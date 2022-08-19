@@ -1,0 +1,6 @@
+
+-r prod.txt
+black ~= 22.6
+mypy ~= 0.961
+isort ~= 5.10.1
+
