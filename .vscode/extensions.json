@@ -1,0 +1,23 @@
+{
+    "recommendations": [
+        "batisteo.vscode-django",
+        "njpwerner.autodocstring",
+        "donjayamanne.python-environment-manager",
+        "kevinrose.vsc-python-indent",
+        "mgesbert.python-path",
+        "littlefoxteam.vscode-python-test-adapter",
+        "streetsidesoftware.code-spell-checker",
+        "qeude.django-test-path",
+        "shamanu4.django-intellisense",
+        "joaompinto.vscode-graphviz",
+        "visualstudioexptteam.vscodeintellicode",
+        "ms-vsliveshare.vsliveshare",
+        "yzhang.markdown-all-in-one",
+        "matangover.mypy",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "spmeesseman.vscode-taskexplorer",
+        "gruntfuggly.todo-tree",
+        "hbenl.vscode-test-explorer"
+    ]
+}
