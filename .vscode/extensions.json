@@ -18,6 +18,7 @@
         "ms-python.python",
         "spmeesseman.vscode-taskexplorer",
         "gruntfuggly.todo-tree",
-        "hbenl.vscode-test-explorer"
+        "hbenl.vscode-test-explorer",
+        "PKief.material-icon-theme"
     ]
 }
