@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Mypy
     steps:
-    - continue-on-error: true
     - uses: actions/checkout@v1
+    - continueOnError: true
     - name: Set up Python 3.8
       uses: actions/setup-python@v1
       with:
