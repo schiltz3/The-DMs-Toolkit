@@ -20,4 +20,4 @@ jobs:
     - name: mypy
       run: |
         mypy ./
-      continue-on-error: true
+      # continue-on-error: true
