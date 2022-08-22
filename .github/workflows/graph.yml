@@ -12,8 +12,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-      with:
-        ref: ${{ github.head_ref }}
     - name: Set up Python 3.9
       uses: actions/setup-python@v3
       with:
@@ -36,13 +34,8 @@ jobs:
         mkdir -p docs/graphs
         python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.pdf"
         python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.svg"
-
-    - name: Check for modified files
-      id: git-check
-      run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
     
     - name: Push changes
-      if: steps.git-check.outputs.modified == 'true'
       run: |
         git config --global user.name 'John Schiltz'
         git config --global user.email '45466247+schiltz3@users.noreply.github.com'
