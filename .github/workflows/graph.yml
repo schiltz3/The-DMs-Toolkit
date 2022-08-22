@@ -2,7 +2,7 @@
 name: Graph CI
 
 on:
-  page_build
+  page_build:
   pull_request:
     types: [closed]
     branches: ["master"]
