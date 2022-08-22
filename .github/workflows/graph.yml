@@ -32,14 +32,14 @@ jobs:
         sudo apt install fonts-roboto
     - name: Create Graphs
       run: |
-      mkdir docs/models
-      python manage.py graph_models -a -o docs/models/CS595_database_graph.pdf
-      python manage.py graph_models -a -o docs/models/CS595_database_graph.svg
+      mkdir docs/
+      python manage.py graph_models -a -o docs/CS595_database_graph.pdf
+      python manage.py graph_models -a -o docs/CS595_database_graph.svg
 
     - uses: actions/upload-artifact@v3
       with:
         name: Graphs
-        path: docs/models/
+        path: docs/
 
 
         
