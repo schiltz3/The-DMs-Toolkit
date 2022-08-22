@@ -21,7 +21,7 @@ How to submit a successful pull request
 ### Processes
 Docs for reference
 
-### [Creating a graph fromo django models]
+### [Creating a graph from django models](https://hackmd.io/@le-angle/Syf6LcbOK)
 Creating database graphs from django
 
 
