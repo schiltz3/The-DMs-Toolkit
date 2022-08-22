@@ -24,9 +24,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Install graphviz
-      run: |
-        python -m pip install pygraphviz
+        pip install pygraphviz
     - name: Install Roboto Font
       run: |
         sudo apt install fonts-roboto
