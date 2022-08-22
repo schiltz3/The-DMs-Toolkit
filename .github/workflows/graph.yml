@@ -34,8 +34,8 @@ jobs:
     - name: Create Graphs
       run: |
         mkdir docs
-        python manage.py graph_models -a -o "docs/CS595_database_graph.pdf"
-        python manage.py graph_models -a -o "docs/CS595_database_graph.svg"
+        python manage.py graph_models --pygraphviz -a -o "docs/CS595_database_graph.pdf"
+        python manage.py graph_models --pygraphviz -a -o "docs/CS595_database_graph.svg"
 
     - uses: actions/upload-artifact@v3
       with:
