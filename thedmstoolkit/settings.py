@@ -27,8 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS: list[str] = []
 
-STATIC_URL = "/static/"
-
 # Application definition
 
 INSTALLED_APPS = [
