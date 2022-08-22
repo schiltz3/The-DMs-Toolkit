@@ -1,0 +1,45 @@
+
+name: Graph CI
+
+on:
+  page_build:
+  push:
+    branches: ["pages"]
+
+jobs:
+  graph:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.9'
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Install graphviz
+      run: |
+        sudo apt install graphviz
+    - name: Install pydot
+      run: |
+        pip install pydot
+    - name: Install Roboto Font
+      run: |
+        sudo apt install fonts-roboto
+    - name: Create Graphs
+      run: |
+        mkdir docs
+        mkdir docs/graphs
+        python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.pdf"
+        python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.svg"
+    - name: Push changes
+      if: steps.git-check.outputs.modified == 'true'
+      run: |
+        git config --global user.name 'John Schiltz'
+        git config --global user.email '45466247+schiltz3@users.noreply.github.com'
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        git commit -am "Automated Graph Generation"
+        git push
