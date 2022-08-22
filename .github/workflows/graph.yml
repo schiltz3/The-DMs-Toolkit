@@ -3,15 +3,11 @@ name: Graph CI
 
 on:
   page_build:
-  pull_request:
-    types: [closed]
-    branches: ["master"]
   push:
-    branches: ["master", "AutoCreateGraphs"]
+    branches: ["pages"]
 
 jobs:
-  graph_if_merged:
-    # if: github.event.pull_request.merged == true
+  graph:
     runs-on: ubuntu-latest
 
     steps:
@@ -36,13 +32,14 @@ jobs:
     - name: Create Graphs
       run: |
         mkdir docs
-        python manage.py graph_models --pydot -a -o "docs/CS595_database_graph.pdf"
-        python manage.py graph_models --pydot -a -o "docs/CS595_database_graph.svg"
-
-    - uses: actions/upload-artifact@v3
-      with:
-        name: Graphs
-        path: docs/
-
-
-        
+        mkdir docs/graphs
+        python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.pdf"
+        python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.svg"
+    - name: Push changes
+      if: steps.git-check.outputs.modified == 'true'
+      run: |
+        git config --global user.name 'John Schiltz'
+        git config --global user.email '45466247+schiltz3@users.noreply.github.com'
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        git commit -am "Automated Graph Generation"
+        git push
