@@ -34,6 +34,7 @@ jobs:
         mkdir docs/graphs
         python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.pdf"
         python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.svg"
+        ls docs/graphs
     - name: Push changes
       if: steps.git-check.outputs.modified == 'true'
       run: |
