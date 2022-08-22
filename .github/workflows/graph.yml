@@ -10,38 +10,36 @@ on:
     branches: ["master", "AutoCreateGraphs"]
 
 jobs:
-  if_marged:
+  graph_if_merged:
     if: github.event.pull_request.merged == true
-      graph:
+    runs-on: ubuntu-latest
 
-        runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.9'
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Install graphviz
+      run: |
+        sudo apt install graphviz
+    - name: Install Roboto Font
+      run: |
+        sudo apt install fonts-roboto
+    - name: Create Graphs
+      run: |
+      mkdir docs/models
+      python manage.py graph_models -a -o docs/models/CS595_database_graph.pdf
+      python manage.py graph_models -a -o docs/models/CS595_database_graph.svg
 
-        steps:
-        - uses: actions/checkout@v3
-        - name: Set up Python 3.9
-          uses: actions/setup-python@v3
-          with:
-            python-version: '3.9'
-        - name: Install Dependencies
-          run: |
-            python -m pip install --upgrade pip
-            pip install -r requirements.txt
-        - name: Install graphviz
-          run: |
-            sudo apt install graphviz
-        - name: Install Roboto Font
-          run: |
-            sudo apt install fonts-roboto
-        - name: Create Graphs
-          run: |
-          mkdir docs/models
-          python manage.py graph_models -a -o docs/models/CS595_database_graph.pdf
-          python manage.py graph_models -a -o docs/models/CS595_database_graph.svg
-
-        - uses: actions/upload-artifact@v3
-          with:
-            name: Graphs
-            path: docs/models/
+    - uses: actions/upload-artifact@v3
+      with:
+        name: Graphs
+        path: docs/models/
 
 
         
