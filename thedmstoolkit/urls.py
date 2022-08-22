@@ -18,7 +18,15 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from toolkit.views.bootstrap_test import BootstrapTest
+from toolkit.views.test_home import TestHome
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    # login
+    path("", TestHome.as_view(), name="test_home"),
+    # test sites
+    path("bootstrapTest/", BootstrapTest.as_view(), name="bootstrap_test"),
+    # static files
     *static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
 ]

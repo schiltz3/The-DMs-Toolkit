@@ -19,6 +19,7 @@
         "spmeesseman.vscode-taskexplorer",
         "gruntfuggly.todo-tree",
         "hbenl.vscode-test-explorer",
-        "PKief.material-icon-theme"
+        "pkief.material-icon-theme",
+        "AnbuselvanRocky.bootstrap5-vscode"
     ]
 }
