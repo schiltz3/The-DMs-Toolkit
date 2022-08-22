@@ -25,9 +25,7 @@ SECRET_KEY = "django-insecure-tg661!%it#$msb(_fjyh^=jz2-if&bxxp7iv(t6o)a*d!7a#=1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-STATIC_URL = "/static/"
+ALLOWED_HOSTS: list[str] = []
 
 # Application definition
 
