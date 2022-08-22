@@ -53,7 +53,7 @@ ROOT_URLCONF = "thedmstoolkit.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": ["toolkit/templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

@@ -1,0 +1,30 @@
+{% comment %}
+bar is a template which takes a list or iterator of BarItem objects and creates a bar from it.
+
+Uses group variable returned from get method to display options for NavBar.
+
+{% endcomment %}
+<div class="container-fluid px-0 py-2">
+    <nav class="navbar navbar-expand-lg navbar-light" >
+     <a class="navbar-brand" href="">DM's Toolkit</a>
+
+    <div>
+     <ul class="navbar-nav mr-auto">
+
+         {% if group == "admin" %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'test_home' %}">Test Home</a>
+            </li>
+         {% elif group == "instructor" %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'test_home' %}">Test Home</a>
+            </li>
+         {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'test_home' %}">Test Home</a>
+            </li>
+         {% endif %}
+     </ul>
+    </div>
+    </nav>
+</div>
