@@ -24,18 +24,17 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Install pygraphviz
+    - name: Install pydot
       run: |
-        sudo apt install graphviz-dev
-        pip install pygraphviz
+        pip install pydot
     - name: Install Roboto Font
       run: |
         sudo apt install fonts-roboto
     - name: Create Graphs
       run: |
         mkdir docs
-        python manage.py graph_models --pygraphviz -a -o "docs/CS595_database_graph.pdf"
-        python manage.py graph_models --pygraphviz -a -o "docs/CS595_database_graph.svg"
+        python manage.py graph_models -a -o "docs/CS595_database_graph.pdf"
+        python manage.py graph_models -a -o "docs/CS595_database_graph.svg"
 
     - uses: actions/upload-artifact@v3
       with:
