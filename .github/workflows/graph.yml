@@ -31,11 +31,13 @@ jobs:
         sudo apt install fonts-roboto
     - name: Create Graphs
       run: |
-        mkdir docs
         mkdir docs/graphs
         python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.pdf"
         python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.svg"
-        ls docs/graphs
+
+    - name: Check for modified files
+      id: git-check
+      run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
     - name: Push changes
       if: steps.git-check.outputs.modified == 'true'
       run: |
