@@ -1,3 +1,6 @@
+[![DeepSource](https://deepsource.io/gh/schiltz3/The-DMs-Toolkit.svg/?label=active+issues&show_trend=true&token=rxy07MpkDYvKHm4CClZMfTkh)](https://deepsource.io/gh/schiltz3/The-DMs-Toolkit/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/schiltz3/The-DMs-Toolkit.svg/?label=resolved+issues&show_trend=true&token=rxy07MpkDYvKHm4CClZMfTkh)](https://deepsource.io/gh/schiltz3/The-DMs-Toolkit/?ref=repository-badge)
+
 # The-DMs-Toolkit
 #### UW-Milwaukee Capstone Project
 
