@@ -1,2 +1,1 @@
 -r prod.txt
-black ~= 22.6
