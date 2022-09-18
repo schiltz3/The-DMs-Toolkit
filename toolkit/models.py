@@ -8,7 +8,8 @@ class Account(models.Model):
     Returns:
         A new Account class
     """
-    Email = models.EmailField( max_length=30, primary_key=True, unique=True)
+
+    Email = models.EmailField(max_length=30, primary_key=True, unique=True)
     Username = models.CharField(max_length=15)
     Password = models.CharField(max_length=20)
 
