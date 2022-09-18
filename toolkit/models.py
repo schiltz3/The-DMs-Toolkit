@@ -3,13 +3,10 @@ from django.db import models
 
 # Create your models here.
 class Account(models.Model):
-    """_summary_
-
-    Args:
-        models (_type_): _description_
+    """Creates accounts
 
     Returns:
-        _type_: _description_
+        A new Account class
     """
 
     Email = models.EmailField(max_length=30, primary_key=True, unique=True)
