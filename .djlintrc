@@ -1,0 +1,4 @@
+{
+  "blank_line_after_tag": "extends,include",
+  "blank_line_before_tag": "block"
+}
