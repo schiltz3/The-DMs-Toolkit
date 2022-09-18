@@ -1,4 +1,7 @@
 {
   "djlint.useEditorIndentation": true,
-  "djlint.configuration": ".djlintrc"
+  "djlint.configuration": ".djlintrc",
+  "emmet.includeLanguages": {
+    "django-html": "html"
+  }
 }
