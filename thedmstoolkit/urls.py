@@ -29,7 +29,7 @@ urlpatterns = [
     # test home
     path("", TestHome.as_view(), name="test_home"),
     # test sites
-    path("bootstrapTest/", BootstrapTest.as_view(), name="bootstrap_test"),
+    path("bootstrap_test/", BootstrapTest.as_view(), name="bootstrap_test"),
     # static files
     *static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
 ]
