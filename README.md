@@ -16,7 +16,7 @@
 #### [Coding Standard](https://hackmd.io/@le-angle/S1LvuuxJj)
 
 ### Setting up templates to use bootstrap and link to useful bootstrap documents
-#### [Getting started with Bootstrap-5](https://hackmd.io/@le-angle/Skd2Zdeys)
+#### [Getting started with Bootstrap-5](https://hackmd.io/@le-angle/ry7gpBlYt)
 
 ### How to submit a successful pull request
 #### [Github Pull Request Process](https://hackmd.io/@le-angle/Skp9fH7KF)
