@@ -19,8 +19,8 @@ from django.contrib import admin
 from django.urls import path
 
 from toolkit.views.bootstrap_test import BootstrapTest
-from toolkit.views.test_home import TestHome
 from toolkit.views.login import Login
+from toolkit.views.test_home import TestHome
 
 urlpatterns = [
     path("admin/", admin.site.urls),
