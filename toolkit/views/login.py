@@ -8,12 +8,10 @@ class Login(View):
     a user's credentials from the Account database.
     """
 
-    @staticmethod
     def get(self, request):
         """GET method for login page."""
         return render(request, "login.html")
 
-    @staticmethod
     def post(self, request):
         """POST method for login page."""
         return render(request, "login.html")
