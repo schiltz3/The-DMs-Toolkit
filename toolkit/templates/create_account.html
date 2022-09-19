@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div>
+    <h1>Create Account</h1>
+    <div class="row">
+      <form action={% url "create_account" %} method="post" class="form">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col">
+            <div class="mb-3">
+              <label class="form-label" for="username">Username</label>
+              <input type="text" name="username" class="form-control" id="username"/>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="password">Password</label>
+              <input type="password" name="password" class="form-control" id="password"/>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-bottom: 5px">Submit</button>
+          </div>
+          <!-- Register buttons -->
+          <div class="text-left">
+            <p>
+            Not a member? <a href="#!">Register</a>
+          </p>
+        </div>
+      </div>
+    </form>
+    <span class="text-danger">{{ error }} {{ password }} {{ username }}</span>
+  </div>
+</div>
+{% endblock content %}

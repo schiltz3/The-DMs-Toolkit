@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path
 
 from toolkit.views.bootstrap_test import BootstrapTest
-from toolkit.views.create_class import CreateClass
+from toolkit.views.create_account import CreateAccount
 from toolkit.views.test_home import TestHome
 
 urlpatterns = [
@@ -27,7 +27,7 @@ urlpatterns = [
     # login
     path("", TestHome.as_view(), name="test_home"),
     # Create Class
-    path("create_class/", CreateClass.as_view(), name="create_class"),
+    path("create_account/", CreateAccount.as_view(), name="create_account"),
     # test sites
     path("bootstrap_test/", BootstrapTest.as_view(), name="bootstrap_test"),
     # static files
