@@ -6,9 +6,10 @@ from ..models import Account
 
 class Login(View):
     """
-    A class to handle the login page's GET and POST requests. As well as retrieve 
+    A class to handle the login page's GET and POST requests. As well as retrieve
     a user's credentials from the Account database.
     """
+
     @staticmethod
     def get(self, request):
         """
@@ -27,4 +28,4 @@ class Login(View):
         """
         Function used to retrieve the credentials of a user and validate them or not.
         """
-        pass # Function to be implemented in separate PR
+        pass  # Function to be implemented in separate PR
