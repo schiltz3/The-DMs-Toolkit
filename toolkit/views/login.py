@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from django.views import View
+
 from ..models import Account
 
 
@@ -13,15 +14,3 @@ class Login(View):
     # Function used to retrieve User from given email address or username and validate password
     def retrieve_user(self):
         pass
-
-
-
-
-
-
-
-
-
-
-
-
