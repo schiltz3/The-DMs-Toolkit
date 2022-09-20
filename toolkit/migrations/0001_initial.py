@@ -7,16 +7,20 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Account',
+            name="Account",
             fields=[
-                ('Email', models.EmailField(max_length=30, primary_key=True, serialize=False, unique=True)),
-                ('Username', models.CharField(max_length=15)),
-                ('Password', models.CharField(max_length=20)),
+                (
+                    "Email",
+                    models.EmailField(
+                        max_length=30, primary_key=True, serialize=False, unique=True
+                    ),
+                ),
+                ("Username", models.CharField(max_length=15)),
+                ("Password", models.CharField(max_length=20)),
             ],
         ),
     ]
