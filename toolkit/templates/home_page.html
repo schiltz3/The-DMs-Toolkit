@@ -1,15 +1,85 @@
 {% extends 'bar_base.html' %}
+
 {% load static %}
+
 {% block application_pane %}
-    <h1>Title Header</h1>
-    <h2>Subtitle Welcome Message</h2>
-    <p>This is the description of the site!</p>
-    <div class="container">
-        <img src="{% static 'Home_Page_Horizon.png' %}"
-             class="img-responsive"
-             style="position:absolute;
-                    bottom:0;
-                    left:50%;"
-             alt="Bruv"/>
+
+<div
+    class="header-image"
+    style="background-image: url('static/images/Home_Page_Horizon.png');"
+>
+    <div class="header-text">
+        <h1>Your creative companion for the journey ahead.</h1>
     </div>
+</div>
+
+
+<div class="title-bar">
+    <h2>-THE DM's TOOLKIT-</h2>
+</div>
+
+<div class="feature-table">
+    <div class="panel">
+        <div class="info-column">
+            <div>
+                <h3>Generate Your Characters</h3>
+            </div>
+            <div>
+                <p>
+                    Use the character generator to build unique randomized
+                    player and NPC character stat blocks. 
+                </p>
+            </div>
+        </div>
+        <div class="image-column">
+            <img src="static/images/Home_Page_Feature_Character.png" alt="Character">
+        </div>
+    </div>
+    <div class="panel">
+        <div class="info-column">
+            <div>
+                <h3>Explore Randomized Encounters</h3>
+            </div>
+            <div>
+                <p>
+                    Challenge your players with exciting random encounters to test
+                    their skill against a variety of foes.
+                </p>
+            </div>
+        </div>
+        <div class="image-column">
+            <img src="static/images/Home_Page_Feature_Encounter.png" alt="Encounter">
+        </div>
+    </div>
+    <div class="panel">
+        <div class="info-column">
+            <div>
+                <h3>Reap the Rewards</h3>
+            </div>
+            <div>
+                <p>
+                    Indulge your players in the spoils of war with a loot hoard
+                    generator that offers luxuries reprieve after every victory.
+                </p>
+            </div>
+        </div>
+        <div class="image-column">
+            <img src="static/images/Home_Page_Feature_Loot.png" alt="Loot">
+        </div>
+    </div>
+</div>
+
+<div class="credits-bar">
+    <h3>CREDITS</h3>
+    <p>
+        The DM's Toolkit is a demonstrative web application developed by Group Two© <br>
+        for their Capstone Project at University of Wisconsin - Milwaukee. <br>
+        The members of Group Two© compose UWM's Class of 2022. They are:<br>
+        John Schiltz<br>
+        Ronen Loundy<br>
+        John Tabor<br>
+        Jeffery Meverden<br>
+    </p>
+</div>
+
 {% endblock application_pane %}
