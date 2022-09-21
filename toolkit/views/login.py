@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
+from django.contrib import messages
 from ..models import Account
 
 
@@ -14,7 +15,15 @@ class Login(View):
         return render(request, "login.html")
 
     def post(self, request):
-        """POST method for login page."""   
+        """POST method for login page.""" 
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        isValid = retrieve_user(email, password)
+        if isValid:
+            request.session['user'] = email
+            return redirect('home_page')
+        else:
+            messages.info(request, 'Email OR password is incorrect')  
         return render(request, "login.html")
     
     def retrieve_user(email, password):
