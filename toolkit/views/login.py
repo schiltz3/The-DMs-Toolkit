@@ -16,3 +16,21 @@ class Login(View):
     def post(self, request):
         """POST method for login page."""   
         return render(request, "login.html")
+    
+    def retrieve_user(email, password):
+        """Function used to authenticate user credentials from login
+
+        Args:
+            email (String): Email input received from form
+            password (String): Password input received from form
+
+        Returns:
+            Boolean: True if email and password are correct
+                     False if user not found or email and password incorrect
+        """
+        try:
+            user = Account.objects.get(email=email)
+            isValid = (user.password == password)
+        except:
+            return False
+        return isValid
