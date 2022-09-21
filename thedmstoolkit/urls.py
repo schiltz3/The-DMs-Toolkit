@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.urls import path
 
 from toolkit.views.bootstrap_test import BootstrapTest
+from toolkit.views.login import Login
 from toolkit.views.test_home import TestHome
 from toolkit.views.login import Login
 
@@ -26,10 +27,10 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # login
     path("login/", Login.as_view(), name="login"),
-    #
+    # test home
     path("", TestHome.as_view(), name="test_home"),
     # test sites
-    path("bootstrapTest/", BootstrapTest.as_view(), name="bootstrap_test"),
+    path("bootstrap_test/", BootstrapTest.as_view(), name="bootstrap_test"),
     # static files
     *static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
 ]
