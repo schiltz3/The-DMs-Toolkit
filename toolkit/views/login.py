@@ -26,7 +26,6 @@ class Login(View):
         messages.info(request, "Email OR password is incorrect")
         return render(request, "login.html")
 
-@staticmethod
 def retrieve_user(email, password):
     """Function used to authenticate user credentials from login
 
