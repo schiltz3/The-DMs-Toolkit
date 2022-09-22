@@ -1,5 +1,5 @@
 {
-  "blank_line_after_tag": "extends,include",
+  "blank_line_after_tag": "extends",
   "blank_line_before_tag": "block",
   "ignore": "H030,H031,H021"
 }
