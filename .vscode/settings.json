@@ -1,6 +1,6 @@
 {
   "djlint.useEditorIndentation": true,
-  "djlint.configuration": ".djlintrc",
+  "djlint.configuration": "pyproject.toml",
   "emmet.includeLanguages": {
     "django-html": "html"
   }
