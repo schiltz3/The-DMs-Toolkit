@@ -17,14 +17,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
-from toolkit.views.CharacterGenerator import CharacterGenerator
-from toolkit.views.EncounterGenerator import EncounterGenerator
-from toolkit.views.LootGenerator import LootGenerator
 
 from toolkit.views.bootstrap_test import BootstrapTest
+from toolkit.views.CharacterGenerator import CharacterGenerator
 from toolkit.views.create_account import CreateAccount
+from toolkit.views.EncounterGenerator import EncounterGenerator
 from toolkit.views.home_page import HomePage
 from toolkit.views.login import Login
+from toolkit.views.LootGenerator import LootGenerator
 from toolkit.views.test_home import TestHome
 
 urlpatterns = [
@@ -34,13 +34,17 @@ urlpatterns = [
     # login
     path("login/", Login.as_view(), name="login"),
     # test home
-    #path("", TestHome.as_view(), name="test_home"),
+    # path("", TestHome.as_view(), name="test_home"),
     # Create Class
     path("create_account/", CreateAccount.as_view(), name="create_account"),
     # Character Generator
-    path("character_generator/", CharacterGenerator.as_view(), name="character_generator"),
+    path(
+        "character_generator/", CharacterGenerator.as_view(), name="character_generator"
+    ),
     # Encounter Generator
-    path("encounter_generator/", EncounterGenerator.as_view(), name="encounter_generator"),
+    path(
+        "encounter_generator/", EncounterGenerator.as_view(), name="encounter_generator"
+    ),
     # Loot Generator
     path("loot_generator/", LootGenerator.as_view(), name="loot_generator"),
     # test sites
