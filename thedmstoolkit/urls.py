@@ -26,7 +26,7 @@ urlpatterns = [
     # home page
     path("", HomePage.as_view(), name="home_page"),
     # test sites
-    path("bootstrapTest/", BootstrapTest.as_view(), name="bootstrap_test"),
+    path("bootstrap_test/", BootstrapTest.as_view(), name="bootstrap_test"),
     # static files
     *static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
 ]
