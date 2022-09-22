@@ -28,9 +28,9 @@ jobs:
         run: |
           git config --global user.name 'John Schiltz'
           git config --global user.email '45466247+schiltz3@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}/${{ github.ref }}
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git commit -am "Automatic Template Formatting"
-          git push
+          git push origin HEAD:${{ github.ref }}
       - name: djlint lint
         run: |
           djlint ./ --lint
