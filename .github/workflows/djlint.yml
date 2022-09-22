@@ -18,5 +18,5 @@ jobs:
           pip install -r requirements.txt
       - name: djlint
         run: |
-          djlint ./
-          continue-on-error: true
+          djlint ./ --reformat --quiet --lint
+        # continue-on-error: true
