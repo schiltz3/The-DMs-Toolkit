@@ -1,0 +1,22 @@
+name: Django Lint CI
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: djlint
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      - name: Install Dependencies
+        run: |
+          pip install djlint
+          pip install -r requirements.txt
+      - name: djlint
+        run: |
+          djlint ./
+          continue-on-error: true

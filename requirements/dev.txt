@@ -1,2 +1,3 @@
 -r prod.txt
-djlint~=1.15
+
+black ~= 22.8
