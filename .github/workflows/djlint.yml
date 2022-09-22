@@ -18,7 +18,7 @@ jobs:
           pip install -r requirements.txt
       - name: djlint format
         run: |
-          djlint ./ --reformat --quiet
+          djlint ./ --reformat --quiet --warn
         # continue-on-error: true
       - name: Check for modified files
         id: git-check
