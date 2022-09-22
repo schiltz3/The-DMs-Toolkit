@@ -27,6 +27,7 @@ class Login(View):
             messages.info(request, "Email OR password is incorrect")
         return render(request, "login.html")
 
+    @staticmethod
     def retrieve_user(email, password):
         """Function used to authenticate user credentials from login
 
@@ -41,6 +42,6 @@ class Login(View):
         try:
             user = Account.objects.get(email=email)
             isValid = user.password == password
-        except:
+        except Account.DoesNotExist:
             return False
         return isValid
