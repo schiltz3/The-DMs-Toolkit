@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import View
+
 from ..models import Account
 
 
@@ -14,9 +15,9 @@ class Login(View):
         return render(request, "login.html")
 
     def post(self, request):
-        """POST method for login page."""   
+        """POST method for login page."""
         return render(request, "login.html")
-    
+
     def retrieve_user(email, password):
         """Function used to authenticate user credentials from login
 
@@ -30,7 +31,7 @@ class Login(View):
         """
         try:
             user = Account.objects.get(email=email)
-            isValid = (user.password == password)
+            isValid = user.password == password
         except:
             return False
         return isValid
