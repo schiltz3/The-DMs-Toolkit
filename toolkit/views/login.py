@@ -17,7 +17,7 @@ class Login(View):
         """POST method for login page."""   
         return render(request, "login.html")
     
-    def retrieve_user(email, password):
+    def retrieve_user(self, email, password):
         """Function used to authenticate user credentials from login
 
         Args:
@@ -31,6 +31,6 @@ class Login(View):
         try:
             user = Account.objects.get(email=email)
             isValid = (user.password == password)
-        except:
+        except Account.DoesNotExist:
             return False
         return isValid
