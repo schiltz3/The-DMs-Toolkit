@@ -8,6 +8,8 @@ jobs:
     name: djlint
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
       - name: Set up Python 3.9
         uses: actions/setup-python@v3
         with:
@@ -31,7 +33,7 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git status
 
-          git pull origin HEAD:${{ github.head_ref }}
+          # git pull origin HEAD:${{ github.head_ref }}
           git commit -am "Automatic Template Formatting"
           # git remote set-head ${{ github.head_ref}}
           git push
