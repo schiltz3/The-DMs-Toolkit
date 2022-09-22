@@ -1,6 +1,7 @@
-from django.shortcuts import render, redirect
-from django.views import View
 from django.contrib import messages
+from django.shortcuts import redirect, render
+from django.views import View
+
 from ..models import Account
 
 
@@ -15,17 +16,17 @@ class Login(View):
         return render(request, "login.html")
 
     def post(self, request):
-        """POST method for login page.""" 
-        email = request.POST.get('email')
-        password = request.POST.get('password')
+        """POST method for login page."""
+        email = request.POST.get("email")
+        password = request.POST.get("password")
         isValid = retrieve_user(email, password)
         if isValid:
-            request.session['user'] = email
-            return redirect('home_page')
+            request.session["user"] = email
+            return redirect("home_page")
         else:
-            messages.info(request, 'Email OR password is incorrect')  
+            messages.info(request, "Email OR password is incorrect")
         return render(request, "login.html")
-    
+
     def retrieve_user(email, password):
         """Function used to authenticate user credentials from login
 
@@ -39,7 +40,7 @@ class Login(View):
         """
         try:
             user = Account.objects.get(email=email)
-            isValid = (user.password == password)
+            isValid = user.password == password
         except:
             return False
         return isValid
