@@ -18,7 +18,8 @@ class Login(View):
         """POST method for login page."""
         return render(request, "login.html")
     
-    def retrieve_user(self, email, password):
+    @staticmethod
+    def retrieve_user(email, password):
         """Function used to authenticate user credentials from login
 
         Args:
