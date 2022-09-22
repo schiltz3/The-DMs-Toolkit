@@ -28,10 +28,10 @@ Uses group variable returned from get method to display options for NavBar.
                 </li>
             {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home_page' %}">Sign Up</a>
+                    <a class="nav-link" href="{% url 'create_account' %}">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home_page' %}">Log In</a>
+                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
                 </li>
             {% endif %}
         </ul>
