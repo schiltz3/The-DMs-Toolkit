@@ -1,4 +1,4 @@
-{% extends 'bar_base.html' %}
+{% extends "bar_base.html" %}
 
 {% load static %}
 
@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="image-column">
-        <img src="static/images/Home_Page_Feature_Character.png" alt="Character">
+        <img src={% static "Home_Page_Feature_Character.png" %} alt="Character"/>
       </div>
     </div>
     <div class="panel">
@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="image-column">
-        <img src="static/images/Home_Page_Feature_Encounter.png" alt="Encounter">
+        <img src={% static "Home_Page_Feature_Encounter.png" %} alt="Encounter"/>
       </div>
     </div>
     <div class="panel">
@@ -58,7 +58,7 @@
         </div>
       </div>
       <div class="image-column">
-        <img src="static/images/Home_Page_Feature_Loot.png" alt="Loot">
+        <img src={% static "Home_Page_Feature_Loot.png" %} alt="Loot"/>
       </div>
     </div>
   </div>
@@ -66,19 +66,19 @@
     <h3>CREDITS</h3>
     <p>
       The DM's Toolkit is a demonstrative web application developed by Group Two©
-      <br>
+      <br/>
       for their Capstone Project at University of Wisconsin - Milwaukee.
-      <br>
+      <br/>
       The members of Group Two© compose UWM's Class of 2022. They are:
-      <br>
+      <br/>
       John Schiltz
-      <br>
+      <br/>
       Ronen Loundy
-      <br>
+      <br/>
       John Tabor
-      <br>
+      <br/>
       Jeffery Meverden
-      <br>
+      <br/>
     </p>
   </div>
 {% endblock application_pane %}
