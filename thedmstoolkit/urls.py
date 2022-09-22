@@ -19,12 +19,20 @@ from django.contrib import admin
 from django.urls import path
 
 from toolkit.views.bootstrap_test import BootstrapTest
-from toolkit.views.home_page import HomePage
+from toolkit.views.create_account import CreateAccount
+from toolkit.views.login import Login
+from toolkit.views.test_home import TestHome
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     # home page
     path("", HomePage.as_view(), name="home_page"),
+    # login
+    path("login/", Login.as_view(), name="login"),
+    # test home
+    path("", TestHome.as_view(), name="test_home"),
+    # Create Class
+    path("create_account/", CreateAccount.as_view(), name="create_account"),
     # test sites
     path("bootstrap_test/", BootstrapTest.as_view(), name="bootstrap_test"),
     # static files
