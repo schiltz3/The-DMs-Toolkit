@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import redirect, render
 from django.views import View
 
 from ..models import Account
@@ -16,23 +17,30 @@ class Login(View):
 
     def post(self, request):
         """POST method for login page."""
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        isValid = retrieve_user(email, password)
+        if isValid:
+            request.session["user"] = email
+            return redirect("home_page")
+        messages.info(request, "Email OR password is incorrect")
         return render(request, "login.html")
 
-    @staticmethod
-    def retrieve_user(email, password):
-        """Function used to authenticate user credentials from login
 
-        Args:
-            email (String): Email input received from form
-            password (String): Password input received from form
+def retrieve_user(email, password):
+    """Function used to authenticate user credentials from login
 
-        Returns:
-            Boolean: True if email and password are correct
-                     False if user not found or email and password incorrect
-        """
-        try:
-            user = Account.objects.get(email=email)
-            isValid = user.password == password
-        except Account.DoesNotExist:
-            return False
-        return isValid
+    Args:
+        email (String): Email input received from form
+        password (String): Password input received from form
+
+    Returns:
+        Boolean: True if email and password are correct
+                 False if user not found or email and password incorrect
+    """
+    try:
+        user = Account.objects.get(email=email)
+        isValid = user.password == password
+    except Account.DoesNotExist:
+        return False
+    return isValid
