@@ -28,6 +28,10 @@
               <label class="form-label" for="password">Password</label>
             </div>
 
+            {% for message in messages %}
+              <p id="messages">{{messages}}</p>
+            {% endfor %}
+
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block mb-4">
               Sign in
