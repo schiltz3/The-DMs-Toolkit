@@ -20,11 +20,14 @@ from django.urls import path
 
 from toolkit.views.bootstrap_test import BootstrapTest
 from toolkit.views.create_account import CreateAccount
+from toolkit.views.home_page import HomePage
 from toolkit.views.login import Login
 from toolkit.views.test_home import TestHome
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    # home page
+    path("", HomePage.as_view(), name="home_page"),
     # login
     path("login/", Login.as_view(), name="login"),
     # test home
