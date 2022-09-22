@@ -25,7 +25,7 @@ from toolkit.views.EncounterGenerator import EncounterGenerator
 from toolkit.views.home_page import HomePage
 from toolkit.views.login import Login
 from toolkit.views.LootGenerator import LootGenerator
-from toolkit.views.test_home import TestHome
+#from toolkit.views.test_home import TestHome
 
 urlpatterns = [
     path("admin/", admin.site.urls),
