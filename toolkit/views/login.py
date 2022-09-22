@@ -32,7 +32,7 @@ class Login(View):
         """
         try:
             user = Account.objects.get(email=email)
-            isValid = (user.password == password)
+            isValid = user.password == password
         except Account.DoesNotExist:
             return False
         return isValid
