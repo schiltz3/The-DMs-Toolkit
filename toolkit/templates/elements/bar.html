@@ -6,17 +6,17 @@ Uses group variable returned from get method to display options for NavBar.
 {% endcomment %}
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light p-0">
-    <a class="navbar-brand" href="">DM's Toolkit</a>
+    <a class="navbar-brand" href="/">DM's Toolkit</a>
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav me-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'home_page' %}">Characters</a>
+                <a class="nav-link" href="{% url 'character_generator' %}">Characters</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'home_page' %}">Encounters</a>
+                <a class="nav-link" href="{% url 'encounter_generator' %}">Encounters</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'home_page' %}">Loot</a>
+                <a class="nav-link" href="{% url 'loot_generator' %}">Loot</a>
             </li>
         </ul>
     </div>
@@ -28,10 +28,10 @@ Uses group variable returned from get method to display options for NavBar.
                 </li>
             {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home_page' %}">Sign Up</a>
+                    <a class="nav-link" href="{% url 'create_account' %}">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'home_page' %}">Log In</a>
+                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
                 </li>
             {% endif %}
         </ul>
