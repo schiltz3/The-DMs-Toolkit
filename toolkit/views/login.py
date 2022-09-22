@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import View
+
 from ..models import Account
 
 
@@ -14,7 +15,7 @@ class Login(View):
         return render(request, "login.html")
 
     def post(self, request):
-        """POST method for login page."""   
+        """POST method for login page."""
         return render(request, "login.html")
     
     def retrieve_user(self, email, password):
