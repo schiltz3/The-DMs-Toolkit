@@ -39,8 +39,8 @@ def retrieve_user(email, password):
                  False if user not found or email and password incorrect
     """
     try:
-        user = Account.objects.get(email=email)
-        isValid = user.password == password
+        user = Account.objects.get(Email=email)
+        isValid = user.Password == password
     except Account.DoesNotExist:
         return False
     return isValid
