@@ -1,4 +1,5 @@
 from tkinter import CASCADE
+
 from django.db import models
 
 
@@ -17,12 +18,14 @@ class Account(models.Model):
     def __str__(self):
         return self.Username
 
+
 class Character(models.Model):
     """Creates characters
 
     Returns:
         A new character class
     """
+
     Name = models.CharField(max_length=20)
     AccountOwner = models.ForeignKey(Account, on_delete=models.CASCADE)
     Race = models.CharField(max_length=15)
@@ -37,7 +40,6 @@ class Character(models.Model):
     Intelligence = models.IntegerField()
     Wisdom = models.IntegerField()
     Charisma = models.IntegerField()
-    
 
     def __str__(self):
         return self.Name + " Level " + self.Level + " " + self.Class
