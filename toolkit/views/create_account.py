@@ -36,7 +36,7 @@ class CreateAccountForm(Form):
         required=True, widget=TextInput(attrs={"class": "form-control"})
     )
     password = CharField(
-        required=True, widget=TextInput(attrs={"class": "form-control"})
+        required=True, widget=PasswordInput(attrs={"class": "form-control"})
     )
 
 
