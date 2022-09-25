@@ -15,10 +15,22 @@ here
         style="background-image: url('{% static "Create_Account_d20.jpg" %}')">
     {% csrf_token %}
     <div class="container" style="height: 100vh">
-      <div class="row h-100 align-items-center justify-content-md-center">
-        <div class="col-xl-5 col-md-8  bg-white rounded-5 shadow-5-strong p-5">
+      <div class="row h-100 align-items-center justify-content-center">
+        <div class="col-xs-12 col-md-7 col-xl-6 bg-white rounded-5 shadow-5-strong p-5">
           <h1>Create Account</h1>
-          {{ form.as_div }}
+          {% for field in form %}
+            <div class="mb-3">
+              <label class="form-label" for={{ field.auto_id }}>{{ field.label }}
+              </label>
+              {% if field.help_text %}<sup>{{ field.help_text }}</sup>{% endif %}
+              {% for error in field.errors %}
+                <div class="row">
+                  <div class="alert alert-danger">{{ error }}</div>
+                </div>
+              {% endfor %}
+              {{ field }}
+            </div>
+          {% endfor %}
           <button type="submit" class="btn btn-primary" style="margin-bottom: 5px">Submit</button>
           <!-- Register buttons -->
           <div class="text-left">

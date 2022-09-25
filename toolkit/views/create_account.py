@@ -5,7 +5,6 @@ from django.forms import Form, CharField, EmailField, PasswordInput, TextInput
 
 from toolkit.models import Account
 from django.db.models import Model
-from toolkit.views.custom_text_input import CustomTextInput
 
 
 class CreateAccount(View):
@@ -28,10 +27,17 @@ class CreateAccount(View):
 
 class CreateAccountForm(Form):
     email = EmailField(
-        required=True, widget=CustomTextInput(attrs={"placeholder": "name@example.com"})
+        required=True,
+        widget=TextInput(
+            attrs={"class": "form-control", "placeholder": "name@example.com"}
+        ),
     )
-    username = CharField(required=True, widget=CustomTextInput())
-    password = CharField(required=True, widget=CustomTextInput())
+    username = CharField(
+        required=True, widget=TextInput(attrs={"class": "form-control"})
+    )
+    password = CharField(
+        required=True, widget=TextInput(attrs={"class": "form-control"})
+    )
 
 
 def create_user(username: str, email: str, password: str) -> Optional[Account]:
