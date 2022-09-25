@@ -1,0 +1,9 @@
+<div class="mb-3">
+  <input class="form-control" 
+  type="text" 
+  name={{ widget.name }} 
+  id={{ widget.name }} 
+  {% if widget.value != None %} value="{{ widget.value|stringformat:'s' }}"{% endif %} 
+  {% if widget.placeholder != None %} placeholder="{{ widget.placeholder }}" {% endif %} 
+  {% include "django/forms/widgets/attrs.html" %}/> 
+</div>
