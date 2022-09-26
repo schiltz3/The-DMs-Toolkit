@@ -20,7 +20,7 @@ from django.urls import path
 
 from toolkit.views.bootstrap_test import BootstrapTest
 from toolkit.views.CharacterGenerator import CharacterGenerator
-from toolkit.views.confimr_account_creation import ConfirmAccountCreation
+from toolkit.views.confirm_account_creation import ConfirmAccountCreation
 from toolkit.views.create_account import CreateAccount
 from toolkit.views.EncounterGenerator import EncounterGenerator
 from toolkit.views.home_page import HomePage

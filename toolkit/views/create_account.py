@@ -41,22 +41,30 @@ class CreateAccount(View):
                 email=form.cleaned_data["email"],
                 permanent=True,
             )
-        else:
-            context["form"] = form
-            print("Invalid form")
+        context["form"] = form
+        print("Invalid form")
 
         return render(request, "create_account.html", context)
 
 
 class CreateAccountForm(Form):
-    username = CharField(
-        required=True, widget=TextInput(attrs={"class": "form-control"})
-    )
+    """Creates a new form for the Create Account template.
+    Takes the POST request returned as an argument to create a new filled out form
+
+    Args:
+        username (str):
+        email (str):
+        password (str):
+    """
+
     email = EmailField(
         required=True,
         widget=TextInput(
             attrs={"class": "form-control", "placeholder": "name@example.com"}
         ),
+    )
+    username = CharField(
+        required=True, widget=TextInput(attrs={"class": "form-control"})
     )
     password = CharField(
         required=True, widget=PasswordInput(attrs={"class": "form-control"})
@@ -64,15 +72,21 @@ class CreateAccountForm(Form):
 
 
 def create_user(username: str, email: str, password: str) -> Optional[Account]:
-    """Create a new user object and save in database if one does not already exist for that email
+    """Create a new user object and save in database
+    if one does not already exist for that email
 
     Args:
         username (str): A valid username containing only alpha-numeric characters
         email (str): A valid email
         password (str): A valid password
 
+
+    Raises:
+        ValueError: Raises an error if no user is found
+
     Returns:
-        Optional[Account]: Returns None if account already exists, otherwise returns the new account
+        Optional[Account]: Returns None if account already exists,
+        otherwise returns the new account
     """
     try:
         Account.objects.get(Email=email)

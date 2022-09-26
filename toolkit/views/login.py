@@ -13,7 +13,7 @@ class Login(View):
 
     def get(self, request, **kwargs):
         """GET method for login page."""
-        email = kwargs.get("email", None)
+        email = kwargs.get("email")
         context = {"email": email}
         return render(request, "login.html", context)
 
@@ -35,6 +35,8 @@ def retrieve_user(email, password):
     Args:
         email (String): Email input received from form
         password (String): Password input received from form
+
+    Raises:
 
     Returns:
         Boolean: True if email and password are correct
