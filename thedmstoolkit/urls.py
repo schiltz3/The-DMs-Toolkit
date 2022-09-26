@@ -34,10 +34,11 @@ urlpatterns = [
     # home page
     path("", HomePage.as_view(), name="home_page"),
     # login
+    path("login/<str:email>", Login.as_view(), name="login"),
     path("login/", Login.as_view(), name="login"),
     # Confirm Account Creation
     path(
-        "create_account/confirm_account_creation/",
+        "create_account/confirm_account_creation/<str:email>",
         ConfirmAccountCreation.as_view(),
         name="confirm_account_creation",
     ),

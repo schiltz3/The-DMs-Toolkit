@@ -30,7 +30,11 @@ class CreateAccount(View):
                 form.cleaned_data["email"],
                 form.cleaned_data["password"],
             )
-            return redirect("confirm_account_creation", permanent=True)
+            return redirect(
+                "confirm_account_creation",
+                email=form.cleaned_data["email"],
+                permanent=True,
+            )
         else:
             context["form"] = form
             print("Invalid form")
