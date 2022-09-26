@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
-from django.views import View
 from django.http.request import HttpRequest
+from django.shortcuts import redirect, render
+from django.views import View
 
 
 class ConfirmAccountCreation(View):

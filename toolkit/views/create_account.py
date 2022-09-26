@@ -1,8 +1,10 @@
 from typing import Any, Optional
-from django.shortcuts import render, redirect
-from django.views import View
-from django.forms import Form, CharField, EmailField, PasswordInput, TextInput
+
+from django.forms import CharField, EmailField, Form, PasswordInput, TextInput
 from django.http.request import HttpRequest
+from django.shortcuts import redirect, render
+from django.views import View
+
 from toolkit.models import Account
 
 
