@@ -10,9 +10,9 @@ dependency_file_paths = ["requirements/prod.txt"]
 [analyzers.meta]
 skip_doc_coverage = ["toolkit/migrations"]
 type_checker = "mypy"
+runtime_version = "3.x.x"
 
 [[transformers]]
-runtime_version = "3.x.x"
 name = "black"
 enabled = true
 
