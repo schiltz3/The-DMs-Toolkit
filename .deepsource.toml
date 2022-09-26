@@ -1,13 +1,18 @@
 version = 1
+exclude_patterns = ["toolkit/migrations/**"]
+test_patterns = ["tests/**", "test_*.py"]
 
 [[analyzers]]
 name = "python"
 enabled = true
+dependency_file_paths = ["requirements/prod.txt"]
 
-  [analyzers.meta]
-  runtime_version = "3.x.x"
+[analyzers.meta]
+skip_doc_coverage = ["toolkit/migrations"]
+type_checker = "mypy"
 
 [[transformers]]
+runtime_version = "3.x.x"
 name = "black"
 enabled = true
 
