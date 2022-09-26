@@ -2,9 +2,10 @@ from typing import Optional
 from django.shortcuts import render
 from django.views import View
 from django.forms import Form, CharField, EmailField, PasswordInput, TextInput
+from django.http.request import HttpRequest
+from django.http.response import HttpResponseRedirect
 
 from toolkit.models import Account
-from django.db.models import Model
 
 
 class CreateAccount(View):
@@ -13,16 +14,28 @@ class CreateAccount(View):
     a user's credentials from the Account database.
     """
 
-    def get(self, request):
+    def get(self, request: HttpRequest):
         """GET method for create user page."""
         context = {}
         context["form"] = CreateAccountForm()
         return render(request, "create_account.html", context)
 
-    def post(self, request):
+    def post(self, request: HttpRequest):
         """POST method for create user page."""
+        form = CreateAccountForm(request.POST)
+        context = {}
+        if form.is_valid():
+            create_user(
+                form.cleaned_data["username"],
+                form.cleaned_data["email"],
+                form.cleaned_data["password"],
+            )
+            return HttpResponseRedirect("/")
+        else:
+            context["form"] = form
+            print("Invalid form")
 
-        return render(request, "create_account.html")
+        return render(request, "create_account.html", context)
 
 
 class CreateAccountForm(Form):
@@ -54,7 +67,7 @@ def create_user(username: str, email: str, password: str) -> Optional[Account]:
     try:
         Account.objects.get(Email=email)
         return None
-    except Model.DoesNotExist:
+    except Account.DoesNotExist:
         pass
 
     a = Account(Email=email, Username=username, Password=password)

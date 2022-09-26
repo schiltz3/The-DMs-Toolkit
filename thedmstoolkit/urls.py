@@ -25,6 +25,7 @@ from toolkit.views.EncounterGenerator import EncounterGenerator
 from toolkit.views.home_page import HomePage
 from toolkit.views.login import Login
 from toolkit.views.LootGenerator import LootGenerator
+from toolkit.views.confimr_account_creation import ConfirmAccountCreation
 
 # from toolkit.views.test_home import TestHome
 
@@ -34,8 +35,12 @@ urlpatterns = [
     path("", HomePage.as_view(), name="home_page"),
     # login
     path("login/", Login.as_view(), name="login"),
-    # test home
-    # path("", TestHome.as_view(), name="test_home"),
+    # Confirm Account Creation
+    path(
+        "confirm_account_creation/",
+        ConfirmAccountCreation.as_view(),
+        name="confirm_account_creation",
+    ),
     # Create Class
     path("create_account/", CreateAccount.as_view(), name="create_account"),
     # Character Generator
