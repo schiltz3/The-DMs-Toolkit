@@ -4,9 +4,7 @@ from django.views import View
 
 
 class ConfirmAccountCreation(View):
-    """
-    A class to handle the confirm account creation page's GET and POST requests.
-    """
+    """A class to handle the confirm account creation page's GET and POST requests."""
 
     @staticmethod
     def get(request: HttpRequest, **kwargs):
