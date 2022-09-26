@@ -1,9 +1,9 @@
-from typing import Optional
+from typing import Any, Optional
 from django.shortcuts import render, redirect
 from django.views import View
 from django.forms import Form, CharField, EmailField, PasswordInput, TextInput
 from django.http.request import HttpRequest
-from django.http.response import HttpResponseRedirect
+from django.contrib.auth.models import User
 
 from toolkit.models import Account
 
@@ -23,13 +23,19 @@ class CreateAccount(View):
     def post(self, request: HttpRequest):
         """POST method for create user page."""
         form = CreateAccountForm(request.POST)
-        context = {}
+        context: dict[str, Any] = {"error": None}
         if form.is_valid():
-            create_user(
-                form.cleaned_data["username"],
-                form.cleaned_data["email"],
-                form.cleaned_data["password"],
-            )
+            try:
+                create_user(
+                    form.cleaned_data["username"],
+                    form.cleaned_data["email"],
+                    form.cleaned_data["password"],
+                )
+            except ValueError as e:
+                context["form"] = form
+                context["error"] = str(e)
+                return render(request, "create_account.html", context)
+
             return redirect(
                 "confirm_account_creation",
                 email=form.cleaned_data["email"],
@@ -43,21 +49,21 @@ class CreateAccount(View):
 
 
 class CreateAccountForm(Form):
+    username = CharField(
+        required=True, widget=TextInput(attrs={"class": "form-control"})
+    )
     email = EmailField(
         required=True,
         widget=TextInput(
             attrs={"class": "form-control", "placeholder": "name@example.com"}
         ),
     )
-    username = CharField(
-        required=True, widget=TextInput(attrs={"class": "form-control"})
-    )
     password = CharField(
         required=True, widget=PasswordInput(attrs={"class": "form-control"})
     )
 
 
-def create_user(username: str, email: str, password: str) -> Optional[Account]:
+def create_user(username: str, email: str, password: str) -> Optional[User]:
     """Create a new user object and save in database if one does not already exist for that email
 
     Args:
@@ -69,11 +75,12 @@ def create_user(username: str, email: str, password: str) -> Optional[Account]:
         Optional[Account]: Returns None if account already exists, otherwise returns the new account
     """
     try:
-        Account.objects.get(Email=email)
-        return None
-    except Account.DoesNotExist:
+        User.objects.get(username=username)
+        raise ValueError(f"User {username} already exists")
+    except User.DoesNotExist:
         pass
 
-    a = Account(Email=email, Username=username, Password=password)
+    a = User(email=email, username=username, password=password)
+    print(a)
     a.save()
     return a

@@ -27,6 +27,9 @@ here
               {% for error in field.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
             </div>
           {% endfor %}
+          {% if error != None %}
+            <div class="alert alert-danger">{{ error }}</div>
+          {% endif %}
           <button type="submit" class="btn btn-primary" style="margin-bottom: 5px">Submit</button>
           <!-- Register buttons -->
           <div class="text-left">
