@@ -3,8 +3,6 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.forms import Form, CharField, EmailField, PasswordInput, TextInput
 from django.http.request import HttpRequest
-from django.contrib.auth.models import User
-
 from toolkit.models import Account
 
 
@@ -63,7 +61,7 @@ class CreateAccountForm(Form):
     )
 
 
-def create_user(username: str, email: str, password: str) -> Optional[User]:
+def create_user(username: str, email: str, password: str) -> Optional[Account]:
     """Create a new user object and save in database if one does not already exist for that email
 
     Args:
@@ -75,12 +73,12 @@ def create_user(username: str, email: str, password: str) -> Optional[User]:
         Optional[Account]: Returns None if account already exists, otherwise returns the new account
     """
     try:
-        User.objects.get(username=username)
-        raise ValueError(f"User {username} already exists")
-    except User.DoesNotExist:
+        Account.objects.get(Email=email)
+        raise ValueError(f"Account {email} already exists")
+    except Account.DoesNotExist:
         pass
 
-    a = User(email=email, username=username, password=password)
+    a = Account(Email=email, Username=username, Password=password)
     print(a)
     a.save()
     return a
