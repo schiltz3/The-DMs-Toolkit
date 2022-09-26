@@ -1,5 +1,5 @@
 from typing import Optional
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.forms import Form, CharField, EmailField, PasswordInput, TextInput
 from django.http.request import HttpRequest
@@ -30,7 +30,7 @@ class CreateAccount(View):
                 form.cleaned_data["email"],
                 form.cleaned_data["password"],
             )
-            return HttpResponseRedirect("/")
+            return redirect("confirm_account_creation", permanent=True)
         else:
             context["form"] = form
             print("Invalid form")
@@ -73,7 +73,3 @@ def create_user(username: str, email: str, password: str) -> Optional[Account]:
     a = Account(Email=email, Username=username, Password=password)
     a.save()
     return a
-
-
-def validate_username(username: str):
-    raise NotImplementedError()

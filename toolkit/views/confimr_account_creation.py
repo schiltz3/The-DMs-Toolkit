@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.http.request import HttpRequest
 
@@ -14,4 +14,4 @@ class ConfirmAccountCreation(View):
 
     def post(self, request: HttpRequest):
         """POST method for confirm account creation page."""
-        return render(request, "confirm_account_creation.html")
+        return redirect("login", permanent=True)

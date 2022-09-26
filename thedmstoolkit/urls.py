@@ -37,7 +37,7 @@ urlpatterns = [
     path("login/", Login.as_view(), name="login"),
     # Confirm Account Creation
     path(
-        "confirm_account_creation/",
+        "create_account/confirm_account_creation/",
         ConfirmAccountCreation.as_view(),
         name="confirm_account_creation",
     ),
