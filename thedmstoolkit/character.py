@@ -1,6 +1,7 @@
 import numpy
 
-from toolkit.models import Character;
+from toolkit.models import Character
+
 
 def Arrange(CharacterID, *StatArray):
 """
@@ -18,7 +19,7 @@ def Arrange(CharacterID, *StatArray):
     CurrentCharacter = Character.objects.get(id=CharacterID)
     CurrentClass = CurrentCharacter.Class
     StatArray = numpy.array(sorted(StatArray))
-    if (CurrentClass == "Artificer"):
+    if CurrentClass == "Artificer":
         CurrentCharacter.Strength = StatArray[0]
         CurrentCharacter.Dexterity = StatArray[3]
         CurrentCharacter.Constitution = StatArray[4]
