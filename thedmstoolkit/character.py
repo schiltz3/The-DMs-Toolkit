@@ -5,14 +5,14 @@ from toolkit.models import Character
 
 def Arrange(CharacterID, *StatArray):
     """
-    Given a character ID and a array of 6 numbers it 
+    Given a character ID and a array of 6 numbers it
     arranges the numbers in an optimal allocation for any given class
-    
+
     Raises:
         RuntimeError: If the character is does not exist
         RuntimeError: If the Array of integers is the wrong size
     """
-    if (StatArray.len!=6):
+    if StatArray.len != 6:
         raise RuntimeError("Array is not the correct size")
     check = Character.objects.filter(id=CharacterID)
     if check.count == 0:
