@@ -1,22 +1,21 @@
 from toolkit.models import Character
 
 
-def Arrange(CharacterID, *StatArray):
+def Arrange(CharacterID, stat1, stat2, stat3, stat4, stat5 ,stat6):
     """
-    Given a character ID and a array of 6 numbers it
+    Given a character ID and a 6 numbers it
     arranges the numbers in an optimal allocation for any given class
 
     Raises:
         RuntimeError: If the character is does not exist
         RuntimeError: If the Array of integers is the wrong size
     """
-    if StatArray.len != 6:
-        raise RuntimeError("Array is not the correct size")
     check = Character.objects.filter(id=CharacterID)
     if check.count == 0:
         raise RuntimeError("Character does not exist")
     CurrentCharacter = Character.objects.get(id=CharacterID)
     CurrentClass = CurrentCharacter.Class
+    StatArray = [stat1, stat2,stat3, stat4, stat5, stat6]
     StatArray = sorted(StatArray)
     if CurrentClass == "Artificer":
         CurrentCharacter.Strength = StatArray[0]
