@@ -1,7 +1,7 @@
 from toolkit.models import Character
 
 
-def Arrange(CharacterID, stat1, stat2, stat3, stat4, stat5 ,stat6):
+def Arrange(CharacterID, StatArray):
     """
     Given a character ID and a 6 numbers it
     arranges the numbers in an optimal allocation for any given class
@@ -15,7 +15,6 @@ def Arrange(CharacterID, stat1, stat2, stat3, stat4, stat5 ,stat6):
         raise RuntimeError("Character does not exist")
     CurrentCharacter = Character.objects.get(id=CharacterID)
     CurrentClass = CurrentCharacter.Class
-    StatArray = [stat1, stat2,stat3, stat4, stat5, stat6]
     StatArray = sorted(StatArray)
     if CurrentClass == "Artificer":
         CurrentCharacter.Strength = StatArray[0]
