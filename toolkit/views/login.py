@@ -41,6 +41,6 @@ def retrieve_user(email, password):
     try:
         user = User.objects.get(email=email)
         isValid = user.password == password
-    except Account.DoesNotExist:
+    except User.DoesNotExist:
         return False
     return isValid
