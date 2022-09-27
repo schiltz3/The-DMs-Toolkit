@@ -24,10 +24,10 @@ def Arrange(CharacterID, StatArray):
         CurrentCharacter.Wisdom = StatArray[2]
         CurrentCharacter.Charisma = StatArray[1]
     elif CurrentClass == "Barbarian":
-        CurrentCharacter.Strength = StatArray[0]
+        CurrentCharacter.Strength = StatArray[5]
         CurrentCharacter.Dexterity = StatArray[3]
         CurrentCharacter.Constitution = StatArray[4]
-        CurrentCharacter.Intelligence = StatArray[5]
+        CurrentCharacter.Intelligence = StatArray[0]
         CurrentCharacter.Wisdom = StatArray[2]
         CurrentCharacter.Charisma = StatArray[1]
     elif CurrentClass == "Bard":
