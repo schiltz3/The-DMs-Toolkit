@@ -1,4 +1,4 @@
-import numpy
+import array
 
 from toolkit.models import Character
 
@@ -18,7 +18,7 @@ def Arrange(CharacterID, *StatArray):
         raise RuntimeError("Character does not exist")
     CurrentCharacter = Character.objects.get(id=CharacterID)
     CurrentClass = CurrentCharacter.Class
-    StatArray = numpy.array(sorted(StatArray))
+    StatArray = array(int,sorted(StatArray))
     if CurrentClass == "Artificer":
         CurrentCharacter.Strength = StatArray[0]
         CurrentCharacter.Dexterity = StatArray[3]
