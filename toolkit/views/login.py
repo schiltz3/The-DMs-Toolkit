@@ -1,8 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.views import View
-
-from ..models import Account
+from ..models import User
 
 
 class Login(View):
@@ -39,7 +38,7 @@ def retrieve_user(email, password):
                  False if user not found or email and password incorrect
     """
     try:
-        user = Account.objects.get(email=email)
+        user = User.objects.get(email=email)
         isValid = user.password == password
     except Account.DoesNotExist:
         return False
