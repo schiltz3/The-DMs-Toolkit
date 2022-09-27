@@ -19,7 +19,7 @@ def Arrange(CharacterID, *StatArray):
         raise RuntimeError("Character does not exist")
     CurrentCharacter = Character.objects.get(id=CharacterID)
     CurrentClass = CurrentCharacter.Class
-    StatArray = array('i',sorted(StatArray))
+    StatArray = array("i", sorted(StatArray))
     if CurrentClass == "Artificer":
         CurrentCharacter.Strength = StatArray[0]
         CurrentCharacter.Dexterity = StatArray[3]
