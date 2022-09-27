@@ -3,7 +3,7 @@ from toolkit.models import Character
 
 def Arrange(CharacterID, StatArray):
     """
-    Given a character ID and a 6 numbers it
+    Given a character ID and a 6 number array it
     arranges the numbers in an optimal allocation for any given class
 
     Raises:
