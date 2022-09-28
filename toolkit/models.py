@@ -1,20 +1,7 @@
+from django.contrib.auth.models import User
 from django.db import models
 
-
 # Create your models here.
-class Account(models.Model):
-    """Creates accounts
-
-    Returns:
-        A new Account class
-    """
-
-    Email = models.EmailField(max_length=30, primary_key=True, unique=True)
-    Username = models.CharField(max_length=15)
-    Password = models.CharField(max_length=20)
-
-    def __str__(self):
-        return self.Username
 
 
 class Character(models.Model):
@@ -25,7 +12,7 @@ class Character(models.Model):
     """
 
     Name = models.CharField(max_length=20)
-    AccountOwner = models.ForeignKey(Account, on_delete=models.CASCADE)
+    AccountOwner = models.ForeignKey(User, on_delete=models.CASCADE)
     Race = models.CharField(max_length=15)
     Class = models.CharField(max_length=9)
     Background = models.CharField(max_length=22)
