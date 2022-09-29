@@ -197,7 +197,7 @@ class Character_Generator:
         Returns:
             String: Race
         """
-        Race = RaceList[random.randint[0, RaceList.len - 1]]
+        Race = RaceList[random.randint(0, RaceList.len - 1)]
         return Race
 
     def Generate_Class(self, ClassList) -> str:
@@ -209,7 +209,7 @@ class Character_Generator:
         Returns:
             String: the random class
         """
-        Class = ClassList[random.randint[0, ClassList.len - 1]]
+        Class = ClassList[random.randint(0, ClassList.len - 1)]
         return Class
 
     def Generate_Alignment(self, AlignmentList) -> str:
@@ -221,7 +221,7 @@ class Character_Generator:
         Returns:
             String: Alignment
         """
-        Alignment = AlignmentList[random.randint[0, AlignmentList.len - 1]]
+        Alignment = AlignmentList[random.randint(0, AlignmentList.len - 1)]
         return Alignment
 
     def Generate_Background(self, BackgroundList) -> str:
@@ -230,7 +230,7 @@ class Character_Generator:
         Args:
             BackgroundList (_type_): _description_
         """
-        return BackgroundList[random.randint[0, BackgroundList.len - 1]]
+        return BackgroundList[random.randint(0, BackgroundList.len - 1)]
 
     def Generate(self, Generator, Key):
         """
