@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.views import View
+
 import thedmstoolkit.character_generation
+
+
 class CharacterGenerator(View):
     """
     A class to provide a  page for users visiting the site to
