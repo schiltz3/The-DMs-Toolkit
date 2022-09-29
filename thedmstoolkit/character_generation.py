@@ -6,6 +6,7 @@ from toolkit.models import Character
 
 class Character_Generator:
     """Contains all the lists and Dictionaries for the various character generation methods"""
+
     RaceDict: dict[str, list] = {
         "Rare": [
             "Aasimar",
@@ -47,7 +48,8 @@ class Character_Generator:
             "Half-Elf",
             "Half-Orc",
             "Halfling",
-            "Human"],
+            "Human",
+        ],
         "All": [
             "Aasimar",
             "Animal Hybrid",
@@ -78,27 +80,57 @@ class Character_Generator:
             "Tortle",
             "Vedalken",
             "Warforged",
-            "Locathah","Bugbear", "Goblin", "Hobgoblin", "Kobold", "Lizardfolk", "Orc",
+            "Locathah",
+            "Bugbear",
+            "Goblin",
+            "Hobgoblin",
+            "Kobold",
+            "Lizardfolk",
+            "Orc",
             "Dwarf",
             "Elf",
             "Gnome",
             "Half-Elf",
             "Half-Orc",
             "Halfling",
-            "Human"],
+            "Human",
+        ],
     }
     ClassDict: dict[str, list] = {
         "Martial": ["Fighter", "Monk", "Ranger", "Rogue"],
         "Divine": ["Cleric", "Paladin", "Warlock"],
         "Magic": ["Artificer", "Bard", "Druid", "Sorcerer", "Wizard"],
-        "All": ["Fighter", "Monk", "Ranger", "Rogue","Cleric", "Paladin", "Warlock", "Artificer", "Bard", "Druid", "Sorcerer", "Wizard"],
+        "All": [
+            "Fighter",
+            "Monk",
+            "Ranger",
+            "Rogue",
+            "Cleric",
+            "Paladin",
+            "Warlock",
+            "Artificer",
+            "Bard",
+            "Druid",
+            "Sorcerer",
+            "Wizard",
+        ],
     }
     AlignmentDict: dict[str, list] = {
         "Good": ["Lawful Good", "Neutral Good", "Chaotic Good"],
         "Neutral": ["Lawful Neutral", "True Neutral", "Chaotic Neutral"],
         "Evil": ["Lawful Evil", "Neutral Evil", "Chaotic Evil"],
-        "All": ["Lawful Good", "Neutral Good", "Chaotic Good","Lawful Neutral", "True Neutral", "Chaotic Neutral","Lawful Evil", "Neutral Evil", "Chaotic Evil"]
-        }
+        "All": [
+            "Lawful Good",
+            "Neutral Good",
+            "Chaotic Good",
+            "Lawful Neutral",
+            "True Neutral",
+            "Chaotic Neutral",
+            "Lawful Evil",
+            "Neutral Evil",
+            "Chaotic Evil",
+        ],
+    }
     MethodDict: dict[str, list] = {
         "StandardArray": [15, 14, 13, 12, 10, 8],
         "3d6": [
@@ -134,8 +166,6 @@ class Character_Generator:
         "Soldier",
         "Urchin",
     ]
-
-    
 
     def get_Generators(self):
         """
