@@ -1,14 +1,13 @@
 from django.contrib import messages
+from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect, render
 from django.views import View
-
-from ..models import User
 
 
 class Login(View):
     """
     A class to handle the login page's GET and POST requests. As well as retrieve
-    a user's credentials from the Account database.
+    a user's credentials from the User database.
     """
 
     def get(self, request, **kwargs):
@@ -19,32 +18,11 @@ class Login(View):
 
     def post(self, request):
         """POST method for login page."""
-        email = request.POST.get("email")
+        username = request.POST.get("username")
         password = request.POST.get("password")
-        isValid = retrieve_user(email, password)
-        if isValid:
-            request.session["user"] = email
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
             return redirect("home_page")
-        messages.info(request, "Email OR password is incorrect")
-        return render(request, "login.html")
-
-
-def retrieve_user(email, password):
-    """Function used to authenticate user credentials from login
-
-    Args:
-        email (String): Email input received from form
-        password (String): Password input received from form
-
-    Raises:
-
-    Returns:
-        Boolean: True if email and password are correct
-                 False if user not found or email and password incorrect
-    """
-    try:
-        user = User.objects.get(email=email)
-        isValid = user.password == password
-    except User.DoesNotExist:
-        return False
-    return isValid
+        messages.error(request, "Username or password is incorrect")
+        return redirect("login")
