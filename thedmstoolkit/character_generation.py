@@ -145,7 +145,7 @@ class Character_Generator:
         """
         return Character_Generator.GeneratorList.keys
 
-    def Generate_Stats(self,StatList):
+    def Generate_Stats(self, StatList):
         """Returns the Stat List needed because the dictionary is in str:function
 
         Args:
@@ -156,7 +156,7 @@ class Character_Generator:
         """
         return StatList
 
-    def Generate_Race(self,RaceList) -> str:
+    def Generate_Race(self, RaceList) -> str:
         """
         Generates a race from the provided list
         Args:
@@ -167,7 +167,7 @@ class Character_Generator:
         Race = RaceList[random.randint[0, RaceList.len - 1]]
         return Race
 
-    def Generate_Class(self,ClassList) -> str:
+    def Generate_Class(self, ClassList) -> str:
         """
         Returns a random class from the provided list
         Args:
@@ -198,6 +198,7 @@ class Character_Generator:
             BackgroundList (_type_): _description_
         """
         return BackgroundList[random.randint[0, BackgroundList.len - 1]]
+
     def Generate(self, Generator):
         """
         Given the generator key it runs that generator
@@ -208,12 +209,12 @@ class Character_Generator:
             Returns the thing you want generated
         """
         GeneratorList: dict[str, any] = {
-        "Stats": Generate_Stats(MethodDict[Key]),
-        "Race": Generate_Race(RaceDict[Key]),
-        "Class": Generate_Class(ClassDict[Key]),
-        "Alignment": Generate_Alignment(AlignmentDict[Key]),
-        "Background": Generate_Background(BackgroundList[Key]),
-    }
+            "Stats": Generate_Stats(MethodDict[Key]),
+            "Race": Generate_Race(RaceDict[Key]),
+            "Class": Generate_Class(ClassDict[Key]),
+            "Alignment": Generate_Alignment(AlignmentDict[Key]),
+            "Background": Generate_Background(BackgroundList[Key]),
+        }
         return GeneratorList[Generator]
 
     def Arrange(self, CharacterID, StatArray):
