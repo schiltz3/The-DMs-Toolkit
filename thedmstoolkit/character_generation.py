@@ -9,7 +9,6 @@ class Character_Generator:
     Contains all the lists and Dictionaries for the various character generation methods
     """
 
-    
     RaceDict: dict[str, list] = {
         "Rare": [
             "Aasimar",
