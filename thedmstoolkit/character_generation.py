@@ -1,41 +1,113 @@
-from typing import Callable, List
-from toolkit.models import Character
 import random
+from typing import Callable, List
+
+from toolkit.models import Character
+
+
 class Character_Generator:
     """
     Contains all the lists and Dictionaries for the various character generation methods
-    """ 
-    GeneratorList: dict[str,function] = {"Stats" : (Stat_Generate(MethodDict[Key])),
-                     "Race" : Generate_Race(RaceDict[Key]),
-                     "Class" : Generate_Class(ClassDict[Key]),
-                     "Alignment" : Generate_Alignment(AlignmentDict[Key]),
-                     "Background" : Generate_Background(BackgroundList[Key])}
-    RaceDict: dict[str,list] = {"Rare" : ["Aasimar", "Animal Hybrid", "Aarakocra",  "Centaur","Changeling","Dragonborn", 
-                         "Kalashtar", "Elephantine","Fairy","Firbolg","Genasi","Geth", "Goliath",
-                         "Harengon", "Hexed Lineage"," Kenku", "Leonine","Minotaur", "Owlin", "Reborn Lineage",
-                         "Satyr", "Yuan-Ti", "Shifter", "Tabaxi", "Tiefling", "Triton","Tortle","Vedalken","Warforged","Locathah"],
-                "Monster" : ["Bugbear", "Goblin", "Hobgoblin", "Kobold","Lizardfolk","Orc"],
-                "Common" : ["Dwarf","Elf","Gnome","Half-Elf","Half-Orc","Halfling","Human"],
-                "All" : RaceDict["Rare"]+RaceDict["Monster"]+RaceDict["Common"]}
-    ClassDict: dict[str,list] = {"Martial" : ["Fighter","Monk","Ranger","Rogue"],
-                 "Divine" : ["Cleric","Paladin","Warlock"],
-                 "Magic" : ["Artificer","Bard","Druid","Sorcerer","Wizard"],
-                 "All": ClassDict["Martial"]+ClassDict["Divine"]+ClassDict["Magic"]}
-    AlignmentDict: dict[str,list] = {"Good" : ["Lawful Good", "Neutral Good", "Chaotic Good"],
-                     "Neutral" :["Lawful Neutral","True Neutral", "Chaotic Neutral"],
-                     "Evil" :["Lawful Evil", "Neutral Evil", "Chaotic Evil"],
-                     "All": AlignmentDict["Good"]+AlignmentDict["Neutral"]+AlignmentDict["Evil"]}
-    MethodDict: dict[str,list] = {"StandardArray":[15,14,13,12,10,8],
-                        "3d6":[random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
-                               random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
-                               random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
-                               random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
-                               random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
-                               random.randint(1,6)+random.randint(1,6)+random.randint(1,6)]}
-    BackgroundList = ["Acolyte","Athlete","Barbarian Tribe Member","Charlatan", "City Watch","Criminal",
-                      "Clan Crafter", "Entertainer","Faction Agent","Far Traveler", "Fisher",
-                      "Folk Hero", "Gladiator", "Hermit", "Knight", "Noble", "Outlander", "Pirate",
-                      "Sage", "Sailor", "Soldier", "Urchin"]
+    """
+
+    GeneratorList: dict[str, function] = {
+        "Stats": (Stat_Generate(MethodDict[Key])),
+        "Race": Generate_Race(RaceDict[Key]),
+        "Class": Generate_Class(ClassDict[Key]),
+        "Alignment": Generate_Alignment(AlignmentDict[Key]),
+        "Background": Generate_Background(BackgroundList[Key]),
+    }
+    RaceDict: dict[str, list] = {
+        "Rare": [
+            "Aasimar",
+            "Animal Hybrid",
+            "Aarakocra",
+            "Centaur",
+            "Changeling",
+            "Dragonborn",
+            "Kalashtar",
+            "Elephantine",
+            "Fairy",
+            "Firbolg",
+            "Genasi",
+            "Geth",
+            "Goliath",
+            "Harengon",
+            "Hexed Lineage",
+            " Kenku",
+            "Leonine",
+            "Minotaur",
+            "Owlin",
+            "Reborn Lineage",
+            "Satyr",
+            "Yuan-Ti",
+            "Shifter",
+            "Tabaxi",
+            "Tiefling",
+            "Triton",
+            "Tortle",
+            "Vedalken",
+            "Warforged",
+            "Locathah",
+        ],
+        "Monster": ["Bugbear", "Goblin", "Hobgoblin", "Kobold", "Lizardfolk", "Orc"],
+        "Common": [
+            "Dwarf",
+            "Elf",
+            "Gnome",
+            "Half-Elf",
+            "Half-Orc",
+            "Halfling",
+            "Human",
+        ],
+        "All": RaceDict["Rare"] + RaceDict["Monster"] + RaceDict["Common"],
+    }
+    ClassDict: dict[str, list] = {
+        "Martial": ["Fighter", "Monk", "Ranger", "Rogue"],
+        "Divine": ["Cleric", "Paladin", "Warlock"],
+        "Magic": ["Artificer", "Bard", "Druid", "Sorcerer", "Wizard"],
+        "All": ClassDict["Martial"] + ClassDict["Divine"] + ClassDict["Magic"],
+    }
+    AlignmentDict: dict[str, list] = {
+        "Good": ["Lawful Good", "Neutral Good", "Chaotic Good"],
+        "Neutral": ["Lawful Neutral", "True Neutral", "Chaotic Neutral"],
+        "Evil": ["Lawful Evil", "Neutral Evil", "Chaotic Evil"],
+        "All": AlignmentDict["Good"] + AlignmentDict["Neutral"] + AlignmentDict["Evil"],
+    }
+    MethodDict: dict[str, list] = {
+        "StandardArray": [15, 14, 13, 12, 10, 8],
+        "3d6": [
+            random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6),
+            random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6),
+            random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6),
+            random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6),
+            random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6),
+            random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6),
+        ],
+    }
+    BackgroundList = [
+        "Acolyte",
+        "Athlete",
+        "Barbarian Tribe Member",
+        "Charlatan",
+        "City Watch",
+        "Criminal",
+        "Clan Crafter",
+        "Entertainer",
+        "Faction Agent",
+        "Far Traveler",
+        "Fisher",
+        "Folk Hero",
+        "Gladiator",
+        "Hermit",
+        "Knight",
+        "Noble",
+        "Outlander",
+        "Pirate",
+        "Sage",
+        "Sailor",
+        "Soldier",
+        "Urchin",
+    ]
 
     def Generate(Generator):
         """
@@ -46,16 +118,16 @@ class Character_Generator:
         Returns:
             Returns the thing you want generated
         """
-        return Character_Generator.GeneratorList[Generator]    
+        return Character_Generator.GeneratorList[Generator]
 
     def get_Generators(Key):
         """
         Gives the list of generator keys
         Returns:
             List: a list of all generator keys
-        """        
+        """
         return Character_Generator.GeneratorList.keys
-    
+
     def Generate_Stats(StatList):
         """Returns the Stat List needed because the dictionary is in str:function
 
@@ -64,21 +136,21 @@ class Character_Generator:
 
         Returns:
             StatList (List): List of stat values
-        """        
+        """
         return StatList
-    
-    def Generate_Race(RaceList)->str:
+
+    def Generate_Race(RaceList) -> str:
         """
         Generates a race from the provided list
         Args:
             RaceList (list): The list chosen from thr dictionary
         Returns:
             String: Race
-        """        
-        Race=RaceList[random.randint[0,Race.len-1]]
+        """
+        Race = RaceList[random.randint[0, Race.len - 1]]
         return Race
 
-    def Generate_Class(ClassList)->str:
+    def Generate_Class(ClassList) -> str:
         """
         Returns a random class from the provided list
         Args:
@@ -86,11 +158,11 @@ class Character_Generator:
 
         Returns:
             String: the random class
-        """        
-        Class = ClassList[random.randint[0,Class.len-1]]
+        """
+        Class = ClassList[random.randint[0, Class.len - 1]]
         return Class
 
-    def Generate_Alignment(AlignmentList)->str:
+    def Generate_Alignment(AlignmentList) -> str:
         """
             Returns a random alignment from the provided list
         Args:
@@ -98,17 +170,17 @@ class Character_Generator:
 
         Returns:
             String: Alignment
-        """        
-        Alignment = AlignmentList[random.randint[0,Alignment.len-1]]
-        return Alignment
-    
-    def Generate_Background(BackgroundList)->str:
         """
-            Generate a random 
+        Alignment = AlignmentList[random.randint[0, Alignment.len - 1]]
+        return Alignment
+
+    def Generate_Background(BackgroundList) -> str:
+        """
+            Generate a random
         Args:
             BackgroundList (_type_): _description_
-        """        
-        return(BackgroundList[random.randint[0,BackgroundList.len-1]])
+        """
+        return BackgroundList[random.randint[0, BackgroundList.len - 1]]
 
     def Arrange(CharacterID, StatArray):
         """
