@@ -20,6 +20,7 @@ from django.urls import path
 
 from toolkit.views.bootstrap_test import BootstrapTest
 from toolkit.views.CharacterGenerator import CharacterGenerator
+from toolkit.views.confirm_account_creation import ConfirmAccountCreation
 from toolkit.views.create_account import CreateAccount
 from toolkit.views.EncounterGenerator import EncounterGenerator
 from toolkit.views.home_page import HomePage
@@ -33,9 +34,19 @@ urlpatterns = [
     # home page
     path("", HomePage.as_view(), name="home_page"),
     # login
+    path("login/<str:username>", Login.as_view(), name="login"),
     path("login/", Login.as_view(), name="login"),
-    # test home
-    # path("", TestHome.as_view(), name="test_home"),
+    # Confirm Account Creation
+    path(
+        "create_account/confirm_account_creation/",
+        ConfirmAccountCreation.as_view(),
+        name="confirm_account_creation",
+    ),
+    path(
+        "create_account/confirm_account_creation/<str:username>",
+        ConfirmAccountCreation.as_view(),
+        name="confirm_account_creation",
+    ),
     # Create Class
     path("create_account/", CreateAccount.as_view(), name="create_account"),
     # Character Generator

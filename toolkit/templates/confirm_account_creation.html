@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% comment %} 
+POST Variables: Put your comments
+here 
+{% endcomment %}
+
+{% block content %}
+  {% load static %}
+  <form action
+        {% url "create_account" %}
+        method="post"
+        class="form"
+        id="background-image"
+        style="background-image: url('{% static "Create_Account_d20.jpg" %}')">
+    {% csrf_token %}
+    <div class="container" style="height: 100vh">
+      <div class="row h-100 align-items-center justify-content-center">
+        <div class=" col-md-8 col-lg-6 bg-white rounded-5 shadow-5-strong p-5">
+          <h1>Account Sucesfully Created</h1>
+          <button type="submit" class="btn btn-primary" style="margin-bottom: 5px">Go to Login</button>
+        </div>
+      </div>
+    </div>
+  </form>
+{% endblock content %}
