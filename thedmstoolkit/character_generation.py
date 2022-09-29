@@ -61,7 +61,7 @@ class Character_Generator:
         """        
         return Character_Generator.GeneratorList.keys
 
-    def Generate_Stats(MethodDictionary, Character_Generator:Callable)->List:
+    def Generate_Stats(MethodDictionary, Key, Character_Generator:Callable)->List:
         """Provided a character ID and the key to the method of generating stats it generates an array
         and passes it to arrange in-order to save it to that character in the right place
 
@@ -71,7 +71,7 @@ class Character_Generator:
        """    
         return MethodDictionary[Key]
     
-    def GenerateRace(RaceDict, Character_Generator:Callable)->str:
+    def GenerateRace(RaceDict, Key, Character_Generator:Callable)->str:
         """_summary_
 
         Args:
@@ -98,7 +98,7 @@ class Character_Generator:
         Class=Class[random.randint[0,Class.len-1]]
         return Class
 
-    def GenerateAlignment(AlignmentDict, Character_Generator:Callable)->str:
+    def GenerateAlignment(AlignmentDict, Key, Character_Generator:Callable)->str:
         """_summary_
 
         Args:
@@ -108,7 +108,7 @@ class Character_Generator:
         Returns:
             _type_: _description_
         """        
-        Alignment = AlignmentDict[]
+        Alignment = AlignmentDict[Key]
         Alignment = Alignment[random.randint[0,Alignment.len-1]]
         return Alignment
     
