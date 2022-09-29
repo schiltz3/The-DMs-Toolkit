@@ -29,7 +29,11 @@ here
           </div>
           <div class="mb-3">
             <label class="form-label" for="password">Password</label>
-            <input type="password" name="password" class="form-control" id="password" required/>
+            <input type="password"
+                   name="password"
+                   class="form-control"
+                   id="password"
+                   required/>
           </div>
           <button type="submit" class="btn btn-primary" style="margin-bottom: 5px">Login</button>
           {% for message in messages %}<div class="alert alert-danger">{{ message }}</div>{% endfor %}
