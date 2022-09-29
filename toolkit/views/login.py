@@ -3,8 +3,6 @@ from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect, render
 from django.views import View
 
-from ..models import User
-
 
 class Login(View):
     """
