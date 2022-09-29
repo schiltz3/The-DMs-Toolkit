@@ -5,7 +5,7 @@ from django.http.request import HttpRequest
 from django.shortcuts import redirect, render
 from django.views import View
 
-from toolkit.models import Account
+from django.contrib.auth.models import User
 
 
 class CreateAccount(View):
@@ -38,7 +38,7 @@ class CreateAccount(View):
 
             return redirect(
                 "confirm_account_creation",
-                email=form.cleaned_data["email"],
+                email=form.cleaned_data["username"],
                 permanent=True,
             )
         context["form"] = form
@@ -71,7 +71,7 @@ class CreateAccountForm(Form):
     )
 
 
-def create_user(username: str, email: str, password: str) -> Optional[Account]:
+def create_user(username: str, email: str, password: str) -> Optional[User]:
     """Create a new user object and save in database
     if one does not already exist for that email
 
@@ -89,12 +89,13 @@ def create_user(username: str, email: str, password: str) -> Optional[Account]:
         otherwise returns the new account
     """
     try:
-        Account.objects.get(Email=email)
-        raise ValueError(f"Account {email} already exists")
-    except Account.DoesNotExist:
+        User.objects.get(username=username)
+        raise ValueError(
+            f"User {username} already exists please pick a different username"
+        )
+    except User.DoesNotExist:
         pass
 
-    a = Account(Email=email, Username=username, Password=password)
-    print(a)
+    a = User(email=email, username=username, password=password)
     a.save()
     return a

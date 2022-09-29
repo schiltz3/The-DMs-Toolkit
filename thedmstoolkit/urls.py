@@ -34,7 +34,7 @@ urlpatterns = [
     # home page
     path("", HomePage.as_view(), name="home_page"),
     # login
-    path("login/<str:email>", Login.as_view(), name="login"),
+    path("login/<str:username>", Login.as_view(), name="login"),
     path("login/", Login.as_view(), name="login"),
     # Confirm Account Creation
     path(

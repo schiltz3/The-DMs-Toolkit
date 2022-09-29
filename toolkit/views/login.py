@@ -13,8 +13,8 @@ class Login(View):
 
     def get(self, request, **kwargs):
         """GET method for login page."""
-        email = kwargs.get("email")
-        context = {"email": email}
+        username = kwargs.get("username")
+        context = {"username": username}
         return render(request, "login.html", context)
 
     def post(self, request):

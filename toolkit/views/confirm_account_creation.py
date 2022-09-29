@@ -11,16 +11,16 @@ class ConfirmAccountCreation(View):
         """GET method for confirm account creation page.
         Args:
             request (HttpRequest):
-            kwargs (dict[str, str]): email
+            kwargs (dict[str, str]): username
         """
         return render(request, "confirm_account_creation.html")
 
     @staticmethod
     def post(request: HttpRequest, **kwargs):
         """POST method for confirm account creation page."""
-        email = kwargs.get("email", "")
+        username = kwargs.get("username", "")
         return redirect(
             "login",
-            email=email,
+            username=username,
             permanent=True,
         )
