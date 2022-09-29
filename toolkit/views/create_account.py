@@ -1,11 +1,10 @@
 from typing import Any, Optional
 
+from django.contrib.auth.models import User
 from django.forms import CharField, EmailField, Form, PasswordInput, TextInput
 from django.http.request import HttpRequest
 from django.shortcuts import redirect, render
 from django.views import View
-
-from django.contrib.auth.models import User
 
 
 class CreateAccount(View):
