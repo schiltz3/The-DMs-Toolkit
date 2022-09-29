@@ -10,7 +10,7 @@ from django.views import View
 class CreateAccount(View):
     """
     A class to handle the create user page's GET and POST requests. As well as retrieve
-    a user's credentials from the Account database.
+    a user's credentials from the User database.
     """
 
     def get(self, request: HttpRequest):
