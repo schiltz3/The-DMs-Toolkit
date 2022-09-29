@@ -9,13 +9,7 @@ class Character_Generator:
     Contains all the lists and Dictionaries for the various character generation methods
     """
 
-    GeneratorList: dict[str, function] = {
-        "Stats": (Stat_Generate(MethodDict[Key])),
-        "Race": Generate_Race(RaceDict[Key]),
-        "Class": Generate_Class(ClassDict[Key]),
-        "Alignment": Generate_Alignment(AlignmentDict[Key]),
-        "Background": Generate_Background(BackgroundList[Key]),
-    }
+    
     RaceDict: dict[str, list] = {
         "Rare": [
             "Aasimar",
@@ -108,6 +102,13 @@ class Character_Generator:
         "Soldier",
         "Urchin",
     ]
+    GeneratorList: dict[str, function] = {
+        "Stats": (Stat_Generate(MethodDict[Key])),
+        "Race": Generate_Race(RaceDict[Key]),
+        "Class": Generate_Class(ClassDict[Key]),
+        "Alignment": Generate_Alignment(AlignmentDict[Key]),
+        "Background": Generate_Background(BackgroundList[Key]),
+    }
 
     def Generate(Generator):
         """
@@ -147,7 +148,7 @@ class Character_Generator:
         Returns:
             String: Race
         """
-        Race = RaceList[random.randint[0, Race.len - 1]]
+        Race = RaceList[random.randint[0, RaceList.len - 1]]
         return Race
 
     def Generate_Class(ClassList) -> str:
@@ -159,7 +160,7 @@ class Character_Generator:
         Returns:
             String: the random class
         """
-        Class = ClassList[random.randint[0, Class.len - 1]]
+        Class = ClassList[random.randint[0, ClassList.len - 1]]
         return Class
 
     def Generate_Alignment(AlignmentList) -> str:
@@ -171,7 +172,7 @@ class Character_Generator:
         Returns:
             String: Alignment
         """
-        Alignment = AlignmentList[random.randint[0, Alignment.len - 1]]
+        Alignment = AlignmentList[random.randint[0, AlignmentList.len - 1]]
         return Alignment
 
     def Generate_Background(BackgroundList) -> str:
