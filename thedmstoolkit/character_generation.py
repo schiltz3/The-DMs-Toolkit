@@ -2,35 +2,30 @@ from typing import Callable, List
 from toolkit.models import Character
 import random
 class Character_Generator:
-    """_summary_
-
-    Raises:
-        RuntimeError: _description_
-
-    Returns:
-        _type_: _description_
-    """   
-    GeneratorList = {"Stats" : Generate_Stats(MethodDictionary,),
-                     "Race" : Generate_Race(RaceDict,),
-                     "Class" : Generate_Class(ClassDict,),
-                     "Alignment" : Generate_Alignment(AlignmentDict,),
-                     "Background" : Generate_Background(BackgroundList,)}
-    RaceDict = {"Rare" : ["Aasimar", "Animal Hybrid", "Aarakocra",  "Centaur","Changeling","Dragonborn", 
+    """
+    Contains all the lists and Dictionaries for the various character generation methods
+    """ 
+    GeneratorList: dict[str,function] = {"Stats" : (Stat_Generate(MethodDict[Key])),
+                     "Race" : Generate_Race(RaceDict[Key]),
+                     "Class" : Generate_Class(ClassDict[Key]),
+                     "Alignment" : Generate_Alignment(AlignmentDict[Key]),
+                     "Background" : Generate_Background(BackgroundList[Key])}
+    RaceDict: dict[str,list] = {"Rare" : ["Aasimar", "Animal Hybrid", "Aarakocra",  "Centaur","Changeling","Dragonborn", 
                          "Kalashtar", "Elephantine","Fairy","Firbolg","Genasi","Geth", "Goliath",
                          "Harengon", "Hexed Lineage"," Kenku", "Leonine","Minotaur", "Owlin", "Reborn Lineage",
                          "Satyr", "Yuan-Ti", "Shifter", "Tabaxi", "Tiefling", "Triton","Tortle","Vedalken","Warforged","Locathah"],
                 "Monster" : ["Bugbear", "Goblin", "Hobgoblin", "Kobold","Lizardfolk","Orc"],
                 "Common" : ["Dwarf","Elf","Gnome","Half-Elf","Half-Orc","Halfling","Human"],
                 "All" : RaceDict["Rare"]+RaceDict["Monster"]+RaceDict["Common"]}
-    ClassDict = {"Martial" : ["Fighter","Monk","Ranger","Rogue"],
+    ClassDict: dict[str,list] = {"Martial" : ["Fighter","Monk","Ranger","Rogue"],
                  "Divine" : ["Cleric","Paladin","Warlock"],
                  "Magic" : ["Artificer","Bard","Druid","Sorcerer","Wizard"],
                  "All": ClassDict["Martial"]+ClassDict["Divine"]+ClassDict["Magic"]}
-    AlignmentDict = {"Good" : ["Lawful Good", "Neutral Good", "Chaotic Good"],
+    AlignmentDict: dict[str,list] = {"Good" : ["Lawful Good", "Neutral Good", "Chaotic Good"],
                      "Neutral" :["Lawful Neutral","True Neutral", "Chaotic Neutral"],
                      "Evil" :["Lawful Evil", "Neutral Evil", "Chaotic Evil"],
                      "All": AlignmentDict["Good"]+AlignmentDict["Neutral"]+AlignmentDict["Evil"]}
-    MethodDictionary = {"StandardArray":[15,14,13,12,10,8],
+    MethodDict: dict[str,list] = {"StandardArray":[15,14,13,12,10,8],
                         "3d6":[random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
                                random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
                                random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
@@ -42,79 +37,74 @@ class Character_Generator:
                       "Folk Hero", "Gladiator", "Hermit", "Knight", "Noble", "Outlander", "Pirate",
                       "Sage", "Sailor", "Soldier", "Urchin"]
 
-    def Generate_Number(Generator):
-        """_summary_
-
+    def Generate(Generator):
+        """
+        Given the generator key it runs that generator
         Args:
-            Generator (_type_): _description_
+            Generator (String): The key to the generator dictionary
 
         Returns:
-            _type_: _description_
-        """ 
+            Returns the thing you want generated
+        """
         return Character_Generator.GeneratorList[Generator]    
 
-    def get_Generators():
-        """_summary_
-
+    def get_Generators(Key):
+        """
+        Gives the list of generator keys
         Returns:
-            _type_: _description_
+            List: a list of all generator keys
         """        
         return Character_Generator.GeneratorList.keys
-
-    def Generate_Stats(MethodDictionary, Key, Character_Generator:Callable)->List:
-        """Provided a character ID and the key to the method of generating stats it generates an array
-        and passes it to arrange in-order to save it to that character in the right place
-
-        Args:
-            CharacterID (int): Primary Key to the Character being generated
-            Key (String): Key to the dictionary of methods to generate stats
-       """    
-        return MethodDictionary[Key]
     
-    def GenerateRace(RaceDict, Key, Character_Generator:Callable)->str:
-        """_summary_
+    def Generate_Stats(StatList):
+        """Returns the Stat List needed because the dictionary is in str:function
 
         Args:
-            RaceDict (_type_): _description_
-            Character_Generator (Callable): _description_
+            StatList (List): List of stat values
 
         Returns:
-            _type_: _description_
+            StatList (List): List of stat values
         """        
-        Race=RaceDict[random.randint[0,Race.len-1]]
+        return StatList
+    
+    def Generate_Race(RaceList)->str:
+        """
+        Generates a race from the provided list
+        Args:
+            RaceList (list): The list chosen from thr dictionary
+        Returns:
+            String: Race
+        """        
+        Race=RaceList[random.randint[0,Race.len-1]]
         return Race
 
-    def GenerateClass(ClassDict, Key, Character_Generator:Callable)->str:
-        """_summary_
-
+    def Generate_Class(ClassList)->str:
+        """
+        Returns a random class from the provided list
         Args:
-            ClassDict (_type_): _description_
-            Character_Generator (Callable): _description_
+            ClassList (List): The list chosen from the Class dictionary
 
         Returns:
-            _type_: _description_
+            String: the random class
         """        
-        Class = ClassDict[Key]
-        Class=Class[random.randint[0,Class.len-1]]
+        Class = ClassList[random.randint[0,Class.len-1]]
         return Class
 
-    def GenerateAlignment(AlignmentDict, Key, Character_Generator:Callable)->str:
-        """_summary_
-
+    def Generate_Alignment(AlignmentList)->str:
+        """
+            Returns a random alignment from the provided list
         Args:
-            AlignmentDict (_type_): _description_
-            Character_Generator (Callable): _description_
+            AlignmentList (List): List of alignments from alignment dictionary
 
         Returns:
-            _type_: _description_
+            String: Alignment
         """        
-        Alignment = AlignmentDict[Key]
-        Alignment = Alignment[random.randint[0,Alignment.len-1]]
+        Alignment = AlignmentList[random.randint[0,Alignment.len-1]]
         return Alignment
     
     def Generate_Background(BackgroundList)->str:
-        """_summary_
-
+        """
+            Generate a random 
         Args:
             BackgroundList (_type_): _description_
         """        
