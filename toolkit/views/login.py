@@ -11,9 +11,11 @@ class Login(View):
     a user's credentials from the Account database.
     """
 
-    def get(self, request):
+    def get(self, request, **kwargs):
         """GET method for login page."""
-        return render(request, "login.html")
+        username = kwargs.get("username")
+        context = {"username": username}
+        return render(request, "login.html", context)
 
     def post(self, request):
         """POST method for login page."""
@@ -33,6 +35,8 @@ def retrieve_user(email, password):
     Args:
         email (String): Email input received from form
         password (String): Password input received from form
+
+    Raises:
 
     Returns:
         Boolean: True if email and password are correct
