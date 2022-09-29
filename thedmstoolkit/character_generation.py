@@ -1,6 +1,22 @@
 from toolkit.models import Character
 import random
-def GenerateStats(CharacterID, Key):
+""" GeneratorList = dict["Stats" : Generate_Stats(CharacterID, Key),
+                     "Race" : Generate_Race(CharacterID, RaceOptions),
+                     "Class" : Generate_Class(CharacterID, Key),
+                     "Alignment" : Generate_Alignment(CharacterID,Key),
+                     "Background" : Generate_Background(CharacterID)] """
+
+def Generate_Number(Generator, CharacterID, Key):
+    GeneratorList = dict["Stats" : Generate_Stats(CharacterID, Key),
+                     "Race" : Generate_Race(CharacterID, Key),
+                     "Class" : Generate_Class(CharacterID, Key),
+                     "Alignment" : Generate_Alignment(CharacterID,Key),
+                     "Background" : Generate_Background(CharacterID)]
+
+def get_Generators():
+    return GeneratorList.keys
+
+def Generate_Stats(CharacterID, Key):
     """Provided a character ID and the key to the method of generating stats it generates an array
     and passes it to arrange in-order to save it to that character in the right place
 
@@ -15,18 +31,51 @@ def GenerateStats(CharacterID, Key):
                                    random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
                                    random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
                                    random.randint(1,6)+random.randint(1,6)+random.randint(1,6)]]
+    
     Arrange(CharacterID, MethodDictionary[Key])
     
-def GenerateRace(CharacterID):
-    pass
+def Generate_Race(CharacterID, Key):
+    RaceDict: dict["Rare" : ["Aasimar", "Animal Hybrid", "Aarakocra",  "Centaur","Changeling","Dragonborn", 
+                                "Kalashtar", "Elephantine","Fairy","Firbolg","Genasi","Geth", "Goliath",
+                                "Harengon", "Hexed Lineage"," Kenku", "Leonine","Minotaur", "Owlin", "Reborn Lineage",
+                                "Satyr", "Yuan-Ti", "Shifter", "Tabaxi", "Tiefling", "Triton","Tortle","Vedalken","Warforged","Locathah"],
+                    "Monster" : ["Bugbear", "Goblin", "Hobgoblin", "Kobold","Lizardfolk","Orc"],
+                    "Common" : ["Dwarf","Elf","Gnome","Half-Elf","Half-Orc","Halfling","Human"],
+                    "All" : RaceDict["Rare"]+RaceDict["Monster"]+RaceDict["Common"]]
+    check = Character.objects.filter(id=CharacterID)
+    if check.count == 0:
+        raise RuntimeError("Character does not exist")
+    CurrentCharacter = Character.objects.get(id=CharacterID)
+    Race = RaceDict[Key]
+    Race=Race[random.randint[0,Race.len-1]]
+    CurrentCharacter.Race = Race
 
-def GenerateClass(CharacterID):
-    pass
+def Generate_Class(CharacterID, Key):
+    ClassDict: dict["Martial" : ["Fighter","Monk","Ranger","Rogue"],
+                    "Divine" : ["Cleric","Paladin","Warlock"],
+                    "Magic" : ["Artificer","Bard","Druid","Sorcerer","Wizard"],
+                    "All": ClassDict["Martial"]+ClassDict["Divine"]+ClassDict["Magic"]]
+    check = Character.objects.filter(id=CharacterID)
+    if check.count == 0:
+        raise RuntimeError("Character does not exist")
+    CurrentCharacter = Character.objects.get(id=CharacterID)
+    Class = ClassDict[Key]
+    Class=Class[random.randint[0,Class.len-1]]
+    CurrentCharacter.Class = Class
 
-def GenerateAlignment(CharacterID):
-    pass
-
-def GenerateBackground(CharacterID):
+def Generate_Alignment(CharacterID,Key):
+    AlignmentDict: dict["Good" : ["Lawful Good", "Neutral Good", "Chaotic Good"],
+                    "Neutral" :["Lawful Neutral","True Neutral", "Chaotic Neutral"],
+                    "Evil" :["Lawful Evil", "Neutral Evil", "Chaotic Evil"],
+                    "All": AlignmentDict["Good"]+AlignmentDict["Neutral"]+AlignmentDict["Evil"]]
+    check = Character.objects.filter(id=CharacterID)
+    if check.count == 0:
+        raise RuntimeError("Character does not exist")
+    CurrentCharacter = Character.objects.get(id=CharacterID)
+    Alignment = AlignmentDict[Key]
+    Alignment=Alignment[random.randint[0,Alignment.len-1]]
+    CurrentCharacter.Alignment = Alignment
+def Generate_Background(CharacterID):
     pass
 
 def Arrange(CharacterID, StatArray):
