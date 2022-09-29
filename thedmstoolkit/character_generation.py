@@ -239,11 +239,11 @@ class Character_Generator:
             Returns the thing you want generated
         """
         GeneratorList: dict[str, any] = {
-            "Stats": Character_Generator.Generate_Stats(Character_Generator.MethodDict[Key]),
-            "Race": Character_Generator.Generate_Race(Character_Generator.RaceDict[Key]),
-            "Class": Character_Generator.Generate_Class(Character_Generator.ClassDict[Key]),
-            "Alignment": Character_Generator.Generate_Alignment(Character_Generator.AlignmentDict[Key]),
-            "Background": Character_Generator.Generate_Background(Character_Generator.BackgroundList[Key]),
+            "Stats": Character_Generator.Generate_Stats(self,Character_Generator.MethodDict[Key]),
+            "Race": Character_Generator.Generate_Race(self, Character_Generator.RaceDict[Key]),
+            "Class": Character_Generator.Generate_Class(self, Character_Generator.ClassDict[Key]),
+            "Alignment": Character_Generator.Generate_Alignment(self, Character_Generator.AlignmentDict[Key]),
+            "Background": Character_Generator.Generate_Background(self, Character_Generator.BackgroundList[Key]),
         }
         return GeneratorList[Generator]
 
