@@ -5,10 +5,7 @@ from toolkit.models import Character
 
 
 class Character_Generator:
-    """
-    Contains all the lists and Dictionaries for the various character generation methods
-    """
-
+    """Contains all the lists and Dictionaries for the various character generation methods"""
     RaceDict: dict[str, list] = {
         "Rare": [
             "Aasimar",
@@ -26,7 +23,7 @@ class Character_Generator:
             "Goliath",
             "Harengon",
             "Hexed Lineage",
-            " Kenku",
+            "Kenku",
             "Leonine",
             "Minotaur",
             "Owlin",
@@ -50,22 +47,58 @@ class Character_Generator:
             "Half-Elf",
             "Half-Orc",
             "Halfling",
-            "Human",
-        ],
-        "All": RaceDict["Rare"] + RaceDict["Monster"] + RaceDict["Common"],
+            "Human"],
+        "All": [
+            "Aasimar",
+            "Animal Hybrid",
+            "Aarakocra",
+            "Centaur",
+            "Changeling",
+            "Dragonborn",
+            "Kalashtar",
+            "Elephantine",
+            "Fairy",
+            "Firbolg",
+            "Genasi",
+            "Geth",
+            "Goliath",
+            "Harengon",
+            "Hexed Lineage",
+            "Kenku",
+            "Leonine",
+            "Minotaur",
+            "Owlin",
+            "Reborn Lineage",
+            "Satyr",
+            "Yuan-Ti",
+            "Shifter",
+            "Tabaxi",
+            "Tiefling",
+            "Triton",
+            "Tortle",
+            "Vedalken",
+            "Warforged",
+            "Locathah","Bugbear", "Goblin", "Hobgoblin", "Kobold", "Lizardfolk", "Orc",
+            "Dwarf",
+            "Elf",
+            "Gnome",
+            "Half-Elf",
+            "Half-Orc",
+            "Halfling",
+            "Human"],
     }
     ClassDict: dict[str, list] = {
         "Martial": ["Fighter", "Monk", "Ranger", "Rogue"],
         "Divine": ["Cleric", "Paladin", "Warlock"],
         "Magic": ["Artificer", "Bard", "Druid", "Sorcerer", "Wizard"],
-        "All": ClassDict["Martial"] + ClassDict["Divine"] + ClassDict["Magic"],
+        "All": ["Fighter", "Monk", "Ranger", "Rogue","Cleric", "Paladin", "Warlock", "Artificer", "Bard", "Druid", "Sorcerer", "Wizard"],
     }
     AlignmentDict: dict[str, list] = {
         "Good": ["Lawful Good", "Neutral Good", "Chaotic Good"],
         "Neutral": ["Lawful Neutral", "True Neutral", "Chaotic Neutral"],
         "Evil": ["Lawful Evil", "Neutral Evil", "Chaotic Evil"],
-        "All": AlignmentDict["Good"] + AlignmentDict["Neutral"] + AlignmentDict["Evil"],
-    }
+        "All": ["Lawful Good", "Neutral Good", "Chaotic Good","Lawful Neutral", "True Neutral", "Chaotic Neutral","Lawful Evil", "Neutral Evil", "Chaotic Evil"]
+        }
     MethodDict: dict[str, list] = {
         "StandardArray": [15, 14, 13, 12, 10, 8],
         "3d6": [
@@ -104,7 +137,7 @@ class Character_Generator:
 
     
 
-    def get_Generators(self,Key):
+    def get_Generators(self):
         """
         Gives the list of generator keys
         Returns:
