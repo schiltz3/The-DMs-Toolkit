@@ -229,7 +229,7 @@ class Character_Generator:
         """
         return BackgroundList[random.randint[0, BackgroundList.len - 1]]
 
-    def Generate(self, Generator,Key):
+    def Generate(self, Generator, Key):
         """
         Given the generator key it runs that generator
         Args:
