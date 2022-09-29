@@ -1,5 +1,33 @@
 from toolkit.models import Character
+import random
+def GenerateStats(CharacterID, Key):
+    """Provided a character ID and the key to the method of generating stats it generates an array
+    and passes it to arrange in-order to save it to that character in the right place
 
+    Args:
+        CharacterID (int): Primary Key to the Character being generated
+        Key (String): Key to the dictionary of methods to generate stats
+    """    
+    MethodDictionary = dict["StandardArray":[15,14,13,12,10,8],
+                            "3d6":[random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
+                                   random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
+                                   random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
+                                   random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
+                                   random.randint(1,6)+random.randint(1,6)+random.randint(1,6),
+                                   random.randint(1,6)+random.randint(1,6)+random.randint(1,6)]]
+    Arrange(CharacterID, MethodDictionary[Key])
+    
+def GenerateRace(CharacterID):
+    pass
+
+def GenerateClass(CharacterID):
+    pass
+
+def GenerateAlignment(CharacterID):
+    pass
+
+def GenerateBackground(CharacterID):
+    pass
 
 def Arrange(CharacterID, StatArray):
     """
