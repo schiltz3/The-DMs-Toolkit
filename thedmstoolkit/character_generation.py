@@ -217,7 +217,7 @@ class Character_Generator:
         """
         return self.UnlimitedGenerators.keys()
 
-    def generate_stat_list(self, GeneratorKey):
+    def generate_stat_list(self, GeneratorKey:str):
         """Returns the Stat List needed because the dictionary is in str:function
 
         Args:
