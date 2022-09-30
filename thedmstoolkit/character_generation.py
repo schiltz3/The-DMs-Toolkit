@@ -169,7 +169,7 @@ class Character_Generator:
     @staticmethod
     def three_d_six(_low, _high) -> int:
         """Returns the total od 3d6
-        
+
         Args:
             _low (_type_): Ignored
             _high (_type_): Ignored
@@ -226,7 +226,7 @@ class Character_Generator:
         """
         return self.UnlimitedGenerators.keys()
 
-    def generate_stat_list(self, GeneratorKey:str):
+    def generate_stat_list(self, GeneratorKey: str):
         """Returns the Stat List needed because the dictionary is in str:function
 
         Args:
