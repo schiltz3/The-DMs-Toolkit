@@ -228,7 +228,7 @@ class Character_Generator:
         """
         if GeneratorKey not in self.get_all_random_generators:
             raise RuntimeError("Generator does not exist")
-        stat_list = [self.Generator[GeneratorKey](1, 20) for _ in range(5)]
+        stat_list = [self.Generators[GeneratorKey](1, 20) for _ in range(5)]
         return stat_list
 
     def generate_race(self, race_list: list[str], GeneratorKey: str) -> str:
