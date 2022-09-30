@@ -278,7 +278,7 @@ class Character_Generator:
         race_key="All",
         class_key="All",
         alignment_key="All",
-        generator: Generator = "random",
+        generator: Generator = random.randint,
         stat_list=Optional[list[int]],
     ) -> dict[str, list[int] | str]:
         """Given generator parameters, return a dictionary of character characteristics
