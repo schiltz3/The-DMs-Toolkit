@@ -1,8 +1,5 @@
 import random
-from operator import contains
 from typing import Callable, Optional, Union
-
-from genericpath import exists
 
 from toolkit.models import Character
 
