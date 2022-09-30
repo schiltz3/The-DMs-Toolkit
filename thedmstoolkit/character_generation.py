@@ -177,7 +177,8 @@ class Character_Generator:
         self,
     ):
         self.Generators: dict[str, Generator] = {
-            self.UnlimitedGenerators | self.UnlimitedGenerators
+            **self.LimitedGenerators,
+            **self.UnlimitedGenerators,
         }
         # TODO: Put list concatenation here
 
