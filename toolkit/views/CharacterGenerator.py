@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.views import View
 
-import thedmstoolkit.character_generation
-
 
 class CharacterGenerator(View):
     """
