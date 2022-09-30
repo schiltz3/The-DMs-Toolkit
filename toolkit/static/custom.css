@@ -102,16 +102,16 @@ img {
 }
 
 .character-header {
-    width: 75%;
+    width: 60%;
     height: auto;
     padding-top: 20px;
     float: left;
 }
 
 .character-control {
-    width: 25%;
+    width: 40%;
     height: auto;
-    padding-top: 40px;
+    padding-top: 30px;
     float: right;
 }
 
