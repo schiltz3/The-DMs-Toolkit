@@ -1,5 +1,5 @@
 import random
-from typing import Callable, Optional
+from typing import Callable, Optional, Union
 
 from toolkit.models import Character
 
@@ -163,7 +163,7 @@ class Character_Generator:
     STANDARD_ARRAY: list[int] = [15, 14, 13, 12, 10, 8]
 
     @staticmethod
-    def three_d_six(low, high) -> int:
+    def three_d_six(_low, _high) -> int:
         return random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6)
 
     # Unlimited Generators have a minimum range of [1,max_int]
@@ -280,7 +280,7 @@ class Character_Generator:
         alignment_key="All",
         generator: Generator = random.randint,
         stat_list=Optional[list[int]],
-    ) -> dict[str, list[int] | str]:
+    ) -> dict[str, Union[list[int], str]]:
         """Given generator parameters, return a dictionary of character characteristics
 
         Args:
@@ -314,7 +314,7 @@ class Character_Generator:
             else self.LimitedGenerators[stat_generator_key]
         )
 
-        generated: dict[str, list[int] | str] = {
+        generated: dict[str, Union[list[int], str]] = {
             "Stats": stat_list
             if stat_list
             else self.generate_stat_list(stat_generator),
