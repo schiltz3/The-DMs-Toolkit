@@ -1,7 +1,9 @@
 import random
-from typing import Callable, List
+from typing import Callable, Optional, Union
 
 from toolkit.models import Character
+
+Generator = Callable[[int, int], int]
 
 
 class Character_Generator:
@@ -10,7 +12,7 @@ class Character_Generator:
     for the various character generation methods
     """
 
-    RaceDict: dict[str, list] = {
+    RACE_DICT: dict[str, list] = {
         "Rare": [
             "Aasimar",
             "Animal Hybrid",
@@ -99,7 +101,7 @@ class Character_Generator:
             "Human",
         ],
     }
-    ClassDict: dict[str, list] = {
+    CLASS_DICT: dict[str, list] = {
         "Martial": ["Fighter", "Monk", "Ranger", "Rogue"],
         "Divine": ["Cleric", "Paladin", "Warlock"],
         "Magic": ["Artificer", "Bard", "Druid", "Sorcerer", "Wizard"],
@@ -118,7 +120,7 @@ class Character_Generator:
             "Wizard",
         ],
     }
-    AlignmentDict: dict[str, list] = {
+    ALIGNMENT_DICT: dict[str, list] = {
         "Good": ["Lawful Good", "Neutral Good", "Chaotic Good"],
         "Neutral": ["Lawful Neutral", "True Neutral", "Chaotic Neutral"],
         "Evil": ["Lawful Evil", "Neutral Evil", "Chaotic Evil"],
@@ -134,18 +136,7 @@ class Character_Generator:
             "Chaotic Evil",
         ],
     }
-    MethodDict: dict[str, list] = {
-        "StandardArray": [15, 14, 13, 12, 10, 8],
-        "3d6": [
-            random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6),
-            random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6),
-            random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6),
-            random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6),
-            random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6),
-            random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6),
-        ],
-    }
-    BackgroundList = [
+    BACKGROUND_LIST = [
         "Acolyte",
         "Athlete",
         "Barbarian Tribe Member",
@@ -169,98 +160,175 @@ class Character_Generator:
         "Soldier",
         "Urchin",
     ]
+    STANDARD_ARRAY: list[int] = [15, 14, 13, 12, 10, 8]
 
-    def get_Generators(self):
+    @staticmethod
+    def three_d_six(_low, _high) -> int:
+        return random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6)
+
+    # Unlimited Generators have a minimum range of [1,max_int]
+    UnlimitedGenerators: dict[str, Generator] = {"random": random.randint}
+    # Limited Generators have a max range of [1,20], and therefore are not suitable for use in generating race, class, etc
+    LimitedGenerators: dict[str, Generator] = {
+        "3d6": three_d_six,
+    }
+
+    def __init__(
+        self,
+    ):
+        self.Generators: dict[str, Generator] = {
+            **self.LimitedGenerators,
+            **self.UnlimitedGenerators,
+        }
+        # TODO: Put list "All" concatenation here?
+
+    def get_all_generators(self):
         """
         Gives the list of generator keys
         Returns:
             List: a list of all generator keys
         """
-        return Character_Generator.GeneratorList.keys
+        # TODO: could just replace generator list here?
+        return self.Generators.keys()
 
-    def Generate_Stats(self, StatList):
+    def get_limited_generators(self):
+        """
+        Gives the list of limited generator keys
+        Returns:
+            List: a list of all limited generator keys
+        """
+        return self.LimitedGenerators.keys()
+
+    def get_unlimited_generators(self):
+        """
+        Gives the list of unlimited generator keys
+        Returns:
+            List: a list of all unlimited generator keys
+        """
+        return self.UnlimitedGenerators.keys()
+
+    @staticmethod
+    def generate_stat_list(generator: Generator):
         """Returns the Stat List needed because the dictionary is in str:function
 
         Args:
-            StatList (List): List of stat values
+            generator (Callable): random number generator
 
         Returns:
             StatList (List): List of stat values
         """
-        return StatList
 
-    def Generate_Race(self, RaceList) -> str:
+        stat_list = [generator(1, 20) for _ in range(5)]
+        return stat_list
+
+    @staticmethod
+    def generate_race(race_list: list[str], generator: Generator) -> str:
         """
         Generates a race from the provided list
         Args:
             RaceList (list): The list chosen from thr dictionary
+            generator (Callable): random number generator
         Returns:
             String: Race
         """
-        Race = RaceList[random.randint(0, RaceList.len - 1)]
+        Race: str = race_list[generator(0, len(race_list) - 1)]
         return Race
 
-    def Generate_Class(self, ClassList) -> str:
+    @staticmethod
+    def generate_class(class_list: list[str], generator: Generator) -> str:
         """
         Returns a random class from the provided list
         Args:
-            ClassList (List): The list chosen from the Class dictionary
+            class_list (List): The list chosen from the Class dictionary
+            generator (Callable): random number generator
 
         Returns:
             String: the random class
         """
-        Class = ClassList[random.randint(0, ClassList.len - 1)]
-        return Class
+        clazz: str = class_list[generator(0, len(class_list) - 1)]
+        return clazz
 
-    def Generate_Alignment(self, AlignmentList) -> str:
+    @staticmethod
+    def generate_alignment(alignment_list: list[str], generator: Generator) -> str:
         """
             Returns a random alignment from the provided list
         Args:
             AlignmentList (List): List of alignments from alignment dictionary
+            generator (Callable): random number generator
 
         Returns:
             String: Alignment
         """
-        Alignment = AlignmentList[random.randint(0, AlignmentList.len - 1)]
-        return Alignment
+        alignment = alignment_list[generator(0, len(alignment_list) - 1)]
+        return alignment
 
-    def Generate_Background(self, BackgroundList) -> str:
+    @staticmethod
+    def generate_background(background_list: list[str], generator: Generator) -> str:
         """
-            Generate a random
+            Generate a random background
         Args:
-            BackgroundList (_type_): _description_
+            background_list (str): background
+            generator (Callable): random number generator
         """
-        return BackgroundList[random.randint(0, BackgroundList.len - 1)]
+        return background_list[generator(0, len(background_list) - 1)]
 
-    def Generate(self, Generator, Key):
-        """
-        Given the generator key it runs that generator
+    def Generate(
+        self,
+        stat_generator_key: Optional[str] = None,
+        race_key="All",
+        class_key="All",
+        alignment_key="All",
+        generator: Generator = random.randint,
+        stat_list=Optional[list[int]],
+    ) -> dict[str, Union[list[int], str]]:
+        """Given generator parameters, return a dictionary of character characteristics
+
         Args:
-            Generator (String): The key to the generator dictionary
+            generator_key (str, optional): A generator name from unlimited_generators(). Defaults to "All".
+            stat_generator_key (Optional[str], optional): A generator name from limited_generators(). Defaults to None.
+            race_key (str, optional): A race name, from the RACE_DICT. Defaults to "All".
+            class_key (str, optional): A class name from the CLASS_DICT. Defaults to "All".
+            alignment_key (str, optional): A alignment name from the ALIGNMENT_DICT. Defaults to "All".
+            background_key (str, optional): A background name from the BACKGROUND_DICT. Defaults to "All".
+            stat_list (list[int], optional): A list of 6 numbers between 1 and 20 to use as stats. Defaults to None.
+
+        Raises:
+            ValueError: _description_
 
         Returns:
-            Returns the thing you want generated
+            dict[str, list[int] | str]: Generated Characteristics
         """
-        GeneratorList: dict[str, any] = {
-            "Stats": Character_Generator.Generate_Stats(
-                self, Character_Generator.MethodDict[Key]
-            ),
-            "Race": Character_Generator.Generate_Race(
-                self, Character_Generator.RaceDict[Key]
-            ),
-            "Class": Character_Generator.Generate_Class(
-                self, Character_Generator.ClassDict[Key]
-            ),
-            "Alignment": Character_Generator.Generate_Alignment(
-                self, Character_Generator.AlignmentDict[Key]
-            ),
-            "Background": Character_Generator.Generate_Background(
-                self, Character_Generator.BackgroundList[Key]
-            ),
-        }
-        return GeneratorList[Generator]
+        # TODO: put in input validation
 
-    def Arrange(self, CharacterID, StatArray):
+        if stat_list & len(stat_list) != 6:
+            raise ValueError("Stat list length must be 6")
+        if stat_generator_key is None:
+            stat_generator_keys: list[str] = self.get_limited_generators()
+            stat_generator_key = stat_generator_keys[
+                random.randint(0, len(stat_generator_keys) - 1)
+            ]
+        # Set the stat generator if selected
+        stat_generator = (
+            generator
+            if not stat_generator_key
+            else self.LimitedGenerators[stat_generator_key]
+        )
+
+        generated: dict[str, Union[list[int], str]] = {
+            "Stats": stat_list
+            if stat_list
+            else self.generate_stat_list(stat_generator),
+            "Race": self.generate_race(self.RACE_DICT[race_key], generator),
+            "Class": self.generate_class(self.CLASS_DICT[class_key], generator),
+            "Alignment": self.generate_alignment(
+                self.ALIGNMENT_DICT[alignment_key], generator
+            ),
+            "Background": self.generate_background(self.BACKGROUND_LIST, generator),
+        }
+        return generated
+
+    @staticmethod
+    def Arrange(CharacterID, StatArray):
         """
         Given a character ID and a 6 number array it
         arranges the numbers in an optimal allocation for any given class
