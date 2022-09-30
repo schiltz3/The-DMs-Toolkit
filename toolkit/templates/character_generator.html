@@ -3,36 +3,32 @@
 {% load static %}
 
 {% block application_pane %}
-
-
-<div class="row">
-    <div class="character-column-first">
-        <img src={% static "/character/Character_Statblock.png" %} alt="Character Statblock" style="width:100%"/>
-    </div>
-    <div class="character-column-second">
-        <div>
-            <img src={% static "/character/Character_Proficiency_Throws.png" %} alt="Character Proficiency and Throws" style="width:100%"/>
+    <div class="row" style="padding-bottom: 1%;">
+        <div class="character-header">
+            <img src={% static "/character/Character_Header.png" %} alt="Character Header"/>
         </div>
-        <div>
-            <img src={% static "/character/Character_Combat.png" %} alt="Character Combat" style="width:100%"/>
+        <div class="character-control">
+            <img src={% static "/character/Character_Control.png" %} alt="Character Control"/>
         </div>
     </div>
-    <div class="character-column-third">
-        <img src={% static "/character/Character_Skills.png" %} alt="Character Skills" style="width:100%"/>
-    </div>
-    <div class="character-column-fourth">
-        <div>
-            <img src={% static "/character/Character_Personality.png" %} alt="Character Personality" style="width:100%"/>
+    <div class="row">
+        <div class="character-column-first">
+            <img src={% static "/character/Character_Column_First.png" %} alt="Character Statblock"/>
         </div>
-        <div>
-            <img src={% static "/character/Character_Attacks_Spellcasting.png" %} alt="Character Attacks and Spellcasting" style="width:100%"/>
+        <div class="character-column-second">
+            <img src={% static "/character/Character_Column_Second.png" %} alt="Character Saves and Combat"/>
         </div>
-    </div>
-    <div class="character-column-fifth">
-        <img src={% static "/character/Character_Other.png" %} alt="Character Other" style="width:100%"/>
-    </div>
-    <div class="character-column-sixth">
-        <img src={% static "/character/Character_Features_Traits.png" %} alt="Character Features and Traits" style="width:100%"/>
-    </div>
-  </div> 
+        <div class="character-column-third">
+            <img src={% static "/character/Character_Column_Third.png" %} alt="Character Skills"/>
+        </div>
+        <div class="character-column-fourth">
+            <img src={% static "/character/Character_Column_Fourth.png" %} alt="Character Personality and Attacks"/>
+        </div>
+        <div class="character-column-fifth">
+            <img src={% static "/character/Character_Column_Fifth.png" %} alt="Character Other"/>
+        </div>
+        <div class="character-column-sixth">
+            <img src={% static "/character/Character_Column_Sixth.png" %} alt="Character Features and Traits"/>
+        </div>
+    </div> 
 {% endblock application_pane %}
