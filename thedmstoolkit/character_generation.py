@@ -168,6 +168,15 @@ class Character_Generator:
 
     @staticmethod
     def three_d_six(_low, _high) -> int:
+        """Returns the total od 3d6
+        
+        Args:
+            _low (_type_): Ignored
+            _high (_type_): Ignored
+
+        Returns:
+            int: Returns the total of 3d6
+        """
         return random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6)
 
     # Unlimited Generators have a minimum range of [1,max_int]
