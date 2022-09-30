@@ -100,3 +100,48 @@ img {
     max-height: 100%;
     max-width: 100%;
 }
+
+.character-column-first {
+    width: 10%;
+    height: 30vh;
+    padding: 0 5px 0 0;
+    float: left;
+}
+
+.character-column-second {
+    width: 18%;
+    height: 30vh;
+    padding: 0 5px 0 0;
+    float: left;
+}
+
+.character-column-third {
+    width: 18%;
+    height: 30vh;
+    padding: 0 5px 0 0;
+    float: left;
+}
+
+.character-column-fourth {
+    width: 18%;
+    max-height: 30vh;
+    padding: 0 5px 0 0;
+    float: left;
+}
+
+.character-column-fifth {
+    width: 18%;
+    height: 30vh;
+    padding: 0 5px 0 0;
+    float: left;
+}
+
+.character-column-sixth {
+    width: 18%;
+    height: 30vh;
+    padding: 0 5px 0 0;
+    float: left;
+}
+
+
+
