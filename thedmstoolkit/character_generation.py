@@ -1,7 +1,8 @@
-from genericpath import exists
-from operator import contains
 import random
+from operator import contains
 from typing import Callable, Optional, Union
+
+from genericpath import exists
 
 from toolkit.models import Character
 
@@ -162,7 +163,7 @@ class Character_Generator:
         "Soldier",
         "Urchin",
     ]
-    GENERATOR_LIST: list[str] = ["Stats","Race", "Class","Alignment","Background"]
+    GENERATOR_LIST: list[str] = ["Stats", "Race", "Class", "Alignment", "Background"]
     STANDARD_ARRAY: list[int] = [15, 14, 13, 12, 10, 8]
 
     @staticmethod
@@ -183,7 +184,7 @@ class Character_Generator:
             **self.LimitedGenerators,
             **self.UnlimitedGenerators,
         }
-        
+
     def get_all_generators(self):
         """
         Gives the list of generator keys
@@ -191,6 +192,7 @@ class Character_Generator:
             List: a list of all generator keys
         """
         return self.GENERATOR_LIST
+
     def get_all_random_generators(self):
         """
         Gives the list of random generator keys
@@ -215,7 +217,7 @@ class Character_Generator:
         """
         return self.UnlimitedGenerators.keys()
 
-    def generate_stat_list(self,GeneratorKey):
+    def generate_stat_list(self, GeneratorKey):
         """Returns the Stat List needed because the dictionary is in str:function
 
         Args:
@@ -276,7 +278,9 @@ class Character_Generator:
             raise RuntimeError("Generator does not exist")
         if alignment_list not in self.ALIGNMENT_DICT.items():
             raise RuntimeError("Invalid List")
-        alignment = alignment_list[self.Generators[GeneratorKey](0, len(alignment_list) - 1)]
+        alignment = alignment_list[
+            self.Generators[GeneratorKey](0, len(alignment_list) - 1)
+        ]
         return alignment
 
     def generate_background(self, background_list: list[str], GeneratorKey) -> str:
@@ -290,10 +294,19 @@ class Character_Generator:
             raise RuntimeError("Generator does not exist")
         if background_list != self.BACKGROUND_LIST:
             raise RuntimeError("Invalid List")
-        return background_list[self.Generators[GeneratorKey](0, len(background_list) - 1)]
+        return background_list[
+            self.Generators[GeneratorKey](0, len(background_list) - 1)
+        ]
 
-    def Generate(self, GenerationsList="All",stat_generator_key: Optional[str] = None, race_key="All", class_key="All",
-        alignment_key="All", GeneratorKey = "random", stat_list=Optional[list[int]],
+    def Generate(
+        self,
+        GenerationsList="All",
+        stat_generator_key: Optional[str] = None,
+        race_key="All",
+        class_key="All",
+        alignment_key="All",
+        GeneratorKey="random",
+        stat_list=Optional[list[int]],
     ) -> dict[str, Union[list[int], str]]:
         """Given generator parameters, return a dictionary of character characteristics
 
@@ -334,15 +347,31 @@ class Character_Generator:
             if stat_list:
                 generated.update({"Stats": stat_list})
             else:
-                generated.update({"Stats" : self.generate_stat_list(stat_generator)})
+                generated.update({"Stats": self.generate_stat_list(stat_generator)})
         if "Race" in GenerationsList:
-            generated.update({"Race": self.generate_race(self.RACE_DICT[race_key], GeneratorKey)})
+            generated.update(
+                {"Race": self.generate_race(self.RACE_DICT[race_key], GeneratorKey)}
+            )
         if "Class" in GenerationsList:
-            generated.update({"Class": self.generate_class(self.CLASS_DICT[class_key], GeneratorKey)})
+            generated.update(
+                {"Class": self.generate_class(self.CLASS_DICT[class_key], GeneratorKey)}
+            )
         if "Alignment" in GenerationsList:
-            generated.update({"Alignment": self.generate_alignment(self.ALIGNMENT_DICT[alignment_key], GeneratorKey)})
+            generated.update(
+                {
+                    "Alignment": self.generate_alignment(
+                        self.ALIGNMENT_DICT[alignment_key], GeneratorKey
+                    )
+                }
+            )
         if "Background" in GenerationsList:
-            generated.update({"Background": self.generate_background(self.BACKGROUND_LIST, GeneratorKey)})
+            generated.update(
+                {
+                    "Background": self.generate_background(
+                        self.BACKGROUND_LIST, GeneratorKey
+                    )
+                }
+            )
         return generated
 
     @staticmethod
