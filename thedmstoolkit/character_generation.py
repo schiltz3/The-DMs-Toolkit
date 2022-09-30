@@ -262,7 +262,7 @@ class Character_Generator:
         clazz: str = class_list[self.Generators[GeneratorKey](0, len(class_list) - 1)]
         return clazz
 
-    def generate_alignment(self, alignment_list: list[str], GeneratorKey) -> str:
+    def generate_alignment(self, alignment_list: list[str], GeneratorKey: str) -> str:
         """
             Returns a random alignment from the provided list
         Args:
