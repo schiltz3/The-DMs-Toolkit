@@ -100,3 +100,67 @@ img {
     max-height: 100%;
     max-width: 100%;
 }
+
+.character-header {
+    display:flex;
+    background-color: #D9CAAB;
+}
+
+.character-row {
+    display: flex;
+}
+
+.character-name {
+    background-color: #7D8B8C;
+    width: 30%;
+    display: flex;
+    float: left;
+    padding: 1%;
+    justify-content: left;
+    align-items: center;
+}
+
+.character-info {
+    background-color:  #7D8B8C;
+    width: 40%;
+    display: grid;
+    padding: 1%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    float: left;
+}
+
+.character-control {
+    background-color: #7D8B8C;
+    width: 30%;
+    display: flex;
+    float: left;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: #55bd6b;
+    color: white;
+    width: 80%;
+    border-radius: 2%;
+    text-align: center;
+    display: inline-block;
+    font-size: 3vw;
+}
+
+input.small {
+    display: flex;
+    position: relative;
+}
+
+input.big {
+    display: flex;
+    position: relative;
+    font-size: 2rem;
+}
+  
+label {
+    display: inline-block;
+    width: 20em;
+}
