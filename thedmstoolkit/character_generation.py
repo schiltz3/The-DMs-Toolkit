@@ -274,12 +274,11 @@ class Character_Generator:
 
     def Generate(
         self,
-        generator_key="All",
         stat_generator_key: Optional[str] = None,
         race_key="All",
         class_key="All",
         alignment_key="All",
-        background_key="All",
+        generator: Generator = "random",
         stat_list=Optional[list[int]],
     ) -> dict[str, list[int] | str]:
         """Given generator parameters, return a dictionary of character characteristics
@@ -303,15 +302,11 @@ class Character_Generator:
 
         if stat_list & len(stat_list) != 6:
             raise ValueError("Stat list length must be 6")
-        if generator_key == "All":
-            generator_keys: list[str] = self.get_all_generators()
-            generator_key = generator_keys[random.randint(0, len(generator_keys) - 1)]
         if stat_generator_key == None:
             stat_generator_keys: list[str] = self.get_limited_generators()
             stat_generator_key = stat_generator_keys[
-                random.randint(0, len(generator_keys) - 1)
+                random.randint(0, len(stat_generator_keys) - 1)
             ]
-        generator = self.Generators[generator_key]
         # Set the stat generator if selected
         stat_generator = (
             generator
@@ -328,9 +323,7 @@ class Character_Generator:
             "Alignment": self.generate_alignment(
                 self.ALIGNMENT_DICT[alignment_key], generator
             ),
-            "Background": self.generate_background(
-                self.BACKGROUND_LIST[background_key], generator
-            ),
+            "Background": self.generate_background(self.BACKGROUND_LIST, generator),
         }
         return generated
 
