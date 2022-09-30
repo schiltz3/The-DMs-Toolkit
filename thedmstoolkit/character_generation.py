@@ -231,7 +231,7 @@ class Character_Generator:
         stat_list = [self.Generator[GeneratorKey](1, 20) for _ in range(5)]
         return stat_list
 
-    def generate_race(self, race_list: list[str], GeneratorKey) -> str:
+    def generate_race(self, race_list: list[str], GeneratorKey: str) -> str:
         """
         Generates a race from the provided list
         Args:
@@ -247,7 +247,7 @@ class Character_Generator:
         Race: str = race_list[self.Generators[GeneratorKey](0, len(race_list) - 1)]
         return Race
 
-    def generate_class(self, class_list: list[str], GeneratorKey) -> str:
+    def generate_class(self, class_list: list[str], GeneratorKey: str) -> str:
         """
         Returns a random class from the provided list
         Args:
@@ -283,7 +283,7 @@ class Character_Generator:
         ]
         return alignment
 
-    def generate_background(self, background_list: list[str], GeneratorKey) -> str:
+    def generate_background(self, background_list: list[str], GeneratorKey: str) -> str:
         """
             Generate a random background
         Args:
