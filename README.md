@@ -1,3 +1,6 @@
+[![DeepSource](https://deepsource.io/gh/schiltz3/The-DMs-Toolkit.svg/?label=active+issues&show_trend=true&token=rxy07MpkDYvKHm4CClZMfTkh)](https://deepsource.io/gh/schiltz3/The-DMs-Toolkit/?ref=repository-badge)
+[![DeepSource](https://deepsource.io/gh/schiltz3/The-DMs-Toolkit.svg/?label=resolved+issues&show_trend=true&token=rxy07MpkDYvKHm4CClZMfTkh)](https://deepsource.io/gh/schiltz3/The-DMs-Toolkit/?ref=repository-badge)
+
 # The-DMs-Toolkit
 #### UW-Milwaukee Capstone Project
 
@@ -13,7 +16,7 @@
 #### [Coding Standard](https://hackmd.io/@le-angle/S1LvuuxJj)
 
 ### Setting up templates to use bootstrap and link to useful bootstrap documents
-#### [Getting started with Bootstrap-5](https://hackmd.io/@le-angle/Skd2Zdeys)
+#### [Getting started with Bootstrap-5](https://hackmd.io/@le-angle/ry7gpBlYt)
 
 ### How to submit a successful pull request
 #### [Github Pull Request Process](https://hackmd.io/@le-angle/Skp9fH7KF)

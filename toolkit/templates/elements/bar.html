@@ -4,27 +4,35 @@ bar is a template which takes a list or iterator of BarItem objects and creates 
 Uses group variable returned from get method to display options for NavBar.
 
 {% endcomment %}
-<div class="container-fluid px-0 py-2">
-    <nav class="navbar navbar-expand-lg navbar-light" >
-     <a class="navbar-brand" href="">DM's Toolkit</a>
-
-    <div>
-     <ul class="navbar-nav mr-auto">
-
-         {% if group == "admin" %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'test_home' %}">Test Home</a>
-            </li>
-         {% elif group == "instructor" %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'test_home' %}">Test Home</a>
-            </li>
-         {% else %}
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'test_home' %}">Test Home</a>
-            </li>
-         {% endif %}
-     </ul>
-    </div>
-    </nav>
-</div>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light p-0">
+  <a class="navbar-brand" href="{% url "home_page" %}">DM's Toolkit</a>
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'character_generator' %}">Characters</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'encounter_generator' %}">Encounters</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'loot_generator' %}">Loot</a>
+      </li>
+    </ul>
+  </div>
+  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <ul class="navbar-nav ms-auto">
+      {% if group == "admin" %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home_page' %}">Profile</a>
+        </li>
+      {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'create_account' %}">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Log In</a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

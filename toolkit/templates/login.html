@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% comment %} 
+POST Variables: Put your comments
+here 
+{% endcomment %}
+
+{% block content %}
+  {% load static %}
+  <form action
+        {% url "login" %}
+        method="post"
+        class="form"
+        id="background-image"
+        style="background-image: url('{% static "Login_Page_Background.jpg" %}')">
+    {% csrf_token %}
+    <div class="container" style="height: 100vh">
+      <div class="row h-100 align-items-center justify-content-md-center">
+        <div class="col-xl-5 col-md-8  bg-white rounded-5 shadow-5-strong p-5">
+          <h1>Welcome!</h1>
+          <div class="mb-3">
+            <label class="form-label" for="username">Username</label>
+            <input type="username"
+                   name="username"
+                   class="form-control"
+                   id="username"
+                   required/>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input type="password"
+                   name="password"
+                   class="form-control"
+                   id="password"
+                   required/>
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-bottom: 5px">Login</button>
+          {% for message in messages %}<div class="alert alert-danger">{{ message }}</div>{% endfor %}
+          <!-- Register buttons -->
+          <div class="text-left">
+            <p>
+              Not a member? <a href="{% url 'create_account' %}">Register</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+{% endblock content %}
