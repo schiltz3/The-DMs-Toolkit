@@ -164,7 +164,7 @@ class Character_Generator:
 
     @staticmethod
     def three_d_six(low, high) -> int:
-        return random.randint(1, 6)
+        return random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6)
 
     # Unlimited Generators have a minimum range of [1,max_int]
     UnlimitedGenerators: dict[str, Generator] = {"random": random.randint}
@@ -180,15 +180,15 @@ class Character_Generator:
             **self.LimitedGenerators,
             **self.UnlimitedGenerators,
         }
-        # TODO: Put list concatenation here
+        # TODO: Put list "All" concatenation here?
 
     def get_all_generators(self):
         """
         Gives the list of generator keys
         Returns:
             List: a list of all generator keys
-        #TODO: could just replace generator list here
         """
+        # TODO: could just replace generator list here?
         return self.Generators.keys()
 
     def get_limited_generators(self):
@@ -231,7 +231,7 @@ class Character_Generator:
         Returns:
             String: Race
         """
-        Race: str = race_list[generator(0, len(race_list))]
+        Race: str = race_list[generator(0, len(race_list) - 1)]
         return Race
 
     @staticmethod
@@ -245,7 +245,7 @@ class Character_Generator:
         Returns:
             String: the random class
         """
-        clazz: str = class_list[generator(0, len(class_list))]
+        clazz: str = class_list[generator(0, len(class_list) - 1)]
         return clazz
 
     @staticmethod
@@ -259,7 +259,7 @@ class Character_Generator:
         Returns:
             String: Alignment
         """
-        alignment = alignment_list[generator(0, len(alignment_list))]
+        alignment = alignment_list[generator(0, len(alignment_list) - 1)]
         return alignment
 
     @staticmethod
@@ -270,7 +270,7 @@ class Character_Generator:
             background_list (str): background
             generator (Callable): random number generator
         """
-        return background_list[generator(0, len(background_list))]
+        return background_list[generator(0, len(background_list) - 1)]
 
     def Generate(
         self,
@@ -306,7 +306,7 @@ class Character_Generator:
         if generator_key == "All":
             generator_keys: list[str] = self.get_all_generators()
             generator_key = generator_keys[random.randint(0, len(generator_keys) - 1)]
-        if stat_generator_key == "All":
+        if stat_generator_key == None:
             stat_generator_keys: list[str] = self.get_limited_generators()
             stat_generator_key = stat_generator_keys[
                 random.randint(0, len(generator_keys) - 1)
@@ -319,7 +319,7 @@ class Character_Generator:
             else self.LimitedGenerators[stat_generator_key]
         )
 
-        generated_list: dict[str, list[int] | str] = {
+        generated: dict[str, list[int] | str] = {
             "Stats": stat_list
             if stat_list
             else self.generate_stat_list(stat_generator),
@@ -332,7 +332,7 @@ class Character_Generator:
                 self.BACKGROUND_LIST[background_key], generator
             ),
         }
-        return generated_list
+        return generated
 
     @staticmethod
     def Arrange(CharacterID, StatArray):
