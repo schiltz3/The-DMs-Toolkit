@@ -106,6 +106,7 @@ img {
     height: auto;
     padding-top: 20px;
     float: left;
+    position: relative;
 }
 
 .character-control {
@@ -113,7 +114,20 @@ img {
     height: auto;
     padding-top: 30px;
     float: right;
+    display: inline-block;
+    position: relative;
 }
+
+.character-control button {
+    position: absolute;
+    bottom: 3.5em;
+    right: 10.5em;
+    width: 50%;
+    background-color: #86D6D9;
+    border-radius: 0.5em;
+    color: white;
+    padding: 1em 1.5em;
+    }
 
 .character-column-first {
     width: 10%;
