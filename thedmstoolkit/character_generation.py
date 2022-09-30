@@ -302,7 +302,7 @@ class Character_Generator:
 
         if stat_list & len(stat_list) != 6:
             raise ValueError("Stat list length must be 6")
-        if stat_generator_key == None:
+        if stat_generator_key is None:
             stat_generator_keys: list[str] = self.get_limited_generators()
             stat_generator_key = stat_generator_keys[
                 random.randint(0, len(stat_generator_keys) - 1)
