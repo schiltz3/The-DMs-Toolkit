@@ -451,7 +451,12 @@ class Character_Generator:
         check = Character.objects.filter(id=CharacterID)
         if check.count == 0:
             raise RuntimeError("Character does not exist")
-        CurrentCharacter = Character.objects.get(id=CharacterID)
+        for i in StatArray:
+            if type(i) is not int:
+                raise RuntimeError("Non integer found in the list")
+            if not 0<i<=18:
+                raise RuntimeError("Invalid number")
+        CurrentCharacter = Character.objects.get(pk=CharacterID)
         CurrentClass = CurrentCharacter.Class
         StatArray = sorted(StatArray)
         if CurrentClass == "Artificer":
