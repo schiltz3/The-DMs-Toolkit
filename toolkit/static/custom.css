@@ -102,6 +102,7 @@ img {
 }
 
 .character-header {
+    min-height: 85px;
     display:flex;
     background-color: #D9CAAB;
 }
@@ -125,28 +126,86 @@ img {
     width: 40%;
     display: grid;
     padding: 1%;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     float: left;
 }
 
 .character-control {
     background-color: #7D8B8C;
     width: 30%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     float: left;
     padding: 1%;
+    column-gap: 5%;
     justify-content: center;
     align-items: center;
 }
 
+.character-statblock {
+    background-color: #D9CAAB;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    row-gap: 1vh;
+}
+
+.character-stat {
+    background-color: tan;
+    width: 50%;
+    padding: 1%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    display: flex;
+}
+
+.character-stat-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -270%);
+    font-size: 85%;
+}
+
+.character-stat-base {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.character-stat-bonus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 90%);
+}
+
 button {
-    background-color: #55bd6b;
     color: white;
-    width: 80%;
-    border-radius: 2%;
+    width: 100%;
+    height: 90%;
+    border-radius: 20%;
     text-align: center;
     display: inline-block;
-    font-size: 3vw;
+    }
+    .green {
+    background-color: #55bd6b;
+    }
+    .blue {
+    background-color: #B6D6D9;
+    }
+    .purple {
+    background-color: #A8A0D9;
+    }
+
+button:hover {
+    background-color: #4D5657;
 }
 
 input.small {
@@ -158,6 +217,7 @@ input.big {
     display: flex;
     position: relative;
     font-size: 2rem;
+    width: 100%;
 }
   
 label {
