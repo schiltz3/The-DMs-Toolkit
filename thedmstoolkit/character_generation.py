@@ -228,7 +228,7 @@ class Character_Generator:
 
         Args:
             GeneratorKey (str): key required to specify which randomizer you want
-        
+
         Raises:
             RuntimeError: If the key provided is the wrong type
 
@@ -251,11 +251,11 @@ class Character_Generator:
         Args:
             RaceList (list): The list chosen from the dictionary
             GeneratorKey (str): key required to specify which randomizer you want
-        
+
         Raises:
             RuntimeError: If the key provided is the wrong type
             RuntimeError: If there is an unauthorized item in the passed list
-            
+
         Returns:
             String: Race
         """
@@ -276,7 +276,7 @@ class Character_Generator:
         Args:
             class_list (List): The list chosen from the Class dictionary
             GeneratorKey (str): key required to specify which randomizer you want
-        
+
         Raises:
             RuntimeError: If the key provided is the wrong type
             RuntimeError: If there is an unauthorized item in the passed list
@@ -301,7 +301,7 @@ class Character_Generator:
         Args:
             AlignmentList (List): List of alignments from alignment dictionary
             GeneratorKey (str): key required to specify which randomizer you want
-        
+
         Raises:
             RuntimeError: If the key provided is the wrong type
             RuntimeError: If there is an unauthorized item in the passed list
@@ -326,11 +326,11 @@ class Character_Generator:
         Args:
             background_list (str): background
             GeneratorKey (str): key required to specify which randomizer you want
-        
+
         Raises:
             RuntimeError: If the key provided is the wrong type
             RuntimeError: If there is an unauthorized item in the passed list
-            
+
         Returns:
             String: Background
         """
