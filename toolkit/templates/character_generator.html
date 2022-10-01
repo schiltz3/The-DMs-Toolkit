@@ -7,12 +7,10 @@
 <div class="character-header">
     <img src={% static "Character_Header.png" %} alt="Character Header" style="width: 45%"/>
 </div>
-
 <div class="character-row">
     <div class="character-name">
         <label><h4>Character Name</h4><input class="big" name="form-character-name" id="form-character-name" maxlength="100" /></label>
     </div>
-    
     <div class="character-info">
         <label>Class<input class="small" name="form-character-class" id="form-character-class" maxlength="50" /></label>
         <label>Background<input class="small" name="form-character-background" id="form-character-background" maxlength="50" /></label>
@@ -21,14 +19,12 @@
         <label>Alignment<input class="small" name="form-character-alignment" id="form-character-alignment" maxlength="50" /></label>
         <label>Experience Points<input class="small" name="form-character-experience" id="form-character-experience" maxlength="50" /></label>
     </div>
-    
     <div class="character-control">
         <button class="green" type="button"><h4>GENERATE</h4></button> 
         <button class="blue" type="button"><h4>SAVE</h4></button> 
         <button class="purple" type="button"><h4>EXPORT</h4></button> 
     </div>
 </div>
-
 <div class="character-statblock">
     <div class="character-stat">
         <img src={% static "Character_UI_Stat.png" %} alt="Character UI Stat" style="width: 100%"/>
@@ -103,7 +99,6 @@
         </div>
     </div>
 </div>
-
 <div class="character-baseplate">
     <div class="character-plate">
         <div style="text-align: center;">
@@ -433,5 +428,4 @@
         </div>
     </div>
 </div>
-
 {% endblock application_pane %}

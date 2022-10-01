@@ -106,9 +106,9 @@ img {
 }
 
 .character-header {
-    min-height: 85px;
-    display:flex;
     background-color: #D9CAAB;
+    display:flex;
+    min-height: 85px;
 }
 
 .character-row {
@@ -116,96 +116,96 @@ img {
 }
 
 .character-name {
+    align-items: center;
     background-color: #7D8B8C;
-    width: 30%;
     display: flex;
     float: left;
-    padding: 1%;
     justify-content: left;
-    align-items: center;
+    padding: 1%;
+    width: 30%;
 }
 
 .character-info {
     background-color:  #7D8B8C;
-    width: 40%;
     display: grid;
-    padding: 1%;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     float: left;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 1%;
+    width: 40%;
 }
 
 .character-control {
-    background-color: #7D8B8C;
-    width: 30%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    float: left;
-    padding: 1%;
-    column-gap: 5%;
-    justify-content: center;
     align-items: center;
+    background-color: #7D8B8C;
+    column-gap: 5%;
+    display: grid;
+    float: left;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-content: center;
+    padding: 1%;
+    width: 30%;
 }
 
 .character-statblock {
     background-color: #D9CAAB;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
     padding-top: 3vh;
     padding-bottom: 3vh;
-    display: grid;
-    width: 100%;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     row-gap: 1vh;
+    width: 100%;
 }
 
 .character-stat {
-    background-color: tan;
-    width: 50%;
-    padding: 1%;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    position: relative;
+    background-color: tan;
     display: flex;
+    justify-content: center;
+    padding: 1%;
+    position: relative;
+    text-align: center;
+    width: 50%;
 }
 
 .character-stat-title {
+    font-size: 85%;
+    left: 50%;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -270%);
-    font-size: 85%;
 }
 
 .character-stat-base {
+    left: 50%;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .character-stat-bonus {
+    left: 50%;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, 90%);
 }
 
 .character-baseplate {
     background-color: #7D8B8C;
-    padding-top: 4vh;
-    padding-bottom: 4vh;
     display: grid;
-    width: 100%;
-    justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding-bottom: 4vh;
+    padding-top: 4vh;
+    justify-items: center;
     row-gap: 1vh;
+    width: 100%;
 }
 
 .character-plate {
-    border-radius: 10%;
     background-color: tan;
-    min-width: 80%;
+    border-radius: 10%;
     padding: 2%;
+    min-width: 80%;
 }
 
 .character-panel {
@@ -214,12 +214,12 @@ img {
 }
 
 button {
-    color: white;
-    width: 100%;
-    height: 90%;
     border-radius: 20%;
-    text-align: center;
+    color: white;
     display: inline-block;
+    height: 90%;
+    text-align: center;
+    width: 100%;
     }
     .green {
     background-color: #55bd6b;
@@ -242,12 +242,12 @@ input.small {
 
 input.big {
     display: flex;
-    position: relative;
     font-size: 2rem;
+    position: relative;
     width: 100%;
 }
 
 input[type=checkbox] {
-    width: 100%;
     height: 1.5em;
+    width: 100%;
 }
