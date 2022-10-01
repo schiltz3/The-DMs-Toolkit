@@ -175,22 +175,25 @@ class Character_Generator:
             int: Returns the total of 3d6
         """
         return random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6)
-
+    Generators: dict[str, Generator] = {}
     # Unlimited Generators have a minimum range of [1,max_int]
     UnlimitedGenerators: dict[str, Generator] = {"random": random.randint}
     # Limited Generators have a max range of [1,20], and therefore are not suitable for use in generating race, class, etc
     LimitedGenerators: dict[str, Generator] = {
         "3d6": three_d_six,
     }
+    Generators.update(LimitedGenerators)
+    Generators.update(UnlimitedGenerators)
 
-    def __init__(
-        self,
-    ):
-        self.Generators: dict[str, Generator] = {
-            **self.LimitedGenerators,
-            **self.UnlimitedGenerators,
-        }
 
+    def __init__(self):
+        pass
+         #self.Generators: dict[str, Generator] = {
+        #    **self.LimitedGenerators,
+        #    **self.UnlimitedGenerators,
+       #  }
+        
+        
     def get_all_generators(self):
         """
         Gives the list of generator keys
@@ -232,7 +235,7 @@ class Character_Generator:
         Returns:
             StatList (List): List of stat values
         """
-        if GeneratorKey not in self.get_all_random_generators:
+        if GeneratorKey not in list(self.Generators.keys()):
             raise RuntimeError("Generator does not exist")
         stat_list = [self.Generators[GeneratorKey](1, 20) for _ in range(5)]
         return stat_list
@@ -246,7 +249,7 @@ class Character_Generator:
         Returns:
             String: Race
         """
-        if GeneratorKey not in self.get_all_random_generators:
+        if GeneratorKey not in list(self.Generators.keys()):
             raise RuntimeError("Generator does not exist")
         if race_list not in self.RACE_DICT.items():
             raise RuntimeError("Invalid List")
@@ -263,7 +266,7 @@ class Character_Generator:
         Returns:
             String: the random class
         """
-        if GeneratorKey not in self.get_all_random_generators:
+        if GeneratorKey not in list(self.Generators.keys()):
             raise RuntimeError("Generator does not exist")
         if class_list not in self.CLASS_DICT.items():
             raise RuntimeError("Invalid List")
@@ -280,7 +283,7 @@ class Character_Generator:
         Returns:
             String: Alignment
         """
-        if GeneratorKey not in self.get_all_random_generators:
+        if GeneratorKey not in list(self.Generators.keys()):
             raise RuntimeError("Generator does not exist")
         if alignment_list not in self.ALIGNMENT_DICT.items():
             raise RuntimeError("Invalid List")
@@ -296,7 +299,7 @@ class Character_Generator:
             background_list (str): background
             generator (Callable): random number generator
         """
-        if GeneratorKey not in self.get_all_random_generators:
+        if GeneratorKey not in list(self.Generators.keys()):
             raise RuntimeError("Generator does not exist")
         if background_list != self.BACKGROUND_LIST:
             raise RuntimeError("Invalid List")
@@ -331,21 +334,22 @@ class Character_Generator:
         Returns:
             dict[str, list[int] | str]: Generated Characteristics
         """
-        # TODO: put in input validation
 
         if stat_list & len(stat_list) != 6:
             raise ValueError("Stat list length must be 6")
+        if stat_list:
+            for i in stat_list:
+                if type(i) != int:
+                    raise RuntimeError("Not all numbers in Stat array are integers")
+                if not 0<i<=18:
+                    raise RuntimeError(i + "is not a valid number, please use 1-18")
         if stat_generator_key is None:
             stat_generator_keys: list[str] = self.get_limited_generators()
             stat_generator_key = stat_generator_keys[
                 random.randint(0, len(stat_generator_keys) - 1)
             ]
         # Set the stat generator if selected
-        stat_generator = (
-            self.Generators[GeneratorKey]
-            if not stat_generator_key
-            else self.LimitedGenerators[stat_generator_key]
-        )
+                
         if GenerationsList == "All":
             GenerationsList = self.get_all_generators()
         generated: dict[str, Union[list[int], str]] = {}
@@ -353,7 +357,7 @@ class Character_Generator:
             if stat_list:
                 generated.update({"Stats": stat_list})
             else:
-                generated.update({"Stats": self.generate_stat_list(stat_generator)})
+                generated.update({"Stats": self.generate_stat_list(stat_generator_key)})
         if "Race" in GenerationsList:
             generated.update(
                 {"Race": self.generate_race(self.RACE_DICT[race_key], GeneratorKey)}
