@@ -1,6 +1,5 @@
 import unittest
-
-import character_generation as Char_Gen
+import thedmstoolkit.character_generation as Char_Gen
 
 
 class PositiveTests(unittest.TestCase):
