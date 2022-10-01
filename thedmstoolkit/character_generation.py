@@ -341,8 +341,10 @@ class Character_Generator:
             for i in stat_list:
                 if type(i) != int:
                     raise RuntimeError("Not all numbers in Stat array are integers")
-                if not 0<i<=18:
-                    raise RuntimeError("There is an invalid number in the array, please use 1-18")
+                if not 0 < i <= 18:
+                    raise RuntimeError(
+                        "There is an invalid number in the array, please use 1-18"
+                    )
         if stat_generator_key is None:
             stat_generator_keys: list[str] = self.get_limited_generators()
             stat_generator_key = stat_generator_keys[
