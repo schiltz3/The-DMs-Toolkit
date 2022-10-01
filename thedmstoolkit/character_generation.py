@@ -186,14 +186,6 @@ class Character_Generator:
     Generators.update(LimitedGenerators)
     Generators.update(UnlimitedGenerators)
 
-    def __init__(self):
-        pass
-        # self.Generators: dict[str, Generator] = {
-        #    **self.LimitedGenerators,
-        #    **self.UnlimitedGenerators,
-
-    #  }
-
     def get_all_generators(self):
         """
         Gives the list of generator keys
@@ -235,7 +227,7 @@ class Character_Generator:
         Returns:
             StatList (List): List of stat values
         """
-        if GeneratorKey not in list(self.Generators.keys()):
+        if GeneratorKey not in self.Generators.keys():
             raise RuntimeError("Generator does not exist")
         stat_list = [self.Generators[GeneratorKey](1, 20) for _ in range(5)]
         return stat_list
@@ -249,7 +241,7 @@ class Character_Generator:
         Returns:
             String: Race
         """
-        if GeneratorKey not in list(self.Generators.keys()):
+        if GeneratorKey not in self.Generators.keys():
             raise RuntimeError("Generator does not exist")
         if race_list not in self.RACE_DICT.items():
             raise RuntimeError("Invalid List")
@@ -266,7 +258,7 @@ class Character_Generator:
         Returns:
             String: the random class
         """
-        if GeneratorKey not in list(self.Generators.keys()):
+        if GeneratorKey not in self.Generators.keys():
             raise RuntimeError("Generator does not exist")
         if class_list not in self.CLASS_DICT.items():
             raise RuntimeError("Invalid List")
@@ -283,7 +275,7 @@ class Character_Generator:
         Returns:
             String: Alignment
         """
-        if GeneratorKey not in list(self.Generators.keys()):
+        if GeneratorKey not in self.Generators.keys():
             raise RuntimeError("Generator does not exist")
         if alignment_list not in self.ALIGNMENT_DICT.items():
             raise RuntimeError("Invalid List")
@@ -299,7 +291,7 @@ class Character_Generator:
             background_list (str): background
             generator (Callable): random number generator
         """
-        if GeneratorKey not in list(self.Generators.keys()):
+        if GeneratorKey not in self.Generators.keys():
             raise RuntimeError("Generator does not exist")
         if background_list != self.BACKGROUND_LIST:
             raise RuntimeError("Invalid List")
