@@ -175,6 +175,7 @@ class Character_Generator:
             int: Returns the total of 3d6
         """
         return random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6)
+
     Generators: dict[str, Generator] = {}
     # Unlimited Generators have a minimum range of [1,max_int]
     UnlimitedGenerators: dict[str, Generator] = {"random": random.randint}
@@ -185,15 +186,14 @@ class Character_Generator:
     Generators.update(LimitedGenerators)
     Generators.update(UnlimitedGenerators)
 
-
     def __init__(self):
         pass
-         #self.Generators: dict[str, Generator] = {
+        # self.Generators: dict[str, Generator] = {
         #    **self.LimitedGenerators,
         #    **self.UnlimitedGenerators,
-       #  }
-        
-        
+
+    #  }
+
     def get_all_generators(self):
         """
         Gives the list of generator keys
@@ -349,7 +349,7 @@ class Character_Generator:
                 random.randint(0, len(stat_generator_keys) - 1)
             ]
         # Set the stat generator if selected
-                
+
         if GenerationsList == "All":
             GenerationsList = self.get_all_generators()
         generated: dict[str, Union[list[int], str]] = {}
