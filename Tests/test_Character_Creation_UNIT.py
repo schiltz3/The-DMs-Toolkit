@@ -1,5 +1,5 @@
 import unittest
-import character_generation as Char_Gen
+import thedmstoolkit.character_generation as Char_Gen
 from toolkit.models import Character, User
 from django.test import TestCase
 
