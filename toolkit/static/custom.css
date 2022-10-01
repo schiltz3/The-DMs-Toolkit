@@ -61,6 +61,10 @@ h3 {
     font-weight: 500;
 }
 
+h5 {
+    font-size: 2vh;
+}
+
 .navbar-expand-lg {
     background-color: #7D8B8C;
     padding-left: 5rem !important;
@@ -144,8 +148,8 @@ img {
 
 .character-statblock {
     background-color: #D9CAAB;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
     display: grid;
     width: 100%;
     justify-items: center;
@@ -186,6 +190,29 @@ img {
     transform: translate(-50%, 90%);
 }
 
+.character-baseplate {
+    background-color: #7D8B8C;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    row-gap: 1vh;
+}
+
+.character-plate {
+    border-radius: 10%;
+    background-color: tan;
+    min-width: 80%;
+    padding: 2%;
+}
+
+.character-panel {
+    display: flex;
+    justify-content: center;
+}
+
 button {
     color: white;
     width: 100%;
@@ -219,8 +246,8 @@ input.big {
     font-size: 2rem;
     width: 100%;
 }
-  
-label {
-    display: inline-block;
-    width: 20em;
+
+input[type=checkbox] {
+    width: 100%;
+    height: 1.5em;
 }
