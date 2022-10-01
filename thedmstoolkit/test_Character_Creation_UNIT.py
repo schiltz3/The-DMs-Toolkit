@@ -1,5 +1,7 @@
 import unittest
+
 import character_generation as Char_Gen
+
 
 class PositiveTests(unittest.TestCase):
     def test_generate_stats(self):
@@ -183,9 +185,7 @@ class Negative_Tests(unittest.TestCase):
         with self.assertRaises(RuntimeError, msg="Should not except nonexisting keys"):
             Char_Gen.Character_Generator.generate_stat_list("GARBAGE")
         with self.assertRaises(Exception, msg="Should not except that many inputs"):
-            Char_Gen.Character_Generator.generate_stat_list(
-                "random", "too many"
-            )
+            Char_Gen.Character_Generator.generate_stat_list("random", "too many")
         with self.assertRaises(Exception, msg="Should not except that few inputs"):
             Char_Gen.Character_Generator.generate_stat_list()
 
@@ -213,9 +213,7 @@ class Negative_Tests(unittest.TestCase):
         with self.assertRaises(
             RuntimeError, msg="Should not except nonapproved items in the list"
         ):
-            Char_Gen.Character_Generator.generate_class(
-                ["Musician"], "random"
-            )
+            Char_Gen.Character_Generator.generate_class(["Musician"], "random")
         with self.assertRaises(Exception, msg="Should not except that many inputs"):
             Char_Gen.Character_Generator.generate_class(
                 Char_Gen.Character_Generator.CLASS_DICT["All"], "random", "too many"
@@ -253,9 +251,7 @@ class Negative_Tests(unittest.TestCase):
         with self.assertRaises(
             RuntimeError, msg="Should not except nonapproved items in the list"
         ):
-            tChar_Gen.Character_Generator.generate_background(
-                ["Adventurer"], "random"
-            )
+            tChar_Gen.Character_Generator.generate_background(["Adventurer"], "random")
         with self.assertRaises(Exception, msg="Should not except that many inputs"):
             Char_Gen.Character_Generator.generate_background(
                 Char_Gen.Character_Generator.BACKGROUND_LIST, "random", "too many"
@@ -269,15 +265,11 @@ class Negative_Tests(unittest.TestCase):
         with self.assertRaises(ValueError, msg="Should not except such small arrays"):
             Char_Gen.Character_Generator.Generate([12, 12, 12, 12])
         with self.assertRaises(RuntimeError, msg="Should not except non integers"):
-            Char_Gen.Character_Generator.Generate(
-                [12, 12, 12, 12, 12, "Test"]
-            )
+            Char_Gen.Character_Generator.Generate([12, 12, 12, 12, 12, "Test"])
         with self.assertRaises(
             RuntimeError, msg="Should not except such large numbers"
         ):
-            Char_Gen.Character_Generator.Generate(
-                [12, 12, 12, 12, 12, 60]
-            )
+            Char_Gen.Character_Generator.Generate([12, 12, 12, 12, 12, 60])
         with self.assertRaises(Exception, msg="Should not except so many inputs"):
             Char_Gen.Character_Generator.Generate(
                 ["Class", "Alignment", "Background", "Stats", "Race"],
