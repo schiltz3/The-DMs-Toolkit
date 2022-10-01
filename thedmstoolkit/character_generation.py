@@ -227,7 +227,7 @@ class Character_Generator:
         Returns:
             StatList (List): List of stat values
         """
-        if GeneratorKey not in self.Generators.keys():
+        if GeneratorKey not in self.Generators:
             raise RuntimeError("Generator does not exist")
         stat_list = [self.Generators[GeneratorKey](1, 20) for _ in range(5)]
         return stat_list
