@@ -227,7 +227,10 @@ class Character_Generator:
         """Returns the Stat List needed because the dictionary is in str:function
 
         Args:
-            generator (Callable): random number generator
+            GeneratorKey (str): key required to specify which randomizer you want
+        
+        Raises:
+            RuntimeError: If the key provided is the wrong type
 
         Returns:
             StatList (List): List of stat values
@@ -246,8 +249,13 @@ class Character_Generator:
         """
         Generates a race from the provided list
         Args:
-            RaceList (list): The list chosen from thr dictionary
-            generator (Callable): random number generator
+            RaceList (list): The list chosen from the dictionary
+            GeneratorKey (str): key required to specify which randomizer you want
+        
+        Raises:
+            RuntimeError: If the key provided is the wrong type
+            RuntimeError: If there is an unauthorized item in the passed list
+            
         Returns:
             String: Race
         """
@@ -267,7 +275,11 @@ class Character_Generator:
         Returns a random class from the provided list
         Args:
             class_list (List): The list chosen from the Class dictionary
-            generator (Callable): random number generator
+            GeneratorKey (str): key required to specify which randomizer you want
+        
+        Raises:
+            RuntimeError: If the key provided is the wrong type
+            RuntimeError: If there is an unauthorized item in the passed list
 
         Returns:
             String: the random class
@@ -288,7 +300,11 @@ class Character_Generator:
             Returns a random alignment from the provided list
         Args:
             AlignmentList (List): List of alignments from alignment dictionary
-            generator (Callable): random number generator
+            GeneratorKey (str): key required to specify which randomizer you want
+        
+        Raises:
+            RuntimeError: If the key provided is the wrong type
+            RuntimeError: If there is an unauthorized item in the passed list
 
         Returns:
             String: Alignment
@@ -309,7 +325,14 @@ class Character_Generator:
             Generate a random background
         Args:
             background_list (str): background
-            generator (Callable): random number generator
+            GeneratorKey (str): key required to specify which randomizer you want
+        
+        Raises:
+            RuntimeError: If the key provided is the wrong type
+            RuntimeError: If there is an unauthorized item in the passed list
+            
+        Returns:
+            String: Background
         """
         if GeneratorKey not in Character_Generator.Generators:
             raise RuntimeError("Generator does not exist")
@@ -341,6 +364,7 @@ class Character_Generator:
 
         Raises:
             ValueError: _description_
+            RuntimeError: Not all numbers are in the passed stat array are valid
 
         Returns:
             dict[str, list[int] | str]: Generated Characteristics
