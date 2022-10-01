@@ -4,9 +4,10 @@ import thedmstoolkit.character_generation as Char_Gen
 
 
 class PositiveTests(unittest.TestCase):
-    """Testing for positive results from various character generation classes"""    
+    """Testing for positive results from various character generation classes"""
+
     def test_generate_stats(self):
-        """Tests the random stat generation method"""        
+        """Tests the random stat generation method"""
         test_stats = Char_Gen.Character_Generator.generate_stat_list("random")
         self.assertEqual(len(test_stats), 6)
         print(test_stats)
@@ -24,7 +25,7 @@ class PositiveTests(unittest.TestCase):
             self.assertLessEqual(i, 18)
 
     def test_generate_race(self):
-        """Tests the generate race method"""        
+        """Tests the generate race method"""
         test_race = Char_Gen.Character_Generator.generate_race(
             Char_Gen.Character_Generator.RACE_DICT["All"], "random"
         )
@@ -50,7 +51,7 @@ class PositiveTests(unittest.TestCase):
         self.assertTrue(test_race in Char_Gen.Character_Generator.RACE_DICT["Rare"])
 
     def test_generate_class(self):
-        """Tests the generate class method"""        
+        """Tests the generate class method"""
         test_class = Char_Gen.Character_Generator.generate_class(
             Char_Gen.Character_Generator.CLASS_DICT["All"], "random"
         )
@@ -78,7 +79,7 @@ class PositiveTests(unittest.TestCase):
         self.assertTrue(test_class in Char_Gen.Character_Generator.CLASS_DICT["Divine"])
 
     def test_generate_alignment(self):
-        """Testing the generate alignment method"""        
+        """Testing the generate alignment method"""
         test_alignment = Char_Gen.Character_Generator.generate_alignment(
             Char_Gen.Character_Generator.ALIGNMENT_DICT["All"], "random"
         )
@@ -112,7 +113,7 @@ class PositiveTests(unittest.TestCase):
         )
 
     def test_generate_background(self):
-        """Testing the generate background function"""        
+        """Testing the generate background function"""
         test_background = Char_Gen.Character_Generator.generate_background(
             Char_Gen.Character_Generator.BACKGROUND_LIST, "random"
         )
@@ -120,7 +121,7 @@ class PositiveTests(unittest.TestCase):
         self.assertTrue(test_background in Char_Gen.Character_Generator.BACKGROUND_LIST)
 
     def test_generate(self):
-        """Testing the wider generate function"""        
+        """Testing the wider generate function"""
         test_generated = Char_Gen.Character_Generator.Generate()
         self.assertEqual(len(test_generated), 5)
         self.assertTrue(
@@ -192,13 +193,14 @@ class Negative_Tests(unittest.TestCase):
 
     Args:
         unittest (_type_): _description_
-    """    
+    """
+
     def test_generate_stats(self):
         """
         Tests nonexisting keys
         Too many inputs
         Too few inputs
-        """        
+        """
         with self.assertRaises(RuntimeError, msg="Should not accept nonexisting keys"):
             Char_Gen.Character_Generator.generate_stat_list("GARBAGE")
         with self.assertRaises(Exception, msg="Should not accept that many inputs"):
@@ -212,12 +214,14 @@ class Negative_Tests(unittest.TestCase):
         Unapproved item in list
         Too many inputs
         Too few inputs
-        """ 
+        """
         with self.assertRaises(RuntimeError, msg="Should not accept nonexisting keys"):
             Char_Gen.Character_Generator.generate_race(
                 Char_Gen.Character_Generator.RACE_DICT["All"], "GARBAGE"
             )
-        with self.assertRaises(RuntimeError, msg="Should not accept unapproved items in lists"):
+        with self.assertRaises(
+            RuntimeError, msg="Should not accept unapproved items in lists"
+        ):
             Char_Gen.Character_Generator.generate_race(["Potato"], "random")
         with self.assertRaises(Exception, msg="Should not accept that many inputs"):
             Char_Gen.Character_Generator.generate_stat_list(
@@ -234,7 +238,7 @@ class Negative_Tests(unittest.TestCase):
         Unapproved item in list
         Too many inputs
         Too few inputs
-        """ 
+        """
         with self.assertRaises(RuntimeError, msg="Should not accept nonexisting keys"):
             Char_Gen.Character_Generator.generate_class(
                 Char_Gen.Character_Generator.CLASS_DICT["All"], "GARBAGE"
@@ -258,7 +262,7 @@ class Negative_Tests(unittest.TestCase):
         Unapproved item in list
         Too many inputs
         Too few inputs
-        """ 
+        """
         with self.assertRaises(RuntimeError, msg="Should not accept nonexisting keys"):
             Char_Gen.Character_Generator.generate_alignment(
                 Char_Gen.Character_Generator.ALIGNMENT_DICT["All"], "GARBAGE"
@@ -284,7 +288,7 @@ class Negative_Tests(unittest.TestCase):
         Unapproved item in list
         Too many inputs
         Too few inputs
-        """ 
+        """
         with self.assertRaises(RuntimeError, msg="Should not accept nonexisting keys"):
             Char_Gen.Character_Generator.generate_background(
                 Char_Gen.Character_Generator.BACKGROUND_LIST, "GARBAGE"
@@ -308,7 +312,7 @@ class Negative_Tests(unittest.TestCase):
         Unapproved item in list
         Tests too large stat numbers
         Too many inputs
-        """ 
+        """
         with self.assertRaises(ValueError, msg="Should not accept such small arrays"):
             Char_Gen.Character_Generator.Generate([12, 12, 12, 12])
         with self.assertRaises(RuntimeError, msg="Should not accept non integers"):
