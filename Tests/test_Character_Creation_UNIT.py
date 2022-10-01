@@ -167,9 +167,9 @@ class PositiveTests(TestCase):
             self.assertEqual(i, 12)
 
         test_generated = Char_Gen.Character_Generator.Generate(
-            ["Stats", "Alignment"], "Evil", [13, 13, 13, 13, 13, 13]
+            generations_list=["Stats", "Alignment"], alignment_key="Evil", stat_list=[13, 13, 13, 13, 13, 13]
         )
-        self.assertEqual(len(test_generated), 5)
+        self.assertEqual(len(test_generated), 2)
         self.assertTrue(
             test_generated["Alignment"]
             in Char_Gen.Character_Generator.ALIGNMENT_DICT["Evil"]
@@ -305,13 +305,13 @@ class Negative_Tests(TestCase):
         Too many inputs
         """
         with self.assertRaises(ValueError, msg="Should not accept such small arrays"):
-            Char_Gen.Character_Generator.Generate([12, 12, 12, 12])
+            Char_Gen.Character_Generator.Generate(stat_list=[12, 12, 12, 12])
         with self.assertRaises(RuntimeError, msg="Should not accept non integers"):
-            Char_Gen.Character_Generator.Generate([12, 12, 12, 12, 12, "Test"])
+            Char_Gen.Character_Generator.Generate(stat_list=[12, 12, 12, 12, 12, "Test"])
         with self.assertRaises(
             RuntimeError, msg="Should not accept such large numbers"
         ):
-            Char_Gen.Character_Generator.Generate([12, 12, 12, 12, 12, 60])
+            Char_Gen.Character_Generator.Generate(stat_list=[12, 12, 12, 12, 12, 60])
         with self.assertRaises(Exception, msg="Should not accept so many inputs"):
             Char_Gen.Character_Generator.Generate(
                 ["Class", "Alignment", "Background", "Stats", "Race"],
