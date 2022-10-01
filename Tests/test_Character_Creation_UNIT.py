@@ -3,6 +3,9 @@ import thedmstoolkit.character_generation as Char_Gen
 from toolkit.models import Character, User
 from django.test import TestCase
 
+from toolkit.models import Character, User
+
+
 class PositiveTests(unittest.TestCase):
     """Testing for positive results from various character generation classes"""
 
@@ -333,63 +336,65 @@ class Negative_Tests(unittest.TestCase):
                 "Test",
             )
 
+
 class Arrange_Tests(TestCase):
     def setUp(self):
-        """Sets up the databases for the tests using Django tests"""        
-        tempUser=User(username = "Ronen",
-                      password = "test",
-                      email = "test@test.com")
+        """Sets up the databases for the tests using Django tests"""
+        tempUser = User(username="Ronen", password="test", email="test@test.com")
         tempUser.save()
-        tempCharacter = Character(Name = "Fred",
-                                  AccountOwner = User.objects.get(username="Ronen"),
-                                  Race = "Human",
-                                  Class = "Rogue",
-                                  Background = "Sailor",
-                                  Alignment = "Chaotic Evil",
-                                  Level = 1,
-                                  Experience = 0,
-                                  Strength = 1,
-                                  Dexterity = 1,
-                                  Constitution = 1,
-                                  Intelligence = 1,
-                                  Wisdom = 1,
-                                  Charisma = 1)
+        tempCharacter = Character(
+            Name="Fred",
+            AccountOwner=User.objects.get(username="Ronen"),
+            Race="Human",
+            Class="Rogue",
+            Background="Sailor",
+            Alignment="Chaotic Evil",
+            Level=1,
+            Experience=0,
+            Strength=1,
+            Dexterity=1,
+            Constitution=1,
+            Intelligence=1,
+            Wisdom=1,
+            Charisma=1,
+        )
         tempCharacter.save()
+
     def test_positive_arrange(self):
-        """Testing to make sure the arrange algorithm works
-        """        
+        """Testing to make sure the arrange algorithm works"""
         self.setUp()
-        testChar = Character.objects.get(Name = "Fred")
-        Char_Gen.Character_Generator.Arrange(testChar.pk, [18,16,14,12,10,8])
-        self.assertEqual(testChar.Strength,8)
-        self.assertEqual(testChar.Dexterity,18)
-        self.assertEqual(testChar.Constitution,16)
-        self.assertEqual(testChar.Intelligence,14)
-        self.assertEqual(testChar.Wisdom,10)
-        self.assertEqual(testChar.Charisma,12)
+        testChar = Character.objects.get(Name="Fred")
+        Char_Gen.Character_Generator.Arrange(testChar.pk, [18, 16, 14, 12, 10, 8])
+        self.assertEqual(testChar.Strength, 8)
+        self.assertEqual(testChar.Dexterity, 18)
+        self.assertEqual(testChar.Constitution, 16)
+        self.assertEqual(testChar.Intelligence, 14)
+        self.assertEqual(testChar.Wisdom, 10)
+        self.assertEqual(testChar.Charisma, 12)
         self.tearDown()
-        
+
     def test_negative_arrange(self):
         """
         Test the rejected cases of the arrange method:
             Non existing character
             Too small stat array
             Too Big stat array
-            Non integer in the stat array 
-        """        
+            Non integer in the stat array
+        """
         self.setUp()
-        with self.assertRaises(RuntimeError, msg = "Should not accept a non existing character"):
-            Char_Gen.Character_Generator.Arrange(10, [18,16,14,12,10,8])
-        testChar = Character.objects.get(Name = "Fred")
-        with self.assertRaises(RuntimeError, msg = "Should not accept a too small list"):
-            Char_Gen.Character_Generator.Arrange(testChar.pk, [18,16,14,12,10])
-        with self.assertRaises(RuntimeError, msg = "Should not accept a too big list"):
-            Char_Gen.Character_Generator.Arrange(testChar.pk, [18,16,14,12,10,8,6,4])
-        with self.assertRaises(RuntimeError, msg = "Should not accept a non integer in the list"):
-            Char_Gen.Character_Generator.Arrange(testChar.pk, [18,16,14,12,"Test"])
+        with self.assertRaises(
+            RuntimeError, msg="Should not accept a non existing character"
+        ):
+            Char_Gen.Character_Generator.Arrange(10, [18, 16, 14, 12, 10, 8])
+        testChar = Character.objects.get(Name="Fred")
+        with self.assertRaises(RuntimeError, msg="Should not accept a too small list"):
+            Char_Gen.Character_Generator.Arrange(testChar.pk, [18, 16, 14, 12, 10])
+        with self.assertRaises(RuntimeError, msg="Should not accept a too big list"):
+            Char_Gen.Character_Generator.Arrange(
+                testChar.pk, [18, 16, 14, 12, 10, 8, 6, 4]
+            )
+        with self.assertRaises(
+            RuntimeError, msg="Should not accept a non integer in the list"
+        ):
+            Char_Gen.Character_Generator.Arrange(testChar.pk, [18, 16, 14, 12, "Test"])
         self.tearDown()
-
-        
-        
-        
-        
