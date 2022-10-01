@@ -348,7 +348,7 @@ class Character_Generator:
         if type(stat_list) is list:
             if len(stat_list) != 6:
                 raise ValueError("Stat list length must be 6")
-        if type(stat_list) is list:
+            
             for i in stat_list:
                 if type(i) != int:
                     raise RuntimeError("Not all numbers in Stat array are integers")
