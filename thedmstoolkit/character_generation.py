@@ -1,5 +1,6 @@
 import random
 from typing import Callable, Optional, Union
+
 from toolkit.models import Character
 
 Generator = Callable[[int, int], int]
