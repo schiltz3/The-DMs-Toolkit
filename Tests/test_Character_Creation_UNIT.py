@@ -250,9 +250,7 @@ class Negative_Tests(unittest.TestCase):
         with self.assertRaises(
             RuntimeError, msg="Should not except nonapproved items in the list"
         ):
-            Char_Gen.Character_Generator.generate_background(
-                ["Adventurer"], "random"
-            )
+            Char_Gen.Character_Generator.generate_background(["Adventurer"], "random")
         with self.assertRaises(Exception, msg="Should not except that many inputs"):
             Char_Gen.Character_Generator.generate_background(
                 Char_Gen.Character_Generator.BACKGROUND_LIST, "random", "too many"
