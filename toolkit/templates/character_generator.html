@@ -3,429 +3,651 @@
 {% load static %}
 
 {% block application_pane %}
-
-<div class="character-header">
-    <img src={% static "Character_Header.png" %} alt="Character Header" style="width: 45%"/>
-</div>
-<div class="character-row">
+  <div class="character-header">
+    <img src
+         {% static "Character_Header.png" %}
+         alt="Character Header"
+         style="width: 45%"/>
+  </div>
+  <div class="character-row">
     <div class="character-name">
-        <label><h4>Character Name</h4><input class="big" name="form-character-name" id="form-character-name" maxlength="100" /></label>
+      <label>
+        <h4>Character Name</h4>
+        <input class="big"
+               name="form-character-name"
+               id="form-character-name"
+               maxlength="100"/>
+      </label>
     </div>
     <div class="character-info">
-        <label>Class<input class="small" name="form-character-class" id="form-character-class" maxlength="50" /></label>
-        <label>Background<input class="small" name="form-character-background" id="form-character-background" maxlength="50" /></label>
-        <label>Player Name<input class="small" name="form-character-player" id="form-character-player" maxlength="50" /></label>
-        <label>Race<input class="small" name="form-character-race" id="form-character-race" maxlength="50" /></label>
-        <label>Alignment<input class="small" name="form-character-alignment" id="form-character-alignment" maxlength="50" /></label>
-        <label>Experience Points<input class="small" name="form-character-experience" id="form-character-experience" maxlength="50" /></label>
+      <label>
+        Class
+        <input class="small"
+               name="form-character-class"
+               id="form-character-class"
+               maxlength="50"/>
+      </label>
+      <label>
+        Background
+        <input class="small"
+               name="form-character-background"
+               id="form-character-background"
+               maxlength="50"/>
+      </label>
+      <label>
+        Player Name
+        <input class="small"
+               name="form-character-player"
+               id="form-character-player"
+               maxlength="50"/>
+      </label>
+      <label>
+        Race
+        <input class="small"
+               name="form-character-race"
+               id="form-character-race"
+               maxlength="50"/>
+      </label>
+      <label>
+        Alignment
+        <input class="small"
+               name="form-character-alignment"
+               id="form-character-alignment"
+               maxlength="50"/>
+      </label>
+      <label>
+        Experience Points
+        <input class="small"
+               name="form-character-experience"
+               id="form-character-experience"
+               maxlength="50"/>
+      </label>
     </div>
     <div class="character-control">
-        <button class="green" type="button"><h4>GENERATE</h4></button> 
-        <button class="blue" type="button"><h4>SAVE</h4></button> 
-        <button class="purple" type="button"><h4>EXPORT</h4></button> 
+      <button class="green" type="button">
+        <h4>GENERATE</h4>
+      </button>
+      <button class="blue" type="button">
+        <h4>SAVE</h4>
+      </button>
+      <button class="purple" type="button">
+        <h4>EXPORT</h4>
+      </button>
     </div>
-</div>
-<div class="character-statblock">
+  </div>
+  <div class="character-statblock">
     <div class="character-stat">
-        <img src={% static "Character_UI_Stat.png" %} alt="Character UI Stat" style="width: 100%"/>
-        <div class="character-stat-title">
-            STRENGTH
-        </div>
-        <div class="character-stat-base">
-            <h3>10</h3>
-        </div>
-        <div class="character-stat-bonus">
-            <h4>+0</h4>
-        </div>
-    </div>
-    <div class="character-stat">
-        <img src={% static "Character_UI_Stat.png" %} alt="Character UI Stat" style="width: 100%"/>
-        <div class="character-stat-title">
-            DEXTERITY
-        </div>
-        <div class="character-stat-base">
-            <h3>10</h3>
-        </div>
-        <div class="character-stat-bonus">
-            <h4>+0</h4>
-        </div>
+      <img src
+           {% static "Character_UI_Stat.png" %}
+           alt="Character UI Stat"
+           style="width: 100%"/>
+      <div class="character-stat-title">STRENGTH</div>
+      <div class="character-stat-base">
+        <h3>10</h3>
+      </div>
+      <div class="character-stat-bonus">
+        <h4>+0</h4>
+      </div>
     </div>
     <div class="character-stat">
-        <img src={% static "Character_UI_Stat.png" %} alt="Character UI Stat" style="width: 100%"/>
-        <div class="character-stat-title">
-            CONSTITUTION
-        </div>
-        <div class="character-stat-base">
-            <h3>10</h3>
-        </div>
-        <div class="character-stat-bonus">
-            <h4>+0</h4>
-        </div>
+      <img src
+           {% static "Character_UI_Stat.png" %}
+           alt="Character UI Stat"
+           style="width: 100%"/>
+      <div class="character-stat-title">DEXTERITY</div>
+      <div class="character-stat-base">
+        <h3>10</h3>
+      </div>
+      <div class="character-stat-bonus">
+        <h4>+0</h4>
+      </div>
     </div>
     <div class="character-stat">
-        <img src={% static "Character_UI_Stat.png" %} alt="Character UI Stat" style="width: 100%"/>
-        <div class="character-stat-title">
-            INTELLIGENCE
-        </div>
-        <div class="character-stat-base">
-            <h3>10</h3>
-        </div>
-        <div class="character-stat-bonus">
-            <h4>+0</h4>
-        </div>
+      <img src
+           {% static "Character_UI_Stat.png" %}
+           alt="Character UI Stat"
+           style="width: 100%"/>
+      <div class="character-stat-title">CONSTITUTION</div>
+      <div class="character-stat-base">
+        <h3>10</h3>
+      </div>
+      <div class="character-stat-bonus">
+        <h4>+0</h4>
+      </div>
     </div>
     <div class="character-stat">
-        <img src={% static "Character_UI_Stat.png" %} alt="Character UI Stat" style="width: 100%"/>
-        <div class="character-stat-title">
-            WISDOM
-        </div>
-        <div class="character-stat-base">
-            <h3>10</h3>
-        </div>
-        <div class="character-stat-bonus">
-            <h4>+0</h4>
-        </div>
+      <img src
+           {% static "Character_UI_Stat.png" %}
+           alt="Character UI Stat"
+           style="width: 100%"/>
+      <div class="character-stat-title">INTELLIGENCE</div>
+      <div class="character-stat-base">
+        <h3>10</h3>
+      </div>
+      <div class="character-stat-bonus">
+        <h4>+0</h4>
+      </div>
     </div>
     <div class="character-stat">
-        <img src={% static "Character_UI_Stat.png" %} alt="Character UI Stat" style="width: 100%"/>
-        <div class="character-stat-title">
-            CHARISMA
-        </div>
-        <div class="character-stat-base">
-            <h3>10</h3>
-        </div>
-        <div class="character-stat-bonus">
-            <h4>+0</h4>
-        </div>
+      <img src
+           {% static "Character_UI_Stat.png" %}
+           alt="Character UI Stat"
+           style="width: 100%"/>
+      <div class="character-stat-title">WISDOM</div>
+      <div class="character-stat-base">
+        <h3>10</h3>
+      </div>
+      <div class="character-stat-bonus">
+        <h4>+0</h4>
+      </div>
     </div>
-</div>
-<div class="character-baseplate">
+    <div class="character-stat">
+      <img src
+           {% static "Character_UI_Stat.png" %}
+           alt="Character UI Stat"
+           style="width: 100%"/>
+      <div class="character-stat-title">CHARISMA</div>
+      <div class="character-stat-base">
+        <h3>10</h3>
+      </div>
+      <div class="character-stat-bonus">
+        <h4>+0</h4>
+      </div>
+    </div>
+  </div>
+  <div class="character-baseplate">
     <div class="character-plate">
-        <div style="text-align: center;">
-            <h4>PROFICIENCY</h4>
+      <div style="text-align: center;">
+        <h4>PROFICIENCY</h4>
+      </div>
+      <div class="character-panel">
+        <div style="width: 25%; float: center;">
+          <h5 style="font-weight: 800;">0</h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 25%; float: center;">
-                <h5 style="font-weight: 800;"> 0 </h5>
-            </div>
-            <div style="width: 50%; float: center;">
-                <h5> Proficiency Bonus </h5>
-            </div>
+        <div style="width: 50%; float: center;">
+          <h5>Proficiency Bonus</h5>
         </div>
-        <div style="text-align: center;">
-            <h4>SAVING THROWS</h4>
+      </div>
+      <div style="text-align: center;">
+        <h4>SAVING THROWS</h4>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-throw-strength"
+                 name="character-throw-strength">
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-throw-strength" name="character-throw-strength">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Strength </h5>
-            </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-throw-dexterity" name="character-throw-dexterity">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Dexterity </h5>
-            </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Strength
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-throw-constitution" name="character-throw-constitution">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Constitution </h5>
-            </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-throw-dexterity"
+                 name="character-throw-dexterity">
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-throw-intelligence" name="character-throw-intelligence">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Intelligence </h5>
-            </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-throw-wisdom" name="character-throw-wisdom">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Wisdom </h5>
-            </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Dexterity
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-throw-charisma" name="character-throw-charisma">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Charisma </h5>
-            </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-throw-constitution"
+                 name="character-throw-constitution">
         </div>
-    </div>
-    <div class="character-plate">
-        <div style="text-align: center;">
-            <h4>STATISTICS</h4>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 25%; float: center;">
-                <h5 style="font-weight: 800;"> 0 </h5>
-            </div>
-            <div style="width: 50%; float: center;">
-                <h5> Speed </h5>
-            </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Constitution
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 25%; float: center;">
-                <h5 style="font-weight: 800;"> 0 </h5>
-            </div>
-            <div style="width: 50%; float: center;">
-                <h5> Initiative </h5>
-            </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-throw-intelligence"
+                 name="character-throw-intelligence">
         </div>
-        <div class="character-panel">
-            <div style="width: 25%; float: center;">
-                <h5 style="font-weight: 800;"> 0 </h5>
-            </div>
-            <div style="width: 50%; float: center;">
-                <h5> Hit Points </h5>
-            </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 25%; float: center;">
-                <h5 style="font-weight: 800;"> 0 </h5>
-            </div>
-            <div style="width: 50%; float: center;">
-                <h5> Hit Dice </h5>
-            </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Intelligence
+          </h5>
         </div>
-    </div>
-    <div class="character-plate">
-        <div style="text-align: center;">
-            <h4>SKILLS 1</h4>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-throw-wisdom"
+                 name="character-throw-wisdom">
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-acrobatics" name="character-skill-acrobatics">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Acrobatics </h5>
-            </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-animal-handling" name="character-skill-animal-handling">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Animal Handling </h5>
-            </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Wisdom
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-arcana" name="character-skill-arcana">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Arcana </h5>
-            </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-throw-charisma"
+                 name="character-throw-charisma">
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-athletics" name="character-skill-athletics">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Athletics </h5>
-            </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-deception" name="character-skill-deception">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Deception </h5>
-            </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Charisma
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-history" name="character-skill-history">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> History </h5>
-            </div>
-        </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-insight" name="character-skill-insight">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Insight </h5>
-            </div>
-        </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-intimidation" name="character-skill-intimidation">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Intimidation </h5>
-            </div>
-        </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-investigation" name="character-skill-investigation">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Investigation </h5>
-            </div>
-        </div>
+      </div>
     </div>
     <div class="character-plate">
-        <div style="text-align: center;">
-            <h4>SKILLS 2</h4>
+      <div style="text-align: center;">
+        <h4>
+          STATISTICS
+        </h4>
+      </div>
+      <div class="character-panel">
+        <div style="width: 25%; float: center;">
+          <h5 style="font-weight: 800;">
+            0
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-medicine" name="character-skill-medicine">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Medicine </h5>
-            </div>
+        <div style="width: 50%; float: center;">
+          <h5>
+            Speed
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-nature" name="character-skill-nature">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Nature </h5>
-            </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 25%; float: center;">
+          <h5 style="font-weight: 800;">
+            0
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-perception" name="character-skill-perception">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Perception </h5>
-            </div>
+        <div style="width: 50%; float: center;">
+          <h5>
+            Initiative
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-performance" name="character-skill-performance">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Performance </h5>
-            </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 25%; float: center;">
+          <h5 style="font-weight: 800;">
+            0
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-persuasion" name="character-skill-persuasion">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Persuasion </h5>
-            </div>
+        <div style="width: 50%; float: center;">
+          <h5>
+            Hit Points
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-religion" name="character-skill-religion">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Religion </h5>
-            </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 25%; float: center;">
+          <h5 style="font-weight: 800;">
+            0
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-sleight-of-hand" name="character-skill-sleight-of-hand">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Sleight of Hand </h5>
-            </div>
+        <div style="width: 50%; float: center;">
+          <h5>
+            Hit Dice
+          </h5>
         </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-stealth" name="character-skill-stealth">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Stealth </h5>
-            </div>
-        </div>
-        <div class="character-panel">
-            <div style="width: 30%; float: left;">
-                <input type="checkbox" id="character-skill-survival" name="character-skill-survival">
-            </div>
-            <div style="width: 20%; float: left;">
-                <h5 style="font-weight: 700;"> +0 </h5>
-            </div>
-            <div style="width: 50%; float: left;">
-                <h5> Survival </h5>
-            </div>
-        </div>
+      </div>
     </div>
-</div>
+    <div class="character-plate">
+      <div style="text-align: center;">
+        <h4>
+          SKILLS 1
+        </h4>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-acrobatics"
+                 name="character-skill-acrobatics">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Acrobatics
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-animal-handling"
+                 name="character-skill-animal-handling">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Animal Handling
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-arcana"
+                 name="character-skill-arcana">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Arcana
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-athletics"
+                 name="character-skill-athletics">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Athletics
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-deception"
+                 name="character-skill-deception">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Deception
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-history"
+                 name="character-skill-history">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            History
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-insight"
+                 name="character-skill-insight">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Insight
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-intimidation"
+                 name="character-skill-intimidation">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Intimidation
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-investigation"
+                 name="character-skill-investigation">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Investigation
+          </h5>
+        </div>
+      </div>
+    </div>
+    <div class="character-plate">
+      <div style="text-align: center;">
+        <h4>
+          SKILLS 2
+        </h4>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-medicine"
+                 name="character-skill-medicine">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Medicine
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-nature"
+                 name="character-skill-nature">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Nature
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-perception"
+                 name="character-skill-perception">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Perception
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-performance"
+                 name="character-skill-performance">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Performance
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-persuasion"
+                 name="character-skill-persuasion">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Persuasion
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-religion"
+                 name="character-skill-religion">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Religion
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-sleight-of-hand"
+                 name="character-skill-sleight-of-hand">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Sleight of Hand
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-stealth"
+                 name="character-skill-stealth">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Stealth
+          </h5>
+        </div>
+      </div>
+      <div class="character-panel">
+        <div style="width: 30%; float: left;">
+          <input type="checkbox"
+                 id="character-skill-survival"
+                 name="character-skill-survival">
+        </div>
+        <div style="width: 20%; float: left;">
+          <h5 style="font-weight: 700;">
+            +0
+          </h5>
+        </div>
+        <div style="width: 50%; float: left;">
+          <h5>
+            Survival
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock application_pane %}
