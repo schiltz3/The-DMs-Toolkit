@@ -338,7 +338,7 @@ class Character_Generator:
             raise RuntimeError("Generator does not exist")
         for x in background_list:
             if x not in Character_Generator.BACKGROUND_LIST:
-               raise RuntimeError("Invalid List")
+                raise RuntimeError("Invalid List")
         return background_list[
             Character_Generator.Generators[GeneratorKey](0, len(background_list) - 1)
         ]
