@@ -454,7 +454,7 @@ class Character_Generator:
         for i in StatArray:
             if type(i) is not int:
                 raise RuntimeError("Non integer found in the list")
-            if not 0<i<=18:
+            if not 0 < i <= 18:
                 raise RuntimeError("Invalid number")
         CurrentCharacter = Character.objects.get(pk=CharacterID)
         CurrentClass = CurrentCharacter.Class
