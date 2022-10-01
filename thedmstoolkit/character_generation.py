@@ -449,7 +449,7 @@ class Character_Generator:
             RuntimeError: If the Array of integers is the wrong size
         """
         check = Character.objects.filter(id=CharacterID)
-        if len(StatArray)!=6:
+        if len(StatArray) != 6:
             raise RuntimeError("Not a valid list")
         if not check.exists():
             raise RuntimeError("Character does not exist")
@@ -458,7 +458,7 @@ class Character_Generator:
                 raise RuntimeError("Non integer found in the list")
             if not 0 < i <= 18:
                 raise RuntimeError("Invalid number")
-        if len(StatArray)!=6:
+        if len(StatArray) != 6:
             raise RuntimeError("Not a valid list")
         CurrentCharacter = Character.objects.get(id=CharacterID)
         CurrentClass = CurrentCharacter.Class

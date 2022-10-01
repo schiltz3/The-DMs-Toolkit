@@ -1,7 +1,8 @@
-
 import unittest
+
 import django
 from django.test import TestCase
+
 import thedmstoolkit.character_generation as Char_Gen
 from toolkit.models import Character, User
 django.setup()
@@ -343,7 +344,7 @@ class Arrange_Tests(unittest.TestCase):
 
     Args:
         TestCase (_type_): Django Test Case
-    """   
+    """
 
     def test_positive_arrange(self):
         """Testing to make sure the arrange algorithm works"""
@@ -366,7 +367,7 @@ class Arrange_Tests(unittest.TestCase):
             Charisma=1,
         )
         tempCharacter.save()
-        
+
         testChar = Character.objects.get(Name="Fred")
         Char_Gen.Character_Generator.Arrange(testChar.id, [18, 16, 14, 12, 10, 8])
         testChar = Character.objects.get(Name="Fred")
@@ -403,15 +404,15 @@ class Arrange_Tests(unittest.TestCase):
             Wisdom=1,
             Charisma=1,
         )
-        tempCharacter.save()    
+        tempCharacter.save()
         testChar = Character.objects.get(Name="Fred2")
-        print (testChar.id)    
+        print(testChar.id)
         with self.assertRaises(
             RuntimeError, msg="Should not accept a non existing character"
         ):
             Char_Gen.Character_Generator.Arrange(10, [18, 16, 14, 12, 10, 8])
         testChar = Character.objects.get(Name="Fred2")
-        print (testChar.id)
+        print(testChar.id)
         with self.assertRaises(RuntimeError, msg="Should not accept a too small list"):
             Char_Gen.Character_Generator.Arrange(testChar.id, [18, 16, 14, 12, 10])
         with self.assertRaises(RuntimeError, msg="Should not accept a too big list"):
