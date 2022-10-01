@@ -241,7 +241,7 @@ class Character_Generator:
         Returns:
             String: Race
         """
-        if GeneratorKey not in self.Generators.keys():
+        if GeneratorKey not in self.Generators:
             raise RuntimeError("Generator does not exist")
         if race_list not in self.RACE_DICT.items():
             raise RuntimeError("Invalid List")
@@ -258,7 +258,7 @@ class Character_Generator:
         Returns:
             String: the random class
         """
-        if GeneratorKey not in self.Generators.keys():
+        if GeneratorKey not in self.Generators:
             raise RuntimeError("Generator does not exist")
         if class_list not in self.CLASS_DICT.items():
             raise RuntimeError("Invalid List")
@@ -275,7 +275,7 @@ class Character_Generator:
         Returns:
             String: Alignment
         """
-        if GeneratorKey not in self.Generators.keys():
+        if GeneratorKey not in self.Generators:
             raise RuntimeError("Generator does not exist")
         if alignment_list not in self.ALIGNMENT_DICT.items():
             raise RuntimeError("Invalid List")
@@ -291,7 +291,7 @@ class Character_Generator:
             background_list (str): background
             generator (Callable): random number generator
         """
-        if GeneratorKey not in self.Generators.keys():
+        if GeneratorKey not in self.Generators:
             raise RuntimeError("Generator does not exist")
         if background_list != self.BACKGROUND_LIST:
             raise RuntimeError("Invalid List")
