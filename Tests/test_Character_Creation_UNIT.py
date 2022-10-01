@@ -167,7 +167,9 @@ class PositiveTests(TestCase):
             self.assertEqual(i, 12)
 
         test_generated = Char_Gen.Character_Generator.Generate(
-            generations_list=["Stats", "Alignment"], alignment_key="Evil", stat_list=[13, 13, 13, 13, 13, 13]
+            generations_list=["Stats", "Alignment"],
+            alignment_key="Evil",
+            stat_list=[13, 13, 13, 13, 13, 13],
         )
         self.assertEqual(len(test_generated), 2)
         self.assertTrue(
@@ -307,7 +309,9 @@ class Negative_Tests(TestCase):
         with self.assertRaises(ValueError, msg="Should not accept such small arrays"):
             Char_Gen.Character_Generator.Generate(stat_list=[12, 12, 12, 12])
         with self.assertRaises(RuntimeError, msg="Should not accept non integers"):
-            Char_Gen.Character_Generator.Generate(stat_list=[12, 12, 12, 12, 12, "Test"])
+            Char_Gen.Character_Generator.Generate(
+                stat_list=[12, 12, 12, 12, 12, "Test"]
+            )
         with self.assertRaises(
             RuntimeError, msg="Should not accept such large numbers"
         ):
