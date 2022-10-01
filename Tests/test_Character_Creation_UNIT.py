@@ -340,7 +340,7 @@ class Negative_Tests(TestCase):
 class Arrange_Tests(unittest.TestCase):
     """
     Contains the various methods testing the arrange method for character creation
-    
+
     Args:
         TestCase (_type_): Django Test Case
     """   
