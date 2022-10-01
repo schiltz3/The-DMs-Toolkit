@@ -396,25 +396,27 @@ class Character_Generator:
         generated: dict[str, Union[list[int], str]] = {}
         if "Stats" in generations_list:
             if type(stat_list) is list:
-                generated["Stats"] = stat_list 
+                generated["Stats"] = stat_list
             else:
-                generated["Stats"] = Character_Generator.generate_stat_list(stat_generator_key)
+                generated["Stats"] = Character_Generator.generate_stat_list(
+                    stat_generator_key
+                )
         if "Race" in generations_list:
-            generated["Race"]= Character_Generator.generate_race(
-                        Character_Generator.RACE_DICT[race_key], GeneratorKey
-                    )
+            generated["Race"] = Character_Generator.generate_race(
+                Character_Generator.RACE_DICT[race_key], GeneratorKey
+            )
         if "Class" in generations_list:
             generated["Class"] = Character_Generator.generate_class(
-                        Character_Generator.CLASS_DICT[class_key], GeneratorKey
-                    )
+                Character_Generator.CLASS_DICT[class_key], GeneratorKey
+            )
         if "Alignment" in generations_list:
-            generated["Alignment"]= Character_Generator.generate_alignment(
-                        Character_Generator.ALIGNMENT_DICT[alignment_key], GeneratorKey
-                    )
+            generated["Alignment"] = Character_Generator.generate_alignment(
+                Character_Generator.ALIGNMENT_DICT[alignment_key], GeneratorKey
+            )
         if "Background" in generations_list:
-            generated["Background"]= Character_Generator.generate_background(
-                        Character_Generator.BACKGROUND_LIST, GeneratorKey
-                    )
+            generated["Background"] = Character_Generator.generate_background(
+                Character_Generator.BACKGROUND_LIST, GeneratorKey
+            )
         return generated
 
     @staticmethod
