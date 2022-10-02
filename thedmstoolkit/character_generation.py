@@ -374,7 +374,7 @@ class Character_Generator:
         print(type(stat_list))
         if type(stat_list) is not list and stat_list is not None:
             raise ValueError("Improper Argument in stat list")
-        elif type(stat_list) is list:
+        if type(stat_list) is list:
             if len(stat_list) != 6:
                 raise ValueError("Stat list length must be 6")
 
