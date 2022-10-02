@@ -351,7 +351,7 @@ class Character_Generator:
         class_key="All",
         alignment_key="All",
         generator_key="random",
-        stat_list=Optional[list[int]],
+        stat_list:Optional[list[int]]=None,
     ) -> dict[str, Union[list[int], str]]:
         """Given generator parameters, return a dictionary of character characteristics
 
@@ -371,7 +371,10 @@ class Character_Generator:
             dict[str, list[int] | str]: Generated Characteristics
         """
 
-        if type(stat_list) is list:
+        print(type(stat_list))
+        if type(stat_list) is not list and stat_list is not None:
+            raise ValueError("Improper Argument in stat list")
+        elif type(stat_list) is list:
             if len(stat_list) != 6:
                 raise ValueError("Stat list length must be 6")
 
