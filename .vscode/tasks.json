@@ -21,6 +21,35 @@
         "revealProblems": "onProblem",
         "close": false
       }
+    },
+    {
+      "label": "test",
+      "type": "shell",
+      "windows": {
+        "command": "python",
+        "args": ["${workspaceFolder}\\manage.py", "test", "${input:test_path}"]
+      },
+      "command": "python",
+      "args": ["${workspaceFolder}/manage.py", "test", "${input:test_path}"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": false,
+        "revealProblems": "onProblem",
+        "close": false
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "test_path",
+      "description": "Python import path to class to test",
+      "default": "",
+      "type": "promptString"
     }
   ]
 }
