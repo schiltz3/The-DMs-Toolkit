@@ -61,6 +61,10 @@ h3 {
     font-weight: 500;
 }
 
+h5 {
+    font-size: 2vh;
+}
+
 .navbar-expand-lg {
     background-color: #7D8B8C;
     padding-left: 5rem !important;
@@ -99,4 +103,151 @@ img {
     border-radius: 15px;
     max-height: 100%;
     max-width: 100%;
+}
+
+.character-header {
+    background-color: #D9CAAB;
+    display:flex;
+    min-height: 85px;
+}
+
+.character-row {
+    display: flex;
+}
+
+.character-name {
+    align-items: center;
+    background-color: #7D8B8C;
+    display: flex;
+    float: left;
+    justify-content: left;
+    padding: 1%;
+    width: 30%;
+}
+
+.character-info {
+    background-color:  #7D8B8C;
+    display: grid;
+    float: left;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    padding: 1%;
+    width: 40%;
+}
+
+.character-control {
+    align-items: center;
+    background-color: #7D8B8C;
+    column-gap: 5%;
+    display: grid;
+    float: left;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-content: center;
+    padding: 1%;
+    width: 30%;
+}
+
+.character-statblock {
+    background-color: #D9CAAB;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-items: center;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    row-gap: 1vh;
+    width: 100%;
+}
+
+.character-stat {
+    align-items: center;
+    background-color: tan;
+    display: flex;
+    justify-content: center;
+    padding: 1%;
+    position: relative;
+    text-align: center;
+    width: 50%;
+}
+
+.character-stat-title {
+    font-size: 85%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -270%);
+}
+
+.character-stat-base {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.character-stat-bonus {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, 90%);
+}
+
+.character-baseplate {
+    background-color: #7D8B8C;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding-bottom: 4vh;
+    padding-top: 4vh;
+    justify-items: center;
+    row-gap: 1vh;
+    width: 100%;
+}
+
+.character-plate {
+    background-color: tan;
+    border-radius: 10%;
+    padding: 2%;
+    min-width: 80%;
+}
+
+.character-panel {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border-radius: 20%;
+    color: white;
+    display: inline-block;
+    height: 90%;
+    text-align: center;
+    width: 100%;
+    }
+    .green {
+    background-color: #55bd6b;
+    }
+    .blue {
+    background-color: #B6D6D9;
+    }
+    .purple {
+    background-color: #A8A0D9;
+    }
+
+button:hover {
+    background-color: #4D5657;
+}
+
+input.small {
+    display: flex;
+    position: relative;
+}
+
+input.big {
+    display: flex;
+    font-size: 2rem;
+    position: relative;
+    width: 100%;
+}
+
+input[type=checkbox] {
+    height: 1.5em;
+    width: 100%;
 }
