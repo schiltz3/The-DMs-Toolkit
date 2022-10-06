@@ -12,64 +12,51 @@
     <div class="character-name">
       <label>
         <h4>Character Name</h4>
-        <input class="big"
-               name="form-character-name"
-               id="form-character-name"
-               maxlength="100"/>
+        {{ form.name }}
+        {% for error in  form.name.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
       </label>
     </div>
     <div class="character-info">
       <label>
         Class
-        <input class="small"
-               name="form-character-class"
-               id="form-character-class"
-               maxlength="50"/>
+        {{ form.clazz }}
+        {% for error in  form.clazz.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
       </label>
       <label>
         Background
-        <input class="small"
-               name="form-character-background"
-               id="form-character-background"
-               maxlength="50"/>
+        {{ form.background }}
+        {% for error in  form.background.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
       </label>
       <label>
         Player Name
-        <input class="small"
-               name="form-character-player"
-               id="form-character-player"
-               maxlength="50"/>
+        {{ form.player_name }}
+        {% for error in  form.player_name.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
       </label>
       <label>
         Race
-        <input class="small"
-               name="form-character-race"
-               id="form-character-race"
-               maxlength="50"/>
+        {{form.race }}
+        {% for error in form.race.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
       </label>
       <label>
         Alignment
-        <input class="small"
-               name="form-character-alignment"
-               id="form-character-alignment"
-               maxlength="50"/>
+        {{ form.alignment }}
+        {% for error in  form.alignment.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
       </label>
       <label>
         Experience Points
-        <input class="small"
-               name="form-character-experience"
-               id="form-character-experience"
-               maxlength="50"/>
+        {{ form.experience_points }}
+        {% for error in form.experience_points.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
       </label>
     </div>
     <div class="character-control">
-      <button class="green" type="button">
+
+      <button class="green" type="submit" name="generate">
         <h4>GENERATE</h4>
       </button>
-      <button class="blue" type="button">
+      <button class="blue" type="submit" name="save">
         <h4>SAVE</h4>
       </button>
-      <button class="purple" type="button">
+      <button class="purple" type="submit" name="export">
         <h4>EXPORT</h4>
       </button>
     </div>

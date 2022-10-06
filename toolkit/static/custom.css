@@ -251,3 +251,15 @@ input[type=checkbox] {
     height: 1.5em;
     width: 100%;
 }
+
+form-control.small {
+    display: flex;
+    position: relative;
+}
+
+form-control.big {
+    display: flex;
+    font-size: 2rem;
+    position: relative;
+    width: 100%;
+}
