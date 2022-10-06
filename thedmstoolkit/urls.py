@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path
 
 from toolkit.views.bootstrap_test import BootstrapTest
-from toolkit.views.CharacterGenerator import CharacterGenerator
+from toolkit.views.character_generator.character_generator import CharacterGenerator
 from toolkit.views.confirm_account_creation import ConfirmAccountCreation
 from toolkit.views.create_account import CreateAccount
 from toolkit.views.EncounterGenerator import EncounterGenerator
