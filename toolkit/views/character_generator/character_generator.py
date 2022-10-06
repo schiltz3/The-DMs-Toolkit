@@ -44,7 +44,7 @@ class CharacterGenerator(View):
         class_keys_type = type(self.generator.CLASS_DICT.keys())
         print(class_keys_type)
         print(class_keys)
-        self.context["form"] = GenerateCharacterForm({"clazz": "hi"})
+        self.context["form"] = GenerateCharacterForm({"clazz": "All"})
 
         return render(request, "character_generator.html", self.context)
 
@@ -90,11 +90,10 @@ class GenerateCharacterForm(Form):
     )
     clazz = ChoiceField(
         required=False,
-        widget=Select(
-            attrs={"class": " form-control", "maxlength": 50},
-            # choices=Character_Generator.CLASS_DICT.items(),
-        ),
-        choices=Character_Generator.CLASS_DICT.items(),
+        # widget=Select(
+        #     attrs={"class": "dropdown btn dropdown-toggle", "maxlength": 50},
+        # ),
+        choices=[(key, key) for key in Character_Generator.CLASS_DICT.keys()],
     )
     background = CharField(
         required=False,

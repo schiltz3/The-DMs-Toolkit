@@ -20,6 +20,14 @@
       <label>
         Class
         {{ form.clazz }}
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          Class
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        {% for choice in form.clazz %}
+          <li><a class="dropdown-item" href="#">{{choice}}</a></li>
+        {% endfor %}
+        </ul>
         {% for error in  form.clazz.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
       </label>
       <label>
