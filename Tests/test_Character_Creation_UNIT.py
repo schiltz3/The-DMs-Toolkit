@@ -3,7 +3,7 @@ import unittest
 import django
 from django.test import TestCase
 
-import thedmstoolkit.character_generation as Char_Gen
+import toolkit.views.character_generator.character_generation as Char_Gen
 from toolkit.models import Character, User
 
 django.setup()
