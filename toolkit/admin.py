@@ -1,8 +1,17 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Character, Armor, Weapon, GenericItem, MagicItem, GeneratedLoot, Tag, Monster, GeneratedEncounter
-
+from .models import (
+    Armor,
+    Character,
+    GeneratedEncounter,
+    GeneratedLoot,
+    GenericItem,
+    MagicItem,
+    Monster,
+    Tag,
+    Weapon,
+)
 
 admin.site.register(Character)
 admin.site.register(Armor)
