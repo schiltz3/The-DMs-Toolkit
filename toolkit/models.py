@@ -203,7 +203,7 @@ class GeneratedEncounter(models.Model):
     Encounter_Type = models.CharField(max_length = 20)
     Number_Of_Characters = models.IntegerField()
     Average_Character_Levels = models.FloatField()
-    Reward = models.OneToOneField(GeneratedLoot, on_delete = models.SET_NULL, null = True)
+    Reward = models.OneToOneField(GeneratedLoot, on_delete = models.SET_NULL, null = True, blank = True)
     Encounter_Tags = models.ManyToManyField(Tag, blank = True)
     Monsters = models.ManyToManyField(Monster)
 
