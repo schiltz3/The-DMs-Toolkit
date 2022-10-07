@@ -264,10 +264,10 @@ class Character_Generator:
         for x in race_list:
             if x not in Character_Generator.RACE_DICT["All"]:
                 raise RuntimeError("Invalid List")
-        Race: str = race_list[
+        race: str = race_list[
             Character_Generator.Generators[generator_key](0, len(race_list) - 1)
         ]
-        return Race
+        return race
 
     @staticmethod
     def generate_class(class_list: list[str], generator_key: str) -> str:
@@ -423,7 +423,7 @@ class Character_Generator:
         return generated
 
     @staticmethod
-    def Arrange(CharacterID, StatArray):
+    def Arrange(character_id, stat_array):
         """
         Given a character ID and a 6 number array it
         arranges the numbers in an optimal allocation for any given class
@@ -432,110 +432,110 @@ class Character_Generator:
             RuntimeError: If the character is does not exist
             RuntimeError: If the Array of integers is the wrong size
         """
-        check = Character.objects.filter(id=CharacterID)
-        if len(StatArray) != 6:
+        check_existence = Character.objects.filter(id=character_id)
+        if len(stat_array) != 6:
             raise RuntimeError("Not a valid list")
-        if not check.exists():
+        if not check_existence.exists():
             raise RuntimeError("Character does not exist")
-        for i in StatArray:
+        for i in stat_array:
             if type(i) is not int:
                 raise RuntimeError("Non integer found in the list")
             if not 0 < i <= 18:
                 raise RuntimeError("Invalid number")
-        if len(StatArray) != 6:
+        if len(stat_array) != 6:
             raise RuntimeError("Not a valid list")
-        CurrentCharacter = Character.objects.get(id=CharacterID)
-        CurrentClass = CurrentCharacter.Class
-        StatArray = sorted(StatArray)
-        if CurrentClass == "Artificer":
-            CurrentCharacter.Strength = StatArray[0]
-            CurrentCharacter.Dexterity = StatArray[3]
-            CurrentCharacter.Constitution = StatArray[4]
-            CurrentCharacter.Intelligence = StatArray[5]
-            CurrentCharacter.Wisdom = StatArray[2]
-            CurrentCharacter.Charisma = StatArray[1]
-        elif CurrentClass == "Barbarian":
-            CurrentCharacter.Strength = StatArray[5]
-            CurrentCharacter.Dexterity = StatArray[3]
-            CurrentCharacter.Constitution = StatArray[4]
-            CurrentCharacter.Intelligence = StatArray[0]
-            CurrentCharacter.Wisdom = StatArray[2]
-            CurrentCharacter.Charisma = StatArray[1]
-        elif CurrentClass == "Bard":
-            CurrentCharacter.Strength = StatArray[1]
-            CurrentCharacter.Dexterity = StatArray[4]
-            CurrentCharacter.Constitution = StatArray[3]
-            CurrentCharacter.Intelligence = StatArray[0]
-            CurrentCharacter.Wisdom = StatArray[1]
-            CurrentCharacter.Charisma = StatArray[5]
-        elif CurrentClass == "Cleric":
-            CurrentCharacter.Strength = StatArray[3]
-            CurrentCharacter.Dexterity = StatArray[2]
-            CurrentCharacter.Constitution = StatArray[4]
-            CurrentCharacter.Intelligence = StatArray[0]
-            CurrentCharacter.Wisdom = StatArray[5]
-            CurrentCharacter.Charisma = StatArray[1]
-        elif CurrentClass == "Druid":
-            CurrentCharacter.Strength = StatArray[2]
-            CurrentCharacter.Dexterity = StatArray[3]
-            CurrentCharacter.Constitution = StatArray[4]
-            CurrentCharacter.Intelligence = StatArray[1]
-            CurrentCharacter.Wisdom = StatArray[5]
-            CurrentCharacter.Charisma = StatArray[0]
-        elif CurrentClass == "Fighter":
-            CurrentCharacter.Strength = StatArray[5]
-            CurrentCharacter.Dexterity = StatArray[3]
-            CurrentCharacter.Constitution = StatArray[4]
-            CurrentCharacter.Intelligence = StatArray[0]
-            CurrentCharacter.Wisdom = StatArray[2]
-            CurrentCharacter.Charisma = StatArray[1]
-        elif CurrentClass == "Monk":
-            CurrentCharacter.Strength = StatArray[2]
-            CurrentCharacter.Dexterity = StatArray[5]
-            CurrentCharacter.Constitution = StatArray[3]
-            CurrentCharacter.Intelligence = StatArray[1]
-            CurrentCharacter.Wisdom = StatArray[4]
-            CurrentCharacter.Charisma = StatArray[0]
-        elif CurrentClass == "Paladin":
-            CurrentCharacter.Strength = StatArray[5]
-            CurrentCharacter.Dexterity = StatArray[2]
-            CurrentCharacter.Constitution = StatArray[3]
-            CurrentCharacter.Intelligence = StatArray[0]
-            CurrentCharacter.Wisdom = StatArray[1]
-            CurrentCharacter.Charisma = StatArray[4]
-        elif CurrentClass == "Ranger":
-            CurrentCharacter.Strength = StatArray[2]
-            CurrentCharacter.Dexterity = StatArray[5]
-            CurrentCharacter.Constitution = StatArray[4]
-            CurrentCharacter.Intelligence = StatArray[1]
-            CurrentCharacter.Wisdom = StatArray[3]
-            CurrentCharacter.Charisma = StatArray[0]
-        elif CurrentClass == "Rogue":
-            CurrentCharacter.Strength = StatArray[0]
-            CurrentCharacter.Dexterity = StatArray[5]
-            CurrentCharacter.Constitution = StatArray[4]
-            CurrentCharacter.Intelligence = StatArray[3]
-            CurrentCharacter.Wisdom = StatArray[1]
-            CurrentCharacter.Charisma = StatArray[2]
-        elif CurrentClass == "Sorcerer":
-            CurrentCharacter.Strength = StatArray[0]
-            CurrentCharacter.Dexterity = StatArray[3]
-            CurrentCharacter.Constitution = StatArray[4]
-            CurrentCharacter.Intelligence = StatArray[2]
-            CurrentCharacter.Wisdom = StatArray[1]
-            CurrentCharacter.Charisma = StatArray[5]
-        elif CurrentClass == "Warlock":
-            CurrentCharacter.Strength = StatArray[1]
-            CurrentCharacter.Dexterity = StatArray[3]
-            CurrentCharacter.Constitution = StatArray[4]
-            CurrentCharacter.Intelligence = StatArray[2]
-            CurrentCharacter.Wisdom = StatArray[0]
-            CurrentCharacter.Charisma = StatArray[5]
-        elif CurrentClass == "Wizard":
-            CurrentCharacter.Strength = StatArray[0]
-            CurrentCharacter.Dexterity = StatArray[3]
-            CurrentCharacter.Constitution = StatArray[4]
-            CurrentCharacter.Intelligence = StatArray[5]
-            CurrentCharacter.Wisdom = StatArray[2]
-            CurrentCharacter.Charisma = StatArray[1]
-        CurrentCharacter.save()
+        current_character = Character.objects.get(id=character_id)
+        current_class = current_character.Class
+        stat_array = sorted(stat_array)
+        if current_class == "Artificer":
+            current_character.Strength = stat_array[0]
+            current_character.Dexterity = stat_array[3]
+            current_character.Constitution = stat_array[4]
+            current_character.Intelligence = stat_array[5]
+            current_character.Wisdom = stat_array[2]
+            current_character.Charisma = stat_array[1]
+        elif current_class == "Barbarian":
+            current_character.Strength = stat_array[5]
+            current_character.Dexterity = stat_array[3]
+            current_character.Constitution = stat_array[4]
+            current_character.Intelligence = stat_array[0]
+            current_character.Wisdom = stat_array[2]
+            current_character.Charisma = stat_array[1]
+        elif current_class == "Bard":
+            current_character.Strength = stat_array[1]
+            current_character.Dexterity = stat_array[4]
+            current_character.Constitution = stat_array[3]
+            current_character.Intelligence = stat_array[0]
+            current_character.Wisdom = stat_array[1]
+            current_character.Charisma = stat_array[5]
+        elif current_class == "Cleric":
+            current_character.Strength = stat_array[3]
+            current_character.Dexterity = stat_array[2]
+            current_character.Constitution = stat_array[4]
+            current_character.Intelligence = stat_array[0]
+            current_character.Wisdom = stat_array[5]
+            current_character.Charisma = stat_array[1]
+        elif current_class == "Druid":
+            current_character.Strength = stat_array[2]
+            current_character.Dexterity = stat_array[3]
+            current_character.Constitution = stat_array[4]
+            current_character.Intelligence = stat_array[1]
+            current_character.Wisdom = stat_array[5]
+            current_character.Charisma = stat_array[0]
+        elif current_class == "Fighter":
+            current_character.Strength = stat_array[5]
+            current_character.Dexterity = stat_array[3]
+            current_character.Constitution = stat_array[4]
+            current_character.Intelligence = stat_array[0]
+            current_character.Wisdom = stat_array[2]
+            current_character.Charisma = stat_array[1]
+        elif current_class == "Monk":
+            current_character.Strength = stat_array[2]
+            current_character.Dexterity = stat_array[5]
+            current_character.Constitution = stat_array[3]
+            current_character.Intelligence = stat_array[1]
+            current_character.Wisdom = stat_array[4]
+            current_character.Charisma = stat_array[0]
+        elif current_class == "Paladin":
+            current_character.Strength = stat_array[5]
+            current_character.Dexterity = stat_array[2]
+            current_character.Constitution = stat_array[3]
+            current_character.Intelligence = stat_array[0]
+            current_character.Wisdom = stat_array[1]
+            current_character.Charisma = stat_array[4]
+        elif current_class == "Ranger":
+            current_character.Strength = stat_array[2]
+            current_character.Dexterity = stat_array[5]
+            current_character.Constitution = stat_array[4]
+            current_character.Intelligence = stat_array[1]
+            current_character.Wisdom = stat_array[3]
+            current_character.Charisma = stat_array[0]
+        elif current_class == "Rogue":
+            current_character.Strength = stat_array[0]
+            current_character.Dexterity = stat_array[5]
+            current_character.Constitution = stat_array[4]
+            current_character.Intelligence = stat_array[3]
+            current_character.Wisdom = stat_array[1]
+            current_character.Charisma = stat_array[2]
+        elif current_class == "Sorcerer":
+            current_character.Strength = stat_array[0]
+            current_character.Dexterity = stat_array[3]
+            current_character.Constitution = stat_array[4]
+            current_character.Intelligence = stat_array[2]
+            current_character.Wisdom = stat_array[1]
+            current_character.Charisma = stat_array[5]
+        elif current_class == "Warlock":
+            current_character.Strength = stat_array[1]
+            current_character.Dexterity = stat_array[3]
+            current_character.Constitution = stat_array[4]
+            current_character.Intelligence = stat_array[2]
+            current_character.Wisdom = stat_array[0]
+            current_character.Charisma = stat_array[5]
+        elif current_class == "Wizard":
+            current_character.Strength = stat_array[0]
+            current_character.Dexterity = stat_array[3]
+            current_character.Constitution = stat_array[4]
+            current_character.Intelligence = stat_array[5]
+            current_character.Wisdom = stat_array[2]
+            current_character.Charisma = stat_array[1]
+        current_character.save()
