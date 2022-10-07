@@ -25,6 +25,7 @@ here
                    name="username"
                    class="form-control"
                    id="username"
+                   {% if username %} value="{{ username }}"{% endif %}
                    required/>
           </div>
           <div class="mb-3">
