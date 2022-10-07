@@ -5,8 +5,9 @@ from django.db import models
 
 
 class Character(models.Model):
-
-    """Creates Characters
+    """
+    Creates Characters
+    
     Args:         
         Name (String): max_length = 20, What is the character's name
         AccountOwner (ForeignKey): On delete of the owner delete all characters owned by them, Who owns this character
