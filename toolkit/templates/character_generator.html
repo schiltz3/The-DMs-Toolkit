@@ -4,7 +4,8 @@
 
 {% block application_pane %}
   <div class="character-header">
-    <img src={% static "Character_Header.png" %}
+    <img src
+         {% static "Character_Header.png" %}
          alt="Character Header"
          style="width: 45%"/>
   </div>
@@ -12,52 +13,51 @@
     <div class="character-name">
       <label>
         <h4>Character Name</h4>
-        {{ form.name }}
-        {% for error in  form.name.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
+        {{ data.name }}
       </label>
     </div>
     <div class="character-info">
       <label>
         Class
-        {{ form.clazz }}
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          Class
-        </a>
+        <button class="btn btn-secondary dropdown-toggle"
+                type="submit"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+          {{ data.clazz }}
+        </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        {% for choice in form.clazz %}
-          <li><a class="dropdown-item" href="#">{{choice}}</a></li>
-        {% endfor %}
+          {% for choice in clazz_list %}
+            <li>
+              <a class="dropdown-item" href="#">{{ choice }}</a>
+            </li>
+          {% endfor %}
         </ul>
-        {% for error in  form.clazz.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
       </label>
       <label>
         Background
-        {{ form.background }}
-        {% for error in  form.background.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
+        {{ data.background }}
       </label>
       <label>
         Player Name
-        {{ form.player_name }}
-        {% for error in  form.player_name.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
+        {{ data.player_name }}
       </label>
       <label>
         Race
-        {{form.race }}
-        {% for error in form.race.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
+        {{ data.race }}
       </label>
       <label>
         Alignment
-        {{ form.alignment }}
-        {% for error in  form.alignment.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
+        {{ data.alignment }}
       </label>
       <label>
         Experience Points
-        {{ form.experience_points }}
-        {% for error in form.experience_points.errors %}<div class="alert alert-danger">{{ error }}</div>{% endfor %}
+        {{ data.experience_points }}
       </label>
     </div>
     <div class="character-control">
-
       <button class="green" type="submit" name="generate">
         <h4>GENERATE</h4>
       </button>
@@ -83,7 +83,7 @@
       </div>
     </div>
     <div class="character-stat">
-      <img src={% static "Character_UI_Stat.png" %}
+      <img src = {% static "Character_UI_Stat.png" %}
            alt="Character UI Stat"
            style="width: 100%"/>
       <div class="character-stat-title">DEXTERITY</div>
@@ -95,7 +95,7 @@
       </div>
     </div>
     <div class="character-stat">
-      <img src={% static "Character_UI_Stat.png" %}
+      <img src= {% static "Character_UI_Stat.png" %}
            alt="Character UI Stat"
            style="width: 100%"/>
       <div class="character-stat-title">CONSTITUTION</div>
@@ -107,7 +107,7 @@
       </div>
     </div>
     <div class="character-stat">
-      <img src={% static "Character_UI_Stat.png" %}
+      <img src = {% static "Character_UI_Stat.png" %}
            alt="Character UI Stat"
            style="width: 100%"/>
       <div class="character-stat-title">INTELLIGENCE</div>
@@ -119,7 +119,7 @@
       </div>
     </div>
     <div class="character-stat">
-      <img src={% static "Character_UI_Stat.png" %}
+      <img src = {% static "Character_UI_Stat.png" %}
            alt="Character UI Stat"
            style="width: 100%"/>
       <div class="character-stat-title">WISDOM</div>
@@ -131,7 +131,7 @@
       </div>
     </div>
     <div class="character-stat">
-      <img src={% static "Character_UI_Stat.png" %}
+      <img src = {% static "Character_UI_Stat.png" %}
            alt="Character UI Stat"
            style="width: 100%"/>
       <div class="character-stat-title">CHARISMA</div>
@@ -153,11 +153,15 @@
           <h5 style="font-weight: 800;">0</h5>
         </div>
         <div style="width: 50%; float: center;">
-          <h5>Proficiency Bonus</h5>
+          <h5>
+            Proficiency Bonus
+          </h5>
         </div>
       </div>
       <div style="text-align: center;">
-        <h4>SAVING THROWS</h4>
+        <h4>
+          SAVING THROWS
+        </h4>
       </div>
       <div class="character-panel">
         <div style="width: 30%; float: left; text-align: center;">

@@ -1,14 +1,13 @@
+from dataclasses import dataclass
+from turtle import back
 from django.shortcuts import render
 from django.views import View
-from typing import Any, Optional
 
-from django.contrib.auth.models import User
 from django.forms import (
     CharField,
     Form,
     TextInput,
     Select,
-    TypedChoiceField,
     ChoiceField,
 )
 from django.http.request import HttpRequest
@@ -27,14 +26,7 @@ class CharacterGenerator(View):
     def __init__(self, **kwargs):
         super(CharacterGenerator, self).__init__(**kwargs)
 
-        self.context: dict[str, any] = {
-            "strength": 0,
-            "dexterity": 0,
-            "constitution": 0,
-            "intelligence": 0,
-            "wisdom": 0,
-            "charisma": 0,
-        }
+        self.context: dict[str, any] = {}
         self.generator = Character_Generator()
 
     def get(self, request: HttpRequest):
@@ -44,12 +36,19 @@ class CharacterGenerator(View):
         class_keys_type = type(self.generator.CLASS_DICT.keys())
         print(class_keys_type)
         print(class_keys)
-        self.context["form"] = GenerateCharacterForm({"clazz": "All"})
+        self.context["data"] = GenerateCharacterData(clazz="All", background="All", race="All", alignment="All")
+        self.context["clazz_list"] = self.generator.CLASS_DICT
+        self.context["background_list"] = self.generator.BACKGROUND_LIST
+        self.context["race_list"] = self.generator.RACE_DICT
+        self.context["alignment_list"] = self.generator.ALIGNMENT_DICT
+        # self.context["form"] = GenerateCharacterForm({"clazz": "All"})
 
         return render(request, "character_generator.html", self.context)
 
     def post(self, request: HttpRequest):
         """POST method for create user page."""
+
+        self.context["data"] = GenerateCharacterData(**request.POST)
         form = GenerateCharacterForm(request.POST)
         self.context["error"] = None
         if form.is_valid():
@@ -68,6 +67,23 @@ class CharacterGenerator(View):
         self.context["form"] = form
         print("Invalid form")
         return render(request, "character_generator.html", self.context)
+
+@dataclass
+class GenerateCharacterData():
+    name:str = ""
+    clazz:str = ""
+    background:str = ""
+    player_name:str = ""
+    race:str = ""
+    alignment:str = ""
+    experience_points:int = 0
+
+    strength:int = 0
+    dexterity:int = 0
+    constitution:int = 0
+    intelligence:int = 0
+    wisdom: int = 0
+    charisma:int = 0
 
 
 class GenerateCharacterForm(Form):
