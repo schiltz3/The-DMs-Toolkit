@@ -13,10 +13,15 @@
     </div>
     <div class="character-row">
       <div class="character-name">
-        <label>
-          <h4>Character Name</h4>
-          {{ data.name }}
-        </label>
+        <div class="form-group">
+          <label for="character_name">
+            <h4>Character Name</h4>
+          </label>
+          <input class="form-control"
+                 id="character_name"
+                 placeholder="{{ data.name }}"/>
+        </div>
+        <label>{{ data.name }}</label>
       </div>
       <div class="character-info">
         <label>
@@ -53,9 +58,7 @@
             {% endfor %}
           </ul>
         </label>
-        <label>
-          Player Name
-        </label>
+        <label>Player Name</label>
         <label>
           <button class="btn btn-secondary dropdown-toggle"
                   href="#"
@@ -63,7 +66,7 @@
                   id="dropdownMenuLink"
                   data-bs-toggle="dropdown"
                   aria-expanded="false">
-          Race
+            Race
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             {% for choice in race_list %}
@@ -80,7 +83,7 @@
                   id="dropdownMenuLink"
                   data-bs-toggle="dropdown"
                   aria-expanded="false">
-          Alignment
+            Alignment
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             {% for choice in alignment_list %}
@@ -160,24 +163,36 @@
         <img src=" {% static "Character_UI_Stat.png" %}"
              alt="Character UI Stat"
              style="width: 100%"/>
-        <div class="character-stat-title">WISDOM</div>
+        <div class="character-stat-title">
+          WISDOM
+        </div>
         <div class="character-stat-base">
-          <h3>10</h3>
+          <h3>
+            10
+          </h3>
         </div>
         <div class="character-stat-bonus">
-          <h4>+0</h4>
+          <h4>
+            +0
+          </h4>
         </div>
       </div>
       <div class="character-stat">
         <img src="{% static "Character_UI_Stat.png" %}"
              alt="Character UI Stat"
              style="width: 100%"/>
-        <div class="character-stat-title">CHARISMA</div>
+        <div class="character-stat-title">
+          CHARISMA
+        </div>
         <div class="character-stat-base">
-          <h3>10</h3>
+          <h3>
+            10
+          </h3>
         </div>
         <div class="character-stat-bonus">
-          <h4>+0</h4>
+          <h4>
+            +0
+          </h4>
         </div>
       </div>
     </div>
