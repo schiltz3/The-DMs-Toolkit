@@ -2,7 +2,7 @@ import django
 from django.test import TestCase
 
 import thedmstoolkit.loot_generation as Loot_Gen
-from toolkit.models import Armor, GeneratedLoot, GenericItem, MagicItem, Weapon
+from toolkit.models import Armor, GenericItem, MagicItem, Weapon
 
 django.setup()
 
@@ -61,7 +61,6 @@ class PositiveTests(TestCase):
             Base_Value = 1.2,
             Max_Range = 5,
             Weight = 10,
-            Ammo = None,
             Special_Characteristics = 101000000
         )
         weapon.save()
@@ -124,7 +123,6 @@ class PositiveTests(TestCase):
             Base_Value = 1.2,
             Max_Range = 5,
             Weight = 10,
-            Ammo = None,
             Special_Characteristics = 101000000
         )
         weapon.save()
@@ -162,7 +160,6 @@ class PositiveTests(TestCase):
             Base_Value = 1.2,
             Max_Range = 5,
             Weight = 10,
-            Ammo = None,
             Special_Characteristics = 101000000
         )
         weapon.save()
