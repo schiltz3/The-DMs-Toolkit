@@ -1,5 +1,5 @@
 import random
-from typing import Callable, Optional, Union
+from typing import Callable, List, Optional, Union
 
 from toolkit.models import Armor, GeneratedLoot, GenericItem, MagicItem, Weapon
 
@@ -7,9 +7,7 @@ Generator = Callable[[int, int], int]
 
 
 class Loot_Generator:
-    """
-    Stores information for generating loot
-    """    
+    """Stores information for generating loot"""    
     total_value_to_generate = 0
     total_value_generated = 0
     continue_generating = True
@@ -17,10 +15,10 @@ class Loot_Generator:
     loot_type = "random"
     loot_level = 1
     generator_key = "random"
-    armor_list = []
-    weapon_list = []
-    gen_list = []
-    magic_list = []
+    armor_list: List[Armor] = []
+    weapon_list: List[Weapon]= []
+    gen_list: List[GenericItem] = []
+    magic_list: List[MagicItem] = []
     LOOT_TYPE_DICT = {
         "Encounter": 1,
         "Treasure Chest": 10,
@@ -34,17 +32,13 @@ class Loot_Generator:
     Generators.update(UnlimitedGenerators)
 
 def check_value(self):
-    """
-    Checks if the current value has exceeded the intended loot generation
-    """    
+    """Checks if the current value has exceeded the intended loot generation"""    
     if self.total_value_generated > self.total_value_to_generate:
         self.continue_generating = False
 
 
 def generate_loot_type(self):
-    """
-    Generate a random loot type
-    """    
+    """Generate a random loot type"""    
     self.loot_type = Loot_Generator.LOOT_TYPE_LIST[Loot_Generator.Generators[self.generator_key](0, len(Loot_Generator.LOOT_TYPE_LIST)-1)]
 
 def generate_currency(self):
@@ -61,9 +55,7 @@ def generate_currency(self):
     self.check_value(self)
 
 def generate_weapon(self):
-    """
-    Get a list of all weapons from the database then pick a random one and add it to the list of things to add
-    """    
+    """Get a list of all weapons from the database then pick a random one and add it to the list of things to add"""    
     possible_weapons = list(Weapon.objects.all())
     new_weapon = possible_weapons[
         Loot_Generator.Generators[self.generator_key](0, len(possible_weapons) - 1)
@@ -74,9 +66,7 @@ def generate_weapon(self):
 
 
 def generate_armor(self):
-    """
-    Get a list of all armor from the database then pick a random one and add it to the list of things to add
-    """    
+    """Get a list of all armor from the database then pick a random one and add it to the list of things to add"""    
     possible_armor = list(Armor.objects.all())
     new_armor = possible_armor[
         Loot_Generator.Generators[self.generator_key](0, len(possible_armor) - 1)
@@ -87,9 +77,7 @@ def generate_armor(self):
 
 
 def generate_generic_item(self):
-    """
-    Get a list of all random items from the database then pick a random one and add it to the list of things to add
-    """    
+    """Get a list of all random items from the database then pick a random one and add it to the list of things to add"""    
     possible_items = list(GenericItem.objects.all())
     new_item = possible_items[
         Loot_Generator.Generators[self.generator_key](0, len(possible_items) - 1)
@@ -136,9 +124,7 @@ GENERATOR_DICT = {
 
 
 def generate_random(self):
-    """
-    Choose which item to randomly generate
-    """    
+    """Choose which item to randomly generate"""    
     gen_keys = GENERATOR_DICT.keys
     to_generate = Loot_Generator.Generators[self.generator_key](0, len(gen_keys) - 1)
     GENERATOR_DICT[gen_keys[to_generate]](self)
@@ -161,7 +147,7 @@ def generate_loot(
         input_loot_type (str, optional): What kind of loot choose from keys on LOOT_TYPE_DICT. Defaults to "random".
 
     Returns:
-        _type_: _description_
+        GeneratedLoot: an item to put in the GeneratedLoot model
     """    
     self.generator_key = generator_key
     if input_loot_type == "random":
