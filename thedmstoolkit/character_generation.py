@@ -371,7 +371,6 @@ class Character_Generator:
             dict[str, list[int] | str]: Generated Characteristics
         """
 
-        print(type(stat_list))
         if type(stat_list) is not list and stat_list is not None:
             raise ValueError("Improper Argument in stat list")
         if type(stat_list) is list:
