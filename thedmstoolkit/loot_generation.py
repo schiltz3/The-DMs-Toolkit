@@ -38,8 +38,9 @@ def check_value(self):
     Checks if the current value has exceeded the intended loot generation
     """    
     if self.total_value_generated > self.total_value_to_generate:
-         self.continue_generating = False
-             
+        self.continue_generating = False
+
+
 def generate_loot_type(self):
     """
     Generate a random loot type
@@ -70,6 +71,7 @@ def generate_weapon(self):
     self.total_value_generated += new_weapon.Base_Value
     self.weapon_list.append(new_weapon)
     self.check_value(self)
+
 
 def generate_armor(self):
     """
