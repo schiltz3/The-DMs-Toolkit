@@ -31,7 +31,7 @@ def check_value(self):
     if self.total_value_generated > self.total_value_to_generate:
          self.continue_generating = False
              
-def generate_loot_type(self, generator_key):
+def generate_loot_type(self):
     self.loot_type = Loot_Generator.LOOT_TYPE_LIST[Loot_Generator.Generators[self.generator_key](0, len(Loot_Generator.LOOT_TYPE_LIST)-1)]
 
 def generate_currency(self):
@@ -40,35 +40,38 @@ def generate_currency(self):
      local_currency += Loot_Generator.Generators[self.generator_key](0, 100)/100
      self.currency += local_currency
      self.total_value_generated += local_currency
-     self.check_value
+     self.check_value(self)
 
-def generate_weapon(self, generator_key):
+def generate_weapon(self):
     possible_weapons = list(Weapon.objects.all())
     new_weapon = possible_weapons[Loot_Generator.Generators[self.generator_key](0, len(possible_weapons)-1)]
     self.total_value_generated += new_weapon.Base_Value
     self.weapon_list.append(new_weapon)
-    self.check_value
+    self.check_value(self)
 
-def generate_armor(self, generator_key, level):
+def generate_armor(self):
     possible_armor = list(Armor.objects.all())
     new_armor = possible_armor[Loot_Generator.Generators[self.generator_key](0, len(possible_armor)-1)]
     self.total_value_generated += new_armor.Base_Value
     self.armor_list.append(new_armor)
-    self.check_value
+    self.check_value(self)
 
-def generate_generic_item(self, generator_key, level):
+
+def generate_generic_item(self):
     possible_items = list(GenericItem.objects.all())
     new_item = possible_items[Loot_Generator.Generators[self.generator_key](0, len(possible_items)-1)]
     self.total_value_generated += new_item.Base_Value
     self.item_list.append(new_item)
-    self.check_value
+    self.check_value(self)
 
-def generate_magical_item(self, generator_key, level):
+
+def generate_magical_item(self):
     possible_magic_items = list(MagicItem.objects.all())
     new_magic_item = possible_magic_items[Loot_Generator.Generators[self.generator_key](0, len(possible_magic_items)-1)]
     self.continue_generating = False
     self.magic_list.append(new_magic_item)
-    self.check_value
+    self.check_value(self)
+
 
 def generate_total_value(self):
     self.total_value_to_generate = Loot_Generator.Generators[self.generator_key](1, 10)*self.level*Loot_Generator.LOOT_TYPE_DICT[self.loot_type]
@@ -87,10 +90,10 @@ def generate_random(self):
 def generate_loot(self, generator_key = "random", level = 1, approximate_total_value = 0, input_loot_type = "random"):
     self.generator_key = generator_key
     if input_loot_type is "random":
-        generate_loot_type(self,generator_key)
+        generate_loot_type(self)
     self.loot_level = level
     if approximate_total_value != 0:
-        generate_total_value(self,generator_key)
+        generate_total_value(self)
     else:
         self.total_value_to_generate = approximate_total_value
     
