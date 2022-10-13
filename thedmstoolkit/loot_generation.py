@@ -7,7 +7,8 @@ Generator = Callable[[int, int], int]
 
 
 class Loot_Generator:
-    """Stores information for generating loot"""    
+    """Stores information for generating loot"""
+
     total_value_to_generate = 0.0
     total_value_generated = 0.0
     continue_generating = True
@@ -16,7 +17,7 @@ class Loot_Generator:
     loot_level = 1
     generator_key = "random"
     armor_list: list[Armor] = []
-    weapon_list: list[Weapon]= []
+    weapon_list: list[Weapon] = []
     gen_list: list[GenericItem] = []
     magic_list: list[MagicItem] = []
     LOOT_TYPE_DICT: dict[str, float] = {
@@ -31,17 +32,17 @@ class Loot_Generator:
     UnlimitedGenerators: dict[str, Generator] = {"random": random.randint}
     Generators.update(UnlimitedGenerators)
 
-
     def check_value(self):
-        """Checks if the current value has exceeded the intended loot generation"""    
+        """Checks if the current value has exceeded the intended loot generation"""
         if self.total_value_generated > self.total_value_to_generate:
             self.continue_generating = False
 
-
     def generate_loot_type(self):
-        """Generate a random loot type"""  
+        """Generate a random loot type"""
         loot_keys = list(Loot_Generator.LOOT_TYPE_DICT.keys())
-        self.loot_type = loot_keys[Loot_Generator.Generators[self.generator_key](0, len(loot_keys)-1)]
+        self.loot_type = loot_keys[
+            Loot_Generator.Generators[self.generator_key](0, len(loot_keys) - 1)
+        ]
 
     def generate_currency(self):
         """
@@ -58,9 +59,8 @@ class Loot_Generator:
         self.total_value_generated += local_currency
         self.check_value()
 
-
     def generate_weapon(self):
-        """Get a list of all weapons from the database then pick a random one and add it to the list of things to add"""    
+        """Get a list of all weapons from the database then pick a random one and add it to the list of things to add"""
         possible_weapons = list(Weapon.objects.all())
         new_weapon = possible_weapons[
             Loot_Generator.Generators[self.generator_key](0, len(possible_weapons) - 1)
@@ -69,9 +69,8 @@ class Loot_Generator:
         self.weapon_list.append(new_weapon)
         self.check_value()
 
-
     def generate_armor(self):
-        """Get a list of all armor from the database then pick a random one and add it to the list of things to add"""    
+        """Get a list of all armor from the database then pick a random one and add it to the list of things to add"""
         possible_armor = list(Armor.objects.all())
         new_armor = possible_armor[
             Loot_Generator.Generators[self.generator_key](0, len(possible_armor) - 1)
@@ -80,9 +79,8 @@ class Loot_Generator:
         self.armor_list.append(new_armor)
         self.check_value()
 
-
     def generate_generic_item(self):
-        """Get a list of all random items from the database then pick a random one and add it to the list of things to add"""    
+        """Get a list of all random items from the database then pick a random one and add it to the list of things to add"""
         possible_items = list(GenericItem.objects.all())
         new_item = possible_items[
             Loot_Generator.Generators[self.generator_key](0, len(possible_items) - 1)
@@ -91,7 +89,6 @@ class Loot_Generator:
         self.gen_list.append(new_item)
         self.check_value()
 
-
     def generate_magical_item(self):
         """
         Get a list of all magic items from the database then pick a random one and add it to the list of things to add
@@ -99,13 +96,14 @@ class Loot_Generator:
         """
         possible_magic_items = list(MagicItem.objects.all())
         new_magic_item = possible_magic_items[
-            Loot_Generator.Generators[self.generator_key](0, len(possible_magic_items) - 1)
+            Loot_Generator.Generators[self.generator_key](
+                0, len(possible_magic_items) - 1
+            )
         ]
         self.continue_generating = False
         self.total_value_generated += 1
         self.magic_list.append(new_magic_item)
         self.check_value()
-
 
     def generate_total_value(self):
         """
@@ -113,11 +111,12 @@ class Loot_Generator:
 
         Equal to a random number between 1-10 and multiplied by the level and the treasure type
         """
-        
-        self.total_value_to_generate = (
-            (Loot_Generator.Generators[self.generator_key](1, 10)) * self.loot_level * Loot_Generator.LOOT_TYPE_DICT[self.loot_type]
-        )
 
+        self.total_value_to_generate = (
+            (Loot_Generator.Generators[self.generator_key](1, 10))
+            * self.loot_level
+            * Loot_Generator.LOOT_TYPE_DICT[self.loot_type]
+        )
 
     GENERATOR_DICT = {
         "Currency": generate_currency,
@@ -127,13 +126,13 @@ class Loot_Generator:
         "Magic": generate_magical_item,
     }
 
-
     def generate_random(self):
-        """Choose which item to randomly generate"""    
+        """Choose which item to randomly generate"""
         gen_keys = list(Loot_Generator.GENERATOR_DICT.keys())
-        to_generate = Loot_Generator.Generators[self.generator_key](0, len(gen_keys) - 1)
+        to_generate = Loot_Generator.Generators[self.generator_key](
+            0, len(gen_keys) - 1
+        )
         Loot_Generator.GENERATOR_DICT[gen_keys[to_generate]](self)
-
 
     def generate_loot(
         self,
@@ -150,7 +149,7 @@ class Loot_Generator:
             level (int, optional): average level of the party. Defaults to 1.
             approximate_total_value (double, optional): how much value should be generated is 0 only temporarily on default. Defaults to 0.
             input_loot_type (str, optional): What kind of loot choose from keys on LOOT_TYPE_DICT. Defaults to "random".
-            
+
         Raises:
             ValueError: If generator key is not contained in the dictionary
             ValueError: If a non int is passed as a level
@@ -160,20 +159,23 @@ class Loot_Generator:
             ValueError: If the loot type is not random or a valid loot type key
         Returns:
             GeneratedLoot: an item to put in the GeneratedLoot model
-        """    
-     
+        """
+
         if not generator_key in Loot_Generator.Generators.keys():
             raise ValueError("Illegal generator type")
         if not type(level) is int:
             raise ValueError("Not a valid Level")
-        if not 0< level <=21:
+        if not 0 < level <= 21:
             raise ValueError("Illegal Level")
         if not type(approximate_total_value) is int:
             raise ValueError("Not a valid Level")
-        if approximate_total_value<0:
+        if approximate_total_value < 0:
             raise ValueError("Illegal Total Value")
-        
-        if input_loot_type is not "random" or input_loot_type not in Loot_Generator.LOOT_TYPE_DICT:
+
+        if (
+            input_loot_type is not "random"
+            or input_loot_type not in Loot_Generator.LOOT_TYPE_DICT
+        ):
             raise ValueError("Illegal Loot Type")
         self.generator_key = generator_key
         if input_loot_type is "random":

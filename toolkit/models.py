@@ -92,7 +92,7 @@ class Weapon(models.Model):
     Base_Value = models.FloatField()
     Max_Range = models.IntegerField()
     Weight = models.IntegerField()
-    Ammo = models.CharField(blank=True, null = True, max_length=7)
+    Ammo = models.CharField(blank=True, null=True, max_length=7)
     Special_Characteristics = models.IntegerField()
     # store as a binary where Heavy Light TwoHanded Reach Versatile Finesse Throwable Ammunition Special
     # So heavy two handed with reach would be 101100000
