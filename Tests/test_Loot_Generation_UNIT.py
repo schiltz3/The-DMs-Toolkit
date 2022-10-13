@@ -59,13 +59,13 @@ class PositiveTests(TestCase):
     def test_weapons(self):
         """tests for generate weapons"""
         weapon = Weapon(
-            Name = "Axe",
-            Damage_Type = "Slashing",
-            Damage_Die = "1d12",
-            Base_Value = 1.2,
-            Max_Range = 5,
-            Weight = 10,
-            Special_Characteristics = 101000000
+            Name="Axe",
+            Damage_Type="Slashing",
+            Damage_Die="1d12",
+            Base_Value=1.2,
+            Max_Range=5,
+            Weight=10,
+            Special_Characteristics=101000000,
         )
         weapon.save()
 
@@ -119,13 +119,13 @@ class PositiveTests(TestCase):
         item.save()
 
         weapon = Weapon(
-            Name = "Axe",
-            Damage_Type = "Slashing",
-            Damage_Die = "1d12",
-            Base_Value = 1.2,
-            Max_Range = 5,
-            Weight = 10,
-            Special_Characteristics = 101000000
+            Name="Axe",
+            Damage_Type="Slashing",
+            Damage_Die="1d12",
+            Base_Value=1.2,
+            Max_Range=5,
+            Weight=10,
+            Special_Characteristics=101000000,
         )
         weapon.save()
 
@@ -158,13 +158,13 @@ class PositiveTests(TestCase):
         item.save()
 
         weapon = Weapon(
-            Name = "Axe",
-            Damage_Type = "Slashing",
-            Damage_Die = "1d12",
-            Base_Value = 1.2,
-            Max_Range = 5,
-            Weight = 10,
-            Special_Characteristics = 101000000
+            Name="Axe",
+            Damage_Type="Slashing",
+            Damage_Die="1d12",
+            Base_Value=1.2,
+            Max_Range=5,
+            Weight=10,
+            Special_Characteristics=101000000,
         )
         weapon.save()
 
