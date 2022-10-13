@@ -32,18 +32,27 @@ class Loot_Generator:
 
 def check_value(self):
     if self.total_value_generated > self.total_value_to_generate:
-         self.continue_generating = False
-             
+        self.continue_generating = False
+
+
 def generate_loot_type(self):
-    self.loot_type = Loot_Generator.LOOT_TYPE_LIST[Loot_Generator.Generators[self.generator_key](0, len(Loot_Generator.LOOT_TYPE_LIST)-1)]
+    self.loot_type = Loot_Generator.LOOT_TYPE_LIST[
+        Loot_Generator.Generators[self.generator_key](
+            0, len(Loot_Generator.LOOT_TYPE_LIST) - 1
+        )
+    ]
+
 
 def generate_currency(self):
-     local_currency = Loot_Generator.Generators[self.generator_key](0, self.total_value_to_generate-self.total_value_generated)
-     local_currency += Loot_Generator.Generators[self.generator_key](0, 100)/10
-     local_currency += Loot_Generator.Generators[self.generator_key](0, 100)/100
-     self.currency += local_currency
-     self.total_value_generated += local_currency
-     self.check_value(self)
+    local_currency = Loot_Generator.Generators[self.generator_key](
+        0, self.total_value_to_generate - self.total_value_generated
+    )
+    local_currency += Loot_Generator.Generators[self.generator_key](0, 100) / 10
+    local_currency += Loot_Generator.Generators[self.generator_key](0, 100) / 100
+    self.currency += local_currency
+    self.total_value_generated += local_currency
+    self.check_value(self)
+
 
 def generate_weapon(self):
     possible_weapons = list(Weapon.objects.all())
@@ -53,6 +62,7 @@ def generate_weapon(self):
     self.total_value_generated += new_weapon.Base_Value
     self.weapon_list.append(new_weapon)
     self.check_value(self)
+
 
 def generate_armor(self):
     possible_armor = list(Armor.objects.all())
