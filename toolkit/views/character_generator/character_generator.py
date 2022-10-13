@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from turtle import back
 from django.shortcuts import render
 from django.views import View
+import inspect
 
 from django.forms import (
     CharField,
@@ -28,6 +29,10 @@ class CharacterGenerator(View):
 
         self.context: dict[str, any] = {}
         self.generator = Character_Generator()
+        self.context["clazz_list"] = self.generator.CLASS_DICT
+        self.context["background_list"] = self.generator.BACKGROUND_LIST
+        self.context["race_list"] = self.generator.RACE_DICT
+        self.context["alignment_list"] = self.generator.ALIGNMENT_DICT
 
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
@@ -36,11 +41,9 @@ class CharacterGenerator(View):
         class_keys_type = type(self.generator.CLASS_DICT.keys())
         print(class_keys_type)
         print(class_keys)
-        self.context["data"] = GenerateCharacterData(clazz="All", background="All", race="All", alignment="All")
-        self.context["clazz_list"] = self.generator.CLASS_DICT
-        self.context["background_list"] = self.generator.BACKGROUND_LIST
-        self.context["race_list"] = self.generator.RACE_DICT
-        self.context["alignment_list"] = self.generator.ALIGNMENT_DICT
+        self.context["data"] = GenerateCharacterData(
+            clazz="All", background="All", race="All", alignment="All"
+        )
         # self.context["form"] = GenerateCharacterForm({"clazz": "All"})
 
         return render(request, "character_generator.html", self.context)
@@ -48,8 +51,8 @@ class CharacterGenerator(View):
     def post(self, request: HttpRequest):
         """POST method for create user page."""
 
-        self.context["data"] = GenerateCharacterData(**request.POST)
-        form = GenerateCharacterForm(request.POST)
+        form = GenerateCharacterData.from_form(request.POST)
+        self.context["data"] = form
         self.context["error"] = None
         if form.is_valid():
             try:
@@ -59,31 +62,36 @@ class CharacterGenerator(View):
                 self.context["error"] = str(e)
                 return render(request, "create_account.html", self.context)
 
-            return redirect(
-                "confirm_account_creation",
-                email=form.cleaned_data["username"],
-                permanent=True,
-            )
         self.context["form"] = form
         print("Invalid form")
         return render(request, "character_generator.html", self.context)
 
-@dataclass
-class GenerateCharacterData():
-    name:str = ""
-    clazz:str = ""
-    background:str = ""
-    player_name:str = ""
-    race:str = ""
-    alignment:str = ""
-    experience_points:int = 0
 
-    strength:int = 0
-    dexterity:int = 0
-    constitution:int = 0
-    intelligence:int = 0
+@dataclass
+class GenerateCharacterData:
+    name: str = ""
+    clazz: str = ""
+    background: str = ""
+    player_name: str = ""
+    race: str = ""
+    alignment: str = ""
+    experience_points: int = 0
+
+    strength: int = 0
+    dexterity: int = 0
+    constitution: int = 0
+    intelligence: int = 0
     wisdom: int = 0
-    charisma:int = 0
+    charisma: int = 0
+
+    @classmethod
+    def from_form(cls, env):
+        return cls(
+            **{k: v for k, v in env.items() if k in inspect.signature(cls).parameters}
+        )
+
+    def is_valid(self):
+        return True
 
 
 class GenerateCharacterForm(Form):
