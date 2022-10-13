@@ -31,6 +31,7 @@ class Loot_Generator:
     UnlimitedGenerators: dict[str, Generator] = {"random": random.randint}
     Generators.update(UnlimitedGenerators)
 
+
 def check_value(self):
     """Checks if the current value has exceeded the intended loot generation"""    
     if self.total_value_generated > self.total_value_to_generate:
@@ -47,12 +48,15 @@ def generate_currency(self):
     Then generates 0-100 silver
     Then generates 0-100 copper
     """
-    local_currency = Loot_Generator.Generators[self.generator_key](0, self.total_value_to_generate-self.total_value_generated)
-    local_currency += Loot_Generator.Generators[self.generator_key](0, 100)/10
-    local_currency += Loot_Generator.Generators[self.generator_key](0, 100)/100
+    local_currency = Loot_Generator.Generators[self.generator_key](
+        0, self.total_value_to_generate - self.total_value_generated
+    )
+    local_currency += Loot_Generator.Generators[self.generator_key](0, 100) / 10
+    local_currency += Loot_Generator.Generators[self.generator_key](0, 100) / 100
     self.currency += local_currency
     self.total_value_generated += local_currency
     self.check_value(self)
+
 
 def generate_weapon(self):
     """Get a list of all weapons from the database then pick a random one and add it to the list of things to add"""    
@@ -88,10 +92,10 @@ def generate_generic_item(self):
 
 
 def generate_magical_item(self):
-    """    
+    """
     Get a list of all magic items from the database then pick a random one and add it to the list of things to add
     Ends Generation
-    """    
+    """
     possible_magic_items = list(MagicItem.objects.all())
     new_magic_item = possible_magic_items[
         Loot_Generator.Generators[self.generator_key](0, len(possible_magic_items) - 1)
@@ -104,9 +108,9 @@ def generate_magical_item(self):
 def generate_total_value(self):
     """
     Give a random integer that the minimum amount of value should be generated
-    
+
     Equal to a random number between 1-10 and multiplied by the level and the treasure type
-    """    
+    """
     self.total_value_to_generate = (
         Loot_Generator.Generators[self.generator_key](1, 10)
         * self.level
