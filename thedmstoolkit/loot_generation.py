@@ -161,7 +161,7 @@ class Loot_Generator:
             GeneratedLoot: an item to put in the GeneratedLoot model
         """    
      
-        if generator_key not in Loot_Generator.Generators.keys():
+        if generator_key not in Loot_Generator.Generators:
             raise ValueError("Illegal generator type")
         if not type(level) is int:
             raise ValueError("Not a valid Level")
