@@ -171,8 +171,11 @@ class Loot_Generator:
             raise ValueError("Not a valid Level")
         if approximate_total_value < 0:
             raise ValueError("Illegal Total Value")
-        
-        if input_loot_type != "random" or input_loot_type not in Loot_Generator.LOOT_TYPE_DICT:
+
+        if (
+            input_loot_type != "random"
+            or input_loot_type not in Loot_Generator.LOOT_TYPE_DICT
+        ):
             raise ValueError("Illegal Loot Type")
         self.generator_key = generator_key
         if input_loot_type == "random":
