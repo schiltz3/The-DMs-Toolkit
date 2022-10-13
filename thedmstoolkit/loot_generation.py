@@ -9,7 +9,8 @@ Generator = Callable[[int, int], int]
 class Loot_Generator:
     """
     Stores information for generating loot
-    """    
+    """
+
     total_value_to_generate = 0
     total_value_generated = 0
     continue_generating = True
@@ -33,10 +34,11 @@ class Loot_Generator:
     UnlimitedGenerators: dict[str, Generator] = {"random": random.randint}
     Generators.update(UnlimitedGenerators)
 
+
 def check_value(self):
     """
     Checks if the current value has exceeded the intended loot generation
-    """    
+    """
     if self.total_value_generated > self.total_value_to_generate:
         self.continue_generating = False
 
@@ -44,8 +46,13 @@ def check_value(self):
 def generate_loot_type(self):
     """
     Generate a random loot type
-    """    
-    self.loot_type = Loot_Generator.LOOT_TYPE_LIST[Loot_Generator.Generators[self.generator_key](0, len(Loot_Generator.LOOT_TYPE_LIST)-1)]
+    """
+    self.loot_type = Loot_Generator.LOOT_TYPE_LIST[
+        Loot_Generator.Generators[self.generator_key](
+            0, len(Loot_Generator.LOOT_TYPE_LIST) - 1
+        )
+    ]
+
 
 def generate_currency(self):
     """
@@ -53,17 +60,20 @@ def generate_currency(self):
     Then generates 0-100 silver
     Then generates 0-100 copper
     """
-    local_currency = Loot_Generator.Generators[self.generator_key](0, self.total_value_to_generate-self.total_value_generated)
-    local_currency += Loot_Generator.Generators[self.generator_key](0, 100)/10
-    local_currency += Loot_Generator.Generators[self.generator_key](0, 100)/100
+    local_currency = Loot_Generator.Generators[self.generator_key](
+        0, self.total_value_to_generate - self.total_value_generated
+    )
+    local_currency += Loot_Generator.Generators[self.generator_key](0, 100) / 10
+    local_currency += Loot_Generator.Generators[self.generator_key](0, 100) / 100
     self.currency += local_currency
     self.total_value_generated += local_currency
     self.check_value(self)
 
+
 def generate_weapon(self):
     """
     Get a list of all weapons from the database then pick a random one and add it to the list of things to add
-    """    
+    """
     possible_weapons = list(Weapon.objects.all())
     new_weapon = possible_weapons[
         Loot_Generator.Generators[self.generator_key](0, len(possible_weapons) - 1)
@@ -76,7 +86,7 @@ def generate_weapon(self):
 def generate_armor(self):
     """
     Get a list of all armor from the database then pick a random one and add it to the list of things to add
-    """    
+    """
     possible_armor = list(Armor.objects.all())
     new_armor = possible_armor[
         Loot_Generator.Generators[self.generator_key](0, len(possible_armor) - 1)
@@ -89,7 +99,7 @@ def generate_armor(self):
 def generate_generic_item(self):
     """
     Get a list of all random items from the database then pick a random one and add it to the list of things to add
-    """    
+    """
     possible_items = list(GenericItem.objects.all())
     new_item = possible_items[
         Loot_Generator.Generators[self.generator_key](0, len(possible_items) - 1)
@@ -100,10 +110,10 @@ def generate_generic_item(self):
 
 
 def generate_magical_item(self):
-    """    
+    """
     Get a list of all magic items from the database then pick a random one and add it to the list of things to add
     Ends Generation
-    """    
+    """
     possible_magic_items = list(MagicItem.objects.all())
     new_magic_item = possible_magic_items[
         Loot_Generator.Generators[self.generator_key](0, len(possible_magic_items) - 1)
@@ -116,9 +126,9 @@ def generate_magical_item(self):
 def generate_total_value(self):
     """
     Give a random integer that the minimum amount of value should be generated
-    
+
     Equal to a random number between 1-10 and multiplied by the level and the treasure type
-    """    
+    """
     self.total_value_to_generate = (
         Loot_Generator.Generators[self.generator_key](1, 10)
         * self.level
@@ -138,7 +148,7 @@ GENERATOR_DICT = {
 def generate_random(self):
     """
     Choose which item to randomly generate
-    """    
+    """
     gen_keys = GENERATOR_DICT.keys
     to_generate = Loot_Generator.Generators[self.generator_key](0, len(gen_keys) - 1)
     GENERATOR_DICT[gen_keys[to_generate]](self)
@@ -162,7 +172,7 @@ def generate_loot(
 
     Returns:
         _type_: _description_
-    """    
+    """
     self.generator_key = generator_key
     if input_loot_type == "random":
         generate_loot_type(self)
