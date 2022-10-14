@@ -10,9 +10,9 @@ application_pane
 
 {% block content %}
   <div id="application" class="row gx-5">
-    <div class="row">{% include "elements/bar.html" %}</div>
-    <div class="col-xs-12 col-lg-12 order-lg-1">
-      <div id="application-content" class="container-fluid">
+    <div class="row p-0">{% include "elements/bar.html" %}</div>
+    <div class="col p-0 order-first">
+      <div id="application-content" class="container-fluid p-0">
 
         {% block application_pane %}
           <h1>bar_base is not intended to be rendered directly</h1>
