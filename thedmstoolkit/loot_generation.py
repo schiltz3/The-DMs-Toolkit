@@ -8,18 +8,6 @@ Generator = Callable[[int, int], int]
 
 class Loot_Generator:
     """Stores information for generating loot"""
-
-    total_value_to_generate = 0.0
-    total_value_generated = 0.0
-    continue_generating = True
-    currency = 0.0
-    loot_type = "random"
-    loot_level = 1
-    generator_key = "random"
-    armor_list: list[Armor] = []
-    weapon_list: list[Weapon] = []
-    gen_list: list[GenericItem] = []
-    magic_list: list[MagicItem] = []
     LOOT_TYPE_DICT: dict[str, float] = {
         "Encounter": 1.0,
         "Treasure Chest": 10.0,
@@ -32,9 +20,24 @@ class Loot_Generator:
     UnlimitedGenerators: dict[str, Generator] = {"random": random.randint}
     Generators.update(UnlimitedGenerators)
 
+
+    def __init__(self):
+        """Sets"""        
+        self.min_value_to_generate = 0.0
+        self.total_value_generated = 0.0
+        self.continue_generating = True
+        self.currency = 0.0
+        self.loot_type = "random"
+        self.loot_level = 1
+        self.generator_key = "random"
+        self.armor_list: list[Armor] = []
+        self.weapon_list: list[Weapon] = []
+        self.gen_list: list[GenericItem] = []
+        self.magic_list: list[MagicItem] = []
+        
     def check_value(self):
         """Checks if the current value has exceeded the intended loot generation"""
-        if self.total_value_generated > self.total_value_to_generate:
+        if self.total_value_generated > self.min_value_to_generate:
             self.continue_generating = False
 
     def generate_loot_type(self):
@@ -50,14 +53,11 @@ class Loot_Generator:
         Then generates 0-100 silver
         Then generates 0-100 copper
         """
-        local_currency = Loot_Generator.Generators[self.generator_key](
-            0, self.total_value_to_generate - self.total_value_generated
-        )
+        local_currency = Loot_Generator.Generators[self.generator_key](0,  int(self.min_value_to_generate - self.total_value_generated))
         local_currency += Loot_Generator.Generators[self.generator_key](1, 100) / 10
         local_currency += Loot_Generator.Generators[self.generator_key](1, 100) / 100
         self.currency += local_currency
         self.total_value_generated += local_currency
-        self.check_value()
 
     def generate_weapon(self):
         """Get a list of all weapons from the database then pick a random one and add it to the list of things to add"""
@@ -67,7 +67,6 @@ class Loot_Generator:
         ]
         self.total_value_generated += new_weapon.Base_Value
         self.weapon_list.append(new_weapon)
-        self.check_value()
 
     def generate_armor(self):
         """Get a list of all armor from the database then pick a random one and add it to the list of things to add"""
@@ -77,7 +76,6 @@ class Loot_Generator:
         ]
         self.total_value_generated += new_armor.Base_Value
         self.armor_list.append(new_armor)
-        self.check_value()
 
     def generate_generic_item(self):
         """Get a list of all random items from the database then pick a random one and add it to the list of things to add"""
@@ -87,7 +85,6 @@ class Loot_Generator:
         ]
         self.total_value_generated += new_item.Base_Value
         self.gen_list.append(new_item)
-        self.check_value()
 
     def generate_magical_item(self):
         """
@@ -103,7 +100,6 @@ class Loot_Generator:
         self.continue_generating = False
         self.total_value_generated += 1
         self.magic_list.append(new_magic_item)
-        self.check_value()
 
     def generate_total_value(self):
         """
@@ -112,13 +108,13 @@ class Loot_Generator:
         Equal to a random number between 1-10 and multiplied by the level and the treasure type
         """
 
-        self.total_value_to_generate = (
+        self.min_value_to_generate = (
             (Loot_Generator.Generators[self.generator_key](1, 10))
             * self.loot_level
             * Loot_Generator.LOOT_TYPE_DICT[self.loot_type]
         )
 
-    GENERATOR_DICT = {
+    LOOT_GENERATOR_DICT = {
         "Currency": generate_currency,
         "Armor": generate_armor,
         "Weapon": generate_weapon,
@@ -128,24 +124,26 @@ class Loot_Generator:
 
     def generate_random(self):
         """Choose which item to randomly generate"""
-        gen_keys = list(Loot_Generator.GENERATOR_DICT.keys())
+        gen_keys = list(Loot_Generator.LOOT_GENERATOR_DICT.keys())
         to_generate = Loot_Generator.Generators[self.generator_key](
             0, len(gen_keys) - 1
         )
-        Loot_Generator.GENERATOR_DICT[gen_keys[to_generate]](self)
+        Loot_Generator.LOOT_GENERATOR_DICT[gen_keys[to_generate]](self)
 
     def generate_loot(
         self,
+        current_user = None,
         generator_key="random",
         level=1,
         approximate_total_value=0,
-        input_loot_type="random",
+        input_loot_type="random"
     ):
         """
         Overall Function - generates all the loot types
 
         Args:
-            generator_key (str, optional): which generator to use choose from keys on Generators.keys. Defaults to "random".
+            generator_key (str, optional): which generator to use choose from keys on Generators.keys. 
+            Generate key is static for every generation type. Defaults to "random".
             level (int, optional): average level of the party. Defaults to 1.
             approximate_total_value (double, optional): how much value should be generated is 0 only temporarily on default. Defaults to 0.
             input_loot_type (str, optional): What kind of loot choose from keys on LOOT_TYPE_DICT. Defaults to "random".
@@ -185,27 +183,20 @@ class Loot_Generator:
             self.generate_loot_type()
         else:
             self.loot_type = input_loot_type
-
-        if approximate_total_value != 0:
+        if approximate_total_value == 0:
             self.generate_total_value()
         else:
-            self.total_value_to_generate = approximate_total_value
+            self.min_value_to_generate = approximate_total_value
 
         while self.continue_generating:
             self.generate_random()
+            self.check_value()
+
 
         current_loot = GeneratedLoot(
+            Owner = current_user,
             Loot_Type=self.loot_type,
             Total_Value=self.total_value_generated,
             Money=self.currency,
         )
-        current_loot.save()
-        for armor in self.armor_list:
-            current_loot.Armors.add(armor)
-        for weapon in self.weapon_list:
-            current_loot.Weapons.add(weapon)
-        for item in self.gen_list:
-            current_loot.Generic_Items.add(item)
-        for magic_item in self.magic_list:
-            current_loot.Magical_Items.add(magic_item)
-        return current_loot
+        return current_loot, self.armor_list, self.weapon_list, self.gen_list, self.magic_list

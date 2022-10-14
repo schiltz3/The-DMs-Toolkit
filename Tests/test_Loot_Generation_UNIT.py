@@ -18,7 +18,7 @@ class PositiveTests(TestCase):
     def test_check_value(self):
         """Tests for the check value function"""
         new_loot = Loot_Gen.Loot_Generator()
-        new_loot.total_value_to_generate = 1000
+        new_loot.min_value_to_generate = 1000
         new_loot.check_value()
         self.assertTrue(new_loot.continue_generating)
 
@@ -35,7 +35,7 @@ class PositiveTests(TestCase):
     def test_currency(self):
         """Tests for generate currency"""
         new_loot = Loot_Gen.Loot_Generator()
-        new_loot.total_value_to_generate = 1000
+        new_loot.min_value_to_generate = 1000
         new_loot.generate_currency()
         self.assertTrue(new_loot.currency > 0)
 
@@ -103,7 +103,7 @@ class PositiveTests(TestCase):
         new_loot.loot_type = "Encounter"
 
         new_loot.generate_total_value()
-        self.assertTrue(new_loot.total_value_to_generate > 0)
+        self.assertTrue(new_loot.min_value_to_generate > 0)
 
     def test_random(self):
         """tests for generate random item of any type"""
@@ -142,7 +142,7 @@ class PositiveTests(TestCase):
 
         new_loot = Loot_Gen.Loot_Generator()
         new_loot.generate_random()
-        self.assertFalse(new_loot.continue_generating)
+        self.assertTrue(new_loot.total_value_generated>0)
 
     def test_generate(self):
         """Tests for the overall generate loot function"""
@@ -181,15 +181,15 @@ class PositiveTests(TestCase):
 
         new_loot = Loot_Gen.Loot_Generator()
         result = new_loot.generate_loot()
-        self.assertTrue(result.Total_Value > 0)
-        result2 = new_loot.generate_loot("random")
-        self.assertTrue(result2.Total_Value > 0)
-        result3 = new_loot.generate_loot("random", 10)
-        self.assertTrue(result3.Total_Value > 0)
-        result4 = new_loot.generate_loot("random", 10, 22)
-        self.assertTrue(result4.Total_Value > 0)
-        result4 = new_loot.generate_loot("random", 10, input_loot_type="Hoard")
-        self.assertTrue(result4.Total_Value > 0)
+        self.assertTrue(result[0].Total_Value > 0)
+        result2 = new_loot.generate_loot(generator_key="random")
+        self.assertTrue(result2[0].Total_Value > 0)
+        result3 = new_loot.generate_loot(generator_key="random", level=10)
+        self.assertTrue(result3[0].Total_Value > 0)
+        result4 = new_loot.generate_loot(generator_key="random", level=10, approximate_total_value=22)
+        self.assertTrue(result4[0].Total_Value > 0)
+        result5 = new_loot.generate_loot(generator_key="random", level=10, input_loot_type="Hoard")
+        self.assertTrue(result5[0].Total_Value > 0)
 
 
 class negative_tests(TestCase):
