@@ -37,7 +37,7 @@ class CreateAccount(View):
 
             return redirect(
                 "confirm_account_creation",
-                email=form.cleaned_data["username"],
+                username=form.cleaned_data["username"],
                 permanent=True,
             )
         context["form"] = form
