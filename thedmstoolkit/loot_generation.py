@@ -159,8 +159,8 @@ class Loot_Generator:
             ValueError: If the loot type is not random or a valid loot type key
         Returns:
             GeneratedLoot: an item to put in the GeneratedLoot model
-        """    
-     
+        """
+
         if generator_key not in Loot_Generator.Generators:
             raise ValueError("Illegal generator type")
         if not type(level) is int:
