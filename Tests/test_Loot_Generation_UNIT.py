@@ -188,7 +188,7 @@ class PositiveTests(TestCase):
         self.assertTrue(result3.Total_Value > 0)
         result4 = new_loot.generate_loot("random", 10, 22)
         self.assertTrue(result4.Total_Value > 0)
-        result4 = new_loot.generate_loot("random", 10, input_loot_type="Horde")
+        result4 = new_loot.generate_loot("random", 10, input_loot_type="Hoard")
         self.assertTrue(result4.Total_Value > 0)
 
 

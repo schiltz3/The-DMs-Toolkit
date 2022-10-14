@@ -139,7 +139,7 @@ class Loot_Generator:
         generator_key="random",
         level=1,
         approximate_total_value=0,
-        input_loot_type="random",
+        input_loot_type="random"
     ):
         """
         Overall Function - generates all the loot types
@@ -171,16 +171,16 @@ class Loot_Generator:
             raise ValueError("Not a valid Level")
         if approximate_total_value < 0:
             raise ValueError("Illegal Total Value")
-
-        if (
-            input_loot_type != "random"
-            or input_loot_type not in Loot_Generator.LOOT_TYPE_DICT
-        ):
+       
+        if input_loot_type != "random" and input_loot_type not in Loot_Generator.LOOT_TYPE_DICT:
             raise ValueError("Illegal Loot Type")
+        else:
+            self.loot_type = input_loot_type
+            
         self.generator_key = generator_key
-        if input_loot_type == "random":
-            self.generate_loot_type()
         self.loot_level = level
+        if input_loot_type == "random":
+            self.generate_loot_type()    
         if approximate_total_value != 0:
             self.generate_total_value()
         else:
