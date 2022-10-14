@@ -28,7 +28,7 @@ class Character(models.Model):
     """
 
     Name = models.CharField(max_length=20)
-    AccountOwner = models.ForeignKey(User, on_delete=models.CASCADE)
+    Owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     Race = models.CharField(max_length=15)
     Class = models.CharField(max_length=9)
     Background = models.CharField(max_length=22)
@@ -93,7 +93,7 @@ class Weapon(models.Model):
     Max_Range = models.IntegerField()
     Weight = models.IntegerField()
     Ammo = models.CharField(blank=True, max_length=7)
-    Special_Characteristics = models.BinaryField()
+    Special_Characteristics = models.IntegerField()
     # store as a binary where Heavy Light TwoHanded Reach Versatile Finesse Throwable Ammunition Special
     # So heavy two handed with reach would be 101100000
 
@@ -150,6 +150,7 @@ class GeneratedLoot(models.Model):
 
     """
 
+    Owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     Loot_Type = models.CharField(max_length=20)
     Total_Value = models.FloatField()
     Money = models.FloatField()
@@ -217,6 +218,7 @@ class GeneratedEncounter(models.Model):
 
     """
 
+    Owner = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     Encounter_Type = models.CharField(max_length=20)
     Number_Of_Characters = models.IntegerField()
     Average_Character_Levels = models.FloatField()
