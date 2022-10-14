@@ -142,7 +142,7 @@ class PositiveTests(TestCase):
 
         new_loot = Loot_Gen.Loot_Generator()
         new_loot.generate_random()
-        self.assertTrue(new_loot.total_value_generated>0)
+        self.assertTrue(new_loot.total_value_generated > 0)
 
     def test_generate(self):
         """Tests for the overall generate loot function"""
@@ -186,9 +186,13 @@ class PositiveTests(TestCase):
         self.assertTrue(result2[0].Total_Value > 0)
         result3 = new_loot.generate_loot(generator_key="random", level=10)
         self.assertTrue(result3[0].Total_Value > 0)
-        result4 = new_loot.generate_loot(generator_key="random", level=10, approximate_total_value=22)
+        result4 = new_loot.generate_loot(
+            generator_key="random", level=10, approximate_total_value=22
+        )
         self.assertTrue(result4[0].Total_Value > 0)
-        result5 = new_loot.generate_loot(generator_key="random", level=10, input_loot_type="Hoard")
+        result5 = new_loot.generate_loot(
+            generator_key="random", level=10, input_loot_type="Hoard"
+        )
         self.assertTrue(result5[0].Total_Value > 0)
 
 

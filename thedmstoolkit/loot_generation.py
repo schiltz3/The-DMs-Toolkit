@@ -8,6 +8,7 @@ Generator = Callable[[int, int], int]
 
 class Loot_Generator:
     """Stores information for generating loot"""
+
     LOOT_TYPE_DICT: dict[str, float] = {
         "Encounter": 1.0,
         "Treasure Chest": 10.0,
@@ -20,9 +21,8 @@ class Loot_Generator:
     UnlimitedGenerators: dict[str, Generator] = {"random": random.randint}
     Generators.update(UnlimitedGenerators)
 
-
     def __init__(self):
-        """Sets"""        
+        """Sets"""
         self.min_value_to_generate = 0.0
         self.total_value_generated = 0.0
         self.continue_generating = True
@@ -34,7 +34,7 @@ class Loot_Generator:
         self.weapon_list: list[Weapon] = []
         self.gen_list: list[GenericItem] = []
         self.magic_list: list[MagicItem] = []
-        
+
     def check_value(self):
         """Checks if the current value has exceeded the intended loot generation"""
         if self.total_value_generated > self.min_value_to_generate:
@@ -53,7 +53,9 @@ class Loot_Generator:
         Then generates 0-100 silver
         Then generates 0-100 copper
         """
-        local_currency = Loot_Generator.Generators[self.generator_key](0,  int(self.min_value_to_generate - self.total_value_generated))
+        local_currency = Loot_Generator.Generators[self.generator_key](
+            0, int(self.min_value_to_generate - self.total_value_generated)
+        )
         local_currency += Loot_Generator.Generators[self.generator_key](1, 100) / 10
         local_currency += Loot_Generator.Generators[self.generator_key](1, 100) / 100
         self.currency += local_currency
@@ -132,17 +134,17 @@ class Loot_Generator:
 
     def generate_loot(
         self,
-        current_user = None,
+        current_user=None,
         generator_key="random",
         level=1,
         approximate_total_value=0,
-        input_loot_type="random"
+        input_loot_type="random",
     ):
         """
         Overall Function - generates all the loot types
 
         Args:
-            generator_key (str, optional): which generator to use choose from keys on Generators.keys. 
+            generator_key (str, optional): which generator to use choose from keys on Generators.keys.
             Generate key is static for every generation type. Defaults to "random".
             level (int, optional): average level of the party. Defaults to 1.
             approximate_total_value (double, optional): how much value should be generated is 0 only temporarily on default. Defaults to 0.
@@ -192,11 +194,16 @@ class Loot_Generator:
             self.generate_random()
             self.check_value()
 
-
         current_loot = GeneratedLoot(
-            Owner = current_user,
+            Owner=current_user,
             Loot_Type=self.loot_type,
             Total_Value=self.total_value_generated,
             Money=self.currency,
         )
-        return current_loot, self.armor_list, self.weapon_list, self.gen_list, self.magic_list
+        return (
+            current_loot,
+            self.armor_list,
+            self.weapon_list,
+            self.gen_list,
+            self.magic_list,
+        )
