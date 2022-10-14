@@ -343,7 +343,7 @@ class Arrange_Tests(unittest.TestCase):
         tempUser.save()
         tempCharacter = Character(
             Name="Fred",
-            AccountOwner=User.objects.get(username="Ronen"),
+            Owner=User.objects.get(username="Ronen"),
             Race="Human",
             Class="Rogue",
             Background="Sailor",
@@ -381,7 +381,7 @@ class Arrange_Tests(unittest.TestCase):
         tempUser.save()
         tempCharacter = Character(
             Name="Fred2",
-            AccountOwner=User.objects.get(username="Ronen2"),
+            Owner=User.objects.get(username="Ronen2"),
             Race="Human",
             Class="Rogue",
             Background="Sailor",
