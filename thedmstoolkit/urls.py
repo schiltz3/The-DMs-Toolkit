@@ -26,6 +26,7 @@ from toolkit.views.EncounterGenerator import EncounterGenerator
 from toolkit.views.home_page import HomePage
 from toolkit.views.login import Login
 from toolkit.views.LootGenerator import LootGenerator
+from toolkit.views.logout import Logout
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -34,6 +35,8 @@ urlpatterns = [
     # login
     path("login/<str:username>", Login.as_view(), name="login"),
     path("login/", Login.as_view(), name="login"),
+    # logout
+    path("logout/", Logout.custom_logout, name="logout"),
     # Confirm Account Creation
     path(
         "create_account/confirm_account_creation/",
