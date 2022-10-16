@@ -5,13 +5,13 @@
 {% block application_pane %}
   <form action="{% url "character_generator" %}" method="post" class="form">
     {% csrf_token %}
-    <div class="row">
-      <div class="character-header">
-        <img src="{% static "Character_Header.png" %}"
-             alt="Character Header"
-             style="width: 45%"/>
+    <div class="row mx-0">
+        <div class="character-header">
+          <img src="{% static "Character_Header.png" %}"
+               alt="Character Header"
+               style="width: 45%"/>
+        </div>
       </div>
-    </div>
     {% comment %} Start of character row {% endcomment %}
     <div class="row">
       <div class="column md-8"
