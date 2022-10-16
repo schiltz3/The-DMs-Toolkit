@@ -5,7 +5,7 @@ from toolkit.models import User
 
 class TestCreateAccount(TestCase):
     """
-    Testing for login page.
+    Testing for create account page.
     """
 
     def setUp(self):
@@ -25,7 +25,7 @@ class TestCreateAccount(TestCase):
         )
         # self.save()
 
-    def test_can_access_login_page(self):
+    def test_can_access_create_account_page(self):
         """
         Tests to see if a user is able to access the create account page.
         """
@@ -33,9 +33,9 @@ class TestCreateAccount(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "create_account.html")
 
-    def test_successful_login(self):
+    def test_successful_create_account(self):
         """
-        Tests if a user is able to login successfully after giving correct credentials
+        Tests if a user is able to create account successfully after giving correct credentials
         """
         response = self.client.post(
             self.create_account_url,
@@ -45,64 +45,68 @@ class TestCreateAccount(TestCase):
         )
         self.assertEqual(response.status_code, 302)
         user = User.objects.filter(username=self.username).first()
-        self.assertEqual(user, self.test_user)
+        self.assertIsNotNone(user)
+        self.assertTupleEqual(
+            (user.username, user.email, user.password),
+            (self.username, self.email, self.password),
+        )
         # response = self.client.login(username=self.username, password=self.password)
         # self.assertTrue(response)
 
-    def test_unsuccessful_login_no_username(self):
-        """
-        Tests if a user is able to login after giving no username
-        """
-        response = self.client.post(
-            self.create_account_url,
-            {"username": "", "password": self.password},
-            follow=True,
-        )
-        self.assertEqual(response.status_code, 200)
-        self.assertRedirects(response, self.create_account_url)
+    # def test_unsuccessful_create_account_no_username(self):
+    #     """
+    #     Tests if a user is able to create account after giving no username
+    #     """
+    #     response = self.client.post(
+    #         self.create_account_url,
+    #         {"username": "", "password": self.password},
+    #         follow=True,
+    #     )
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertRedirects(response, self.create_account_url)
 
-    def test_unsuccessful_login_no_password(self):
-        """
-        Tests if a user is able to login after giving no password
-        """
-        response = self.client.post(
-            self.create_account_url,
-            {"username": self.username, "password": ""},
-            follow=True,
-        )
-        self.assertEqual(response.status_code, 200)
-        self.assertRedirects(response, self.create_account_url)
+    # def test_unsuccessful_create_account__account__account_no_password(self):
+    #     """
+    #     Tests if a user is able to create account after giving no password
+    #     """
+    #     response = self.client.post(
+    #         self.create_account_url,
+    #         {"username": self.username, "password": ""},
+    #         follow=True,
+    #     )
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertRedirects(response, self.create_account_url)
 
-    def test_unsuccessful_login_no_username_password(self):
-        """
-        Tests if a user is able to login after giving no username or password
-        """
-        response = self.client.post(
-            self.create_account_url, {"username": "", "password": ""}, follow=True
-        )
-        self.assertEqual(response.status_code, 200)
-        self.assertRedirects(response, self.create_account_url)
+    # def test_unsuccessful_create_account_no_username_password(self):
+    #     """
+    #     Tests if a user is able to create account after giving no username or password
+    #     """
+    #     response = self.client.post(
+    #         self.create_account_url, {"username": "", "password": ""}, follow=True
+    #     )
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertRedirects(response, self.create_account_url)
 
-    def test_unsuccessful_login_wrong_username(self):
-        """
-        Tests if a user is able to login after giving incorrect username
-        """
-        response = self.client.post(
-            self.create_account_url,
-            {"username": "failure", "password": self.password},
-            follow=True,
-        )
-        self.assertEqual(response.status_code, 200)
-        self.assertRedirects(response, self.create_account_url)
+    # def test_unsuccessful_create_account_wrong_username(self):
+    #     """
+    #     Tests if a user is able to create account after giving incorrect username
+    #     """
+    #     response = self.client.post(
+    #         self.create_account_url,
+    #         {"username": "failure", "password": self.password},
+    #         follow=True,
+    #     )
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertRedirects(response, self.create_account_url)
 
-    def test_unsuccessful_login_wrong_password(self):
-        """
-        Tests if a user is able to login after giving incorrect password
-        """
-        response = self.client.post(
-            self.create_account_url,
-            {"username": self.username, "password": "failure"},
-            follow=True,
-        )
-        self.assertEqual(response.status_code, 200)
-        self.assertRedirects(response, self.create_account_url)
+    # def test_unsuccessful_create_account_wrong_password(self):
+    #     """
+    #     Tests if a user is able to create account after giving incorrect password
+    #     """
+    #     response = self.client.post(
+    #         self.create_account_url,
+    #         {"username": self.username, "password": "failure"},
+    #         follow=True,
+    #     )
+    #     self.assertEqual(response.status_code, 200)
+    #     self.assertRedirects(response, self.create_account_url)
