@@ -29,7 +29,7 @@
             <label for="player_name" class="form-label">Player Name</label>
             <input class="form-control" id="player_name" placeholder="Player Name"/>
           </div>
-          <div class="col-10 col-lg-3">
+          <div class="col-10 col-lg-2">
             <label for="class_select" class="form-label">Class</label>
             <select class="form-select" id="class_select" aria-label="Class">
               {% for choice in clazz_list %}
@@ -49,7 +49,7 @@
               {% endfor %}
             </select>
           </div>
-          <div class="col-10 col-lg-3">
+          <div class="col-10 col-lg-2">
             <label for="race_select" class="form-label">Race</label>
             <select class="form-select" id="race_select" aria-label="Class">
               {% for choice in race_list %}
@@ -59,7 +59,7 @@
               {% endfor %}
             </select>
           </div>
-          <div class="col-10 col-lg-3">
+          <div class="col-10 col-lg-2">
             <label for="alignment_select" class="form-label">Alignment</label>
             <select class="form-select" id="alignment_select" aria-label="Class">
               {% for choice in alignment_list %}
@@ -72,15 +72,15 @@
         </div>
       </div>
       <div class="col-7 col-lg">
-        <div class="row g-3 p-3">
+        <div class="row p-3 ">
           <div class="btn-group" role="group" aria-label="Generate-buttons">
-            <button type="button"
+            <button type="submit"
                     class="btn btn-lg btn-success"
                     style="--bs-btn-padding-y: 1rem;">GENERATE</button>
-            <button type="button"
+            <button type="submit"
                     class="btn btn-lg btn-primary"
                     style="--bs-btn-padding-y: 1rem;">SAVE</button>
-            <button type="button"
+            <button type="submit"
                     class="btn btn-lg btn-secondary"
                     style="--bs-btn-padding-y: 1rem;">EXPORT</button>
           </div>
@@ -88,71 +88,6 @@
       </div>
     </div>
     {% comment %}
-    <div class="row">
-      <div class="column md-8" <div class="form-group">
-          <label for="character_name">
-            <h4>Character Name</h4>
-          </label>
-          <input class="form-control" id="character_name" placeholder="{{ data.name }}"/>
-        </div>
-        {{ data.name }}
-      </div>
-      <div class="column md-8">
-        <input class="form-control" id="player_name" placeholder="Player Name"/>
-        <button class="btn btn-secondary dropdown-toggle" href="#" rols="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          Class
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          {% for choice in clazz_list %}
-            <li>
-              <a class="dropdown-item" href="#">{{ choice }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-        <button class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          Background
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          {% for choice in background_list %}
-            <li>
-              <a class="dropdown-item" href="#">{{ choice }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-        <button class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          Race
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          {% for choice in race_list %}
-            <li>
-              <a class="dropdown-item" href="#">{{ choice }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-        <button class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-          Alignment
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          {% for choice in alignment_list %}
-            <li>
-              <a class="dropdown-item" href="#">{{ choice }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-        <input class="form-control" id="player_name" placeholder="Experience Points"/>
-      </div>
-      <div class="column md-8">
-        <button class="green" type="submit" name="generate">
-          <h4>GENERATE</h4>
-        </button>
-        <button class="blue" type="submit" name="save">
-          <h4>SAVE</h4>
-        </button>
-        <button class="purple" type="submit" name="export">
-          <h4>EXPORT</h4>
-        </button>
-      </div>
-    </div>
   <div class="row">
     <div class="character-statblock">
       <div class="character-stat">
