@@ -14,56 +14,77 @@
         </div>
       </div>
     </div>
-    <div class="row mx-0 character-statblock">
-      <div class="col">
+    <div class="row mx-0 pt-3 " style="background-color: #7D8B8C;">
+      <div class="col-7 col-lg-3" style="background-color: #7D8B8C;">
+        <label for="character_name">
+          <h4>Character Name</h4>
+        </label>
         <input class="form-control"
                id="character_name"
-               placeholder="{% if data.name %}{{ data.name }}{% else %}Character Nmae{% endif %}"/>
-        <input class="form-control" id="player_name" placeholder="Player Name"/>
+               placeholder="{% if data.name %}{{ data.name }}{% endif %}"/>
       </div>
-      <div class="col">
-        <label for="class_select" class="form-label">
-          <h4>Class</h4>
-        </label>
-        <select class="form-select" id="class_select" aria-label="Class">
-          {% for choice in clazz_list %}
-            <option value="{{ choice }}">
-              {{ choice }}
-            </option>
-          {% endfor %}
-        </select>
-        <label for="background_select" class="form-label">
-          <h4>Background</h4>
-        </label>
-        <select class="form-select" id="background_select" aria-label="Class">
-          {% for choice in background_list %}
-            <option value="{{ choice }}">
-              {{ choice }}
-            </option>
-          {% endfor %}
-        </select>
+      <div class="col-7 col-lg-6">
+        <div class="row gy-3">
+          <div class="col-10 col-lg-3">
+            <label for="player_name" class="form-label">Player Name</label>
+            <input class="form-control" id="player_name" placeholder="Player Name"/>
+          </div>
+          <div class="col-10 col-lg-3">
+            <label for="class_select" class="form-label">Class</label>
+            <select class="form-select" id="class_select" aria-label="Class">
+              {% for choice in clazz_list %}
+                <option value="{{ choice }}">
+                  {{ choice }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-10 col-lg-3">
+            <label for="background_select" class="form-label">Background</label>
+            <select class="form-select" id="background_select" aria-label="Class">
+              {% for choice in background_list %}
+                <option value="{{ choice }}">
+                  {{ choice }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-10 col-lg-3">
+            <label for="race_select" class="form-label">Race</label>
+            <select class="form-select" id="race_select" aria-label="Class">
+              {% for choice in race_list %}
+                <option value="{{ choice }}">
+                  {{ choice }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-10 col-lg-3">
+            <label for="alignment_select" class="form-label">Alignment</label>
+            <select class="form-select" id="alignment_select" aria-label="Class">
+              {% for choice in alignment_list %}
+                <option value="{{ choice }}">
+                  {{ choice }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
       </div>
-      <div class="col">
-        <label for="race_select" class="form-label">
-          <h4>Race</h4>
-        </label>
-        <select class="form-select" id="race_select" aria-label="Class">
-          {% for choice in race_list %}
-            <option value="{{ choice }}">
-              {{ choice }}
-            </option>
-          {% endfor %}
-        </select>
-        <label for="alignment_select" class="form-label">
-          <h4>Alignment</h4>
-        </label>
-        <select class="form-select" id="alignment_select" aria-label="Class">
-          {% for choice in alignment_list %}
-            <option value="{{ choice }}">
-              {{ choice }}
-            </option>
-          {% endfor %}
-        </select>
+      <div class="col-7 col-lg">
+        <div class="row g-3 p-3">
+          <div class="btn-group" role="group" aria-label="Generate-buttons">
+            <button type="button"
+                    class="btn btn-lg btn-success"
+                    style="--bs-btn-padding-y: 1rem;">GENERATE</button>
+            <button type="button"
+                    class="btn btn-lg btn-primary"
+                    style="--bs-btn-padding-y: 1rem;">SAVE</button>
+            <button type="button"
+                    class="btn btn-lg btn-secondary"
+                    style="--bs-btn-padding-y: 1rem;">EXPORT</button>
+          </div>
+        </div>
       </div>
     </div>
     {% comment %}
