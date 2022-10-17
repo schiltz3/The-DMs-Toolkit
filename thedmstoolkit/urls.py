@@ -27,6 +27,9 @@ from toolkit.views.home_page import HomePage
 from toolkit.views.login import Login
 from toolkit.views.LootGenerator import LootGenerator
 from toolkit.views.logout import Logout
+from toolkit.views.saved_characters import SavedCharacters
+from toolkit.views.saved_loot import SavedLoot
+from toolkit.views.saved_encounters import SavedEncounters
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -60,6 +63,12 @@ urlpatterns = [
     ),
     # Loot Generator
     path("loot_generator/", LootGenerator.as_view(), name="loot_generator"),
+    # Saved Characters
+    path("saved_characters/", SavedCharacters.as_view(), name="saved_characters"),
+    # Saved Loot
+    path("saved_loot/", SavedLoot.as_view(), name="saved_loot"),
+    # Saved Encounters
+    path("saved_encounters/", SavedEncounters.as_view(), name="saved_encounters"),
     # test sites
     path("bootstrap_test/", BootstrapTest.as_view(), name="bootstrap_test"),
     # static files
