@@ -29,10 +29,10 @@ class CharacterGenerator(View):
 
         self.context: dict[str, any] = {}
         self.generator = Character_Generator()
-        self.context["clazz_list"] = self.generator.CLASS_DICT
-        self.context["background_list"] = self.generator.BACKGROUND_LIST
-        self.context["race_list"] = self.generator.RACE_DICT
-        self.context["alignment_list"] = self.generator.ALIGNMENT_DICT
+        self.context["clazz_list"] = sorted(self.generator.CLASS_DICT)
+        self.context["background_list"] = sorted(self.generator.BACKGROUND_LIST)
+        self.context["race_list"] = sorted(self.generator.RACE_DICT)
+        self.context["alignment_list"] = sorted(self.generator.ALIGNMENT_DICT)
 
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
