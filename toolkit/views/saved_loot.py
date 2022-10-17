@@ -6,6 +6,7 @@ from django.views import View
 class SavedLoot(View):
     """A class to handle the retrieval and list of a user's saved loot."""
 
+    @staticmethod
     def get(request):
         """GET method for saved loot page"""
         if not request.user.is_authenticated:
@@ -13,6 +14,7 @@ class SavedLoot(View):
             return redirect("login")
         return render(request, "saved_loot.html")
 
+    @staticmethod
     def post(request):
         """POST method for saved loot page"""
         if not request.user.is_authenticated:
