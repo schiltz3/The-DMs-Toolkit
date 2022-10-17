@@ -109,6 +109,8 @@ img {
     background-color: #D9CAAB;
     display:flex;
     min-height: 85px;
+    width: 100%;
+    /* height: auto; */
 }
 
 .character-row {
@@ -131,7 +133,7 @@ img {
     float: left;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     padding: 1%;
-    width: 40%;
+    width: 60%;
 }
 
 .character-control {
@@ -213,7 +215,7 @@ img {
     justify-content: center;
 }
 
-button {
+/* button {
     border-radius: 20%;
     color: white;
     display: inline-block;
@@ -229,11 +231,11 @@ button {
     }
     .purple {
     background-color: #A8A0D9;
-    }
+    } */
 
-button:hover {
+/* button:hover {
     background-color: #4D5657;
-}
+} */
 
 input.small {
     display: flex;
