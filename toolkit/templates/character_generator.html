@@ -27,11 +27,17 @@
         <div class="row gy-3">
           <div class="col-10 col-lg-3">
             <label for="player_name" class="form-label">Player Name</label>
-            <input class="form-control" id="player_name" placeholder="Player Name"/>
+            <input class="form-control"
+                   id="player_name"
+                   name="player_name"
+                   placeholder="Player Name"/>
           </div>
           <div class="col-10 col-lg-2">
             <label for="class_select" class="form-label">Class</label>
-            <select class="form-select" id="class_select" aria-label="Class">
+            <select class="form-select"
+                    id="class_select"
+                    name="class_select"
+                    aria-label="Class">
               {% for choice in clazz_list %}
                 <option value="{{ choice }}">
                   {{ choice }}
@@ -41,7 +47,10 @@
           </div>
           <div class="col-10 col-lg-3">
             <label for="background_select" class="form-label">Background</label>
-            <select class="form-select" id="background_select" aria-label="Class">
+            <select class="form-select"
+                    id="background_select"
+                    name="background_select"
+                    aria-label="Class">
               {% for choice in background_list %}
                 <option value="{{ choice }}">
                   {{ choice }}
@@ -51,7 +60,10 @@
           </div>
           <div class="col-10 col-lg-2">
             <label for="race_select" class="form-label">Race</label>
-            <select class="form-select" id="race_select" aria-label="Class">
+            <select class="form-select"
+                    id="race_select"
+                    name="race_select"
+                    aria-label="Class">
               {% for choice in race_list %}
                 <option value="{{ choice }}">
                   {{ choice }}
@@ -61,7 +73,10 @@
           </div>
           <div class="col-10 col-lg-2">
             <label for="alignment_select" class="form-label">Alignment</label>
-            <select class="form-select" id="alignment_select" aria-label="Class">
+            <select class="form-select"
+                    id="alignment_select"
+                    name="alignment_select"
+                    aria-label="Class">
               {% for choice in alignment_list %}
                 <option value="{{ choice }}">
                   {{ choice }}
@@ -76,13 +91,20 @@
           <div class="btn-group" role="group" aria-label="Generate-buttons">
             <button type="submit"
                     class="btn btn-lg btn-success"
-                    style="--bs-btn-padding-y: 1rem;">GENERATE</button>
+                    name="generate_button"
+                    style="--bs-btn-padding-y: 1rem;">
+              GENERATE
+            </button>
             <button type="submit"
                     class="btn btn-lg btn-primary"
+                    name="save_button"
                     style="--bs-btn-padding-y: 1rem;">SAVE</button>
             <button type="submit"
+                    name="export_button"
                     class="btn btn-lg btn-secondary"
-                    style="--bs-btn-padding-y: 1rem;">EXPORT</button>
+                    style="--bs-btn-padding-y: 1rem;">
+              EXPORT
+            </button>
           </div>
         </div>
       </div>

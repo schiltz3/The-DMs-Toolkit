@@ -1,5 +1,6 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from turtle import back
+from typing import Any
 from django.shortcuts import render
 from django.views import View
 import inspect
@@ -16,6 +17,12 @@ from django.shortcuts import redirect, render
 from django.views import View
 
 from toolkit.views.character_generator.character_generation import Character_Generator
+
+
+class Element:
+    def __init__(self, data: Any = "", error: str = ""):
+        self.data = data
+        self.error = error
 
 
 class CharacterGenerator(View):
@@ -50,6 +57,7 @@ class CharacterGenerator(View):
 
     def post(self, request: HttpRequest):
         """POST method for create user page."""
+        print(request.POST.get("character_name"))
 
         form = GenerateCharacterData.from_form(request.POST)
         self.context["data"] = form
@@ -69,7 +77,7 @@ class CharacterGenerator(View):
 
 @dataclass
 class GenerateCharacterData:
-    name: str = ""
+    name: Element = field(default_factory=Element)
     clazz: str = ""
     background: str = ""
     player_name: str = ""
@@ -86,6 +94,7 @@ class GenerateCharacterData:
 
     @classmethod
     def from_form(cls, env):
+        print(env)
         return cls(
             **{k: v for k, v in env.items() if k in inspect.signature(cls).parameters}
         )
