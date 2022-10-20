@@ -21,7 +21,7 @@
         </label>
         <input class="form-control"
                id="character_name"
-               placeholder="{% if data.name %}{{ data.name }}{% endif %}"/>
+               placeholder="{% if data.name %}{{ data.name.data }}{% endif %}"/>
       </div>
       <div class="col-7 col-lg-6">
         <div class="row gy-3">
@@ -34,14 +34,16 @@
           </div>
           <div class="col-10 col-lg-2">
             <label for="class_select" class="form-label">Class</label>
-            <select class="form-select"
-                    id="class_select"
-                    name="class_select"
-                    aria-label="Class">
+            <select class="form-select" id="class_select" name="clazz" aria-label="class">
+              <option selected>
+                {{ data.clazz.value }}
+              </option>
               {% for choice in clazz_list %}
-                <option value="{{ choice }}">
-                  {{ choice }}
-                </option>
+                {% if choice != data.clazz.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
               {% endfor %}
             </select>
           </div>
@@ -49,25 +51,32 @@
             <label for="background_select" class="form-label">Background</label>
             <select class="form-select"
                     id="background_select"
-                    name="background_select"
-                    aria-label="Class">
+                    name="background"
+                    aria-label="background">
+              <option selected>
+                {{ data.background.value }}
+              </option>
               {% for choice in background_list %}
-                <option value="{{ choice }}">
-                  {{ choice }}
-                </option>
+                {% if choice != data.background.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
               {% endfor %}
             </select>
           </div>
           <div class="col-10 col-lg-2">
             <label for="race_select" class="form-label">Race</label>
-            <select class="form-select"
-                    id="race_select"
-                    name="race_select"
-                    aria-label="Class">
+            <select class="form-select" id="race_select" name="race" aria-label="race">
+              <option selected>
+                {{ data.race.value }}
+              </option>
               {% for choice in race_list %}
-                <option value="{{ choice }}">
-                  {{ choice }}
-                </option>
+                {% if choice != data.race.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
               {% endfor %}
             </select>
           </div>
@@ -75,12 +84,17 @@
             <label for="alignment_select" class="form-label">Alignment</label>
             <select class="form-select"
                     id="alignment_select"
-                    name="alignment_select"
-                    aria-label="Class">
+                    name="alignment"
+                    aria-label="alignment">
+              <option selected>
+                {{ data.alignment.value }}
+              </option>
               {% for choice in alignment_list %}
-                <option value="{{ choice }}">
-                  {{ choice }}
-                </option>
+                {% if choice != data.alignment.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
               {% endfor %}
             </select>
           </div>
@@ -117,10 +131,10 @@
                style="width: 100%"/>
           <div class="character-stat-title">STRENGTH</div>
           <div class="character-stat-base">
-            <h3>10</h3>
+            <h3>{{ out.strength }}</h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>+0</h4>
+            <h4>{{ out.mod_strength }}</h4>
           </div>
         </div>
         <div class="character-stat">
@@ -129,10 +143,10 @@
                style="width: 100%"/>
           <div class="character-stat-title">DEXTERITY</div>
           <div class="character-stat-base">
-            <h3>10</h3>
+            <h3>{{ out.dexterity }}</h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>+0</h4>
+            <h4>{{ out.mod_dexterity }}</h4>
           </div>
         </div>
         <div class="character-stat">
@@ -141,10 +155,10 @@
                style="width: 100%"/>
           <div class="character-stat-title">CONSTITUTION</div>
           <div class="character-stat-base">
-            <h3>10</h3>
+            <h3>{{ out.constitution }}</h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>+0</h4>
+            <h4>{{ out.mod_constitution }}</h4>
           </div>
         </div>
         <div class="character-stat">
@@ -153,10 +167,10 @@
                style="width: 100%"/>
           <div class="character-stat-title">INTELLIGENCE</div>
           <div class="character-stat-base">
-            <h3>10</h3>
+            <h3>{{ out.intelligence }}</h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>+0</h4>
+            <h4>{{ out.mod_intelligence }}</h4>
           </div>
         </div>
         <div class="character-stat">
@@ -165,10 +179,10 @@
                style="width: 100%"/>
           <div class="character-stat-title">WISDOM</div>
           <div class="character-stat-base">
-            <h3>10</h3>
+            <h3>{{ out.wisdom }}</h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>+0</h4>
+            <h4>{{ out.mod_wisdom }}</h4>
           </div>
         </div>
         <div class="character-stat">
@@ -177,11 +191,11 @@
                style="width: 100%"/>
           <div class="character-stat-title">CHARISMA</div>
           <div class="character-stat-base">
-            <h3>10</h3>
+            <h3>{{ out.charisma }}</h3>
           </div>
           <div class="character-stat-bonus">
             <h4>
-              +0
+              {{ out.mod_charisma }}
             </h4>
           </div>
         </div>
