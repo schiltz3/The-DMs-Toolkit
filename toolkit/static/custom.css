@@ -1,5 +1,7 @@
 body {
     background-color: #2f2e35;
+    width: 100%;
+    margin: auto;
 }
 
 #background-image{
@@ -212,6 +214,51 @@ img {
 .character-panel {
     display: flex;
     justify-content: center;
+}
+
+.loot-header {
+    background-color: #D9CAAB;
+    display:flex;
+    min-height: 85px;
+}
+ 
+.loot-scrollbar {
+    position: relative;
+    height: 365px;
+    overflow: auto;
+}
+
+.loot-table {
+    display: block;
+}
+
+.loot-table th {
+    background-color: #202024;
+    color: white;
+}
+
+.loot-table td {
+    background-color: #2f2e35;
+    color: white;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #2f2e35;
+    color: white;
+ }
+ 
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #6f6e7a;
+    color: black;
+}
+
+.btn-default {
+    padding-bottom: 50%;
+}
+
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
 }
 
 /* button {
