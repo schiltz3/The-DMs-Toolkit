@@ -167,7 +167,8 @@ img {
     padding: 1%;
     position: relative;
     text-align: center;
-    width: 50%;
+    width: 150px;
+    height: 170px; 
 }
 
 .character-stat-title {
@@ -186,10 +187,8 @@ img {
 }
 
 .character-stat-bonus {
-    left: 50%;
     position: absolute;
-    top: 50%;
-    transform: translate(-50%, 90%);
+    transform: translate(-7%, 150%);
 }
 
 .character-baseplate {
