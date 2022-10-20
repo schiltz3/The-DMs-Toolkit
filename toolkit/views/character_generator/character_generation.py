@@ -1,3 +1,4 @@
+from math import floor
 import random
 from typing import Callable, Optional, Union
 
@@ -196,19 +197,8 @@ class Character_Generator:
         Returns:
             str: ability modifier string
         """
-        stat_to_modifier_map = {
-            15: "+3",
-            14: "+2",
-            13: "+1",
-            12: "+1",
-            10: "+0",
-            8: "-1",
-        }
-
-        for k, v in stat_to_modifier_map.items():
-            if stat >= k:
-                return v
-        return "-1"
+        value = floor((stat - 10) / 2)
+        return str(value) if value < 0 else f"+{value}"
 
     @staticmethod
     def get_all_generators():

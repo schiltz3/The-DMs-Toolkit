@@ -1,4 +1,4 @@
-from dataclasses import dataclass, field
+from dataclasses import InitVar, dataclass, field
 from typing import Any, Optional
 from django.shortcuts import render
 from django.views import View
@@ -31,7 +31,7 @@ class CharacterGenerator(View):
 
         self.context: dict[str, any] = {}
         self.generator = Character_Generator()
-        self.context["out"] = GeneratedCharacterOutputs()
+        self.context["out"] = GeneratedCharacterOutputs(calculate=True)
         self.context["clazz_list"] = sorted(self.generator.CLASS_DICT)
         self.context["background_list"] = sorted(self.generator.BACKGROUND_LIST)
         self.context["race_list"] = sorted(self.generator.RACE_DICT)
@@ -40,6 +40,7 @@ class CharacterGenerator(View):
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
         self.context["data"] = GenerateCharacterInputs()
+        self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
 
     def post(self, request: HttpRequest):
@@ -49,12 +50,12 @@ class CharacterGenerator(View):
         print(request.POST)
 
         form = GenerateCharacterInputs.from_dict(request.POST)
+        print(form)
         self.context["data"] = form
         self.context["error"] = None
         if form.is_valid():
             try:
                 if request.POST.get("generate_button") is not None:
-                    pass
                     generated = Character_Generator.generate(
                         generations_list=[
                             "Stats",
@@ -72,6 +73,7 @@ class CharacterGenerator(View):
                         raise ValueError("stats not be list")
 
                     output = GeneratedCharacterOutputs(
+                        calculate=True,
                         strength=stats[0],
                         dexterity=stats[1],
                         constitution=stats[2],
@@ -83,10 +85,9 @@ class CharacterGenerator(View):
                     return render(request, "character_generator.html", self.context)
 
                 elif request.POST.get("save_button") is not None:
-                    pass
+                    return render(request, "character_generator.html", self.context)
                 elif request.POST.get("export_button") is not None:
-                    pass
-                ...
+                    return render(request, "character_generator.html", self.context)
             except ValueError as e:
                 self.context["form"] = form
                 self.context["error"] = str(e)
@@ -99,7 +100,7 @@ class CharacterGenerator(View):
 
 @dataclass
 class GenerateCharacterInputs:
-    name: Element = field(default_factory=Element)
+    character_name: Element = field(default_factory=Element)
     player_name: Element = field(default_factory=Element)  # Optional
     clazz: Element = field(default_factory=lambda: Element("All"))
     background: Element = field(default_factory=lambda: Element("Acolyte"))
@@ -109,7 +110,6 @@ class GenerateCharacterInputs:
 
     @classmethod
     def from_dict(cls, env: dict[str, Any]):
-        print(env)
         return cls(
             **{
                 k: Element(v)
@@ -134,6 +134,7 @@ class GenerateCharacterInputs:
 
 @dataclass
 class GeneratedCharacterOutputs:
+    calculate: InitVar[bool] = True
     strength: int = 0
     dexterity: int = 0
     constitution: int = 0
@@ -146,42 +147,44 @@ class GeneratedCharacterOutputs:
     mod_constitution: str = "+0"
     mod_intelligence: str = "+0"
     mod_wisdom: str = "+0"
-    mod_charisma: str = "+ 0"
+    mod_charisma: str = "+0"
 
-    proficency: int = 0
+    proficency: str = "+0"
 
-    st_strength: int = 0
-    st_dexterity: int = 0
-    st_constitution: int = 0
-    st_intelligence: int = 0
-    st_wisdom: int = 0
-    st_charisma: int = 0
+    st_strength: str = "+0"
+    st_dexterity: str = "+0"
+    st_constitution: str = "+0"
+    st_intelligence: str = "+0"
+    st_wisdom: str = "+0"
+    st_charisma: str = "+0"
 
     stat_speed: int = 0
-    stat_initiative: int = 0
+    stat_initiative: str = "0"
     stat_hit_points: int = 0
     stat_hit_dice: int = 0
 
-    sk_acrobatics: int = 0
-    sk_animal_handling: int = 0
-    sk_arcana: int = 0
-    sk_athletics: int = 0
-    sk_deception: int = 0
-    sk_history: int = 0
-    sk_insight: int = 0
-    sk_intimidation: int = 0
-    sk_investigation: int = 0
-    sk_medicine: int = 0
-    sk_nature: int = 0
-    sk_perception: int = 0
-    sk_performance: int = 0
-    sk_persuation: int = 0
-    sk_religion: int = 0
-    sk_sleight_of_hand: int = 0
-    sk_stealth: int = 0
-    sk_survival: int = 0
+    sk_acrobatics: str = "+0"
+    sk_animal_handling: str = "+0"
+    sk_arcana: str = "+0"
+    sk_athletics: str = "+0"
+    sk_deception: str = "+0"
+    sk_history: str = "+0"
+    sk_insight: str = "+0"
+    sk_intimidation: str = "+0"
+    sk_investigation: str = "+0"
+    sk_medicine: str = "+0"
+    sk_nature: str = "+0"
+    sk_perception: str = "+0"
+    sk_performance: str = "+0"
+    sk_persuasion: str = "+0"
+    sk_religion: str = "+0"
+    sk_sleight_of_hand: str = "+0"
+    sk_stealth: str = "+0"
+    sk_survival: str = "+0"
 
-    def __post_init__(self):
+    def __post_init__(self, calculate: bool):
+        if calculate is False:
+            return
         self.mod_strength = Character_Generator.calculate_ability_modifier(
             self.strength
         )
@@ -198,3 +201,37 @@ class GeneratedCharacterOutputs:
         self.mod_charisma = Character_Generator.calculate_ability_modifier(
             self.charisma
         )
+        self.st_strength = self.mod_strength
+
+        self.st_dexterity = self.mod_strength
+        self.st_constitution = self.mod_constitution
+        self.st_intelligence = self.mod_intelligence
+        self.st_charisma = self.mod_charisma
+
+        # TODO: Add proficiency bonus to initiative
+        self.stat_initiative = self.mod_dexterity
+
+        # TODO: Add proficiency bonuses to these if proficient
+
+        self.sk_athletics = self.mod_strength
+
+        self.sk_acrobatics = self.mod_dexterity
+        self.sk_sleight_of_hand = self.mod_dexterity
+        self.sk_stealth = self.mod_dexterity
+
+        self.sk_arcana = self.mod_intelligence
+        self.sk_history = self.mod_intelligence
+        self.sk_investigation = self.mod_intelligence
+        self.sk_nature = self.mod_intelligence
+        self.sk_religion = self.mod_intelligence
+
+        self.sk_animal_handling = self.mod_wisdom
+        self.sk_insight = self.mod_wisdom
+        self.sk_medicine = self.mod_wisdom
+        self.sk_perception = self.mod_wisdom
+        self.sk_survival = self.mod_wisdom
+
+        self.sk_deception = self.mod_charisma
+        self.sk_intimidation = self.mod_charisma
+        self.sk_performance = self.mod_charisma
+        self.sk_persuasion = self.mod_charisma
