@@ -1,5 +1,5 @@
-from math import floor
 import random
+from math import floor
 from typing import Callable, Optional, Union
 
 from toolkit.models import Character

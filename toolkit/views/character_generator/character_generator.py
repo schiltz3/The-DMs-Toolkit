@@ -1,8 +1,6 @@
+import inspect
 from dataclasses import InitVar, dataclass, field
 from typing import Any, Optional
-from django.shortcuts import render
-from django.views import View
-import inspect
 
 from django.http.request import HttpRequest
 from django.shortcuts import render
