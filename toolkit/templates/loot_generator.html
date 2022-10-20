@@ -3,4 +3,152 @@
 {% load static %}
 
 {% block application_pane %}
+<div class="container-fluid p-4">
+    <div>
+        <div class="row">
+            <div class="loot-header">
+                <img src="{% static 'Loot_Header.png' %}"
+                     alt="Character Header"
+                     style="width: 45%"/>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
+                <form>
+                    <label for="generatorType">Generator Type</label>
+                    <select class="form-select" type="generatorType" aria-label="Generator Type Selector">
+                        <option value="1" selected>Type 1</option>
+                        <option value="2">Type 2</option>
+                        <option value="3">Type 3</option>
+                    </select>
+                    <label for="lootType">Loot Type</label>
+                    <select class="form-select" type="lootType" aria-label="Loot Type Selector">
+                        <option value="1" selected>Type 1</option>
+                        <option value="2">Type 2</option>
+                        <option value="3">Type 3</option>
+                    </select>
+                </form>
+            </div>
+            <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
+                <form>
+                    <div class="form-group">
+                        <label for="totalValue">Total Value</label>
+                        <input type="totalValue" class="form-control" id="totalValue" placeholder="Enter Approximate Hoard Value...">
+                    </div>
+                    <div class="form-group">
+                        <label for="averageLevel">Average Level</label>
+                        <input type="averageLevel" class="form-control" id="averageLevel" placeholder="Enter Average Player Level...">
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-6 px-md-4 p-4" style="background-color: #7D8B8C;">
+                <div class="row p-2" style="height: 100%;">
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary">GENERATE</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary">SAVE</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary">EXPORT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 px-md-4 p-2" style="background-color: #D9CAAB;">
+                <h4>Gold Pieces:</h4>
+            </div>
+            <div class="col-sm-10 px-md-4 p-2" style="background-color: #D9CAAB; text-align: left;">
+                <h4><b>105gp</b></h4>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <div class="loot-table loot-scrollbar">
+                    <table class="table table-hover">
+                        <thead style="position: sticky; top: 0;">
+                        <tr>
+                            <th scope="col" >#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Value</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Sword</td>
+                            <td>Weapon</td>
+                            <td>15gp</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Shield</td>
+                            <td>Armor</td>
+                            <td>20gp</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Amulet</td>
+                            <td>Magic</td>
+                            <td>10gp</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Idol</td>
+                            <td>Generic</td>
+                            <td>5gp</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Spellbook</td>
+                            <td>Magic</td>
+                            <td>50gp</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Helmet</td>
+                            <td>Armor</td>
+                            <td>15gp</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>Bow</td>
+                            <td>Weapon</td>
+                            <td>20gp</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Boots</td>
+                            <td>Armor</td>
+                            <td>10gp</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>Feathers</td>
+                            <td>Generic</td>
+                            <td>5gp</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>Ring</td>
+                            <td>Generic</td>
+                            <td>10gp</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-2 px-md-4 p-2" style="background-color: #D9CAAB;">
+                <h4>Total Value:</h4>
+            </div>
+            <div class="col-sm-10 px-md-4 p-2" style="background-color: #D9CAAB; text-align: left;">
+                <h4><b>1050gp</b></h4>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock application_pane %}
