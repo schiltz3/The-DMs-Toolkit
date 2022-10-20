@@ -187,6 +187,30 @@ class Character_Generator:
     Generators.update(UnlimitedGenerators)
 
     @staticmethod
+    def calculate_ability_modifier(stat: int) -> str:
+        """Takes a stat and returns the ability modifier as a string
+
+        Args:
+            stat (int): the stat
+
+        Returns:
+            str: ability modifier string
+        """
+        stat_to_modifier_map = {
+            15: "+3",
+            14: "+2",
+            13: "+1",
+            12: "+1",
+            10: "+0",
+            8: "-1",
+        }
+
+        for k, v in stat_to_modifier_map.items():
+            if stat >= k:
+                return v
+        return "-1"
+
+    @staticmethod
     def get_all_generators():
         """
         Gives the list of generator keys
@@ -344,7 +368,7 @@ class Character_Generator:
         ]
 
     @staticmethod
-    def Generate(
+    def generate(
         generations_list: Optional[list[str]] = None,
         stat_generator_key: Optional[str] = None,
         race_key="All",
