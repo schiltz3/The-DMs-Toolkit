@@ -16,7 +16,7 @@ class Login(View):
         context = {"username": username}
         return render(request, "login.html", context)
 
-    def post(self, request):
+    def post(self, request, **kwargs):
         """POST method for login page."""
         username = request.POST.get("username")
         password = request.POST.get("password")

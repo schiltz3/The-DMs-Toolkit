@@ -95,6 +95,7 @@ def create_user(username: str, email: str, password: str) -> Optional[User]:
     except User.DoesNotExist:
         pass
 
-    a = User(email=email, username=username, password=password)
+    a = User(email=email, username=username)
+    a.set_password(password)
     a.save()
     return a
