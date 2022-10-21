@@ -3,7 +3,7 @@ import unittest
 import django
 from django.test import TestCase
 
-import thedmstoolkit.character_generation as Char_Gen
+import toolkit.views.character_generator.character_generation as Char_Gen
 from toolkit.models import Character, User
 
 django.setup()
@@ -113,7 +113,7 @@ class PositiveTests(TestCase):
 
     def test_generate(self):
         """Testing the wider generate function"""
-        test_generated = Char_Gen.Character_Generator.Generate()
+        test_generated = Char_Gen.Character_Generator.generate()
         self.assertEqual(len(test_generated), 5)
         self.assertTrue(
             test_generated["Race"] in Char_Gen.Character_Generator.RACE_DICT["All"]
@@ -133,13 +133,13 @@ class PositiveTests(TestCase):
             self.assertGreater(i, 0)
             self.assertLessEqual(i, 18)
 
-        test_generated = Char_Gen.Character_Generator.Generate(["Race"])
+        test_generated = Char_Gen.Character_Generator.generate(["Race"])
         self.assertEqual(len(test_generated), 1)
         self.assertTrue(
             test_generated["Race"] in Char_Gen.Character_Generator.RACE_DICT["All"]
         )
 
-        test_generated = Char_Gen.Character_Generator.Generate(
+        test_generated = Char_Gen.Character_Generator.generate(
             ["Class", "Alignment", "Background", "Stats", "Race"],
             "random",
             "Monster",
@@ -166,7 +166,7 @@ class PositiveTests(TestCase):
             self.assertTrue(type(i) is int)
             self.assertEqual(i, 12)
 
-        test_generated = Char_Gen.Character_Generator.Generate(
+        test_generated = Char_Gen.Character_Generator.generate(
             generations_list=["Stats", "Alignment"],
             alignment_key="Evil",
             stat_list=[13, 13, 13, 13, 13, 13],
@@ -307,17 +307,17 @@ class Negative_Tests(TestCase):
         Too many inputs
         """
         with self.assertRaises(ValueError, msg="Should not accept such small arrays"):
-            Char_Gen.Character_Generator.Generate(stat_list=[12, 12, 12, 12])
+            Char_Gen.Character_Generator.generate(stat_list=[12, 12, 12, 12])
         with self.assertRaises(RuntimeError, msg="Should not accept non integers"):
-            Char_Gen.Character_Generator.Generate(
+            Char_Gen.Character_Generator.generate(
                 stat_list=[12, 12, 12, 12, 12, "Test"]
             )
         with self.assertRaises(
             RuntimeError, msg="Should not accept such large numbers"
         ):
-            Char_Gen.Character_Generator.Generate(stat_list=[12, 12, 12, 12, 12, 60])
+            Char_Gen.Character_Generator.generate(stat_list=[12, 12, 12, 12, 12, 60])
         with self.assertRaises(Exception, msg="Should not accept so many inputs"):
-            Char_Gen.Character_Generator.Generate(
+            Char_Gen.Character_Generator.generate(
                 ["Class", "Alignment", "Background", "Stats", "Race"],
                 "random",
                 "Monster",

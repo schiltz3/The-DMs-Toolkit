@@ -1,4 +1,5 @@
 import random
+from math import floor
 from typing import Callable, Optional, Union
 
 from toolkit.models import Character
@@ -187,6 +188,19 @@ class Character_Generator:
     Generators.update(UnlimitedGenerators)
 
     @staticmethod
+    def calculate_ability_modifier(stat: int) -> str:
+        """Takes a stat and returns the ability modifier as a string
+
+        Args:
+            stat (int): the stat
+
+        Returns:
+            str: ability modifier string
+        """
+        value = floor((stat - 10) / 2)
+        return str(value) if value < 0 else f"+{value}"
+
+    @staticmethod
     def get_all_generators():
         """
         Gives the list of generator keys
@@ -344,7 +358,7 @@ class Character_Generator:
         ]
 
     @staticmethod
-    def Generate(
+    def generate(
         generations_list: Optional[list[str]] = None,
         stat_generator_key: Optional[str] = None,
         race_key="All",
