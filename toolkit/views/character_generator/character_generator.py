@@ -10,6 +10,8 @@ from toolkit.views.character_generator.character_generation import Character_Gen
 
 
 class Element:
+    """Contains the value and error to display in templates"""
+
     def __init__(self, data: Any = "", error: Optional[str] = None):
         self.value = data
         self.error = error
@@ -82,9 +84,9 @@ class CharacterGenerator(View):
                     self.context["out"] = output
                     return render(request, "character_generator.html", self.context)
 
-                elif request.POST.get("save_button") is not None:
+                if request.POST.get("save_button") is not None:
                     return render(request, "character_generator.html", self.context)
-                elif request.POST.get("export_button") is not None:
+                if request.POST.get("export_button") is not None:
                     return render(request, "character_generator.html", self.context)
             except ValueError as e:
                 self.context["form"] = form
@@ -98,6 +100,8 @@ class CharacterGenerator(View):
 
 @dataclass
 class GenerateCharacterInputs:
+    """Class which holds all the user intractable for the character generator page"""
+
     character_name: Element = field(default_factory=Element)
     player_name: Element = field(default_factory=Element)  # Optional
     clazz: Element = field(default_factory=lambda: Element("All"))
@@ -108,6 +112,14 @@ class GenerateCharacterInputs:
 
     @classmethod
     def from_dict(cls, env: dict[str, Any]):
+        """Takes a dictionary, and pulls out the correct args for GenerateCharacterInputs
+        then returns a new GenerateCharacterInputs with the args filled out
+        Args:
+            env (dict[str, Any]): Any dictionary
+
+        Returns:
+            GeneratedCharacterInputs: new GeneratedCharacterInputs with args from env
+        """
         return cls(
             **{
                 k: Element(v)
@@ -116,22 +128,19 @@ class GenerateCharacterInputs:
             }
         )
 
-    def clean(self):
-        if self.clazz.value == "":
-            self.clazz.value = "All"
-        if self.background.value == "":
-            self.background.value = "Acolyte"
-        if self.race.value == "":
-            self.race.value = "All"
-        if self.alignment.value == "":
-            self.alignment.value = "All"
+    def is_valid(self) -> bool:
+        """Determine if Dataclass holds all valid data
 
-    def is_valid(self):
+        Returns:
+            bool: Tru if dataclass holds valid data
+        """
         return True
 
 
 @dataclass
 class GeneratedCharacterOutputs:
+    """Contain all the non-user intractable elements of the page"""
+
     calculate: InitVar[bool] = True
     strength: int = 0
     dexterity: int = 0
