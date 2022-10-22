@@ -2,8 +2,6 @@ import random
 from math import floor, ceil
 from typing import Callable, Optional, Union
 
-from toolkit.models import Character
-
 Generator = Callable[[int, int], int]
 
 
