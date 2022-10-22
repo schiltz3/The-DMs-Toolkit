@@ -1,5 +1,5 @@
 import random
-from math import floor
+from math import floor, ceil
 from typing import Callable, Optional, Union
 
 from toolkit.models import Character
@@ -137,8 +137,8 @@ class Character_Generator:
             "Chaotic Evil",
         ],
     }
-    BACKGROUND_LIST = [
-        "Acolyte",
+    BACKGROUND_DICT = {"All":
+        ["Acolyte",
         "Athlete",
         "Barbarian Tribe Member",
         "Charlatan",
@@ -161,6 +161,7 @@ class Character_Generator:
         "Soldier",
         "Urchin",
     ]
+    }
     GENERATOR_LIST: list[str] = ["Stats", "Race", "Class", "Alignment", "Background"]
     STANDARD_ARRAY: list[int] = [15, 14, 13, 12, 10, 8]
 
@@ -186,7 +187,26 @@ class Character_Generator:
     }
     Generators.update(LimitedGenerators)
     Generators.update(UnlimitedGenerators)
+    @staticmethod
+    def get_proficiency_modifier(level):
+        """_summary_
 
+        Args:
+            level (Integer): Character Level
+
+        Raises:
+            RuntimeError: Not a integer
+            ValueError: Not a valid level
+
+        Returns:
+            Proficiency value: the value to add to proficiencies based on level given
+        """        
+        if type(level) is not int:
+            raise RuntimeError("Level is not an integer")
+        if not 0<level<=21:
+            raise ValueError("Illegal Level")
+        return ceil(level/4)+1
+        
     @staticmethod
     def calculate_ability_modifier(stat: int) -> str:
         """Takes a stat and returns the ability modifier as a string
@@ -197,6 +217,10 @@ class Character_Generator:
         Returns:
             str: ability modifier string
         """
+        if type(int) is not int:
+            raise RuntimeError("Stat is not an integer")
+        if not 0<stat<=20:
+            raise ValueError("Illegal Level")
         value = floor((stat - 10) / 2)
         return str(value) if value < 0 else f"+{value}"
 
@@ -340,7 +364,6 @@ class Character_Generator:
         Args:
             background_list (str): background
             generator_key (str): key required to specify which randomizer you want
-
         Raises:
             RuntimeError: If the key provided is the wrong type
             RuntimeError: If there is an unauthorized item in the passed list
@@ -351,7 +374,7 @@ class Character_Generator:
         if generator_key not in Character_Generator.Generators:
             raise RuntimeError("Generator does not exist")
         for x in background_list:
-            if x not in Character_Generator.BACKGROUND_LIST:
+            if x not in Character_Generator.BACKGROUND_DICT["All"]:
                 raise RuntimeError("Invalid List")
         return background_list[
             Character_Generator.Generators[generator_key](0, len(background_list) - 1)
@@ -364,6 +387,7 @@ class Character_Generator:
         race_key="All",
         class_key="All",
         alignment_key="All",
+        background_key = "All",
         generator_key="random",
         stat_list: Optional[list[int]] = None,
     ) -> dict[str, Union[list[int], str]]:
@@ -431,25 +455,27 @@ class Character_Generator:
             )
         if "Background" in generations_list:
             generated["Background"] = Character_Generator.generate_background(
-                Character_Generator.BACKGROUND_LIST, generator_key
+                Character_Generator.BACKGROUND_DICT[background_key], generator_key
             )
         return generated
 
     @staticmethod
-    def Arrange(character_id, stat_array):
+    def Arrange(current_class, stat_array):
         """
-        Given a character ID and a 6 number array it
+        Given a class and a 6 number array it
         arranges the numbers in an optimal allocation for any given class
 
         Raises:
-            RuntimeError: If the character is does not exist
+            RuntimeError: If the class does not exist
             RuntimeError: If the Array of integers is the wrong size
+            
+        Returns:
+            List of stat values in the Strength Dexterity Constitution Intelligence Wisdom Charisma order
         """
-        check_existence = Character.objects.filter(id=character_id)
+        if current_class not in Character_Generator.CLASS_DICT["All"]:
+            raise RuntimeError("Not a valid class")
         if len(stat_array) != 6:
             raise RuntimeError("Not a valid list")
-        if not check_existence.exists():
-            raise RuntimeError("Character does not exist")
         for i in stat_array:
             if type(i) is not int:
                 raise RuntimeError("Non integer found in the list")
@@ -457,98 +483,97 @@ class Character_Generator:
                 raise RuntimeError("Invalid number")
         if len(stat_array) != 6:
             raise RuntimeError("Not a valid list")
-        current_character = Character.objects.get(id=character_id)
-        current_class = current_character.Class
         stat_array = sorted(stat_array)
+        results = []
         if current_class == "Artificer":
-            current_character.Strength = stat_array[0]
-            current_character.Dexterity = stat_array[3]
-            current_character.Constitution = stat_array[4]
-            current_character.Intelligence = stat_array[5]
-            current_character.Wisdom = stat_array[2]
-            current_character.Charisma = stat_array[1]
+            results.append(stat_array[0])
+            results.append(stat_array[3])
+            results.append(stat_array[4])
+            results.append(stat_array[5])
+            results.append(stat_array[2])
+            results.append(stat_array[1])
         elif current_class == "Barbarian":
-            current_character.Strength = stat_array[5]
-            current_character.Dexterity = stat_array[3]
-            current_character.Constitution = stat_array[4]
-            current_character.Intelligence = stat_array[0]
-            current_character.Wisdom = stat_array[2]
-            current_character.Charisma = stat_array[1]
+            results.append(stat_array[5])
+            results.append(stat_array[3])
+            results.append(stat_array[4])
+            results.append(stat_array[0])
+            results.append(stat_array[2])
+            results.append(stat_array[1])
         elif current_class == "Bard":
-            current_character.Strength = stat_array[1]
-            current_character.Dexterity = stat_array[4]
-            current_character.Constitution = stat_array[3]
-            current_character.Intelligence = stat_array[0]
-            current_character.Wisdom = stat_array[1]
-            current_character.Charisma = stat_array[5]
+            results.append(stat_array[1])
+            results.append(stat_array[4])
+            results.append(stat_array[3])
+            results.append(stat_array[0])
+            results.append(stat_array[1])
+            results.append(stat_array[5])
         elif current_class == "Cleric":
-            current_character.Strength = stat_array[3]
-            current_character.Dexterity = stat_array[2]
-            current_character.Constitution = stat_array[4]
-            current_character.Intelligence = stat_array[0]
-            current_character.Wisdom = stat_array[5]
-            current_character.Charisma = stat_array[1]
+            results.append(stat_array[3])
+            results.append(stat_array[2])
+            results.append(stat_array[4])
+            results.append(stat_array[0])
+            results.append(stat_array[5])
+            results.append(stat_array[1])
         elif current_class == "Druid":
-            current_character.Strength = stat_array[2]
-            current_character.Dexterity = stat_array[3]
-            current_character.Constitution = stat_array[4]
-            current_character.Intelligence = stat_array[1]
-            current_character.Wisdom = stat_array[5]
-            current_character.Charisma = stat_array[0]
+            results.append(stat_array[2])
+            results.append(stat_array[3])
+            results.append(stat_array[4])
+            results.append(stat_array[1])
+            results.append(stat_array[5])
+            results.append(stat_array[0])
         elif current_class == "Fighter":
-            current_character.Strength = stat_array[5]
-            current_character.Dexterity = stat_array[3]
-            current_character.Constitution = stat_array[4]
-            current_character.Intelligence = stat_array[0]
-            current_character.Wisdom = stat_array[2]
-            current_character.Charisma = stat_array[1]
+            results.append(stat_array[5])
+            results.append(stat_array[3])
+            results.append(stat_array[4])
+            results.append(stat_array[0])
+            results.append(stat_array[2])
+            results.append(stat_array[1])
         elif current_class == "Monk":
-            current_character.Strength = stat_array[2]
-            current_character.Dexterity = stat_array[5]
-            current_character.Constitution = stat_array[3]
-            current_character.Intelligence = stat_array[1]
-            current_character.Wisdom = stat_array[4]
-            current_character.Charisma = stat_array[0]
+            results.append(stat_array[2])
+            results.append(stat_array[5])
+            results.append(stat_array[3])
+            results.append(stat_array[1])
+            results.append(stat_array[4])
+            results.append(stat_array[0])
         elif current_class == "Paladin":
-            current_character.Strength = stat_array[5]
-            current_character.Dexterity = stat_array[2]
-            current_character.Constitution = stat_array[3]
-            current_character.Intelligence = stat_array[0]
-            current_character.Wisdom = stat_array[1]
-            current_character.Charisma = stat_array[4]
+            results.append(stat_array[5])
+            results.append(stat_array[2])
+            results.append(stat_array[3])
+            results.append(stat_array[0])
+            results.append(stat_array[1])
+            results.append(stat_array[4])
         elif current_class == "Ranger":
-            current_character.Strength = stat_array[2]
-            current_character.Dexterity = stat_array[5]
-            current_character.Constitution = stat_array[4]
-            current_character.Intelligence = stat_array[1]
-            current_character.Wisdom = stat_array[3]
-            current_character.Charisma = stat_array[0]
+            results.append(stat_array[2])
+            results.append(stat_array[5])
+            results.append(stat_array[4])
+            results.append(stat_array[1])
+            results.append(stat_array[3])
+            results.append(stat_array[0])
         elif current_class == "Rogue":
-            current_character.Strength = stat_array[0]
-            current_character.Dexterity = stat_array[5]
-            current_character.Constitution = stat_array[4]
-            current_character.Intelligence = stat_array[3]
-            current_character.Wisdom = stat_array[1]
-            current_character.Charisma = stat_array[2]
+            results.append(stat_array[0])
+            results.append(stat_array[5])
+            results.append(stat_array[4])
+            results.append(stat_array[3])
+            results.append(stat_array[1])
+            results.append(stat_array[2])
         elif current_class == "Sorcerer":
-            current_character.Strength = stat_array[0]
-            current_character.Dexterity = stat_array[3]
-            current_character.Constitution = stat_array[4]
-            current_character.Intelligence = stat_array[2]
-            current_character.Wisdom = stat_array[1]
-            current_character.Charisma = stat_array[5]
+            results.append(stat_array[0])
+            results.append(stat_array[3])
+            results.append(stat_array[4])
+            results.append(stat_array[2])
+            results.append(stat_array[1])
+            results.append(stat_array[5])
         elif current_class == "Warlock":
-            current_character.Strength = stat_array[1]
-            current_character.Dexterity = stat_array[3]
-            current_character.Constitution = stat_array[4]
-            current_character.Intelligence = stat_array[2]
-            current_character.Wisdom = stat_array[0]
-            current_character.Charisma = stat_array[5]
+            results.append(stat_array[1])
+            results.append(stat_array[3])
+            results.append(stat_array[4])
+            results.append(stat_array[2])
+            results.append(stat_array[0])
+            results.append(stat_array[5])
         elif current_class == "Wizard":
-            current_character.Strength = stat_array[0]
-            current_character.Dexterity = stat_array[3]
-            current_character.Constitution = stat_array[4]
-            current_character.Intelligence = stat_array[5]
-            current_character.Wisdom = stat_array[2]
-            current_character.Charisma = stat_array[1]
-        current_character.save()
+            results.append(stat_array[0])
+            results.append(stat_array[3])
+            results.append(stat_array[4])
+            results.append(stat_array[5])
+            results.append(stat_array[2])
+            results.append(stat_array[1])
+        return results

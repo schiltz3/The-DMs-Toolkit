@@ -158,7 +158,7 @@ class Loot_Generator:
             ValueError: If the total value is below zero
             ValueError: If the loot type is not random or a valid loot type key
         Returns:
-            GeneratedLoot: an item to put in the GeneratedLoot model
+            loot_dict: a dictionary containing the loot object and all item lists to add
         """
 
         if generator_key not in Loot_Generator.Generators:
@@ -200,10 +200,9 @@ class Loot_Generator:
             Total_Value=self.total_value_generated,
             Money=self.currency,
         )
-        return (
-            current_loot,
-            self.armor_list,
-            self.weapon_list,
-            self.gen_list,
-            self.magic_list,
-        )
+        loot_dict = {"loot_object": current_loot,
+                     "armor": self.armor_list,
+                     "weapons": self.weapon_list,
+                     "general0": self.gen_list,
+                     "magic": self.magic_list}
+        return loot_dict
