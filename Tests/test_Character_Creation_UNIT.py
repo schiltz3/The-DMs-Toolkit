@@ -108,7 +108,9 @@ class PositiveTests(TestCase):
         test_background = Char_Gen.Character_Generator.generate_background(
             Char_Gen.Character_Generator.BACKGROUND_DICT["All"], "random"
         )
-        self.assertTrue(test_background in Char_Gen.Character_Generator.BACKGROUND_DICT["All"])
+        self.assertTrue(
+            test_background in Char_Gen.Character_Generator.BACKGROUND_DICT["All"]
+        )
 
     def test_generate(self):
         """Testing the wider generate function"""
@@ -125,7 +127,8 @@ class PositiveTests(TestCase):
             in Char_Gen.Character_Generator.ALIGNMENT_DICT["All"]
         )
         self.assertTrue(
-            test_generated["Background"] in Char_Gen.Character_Generator.BACKGROUND_DICT["All"]
+            test_generated["Background"]
+            in Char_Gen.Character_Generator.BACKGROUND_DICT["All"]
         )
         for i in test_generated["Stats"]:
             self.assertTrue(type(i) is int)
@@ -160,7 +163,8 @@ class PositiveTests(TestCase):
             in Char_Gen.Character_Generator.ALIGNMENT_DICT["Evil"]
         )
         self.assertTrue(
-            test_generated["Background"] in Char_Gen.Character_Generator.BACKGROUND_DICT["All"]
+            test_generated["Background"]
+            in Char_Gen.Character_Generator.BACKGROUND_DICT["All"]
         )
         for i in test_generated["Stats"]:
             self.assertTrue(type(i) is int)
@@ -292,7 +296,9 @@ class Negative_Tests(TestCase):
             Char_Gen.Character_Generator.generate_background(["Adventurer"], "random")
         with self.assertRaises(Exception, msg="Should not accept that many inputs"):
             Char_Gen.Character_Generator.generate_background(
-                Char_Gen.Character_Generator.BACKGROUND_DICT["All"], "random", "too many"
+                Char_Gen.Character_Generator.BACKGROUND_DICT["All"],
+                "random",
+                "too many",
             )
         with self.assertRaises(Exception, msg="Should not accept that few inputs"):
             Char_Gen.Character_Generator.generate_background(
@@ -340,14 +346,15 @@ class Arrange_Tests(unittest.TestCase):
 
     def test_positive_arrange(self):
         """Testing to make sure the arrange algorithm works"""
-        results = Char_Gen.Character_Generator.Arrange("Paladin", [15,10,12,13,18,9])
+        results = Char_Gen.Character_Generator.Arrange(
+            "Paladin", [15, 10, 12, 13, 18, 9]
+        )
         self.assertEqual(results[0], 18)
         self.assertEqual(results[1], 12)
         self.assertEqual(results[2], 13)
         self.assertEqual(results[3], 9)
         self.assertEqual(results[4], 10)
         self.assertEqual(results[5], 15)
-        
 
     def test_negative_arrange(self):
         """
@@ -357,7 +364,7 @@ class Arrange_Tests(unittest.TestCase):
             Too Big stat array
             Non integer in the stat array
         """
-        
+
         with self.assertRaises(
             RuntimeError, msg="Should not accept a non existing class"
         ):
@@ -365,9 +372,7 @@ class Arrange_Tests(unittest.TestCase):
         with self.assertRaises(RuntimeError, msg="Should not accept a too small list"):
             Char_Gen.Character_Generator.Arrange("Rogue", [18, 16, 14, 12, 10])
         with self.assertRaises(RuntimeError, msg="Should not accept a too big list"):
-            Char_Gen.Character_Generator.Arrange(
-                "Bard", [18, 16, 14, 12, 10, 8, 6, 4]
-            )
+            Char_Gen.Character_Generator.Arrange("Bard", [18, 16, 14, 12, 10, 8, 6, 4])
         with self.assertRaises(
             RuntimeError, msg="Should not accept a non integer in the list"
         ):

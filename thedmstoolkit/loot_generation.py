@@ -200,9 +200,11 @@ class Loot_Generator:
             Total_Value=self.total_value_generated,
             Money=self.currency,
         )
-        loot_dict = {"loot_object": current_loot,
-                     "armor": self.armor_list,
-                     "weapons": self.weapon_list,
-                     "general0": self.gen_list,
-                     "magic": self.magic_list}
+        loot_dict = {
+            "loot_object": current_loot,
+            "armor": self.armor_list,
+            "weapons": self.weapon_list,
+            "general0": self.gen_list,
+            "magic": self.magic_list,
+        }
         return loot_dict

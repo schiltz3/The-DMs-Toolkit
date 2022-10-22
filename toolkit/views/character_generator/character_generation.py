@@ -1,5 +1,5 @@
 import random
-from math import floor, ceil
+from math import ceil, floor
 from typing import Callable, Optional, Union
 
 Generator = Callable[[int, int], int]
@@ -135,30 +135,31 @@ class Character_Generator:
             "Chaotic Evil",
         ],
     }
-    BACKGROUND_DICT = {"All":
-        ["Acolyte",
-        "Athlete",
-        "Barbarian Tribe Member",
-        "Charlatan",
-        "City Watch",
-        "Criminal",
-        "Clan Crafter",
-        "Entertainer",
-        "Faction Agent",
-        "Far Traveler",
-        "Fisher",
-        "Folk Hero",
-        "Gladiator",
-        "Hermit",
-        "Knight",
-        "Noble",
-        "Outlander",
-        "Pirate",
-        "Sage",
-        "Sailor",
-        "Soldier",
-        "Urchin",
-    ]
+    BACKGROUND_DICT = {
+        "All": [
+            "Acolyte",
+            "Athlete",
+            "Barbarian Tribe Member",
+            "Charlatan",
+            "City Watch",
+            "Criminal",
+            "Clan Crafter",
+            "Entertainer",
+            "Faction Agent",
+            "Far Traveler",
+            "Fisher",
+            "Folk Hero",
+            "Gladiator",
+            "Hermit",
+            "Knight",
+            "Noble",
+            "Outlander",
+            "Pirate",
+            "Sage",
+            "Sailor",
+            "Soldier",
+            "Urchin",
+        ]
     }
     GENERATOR_LIST: list[str] = ["Stats", "Race", "Class", "Alignment", "Background"]
     STANDARD_ARRAY: list[int] = [15, 14, 13, 12, 10, 8]
@@ -185,6 +186,7 @@ class Character_Generator:
     }
     Generators.update(LimitedGenerators)
     Generators.update(UnlimitedGenerators)
+
     @staticmethod
     def get_proficiency_modifier(level):
         """_summary_
@@ -198,13 +200,13 @@ class Character_Generator:
 
         Returns:
             Proficiency value: the value to add to proficiencies based on level given
-        """        
+        """
         if type(level) is not int:
             raise RuntimeError("Level is not an integer")
-        if not 0<level<=21:
+        if not 0 < level <= 21:
             raise ValueError("Illegal Level")
-        return ceil(level/4)+1
-        
+        return ceil(level / 4) + 1
+
     @staticmethod
     def calculate_ability_modifier(stat: int) -> str:
         """Takes a stat and returns the ability modifier as a string
@@ -217,7 +219,7 @@ class Character_Generator:
         """
         if type(int) is not int:
             raise RuntimeError("Stat is not an integer")
-        if not 0<stat<=20:
+        if not 0 < stat <= 20:
             raise ValueError("Illegal Level")
         value = floor((stat - 10) / 2)
         return str(value) if value < 0 else f"+{value}"
@@ -385,7 +387,7 @@ class Character_Generator:
         race_key="All",
         class_key="All",
         alignment_key="All",
-        background_key = "All",
+        background_key="All",
         generator_key="random",
         stat_list: Optional[list[int]] = None,
     ) -> dict[str, Union[list[int], str]]:
@@ -466,7 +468,7 @@ class Character_Generator:
         Raises:
             RuntimeError: If the class does not exist
             RuntimeError: If the Array of integers is the wrong size
-            
+
         Returns:
             List of stat values in the Strength Dexterity Constitution Intelligence Wisdom Charisma order
         """
