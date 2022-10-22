@@ -1,4 +1,5 @@
-import random, math
+import math
+import random
 from typing import Callable, Optional, Union
 
 from toolkit.models import Character
@@ -185,7 +186,7 @@ class Character_Generator:
     }
     Generators.update(LimitedGenerators)
     Generators.update(UnlimitedGenerators)
-    
+
     @staticmethod
     def get_proficiency_modifier(level):
         """_summary_
@@ -199,13 +200,13 @@ class Character_Generator:
 
         Returns:
             Proficiency value: the value to add to proficiencies based on level given
-        """        
+        """
         if type(level) is not int:
             raise RuntimeError("Level is not an integer")
-        if not 0<level<=21:
+        if not 0 < level <= 21:
             raise ValueError("Illegal Level")
-        return math.ceil(level/4)+1
-        
+        return math.ceil(level / 4) + 1
+
     @staticmethod
     def get_all_generators():
         """
