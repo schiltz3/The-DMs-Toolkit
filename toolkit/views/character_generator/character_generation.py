@@ -203,7 +203,7 @@ class Character_Generator:
         """
         if type(level) is not int:
             raise RuntimeError("Level is not an integer")
-        if not 0 < level <= 21:
+        if not 0 < level <= 30:
             raise ValueError("Illegal Level")
         return ceil(level / 4) + 1
 
