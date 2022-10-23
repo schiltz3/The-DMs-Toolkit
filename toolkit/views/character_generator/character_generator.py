@@ -134,7 +134,7 @@ class GenerateCharacterInputs:
         Returns:
             bool: Tru if dataclass holds valid data
         """
-        if self.character_name.value is "":
+        if self.character_name.value == "":
             return False
         return True
 
