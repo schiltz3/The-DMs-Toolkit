@@ -4,7 +4,6 @@ import django
 from django.test import TestCase
 
 import toolkit.views.character_generator.character_generation as Char_Gen
-from toolkit.models import Character, User
 
 django.setup()
 
@@ -107,9 +106,11 @@ class PositiveTests(TestCase):
     def test_generate_background(self):
         """Testing the generate background function"""
         test_background = Char_Gen.Character_Generator.generate_background(
-            Char_Gen.Character_Generator.BACKGROUND_LIST, "random"
+            Char_Gen.Character_Generator.BACKGROUND_DICT["All"], "random"
         )
-        self.assertTrue(test_background in Char_Gen.Character_Generator.BACKGROUND_LIST)
+        self.assertTrue(
+            test_background in Char_Gen.Character_Generator.BACKGROUND_DICT["All"]
+        )
 
     def test_generate(self):
         """Testing the wider generate function"""
@@ -126,7 +127,8 @@ class PositiveTests(TestCase):
             in Char_Gen.Character_Generator.ALIGNMENT_DICT["All"]
         )
         self.assertTrue(
-            test_generated["Background"] in Char_Gen.Character_Generator.BACKGROUND_LIST
+            test_generated["Background"]
+            in Char_Gen.Character_Generator.BACKGROUND_DICT["All"]
         )
         for i in test_generated["Stats"]:
             self.assertTrue(type(i) is int)
@@ -145,6 +147,7 @@ class PositiveTests(TestCase):
             "Monster",
             "Magic",
             "Evil",
+            "All",
             "random",
             [12, 12, 12, 12, 12, 12],
         )
@@ -160,7 +163,8 @@ class PositiveTests(TestCase):
             in Char_Gen.Character_Generator.ALIGNMENT_DICT["Evil"]
         )
         self.assertTrue(
-            test_generated["Background"] in Char_Gen.Character_Generator.BACKGROUND_LIST
+            test_generated["Background"]
+            in Char_Gen.Character_Generator.BACKGROUND_DICT["All"]
         )
         for i in test_generated["Stats"]:
             self.assertTrue(type(i) is int)
@@ -284,7 +288,7 @@ class Negative_Tests(TestCase):
         """
         with self.assertRaises(RuntimeError, msg="Should not accept nonexisting keys"):
             Char_Gen.Character_Generator.generate_background(
-                Char_Gen.Character_Generator.BACKGROUND_LIST, "GARBAGE"
+                Char_Gen.Character_Generator.BACKGROUND_DICT["All"], "GARBAGE"
             )
         with self.assertRaises(
             RuntimeError, msg="Should not accept nonapproved items in the list"
@@ -292,11 +296,13 @@ class Negative_Tests(TestCase):
             Char_Gen.Character_Generator.generate_background(["Adventurer"], "random")
         with self.assertRaises(Exception, msg="Should not accept that many inputs"):
             Char_Gen.Character_Generator.generate_background(
-                Char_Gen.Character_Generator.BACKGROUND_LIST, "random", "too many"
+                Char_Gen.Character_Generator.BACKGROUND_DICT["All"],
+                "random",
+                "too many",
             )
         with self.assertRaises(Exception, msg="Should not accept that few inputs"):
             Char_Gen.Character_Generator.generate_background(
-                Char_Gen.Character_Generator.BACKGROUND_LIST
+                Char_Gen.Character_Generator.BACKGROUND_DICT["All"]
             )
 
     def test_generate(self):
@@ -323,6 +329,7 @@ class Negative_Tests(TestCase):
                 "Monster",
                 "Magic",
                 "Evil",
+                "All",
                 "random",
                 [12, 12, 12, 12, 12, 12],
                 "Test",
@@ -339,35 +346,15 @@ class Arrange_Tests(unittest.TestCase):
 
     def test_positive_arrange(self):
         """Testing to make sure the arrange algorithm works"""
-        tempUser = User(username="Ronen", password="test", email="test@test.com")
-        tempUser.save()
-        tempCharacter = Character(
-            Name="Fred",
-            Owner=User.objects.get(username="Ronen"),
-            Race="Human",
-            Class="Rogue",
-            Background="Sailor",
-            Alignment="Chaotic Evil",
-            Level=1,
-            Experience=0,
-            Strength=1,
-            Dexterity=1,
-            Constitution=1,
-            Intelligence=1,
-            Wisdom=1,
-            Charisma=1,
+        results = Char_Gen.Character_Generator.Arrange(
+            "Paladin", [15, 10, 12, 13, 18, 9]
         )
-        tempCharacter.save()
-
-        testChar = Character.objects.get(Name="Fred")
-        Char_Gen.Character_Generator.Arrange(testChar.id, [18, 16, 14, 12, 10, 8])
-        testChar = Character.objects.get(Name="Fred")
-        self.assertEqual(testChar.Strength, 8)
-        self.assertEqual(testChar.Dexterity, 18)
-        self.assertEqual(testChar.Constitution, 16)
-        self.assertEqual(testChar.Intelligence, 14)
-        self.assertEqual(testChar.Wisdom, 10)
-        self.assertEqual(testChar.Charisma, 12)
+        self.assertEqual(results[0], 18)
+        self.assertEqual(results[1], 12)
+        self.assertEqual(results[2], 13)
+        self.assertEqual(results[3], 9)
+        self.assertEqual(results[4], 10)
+        self.assertEqual(results[5], 15)
 
     def test_negative_arrange(self):
         """
@@ -377,39 +364,16 @@ class Arrange_Tests(unittest.TestCase):
             Too Big stat array
             Non integer in the stat array
         """
-        tempUser = User(username="Ronen2", password="test", email="test@test.com")
-        tempUser.save()
-        tempCharacter = Character(
-            Name="Fred2",
-            Owner=User.objects.get(username="Ronen2"),
-            Race="Human",
-            Class="Rogue",
-            Background="Sailor",
-            Alignment="Chaotic Evil",
-            Level=1,
-            Experience=0,
-            Strength=1,
-            Dexterity=1,
-            Constitution=1,
-            Intelligence=1,
-            Wisdom=1,
-            Charisma=1,
-        )
-        tempCharacter.save()
-        testChar = Character.objects.get(Name="Fred2")
+
         with self.assertRaises(
-            RuntimeError, msg="Should not accept a non existing character"
+            RuntimeError, msg="Should not accept a non existing class"
         ):
-            Char_Gen.Character_Generator.Arrange(10, [18, 16, 14, 12, 10, 8])
-        testChar = Character.objects.get(Name="Fred2")
+            Char_Gen.Character_Generator.Arrange("Potato", [18, 16, 14, 12, 10, 8])
         with self.assertRaises(RuntimeError, msg="Should not accept a too small list"):
-            Char_Gen.Character_Generator.Arrange(testChar.id, [18, 16, 14, 12, 10])
+            Char_Gen.Character_Generator.Arrange("Rogue", [18, 16, 14, 12, 10])
         with self.assertRaises(RuntimeError, msg="Should not accept a too big list"):
-            Char_Gen.Character_Generator.Arrange(
-                testChar.pk, [18, 16, 14, 12, 10, 8, 6, 4]
-            )
+            Char_Gen.Character_Generator.Arrange("Bard", [18, 16, 14, 12, 10, 8, 6, 4])
         with self.assertRaises(
             RuntimeError, msg="Should not accept a non integer in the list"
         ):
-            Char_Gen.Character_Generator.Arrange(testChar.pk, [18, 16, 14, 12, "Test"])
-        self.tearDown()
+            Char_Gen.Character_Generator.Arrange("Warlock", [18, 16, 14, 12, "Test"])
