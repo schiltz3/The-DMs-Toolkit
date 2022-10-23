@@ -40,6 +40,9 @@
               <option selected>
                 {{ data.clazz.value }}
               </option>
+              <option value="" disabled="disabled">
+                ──────────────
+              </option>
               {% for choice in clazz_list %}
                 {% if choice != data.clazz.value %}
                   <option value="{{ choice }}">
@@ -58,6 +61,9 @@
               <option selected>
                 {{ data.background.value }}
               </option>
+              <option value="" disabled="disabled">
+                ──────────────────────────
+              </option>
               {% for choice in background_list %}
                 {% if choice != data.background.value %}
                   <option value="{{ choice }}">
@@ -72,6 +78,9 @@
             <select class="form-select" id="race_select" name="race" aria-label="race">
               <option selected>
                 {{ data.race.value }}
+              </option>
+              <option value="" disabled="disabled">
+                ──────────────
               </option>
               {% for choice in race_list %}
                 {% if choice != data.race.value %}
@@ -90,6 +99,9 @@
                     aria-label="alignment">
               <option selected>
                 {{ data.alignment.value }}
+              </option>
+              <option value="" disabled="disabled">
+                ─────────────────────
               </option>
               {% for choice in alignment_list %}
                 {% if choice != data.alignment.value %}
