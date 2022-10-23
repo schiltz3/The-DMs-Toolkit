@@ -9,12 +9,12 @@ from django.views import View
 from toolkit.views.character_generator.character_generation import Character_Generator
 
 
+@dataclass
 class Element:
     """Contains the value and error to display in templates"""
 
-    def __init__(self, data: Any = "", error: Optional[str] = None):
-        self.value = data
-        self.error = error
+    value: Any = None
+    error: Optional[str] = None
 
     def __repr__(self):
         return f"Data: {self.value} Error: {self.error if self.error else ''}"
@@ -71,6 +71,22 @@ class CharacterGenerator(View):
                     stats = generated.get("Stats")
                     if type(stats) is not list:
                         raise ValueError("stats not be list")
+
+                    clazz = generated.get("Class")
+                    if clazz:
+                        form.clazz.value = clazz
+
+                    alignment = generated.get("Alignment")
+                    if alignment:
+                        form.alignment.value = alignment
+
+                    race = generated.get("Race")
+                    if race:
+                        form.race.value = race
+
+                    background = generated.get("Background")
+                    if background:
+                        form.background.value = background
 
                     output = GeneratedCharacterOutputs(
                         calculate=True,
