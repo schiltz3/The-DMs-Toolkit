@@ -217,7 +217,7 @@ class Character_Generator:
         Returns:
             str: ability modifier string
         """
-        if type(int) is not int:
+        if type(stat) is not int:
             raise RuntimeError("Stat is not an integer")
         if not 0 < stat <= 20:
             raise ValueError("Illegal Level")

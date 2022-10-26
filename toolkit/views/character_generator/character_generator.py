@@ -33,7 +33,7 @@ class CharacterGenerator(View):
         self.generator = Character_Generator()
         self.context["out"] = GeneratedCharacterOutputs(calculate=True)
         self.context["clazz_list"] = sorted(self.generator.CLASS_DICT)
-        self.context["background_list"] = sorted(self.generator.BACKGROUND_LIST)
+        self.context["background_list"] = sorted(self.generator.BACKGROUND_DICT)
         self.context["race_list"] = sorted(self.generator.RACE_DICT)
         self.context["alignment_list"] = sorted(self.generator.ALIGNMENT_DICT)
 
@@ -158,7 +158,7 @@ class GeneratedCharacterOutputs:
     mod_wisdom: str = "+0"
     mod_charisma: str = "+0"
 
-    proficency: str = "+0"
+    proficiency: str = "+0"
 
     st_strength: str = "+0"
     st_dexterity: str = "+0"

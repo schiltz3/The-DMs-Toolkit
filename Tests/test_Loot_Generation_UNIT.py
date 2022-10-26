@@ -1,7 +1,7 @@
 import django
 from django.test import TestCase
 
-import thedmstoolkit.loot_generation as Loot_Gen
+import toolkit.views.loot_generator.loot_generation as Loot_Gen
 from toolkit.models import Armor, GenericItem, MagicItem, Weapon
 
 django.setup()
