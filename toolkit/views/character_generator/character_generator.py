@@ -130,6 +130,8 @@ class CharacterGenerator(View):
 
         self.context["form"] = form
         print("Invalid form")
+        self.context["data"] = GenerateCharacterInputs()
+        self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
 
 
