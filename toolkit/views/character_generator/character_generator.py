@@ -119,8 +119,9 @@ class CharacterGenerator(View):
 
                 if request.POST.get("save_button") is not None:
                     return render(request, "character_generator.html", self.context)
-                if request.POST.get("export_button") is not None:
-
+                if request.POST.get("clear_button") is not None:
+                    self.context["data"] = GenerateCharacterInputs()
+                    self.context["out"] = GeneratedCharacterOutputs(calculate=False)
                     return render(request, "character_generator.html", self.context)
             except ValueError as e:
                 self.context["form"] = form
