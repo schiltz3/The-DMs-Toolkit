@@ -45,9 +45,7 @@ class CharacterGenerator(View):
         self.context["background_choices_list"] = sorted(
             self.generator.BACKGROUND_DICT.get("All")
         )
-        self.context["race_choices_list"] = sorted(
-            self.generator.RACE_DICT.get("All")
-        )
+        self.context["race_choices_list"] = sorted(self.generator.RACE_DICT.get("All"))
         self.context["alignment_choices_list"] = sorted(
             self.generator.ALIGNMENT_DICT.get("All")
         )
@@ -116,9 +114,13 @@ class CharacterGenerator(View):
                         )
 
                     if stat_generator_key == "standard":
-                        stats = Character_Generator.Arrange(form.clazz.value, Character_Generator.STANDARD_ARRAY)
+                        stats = Character_Generator.Arrange(
+                            form.clazz.value, Character_Generator.STANDARD_ARRAY
+                        )
                     else:
-                        stats = Character_Generator.generate_stat_list(stat_generator_key)
+                        stats = Character_Generator.generate_stat_list(
+                            stat_generator_key
+                        )
 
                     output = GeneratedCharacterOutputs(
                         calculate=True,
