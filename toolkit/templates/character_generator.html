@@ -22,7 +22,8 @@
         <input class="form-control"
                id="character_name"
                name="character_name"
-               value="{% if data.character_name.value != '' %}{{ data.character_name.value }}{% endif %}"/>
+               value="{% if data.character_name.value != '' %}{{ data.character_name.value }}{% endif %}"
+               placeholder="Character Name"/>
       </div>
       <div class="col-7 col-lg-7">
         <div class="row gy-3">
@@ -31,7 +32,7 @@
             <input class="form-control"
                    id="player_name"
                    name="player_name"
-                   {% if data.player_name.value != '' %} value="{{ data.player_name.value }}"{% endif %}
+                   value="{% if data.player_name.value != '' %}{{ data.player_name.value }}{% endif %}"
                    placeholder="Player Name"/>
           </div>
           <div class="col-10 col-lg-2">
