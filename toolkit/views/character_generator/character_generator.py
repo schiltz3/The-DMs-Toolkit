@@ -1,6 +1,9 @@
+from ctypes import alignment
 import inspect
 from dataclasses import InitVar, dataclass, field
-from typing import Any, Optional
+import random
+from turtle import back
+from typing import Any, Optional, Union
 
 from django.http.request import HttpRequest
 from django.shortcuts import render
@@ -56,38 +59,41 @@ class CharacterGenerator(View):
         if form.is_valid():
             try:
                 if request.POST.get("generate_button") is not None:
-                    generated = Character_Generator.generate(
-                        generations_list=[
-                            "Stats",
-                            "Alignment",
-                            "Background",
-                            "Race",
-                            "Class",
-                        ],
-                        race_key=form.race.value,
-                        class_key=form.clazz.value,
-                        alignment_key=form.alignment.value,
-                    )
-                    stats = generated.get("Stats")
-                    if type(stats) is not list:
-                        raise ValueError("stats not be list")
 
-                    clazz = generated.get("Class")
-                    if clazz:
-                        form.clazz.value = clazz
+                    stat_generator_key = "random"
+                    generator_key = "random"
+                    if stat_generator_key is None:
+                        stat_generator_keys: list[str] = list(
+                            Character_Generator.get_all_random_generators()
+                        )
+                        stat_generator_key = stat_generator_keys[
+                            random.randint(0, len(stat_generator_keys) - 1)
+                        ]
+                    # Set the stat generator if selected
 
-                    alignment = generated.get("Alignment")
-                    if alignment:
-                        form.alignment.value = alignment
-
-                    race = generated.get("Race")
-                    if race:
-                        form.race.value = race
-
-                    background = generated.get("Background")
-                    if background:
-                        form.background.value = background
-
+                    race = form.race.value
+                    if race in self.generator.RACE_DICT:
+                        form.race.value = Character_Generator.generate_race(
+                            Character_Generator.RACE_DICT[race], generator_key
+                        )
+                    clazz = form.clazz.value
+                    if clazz in self.generator.CLASS_DICT:
+                        form.clazz.value = Character_Generator.generate_class(
+                            Character_Generator.CLASS_DICT[clazz], generator_key
+                        )
+                    alignment = form.alignment.value
+                    if alignment in self.generator.ALIGNMENT_DICT:
+                        form.alignment.value = Character_Generator.generate_alignment(
+                            Character_Generator.ALIGNMENT_DICT[alignment],
+                            generator_key,
+                        )
+                    background = form.background.value
+                    if background in self.generator.BACKGROUND_DICT:
+                        form.background.value = Character_Generator.generate_background(
+                            Character_Generator.BACKGROUND_DICT[background],
+                            generator_key,
+                        )
+                    stats = Character_Generator.generate_stat_list(stat_generator_key)
                     output = GeneratedCharacterOutputs(
                         calculate=True,
                         strength=stats[0],
@@ -121,7 +127,7 @@ class GenerateCharacterInputs:
     character_name: Element = field(default_factory=Element)
     player_name: Element = field(default_factory=Element)  # Optional
     clazz: Element = field(default_factory=lambda: Element("All"))
-    background: Element = field(default_factory=lambda: Element("Acolyte"))
+    background: Element = field(default_factory=lambda: Element("All"))
     race: Element = field(default_factory=lambda: Element("All"))
     alignment: Element = field(default_factory=lambda: Element("All"))
     experience_points: Element = field(default_factory=lambda: Element(0))
@@ -159,7 +165,7 @@ class GenerateCharacterInputs:
 class GeneratedCharacterOutputs:
     """Contain all the non-user intractable elements of the page"""
 
-    calculate: InitVar[bool] = True
+    calculate: bool = True
     strength: int = 0
     dexterity: int = 0
     constitution: int = 0
@@ -207,8 +213,8 @@ class GeneratedCharacterOutputs:
     sk_stealth: str = "+0"
     sk_survival: str = "+0"
 
-    def __post_init__(self, calculate: bool):
-        if calculate is False:
+    def __post_init__(self):
+        if self.calculate is False:
             return
         self.mod_strength = Character_Generator.calculate_ability_modifier(
             self.strength
