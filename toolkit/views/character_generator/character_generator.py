@@ -1,9 +1,7 @@
-from ctypes import alignment
 import inspect
-from dataclasses import InitVar, dataclass, field
+from dataclasses import dataclass, field
 import random
-from turtle import back
-from typing import Any, Optional, Union
+from typing import Any, Optional
 
 from django.http.request import HttpRequest
 from django.shortcuts import render
@@ -60,6 +58,7 @@ class CharacterGenerator(View):
             try:
                 if request.POST.get("generate_button") is not None:
 
+                    # TODO: get generator from page
                     stat_generator_key = "random"
                     generator_key = "random"
                     if stat_generator_key is None:
@@ -69,7 +68,6 @@ class CharacterGenerator(View):
                         stat_generator_key = stat_generator_keys[
                             random.randint(0, len(stat_generator_keys) - 1)
                         ]
-                    # Set the stat generator if selected
 
                     race = form.race.value
                     if race in self.generator.RACE_DICT:
@@ -132,6 +130,8 @@ class GenerateCharacterInputs:
     alignment: Element = field(default_factory=lambda: Element("All"))
     experience_points: Element = field(default_factory=lambda: Element(0))
 
+    # valid_data: dict[str, Any] = field(default_factory=dict)
+
     @classmethod
     def from_dict(cls, env: dict[str, Any]):
         """Takes a dictionary, and pulls out the correct args for GenerateCharacterInputs
@@ -156,6 +156,7 @@ class GenerateCharacterInputs:
         Returns:
             bool: Tru if dataclass holds valid data
         """
+        self.character_name.value.strip()
         if self.character_name.value == "":
             return False
         return True
@@ -234,10 +235,11 @@ class GeneratedCharacterOutputs:
         )
         self.st_strength = self.mod_strength
 
-        self.st_dexterity = self.mod_strength
+        self.st_dexterity = self.mod_dexterity
         self.st_constitution = self.mod_constitution
         self.st_intelligence = self.mod_intelligence
         self.st_charisma = self.mod_charisma
+        self.st_wisdom: self.mod_wisdom
 
         # TODO: Add proficiency bonus to initiative
         self.stat_initiative = self.mod_dexterity
