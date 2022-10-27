@@ -1,6 +1,6 @@
 import inspect
-from dataclasses import dataclass, field
 import random
+from dataclasses import dataclass, field
 from typing import Any, Optional
 
 from django.http.request import HttpRequest
