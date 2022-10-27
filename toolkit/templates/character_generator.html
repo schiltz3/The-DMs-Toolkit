@@ -75,16 +75,6 @@
               <option value="" disabled="disabled">
                 ──────────────────────────
               </option>
-              {% for choice in background_list %}
-                {% if choice != data.background.value %}
-                  <option value="{{ choice }}">
-                    {{ choice }}
-                  </option>
-                {% endif %}
-              {% endfor %}
-              <option value="" disabled="disabled">
-                ──────────────────────────
-              </option>
               {% for choice in background_choices_list %}
                 {% if choice != data.background.value %}
                   <option value="{{ choice }}">
@@ -153,8 +143,6 @@
               {% endfor %}
             </select>
           </div>
-
-
           <div class="col-10 col-lg-2">
             <label for="generator_type_select" class="form-label">Generator</label>
             <select class="form-select"
@@ -173,8 +161,6 @@
               {% endfor %}
             </select>
           </div>
-
-
         </div>
       </div>
       <div class="col-7 col-lg">
