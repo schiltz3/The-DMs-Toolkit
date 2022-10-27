@@ -163,6 +163,7 @@ class Character_Generator:
     }
     GENERATOR_LIST: list[str] = ["Stats", "Race", "Class", "Alignment", "Background"]
     STANDARD_ARRAY: list[int] = [15, 14, 13, 12, 10, 8]
+    GENERATOR_TYPE_LIST: list[str] = ["Random", "3D6", "Standard"]
 
     @staticmethod
     def three_d_six(_low, _high) -> int:

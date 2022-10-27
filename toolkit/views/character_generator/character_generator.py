@@ -37,6 +37,7 @@ class CharacterGenerator(View):
         self.context["background_list"] = sorted(self.generator.BACKGROUND_DICT)
         self.context["race_list"] = sorted(self.generator.RACE_DICT)
         self.context["alignment_list"] = sorted(self.generator.ALIGNMENT_DICT)
+        self.context["generator_type_list"] = sorted(self.generator.GENERATOR_TYPE_LIST)
 
         self.context["clazz_choices_list"] = sorted(
             self.generator.CLASS_DICT.get("All")
@@ -72,9 +73,17 @@ class CharacterGenerator(View):
             try:
                 if request.POST.get("generate_button") is not None:
 
-                    # TODO: get generator from page
-                    stat_generator_key = "3d6"
                     generator_key = "random"
+                    
+                    if form.generator_type.value == "3D6":
+                        stat_generator_key = "3d6"
+                    elif form.generator_type.value == "Random":
+                        stat_generator_key = "random"
+                    elif form.generator_type.value == "Standard":
+                        stat_generator_key = "standard"
+                    else:
+                        stat_generator_key = None
+
                     if stat_generator_key is None:
                         stat_generator_keys: list[str] = list(
                             Character_Generator.get_all_random_generators()
@@ -105,7 +114,12 @@ class CharacterGenerator(View):
                             Character_Generator.BACKGROUND_DICT[background],
                             generator_key,
                         )
-                    stats = Character_Generator.generate_stat_list(stat_generator_key)
+
+                    if stat_generator_key == "standard":
+                        stats = Character_Generator.Arrange(form.clazz.value, Character_Generator.STANDARD_ARRAY)
+                    else:
+                        stats = Character_Generator.generate_stat_list(stat_generator_key)
+
                     output = GeneratedCharacterOutputs(
                         calculate=True,
                         strength=stats[0],
@@ -148,6 +162,7 @@ class GenerateCharacterInputs:
     background: Element = field(default_factory=lambda: Element("All"))
     race: Element = field(default_factory=lambda: Element("All"))
     alignment: Element = field(default_factory=lambda: Element("All"))
+    generator_type: Element = field(default_factory=lambda: Element("3D6"))
     experience_points: Element = field(default_factory=lambda: Element(0))
 
     # valid_data: dict[str, Any] = field(default_factory=dict)
