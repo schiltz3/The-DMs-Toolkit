@@ -75,6 +75,16 @@
               <option value="" disabled="disabled">
                 ──────────────────────────
               </option>
+              {% for choice in background_list %}
+                {% if choice != data.background.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+              <option value="" disabled="disabled">
+                ──────────────────────────
+              </option>
               {% for choice in background_choices_list %}
                 {% if choice != data.background.value %}
                   <option value="{{ choice }}">

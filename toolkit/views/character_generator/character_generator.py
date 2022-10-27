@@ -46,7 +46,7 @@ class CharacterGenerator(View):
             self.generator.BACKGROUND_DICT.get("All")
         )
         self.context["race_choices_list"] = sorted(
-            self.generator.BACKGROUND_DICT.get("All")
+            self.generator.RACE_DICT.get("All")
         )
         self.context["alignment_choices_list"] = sorted(
             self.generator.ALIGNMENT_DICT.get("All")
@@ -74,7 +74,7 @@ class CharacterGenerator(View):
                 if request.POST.get("generate_button") is not None:
 
                     generator_key = "random"
-                    
+
                     if form.generator_type.value == "3D6":
                         stat_generator_key = "3d6"
                     elif form.generator_type.value == "Random":
