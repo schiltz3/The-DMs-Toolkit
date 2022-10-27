@@ -239,7 +239,7 @@ class GeneratedCharacterOutputs:
         self.st_constitution = self.mod_constitution
         self.st_intelligence = self.mod_intelligence
         self.st_charisma = self.mod_charisma
-        self.st_wisdom: self.mod_wisdom
+        self.st_wisdom = self.mod_wisdom
 
         # TODO: Add proficiency bonus to initiative
         self.stat_initiative = self.mod_dexterity
