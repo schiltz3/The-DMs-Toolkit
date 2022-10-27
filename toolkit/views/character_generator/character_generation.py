@@ -219,7 +219,7 @@ class Character_Generator:
         """
         if type(stat) is not int:
             raise RuntimeError("Stat is not an integer")
-        if not 0 < stat <= 20:
+        if not 0 <= stat <= 20:
             raise ValueError("Illegal Level")
         value = floor((stat - 10) / 2)
         return str(value) if value < 0 else f"+{value}"
