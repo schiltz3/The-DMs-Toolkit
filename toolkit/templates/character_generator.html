@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="row mx-0 pt-3 " style="background-color: #7D8B8C;">
-      <div class="col-7 col-lg-3">
+      <div class="col-7 col-lg-2">
         <label for="character_name">
           <h4>Character Name</h4>
         </label>
@@ -24,9 +24,9 @@
                name="character_name"
                value="{% if data.character_name.value != '' %}{{ data.character_name.value }}{% endif %}"/>
       </div>
-      <div class="col-7 col-lg-6">
+      <div class="col-7 col-lg-7">
         <div class="row gy-3">
-          <div class="col-10 col-lg-3">
+          <div class="col-10 col-lg">
             <label for="player_name" class="form-label">Player Name</label>
             <input class="form-control"
                    id="player_name"
@@ -40,7 +40,20 @@
               <option selected>
                 {{ data.clazz.value }}
               </option>
+              <option value="" disabled="disabled">
+                ──────────────
+              </option>
               {% for choice in clazz_list %}
+                {% if choice != data.clazz.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+              <option value="" disabled="disabled">
+                ──────────────
+              </option>
+              {% for choice in clazz_choices_list %}
                 {% if choice != data.clazz.value %}
                   <option value="{{ choice }}">
                     {{ choice }}
@@ -58,7 +71,20 @@
               <option selected>
                 {{ data.background.value }}
               </option>
+              <option value="" disabled="disabled">
+                ──────────────────────────
+              </option>
               {% for choice in background_list %}
+                {% if choice != data.background.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+              <option value="" disabled="disabled">
+                ──────────────────────────
+              </option>
+              {% for choice in background_choices_list %}
                 {% if choice != data.background.value %}
                   <option value="{{ choice }}">
                     {{ choice }}
@@ -73,7 +99,20 @@
               <option selected>
                 {{ data.race.value }}
               </option>
+              <option value="" disabled="disabled">
+                ──────────────
+              </option>
               {% for choice in race_list %}
+                {% if choice != data.race.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+              <option value="" disabled="disabled">
+                ──────────────
+              </option>
+              {% for choice in race_choices_list %}
                 {% if choice != data.race.value %}
                   <option value="{{ choice }}">
                     {{ choice }}
@@ -82,7 +121,7 @@
               {% endfor %}
             </select>
           </div>
-          <div class="col-10 col-lg-2">
+          <div class="col-10 col-lg-3">
             <label for="alignment_select" class="form-label">Alignment</label>
             <select class="form-select"
                     id="alignment_select"
@@ -91,7 +130,20 @@
               <option selected>
                 {{ data.alignment.value }}
               </option>
+              <option value="" disabled="disabled">
+                ─────────────────────
+              </option>
               {% for choice in alignment_list %}
+                {% if choice != data.alignment.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+              <option value="" disabled="disabled">
+                ─────────────────────
+              </option>
+              {% for choice in alignment_choices_list %}
                 {% if choice != data.alignment.value %}
                   <option value="{{ choice }}">
                     {{ choice }}
