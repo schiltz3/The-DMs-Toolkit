@@ -38,6 +38,19 @@ class CharacterGenerator(View):
         self.context["race_list"] = sorted(self.generator.RACE_DICT)
         self.context["alignment_list"] = sorted(self.generator.ALIGNMENT_DICT)
 
+        self.context["clazz_choices_list"] = sorted(
+            self.generator.CLASS_DICT.get("All")
+        )
+        self.context["background_choices_list"] = sorted(
+            self.generator.BACKGROUND_DICT.get("All")
+        )
+        self.context["race_choices_list"] = sorted(
+            self.generator.BACKGROUND_DICT.get("All")
+        )
+        self.context["alignment_choices_list"] = sorted(
+            self.generator.ALIGNMENT_DICT.get("All")
+        )
+
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
         self.context["data"] = GenerateCharacterInputs()
@@ -107,6 +120,7 @@ class CharacterGenerator(View):
                 if request.POST.get("save_button") is not None:
                     return render(request, "character_generator.html", self.context)
                 if request.POST.get("export_button") is not None:
+
                     return render(request, "character_generator.html", self.context)
             except ValueError as e:
                 self.context["form"] = form
