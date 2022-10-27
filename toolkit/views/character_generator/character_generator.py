@@ -73,7 +73,7 @@ class CharacterGenerator(View):
                 if request.POST.get("generate_button") is not None:
 
                     # TODO: get generator from page
-                    stat_generator_key = "random"
+                    stat_generator_key = "3d6"
                     generator_key = "random"
                     if stat_generator_key is None:
                         stat_generator_keys: list[str] = list(

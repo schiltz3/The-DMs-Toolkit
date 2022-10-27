@@ -181,9 +181,7 @@ class Character_Generator:
     # Unlimited Generators have a minimum range of [1,max_int]
     UnlimitedGenerators: dict[str, Generator] = {"random": random.randint}
     # Limited Generators have a max range of [1,20], and therefore are not suitable for use in generating race, class, etc
-    LimitedGenerators: dict[str, Generator] = {
-        # "3d6": three_d_six,
-    }
+    LimitedGenerators: dict[str, Generator] = {"3d6": three_d_six.__func__}
     Generators.update(LimitedGenerators)
     Generators.update(UnlimitedGenerators)
 
