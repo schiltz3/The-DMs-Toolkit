@@ -181,19 +181,19 @@ class PositiveTests(TestCase):
 
         new_loot = Loot_Gen.Loot_Generator()
         result = new_loot.generate_loot()
-        self.assertTrue(result[0].Total_Value > 0)
+        self.assertTrue(result["loot_object"].Total_Value > 0)
         result2 = new_loot.generate_loot(generator_key="random")
-        self.assertTrue(result2[0].Total_Value > 0)
+        self.assertTrue(result2["loot_object"].Total_Value > 0)
         result3 = new_loot.generate_loot(generator_key="random", level=10)
-        self.assertTrue(result3[0].Total_Value > 0)
+        self.assertTrue(result3["loot_object"].Total_Value > 0)
         result4 = new_loot.generate_loot(
             generator_key="random", level=10, approximate_total_value=22
         )
-        self.assertTrue(result4[0].Total_Value > 0)
+        self.assertTrue(result4["loot_object"].Total_Value > 0)
         result5 = new_loot.generate_loot(
             generator_key="random", level=10, input_loot_type="Hoard"
         )
-        self.assertTrue(result5[0].Total_Value > 0)
+        self.assertTrue(result5["loot_object"].Total_Value > 0)
 
 
 class negative_tests(TestCase):
