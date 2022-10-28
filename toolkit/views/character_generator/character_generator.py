@@ -105,6 +105,7 @@ class CharacterGenerator(View):
                             generator_key,
                         )
                     stats = Character_Generator.generate_stat_list(stat_generator_key)
+                    stats = Character_Generator.arrange_stats(form.clazz.value, stats)
                     output = GeneratedCharacterOutputs(
                         calculate=True,
                         strength=stats[0],
