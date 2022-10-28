@@ -53,8 +53,7 @@ class CharacterGenerator(View):
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
         self.context["data"] = GenerateCharacterInputs(
-            player_name=Element(request.user.get_username()),
-            character_name=Element("")
+            player_name=Element(request.user.get_username())
         )
         self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
@@ -138,8 +137,7 @@ class CharacterGenerator(View):
                     return render(request, "character_generator.html", self.context)
                 if request.POST.get("clear_button") is not None:
                     self.context["data"] = GenerateCharacterInputs(
-                        player_name=Element(request.user.get_username()),
-                        character_name=Element("")
+                        player_name=Element(request.user.get_username())
                     )
                     self.context["out"] = GeneratedCharacterOutputs(calculate=False)
                     return render(request, "character_generator.html", self.context)
@@ -151,8 +149,7 @@ class CharacterGenerator(View):
         self.context["form"] = form
         print("Invalid form")
         self.context["data"] = GenerateCharacterInputs(
-            player_name=Element(request.user.get_username()),
-            character_name=Element("")
+            player_name=Element(request.user.get_username())
         )
         self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
@@ -162,7 +159,7 @@ class CharacterGenerator(View):
 class GenerateCharacterInputs:
     """Class which holds all the user intractable for the character generator page"""
 
-    character_name: Element = field(default_factory=Element)
+    character_name: Element = field(default_factory=lambda: Element(""))
     player_name: Element = field(default_factory=Element)  # Optional
     clazz: Element = field(default_factory=lambda: Element("All"))
     background: Element = field(default_factory=lambda: Element("All"))
