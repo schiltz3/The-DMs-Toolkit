@@ -52,9 +52,10 @@ class CharacterGenerator(View):
 
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
-        self.context["data"] = GenerateCharacterInputs()
+        self.context["data"] = GenerateCharacterInputs(
+            player_name=Element(request.user.get_username())
+        )
         self.context["out"] = GeneratedCharacterOutputs(calculate=False)
-        self.context["data"].player_name.value = request.user.get_username()
         return render(request, "character_generator.html", self.context)
 
     def post(self, request: HttpRequest):
@@ -92,23 +93,23 @@ class CharacterGenerator(View):
 
                     race = form.race.value
                     if race in self.generator.RACE_DICT:
-                        form.race.value = Character_Generator.generate_race(
+                        form.race.value = self.generator.generate_race(
                             Character_Generator.RACE_DICT[race], generator_key
                         )
                     clazz = form.clazz.value
                     if clazz in self.generator.CLASS_DICT:
-                        form.clazz.value = Character_Generator.generate_class(
+                        form.clazz.value = self.generator.generate_class(
                             Character_Generator.CLASS_DICT[clazz], generator_key
                         )
                     alignment = form.alignment.value
                     if alignment in self.generator.ALIGNMENT_DICT:
-                        form.alignment.value = Character_Generator.generate_alignment(
+                        form.alignment.value = self.generator.generate_alignment(
                             Character_Generator.ALIGNMENT_DICT[alignment],
                             generator_key,
                         )
                     background = form.background.value
                     if background in self.generator.BACKGROUND_DICT:
-                        form.background.value = Character_Generator.generate_background(
+                        form.background.value = self.generator.generate_background(
                             Character_Generator.BACKGROUND_DICT[background],
                             generator_key,
                         )
@@ -118,9 +119,7 @@ class CharacterGenerator(View):
                             form.clazz.value, Character_Generator.STANDARD_ARRAY
                         )
                     else:
-                        stats = Character_Generator.generate_stat_list(
-                            stat_generator_key
-                        )
+                        stats = self.generator.generate_stat_list(stat_generator_key)
 
                     output = GeneratedCharacterOutputs(
                         calculate=True,
@@ -137,9 +136,10 @@ class CharacterGenerator(View):
                 if request.POST.get("save_button") is not None:
                     return render(request, "character_generator.html", self.context)
                 if request.POST.get("clear_button") is not None:
-                    self.context["data"] = GenerateCharacterInputs()
+                    self.context["data"] = GenerateCharacterInputs(
+                        player_name=Element(request.user.get_username())
+                    )
                     self.context["out"] = GeneratedCharacterOutputs(calculate=False)
-                    self.context["data"].player_name.value = request.user.get_username()
                     return render(request, "character_generator.html", self.context)
             except ValueError as e:
                 self.context["form"] = form
@@ -148,9 +148,10 @@ class CharacterGenerator(View):
 
         self.context["form"] = form
         print("Invalid form")
-        self.context["data"] = GenerateCharacterInputs()
+        self.context["data"] = GenerateCharacterInputs(
+            player_name=Element(request.user.get_username())
+        )
         self.context["out"] = GeneratedCharacterOutputs(calculate=False)
-        self.context["data"].player_name.value = request.user.get_username()
         return render(request, "character_generator.html", self.context)
 
 
