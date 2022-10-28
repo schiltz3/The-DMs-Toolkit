@@ -8,6 +8,7 @@ class HomePage(View):
     Allows users to navigate to the three generator pages.
     """
 
-    def get(self, request):
+    @staticmethod
+    def get(request):
         """GET method for home page."""
         return render(request, "home_page.html")
