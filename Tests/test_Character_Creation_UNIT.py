@@ -346,7 +346,7 @@ class Arrange_Tests(unittest.TestCase):
 
     def test_positive_arrange(self):
         """Testing to make sure the arrange algorithm works"""
-        results = Char_Gen.Character_Generator.Arrange(
+        results = Char_Gen.Character_Generator.arrange(
             "Paladin", [15, 10, 12, 13, 18, 9]
         )
         self.assertEqual(results[0], 18)
@@ -368,12 +368,12 @@ class Arrange_Tests(unittest.TestCase):
         with self.assertRaises(
             RuntimeError, msg="Should not accept a non existing class"
         ):
-            Char_Gen.Character_Generator.Arrange("Potato", [18, 16, 14, 12, 10, 8])
+            Char_Gen.Character_Generator.arrange("Potato", [18, 16, 14, 12, 10, 8])
         with self.assertRaises(RuntimeError, msg="Should not accept a too small list"):
-            Char_Gen.Character_Generator.Arrange("Rogue", [18, 16, 14, 12, 10])
+            Char_Gen.Character_Generator.arrange("Rogue", [18, 16, 14, 12, 10])
         with self.assertRaises(RuntimeError, msg="Should not accept a too big list"):
-            Char_Gen.Character_Generator.Arrange("Bard", [18, 16, 14, 12, 10, 8, 6, 4])
+            Char_Gen.Character_Generator.arrange("Bard", [18, 16, 14, 12, 10, 8, 6, 4])
         with self.assertRaises(
             RuntimeError, msg="Should not accept a non integer in the list"
         ):
-            Char_Gen.Character_Generator.Arrange("Warlock", [18, 16, 14, 12, "Test"])
+            Char_Gen.Character_Generator.arrange("Warlock", [18, 16, 14, 12, "Test"])
