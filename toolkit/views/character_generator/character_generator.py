@@ -44,10 +44,16 @@ class CharacterGenerator(View):
         gen_keys = sorted(gen_keys)
         self.context["generator_type_list"] = gen_keys
 
-        self.context["clazz_choices_list"] = sorted(self.generator.CLASS_DICT.get("All"))
-        self.context["background_choices_list"] = sorted(self.generator.BACKGROUND_DICT.get("All"))
+        self.context["clazz_choices_list"] = sorted(
+            self.generator.CLASS_DICT.get("All")
+        )
+        self.context["background_choices_list"] = sorted(
+            self.generator.BACKGROUND_DICT.get("All")
+        )
         self.context["race_choices_list"] = sorted(self.generator.RACE_DICT.get("All"))
-        self.context["alignment_choices_list"] = sorted(self.generator.ALIGNMENT_DICT.get("All"))
+        self.context["alignment_choices_list"] = sorted(
+            self.generator.ALIGNMENT_DICT.get("All")
+        )
 
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
