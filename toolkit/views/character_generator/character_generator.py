@@ -37,18 +37,17 @@ class CharacterGenerator(View):
         self.context["background_list"] = sorted(self.generator.BACKGROUND_DICT)
         self.context["race_list"] = sorted(self.generator.RACE_DICT)
         self.context["alignment_list"] = sorted(self.generator.ALIGNMENT_DICT)
-        self.context["generator_type_list"] = sorted(self.generator.GENERATOR_TYPE_LIST)
 
-        self.context["clazz_choices_list"] = sorted(
-            self.generator.CLASS_DICT.get("All")
-        )
-        self.context["background_choices_list"] = sorted(
-            self.generator.BACKGROUND_DICT.get("All")
-        )
+        gen_keys = self.generator.generators.keys()
+        gen_keys = list(gen_keys)
+        gen_keys.append("Standard")
+        gen_keys = sorted(gen_keys)
+        self.context["generator_type_list"] = gen_keys
+
+        self.context["clazz_choices_list"] = sorted(self.generator.CLASS_DICT.get("All"))
+        self.context["background_choices_list"] = sorted(self.generator.BACKGROUND_DICT.get("All"))
         self.context["race_choices_list"] = sorted(self.generator.RACE_DICT.get("All"))
-        self.context["alignment_choices_list"] = sorted(
-            self.generator.ALIGNMENT_DICT.get("All")
-        )
+        self.context["alignment_choices_list"] = sorted(self.generator.ALIGNMENT_DICT.get("All"))
 
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
@@ -72,16 +71,8 @@ class CharacterGenerator(View):
             try:
                 if request.POST.get("generate_button") is not None:
 
-                    generator_key = "random"
-
-                    if form.generator_type.value == "3D6":
-                        stat_generator_key = "3d6"
-                    elif form.generator_type.value == "Random":
-                        stat_generator_key = "random"
-                    elif form.generator_type.value == "Standard":
-                        stat_generator_key = "standard"
-                    else:
-                        stat_generator_key = None
+                    generator_key = "Random"
+                    stat_generator_key = form.generator_type.value
 
                     if stat_generator_key is None:
                         stat_generator_keys: list[str] = list(
@@ -114,7 +105,7 @@ class CharacterGenerator(View):
                             generator_key,
                         )
 
-                    if stat_generator_key == "standard":
+                    if stat_generator_key == "Standard":
                         stats = Character_Generator.Arrange(
                             form.clazz.value, Character_Generator.STANDARD_ARRAY
                         )

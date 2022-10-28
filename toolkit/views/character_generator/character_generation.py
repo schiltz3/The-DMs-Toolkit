@@ -163,17 +163,16 @@ class Character_Generator:
     }
     GENERATOR_LIST: list[str] = ["Stats", "Race", "Class", "Alignment", "Background"]
     STANDARD_ARRAY: list[int] = [15, 14, 13, 12, 10, 8]
-    GENERATOR_TYPE_LIST: list[str] = ["Random", "3D6", "Standard"]
 
     def __init__(self):
 
         self.generators: dict[str, Generator] = {}
         # Unlimited Generators have a minimum range of [1,max_int]
-        UnlimitedGenerators: dict[str, Generator] = {"random": random.randint}
+        self.UnlimitedGenerators: dict[str, Generator] = {"Random": random.randint}
         # Limited Generators have a max range of [1,20], and therefore are not suitable for use in generating race, class, etc
-        LimitedGenerators: dict[str, Generator] = {"3d6": self.three_d_six}
-        self.generators.update(LimitedGenerators)
-        self.generators.update(UnlimitedGenerators)
+        self.LimitedGenerators: dict[str, Generator] = {"3D6": self.three_d_six}
+        self.generators.update(self.LimitedGenerators)
+        self.generators.update(self.UnlimitedGenerators)
 
     @staticmethod
     def three_d_six(_low, _high) -> int:
@@ -382,7 +381,7 @@ class Character_Generator:
         class_key="All",
         alignment_key="All",
         background_key="All",
-        generator_key="random",
+        generator_key="Random",
         stat_list: Optional[list[int]] = None,
     ) -> dict[str, Union[list[int], str]]:
         """Given generator parameters, return a dictionary of character characteristics
