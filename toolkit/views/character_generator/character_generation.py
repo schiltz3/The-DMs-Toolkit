@@ -165,6 +165,16 @@ class Character_Generator:
     STANDARD_ARRAY: list[int] = [15, 14, 13, 12, 10, 8]
     GENERATOR_TYPE_LIST: list[str] = ["Random", "3D6", "Standard"]
 
+    def __init__(self):
+
+        self.generators: dict[str, Generator] = {}
+        # Unlimited Generators have a minimum range of [1,max_int]
+        UnlimitedGenerators: dict[str, Generator] = {"random": random.randint}
+        # Limited Generators have a max range of [1,20], and therefore are not suitable for use in generating race, class, etc
+        LimitedGenerators: dict[str, Generator] = {"3d6": self.three_d_six}
+        self.generators.update(LimitedGenerators)
+        self.generators.update(UnlimitedGenerators)
+
     @staticmethod
     def three_d_six(_low, _high) -> int:
         """Returns the total od 3d6
@@ -177,14 +187,6 @@ class Character_Generator:
             int: Returns the total of 3d6
         """
         return random.randint(1, 6) + random.randint(1, 6) + random.randint(1, 6)
-
-    Generators: dict[str, Generator] = {}
-    # Unlimited Generators have a minimum range of [1,max_int]
-    UnlimitedGenerators: dict[str, Generator] = {"random": random.randint}
-    # Limited Generators have a max range of [1,20], and therefore are not suitable for use in generating race, class, etc
-    LimitedGenerators: dict[str, Generator] = {"3d6": three_d_six.__func__}
-    Generators.update(LimitedGenerators)
-    Generators.update(UnlimitedGenerators)
 
     @staticmethod
     def get_proficiency_modifier(level):
@@ -259,8 +261,7 @@ class Character_Generator:
         """
         return Character_Generator.UnlimitedGenerators.keys()
 
-    @staticmethod
-    def generate_stat_list(generator_key: str):
+    def generate_stat_list(self, generator_key: str):
         """Returns the Stat List needed because the dictionary is in str:function
 
         Args:
@@ -272,17 +273,16 @@ class Character_Generator:
         Returns:
             StatList (List): List of stat values
         """
-        if generator_key not in Character_Generator.Generators:
+        if generator_key not in self.generators:
             raise RuntimeError("Generator does not exist")
         i = 0
         stat_list: list[int] = []
         while i < 6:
-            stat_list.insert(i, Character_Generator.Generators[generator_key](1, 18))
+            stat_list.insert(i, self.generators[generator_key](1, 18))
             i = i + 1
         return stat_list
 
-    @staticmethod
-    def generate_race(race_list: list[str], generator_key: str) -> str:
+    def generate_race(self, race_list: list[str], generator_key: str) -> str:
         """
         Generates a race from the provided list
         Args:
@@ -296,18 +296,15 @@ class Character_Generator:
         Returns:
             String: Race
         """
-        if generator_key not in Character_Generator.Generators:
+        if generator_key not in self.generators:
             raise RuntimeError("Generator does not exist")
         for x in race_list:
             if x not in Character_Generator.RACE_DICT["All"]:
                 raise RuntimeError("Invalid List")
-        race: str = race_list[
-            Character_Generator.Generators[generator_key](0, len(race_list) - 1)
-        ]
+        race: str = race_list[self.generators[generator_key](0, len(race_list) - 1)]
         return race
 
-    @staticmethod
-    def generate_class(class_list: list[str], generator_key: str) -> str:
+    def generate_class(self, class_list: list[str], generator_key: str) -> str:
         """
         Returns a random class from the provided list
         Args:
@@ -321,18 +318,15 @@ class Character_Generator:
         Returns:
             String: the random class
         """
-        if generator_key not in Character_Generator.Generators:
+        if generator_key not in self.generators:
             raise RuntimeError("Generator does not exist")
         for x in class_list:
             if x not in Character_Generator.CLASS_DICT["All"]:
                 raise RuntimeError("Invalid List")
-        clazz: str = class_list[
-            Character_Generator.Generators[generator_key](0, len(class_list) - 1)
-        ]
+        clazz: str = class_list[self.generators[generator_key](0, len(class_list) - 1)]
         return clazz
 
-    @staticmethod
-    def generate_alignment(alignment_list: list[str], generator_key: str) -> str:
+    def generate_alignment(self, alignment_list: list[str], generator_key: str) -> str:
         """
             Returns a random alignment from the provided list
         Args:
@@ -346,18 +340,19 @@ class Character_Generator:
         Returns:
             String: Alignment
         """
-        if generator_key not in Character_Generator.Generators:
+        if generator_key not in self.generators:
             raise RuntimeError("Generator does not exist")
         for x in alignment_list:
             if x not in Character_Generator.ALIGNMENT_DICT["All"]:
                 raise RuntimeError("Invalid List")
         alignment = alignment_list[
-            Character_Generator.Generators[generator_key](0, len(alignment_list) - 1)
+            self.generators[generator_key](0, len(alignment_list) - 1)
         ]
         return alignment
 
-    @staticmethod
-    def generate_background(background_list: list[str], generator_key: str) -> str:
+    def generate_background(
+        self, background_list: list[str], generator_key: str
+    ) -> str:
         """
             Generate a random background
         Args:
@@ -370,17 +365,17 @@ class Character_Generator:
         Returns:
             String: Background
         """
-        if generator_key not in Character_Generator.Generators:
+        if generator_key not in self.generators:
             raise RuntimeError("Generator does not exist")
         for x in background_list:
             if x not in Character_Generator.BACKGROUND_DICT["All"]:
                 raise RuntimeError("Invalid List")
         return background_list[
-            Character_Generator.Generators[generator_key](0, len(background_list) - 1)
+            self.generators[generator_key](0, len(background_list) - 1)
         ]
 
-    @staticmethod
     def generate(
+        self,
         generations_list: Optional[list[str]] = None,
         stat_generator_key: Optional[str] = None,
         race_key="All",
@@ -437,23 +432,21 @@ class Character_Generator:
             if type(stat_list) is list:
                 generated["Stats"] = stat_list
             else:
-                generated["Stats"] = Character_Generator.generate_stat_list(
-                    stat_generator_key
-                )
+                generated["Stats"] = self.generate_stat_list(stat_generator_key)
         if "Race" in generations_list:
-            generated["Race"] = Character_Generator.generate_race(
+            generated["Race"] = self.generate_race(
                 Character_Generator.RACE_DICT[race_key], generator_key
             )
         if "Class" in generations_list:
-            generated["Class"] = Character_Generator.generate_class(
+            generated["Class"] = self.generate_class(
                 Character_Generator.CLASS_DICT[class_key], generator_key
             )
         if "Alignment" in generations_list:
-            generated["Alignment"] = Character_Generator.generate_alignment(
+            generated["Alignment"] = self.generate_alignment(
                 Character_Generator.ALIGNMENT_DICT[alignment_key], generator_key
             )
         if "Background" in generations_list:
-            generated["Background"] = Character_Generator.generate_background(
+            generated["Background"] = self.generate_background(
                 Character_Generator.BACKGROUND_DICT[background_key], generator_key
             )
         return generated
