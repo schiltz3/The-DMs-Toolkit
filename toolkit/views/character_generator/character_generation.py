@@ -233,14 +233,13 @@ class Character_Generator:
         """
         return Character_Generator.GENERATOR_LIST
 
-    @staticmethod
-    def get_all_random_generators():
+    def get_all_random_generators(self):
         """
         Gives the list of random generator keys
         Returns:
             List: a list of all generator keys
         """
-        return Character_Generator.Generators.keys()
+        return list(self.generators.keys())
 
     @staticmethod
     def get_limited_generators():
@@ -416,9 +415,7 @@ class Character_Generator:
                         "There is an invalid number in the array, please use 1-18"
                     )
         if stat_generator_key is None:
-            stat_generator_keys: list[str] = list(
-                Character_Generator.get_all_random_generators()
-            )
+            stat_generator_keys: list[str] = self.get_all_random_generators()
             stat_generator_key = stat_generator_keys[
                 random.randint(0, len(stat_generator_keys) - 1)
             ]

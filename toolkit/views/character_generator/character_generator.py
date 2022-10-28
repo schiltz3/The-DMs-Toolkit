@@ -38,8 +38,7 @@ class CharacterGenerator(View):
         self.context["race_list"] = sorted(self.generator.RACE_DICT)
         self.context["alignment_list"] = sorted(self.generator.ALIGNMENT_DICT)
 
-        gen_keys = self.generator.generators.keys()
-        gen_keys = list(gen_keys)
+        gen_keys = self.generator.get_all_random_generators()
         gen_keys.append("Standard")
         gen_keys = sorted(gen_keys)
         self.context["generator_type_list"] = gen_keys
@@ -79,14 +78,6 @@ class CharacterGenerator(View):
 
                     generator_key = "Random"
                     stat_generator_key = form.generator_type.value
-
-                    if stat_generator_key is None:
-                        stat_generator_keys: list[str] = list(
-                            Character_Generator.get_all_random_generators()
-                        )
-                        stat_generator_key = stat_generator_keys[
-                            random.randint(0, len(stat_generator_keys) - 1)
-                        ]
 
                     race = form.race.value
                     if race in self.generator.RACE_DICT:
