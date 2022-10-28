@@ -53,8 +53,7 @@ class CharacterGenerator(View):
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
         self.context["data"] = GenerateCharacterInputs(
-            player_name=Element(request.user.get_username()),
-            character_name=Element("")
+            player_name=Element(request.user.get_username()), character_name=Element("")
         )
         self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
@@ -139,7 +138,7 @@ class CharacterGenerator(View):
                 if request.POST.get("clear_button") is not None:
                     self.context["data"] = GenerateCharacterInputs(
                         player_name=Element(request.user.get_username()),
-                        character_name=Element("")
+                        character_name=Element(""),
                     )
                     self.context["out"] = GeneratedCharacterOutputs(calculate=False)
                     return render(request, "character_generator.html", self.context)
@@ -151,8 +150,7 @@ class CharacterGenerator(View):
         self.context["form"] = form
         print("Invalid form")
         self.context["data"] = GenerateCharacterInputs(
-            player_name=Element(request.user.get_username()),
-            character_name=Element("")
+            player_name=Element(request.user.get_username()), character_name=Element("")
         )
         self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
