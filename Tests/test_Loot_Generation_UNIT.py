@@ -14,7 +14,7 @@ class PositiveTests(TestCase):
     Args:
         TestCase (_type_): Django Tests
     """
-    
+
     def setUp(self):
         """Set up a generator for each test"""
         self.gen_key = "Random"
@@ -206,7 +206,7 @@ class negative_tests(TestCase):
     Args:
         TestCase (_type_): Django tests
     """
-    
+
     def setUp(self):
         """Set up a generator for each test"""
         self.gen_key = "Random"

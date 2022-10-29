@@ -8,6 +8,7 @@ from django.views import View
 
 from toolkit.views.loot_generator.loot_generation import Loot_Generator
 
+
 class Element:
     """Contains the value and error to display in templates"""
 
@@ -17,6 +18,7 @@ class Element:
 
     def __repr__(self):
         return f"Data: {self.value} Error: {self.error if self.error else ''}"
+
 
 class LootGenerator(View):
     """
@@ -84,7 +86,7 @@ class LootGenerator(View):
 @dataclass
 class GenerateLootInputs:
     """Class which holds all the user intractable for the loot generator page"""
-    
+
     generator_type: Element = field(default_factory=lambda: Element("Random"))
     loot_type: Element = field(default_factory=lambda: Element("Random"))
     total_hoard_value: Element = field(default_factory=lambda: Element(0))

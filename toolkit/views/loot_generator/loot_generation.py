@@ -33,7 +33,7 @@ class Loot_Generator:
         # Unlimited Generators have a minimum range of [1,max_int]
         self.UnlimitedGenerators: dict[str, Generator] = {"Random": random.randint}
         self.Generators.update(self.UnlimitedGenerators)
-        
+
     def get_all_random_generators(self):
         """
         Gives the list of random generator keys
@@ -102,9 +102,7 @@ class Loot_Generator:
         """
         possible_magic_items = list(MagicItem.objects.all())
         new_magic_item = possible_magic_items[
-            self.Generators[self.generator_key](
-                0, len(possible_magic_items) - 1
-            )
+            self.Generators[self.generator_key](0, len(possible_magic_items) - 1)
         ]
         self.continue_generating = False
         self.total_value_generated += 1
@@ -134,9 +132,7 @@ class Loot_Generator:
     def generate_random(self):
         """Choose which item to randomly generate"""
         gen_keys = list(Loot_Generator.LOOT_GENERATOR_DICT.keys())
-        to_generate = self.Generators[self.generator_key](
-            0, len(gen_keys) - 1
-        )
+        to_generate = self.Generators[self.generator_key](0, len(gen_keys) - 1)
         Loot_Generator.LOOT_GENERATOR_DICT[gen_keys[to_generate]](self)
 
     def generate_loot(
