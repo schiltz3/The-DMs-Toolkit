@@ -15,23 +15,24 @@
       </div>
     </div>
     <div class="row mx-0 pt-3 " style="background-color: #7D8B8C;">
-      <div class="col-7 col-lg-3">
+      <div class="col-7 col-lg-2">
         <label for="character_name">
           <h4>Character Name</h4>
         </label>
         <input class="form-control"
                id="character_name"
                name="character_name"
-               value="{% if data.character_name.value != '' %}{{ data.character_name.value }}{% endif %}"/>
+               value="{% if data.character_name.value != '' %}{{ data.character_name.value }}{% endif %}"
+               placeholder="Character Name"/>
       </div>
-      <div class="col-7 col-lg-6">
+      <div class="col-7 col-lg-7">
         <div class="row gy-3">
-          <div class="col-10 col-lg-3">
+          <div class="col-10 col-lg">
             <label for="player_name" class="form-label">Player Name</label>
             <input class="form-control"
                    id="player_name"
                    name="player_name"
-                   {% if data.player_name.value != '' %} value="{{ data.player_name.value }}"{% endif %}
+                   value="{% if data.player_name.value != '' %}{{ data.player_name.value }}{% endif %}"
                    placeholder="Player Name"/>
           </div>
           <div class="col-10 col-lg-2">
@@ -40,7 +41,20 @@
               <option selected>
                 {{ data.clazz.value }}
               </option>
+              <option value="" disabled="disabled">
+                ──────────────
+              </option>
               {% for choice in clazz_list %}
+                {% if choice != data.clazz.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+              <option value="" disabled="disabled">
+                ──────────────
+              </option>
+              {% for choice in clazz_choices_list %}
                 {% if choice != data.clazz.value %}
                   <option value="{{ choice }}">
                     {{ choice }}
@@ -49,7 +63,7 @@
               {% endfor %}
             </select>
           </div>
-          <div class="col-10 col-lg-3">
+          <div class="col-10 col-lg-2">
             <label for="background_select" class="form-label">Background</label>
             <select class="form-select"
                     id="background_select"
@@ -58,7 +72,20 @@
               <option selected>
                 {{ data.background.value }}
               </option>
+              <option value="" disabled="disabled">
+                ──────────────────────────
+              </option>
               {% for choice in background_list %}
+                {% if choice != data.background.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+              <option value="" disabled="disabled">
+                ──────────────────────────
+              </option>
+              {% for choice in background_choices_list %}
                 {% if choice != data.background.value %}
                   <option value="{{ choice }}">
                     {{ choice }}
@@ -73,7 +100,20 @@
               <option selected>
                 {{ data.race.value }}
               </option>
+              <option value="" disabled="disabled">
+                ──────────────
+              </option>
               {% for choice in race_list %}
+                {% if choice != data.race.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+              <option value="" disabled="disabled">
+                ──────────────
+              </option>
+              {% for choice in race_choices_list %}
                 {% if choice != data.race.value %}
                   <option value="{{ choice }}">
                     {{ choice }}
@@ -91,8 +131,39 @@
               <option selected>
                 {{ data.alignment.value }}
               </option>
+              <option value="" disabled="disabled">
+                ─────────────────────
+              </option>
               {% for choice in alignment_list %}
                 {% if choice != data.alignment.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+              <option value="" disabled="disabled">
+                ─────────────────────
+              </option>
+              {% for choice in alignment_choices_list %}
+                {% if choice != data.alignment.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-10 col-lg-2">
+            <label for="generator_type_select" class="form-label">Generator</label>
+            <select class="form-select"
+                    id="generator_type_select"
+                    name="generator_type"
+                    aria-label="generator_type">
+              <option selected>
+                {{ data.generator_type.value }}
+              </option>
+              {% for choice in generator_type_list %}
+                {% if choice != data.generator_type.value %}
                   <option value="{{ choice }}">
                     {{ choice }}
                   </option>
@@ -119,11 +190,10 @@
               SAVE
             </button>
             <button type="submit"
-                    name="export_button"
+                    name="clear_button"
                     class="btn btn-lg btn-secondary"
-                    style="--bs-btn-padding-y: 1rem;"
-                    disabled>
-              EXPORT
+                    style="--bs-btn-padding-y: 1rem;">
+              CLEAR
             </button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import inspect
-from dataclasses import InitVar, dataclass, field
+from dataclasses import dataclass, field
 from typing import Any, Optional
 
 from django.http.request import HttpRequest
@@ -9,12 +9,12 @@ from django.views import View
 from toolkit.views.character_generator.character_generation import Character_Generator
 
 
+@dataclass
 class Element:
     """Contains the value and error to display in templates"""
 
-    def __init__(self, data: Any = "", error: Optional[str] = None):
-        self.value = data
-        self.error = error
+    value: Any = None
+    error: Optional[str] = None
 
     def __repr__(self):
         return f"Data: {self.value} Error: {self.error if self.error else ''}"
@@ -37,9 +37,27 @@ class CharacterGenerator(View):
         self.context["race_list"] = sorted(self.generator.RACE_DICT)
         self.context["alignment_list"] = sorted(self.generator.ALIGNMENT_DICT)
 
+        gen_keys = self.generator.get_all_random_generators()
+        gen_keys.append("Standard")
+        gen_keys = sorted(gen_keys)
+        self.context["generator_type_list"] = gen_keys
+
+        self.context["clazz_choices_list"] = sorted(
+            self.generator.CLASS_DICT.get("All")
+        )
+        self.context["background_choices_list"] = sorted(
+            self.generator.BACKGROUND_DICT.get("All")
+        )
+        self.context["race_choices_list"] = sorted(self.generator.RACE_DICT.get("All"))
+        self.context["alignment_choices_list"] = sorted(
+            self.generator.ALIGNMENT_DICT.get("All")
+        )
+
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
-        self.context["data"] = GenerateCharacterInputs()
+        self.context["data"] = GenerateCharacterInputs(
+            player_name=Element(request.user.get_username())
+        )
         self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
 
@@ -56,21 +74,39 @@ class CharacterGenerator(View):
         if form.is_valid():
             try:
                 if request.POST.get("generate_button") is not None:
-                    generated = Character_Generator.generate(
-                        generations_list=[
-                            "Stats",
-                            "Alignment",
-                            "Background",
-                            "Race",
-                            "Class",
-                        ],
-                        race_key=form.race.value,
-                        class_key=form.clazz.value,
-                        alignment_key=form.alignment.value,
-                    )
-                    stats = generated.get("Stats")
-                    if type(stats) is not list:
-                        raise ValueError("stats not be list")
+
+                    generator_key = "Random"
+                    stat_generator_key = form.generator_type.value
+
+                    race = form.race.value
+                    if race in self.generator.RACE_DICT:
+                        form.race.value = self.generator.generate_race(
+                            Character_Generator.RACE_DICT[race], generator_key
+                        )
+                    clazz = form.clazz.value
+                    if clazz in self.generator.CLASS_DICT:
+                        form.clazz.value = self.generator.generate_class(
+                            Character_Generator.CLASS_DICT[clazz], generator_key
+                        )
+                    alignment = form.alignment.value
+                    if alignment in self.generator.ALIGNMENT_DICT:
+                        form.alignment.value = self.generator.generate_alignment(
+                            Character_Generator.ALIGNMENT_DICT[alignment],
+                            generator_key,
+                        )
+                    background = form.background.value
+                    if background in self.generator.BACKGROUND_DICT:
+                        form.background.value = self.generator.generate_background(
+                            Character_Generator.BACKGROUND_DICT[background],
+                            generator_key,
+                        )
+
+                    if stat_generator_key == "Standard":
+                        stats = Character_Generator.Arrange(
+                            form.clazz.value, Character_Generator.STANDARD_ARRAY
+                        )
+                    else:
+                        stats = self.generator.generate_stat_list(stat_generator_key)
 
                     output = GeneratedCharacterOutputs(
                         calculate=True,
@@ -86,7 +122,11 @@ class CharacterGenerator(View):
 
                 if request.POST.get("save_button") is not None:
                     return render(request, "character_generator.html", self.context)
-                if request.POST.get("export_button") is not None:
+                if request.POST.get("clear_button") is not None:
+                    self.context["data"] = GenerateCharacterInputs(
+                        player_name=Element(request.user.get_username())
+                    )
+                    self.context["out"] = GeneratedCharacterOutputs(calculate=False)
                     return render(request, "character_generator.html", self.context)
             except ValueError as e:
                 self.context["form"] = form
@@ -95,6 +135,10 @@ class CharacterGenerator(View):
 
         self.context["form"] = form
         print("Invalid form")
+        self.context["data"] = GenerateCharacterInputs(
+            player_name=Element(request.user.get_username())
+        )
+        self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
 
 
@@ -102,13 +146,16 @@ class CharacterGenerator(View):
 class GenerateCharacterInputs:
     """Class which holds all the user intractable for the character generator page"""
 
-    character_name: Element = field(default_factory=Element)
+    character_name: Element = field(default_factory=lambda: Element(""))
     player_name: Element = field(default_factory=Element)  # Optional
     clazz: Element = field(default_factory=lambda: Element("All"))
-    background: Element = field(default_factory=lambda: Element("Acolyte"))
+    background: Element = field(default_factory=lambda: Element("All"))
     race: Element = field(default_factory=lambda: Element("All"))
     alignment: Element = field(default_factory=lambda: Element("All"))
+    generator_type: Element = field(default_factory=lambda: Element("3D6"))
     experience_points: Element = field(default_factory=lambda: Element(0))
+
+    # valid_data: dict[str, Any] = field(default_factory=dict)
 
     @classmethod
     def from_dict(cls, env: dict[str, Any]):
@@ -134,8 +181,7 @@ class GenerateCharacterInputs:
         Returns:
             bool: Tru if dataclass holds valid data
         """
-        if self.character_name.value == "":
-            return False
+        self.character_name.value = self.character_name.value.strip()
         return True
 
 
@@ -143,7 +189,7 @@ class GenerateCharacterInputs:
 class GeneratedCharacterOutputs:
     """Contain all the non-user intractable elements of the page"""
 
-    calculate: InitVar[bool] = True
+    calculate: bool = True
     strength: int = 0
     dexterity: int = 0
     constitution: int = 0
@@ -191,8 +237,8 @@ class GeneratedCharacterOutputs:
     sk_stealth: str = "+0"
     sk_survival: str = "+0"
 
-    def __post_init__(self, calculate: bool):
-        if calculate is False:
+    def __post_init__(self):
+        if self.calculate is False:
             return
         self.mod_strength = Character_Generator.calculate_ability_modifier(
             self.strength
@@ -212,10 +258,11 @@ class GeneratedCharacterOutputs:
         )
         self.st_strength = self.mod_strength
 
-        self.st_dexterity = self.mod_strength
+        self.st_dexterity = self.mod_dexterity
         self.st_constitution = self.mod_constitution
         self.st_intelligence = self.mod_intelligence
         self.st_charisma = self.mod_charisma
+        self.st_wisdom = self.mod_wisdom
 
         # TODO: Add proficiency bonus to initiative
         self.stat_initiative = self.mod_dexterity
