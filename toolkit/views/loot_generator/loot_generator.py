@@ -20,7 +20,7 @@ class Element:
 
 class LootGenerator(View):
     """
-    A class to provide a  page for users visiting the site to
+    A class to provide a page for users visiting the site to
     generate loot.
     """
 
@@ -30,7 +30,9 @@ class LootGenerator(View):
         self.context: dict[str, any] = {}
         self.generator = Loot_Generator()
         # self.context["out"] = GeneratedLootOutputs(calculate=True)
-        self.context["loot_generator_list"] = sorted(self.generator.LOOT_GENERATOR_DICT)
+        gen_keys = self.generator.get_all_random_generators()
+        gen_keys = sorted(gen_keys)
+        self.context["loot_generator_list"] = gen_keys
         self.context["loot_type_list"] = sorted(self.generator.LOOT_TYPE_DICT)
 
     def get(self, request: HttpRequest):
@@ -39,8 +41,9 @@ class LootGenerator(View):
         # self.context["out"] = GeneratedLootOutputs(calculate=False)
         return render(request, "loot_generator.html", self.context)
 
-def post(self, request: HttpRequest):
+    def post(self, request: HttpRequest):
         """POST method for create user page."""
+        print(request.POST)
         form = GenerateLootInputs.from_dict(request.POST)
         print(form)
         self.context["data"] = form
@@ -48,32 +51,32 @@ def post(self, request: HttpRequest):
         if form.is_valid():
             try:
                 if request.POST.get("generate_button") is not None:
-                    generated = Loot_Generator.generate_loot(
-                        
+                    generated = self.generator.generate_loot(
+                        self,
+                        generator_key=form.generator_type.value,
+                        level=form.average_player_level.value,
+                        approximate_total_value=form.total_hoard_value.value,
+                        input_loot_type=form.loot_type.value,
                     )
                     loot_object = generated.get("loot_object")
-                    total_value = loot_object.Total_Value
-                    gold_piece = loot_object.Money
-                    if type(total_value) is not float:
-                        raise ValueError("Total value of generated loot object is not float")
-                    elif type(gold_piece) is not float:
-                        raise ValueError("Money of generated loot object is not float")
-                    self.context["total_value"] = total_value
-                    self.context["gold_pieces"] = gold_piece
-                    self.context["gen_armor_list"] = generated.get("armor")
-                    self.context["gen_weapons_list"] = generated.get("weapons")
-                    self.context["gen_generic_list"] = generated.get("general0")
-                    self.context["gen_magic_list"] = generated.get("magic")
-                    return render(request, "character_generator.html", self.context)
+                    print(loot_object.Total_Value)
+                    print(loot_object.Money)
+                    self.context["total_value"] = loot_object.Total_Value
+                    self.context["money"] = loot_object.Money
+                    self.context["armor_list"] = generated.get("armor")
+                    self.context["weapons_list"] = generated.get("weapons")
+                    self.context["generic_list"] = generated.get("general0")
+                    self.context["magic_list"] = generated.get("magic")
+                    return render(request, "loot_generator.html", self.context)
 
                 if request.POST.get("save_button") is not None:
-                    return render(request, "character_generator.html", self.context)
+                    return render(request, "loot_generator.html", self.context)
                 if request.POST.get("export_button") is not None:
-                    return render(request, "character_generator.html", self.context)
+                    return render(request, "loot_generator.html", self.context)
             except ValueError as e:
                 self.context["form"] = form
                 self.context["error"] = str(e)
-                return render(request, "character_generator.html", self.context)
+                return render(request, "loot_generator.html", self.context)
 
         self.context["form"] = form
         print("Invalid form")
@@ -84,10 +87,10 @@ def post(self, request: HttpRequest):
 class GenerateLootInputs:
     """Class which holds all the user intractable for the loot generator page"""
     
-    generator_type: Element = field(default_factory=lambda: Element("All"))
-    loot_type: Element = field(default_factory=lambda: Element("All"))
-    total_value: Element = field(default_factory=lambda: Element(0))
-    average_level: Element = field(default_factory=lambda: Element(0))
+    generator_type: Element = field(default_factory=lambda: Element("Random"))
+    loot_type: Element = field(default_factory=lambda: Element("Random"))
+    total_hoard_value: Element = field(default_factory=lambda: Element(0))
+    average_player_level: Element = field(default_factory=lambda: Element(0))
 
     @classmethod
     def from_dict(cls, env: dict[str, Any]):
@@ -113,8 +116,4 @@ class GenerateLootInputs:
         Returns:
             bool: Tru if dataclass holds valid data
         """
-        if self.total_value.value == "":
-            return False
-        elif self.average_level.value == "":
-            return False
         return True
