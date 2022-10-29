@@ -1,5 +1,5 @@
 import inspect
-from dataclasses import InitVar, dataclass, field
+from dataclasses import dataclass, field
 from typing import Any, Optional
 
 from django.http.request import HttpRequest
@@ -29,7 +29,6 @@ class LootGenerator(View):
 
         self.context: dict[str, any] = {}
         self.generator = Loot_Generator()
-        # self.context["out"] = GeneratedLootOutputs(calculate=True)
         gen_keys = self.generator.get_all_random_generators()
         gen_keys = sorted(gen_keys)
         self.context["loot_generator_list"] = gen_keys
@@ -38,7 +37,6 @@ class LootGenerator(View):
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
         self.context["data"] = GenerateLootInputs()
-        # self.context["out"] = GeneratedLootOutputs(calculate=False)
         return render(request, "loot_generator.html", self.context)
 
     def post(self, request: HttpRequest):
@@ -49,10 +47,10 @@ class LootGenerator(View):
         self.context["data"] = form
         self.context["error"] = None
         if form.is_valid():
-            # try:
+            try:
                 if request.POST.get("generate_button") is not None:
                     current_user = request.user.get_username()
-                    if current_user is "":
+                    if current_user == "":
                         current_user = None
                     generated = self.generator.generate_loot(
                         current_user=current_user,
@@ -62,8 +60,6 @@ class LootGenerator(View):
                         input_loot_type=form.loot_type.value,
                     )
                     loot_object = generated.get("loot_object")
-                    print(loot_object.Total_Value)
-                    print(loot_object.Money)
                     self.context["total_value"] = loot_object.Total_Value
                     self.context["money"] = loot_object.Money
                     self.context["armor_list"] = generated.get("armor")
@@ -71,15 +67,14 @@ class LootGenerator(View):
                     self.context["generic_list"] = generated.get("general0")
                     self.context["magic_list"] = generated.get("magic")
                     return render(request, "loot_generator.html", self.context)
-
                 if request.POST.get("save_button") is not None:
                     return render(request, "loot_generator.html", self.context)
                 if request.POST.get("export_button") is not None:
                     return render(request, "loot_generator.html", self.context)
-            # except ValueError as e:
-            #     self.context["form"] = form
-            #     self.context["error"] = str(e)
-            #     return render(request, "loot_generator.html", self.context)
+            except ValueError as e:
+                self.context["form"] = form
+                self.context["error"] = str(e)
+                return render(request, "loot_generator.html", self.context)
 
         self.context["form"] = form
         print("Invalid form")
