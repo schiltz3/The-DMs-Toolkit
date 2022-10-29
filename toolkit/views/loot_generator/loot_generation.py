@@ -60,7 +60,7 @@ class Loot_Generator:
         Then generates 0-100 silver
         Then generates 0-100 copper
         """
-        local_currency = Loot_Generator.Generators[self.generator_key](
+        local_currency = self.Generators[self.generator_key](
             0, int(self.min_value_to_generate - self.total_value_generated)
         )
         local_currency += self.Generators[self.generator_key](1, 100) / 10
@@ -134,7 +134,7 @@ class Loot_Generator:
     def generate_random(self):
         """Choose which item to randomly generate"""
         gen_keys = list(Loot_Generator.LOOT_GENERATOR_DICT.keys())
-        to_generate = Loot_Generator.Generators[self.generator_key](
+        to_generate = self.Generators[self.generator_key](
             0, len(gen_keys) - 1
         )
         Loot_Generator.LOOT_GENERATOR_DICT[gen_keys[to_generate]](self)

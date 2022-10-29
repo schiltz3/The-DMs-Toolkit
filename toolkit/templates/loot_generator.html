@@ -54,17 +54,17 @@
             </div>
             <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
                     <div class="form-group">
-                        <label for="total_hoard_value">Total Hoard Value</label>
-                        <input class="form-control" 
-                                id="total_hoard_value" 
+                        <label for="total_hoard_value_input">Total Hoard Value</label>
+                        <input type="number" class="form-control" 
+                                id="total_hoard_value_input" 
                                 name="total_hoard_value" 
                                 value="{% if data.total_hoard_value.value != 0.0 %}{{ data.total_hoard_value.value }}{% endif %}"
                                 placeholder="Enter Approximate Hoard Value...">
                     </div>
                     <div class="form-group">
-                        <label for="average_player_level">Average Player Level</label>
-                        <input class="form-control" 
-                                id="average_player_level" 
+                        <label for="average_player_level_input">Average Player Level</label>
+                        <input type="number" class="form-control" 
+                                id="average_player_level_input" 
                                 name="average_player_level" 
                                 value="{% if data.average_player_level.value != 0.0 %}{{ data.average_player_level.value }}{% endif %}"
                                 placeholder="Enter Average Player Level...">
@@ -134,7 +134,7 @@
                                 <th scope="row">1</th>
                                 <td>{{ magic.Name }}</td>
                                 <td>Magic</td>
-                                <td>{{ magic.Name }}
+                                <td>{{ magic.Rarity }}
                             </tr>
                         {% endfor %}
                         </tbody>

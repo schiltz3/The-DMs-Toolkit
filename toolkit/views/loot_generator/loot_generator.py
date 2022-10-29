@@ -49,13 +49,16 @@ class LootGenerator(View):
         self.context["data"] = form
         self.context["error"] = None
         if form.is_valid():
-            try:
+            # try:
                 if request.POST.get("generate_button") is not None:
+                    current_user = request.user.get_username()
+                    if current_user is "":
+                        current_user = None
                     generated = self.generator.generate_loot(
-                        self,
+                        current_user=current_user,
                         generator_key=form.generator_type.value,
-                        level=form.average_player_level.value,
-                        approximate_total_value=form.total_hoard_value.value,
+                        level=int(form.average_player_level.value),
+                        approximate_total_value=int(form.total_hoard_value.value),
                         input_loot_type=form.loot_type.value,
                     )
                     loot_object = generated.get("loot_object")
@@ -73,10 +76,10 @@ class LootGenerator(View):
                     return render(request, "loot_generator.html", self.context)
                 if request.POST.get("export_button") is not None:
                     return render(request, "loot_generator.html", self.context)
-            except ValueError as e:
-                self.context["form"] = form
-                self.context["error"] = str(e)
-                return render(request, "loot_generator.html", self.context)
+            # except ValueError as e:
+            #     self.context["form"] = form
+            #     self.context["error"] = str(e)
+            #     return render(request, "loot_generator.html", self.context)
 
         self.context["form"] = form
         print("Invalid form")
