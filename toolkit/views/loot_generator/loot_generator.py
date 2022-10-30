@@ -1,5 +1,7 @@
 import inspect
 from dataclasses import dataclass, field
+import logging
+import traceback
 from typing import Any, Optional
 
 from django.http.request import HttpRequest
@@ -7,6 +9,8 @@ from django.shortcuts import render
 from django.views import View
 
 from toolkit.views.loot_generator.loot_generation import Loot_Generator
+
+logger = logging.getLogger(__name__)
 
 
 class Element:
@@ -75,6 +79,7 @@ class LootGenerator(View):
                 if request.POST.get("export_button") is not None:
                     return render(request, "loot_generator.html", self.context)
             except ValueError as e:
+                logger.warning(f"\n{traceback.format_exc()}\n")
                 self.context["form"] = form
                 self.context["error"] = str(e)
                 return render(request, "loot_generator.html", self.context)

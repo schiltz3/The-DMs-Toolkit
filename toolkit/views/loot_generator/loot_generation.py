@@ -71,6 +71,8 @@ class Loot_Generator:
     def generate_weapon(self):
         """Get a list of all weapons from the database then pick a random one and add it to the list of things to add"""
         possible_weapons = list(Weapon.objects.all())
+        if len(possible_weapons) == 0:
+            raise ValueError("Failed to retrieve weapons from database")
         new_weapon = possible_weapons[
             self.Generators[self.generator_key](0, len(possible_weapons) - 1)
         ]
@@ -80,6 +82,8 @@ class Loot_Generator:
     def generate_armor(self):
         """Get a list of all armor from the database then pick a random one and add it to the list of things to add"""
         possible_armor = list(Armor.objects.all())
+        if len(possible_armor) == 0:
+            raise ValueError("Failed to retrieve armor from database")
         new_armor = possible_armor[
             self.Generators[self.generator_key](0, len(possible_armor) - 1)
         ]
@@ -89,6 +93,8 @@ class Loot_Generator:
     def generate_generic_item(self):
         """Get a list of all random items from the database then pick a random one and add it to the list of things to add"""
         possible_items = list(GenericItem.objects.all())
+        if len(possible_items) == 0:
+            raise ValueError("Failed to retrieve items from database")
         new_item = possible_items[
             self.Generators[self.generator_key](0, len(possible_items) - 1)
         ]
@@ -101,6 +107,8 @@ class Loot_Generator:
         Ends Generation
         """
         possible_magic_items = list(MagicItem.objects.all())
+        if len(possible_magic_items) == 0:
+            raise ValueError("Failed to retrieve magical items from database")
         new_magic_item = possible_magic_items[
             self.Generators[self.generator_key](0, len(possible_magic_items) - 1)
         ]
