@@ -79,7 +79,7 @@ class LootGenerator(View):
                 if request.POST.get("export_button") is not None:
                     return render(request, "loot_generator.html", self.context)
             except ValueError as e:
-                logger.warning(f"\n{traceback.format_exc()}\n")
+                logger.warning(traceback.format_exc())
                 self.context["form"] = form
                 self.context["error"] = str(e)
                 return render(request, "loot_generator.html", self.context)
