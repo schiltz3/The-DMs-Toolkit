@@ -70,18 +70,28 @@
                                 placeholder="Enter Average Player Level...">
                     </div>
             </div>
-            <div class="col-sm-6 px-md-4 p-4" style="background-color: #7D8B8C;">
-                <div class="row p-2" style="height: 100%;">
-                    <div class="col-sm-4">
-                        <button type="submit" name="generate_button" class="btn btn-primary">GENERATE</button>
-                    </div>
-                    <div class="col-sm-4">
-                        <button type="submit" name="save_button" class="btn btn-primary" disabled>SAVE</button>
-                    </div>
-                    <div class="col-sm-4">
-                        <button type="submit" name="clear_button" class="btn btn-primary" disabled>EXPORT</button>
-                    </div>
-                </div>
+            <div class="col-lg-6 px-md-4 p-4" style="background-color: #7D8B8C;">
+                <div class="btn-group" style="width:100%" role="group" aria-label="Generate-buttons">
+                    <button type="submit"
+                            class="btn btn-lg btn-success"
+                            name="generate_button"
+                            style="--bs-btn-padding-y: 1rem;">
+                      GENERATE
+                    </button>
+                    <button type="submit"
+                            class="btn btn-lg btn-primary"
+                            name="save_button"
+                            style="--bs-btn-padding-y: 1rem;"
+                            disabled>
+                      SAVE
+                    </button>
+                    <button type="submit"
+                            name="clear_button"
+                            class="btn btn-lg btn-secondary"
+                            style="--bs-btn-padding-y: 1rem;">
+                      CLEAR
+                    </button>
+                  </div>
             </div>
         </div>
         <div class="row">
