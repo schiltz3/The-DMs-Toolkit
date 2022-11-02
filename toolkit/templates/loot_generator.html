@@ -5,7 +5,7 @@
 {% block application_pane %}
 <form action {% url "loot_generator" %} method="post" class="form">
     {% csrf_token %}
-<div class="container-fluid p-4">
+<div class="container-fluid">
     <div>
         <div class="row">
             <div class="loot-header">
@@ -53,25 +53,21 @@
                     </select>
             </div>
             <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
-                    <div class="form-group">
-                        <label for="total_hoard_value_input">Total Hoard Value</label>
+                        <label for="total_hoard_value_input" class="form-label">Total Hoard Value</label>
                         <input type="number" class="form-control" 
                                 id="total_hoard_value_input" 
                                 name="total_hoard_value" 
                                 value="{% if data.total_hoard_value.value != 0.0 %}{{ data.total_hoard_value.value }}{% endif %}"
                                 placeholder="Enter Approximate Hoard Value...">
-                    </div>
-                    <div class="form-group">
-                        <label for="average_player_level_input">Average Player Level</label>
+                        <label for="average_player_level_input" class="form-label">Average Player Level</label>
                         <input type="number" class="form-control" 
                                 id="average_player_level_input" 
                                 name="average_player_level" 
                                 value="{% if data.average_player_level.value != 0.0 %}{{ data.average_player_level.value }}{% endif %}"
                                 placeholder="Enter Average Player Level...">
-                    </div>
             </div>
             <div class="col-lg-6 px-md-4 p-4" style="background-color: #7D8B8C;">
-                <div class="btn-group" style="width:100%" role="group" aria-label="Generate-buttons">
+                <div class="btn-group vertical-center" style="width:100%" role="group" aria-label="Generate-buttons">
                     <button type="submit"
                             class="btn btn-lg btn-success"
                             name="generate_button"
