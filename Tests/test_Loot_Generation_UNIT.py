@@ -1,7 +1,7 @@
 import django
 from django.test import TestCase
 
-import thedmstoolkit.loot_generation as Loot_Gen
+import toolkit.views.loot_generator.loot_generation as Loot_Gen
 from toolkit.models import Armor, GenericItem, MagicItem, Weapon
 
 django.setup()
@@ -14,6 +14,10 @@ class PositiveTests(TestCase):
     Args:
         TestCase (_type_): Django Tests
     """
+
+    def setUp(self):
+        """Set up a generator for each test"""
+        self.gen_key = "Random"
 
     def test_check_value(self):
         """Tests for the check value function"""
@@ -182,16 +186,16 @@ class PositiveTests(TestCase):
         new_loot = Loot_Gen.Loot_Generator()
         result = new_loot.generate_loot()
         self.assertTrue(result["loot_object"].Total_Value > 0)
-        result2 = new_loot.generate_loot(generator_key="random")
+        result2 = new_loot.generate_loot(generator_key=self.gen_key)
         self.assertTrue(result2["loot_object"].Total_Value > 0)
-        result3 = new_loot.generate_loot(generator_key="random", level=10)
+        result3 = new_loot.generate_loot(generator_key=self.gen_key, level=10)
         self.assertTrue(result3["loot_object"].Total_Value > 0)
         result4 = new_loot.generate_loot(
-            generator_key="random", level=10, approximate_total_value=22
+            generator_key=self.gen_key, level=10, approximate_total_value=22
         )
         self.assertTrue(result4["loot_object"].Total_Value > 0)
         result5 = new_loot.generate_loot(
-            generator_key="random", level=10, input_loot_type="Hoard"
+            generator_key=self.gen_key, level=10, input_loot_type="Hoard"
         )
         self.assertTrue(result5["loot_object"].Total_Value > 0)
 
@@ -203,6 +207,10 @@ class negative_tests(TestCase):
         TestCase (_type_): Django tests
     """
 
+    def setUp(self):
+        """Set up a generator for each test"""
+        self.gen_key = "Random"
+
     def test_generate(self):
         """Tests on the various inputs of the generate loot function"""
         new_loot = Loot_Gen.Loot_Generator()
@@ -211,14 +219,14 @@ class negative_tests(TestCase):
         ):
             new_loot.generate_loot("bacon")
         with self.assertRaises(ValueError, msg="Shouldn't accept that as a option"):
-            new_loot.generate_loot("random", "lettuce")
+            new_loot.generate_loot(self.gen_key, "lettuce")
         with self.assertRaises(ValueError, msg="Shouldn't accept that as a option"):
-            new_loot.generate_loot("random", 30)
+            new_loot.generate_loot(self.gen_key, 30)
         with self.assertRaises(ValueError, msg="Shouldn't accept that as a option"):
-            new_loot.generate_loot("random", 11, "tomato")
+            new_loot.generate_loot(self.gen_key, 11, "tomato")
         with self.assertRaises(ValueError, msg="Shouldn't accept that as a option"):
-            new_loot.generate_loot("random", 11, -1)
+            new_loot.generate_loot(self.gen_key, 11, -1)
         with self.assertRaises(ValueError, msg="Shouldn't accept that as a option"):
-            new_loot.generate_loot("random", 11, 100, "Nothing")
+            new_loot.generate_loot(self.gen_key, 11, 100, "Nothing")
         with self.assertRaises(Exception, msg="Shouldn't accept that as a option"):
-            new_loot.generate_loot("random", 11, 100, "Horde", "TooMuch")
+            new_loot.generate_loot(self.gen_key, 11, 100, "Horde", "TooMuch")

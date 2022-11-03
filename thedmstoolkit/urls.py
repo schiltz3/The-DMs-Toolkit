@@ -25,7 +25,7 @@ from toolkit.views.EncounterGenerator import EncounterGenerator
 from toolkit.views.home_page import HomePage
 from toolkit.views.login import Login
 from toolkit.views.logout import Logout
-from toolkit.views.LootGenerator import LootGenerator
+from toolkit.views.loot_generator.loot_generator import LootGenerator
 from toolkit.views.saved_characters import SavedCharacters
 from toolkit.views.saved_encounters import SavedEncounters
 from toolkit.views.saved_loot import SavedLoot

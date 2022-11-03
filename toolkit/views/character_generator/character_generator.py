@@ -209,7 +209,7 @@ class GeneratedCharacterOutputs:
     mod_wisdom: str = "+0"
     mod_charisma: str = "+0"
 
-    proficency: str = "+0"
+    proficiency: str = "+0"
 
     st_strength: str = "+0"
     st_dexterity: str = "+0"
