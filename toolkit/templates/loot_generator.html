@@ -111,36 +111,16 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {% for armor in armor_list %}
+                        {% for item in generated_list %}
                             <tr>
-                                <th scope="row">1</th>
-                                <td>{{ armor.Name }}</td>
-                                <td>Armor</td>
-                                <td>{{ armor.Base_Value }}
-                            </tr>
-                        {% endfor %}
-                        {% for weapon in weapons_list %}
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>{{ weapon.Name }}</td>
-                                <td>Weapon</td>
-                                <td>{{ weapon.Base_Value }}
-                            </tr>
-                        {% endfor %}
-                        {% for generic in generic_list %}
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>{{ generic.Name }}</td>
-                                <td>Generic</td>
-                                <td>{{ generic.Base_Value }}
-                            </tr>
-                        {% endfor %}
-                        {% for magic in magic_list %}
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>{{ magic.Name }}</td>
-                                <td>Magic</td>
-                                <td>{{ magic.Rarity }}
+                                <th scope="row">{{forloop.counter}}</th>
+                                <td>{{ item.Name }}</td>
+                                <td>{{ item }}</td>
+                                {% if item|stringformat:"s" != "Magic" %} 
+                                    <td>{{ item.Base_Value }}</td>
+                                {% else %}
+                                    <td>{{ item.Rarity }}</td>
+                                {% endif %}
                             </tr>
                         {% endfor %}
                         </tbody>

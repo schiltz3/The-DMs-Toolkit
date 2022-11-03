@@ -67,14 +67,16 @@ class LootGenerator(View):
                     loot_object = generated.get("loot_object")
                     self.context["total_value"] = int(loot_object.Total_Value)
                     self.context["money"] = int(loot_object.Money)
-                    self.context["armor_list"] = generated.get("armor")
-                    self.context["weapons_list"] = generated.get("weapons")
-                    self.context["generic_list"] = generated.get("general0")
-                    self.context["magic_list"] = generated.get("magic")
+                    generated_list = generated.get("armor")
+                    generated_list.extend(generated.get("weapons"))
+                    generated_list.extend(generated.get("general0"))
+                    generated_list.extend(generated.get("magic"))
+                    self.context["generated_list"] = generated_list
                     return render(request, "loot_generator.html", self.context)
                 if request.POST.get("save_button") is not None:
                     return render(request, "loot_generator.html", self.context)
-                if request.POST.get("export_button") is not None:
+                if request.POST.get("clear_button") is not None:
+                    self.context["data"] = GenerateLootInputs()
                     return render(request, "loot_generator.html", self.context)
             except ValueError as e:
                 logger.warning(traceback.format_exc())
