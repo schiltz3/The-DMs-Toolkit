@@ -24,6 +24,7 @@
                name="character_name"
                value="{% if data.character_name.value != '' %}{{ data.character_name.value }}{% endif %}"
                placeholder="Character Name"/>
+        {% if data.character_name.error %}<div class="alert alert-danger">{{ data.character_name.error }}</div>{% endif %}
       </div>
       <div class="col-7 col-lg-7">
         <div class="row gy-3">
@@ -34,6 +35,7 @@
                    name="player_name"
                    value="{% if data.player_name.value != '' %}{{ data.player_name.value }}{% endif %}"
                    placeholder="Player Name"/>
+        {% if data.player_name.error %}<div class="alert alert-danger">{{ data.player_name.error }}</div>{% endif %}
           </div>
           <div class="col-10 col-lg-2">
             <label for="class_select" class="form-label">Class</label>
@@ -62,6 +64,7 @@
                 {% endif %}
               {% endfor %}
             </select>
+        {% if data.clazz.error %}<div class="alert alert-danger">{{ data.clazz.error }}</div>{% endif %}
           </div>
           <div class="col-10 col-lg-2">
             <label for="background_select" class="form-label">Background</label>
@@ -93,6 +96,7 @@
                 {% endif %}
               {% endfor %}
             </select>
+        {% if data.background.error %}<div class="alert alert-danger">{{ data.background.error }}</div>{% endif %}
           </div>
           <div class="col-10 col-lg-2">
             <label for="race_select" class="form-label">Race</label>
@@ -121,6 +125,7 @@
                 {% endif %}
               {% endfor %}
             </select>
+        {% if data.race.error %}<div class="alert alert-danger">{{ data.race.error }}</div>{% endif %}
           </div>
           <div class="col-10 col-lg-2">
             <label for="alignment_select" class="form-label">Alignment</label>
@@ -152,6 +157,7 @@
                 {% endif %}
               {% endfor %}
             </select>
+        {% if data.alignment.error %}<div class="alert alert-danger">{{ data.alignment.error }}</div>{% endif %}
           </div>
           <div class="col-10 col-lg-2">
             <label for="generator_type_select" class="form-label">Generator</label>
@@ -170,6 +176,7 @@
                 {% endif %}
               {% endfor %}
             </select>
+        {% if data.generator_type.error %}<div class="alert alert-danger">{{ data.generator_type.error }}</div>{% endif %}
           </div>
         </div>
       </div>
@@ -265,9 +272,13 @@
           <img src="{% static "Character_UI_Stat.png" %}"
                alt="Character UI Stat"
                style="width: 100%"/>
-          <div class="character-stat-title">CHARISMA</div>
+          <div class="character-stat-title">
+            CHARISMA
+          </div>
           <div class="character-stat-base">
-            <h3>{{ out.charisma }}</h3>
+            <h3>
+              {{ out.charisma }}
+            </h3>
           </div>
           <div class="character-stat-bonus">
             <h4>
