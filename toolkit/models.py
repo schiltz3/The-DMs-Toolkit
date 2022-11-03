@@ -72,6 +72,7 @@ class Armor(models.Model):
     def __str__(self):
         return "Armor"
 
+
 class Weapon(models.Model):
     """
     The Model for weapons used to store weapons to pull from when generating loot
@@ -98,7 +99,7 @@ class Weapon(models.Model):
     Special_Characteristics = models.IntegerField()
     # store as a binary where Heavy Light TwoHanded Reach Versatile Finesse Throwable Ammunition Special
     # So heavy two handed with reach would be 101100000
-    
+
     def __str__(self):
         return "Weapon"
 
@@ -118,7 +119,7 @@ class GenericItem(models.Model):
     Name = models.CharField(primary_key=True, max_length=30)
     Description = models.CharField(max_length=255)
     Base_Value = models.FloatField()
-    
+
     def __str__(self):
         return "Generic"
 
@@ -140,7 +141,7 @@ class MagicItem(models.Model):
     Rarity = models.CharField(max_length=20)
     Effect_Description = models.CharField(max_length=255)
     Visual_Description = models.CharField(max_length=255)
-    
+
     def __str__(self):
         return "Magic"
 
