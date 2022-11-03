@@ -47,9 +47,7 @@ class LootGenerator(View):
 
     def post(self, request: HttpRequest):
         """POST method for create user page."""
-        print(request.POST)
         form = GenerateLootInputs.from_dict(request.POST)
-        print(form)
         self.context["data"] = form
         self.context["error"] = None
         if form.is_valid():
@@ -67,8 +65,8 @@ class LootGenerator(View):
                         input_loot_type=form.loot_type.value,
                     )
                     loot_object = generated.get("loot_object")
-                    self.context["total_value"] = loot_object.Total_Value
-                    self.context["money"] = loot_object.Money
+                    self.context["total_value"] = int(loot_object.Total_Value)
+                    self.context["money"] = int(loot_object.Money)
                     self.context["armor_list"] = generated.get("armor")
                     self.context["weapons_list"] = generated.get("weapons")
                     self.context["generic_list"] = generated.get("general0")
