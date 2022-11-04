@@ -21,13 +21,9 @@ class Encounter_Generator:
 
     def __init__(self):
         self.average_party_level = 1
-        self.tags = None
-        if self.tags is None:
-            self.tags=[]
+        self.tags=[]
         self.average_cr = 0
-        self.monster_list = None
-        if self.monster_list is None:
-            self.monster_list = []
+        self.monster_list = []
         self.encounter_type = "Average Encounter"
         self.dropped_loot = None
         self.highest_loot_modifier = 0
@@ -209,11 +205,13 @@ class Encounter_Generator:
         self,
         average_level=1,
         encounter_type="Average Encounter",
-        tags=[],
+        tags = None,
         generator_key="Random",
         loot_generate=False,
     ):
         monster_count = 0
+        if tags is None:
+            tags = []
         if generator_key not in self.Generators:
             raise ValueError("Illegal Value")
         if type(loot_generate) is not bool:
