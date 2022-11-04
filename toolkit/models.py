@@ -69,6 +69,9 @@ class Armor(models.Model):
     Weight = models.IntegerField()
     Stealth = models.BooleanField()
 
+    def __str__(self):
+        return "Armor"
+
 
 class Weapon(models.Model):
     """
@@ -97,6 +100,9 @@ class Weapon(models.Model):
     # store as a binary where Heavy Light TwoHanded Reach Versatile Finesse Throwable Ammunition Special
     # So heavy two handed with reach would be 101100000
 
+    def __str__(self):
+        return "Weapon"
+
 
 class GenericItem(models.Model):
     """
@@ -113,6 +119,9 @@ class GenericItem(models.Model):
     Name = models.CharField(primary_key=True, max_length=30)
     Description = models.CharField(max_length=255)
     Base_Value = models.FloatField()
+
+    def __str__(self):
+        return "Generic"
 
 
 class MagicItem(models.Model):
@@ -132,6 +141,9 @@ class MagicItem(models.Model):
     Rarity = models.CharField(max_length=20)
     Effect_Description = models.CharField(max_length=255)
     Visual_Description = models.CharField(max_length=255)
+
+    def __str__(self):
+        return "Magic"
 
 
 class GeneratedLoot(models.Model):
