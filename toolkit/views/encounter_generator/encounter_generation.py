@@ -21,7 +21,7 @@ class Encounter_Generator:
 
     def __init__(self):
         self.average_party_level = 1
-        self.tags=[]
+        self.tags = []
         self.average_cr = 0
         self.monster_list = []
         self.encounter_type = "Average Encounter"
@@ -213,7 +213,7 @@ class Encounter_Generator:
         self,
         average_level=1,
         encounter_type="Average Encounter",
-        tags = None,
+        tags=None,
         generator_key="Random",
         loot_generate=False,
     ):
