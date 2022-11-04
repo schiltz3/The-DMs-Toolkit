@@ -113,70 +113,77 @@ class Encounter_Generator:
     def generate_monster(self):
         if self.encounter_type == "Average Encounter":
             monster_possibilities = Monster.objects.filter(
-                Challenge_Rating__lte = self.average_party_level + 1
+                Challenge_Rating__lte=self.average_party_level + 1
             )
             monster_possibilities.filter(
-                Challenge_Rating__gte
-                = ((self.average_party_level + (self.average_party_level - 1)) / 2)
+                Challenge_Rating__gte=(
+                    (self.average_party_level + (self.average_party_level - 1)) / 2
+                )
             )
         elif self.encounter_type == "Horde":
             monster_possibilities = Monster.objects.filter(
-                Challenge_Rating__lte
-                = ((self.average_party_level + (self.average_party_level - 2)) / 3)
+                Challenge_Rating__lte=(
+                    (self.average_party_level + (self.average_party_level - 2)) / 3
+                )
             )
             monster_possibilities.filter(
-                Challenge_Rating__gte
-                = ((self.average_party_level + (self.average_party_level - 2)) / 4)
+                Challenge_Rating__gte=(
+                    (self.average_party_level + (self.average_party_level - 2)) / 4
+                )
             )
         elif self.encounter_type == "Skirmish":
             monster_possibilities = Monster.objects.filter(
-                Challenge_Rating__lte = self.average_party_level
+                Challenge_Rating__lte=self.average_party_level
             )
             monster_possibilities.filter(
-                Challenge_Rating__gte
-                = ((self.average_party_level + (self.average_party_level - 2)) / 2)
+                Challenge_Rating__gte=(
+                    (self.average_party_level + (self.average_party_level - 2)) / 2
+                )
             )
         elif self.encounter_type == "Challenge":
             if 10 > self.average_party_level > 1:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte
-                    = ((self.average_party_level + (self.average_party_level + 3)) / 2)
+                    Challenge_Rating__lte=(
+                        (self.average_party_level + (self.average_party_level + 3)) / 2
+                    )
                 )
             elif self.average_party_level >= 10:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte
-                    = (self.average_party_level + (self.average_party_level / 3))
+                    Challenge_Rating__lte=(
+                        self.average_party_level + (self.average_party_level / 3)
+                    )
                 )
             else:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte = self.average_party_level
+                    Challenge_Rating__lte=self.average_party_level
                 )
             monster_possibilities.filter(
-                Challenge_Rating__gte = self.average_party_level - 1
+                Challenge_Rating__gte=self.average_party_level - 1
             )
 
         elif self.encounter_type == "Minor Boss":
             if 10 > self.average_party_level > 3:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte
-                    = ((self.average_party_level + (self.average_party_level + 3)) / 2)
+                    Challenge_Rating__lte=(
+                        (self.average_party_level + (self.average_party_level + 3)) / 2
+                    )
                 )
             elif self.average_party_level >= 10:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte
-                    = (self.average_party_level + (self.average_party_level / 3) + 1)
+                    Challenge_Rating__lte=(
+                        self.average_party_level + (self.average_party_level / 3) + 1
+                    )
                 )
             else:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte = self.average_party_level + 2
+                    Challenge_Rating__lte=self.average_party_level + 2
                 )
-            monster_possibilities.filter(Challenge_Rating__gt = self.average_party_level)
+            monster_possibilities.filter(Challenge_Rating__gt=self.average_party_level)
 
         elif self.encounter_type == "Major Boss":
             if 10 > self.average_party_level < 4:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte
-                    = (
+                    Challenge_Rating__lte=(
                         (
                             self.average_party_level
                             + ((self.average_party_level + 3) / 2)
@@ -185,14 +192,15 @@ class Encounter_Generator:
                 )
             elif self.average_party_level > 10:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte
-                    = (self.average_party_level + (self.average_party_level / 3) + 1)
+                    Challenge_Rating__lte=(
+                        self.average_party_level + (self.average_party_level / 3) + 1
+                    )
                 )
             else:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte = self.average_party_level + 2
+                    Challenge_Rating__lte=self.average_party_level + 2
                 )
-        monster_possibilities.filter(Challenge_Rating__gt = self.average_party_level)
+        monster_possibilities.filter(Challenge_Rating__gt=self.average_party_level)
 
         for x in self.tags:
             monster_possibilities.filter(Creature_Tags=x)
