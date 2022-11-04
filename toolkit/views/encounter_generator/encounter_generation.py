@@ -101,13 +101,15 @@ class Encounter_Generator:
         sum = 0
         for x in self.monster_list:
             sum += x.Challenge_Rating
-        self.average_cr = sum/len(self.monster_list)
-    
+        self.average_cr = sum / len(self.monster_list)
+
     def generate_loot(self):
         generator = Loot_Generator()
-        loot = generator.generate_loot(self, self.generator_key, int(self.average_party_level))
+        loot = generator.generate_loot(
+            self, self.generator_key, int(self.average_party_level)
+        )
         self.dropped_loot = loot
-    
+
     def generate_monster(self):
         if self.encounter_type == "Average Encounter":
             monster_possibilities = Monster.objects.filter(
@@ -195,8 +197,14 @@ class Encounter_Generator:
         for x in self.tags:
             monster_possibilities.filter(Creature_Tags=x)
         if monster_possibilities.exists:
-            monster_possibilities = list(monster_possibilities)    
-            self.monster_list.append(monster_possibilities[self.Generators[self.generator_key](0, (len(monster_possibilities) - 1))])
+            monster_possibilities = list(monster_possibilities)
+            self.monster_list.append(
+                monster_possibilities[
+                    self.Generators[self.generator_key](
+                        0, (len(monster_possibilities) - 1)
+                    )
+                ]
+            )
             self.calculate_average_cr()
         else:
             raise RuntimeError("No monsters with those tags at your levels")
