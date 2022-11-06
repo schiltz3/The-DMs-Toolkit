@@ -251,7 +251,7 @@ class Encounter_Generator:
                 )
             else:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte = self.average_party_level
+                    Challenge_Rating__lte=self.average_party_level
                 )
             monster_possibilities=monster_possibilities.filter(
                 Challenge_Rating__gte = self.average_party_level - 1
@@ -268,7 +268,7 @@ class Encounter_Generator:
                 )
             else:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte = self.average_party_level + 2
+                    Challenge_Rating__lte=self.average_party_level + 2
                 )
             monster_possibilities=monster_possibilities.filter(Challenge_Rating__gt = self.average_party_level)
 
@@ -288,7 +288,7 @@ class Encounter_Generator:
                 )
             else:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte = self.average_party_level + 2
+                    Challenge_Rating__lte=self.average_party_level + 2
                 )
                 monster_possibilities=monster_possibilities.filter(Challenge_Rating__gt = self.average_party_level)
 
