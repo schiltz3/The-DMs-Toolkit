@@ -190,10 +190,11 @@ class GenerateCharacterInputs:
         return True
 
 
+@dataclass
 class Stat:
-    value: int
-    repr: str
-    proficiency: bool
+    value: int = 0
+    repr: str = ""
+    proficiency: bool = False
 
     def sk_to_str(self):
         pos = "+" if self.value >= 0 else "-"
@@ -212,45 +213,45 @@ class GeneratedCharacterOutputs:
     wisdom: int = 0
     charisma: int = 0
 
-    mod_strength: str = "+0"
-    mod_dexterity: str = "+0"
-    mod_constitution: str = "+0"
-    mod_intelligence: str = "+0"
-    mod_wisdom: str = "+0"
-    mod_charisma: str = "+0"
-
     proficiency: str = "+0"
-
-    st_strength: str = "+0"
-    st_dexterity: str = "+0"
-    st_constitution: str = "+0"
-    st_intelligence: str = "+0"
-    st_wisdom: str = "+0"
-    st_charisma: str = "+0"
-
     stat_speed: int = 0
-    stat_initiative: str = "0"
     stat_hit_points: int = 0
     stat_hit_dice: int = 0
 
-    sk_acrobatics: str = "+0"
-    sk_animal_handling: str = "+0"
-    sk_arcana: str = "+0"
-    sk_athletics: str = "+0"
-    sk_deception: str = "+0"
-    sk_history: str = "+0"
-    sk_insight: str = "+0"
-    sk_intimidation: str = "+0"
-    sk_investigation: str = "+0"
-    sk_medicine: str = "+0"
-    sk_nature: str = "+0"
-    sk_perception: str = "+0"
-    sk_performance: str = "+0"
-    sk_persuasion: str = "+0"
-    sk_religion: str = "+0"
-    sk_sleight_of_hand: str = "+0"
-    sk_stealth: str = "+0"
-    sk_survival: str = "+0"
+    stat_initiative = field(default_factory=Stat)
+
+    mod_strength = field(default_factory=Stat)
+    mod_dexterity = field(default_factory=Stat)
+    mod_constitution = field(default_factory=Stat)
+    mod_intelligence = field(default_factory=Stat)
+    mod_wisdom = field(default_factory=Stat)
+    mod_charisma = field(default_factory=Stat)
+
+    st_strength = field(default_factory=Stat)
+    st_dexterity = field(default_factory=Stat)
+    st_constitution = field(default_factory=Stat)
+    st_intelligence = field(default_factory=Stat)
+    st_wisdom = field(default_factory=Stat)
+    st_charisma = field(default_factory=Stat)
+
+    sk_acrobatics = field(default_factory=Stat)
+    sk_animal_handling = field(default_factory=Stat)
+    sk_arcana = field(default_factory=Stat)
+    sk_athletics = field(default_factory=Stat)
+    sk_deception = field(default_factory=Stat)
+    sk_history = field(default_factory=Stat)
+    sk_insight = field(default_factory=Stat)
+    sk_intimidation = field(default_factory=Stat)
+    sk_investigation = field(default_factory=Stat)
+    sk_medicine = field(default_factory=Stat)
+    sk_nature = field(default_factory=Stat)
+    sk_perception = field(default_factory=Stat)
+    sk_performance = field(default_factory=Stat)
+    sk_persuasion = field(default_factory=Stat)
+    sk_religion = field(default_factory=Stat)
+    sk_sleight_of_hand = field(default_factory=Stat)
+    sk_stealth = field(default_factory=Stat)
+    sk_survival = field(default_factory=Stat)
 
     def __post_init__(self):
         if self.calculate is False:
