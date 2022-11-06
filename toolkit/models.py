@@ -211,7 +211,7 @@ class Monster(models.Model):
     Intelligence = models.IntegerField()
     Wisdom = models.IntegerField()
     Charisma = models.IntegerField()
-    Gold_Modifier = models.FloatField(blank=True)
+    Gold_Modifier = models.FloatField(blank=True, null=True)
     Creature_Tags = models.ManyToManyField(Tag)
 
 

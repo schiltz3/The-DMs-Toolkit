@@ -145,7 +145,6 @@ class Loot_Generator:
 
     def generate_loot(
         self,
-        current_user=None,
         generator_key="Random",
         level=1,
         approximate_total_value=0,
@@ -206,7 +205,6 @@ class Loot_Generator:
             self.check_value()
 
         current_loot = GeneratedLoot(
-            Owner=current_user,
             Loot_Type=self.loot_type,
             Total_Value=self.total_value_generated,
             Money=self.currency,
