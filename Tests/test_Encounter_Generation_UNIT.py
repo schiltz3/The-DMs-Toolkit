@@ -150,12 +150,7 @@ class Loot_Tests(TestCase):
     def setUp(self):
         """Test setup"""
         self.encounter = enc_gen.Encounter_Generator()
-        mitem = MagicItem(
-            Name="Rope",
-            Rarity="Common",
-            Type = "Trinket",
-            Attuned = False
-        )
+        mitem = MagicItem(Name="Rope", Rarity="Common", Type="Trinket", Attuned=False)
         mitem.save()
 
         item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
@@ -213,17 +208,16 @@ class Monsters_And_CR_Tests(TestCase):
         self.mon1 = Monster(
             Name="Fred",
             Challenge_Rating=2.0,
-            Size = "Medium",
-            Type = "Human",
-            Alignment = "Lawful Good"
-
+            Size="Medium",
+            Type="Human",
+            Alignment="Lawful Good",
         )
         self.mon2 = Monster(
             Name="Demon",
             Challenge_Rating=10.0,
-            Size = "Medium",
-            Type = "Infernal",
-            Alignment = "Chaotic Evil"
+            Size="Medium",
+            Type="Infernal",
+            Alignment="Chaotic Evil",
         )
         self.mon1.save()
         self.mon2.save()
@@ -277,12 +271,7 @@ class Generate_Test(TestCase):
         tag2 = Tag(Name="Human")
         tag1.save()
         tag2.save()
-        mitem = MagicItem(
-            Name="Rope",
-            Rarity="Common",
-            Type = "Trinket",
-            Attuned = False
-        )
+        mitem = MagicItem(Name="Rope", Rarity="Common", Type="Trinket", Attuned=False)
         mitem.save()
 
         item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
@@ -312,17 +301,16 @@ class Generate_Test(TestCase):
         self.mon1 = Monster(
             Name="Fred",
             Challenge_Rating=2.0,
-            Size = "Medium",
-            Type = "Human",
-            Alignment = "Lawful Good"
-
+            Size="Medium",
+            Type="Human",
+            Alignment="Lawful Good",
         )
         self.mon2 = Monster(
             Name="Demon",
             Challenge_Rating=10.0,
-            Size = "Medium",
-            Type = "Infernal",
-            Alignment = "Chaotic Evil"
+            Size="Medium",
+            Type="Infernal",
+            Alignment="Chaotic Evil",
         )
         self.mon1.save()
         self.mon2.save()

@@ -45,12 +45,7 @@ class PositiveTests(TestCase):
 
     def test_armor(self):
         """tests for generate armor"""
-        mitem = MagicItem(
-            Name="Rope",
-            Rarity="Common",
-            Type = "Trinket",
-            Attuned = False
-        )
+        mitem = MagicItem(Name="Rope", Rarity="Common", Type="Trinket", Attuned=False)
         mitem.save()
 
         item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
@@ -83,12 +78,7 @@ class PositiveTests(TestCase):
 
     def test_weapons(self):
         """tests for generate weapons"""
-        mitem = MagicItem(
-            Name="Rope",
-            Rarity="Common",
-            Type = "Trinket",
-            Attuned = False
-        )
+        mitem = MagicItem(Name="Rope", Rarity="Common", Type="Trinket", Attuned=False)
         mitem.save()
 
         item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
@@ -121,12 +111,7 @@ class PositiveTests(TestCase):
 
     def test_generic(self):
         """tests for generate generic items"""
-        mitem = MagicItem(
-            Name="Rope",
-            Rarity="Common",
-            Type = "Trinket",
-            Attuned = False
-        )
+        mitem = MagicItem(Name="Rope", Rarity="Common", Type="Trinket", Attuned=False)
         mitem.save()
 
         item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
@@ -159,12 +144,7 @@ class PositiveTests(TestCase):
 
     def test_magic(self):
         """tests for generate magic items"""
-        mitem = MagicItem(
-            Name="Rope",
-            Rarity="Common",
-            Type = "Trinket",
-            Attuned = False
-        )
+        mitem = MagicItem(Name="Rope", Rarity="Common", Type="Trinket", Attuned=False)
         mitem.save()
 
         item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
@@ -206,12 +186,7 @@ class PositiveTests(TestCase):
 
     def test_random(self):
         """tests for generate random item of any type"""
-        mitem = MagicItem(
-            Name="Rope",
-            Rarity="Common",
-            Type = "Trinket",
-            Attuned = False
-        )
+        mitem = MagicItem(Name="Rope", Rarity="Common", Type="Trinket", Attuned=False)
         mitem.save()
 
         item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
@@ -244,12 +219,7 @@ class PositiveTests(TestCase):
 
     def test_generate(self):
         """Tests for the overall generate loot function"""
-        mitem = MagicItem(
-            Name="Rope",
-            Rarity="Common",
-            Type = "Trinket",
-            Attuned = False
-        )
+        mitem = MagicItem(Name="Rope", Rarity="Common", Type="Trinket", Attuned=False)
         mitem.save()
 
         item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
