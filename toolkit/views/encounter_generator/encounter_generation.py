@@ -139,7 +139,7 @@ class Encounter_Generator:
         Raises:
             ValueError: If new_level is not a float or int
             ValueError: If new level is not possible to get in dnd
-        """        
+        """
         if type(new_level) is not float and type(new_level) is not int:
             raise ValueError("Not a float level")
         if not 1 <= new_level <= 21:
@@ -331,17 +331,18 @@ class Encounter_Generator:
         if len(monster_possibilities) > 1:
             monster_possibilities = list(monster_possibilities)
             toAdd = monster_possibilities[
-                    self.Generators[self.generator_key](
-                        0, (len(monster_possibilities) - 1)
-                    )
-                ]
-            
+                self.Generators[self.generator_key](0, (len(monster_possibilities) - 1))
+            ]
+
         elif len(monster_possibilities) == 1:
-            toAdd=monster_possibilities[0]
+            toAdd = monster_possibilities[0]
         else:
             raise RuntimeError("No monsters with those tags at your levels")
-        if toAdd.Gold_Modifier is not None and toAdd.Gold_Modifier>self.highest_loot_modifier:
-            self.highest_loot_modifier=toAdd.Gold_Modifier
+        if (
+            toAdd.Gold_Modifier is not None
+            and toAdd.Gold_Modifier > self.highest_loot_modifier
+        ):
+            self.highest_loot_modifier = toAdd.Gold_Modifier
         self.monster_list.append(toAdd)
         self.calculate_average_cr()
 
