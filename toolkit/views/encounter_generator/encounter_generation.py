@@ -140,9 +140,8 @@ class Encounter_Generator:
             ValueError: If new_level is not a float or int
             ValueError: If new level is not possible to get in dnd
         """        
-        if type(new_level) is not float:
-            if type(new_level) is not int:
-                raise ValueError("Not a float level")
+        if type(new_level) is not float and type(new_level) is not int:
+            raise ValueError("Not a float level")
         if not 1 <= new_level <= 21:
             raise ValueError("Not a valid level")
         self.average_party_level = new_level
@@ -296,18 +295,20 @@ class Encounter_Generator:
             monster_possibilities=monster_possibilities.filter(Creature_Tags=x)
         if len(monster_possibilities)>1:
             monster_possibilities = list(monster_possibilities)
-            self.monster_list.append(
-                monster_possibilities[
+            toAdd = monster_possibilities[
                     self.Generators[self.generator_key](
                         0, (len(monster_possibilities) - 1)
                     )
                 ]
-            )
-            self.calculate_average_cr()
+            
         elif len(monster_possibilities) == 1:
-            self.monster_list.append(monster_possibilities[0])
+            toAdd=monster_possibilities[0]
         else:
             raise RuntimeError("No monsters with those tags at your levels")
+        if toAdd.Gold_Modifier is not None and toAdd.Gold_Modifier>self.highest_loot_modifier:
+            self.highest_loot_modifier=toAdd.Gold_Modifier
+        self.monster_list.append(toAdd)
+        self.calculate_average_cr()
 
     def generate_encounter(
         self,
