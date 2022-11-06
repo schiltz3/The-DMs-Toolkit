@@ -190,6 +190,11 @@ class GenerateCharacterInputs:
         return True
 
 
+class Stat:
+    value: int
+    repr: str
+
+
 @dataclass
 class GeneratedCharacterOutputs:
     """Contain all the non-user intractable elements of the page"""
@@ -280,10 +285,10 @@ class GeneratedCharacterOutputs:
         self.sk_sleight_of_hand = self.mod_dexterity
         self.sk_stealth = self.mod_dexterity
 
-        self.sk_arcana = self.mod_intelligence
-        self.sk_history = self.mod_intelligence
-        self.sk_investigation = self.mod_intelligence
-        self.sk_nature = self.mod_intelligence
+    def calculate_strings(self):
+        def sk_to_str(sk: int):
+            pos = "+" if sk >= 0 else "-"
+            return f"{pos} {abs(sk)}"
         self.sk_religion = self.mod_intelligence
 
         self.sk_animal_handling = self.mod_wisdom
