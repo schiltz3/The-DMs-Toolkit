@@ -1,5 +1,4 @@
 import inspect
-import random
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
@@ -38,22 +37,27 @@ class CharacterGenerator(View):
         self.context["race_list"] = sorted(self.generator.RACE_DICT)
         self.context["alignment_list"] = sorted(self.generator.ALIGNMENT_DICT)
 
+        gen_keys = self.generator.get_all_random_generators()
+        gen_keys.append("Standard")
+        gen_keys = sorted(gen_keys)
+        self.context["generator_type_list"] = gen_keys
+
         self.context["clazz_choices_list"] = sorted(
             self.generator.CLASS_DICT.get("All")
         )
         self.context["background_choices_list"] = sorted(
             self.generator.BACKGROUND_DICT.get("All")
         )
-        self.context["race_choices_list"] = sorted(
-            self.generator.BACKGROUND_DICT.get("All")
-        )
+        self.context["race_choices_list"] = sorted(self.generator.RACE_DICT.get("All"))
         self.context["alignment_choices_list"] = sorted(
             self.generator.ALIGNMENT_DICT.get("All")
         )
 
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
-        self.context["data"] = GenerateCharacterInputs()
+        self.context["data"] = GenerateCharacterInputs(
+            player_name=Element(request.user.get_username())
+        )
         self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
 
@@ -67,68 +71,79 @@ class CharacterGenerator(View):
         print(form)
         self.context["data"] = form
         self.context["error"] = None
-        if form.is_valid():
+        if not form.is_valid():
+            self.context["form"] = form
+            print("Invalid form")
+            self.context["data"] = GenerateCharacterInputs(
+                player_name=Element(request.user.get_username())
+            )
+            self.context["out"] = GeneratedCharacterOutputs(calculate=False)
+            return render(request, "character_generator.html", self.context)
+        if request.POST.get("generate_button") is not None:
             try:
-                if request.POST.get("generate_button") is not None:
+                generator_key = "Random"
+                stat_generator_key = form.generator_type.value
 
-                    # TODO: get generator from page
-                    stat_generator_key = "random"
-                    generator_key = "random"
-                    if stat_generator_key is None:
-                        stat_generator_keys: list[str] = list(
-                            Character_Generator.get_all_random_generators()
-                        )
-                        stat_generator_key = stat_generator_keys[
-                            random.randint(0, len(stat_generator_keys) - 1)
-                        ]
-
-                    race = form.race.value
-                    if race in self.generator.RACE_DICT:
-                        form.race.value = Character_Generator.generate_race(
-                            Character_Generator.RACE_DICT[race], generator_key
-                        )
-                    clazz = form.clazz.value
-                    if clazz in self.generator.CLASS_DICT:
-                        form.clazz.value = Character_Generator.generate_class(
-                            Character_Generator.CLASS_DICT[clazz], generator_key
-                        )
-                    alignment = form.alignment.value
-                    if alignment in self.generator.ALIGNMENT_DICT:
-                        form.alignment.value = Character_Generator.generate_alignment(
-                            Character_Generator.ALIGNMENT_DICT[alignment],
-                            generator_key,
-                        )
-                    background = form.background.value
-                    if background in self.generator.BACKGROUND_DICT:
-                        form.background.value = Character_Generator.generate_background(
-                            Character_Generator.BACKGROUND_DICT[background],
-                            generator_key,
-                        )
-                    stats = Character_Generator.generate_stat_list(stat_generator_key)
-                    output = GeneratedCharacterOutputs(
-                        calculate=True,
-                        strength=stats[0],
-                        dexterity=stats[1],
-                        constitution=stats[2],
-                        intelligence=stats[3],
-                        wisdom=stats[4],
-                        charisma=stats[5],
+                race = form.race.value
+                if race in self.generator.RACE_DICT:
+                    form.race.value = self.generator.generate_race(
+                        Character_Generator.RACE_DICT[race], generator_key
                     )
-                    self.context["out"] = output
-                    return render(request, "character_generator.html", self.context)
+                clazz = form.clazz.value
+                if clazz in self.generator.CLASS_DICT:
+                    form.clazz.value = self.generator.generate_class(
+                        Character_Generator.CLASS_DICT[clazz], generator_key
+                    )
+                alignment = form.alignment.value
+                if alignment in self.generator.ALIGNMENT_DICT:
+                    form.alignment.value = self.generator.generate_alignment(
+                        Character_Generator.ALIGNMENT_DICT[alignment],
+                        generator_key,
+                    )
+                background = form.background.value
+                if background in self.generator.BACKGROUND_DICT:
+                    form.background.value = self.generator.generate_background(
+                        Character_Generator.BACKGROUND_DICT[background],
+                        generator_key,
+                    )
 
-                if request.POST.get("save_button") is not None:
-                    return render(request, "character_generator.html", self.context)
-                if request.POST.get("export_button") is not None:
+                if stat_generator_key == "Standard":
+                    stats = Character_Generator.Arrange(
+                        form.clazz.value, Character_Generator.STANDARD_ARRAY
+                    )
+                else:
+                    stats = self.generator.generate_stat_list(stat_generator_key)
 
-                    return render(request, "character_generator.html", self.context)
+                output = GeneratedCharacterOutputs(
+                    calculate=True,
+                    strength=stats[0],
+                    dexterity=stats[1],
+                    constitution=stats[2],
+                    intelligence=stats[3],
+                    wisdom=stats[4],
+                    charisma=stats[5],
+                )
+                self.context["out"] = output
+                return render(request, "character_generator.html", self.context)
             except ValueError as e:
                 self.context["form"] = form
                 self.context["error"] = str(e)
                 return render(request, "character_generator.html", self.context)
 
+        if request.POST.get("save_button") is not None:
+            return render(request, "character_generator.html", self.context)
+        if request.POST.get("clear_button") is not None:
+            self.context["data"] = GenerateCharacterInputs(
+                player_name=Element(request.user.get_username())
+            )
+            self.context["out"] = GeneratedCharacterOutputs(calculate=False)
+            return render(request, "character_generator.html", self.context)
+
         self.context["form"] = form
-        print("Invalid form")
+        self.context["data"] = GenerateCharacterInputs(
+            player_name=Element(request.user.get_username())
+        )
+        self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
 
 
@@ -136,12 +151,13 @@ class CharacterGenerator(View):
 class GenerateCharacterInputs:
     """Class which holds all the user intractable for the character generator page"""
 
-    character_name: Element = field(default_factory=Element)
+    character_name: Element = field(default_factory=lambda: Element(""))
     player_name: Element = field(default_factory=Element)  # Optional
     clazz: Element = field(default_factory=lambda: Element("All"))
     background: Element = field(default_factory=lambda: Element("All"))
     race: Element = field(default_factory=lambda: Element("All"))
     alignment: Element = field(default_factory=lambda: Element("All"))
+    generator_type: Element = field(default_factory=lambda: Element("3D6"))
     experience_points: Element = field(default_factory=lambda: Element(0))
 
     # valid_data: dict[str, Any] = field(default_factory=dict)
@@ -170,9 +186,7 @@ class GenerateCharacterInputs:
         Returns:
             bool: Tru if dataclass holds valid data
         """
-        self.character_name.value.strip()
-        if self.character_name.value == "":
-            return False
+        self.character_name.value = self.character_name.value.strip()
         return True
 
 
@@ -195,7 +209,7 @@ class GeneratedCharacterOutputs:
     mod_wisdom: str = "+0"
     mod_charisma: str = "+0"
 
-    proficency: str = "+0"
+    proficiency: str = "+0"
 
     st_strength: str = "+0"
     st_dexterity: str = "+0"

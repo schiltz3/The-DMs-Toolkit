@@ -18,15 +18,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from toolkit.views.bootstrap_test import BootstrapTest
 from toolkit.views.character_generator.character_generator import CharacterGenerator
 from toolkit.views.confirm_account_creation import ConfirmAccountCreation
 from toolkit.views.create_account import CreateAccount
-from toolkit.views.EncounterGenerator import EncounterGenerator
+from toolkit.views.encounter_generator.EncounterGenerator import EncounterGenerator
 from toolkit.views.home_page import HomePage
 from toolkit.views.login import Login
 from toolkit.views.logout import Logout
-from toolkit.views.LootGenerator import LootGenerator
+from toolkit.views.loot_generator.loot_generator import LootGenerator
 from toolkit.views.saved_characters import SavedCharacters
 from toolkit.views.saved_encounters import SavedEncounters
 from toolkit.views.saved_loot import SavedLoot
@@ -69,8 +68,6 @@ urlpatterns = [
     path("saved_loot/", SavedLoot.as_view(), name="saved_loot"),
     # Saved Encounters
     path("saved_encounters/", SavedEncounters.as_view(), name="saved_encounters"),
-    # test sites
-    path("bootstrap_test/", BootstrapTest.as_view(), name="bootstrap_test"),
     # static files
     *static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
 ]

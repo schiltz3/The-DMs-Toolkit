@@ -13,13 +13,15 @@ class CreateAccount(View):
     a user's credentials from the User database.
     """
 
-    def get(self, request: HttpRequest):
+    @staticmethod
+    def get(request: HttpRequest):
         """GET method for create user page."""
         context = {}
         context["form"] = CreateAccountForm()
         return render(request, "create_account.html", context)
 
-    def post(self, request: HttpRequest):
+    @staticmethod
+    def post(request: HttpRequest):
         """POST method for create user page."""
         form = CreateAccountForm(request.POST)
         context: dict[str, Any] = {"error": None}
