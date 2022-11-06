@@ -40,6 +40,7 @@ class Encounter_Generator:
 
     def __init__(self):
         """Initiates Values"""
+        self.gen = Loot_Generator()
         self.average_party_level = 1
         self.tags: list[Tag] = []
         self.average_cr = 0
@@ -201,7 +202,6 @@ class Encounter_Generator:
 
     def generate_loot(self):
         """Generates some loot based on the encounter"""
-        self.gen = Loot_Generator()
         if self.encounter_type == "Major Boss":
             loot = self.gen.generate_loot(
                 generator_key=self.generator_key,

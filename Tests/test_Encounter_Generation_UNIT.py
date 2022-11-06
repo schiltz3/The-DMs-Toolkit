@@ -357,6 +357,8 @@ class Generate_Test(TestCase):
         self.assertNotEqual(None, self.encounter2.dropped_loot)
 
     def test_generate_negative(self):
+        """Test encounter generate
+        """        
         with self.assertRaises(ValueError):
             self.encounter.generate_encounter(generator_key="Error")
         with self.assertRaises(ValueError):
