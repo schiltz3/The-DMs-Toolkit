@@ -202,6 +202,9 @@ class Stat:
         self.repr = f"{pos} {abs(val)}"
         return self
 
+    def __post_init__(self):
+        self.sk_to_str()
+
 
 class GeneratedCharacterOutputs:
     """Contain all the non-user intractable elements of the page"""
@@ -266,54 +269,49 @@ class GeneratedCharacterOutputs:
             self.calculate()
 
     def calculate(self):
-        self.stats["mod_strength"] = Character_Generator.calculate_ability_modifier(
-            self.strength
-        )
-        self.stats["mod_dexterity"] = Character_Generator.calculate_ability_modifier(
-            self.dexterity
-        )
-        self.stats["mod_constitution"] = Character_Generator.calculate_ability_modifier(
-            self.constitution
-        )
-        self.stats["mod_intelligence"] = Character_Generator.calculate_ability_modifier(
-            self.intelligence
-        )
-        self.stats["mod_wisdom"] = Character_Generator.calculate_ability_modifier(
+        self.stats[
+            "mod_strength"
+        ].value = Character_Generator.calculate_ability_modifier(self.strength)
+        self.stats[
+            "mod_dexterity"
+        ].value = Character_Generator.calculate_ability_modifier(self.dexterity)
+        self.stats[
+            "mod_constitution"
+        ].value = Character_Generator.calculate_ability_modifier(self.constitution)
+        self.stats[
+            "mod_intelligence"
+        ].value = Character_Generator.calculate_ability_modifier(self.intelligence)
+        self.stats["mod_wisdom"].value = Character_Generator.calculate_ability_modifier(
             self.wisdom
         )
-        self.stats["mod_charisma"] = Character_Generator.calculate_ability_modifier(
-            self.charisma
-        )
+        self.stats[
+            "mod_charisma"
+        ].value = Character_Generator.calculate_ability_modifier(self.charisma)
 
-        self.stats["st_strength"] = self.mod_strength
-        self.stats["st_dexterity"] = self.mod_dexterity
-        self.stats["st_constitution"] = self.mod_constitution
-        self.stats["st_intelligence"] = self.mod_intelligence
-        self.stats["st_charisma"] = self.mod_charisma
-        self.stats["st_wisdom"] = self.mod_wisdom
-
-        # TODO: Add proficiency bonus to initiative
-        self.stats["stat_initiative"] = self.mod_dexterity
-
-        self.stats["sk_athletics"] = self.mod_strength
-
-        self.stats["sk_acrobatics"] = self.mod_dexterity
-        self.stats["sk_sleight_of_hand"] = self.mod_dexterity
-        self.stats["sk_stealth"] = self.mod_dexterity
-
-        self.stats["sk_animal_handling"] = self.mod_wisdom
-        self.stats["sk_insight"] = self.mod_wisdom
-        self.stats["sk_medicine"] = self.mod_wisdom
-        self.stats["sk_perception"] = self.mod_wisdom
-        self.stats["sk_survival"] = self.mod_wisdom
-
-        self.stats["sk_deception"] = self.mod_charisma
-        self.stats["sk_intimidation"] = self.mod_charisma
-        self.stats["sk_performance"] = self.mod_charisma
-        self.stats["sk_persuasion"] = self.mod_charisma
-        self.stats["sk_religion"] = self.mod_intelligence
+        self.stats["st_strength"].value = self.stats["mod_strength"].value
+        self.stats["st_dexterity"].value = self.stats["mod_dexterity"].value
+        self.stats["st_constitution"].value = self.stats["mod_constitution"].value
+        self.stats["st_intelligence"].value = self.stats["mod_intelligence"].value
+        self.stats["st_charisma"].value = self.stats["mod_charisma"].value
+        self.stats["st_wisdom"].value = self.stats["mod_wisdom"].value
+        self.stats["stat_initiative"].value = self.stats["mod_dexterity"].value
+        self.stats["sk_athletics"].value = self.stats["mod_strength"].value
+        self.stats["sk_acrobatics"].value = self.stats["mod_dexterity"].value
+        self.stats["sk_sleight_of_hand"].value = self.stats["mod_dexterity"].value
+        self.stats["sk_stealth"].value = self.stats["mod_dexterity"].value
+        self.stats["sk_animal_handling"].value = self.stats["mod_wisdom"].value
+        self.stats["sk_insight"].value = self.stats["mod_wisdom"].value
+        self.stats["sk_medicine"].value = self.stats["mod_wisdom"].value
+        self.stats["sk_perception"].value = self.stats["mod_wisdom"].value
+        self.stats["sk_survival"].value = self.stats["mod_wisdom"].value
+        self.stats["sk_deception"].value = self.stats["mod_charisma"].value
+        self.stats["sk_intimidation"].value = self.stats["mod_charisma"].value
+        self.stats["sk_performance"].value = self.stats["mod_charisma"].value
+        self.stats["sk_persuasion"].value = self.stats["mod_charisma"].value
+        self.stats["sk_religion"].value = self.stats["mod_intelligence"].value
 
         for v in self.stats.values():
             v.sk_to_str()
+            v.proficiency = self.proficiency.value
 
         return self

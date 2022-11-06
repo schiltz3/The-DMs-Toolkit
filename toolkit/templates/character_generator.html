@@ -217,7 +217,7 @@
             <h3>{{ out.strength }}</h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>{{ out.mod_strength }}</h4>
+            <h4>{{ out.stats.mod_strength.repr }}</h4>
           </div>
         </div>
         <div class="character-stat">
@@ -229,7 +229,7 @@
             <h3>{{ out.dexterity }}</h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>{{ out.mod_dexterity }}</h4>
+            <h4>{{ out.stats.mod_dexterity.repr }}</h4>
           </div>
         </div>
         <div class="character-stat">
@@ -241,7 +241,7 @@
             <h3>{{ out.constitution }}</h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>{{ out.mod_constitution }}</h4>
+            <h4>{{ out.stats.mod_constitution.repr }}</h4>
           </div>
         </div>
         <div class="character-stat">
@@ -258,7 +258,7 @@
           </div>
           <div class="character-stat-bonus">
             <h4>
-              {{ out.mod_intelligence }}
+              {{ out.stats.mod_intelligence.repr }}
             </h4>
           </div>
         </div>
@@ -276,7 +276,7 @@
           </div>
           <div class="character-stat-bonus">
             <h4>
-              {{ out.mod_wisdom }}
+              {{ out.stats.mod_wisdom.repr }}
             </h4>
           </div>
         </div>
@@ -294,7 +294,7 @@
           </div>
           <div class="character-stat-bonus">
             <h4>
-              {{ out.mod_charisma }}
+              {{ out.stats.mod_charisma.repr }}
             </h4>
           </div>
         </div>
@@ -334,7 +334,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.st_strength }}
+                {{ out.stats.st_strength.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -352,7 +352,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.st_dexterity }}
+                {{ out.stats.st_dexterity.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -370,7 +370,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.st_constitution }}
+                {{ out.stats.st_constitution.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -388,7 +388,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.st_intelligence }}
+                {{ out.stats.st_intelligence.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -406,7 +406,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.st_wisdom }}
+                {{ out.stats.st_wisdom.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -424,7 +424,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.st_charisma }}
+                {{ out.stats.st_charisma.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -455,7 +455,7 @@
           <div class="character-panel">
             <div style="width: 25%; float: center;">
               <h5 style="font-weight: 800;">
-                {{ out.stat_initiative }}
+                {{ out.stats.stat_initiative.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: center;">
@@ -504,7 +504,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_acrobatics }}
+                {{ out.stats.sk_acrobatics.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -522,7 +522,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_animal_handling }}
+                {{ out.stats.sk_animal_handling.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -540,7 +540,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_arcana }}
+                {{ out.stats.sk_arcana.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -558,7 +558,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_athletics }}
+                {{ out.stats.sk_athletics.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -576,7 +576,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_deception }}
+                {{ out.stats.sk_deception.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -594,7 +594,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_history }}
+                {{ out.stats.sk_history.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -612,7 +612,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_insight }}
+                {{ out.stats.sk_insight.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -629,7 +629,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_intimidation }}
+                {{ out.stats.sk_intimidation.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -647,7 +647,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_investigation }}
+                {{ out.stats.sk_investigation.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -672,7 +672,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_medicine }}
+                {{ out.stats.sk_medicine.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -690,7 +690,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_nature }}
+                {{ out.stats.sk_nature.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -708,7 +708,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_perception }}
+                {{ out.stats.sk_perception.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -726,7 +726,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_performance }}
+                {{ out.stats.sk_performance.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -744,7 +744,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_persuasion }}
+                {{ out.stats.sk_persuasion.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -762,7 +762,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_religion }}
+                {{ out.stats.sk_religion.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -780,7 +780,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_sleight_of_hand }}
+                {{ out.stats.sk_sleight_of_hand.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -798,7 +798,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_stealth }}
+                {{ out.stats.sk_stealth.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
@@ -816,7 +816,7 @@
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
-                {{ out.sk_survival }}
+                {{ out.stats.sk_survival.repr }}
               </h5>
             </div>
             <div style="width: 50%; float: left;">
