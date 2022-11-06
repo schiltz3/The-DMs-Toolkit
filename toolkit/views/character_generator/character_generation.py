@@ -1,5 +1,5 @@
 import random
-from math import ceil, floor
+from math import ceil
 from typing import Callable, Optional, Union
 
 Generator = Callable[[int, int], int]
@@ -208,7 +208,7 @@ class Character_Generator:
         return ceil(level / 4) + 1
 
     @staticmethod
-    def calculate_ability_modifier(stat: int) -> str:
+    def calculate_ability_modifier(stat: int) -> int:
         """Takes a stat and returns the ability modifier as a string
 
         Args:
@@ -221,7 +221,7 @@ class Character_Generator:
             raise RuntimeError("Stat is not an integer")
         if not 0 <= stat <= 20:
             raise ValueError("Illegal Level")
-        value = floor((stat - 10) / 2)
+        return (stat - 10) // 2
         return str(value) if value < 0 else f"+{value}"
 
     @staticmethod
