@@ -194,111 +194,126 @@ class GenerateCharacterInputs:
 class Stat:
     value: int = 0
     repr: str = ""
-    proficiency: bool = False
+    proficiency: int = 0
 
     def sk_to_str(self):
-        pos = "+" if self.value >= 0 else "-"
-        return f"{pos} {abs(self.value)}"
+        val = self.value + self.proficiency
+        pos = "+" if self.value + val >= 0 else "-"
+        self.repr = f"{pos} {abs(val)}"
+        return self
 
 
-@dataclass
 class GeneratedCharacterOutputs:
     """Contain all the non-user intractable elements of the page"""
 
-    calculate: bool = True
-    strength: int = 0
-    dexterity: int = 0
-    constitution: int = 0
-    intelligence: int = 0
-    wisdom: int = 0
-    charisma: int = 0
+    def __init__(
+        self,
+        calculate=True,
+        strength=0,
+        dexterity=0,
+        constitution=0,
+        intelligence=0,
+        wisdom=0,
+        charisma=0,
+        proficiency=0,
+    ):
+        self.strength = strength
+        self.dexterity = dexterity
+        self.constitution = constitution
+        self.intelligence = intelligence
+        self.wisdom = wisdom
+        self.charisma = charisma
 
-    proficiency: str = "+0"
-    stat_speed: int = 0
-    stat_hit_points: int = 0
-    stat_hit_dice: int = 0
+        self.proficiency: Stat = Stat(value=proficiency)
+        self.stat_speed: int = 0
+        self.stat_hit_points: int = 0
+        self.stat_hit_dice: int = 0
 
-    stat_initiative = field(default_factory=Stat)
+        self.stats = {
+            "stat_initiative": Stat(),
+            "mod_strength": Stat(),
+            "mod_dexterity": Stat(),
+            "mod_constitution": Stat(),
+            "mod_intelligence": Stat(),
+            "mod_wisdom": Stat(),
+            "mod_charisma": Stat(),
+            "st_strength": Stat(),
+            "st_dexterity": Stat(),
+            "st_constitution": Stat(),
+            "st_intelligence": Stat(),
+            "st_wisdom": Stat(),
+            "st_charisma": Stat(),
+            "sk_acrobatics": Stat(),
+            "sk_animal_handling": Stat(),
+            "sk_arcana": Stat(),
+            "sk_athletics": Stat(),
+            "sk_deception": Stat(),
+            "sk_history": Stat(),
+            "sk_insight": Stat(),
+            "sk_intimidation": Stat(),
+            "sk_investigation": Stat(),
+            "sk_medicine": Stat(),
+            "sk_nature": Stat(),
+            "sk_perception": Stat(),
+            "sk_performance": Stat(),
+            "sk_persuasion": Stat(),
+            "sk_religion": Stat(),
+            "sk_sleight_of_hand": Stat(),
+            "sk_stealth": Stat(),
+            "sk_survival": Stat(),
+        }
+        if calculate is True:
+            self.calculate()
 
-    mod_strength = field(default_factory=Stat)
-    mod_dexterity = field(default_factory=Stat)
-    mod_constitution = field(default_factory=Stat)
-    mod_intelligence = field(default_factory=Stat)
-    mod_wisdom = field(default_factory=Stat)
-    mod_charisma = field(default_factory=Stat)
-
-    st_strength = field(default_factory=Stat)
-    st_dexterity = field(default_factory=Stat)
-    st_constitution = field(default_factory=Stat)
-    st_intelligence = field(default_factory=Stat)
-    st_wisdom = field(default_factory=Stat)
-    st_charisma = field(default_factory=Stat)
-
-    sk_acrobatics = field(default_factory=Stat)
-    sk_animal_handling = field(default_factory=Stat)
-    sk_arcana = field(default_factory=Stat)
-    sk_athletics = field(default_factory=Stat)
-    sk_deception = field(default_factory=Stat)
-    sk_history = field(default_factory=Stat)
-    sk_insight = field(default_factory=Stat)
-    sk_intimidation = field(default_factory=Stat)
-    sk_investigation = field(default_factory=Stat)
-    sk_medicine = field(default_factory=Stat)
-    sk_nature = field(default_factory=Stat)
-    sk_perception = field(default_factory=Stat)
-    sk_performance = field(default_factory=Stat)
-    sk_persuasion = field(default_factory=Stat)
-    sk_religion = field(default_factory=Stat)
-    sk_sleight_of_hand = field(default_factory=Stat)
-    sk_stealth = field(default_factory=Stat)
-    sk_survival = field(default_factory=Stat)
-
-    def __post_init__(self):
-        if self.calculate is False:
-            return
-        self.mod_strength = Character_Generator.calculate_ability_modifier(
+    def calculate(self):
+        self.stats["mod_strength"] = Character_Generator.calculate_ability_modifier(
             self.strength
         )
-        self.mod_dexterity = Character_Generator.calculate_ability_modifier(
+        self.stats["mod_dexterity"] = Character_Generator.calculate_ability_modifier(
             self.dexterity
         )
-        self.mod_constitution = Character_Generator.calculate_ability_modifier(
+        self.stats["mod_constitution"] = Character_Generator.calculate_ability_modifier(
             self.constitution
         )
-        self.mod_intelligence = Character_Generator.calculate_ability_modifier(
+        self.stats["mod_intelligence"] = Character_Generator.calculate_ability_modifier(
             self.intelligence
         )
-        self.mod_wisdom = Character_Generator.calculate_ability_modifier(self.wisdom)
-        self.mod_charisma = Character_Generator.calculate_ability_modifier(
+        self.stats["mod_wisdom"] = Character_Generator.calculate_ability_modifier(
+            self.wisdom
+        )
+        self.stats["mod_charisma"] = Character_Generator.calculate_ability_modifier(
             self.charisma
         )
-        self.st_strength = self.mod_strength
 
-        self.st_dexterity = self.mod_dexterity
-        self.st_constitution = self.mod_constitution
-        self.st_intelligence = self.mod_intelligence
-        self.st_charisma = self.mod_charisma
-        self.st_wisdom = self.mod_wisdom
+        self.stats["st_strength"] = self.mod_strength
+        self.stats["st_dexterity"] = self.mod_dexterity
+        self.stats["st_constitution"] = self.mod_constitution
+        self.stats["st_intelligence"] = self.mod_intelligence
+        self.stats["st_charisma"] = self.mod_charisma
+        self.stats["st_wisdom"] = self.mod_wisdom
 
         # TODO: Add proficiency bonus to initiative
-        self.stat_initiative = self.mod_dexterity
+        self.stats["stat_initiative"] = self.mod_dexterity
 
-        # TODO: Add proficiency bonuses to these if proficient
+        self.stats["sk_athletics"] = self.mod_strength
 
-        self.sk_athletics = self.mod_strength
+        self.stats["sk_acrobatics"] = self.mod_dexterity
+        self.stats["sk_sleight_of_hand"] = self.mod_dexterity
+        self.stats["sk_stealth"] = self.mod_dexterity
 
-        self.sk_acrobatics = self.mod_dexterity
-        self.sk_sleight_of_hand = self.mod_dexterity
-        self.sk_stealth = self.mod_dexterity
+        self.stats["sk_animal_handling"] = self.mod_wisdom
+        self.stats["sk_insight"] = self.mod_wisdom
+        self.stats["sk_medicine"] = self.mod_wisdom
+        self.stats["sk_perception"] = self.mod_wisdom
+        self.stats["sk_survival"] = self.mod_wisdom
 
-        self.sk_animal_handling = self.mod_wisdom
-        self.sk_insight = self.mod_wisdom
-        self.sk_medicine = self.mod_wisdom
-        self.sk_perception = self.mod_wisdom
-        self.sk_survival = self.mod_wisdom
+        self.stats["sk_deception"] = self.mod_charisma
+        self.stats["sk_intimidation"] = self.mod_charisma
+        self.stats["sk_performance"] = self.mod_charisma
+        self.stats["sk_persuasion"] = self.mod_charisma
+        self.stats["sk_religion"] = self.mod_intelligence
 
-        self.sk_deception = self.mod_charisma
-        self.sk_intimidation = self.mod_charisma
-        self.sk_performance = self.mod_charisma
-        self.sk_persuasion = self.mod_charisma
-        self.sk_religion = self.mod_intelligence
+        for v in self.stats.values():
+            v.sk_to_str()
+
+        return self
