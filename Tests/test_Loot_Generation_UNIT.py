@@ -34,7 +34,7 @@ class PositiveTests(TestCase):
         """Tests for the generate loot type"""
         new_loot = Loot_Gen.Loot_Generator()
         new_loot.generate_loot_type()
-        self.assertTrue(new_loot.loot_type in list(new_loot.LOOT_TYPE_DICT.keys()))
+        self.assertTrue(new_loot.loot_type in new_loot.LOOT_TYPE_DICT)
 
     def test_currency(self):
         """Tests for generate currency"""
