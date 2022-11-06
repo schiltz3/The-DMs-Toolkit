@@ -5,7 +5,7 @@
 {% block application_pane %}
 <form action {% url "loot_generator" %} method="post" class="form">
     {% csrf_token %}
-<div class="container-fluid p-4">
+<div class="container-fluid">
     <div>
         <div class="row">
             <div class="loot-header">
@@ -53,35 +53,41 @@
                     </select>
             </div>
             <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
-                    <div class="form-group">
-                        <label for="total_hoard_value_input">Total Hoard Value</label>
+                        <label for="total_hoard_value_input" class="form-label">Total Hoard Value</label>
                         <input type="number" class="form-control" 
                                 id="total_hoard_value_input" 
                                 name="total_hoard_value" 
                                 value="{% if data.total_hoard_value.value != 0.0 %}{{ data.total_hoard_value.value }}{% endif %}"
                                 placeholder="Enter Approximate Hoard Value...">
-                    </div>
-                    <div class="form-group">
-                        <label for="average_player_level_input">Average Player Level</label>
+                        <label for="average_player_level_input" class="form-label">Average Player Level</label>
                         <input type="number" class="form-control" 
                                 id="average_player_level_input" 
                                 name="average_player_level" 
                                 value="{% if data.average_player_level.value != 0.0 %}{{ data.average_player_level.value }}{% endif %}"
                                 placeholder="Enter Average Player Level...">
-                    </div>
             </div>
-            <div class="col-sm-6 px-md-4 p-4" style="background-color: #7D8B8C;">
-                <div class="row p-2" style="height: 100%;">
-                    <div class="col-sm-4">
-                        <button type="submit" name="generate_button" class="btn btn-primary">GENERATE</button>
-                    </div>
-                    <div class="col-sm-4">
-                        <button type="submit" name="save_button" class="btn btn-primary" disabled>SAVE</button>
-                    </div>
-                    <div class="col-sm-4">
-                        <button type="submit" name="clear_button" class="btn btn-primary" disabled>EXPORT</button>
-                    </div>
-                </div>
+            <div class="col-lg-6 px-md-4 p-4" style="background-color: #7D8B8C;">
+                <div class="btn-group vertical-center" style="width:100%" role="group" aria-label="Generate-buttons">
+                    <button type="submit"
+                            class="btn btn-lg btn-success"
+                            name="generate_button"
+                            style="--bs-btn-padding-y: 1rem;">
+                      GENERATE
+                    </button>
+                    <button type="submit"
+                            class="btn btn-lg btn-primary"
+                            name="save_button"
+                            style="--bs-btn-padding-y: 1rem;"
+                            disabled>
+                      SAVE
+                    </button>
+                    <button type="submit"
+                            name="clear_button"
+                            class="btn btn-lg btn-secondary"
+                            style="--bs-btn-padding-y: 1rem;">
+                      CLEAR
+                    </button>
+                  </div>
             </div>
         </div>
         <div class="row">
@@ -98,43 +104,23 @@
                     <table class="table table-hover">
                         <thead style="position: sticky; top: 0;">
                         <tr>
-                            <th scope="col" >#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Type</th>
-                            <th scope="col">Value</th>
+                            <th style="width: 10%" scope="col" >#</th>
+                            <th style="width: 30%" scope="col">Name</th>
+                            <th style="width: 30%" scope="col">Type</th>
+                            <th style="width: 30%" scope="col">Value</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {% for armor in armor_list %}
+                        {% for item in generated_list %}
                             <tr>
-                                <th scope="row">1</th>
-                                <td>{{ armor.Name }}</td>
-                                <td>Armor</td>
-                                <td>{{ armor.Base_Value }}
-                            </tr>
-                        {% endfor %}
-                        {% for weapon in weapons_list %}
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>{{ weapon.Name }}</td>
-                                <td>Weapon</td>
-                                <td>{{ weapon.Base_Value }}
-                            </tr>
-                        {% endfor %}
-                        {% for generic in generic_list %}
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>{{ generic.Name }}</td>
-                                <td>Generic</td>
-                                <td>{{ generic.Base_Value }}
-                            </tr>
-                        {% endfor %}
-                        {% for magic in magic_list %}
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>{{ magic.Name }}</td>
-                                <td>Magic</td>
-                                <td>{{ magic.Rarity }}
+                                <th scope="row">{{forloop.counter}}</th>
+                                <td>{{ item.Name }}</td>
+                                <td>{{ item }}</td>
+                                {% if item|stringformat:"s" != "Magic" %} 
+                                    <td>{{ item.Base_Value }}</td>
+                                {% else %}
+                                    <td>{{ item.Rarity }}</td>
+                                {% endif %}
                             </tr>
                         {% endfor %}
                         </tbody>
