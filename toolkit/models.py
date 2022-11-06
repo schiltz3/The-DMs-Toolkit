@@ -62,10 +62,9 @@ class Armor(models.Model):
     """
 
     Name = models.CharField(primary_key=True, max_length=30)
-    Description = models.CharField(max_length=255)
     Armor_Type = models.CharField(max_length=6)
     Base_Value = models.FloatField()
-    Armor_Class_Change = models.IntegerField()
+    Armor_Class_Change = models.CharField(max_length = 50)
     Weight = models.IntegerField()
     Stealth = models.BooleanField()
 
@@ -96,7 +95,7 @@ class Weapon(models.Model):
     Max_Range = models.IntegerField()
     Weight = models.IntegerField()
     Ammo = models.CharField(blank=True, max_length=7)
-    Special_Characteristics = models.IntegerField()
+    Special_Characteristics = models.IntegerField(blank=True, null = True)
     # store as a binary where Heavy Light TwoHanded Reach Versatile Finesse Throwable Ammunition Special
     # So heavy two handed with reach would be 101100000
 
@@ -119,7 +118,8 @@ class GenericItem(models.Model):
     Name = models.CharField(primary_key=True, max_length=30)
     Description = models.CharField(max_length=255)
     Base_Value = models.FloatField()
-
+    Weight = models.IntegerField(blank=True, null = True)
+    
     def __str__(self):
         return "Generic"
 
@@ -136,11 +136,11 @@ class MagicItem(models.Model):
         Visual_Description (String): max_length = 255, What does look like
 
     """
-
+    
     Name = models.CharField(primary_key=True, max_length=30)
     Rarity = models.CharField(max_length=20)
-    Effect_Description = models.CharField(max_length=255)
-    Visual_Description = models.CharField(max_length=255)
+    Type = models.CharField(max_length = 30)
+    Attuned = models.BooleanField()
 
     def __str__(self):
         return "Magic"
@@ -203,14 +203,10 @@ class Monster(models.Model):
     """
 
     Name = models.CharField(primary_key=True, max_length=30)
-    Description = models.CharField(max_length=255)
+    Size = models.CharField(max_length = 20)
     Challenge_Rating = models.FloatField()
-    Strength = models.IntegerField()
-    Dexterity = models.IntegerField()
-    Constitution = models.IntegerField()
-    Intelligence = models.IntegerField()
-    Wisdom = models.IntegerField()
-    Charisma = models.IntegerField()
+    Type = models.CharField(max_length = 20)
+    Alignment = models.CharField(max_length = 20)
     Gold_Modifier = models.FloatField(blank=True, null=True)
     Creature_Tags = models.ManyToManyField(Tag)
 

@@ -45,9 +45,30 @@ class PositiveTests(TestCase):
 
     def test_armor(self):
         """tests for generate armor"""
+        mitem = MagicItem(
+            Name="Rope",
+            Rarity="Common",
+            Type = "Trinket",
+            Attuned = False
+        )
+        mitem.save()
+
+        item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
+        item.save()
+
+        weapon = Weapon(
+            Name="Axe",
+            Damage_Type="Slashing",
+            Damage_Die="1d12",
+            Base_Value=1.2,
+            Max_Range=5,
+            Weight=10,
+            Special_Characteristics=101000000,
+        )
+        weapon.save()
+
         armor = Armor(
             Name="Plate",
-            Description="Plate Armor",
             Armor_Type="Heavy",
             Base_Value=2.1,
             Armor_Class_Change=2,
@@ -62,6 +83,17 @@ class PositiveTests(TestCase):
 
     def test_weapons(self):
         """tests for generate weapons"""
+        mitem = MagicItem(
+            Name="Rope",
+            Rarity="Common",
+            Type = "Trinket",
+            Attuned = False
+        )
+        mitem.save()
+
+        item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
+        item.save()
+
         weapon = Weapon(
             Name="Axe",
             Damage_Type="Slashing",
@@ -73,14 +105,53 @@ class PositiveTests(TestCase):
         )
         weapon.save()
 
+        armor = Armor(
+            Name="Plate",
+            Armor_Type="Heavy",
+            Base_Value=2.1,
+            Armor_Class_Change=2,
+            Weight=50,
+            Stealth=True,
+        )
+        armor.save()
+
         new_loot = Loot_Gen.Loot_Generator()
         new_loot.generate_weapon()
         self.assertTrue(weapon in new_loot.weapon_list)
 
     def test_generic(self):
         """tests for generate generic items"""
+        mitem = MagicItem(
+            Name="Rope",
+            Rarity="Common",
+            Type = "Trinket",
+            Attuned = False
+        )
+        mitem.save()
+
         item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
         item.save()
+
+        weapon = Weapon(
+            Name="Axe",
+            Damage_Type="Slashing",
+            Damage_Die="1d12",
+            Base_Value=1.2,
+            Max_Range=5,
+            Weight=10,
+            Special_Characteristics=101000000,
+        )
+        weapon.save()
+
+        armor = Armor(
+            Name="Plate",
+            Armor_Type="Heavy",
+            Base_Value=2.1,
+            Armor_Class_Change=2,
+            Weight=50,
+            Stealth=True,
+        )
+        armor.save()
 
         new_loot = Loot_Gen.Loot_Generator()
         new_loot.generate_generic_item()
@@ -91,10 +162,34 @@ class PositiveTests(TestCase):
         mitem = MagicItem(
             Name="Rope",
             Rarity="Common",
-            Effect_Description="It does something special",
-            Visual_Description="It's rope but magic",
+            Type = "Trinket",
+            Attuned = False
         )
         mitem.save()
+
+        item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
+        item.save()
+
+        weapon = Weapon(
+            Name="Axe",
+            Damage_Type="Slashing",
+            Damage_Die="1d12",
+            Base_Value=1.2,
+            Max_Range=5,
+            Weight=10,
+            Special_Characteristics=101000000,
+        )
+        weapon.save()
+
+        armor = Armor(
+            Name="Plate",
+            Armor_Type="Heavy",
+            Base_Value=2.1,
+            Armor_Class_Change=2,
+            Weight=50,
+            Stealth=True,
+        )
+        armor.save()
 
         new_loot = Loot_Gen.Loot_Generator()
         new_loot.generate_magical_item()
@@ -114,8 +209,8 @@ class PositiveTests(TestCase):
         mitem = MagicItem(
             Name="Rope",
             Rarity="Common",
-            Effect_Description="It does something special",
-            Visual_Description="It's rope but magic",
+            Type = "Trinket",
+            Attuned = False
         )
         mitem.save()
 
@@ -135,7 +230,6 @@ class PositiveTests(TestCase):
 
         armor = Armor(
             Name="Plate",
-            Description="Plate Armor",
             Armor_Type="Heavy",
             Base_Value=2.1,
             Armor_Class_Change=2,
@@ -153,8 +247,8 @@ class PositiveTests(TestCase):
         mitem = MagicItem(
             Name="Rope",
             Rarity="Common",
-            Effect_Description="It does something special",
-            Visual_Description="It's rope but magic",
+            Type = "Trinket",
+            Attuned = False
         )
         mitem.save()
 
@@ -174,7 +268,6 @@ class PositiveTests(TestCase):
 
         armor = Armor(
             Name="Plate",
-            Description="Plate Armor",
             Armor_Type="Heavy",
             Base_Value=2.1,
             Armor_Class_Change=2,
