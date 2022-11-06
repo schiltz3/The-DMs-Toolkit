@@ -193,6 +193,11 @@ class GenerateCharacterInputs:
 class Stat:
     value: int
     repr: str
+    proficiency: bool
+
+    def sk_to_str(self):
+        pos = "+" if self.value >= 0 else "-"
+        return f"{pos} {abs(self.value)}"
 
 
 @dataclass
@@ -285,12 +290,6 @@ class GeneratedCharacterOutputs:
         self.sk_sleight_of_hand = self.mod_dexterity
         self.sk_stealth = self.mod_dexterity
 
-    def calculate_strings(self):
-        def sk_to_str(sk: int):
-            pos = "+" if sk >= 0 else "-"
-            return f"{pos} {abs(sk)}"
-        self.sk_religion = self.mod_intelligence
-
         self.sk_animal_handling = self.mod_wisdom
         self.sk_insight = self.mod_wisdom
         self.sk_medicine = self.mod_wisdom
@@ -301,3 +300,4 @@ class GeneratedCharacterOutputs:
         self.sk_intimidation = self.mod_charisma
         self.sk_performance = self.mod_charisma
         self.sk_persuasion = self.mod_charisma
+        self.sk_religion = self.mod_intelligence
