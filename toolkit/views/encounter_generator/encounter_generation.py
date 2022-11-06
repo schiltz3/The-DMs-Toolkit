@@ -26,7 +26,8 @@ class Encounter_Generator:
 
     Returns:
         _type_: _description_
-    """    
+    """
+
     ENCOUNTER_TYPE_LIST = [
         "Horde",
         "Skirmish",
@@ -38,8 +39,7 @@ class Encounter_Generator:
     Generators: dict[str, Generator] = {"Random": random.randint}
 
     def __init__(self):
-        """Initiates Values
-        """        
+        """Initiates Values"""
         self.average_party_level = 1
         self.tags: list[Tag] = []
         self.average_cr = 0
@@ -50,11 +50,11 @@ class Encounter_Generator:
         self.generator_key = "Random"
 
     def get_tags(self):
-        """ Get Current Tags
+        """Get Current Tags
 
         Returns:
             List: List of Tags
-        """        
+        """
         return self.tags
 
     def add_tag(self, tag):
@@ -67,7 +67,7 @@ class Encounter_Generator:
             ValueError: If the tag is a string and no matching tag is in the database
             ValueError: If the tag is a tag object and not in the database
             ValueError: If the tag is not a string or tag object
-        """        
+        """
         check = list(Tag.objects.all())
         if type(tag) is str:
             valid = False
@@ -78,7 +78,7 @@ class Encounter_Generator:
             if not valid:
                 raise ValueError("Not a Valid Tag")
         elif type(tag) is Tag:
-            added_tag = tag 
+            added_tag = tag
             if added_tag not in check:
                 raise ValueError("Not a Valid Tag")
         else:
@@ -95,11 +95,11 @@ class Encounter_Generator:
             ValueError: If the tag is a string and no matching tag is in the database
             ValueError: If the tag is a tag object and not in the database
             ValueError: If the tag is not a string or tag object
-        """   
-        check = list(Tag.objects.all())  
+        """
+        check = list(Tag.objects.all())
         if type(tag) is str:
             valid = False
-           
+
             for x in check:
                 if x.Name == tag:
                     valid = True
@@ -119,7 +119,7 @@ class Encounter_Generator:
 
         Returns:
            Float: Average cr of the generated monsters
-        """        
+        """
         return self.average_cr
 
     def get_average_level(self):
@@ -127,7 +127,7 @@ class Encounter_Generator:
 
         Returns:
            Float: Average level of the players
-        """    
+        """
         return self.average_party_level
 
     def change_average_level(self, new_level):
@@ -139,7 +139,7 @@ class Encounter_Generator:
         Raises:
             ValueError: If new_level is not a float or int
             ValueError: If new level is not possible to get in dnd
-        """        
+        """
         if type(new_level) is not float:
             if type(new_level) is not int:
                 raise ValueError("Not a float level")
@@ -152,7 +152,7 @@ class Encounter_Generator:
 
         Returns:
             List: a list of all monsters generated so far
-        """        
+        """
         return self.monster_list
 
     def get_encounter_type(self):
@@ -160,7 +160,7 @@ class Encounter_Generator:
 
         Returns:
             String: type of encounter
-        """        
+        """
         return self.encounter_type
 
     def set_encounter_type(self, encounter_type):
@@ -171,7 +171,7 @@ class Encounter_Generator:
 
         Raises:
             ValueError: If encounter_type is not a valid encounter type
-        """        
+        """
         if encounter_type not in self.ENCOUNTER_TYPE_LIST:
             raise ValueError("Not a valid encounter type")
         self.encounter_type = encounter_type
@@ -181,7 +181,7 @@ class Encounter_Generator:
 
         Returns:
             Dictionary: The standard dictionary returned by the generate function from the loot generator
-        """        
+        """
         return self.dropped_loot
 
     def get_loot_modifier(self):
@@ -190,30 +190,37 @@ class Encounter_Generator:
 
         Returns:
             float: modifier for loot dropped
-        """        
+        """
         return self.highest_loot_modifier
 
     def calculate_average_cr(self):
-        """calculates and updates the average cr, only used internally
-        """        
+        """calculates and updates the average cr, only used internally"""
         cr_sum = 0.0
         for x in self.monster_list:
             cr_sum += x.Challenge_Rating
         self.average_cr = cr_sum / len(self.monster_list)
 
     def generate_loot(self):
-        """Generates some loot based on the encounter
-        """        
+        """Generates some loot based on the encounter"""
         self.gen = Loot_Generator()
         if self.encounter_type == "Major Boss":
             loot = self.gen.generate_loot(
-            generator_key= self.generator_key,level= int(self.average_party_level), input_loot_type="Horde"
-        )
+                generator_key=self.generator_key,
+                level=int(self.average_party_level),
+                input_loot_type="Horde",
+            )
         elif self.encounter_type == "Minor Boss":
             loot = self.gen.generate_loot(
-            generator_key= self.generator_key,level= int(self.average_party_level), input_loot_type="Treasure Chest")
+                generator_key=self.generator_key,
+                level=int(self.average_party_level),
+                input_loot_type="Treasure Chest",
+            )
         else:
-            loot = self.gen.generate_loot(generator_key= self.generator_key,level= int(self.average_party_level), input_loot_type="Encounter")
+            loot = self.gen.generate_loot(
+                generator_key=self.generator_key,
+                level=int(self.average_party_level),
+                input_loot_type="Encounter",
+            )
         self.dropped_loot = loot
 
     def generate_monster(self):
@@ -222,60 +229,84 @@ class Encounter_Generator:
         Raises:
             RuntimeError: If there are no monsters suitable to be generated
         """
-     
-        if self.encounter_type == "Average Encounter":
-            monster_possibilities = Monster.objects.filter(Challenge_Rating__lte = (self.average_party_level + 1))
 
-            monster_possibilities=monster_possibilities.filter(Challenge_Rating__gte = ((self.average_party_level + (self.average_party_level - 1)) / 2)
+        if self.encounter_type == "Average Encounter":
+            monster_possibilities = Monster.objects.filter(
+                Challenge_Rating__lte=(self.average_party_level + 1)
+            )
+
+            monster_possibilities = monster_possibilities.filter(
+                Challenge_Rating__gte=(
+                    (self.average_party_level + (self.average_party_level - 1)) / 2
+                )
             )
 
         elif self.encounter_type == "Horde":
-            monster_possibilities = Monster.objects.filter(Challenge_Rating__lte = ((self.average_party_level + (self.average_party_level - 2)) / 3)
+            monster_possibilities = Monster.objects.filter(
+                Challenge_Rating__lte=(
+                    (self.average_party_level + (self.average_party_level - 2)) / 3
+                )
             )
-            monster_possibilities = monster_possibilities.filter(Challenge_Rating__gte = ((self.average_party_level + (self.average_party_level - 2)) / 4)
+            monster_possibilities = monster_possibilities.filter(
+                Challenge_Rating__gte=(
+                    (self.average_party_level + (self.average_party_level - 2)) / 4
+                )
             )
         elif self.encounter_type == "Skirmish":
-            monster_possibilities = Monster.objects.filter(Challenge_Rating__lte = self.average_party_level
+            monster_possibilities = Monster.objects.filter(
+                Challenge_Rating__lte=self.average_party_level
             )
-            monster_possibilities=monster_possibilities.filter(
-                Challenge_Rating__gte = ((self.average_party_level + (self.average_party_level - 2)) / 2)
+            monster_possibilities = monster_possibilities.filter(
+                Challenge_Rating__gte=(
+                    (self.average_party_level + (self.average_party_level - 2)) / 2
+                )
             )
         elif self.encounter_type == "Challenge":
             if 10 > self.average_party_level > 1:
-                monster_possibilities=monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte = ((self.average_party_level + (self.average_party_level + 3)) / 2)
+                monster_possibilities = monster_possibilities = Monster.objects.filter(
+                    Challenge_Rating__lte=(
+                        (self.average_party_level + (self.average_party_level + 3)) / 2
+                    )
                 )
             elif self.average_party_level >= 10:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte = (self.average_party_level + (self.average_party_level / 3))
+                    Challenge_Rating__lte=(
+                        self.average_party_level + (self.average_party_level / 3)
+                    )
                 )
             else:
                 monster_possibilities = Monster.objects.filter(
                     Challenge_Rating__lte=self.average_party_level
                 )
-            monster_possibilities=monster_possibilities.filter(
-                Challenge_Rating__gte = self.average_party_level - 1
+            monster_possibilities = monster_possibilities.filter(
+                Challenge_Rating__gte=self.average_party_level - 1
             )
 
         elif self.encounter_type == "Minor Boss":
             if 10 > self.average_party_level > 3:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte = ((self.average_party_level + (self.average_party_level + 3)) / 2)
+                    Challenge_Rating__lte=(
+                        (self.average_party_level + (self.average_party_level + 3)) / 2
+                    )
                 )
             elif self.average_party_level >= 10:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte = (self.average_party_level + (self.average_party_level / 3) + 1)
+                    Challenge_Rating__lte=(
+                        self.average_party_level + (self.average_party_level / 3) + 1
+                    )
                 )
             else:
                 monster_possibilities = Monster.objects.filter(
                     Challenge_Rating__lte=self.average_party_level + 2
                 )
-            monster_possibilities=monster_possibilities.filter(Challenge_Rating__gt = self.average_party_level)
+            monster_possibilities = monster_possibilities.filter(
+                Challenge_Rating__gt=self.average_party_level
+            )
 
         elif self.encounter_type == "Major Boss":
             if 10 > self.average_party_level < 4:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte = (
+                    Challenge_Rating__lte=(
                         (
                             self.average_party_level
                             + ((self.average_party_level + 3) / 2)
@@ -284,17 +315,21 @@ class Encounter_Generator:
                 )
             elif self.average_party_level > 10:
                 monster_possibilities = Monster.objects.filter(
-                    Challenge_Rating__lte = (self.average_party_level + (self.average_party_level / 3) + 1)
+                    Challenge_Rating__lte=(
+                        self.average_party_level + (self.average_party_level / 3) + 1
+                    )
                 )
             else:
                 monster_possibilities = Monster.objects.filter(
                     Challenge_Rating__lte=self.average_party_level + 2
                 )
-                monster_possibilities=monster_possibilities.filter(Challenge_Rating__gt = self.average_party_level)
+                monster_possibilities = monster_possibilities.filter(
+                    Challenge_Rating__gt=self.average_party_level
+                )
 
         for x in self.tags:
-            monster_possibilities=monster_possibilities.filter(Creature_Tags=x)
-        if len(monster_possibilities)>1:
+            monster_possibilities = monster_possibilities.filter(Creature_Tags=x)
+        if len(monster_possibilities) > 1:
             monster_possibilities = list(monster_possibilities)
             self.monster_list.append(
                 monster_possibilities[
@@ -322,7 +357,7 @@ class Encounter_Generator:
         Args:
             average_level (int or float, optional): Average Level of the party. Defaults to 1.
             encounter_type (str, optional): Type of encounter to be generated. Defaults to "Average Encounter".
-            tags (List of Tags or strings, optional): A list of all tags to be included, tags stack to further limit not expand. 
+            tags (List of Tags or strings, optional): A list of all tags to be included, tags stack to further limit not expand.
                 Defaults to None.
             generator_key (str, optional): Generator Type. Defaults to "Random".
             loot_generate (bool, optional): Boolean generate loot or not. Defaults to False.
@@ -330,7 +365,7 @@ class Encounter_Generator:
         Raises:
             ValueError: Generator Key is not valid
             ValueError: Loot Generate is not true or false
-        """        
+        """
         monster_count = 0
         if tags is None:
             tags = []
