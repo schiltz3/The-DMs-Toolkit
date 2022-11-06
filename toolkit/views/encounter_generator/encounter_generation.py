@@ -69,9 +69,9 @@ class Encounter_Generator:
             ValueError: If the tag is a tag object and not in the database
             ValueError: If the tag is not a string or tag object
         """
-        
+
         if type(tag) is str:
-            check = list(Tag.objects.filter(Name = tag))
+            check = list(Tag.objects.filter(Name=tag))
             valid = False
             for x in check:
                 if x.Name == tag:
@@ -80,7 +80,7 @@ class Encounter_Generator:
             if not valid:
                 raise ValueError("Not a Valid Tag")
         elif type(tag) is Tag:
-            check = list(Tag.objects.filter(Name = tag.Name))
+            check = list(Tag.objects.filter(Name=tag.Name))
             added_tag = tag
             if added_tag not in check:
                 raise ValueError("Not a Valid Tag")
@@ -99,10 +99,10 @@ class Encounter_Generator:
             ValueError: If the tag is a tag object and not in the database
             ValueError: If the tag is not a string or tag object
         """
-        
+
         if type(tag) is str:
             valid = False
-            check = list(Tag.objects.filter(Name = tag))
+            check = list(Tag.objects.filter(Name=tag))
             for x in check:
                 if x.Name == tag:
                     valid = True
@@ -110,7 +110,7 @@ class Encounter_Generator:
             if not valid:
                 raise ValueError("Not a Valid Tag")
         elif type(tag) is Tag:
-            check = list(Tag.objects.filter(Name = tag.Name))
+            check = list(Tag.objects.filter(Name=tag.Name))
             removed_tag = tag
             if tag not in check:
                 raise ValueError("Not a Valid Tag")
