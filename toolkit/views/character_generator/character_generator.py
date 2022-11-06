@@ -63,7 +63,6 @@ class CharacterGenerator(View):
 
     def post(self, request: HttpRequest):
         """POST method for create user page."""
-        print(request.POST.get("character_name"))
 
         print(request.POST)
 
@@ -123,6 +122,7 @@ class CharacterGenerator(View):
                     wisdom=stats[4],
                     charisma=stats[5],
                 )
+                output.update_proficiencies_from_dict(request.POST)
                 self.context["out"] = output
                 return render(request, "character_generator.html", self.context)
             except ValueError as e:
@@ -228,6 +228,8 @@ class GeneratedCharacterOutputs:
         self.charisma = charisma
 
         self.proficiency: Stat = Stat(value=proficiency)
+
+        self.proficiency.value = 10  # TODO: remove
         self.stat_speed: int = 0
         self.stat_hit_points: int = 0
         self.stat_hit_dice: int = 0
@@ -267,6 +269,14 @@ class GeneratedCharacterOutputs:
         }
         if calculate is True:
             self.calculate()
+
+    def update_proficiencies_from_dict(self, env: dict[str, Any]):
+        for k in env.keys():
+            sk = self.stats.get(k)
+            if sk is not None:
+                sk.proficiency = self.proficiency.value
+
+        return self
 
     def calculate(self):
         self.stats[
