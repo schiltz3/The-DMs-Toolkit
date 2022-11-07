@@ -330,7 +330,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="st_strength"
-                     name="st_strength"/>
+                     name="st_strength"/ {% if out.stats.st_strength.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -348,7 +348,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="st_dexterity"
-                     name="st_dexterity"/>
+                     name="st_dexterity"/ {% if out.stats.st_dexterity.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -366,7 +366,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="st_constitution"
-                     name="st_constitution"/>
+                     name="st_constitution"/ {% if out.stats.st_constitution.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -384,7 +384,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="st_intelligence"
-                     name="st_intelligence"/>
+                     name="st_intelligence"/ {% if out.stats.st_intelligence.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -402,7 +402,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="st_wisdom"
-                     name="st_wisdom"/>
+                     name="st_wisdom"/ {% if out.stats.st_wisdom.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -420,7 +420,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="st_charisma"
-                     name="st_charisma"/>
+                     name="st_charisma"/ {% if out.stats.st_charisma.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -500,7 +500,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_acrobatics"
-                     name="sk_acrobatics"/>
+                     name="sk_acrobatics"/ {% if out.stats.sk_acrobatics.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -518,7 +518,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_animal_handling"
-                     name="sk_animal_handling"/>
+                     name="sk_animal_handling"/ {% if out.stats.sk_animal_handling.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -536,7 +536,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_arcana"
-                     name="sk_arcana"/>
+                     name="sk_arcana"/ {% if out.stats.sk_arcana.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -554,7 +554,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_athletics"
-                     name="sk_athletics"/>
+                     name="sk_athletics"/ {% if out.stats.sk_athletics.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -572,7 +572,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_deception"
-                     name="sk_deception"/>
+                     name="sk_deception"/ {% if out.stats.sk_deception.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -590,7 +590,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_history"
-                     name="sk_history"/>
+                     name="sk_history"/ {% if out.stats.sk_history.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -608,7 +608,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_insight"
-                     name="sk_insight"/>
+                     name="sk_insight"/ {% if out.stats.sk_insight.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -625,7 +625,7 @@
             <div style="width: 30%; float: left; text-align: center;">
               <input class="form-check-input mt-0"
                      type="checkbox"
-                     name="character-skill-intimidation"/>
+                     name="sk_intimidation"/ {% if out.stats.sk_intimidation.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -642,8 +642,7 @@
             <div style="width: 30%; float: left; text-align: center;">
               <input class="form-check-input mt-0"
                      type="checkbox"
-                     id="sk_investigation"
-                     name="sk_investigation"/>
+                     name="sk_investigation"/ {% if out.stats.sk_investigation.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -667,8 +666,7 @@
             <div style="width: 30%; float: left; text-align: center;">
               <input class="form-check-input mt-0"
                      type="checkbox"
-                     id="sk_medicine"
-                     name="sk_medicine"/>
+                     name="sk_medicine"/ {% if out.stats.sk_medicine.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -686,7 +684,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_nature"
-                     name="sk_nature"/>
+                     name="sk_nature"/ {% if out.stats.sk_nature.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -704,7 +702,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_perception"
-                     name="sk_perception"/>
+                     name="sk_perception"/ {% if out.stats.sk_perception.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -722,7 +720,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_performance"
-                     name="sk_performance"/>
+                     name="sk_performance"/ {% if out.stats.sk_performance.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -740,7 +738,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_persuasion"
-                     name="sk_persuasion"/>
+                     name="sk_persuasion"/ {% if out.stats.sk_persuasion.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -758,7 +756,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_religion"
-                     name="sk_religion"/>
+                     name="sk_religion"/ {% if out.stats.sk_religion.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -776,7 +774,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_sleight_of_hand"
-                     name="sk_sleight_of_hand"/>
+                     name="sk_sleight_of_hand"/ {% if out.stats.sk_sleight_of_hand.checked %} checked {% endif %}>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -794,7 +792,7 @@
               <input class="form-check-input mt-0"
                      type="checkbox"
                      id="sk_stealth"
-                     name="sk_stealth"/>
+                     name="sk_stealth" {% if out.stats.sk_stealth.checked %} checked {% endif %} />
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">
@@ -811,8 +809,8 @@
             <div style="width: 30%; float: left; text-align: center;">
               <input class="form-check-input mt-0"
                      type="checkbox"
-                     id="flexCheckChecked"
-                     name="sk_survival"/>
+                     id="flexCheck"
+                     name="sk_survival" {% if out.stats.sk_survival.checked %} checked {% endif %}/>
             </div>
             <div style="width: 20%; float: left;">
               <h5 style="font-weight: 700;">

@@ -195,6 +195,7 @@ class Stat:
     value: int = 0
     repr: str = ""
     proficiency: int = 0
+    checked: bool = False
 
     def sk_to_str(self):
         val = self.value + self.proficiency
@@ -271,10 +272,19 @@ class GeneratedCharacterOutputs:
             self.calculate()
 
     def update_proficiencies_from_dict(self, env: dict[str, Any]):
-        for k in env.keys():
-            sk = self.stats.get(k)
+        for k in self.stats.values():
+            k.proficiency = 0
+            k.checked = False
+
+        for ek in env.keys():
+            sk = self.stats.get(ek)
             if sk is not None:
+                print(sk)
                 sk.proficiency = self.proficiency.value
+                sk.checked = True
+
+        for k in self.stats.values():
+            k.sk_to_str()
 
         return self
 
