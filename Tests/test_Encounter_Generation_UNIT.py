@@ -150,12 +150,7 @@ class Loot_Tests(TestCase):
     def setUp(self):
         """Test setup"""
         self.encounter = enc_gen.Encounter_Generator()
-        mitem = MagicItem(
-            Name="Rope",
-            Rarity="Common",
-            Effect_Description="It does something special",
-            Visual_Description="It's rope but magic",
-        )
+        mitem = MagicItem(Name="Rope", Rarity="Common", Type="Trinket", Attuned=False)
         mitem.save()
 
         item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
@@ -174,7 +169,6 @@ class Loot_Tests(TestCase):
 
         armor = Armor(
             Name="Plate",
-            Description="Plate Armor",
             Armor_Type="Heavy",
             Base_Value=2.1,
             Armor_Class_Change=2,
@@ -213,25 +207,17 @@ class Monsters_And_CR_Tests(TestCase):
 
         self.mon1 = Monster(
             Name="Fred",
-            Description="A guy",
             Challenge_Rating=2.0,
-            Strength=1,
-            Dexterity=1,
-            Constitution=1,
-            Intelligence=1,
-            Wisdom=1,
-            Charisma=1,
+            Size="Medium",
+            Type="Human",
+            Alignment="Lawful Good",
         )
         self.mon2 = Monster(
             Name="Demon",
-            Description="A demon",
             Challenge_Rating=10.0,
-            Strength=1,
-            Dexterity=1,
-            Constitution=1,
-            Intelligence=1,
-            Wisdom=1,
-            Charisma=1,
+            Size="Medium",
+            Type="Infernal",
+            Alignment="Chaotic Evil",
         )
         self.mon1.save()
         self.mon2.save()
@@ -285,12 +271,7 @@ class Generate_Test(TestCase):
         tag2 = Tag(Name="Human")
         tag1.save()
         tag2.save()
-        mitem = MagicItem(
-            Name="Rope",
-            Rarity="Common",
-            Effect_Description="It does something special",
-            Visual_Description="It's rope but magic",
-        )
+        mitem = MagicItem(Name="Rope", Rarity="Common", Type="Trinket", Attuned=False)
         mitem.save()
 
         item = GenericItem(Name="Rope", Description="It's Rope", Base_Value=0.01)
@@ -309,7 +290,6 @@ class Generate_Test(TestCase):
 
         armor = Armor(
             Name="Plate",
-            Description="Plate Armor",
             Armor_Type="Heavy",
             Base_Value=2.1,
             Armor_Class_Change=2,
@@ -320,28 +300,17 @@ class Generate_Test(TestCase):
 
         self.mon1 = Monster(
             Name="Fred",
-            Description="A guy",
             Challenge_Rating=2.0,
-            Strength=1,
-            Dexterity=1,
-            Constitution=1,
-            Intelligence=1,
-            Wisdom=1,
-            Charisma=1,
-            Gold_Modifier=1,
+            Size="Medium",
+            Type="Human",
+            Alignment="Lawful Good",
         )
-
         self.mon2 = Monster(
             Name="Demon",
-            Description="A demon",
             Challenge_Rating=10.0,
-            Strength=1,
-            Dexterity=1,
-            Constitution=1,
-            Intelligence=1,
-            Wisdom=1,
-            Charisma=1,
-            Gold_Modifier=10,
+            Size="Medium",
+            Type="Infernal",
+            Alignment="Chaotic Evil",
         )
         self.mon1.save()
         self.mon2.save()
