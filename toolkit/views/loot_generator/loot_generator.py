@@ -52,6 +52,9 @@ class LootGenerator(View):
         form = GenerateLootInputs.from_dict(request.POST)
         self.context["data"] = form
         self.context["error"] = None
+        if request.POST.get("clear_button") is not None:
+            self.context["data"] = GenerateLootInputs()
+            return render(request, "loot_generator.html", self.context)
         if form.is_valid():
             try:
                 if request.POST.get("generate_button") is not None:
@@ -71,9 +74,6 @@ class LootGenerator(View):
                     self.context["generated_list"] = generated_list
                     return render(request, "loot_generator.html", self.context)
                 if request.POST.get("save_button") is not None:
-                    return render(request, "loot_generator.html", self.context)
-                if request.POST.get("clear_button") is not None:
-                    self.context["data"] = GenerateLootInputs()
                     return render(request, "loot_generator.html", self.context)
             except ValueError as e:
                 logger.warning(traceback.format_exc())
@@ -123,7 +123,11 @@ class GenerateLootInputs:
             return False
         if not self.loot_type.value in Loot_Generator.LOOT_TYPE_DICT.keys() and self.loot_type.value != "Random":
             return False
+        if self.total_hoard_value.value == "":
+            return False
         if int(self.total_hoard_value.value) <= 0:
+            return False
+        if self.average_player_level.value == "":
             return False
         if not 0 < int(self.average_player_level.value) <= 21:
             return False

@@ -96,12 +96,20 @@ class TestLootGenerator(TestCase):
         form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": 0, "average_player_level": self.average_player_level})
         self.assertFalse(form.is_valid())
         
+    def test_invalid_form_total_hoard_value_empty(self):
+        form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": "", "average_player_level": self.average_player_level})
+        self.assertFalse(form.is_valid())
+        
+    def test_invalid_form_player_level_empty(self):
+        form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": ""})
+        self.assertFalse(form.is_valid())
+        
     def test_invalid_form_player_level_zero(self):
         form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": 0})
         self.assertFalse(form.is_valid())
         
     def test_invalid_form_player_level_high(self):
-        self.form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": 22})
+        form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": 22})
         self.assertFalse(self.form.is_valid())
 
     def test_successful_generate(self):
@@ -112,6 +120,8 @@ class TestLootGenerator(TestCase):
             follow=True,
         )
         self.assertEqual(response.status_code, 200)
+        self.assertNotEqual(response.context["total_value"], 0)
+        self.assertNotEqual(response.context["generated_list"], [])
 
     # Will be further developed when save functionality is implemented
     def test_save(self):
