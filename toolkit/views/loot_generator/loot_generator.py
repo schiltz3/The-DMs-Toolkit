@@ -121,18 +121,14 @@ class GenerateLootInputs:
         """
         if not type(self.generator_type.value) is str:
             return False
-        if not self.generator_type.value in Loot_Generator.LOOT_GENERATOR_DICT:
+        if not self.generator_type.value in Loot_Generator().get_all_random_generators():
             return False
         if not type(self.loot_type.value) is str:
             return False
-        if not self.loot_type.value in Loot_Generator.LOOT_TYPE_DICT:
+        if not self.loot_type.value in Loot_Generator.LOOT_TYPE_DICT.keys() and self.loot_type.value != "Random":
             return False
-        if not type(self.total_hoard_value.value) is int:
+        if int(self.total_hoard_value.value) <= 0:
             return False
-        if self.total_hoard_value.value <= 0:
-            return False
-        if not type(self.average_player_level.value) is int:
-            return False
-        if not 0 < self.average_player_level.value <= 21:
+        if not 0 < int(self.average_player_level.value) <= 21:
             return False
         return True
