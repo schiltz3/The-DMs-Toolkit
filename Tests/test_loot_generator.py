@@ -81,38 +81,51 @@ class TestLootGenerator(TestCase):
         self.assertTemplateUsed(response, "loot_generator.html")
         
     def test_valid_form(self):
-        form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": self.average_player_level},)
+        form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": self.average_player_level})
         self.assertTrue(form.is_valid())
         
     def test_invalid_form_generator_type(self):
-        form = self.form.from_dict({"generator_type": "Nonsense", "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": self.average_player_level},)
+        form = self.form.from_dict({"generator_type": "Nonsense", "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": self.average_player_level})
         self.assertFalse(form.is_valid())
         
     def test_invalid_form_loot_type(self):
-        form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": "Nonsense", "total_hoard_value": self.total_hoard_value, "average_player_level": self.average_player_level},)
+        form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": "Nonsense", "total_hoard_value": self.total_hoard_value, "average_player_level": self.average_player_level})
         self.assertFalse(form.is_valid())
         
     def test_invalid_form_total_hoard_value(self):
-        form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": 0, "average_player_level": self.average_player_level},)
+        form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": 0, "average_player_level": self.average_player_level})
         self.assertFalse(form.is_valid())
         
     def test_invalid_form_player_level_zero(self):
-        form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": 0},)
+        form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": 0})
         self.assertFalse(form.is_valid())
         
     def test_invalid_form_player_level_high(self):
-        self.form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": 22},)
+        self.form = self.form.from_dict({"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": 22})
         self.assertFalse(self.form.is_valid())
 
-    # def test_successful_generate(self):
-    #     """Tests if a user is able to successfully generate loot after giving correct input."""
-    #     response = self.client.post(
-    #         self.loot_generator_url,
-    #         data={"generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": self.average_player_level},
-    #         follow=True,
-    #     )
-    #     self.assertEqual(response.status_code, 200)
-    #     self.assertContains()
+    def test_successful_generate(self):
+        """Tests if a user is able to successfully generate loot after giving correct input."""
+        response = self.client.post(
+            self.loot_generator_url,
+            data={"generate_button": "", "generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": self.average_player_level},
+            follow=True,
+        )
+        self.assertEqual(response.status_code, 200)
 
+    # Will be further developed when save functionality is implemented
+    def test_save(self):
+        response = self.client.post(
+            self.loot_generator_url,
+            data={"save_button": "", "generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": self.average_player_level},
+            follow=True,
+        )
+        self.assertEqual(response.status_code, 200)
 
-        
+    def test_clear(self):
+        response = self.client.post(
+            self.loot_generator_url,
+            data={"clear_button": "", "generator_type": self.generator_type, "loot_type": self.loot_type, "total_hoard_value": self.total_hoard_value, "average_player_level": self.average_player_level},
+            follow=True,
+        )
+        self.assertEqual(response.status_code, 200)

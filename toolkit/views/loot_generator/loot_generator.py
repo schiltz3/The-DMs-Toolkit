@@ -119,11 +119,7 @@ class GenerateLootInputs:
         Returns:
             bool: Tru if dataclass holds valid data
         """
-        if not type(self.generator_type.value) is str:
-            return False
         if not self.generator_type.value in Loot_Generator().get_all_random_generators():
-            return False
-        if not type(self.loot_type.value) is str:
             return False
         if not self.loot_type.value in Loot_Generator.LOOT_TYPE_DICT.keys() and self.loot_type.value != "Random":
             return False
