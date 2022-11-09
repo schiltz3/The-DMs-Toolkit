@@ -192,6 +192,8 @@ class GenerateCharacterInputs:
 
 @dataclass
 class Stat:
+    """A stat element that tracks if it is checked as well as its proficiency"""
+
     value: int = 0
     repr: str = ""
     proficiency: int = 0
