@@ -53,12 +53,7 @@ class LootGenerator(View):
         if form.is_valid():
             try:
                 if request.POST.get("generate_button") is not None:
-                    if request.user.is_authenticated:
-                        current_user = request.user
-                    else:
-                        current_user = None
                     generated = self.generator.generate_loot(
-                        current_user=current_user,
                         generator_key=form.generator_type.value,
                         level=int(form.average_player_level.value),
                         approximate_total_value=int(form.total_hoard_value.value),
@@ -122,4 +117,20 @@ class GenerateLootInputs:
         Returns:
             bool: Tru if dataclass holds valid data
         """
+        if not type(self.generator_type.value) is str:
+            return False
+        if not self.generator_type.value in Loot_Generator.LOOT_GENERATOR_DICT:
+            return False
+        if not type(self.loot_type.value) is str:
+            return False
+        if not self.loot_type.value in Loot_Generator.LOOT_TYPE_DICT:
+            return False
+        if not type(self.total_hoard_value.value) is int:
+            return False
+        if self.total_hoard_value.value <= 0:
+            return False
+        if not type(self.average_player_level.value) is int:
+            return False
+        if not 0 < self.average_player_level.value <= 21:
+            return False
         return True
