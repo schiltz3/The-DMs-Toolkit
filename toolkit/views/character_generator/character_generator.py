@@ -198,6 +198,11 @@ class Stat:
     checked: bool = False
 
     def sk_to_str(self):
+        """Generates the string to display from the current state
+
+        Returns:
+            Stat: return self for chaining
+        """
         val = self.value + self.proficiency
         pos = "+" if self.value + val >= 0 else "-"
         self.repr = f"{pos} {abs(val)}"
@@ -230,7 +235,6 @@ class GeneratedCharacterOutputs:
 
         self.proficiency: Stat = Stat(value=proficiency)
 
-        self.proficiency.value = 10  # TODO: remove
         self.stat_speed: int = 0
         self.stat_hit_points: int = 0
         self.stat_hit_dice: int = 0
@@ -272,6 +276,14 @@ class GeneratedCharacterOutputs:
             self.calculate()
 
     def update_proficiencies_from_dict(self, env: dict[str, Any]):
+        """Takes POST request dict and updates checked boxes from it
+
+        Args:
+            env (dict[str, Any]): dictionary containing check boxes with same names as dict keys
+
+        Returns:
+            GeneratedCharacterOutputs: returns self for chaining
+        """
         for k in self.stats.values():
             k.proficiency = 0
             k.checked = False
@@ -289,6 +301,11 @@ class GeneratedCharacterOutputs:
         return self
 
     def calculate(self):
+        """Calculate all stat values
+
+        Returns:
+            GeneratedCharacterOutputs: returns self for chaining
+        """
         self.stats[
             "mod_strength"
         ].value = Character_Generator.calculate_ability_modifier(self.strength)
