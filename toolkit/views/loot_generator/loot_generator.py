@@ -38,7 +38,9 @@ class LootGenerator(View):
         gen_keys = self.generator.get_all_random_generators()
         gen_keys = sorted(gen_keys)
         self.context["loot_generator_list"] = gen_keys
-        self.context["loot_type_list"] = sorted(self.generator.LOOT_TYPE_DICT)
+        loot_type_list = ["Random"]
+        loot_type_list.extend(sorted(self.generator.LOOT_TYPE_DICT))
+        self.context["loot_type_list"] = loot_type_list
 
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
