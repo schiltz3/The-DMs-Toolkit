@@ -28,13 +28,28 @@ Uses group variable returned from get method to display options for NavBar.
       {% else %}
         {% if user.is_authenticated %}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{user.username}}</a>
-            <ul class="dropdown-menu dropdown-menu-large dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="{% url 'saved_characters' %}">My Characters</a></li>
-              <li><a class="dropdown-item" href="{% url 'saved_loot' %}">My Loot</a></li>
-              <li><a class="dropdown-item" href="{% url 'saved_encounters' %}">My Encounters</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+            <a class="nav-link dropdown-toggle"
+               id="navbarDropdown"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">{{ user.username }}</a>
+            <ul class="dropdown-menu dropdown-menu-large dropdown-menu-end"
+                aria-labelledby="navbarDropdown">
+              <li>
+                <a class="dropdown-item" href="{% url 'saved_characters' %}">My Characters</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'saved_loot' %}">My Loot</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'saved_encounters' %}">My Encounters</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider"/>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+              </li>
             </ul>
           </li>
         {% else %}
