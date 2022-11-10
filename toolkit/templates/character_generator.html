@@ -35,7 +35,7 @@
                    name="player_name"
                    value="{% if data.player_name.value != '' %}{{ data.player_name.value }}{% endif %}"
                    placeholder="Player Name"/>
-        {% if data.player_name.error %}<div class="alert alert-danger">{{ data.player_name.error }}</div>{% endif %}
+            {% if data.player_name.error %}<div class="alert alert-danger">{{ data.player_name.error }}</div>{% endif %}
           </div>
           <div class="col-10 col-lg-2">
             <label for="class_select" class="form-label">Class</label>
@@ -64,7 +64,7 @@
                 {% endif %}
               {% endfor %}
             </select>
-        {% if data.clazz.error %}<div class="alert alert-danger">{{ data.clazz.error }}</div>{% endif %}
+            {% if data.clazz.error %}<div class="alert alert-danger">{{ data.clazz.error }}</div>{% endif %}
           </div>
           <div class="col-10 col-lg-2">
             <label for="background_select" class="form-label">Background</label>
@@ -96,7 +96,7 @@
                 {% endif %}
               {% endfor %}
             </select>
-        {% if data.background.error %}<div class="alert alert-danger">{{ data.background.error }}</div>{% endif %}
+            {% if data.background.error %}<div class="alert alert-danger">{{ data.background.error }}</div>{% endif %}
           </div>
           <div class="col-10 col-lg-2">
             <label for="race_select" class="form-label">Race</label>
@@ -125,7 +125,7 @@
                 {% endif %}
               {% endfor %}
             </select>
-        {% if data.race.error %}<div class="alert alert-danger">{{ data.race.error }}</div>{% endif %}
+            {% if data.race.error %}<div class="alert alert-danger">{{ data.race.error }}</div>{% endif %}
           </div>
           <div class="col-10 col-lg-2">
             <label for="alignment_select" class="form-label">Alignment</label>
@@ -157,7 +157,7 @@
                 {% endif %}
               {% endfor %}
             </select>
-        {% if data.alignment.error %}<div class="alert alert-danger">{{ data.alignment.error }}</div>{% endif %}
+            {% if data.alignment.error %}<div class="alert alert-danger">{{ data.alignment.error }}</div>{% endif %}
           </div>
           <div class="col-10 col-lg-2">
             <label for="generator_type_select" class="form-label">Generator</label>
@@ -176,7 +176,7 @@
                 {% endif %}
               {% endfor %}
             </select>
-        {% if data.generator_type.error %}<div class="alert alert-danger">{{ data.generator_type.error }}</div>{% endif %}
+            {% if data.generator_type.error %}<div class="alert alert-danger">{{ data.generator_type.error }}</div>{% endif %}
           </div>
         </div>
       </div>
@@ -217,7 +217,7 @@
             <h3>{{ out.strength }}</h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>{{ out.mod_strength }}</h4>
+            <h4>{{ out.stats.mod_strength.repr }}</h4>
           </div>
         </div>
         <div class="character-stat">
@@ -229,7 +229,7 @@
             <h3>{{ out.dexterity }}</h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>{{ out.mod_dexterity }}</h4>
+            <h4>{{ out.stats.mod_dexterity.repr }}</h4>
           </div>
         </div>
         <div class="character-stat">
@@ -241,31 +241,43 @@
             <h3>{{ out.constitution }}</h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>{{ out.mod_constitution }}</h4>
+            <h4>{{ out.stats.mod_constitution.repr }}</h4>
           </div>
         </div>
         <div class="character-stat">
           <img src="{% static "Character_UI_Stat.png" %}"
                alt="Character UI Stat"
                style="width: 100%"/>
-          <div class="character-stat-title">INTELLIGENCE</div>
+          <div class="character-stat-title">
+            INTELLIGENCE
+          </div>
           <div class="character-stat-base">
-            <h3>{{ out.intelligence }}</h3>
+            <h3>
+              {{ out.intelligence }}
+            </h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>{{ out.mod_intelligence }}</h4>
+            <h4>
+              {{ out.stats.mod_intelligence.repr }}
+            </h4>
           </div>
         </div>
         <div class="character-stat">
           <img src=" {% static "Character_UI_Stat.png" %}"
                alt="Character UI Stat"
                style="width: 100%"/>
-          <div class="character-stat-title">WISDOM</div>
+          <div class="character-stat-title">
+            WISDOM
+          </div>
           <div class="character-stat-base">
-            <h3>{{ out.wisdom }}</h3>
+            <h3>
+              {{ out.wisdom }}
+            </h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>{{ out.mod_wisdom }}</h4>
+            <h4>
+              {{ out.stats.mod_wisdom.repr }}
+            </h4>
           </div>
         </div>
         <div class="character-stat">
@@ -282,7 +294,7 @@
           </div>
           <div class="character-stat-bonus">
             <h4>
-              {{ out.mod_charisma }}
+              {{ out.stats.mod_charisma.repr }}
             </h4>
           </div>
         </div>
@@ -291,7 +303,7 @@
     <div class="row mx-0 gap-3 p-3 justify-content-evenly"
          style="background-color: #7D8B8C;">
       <div class="col-sm-6 col-md-5 col-lg rounded-5"
-           style="background-color: #D9CAAB;">
+           style="background-color: tan;">
         <div style="text-align: center;">
           <h4>
             PROFICIENCY
@@ -300,7 +312,7 @@
         <div class="character-panel">
           <div style="width: 25%; float: center;">
             <h5 style="font-weight: 800;">
-              0
+              {{ out.proficiency.value }}
             </h5>
           </div>
           <div style="width: 50%; float: center;">
@@ -315,15 +327,16 @@
           </h4>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-throw-strength"
-                   name="character-throw-strength"/>
+                   type="checkbox"
+                   id="st_strength"
+                   name="st_strength"
+                   {% if out.stats.st_strength.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.st_strength }}
+              {{ out.stats.st_strength.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -333,15 +346,16 @@
           </div>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-throw-dexterity"
-                   name="character-throw-dexterity"/>
+                   type="checkbox"
+                   id="st_dexterity"
+                   name="st_dexterity"
+                   {% if out.stats.st_dexterity.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.st_dexterity }}
+              {{ out.stats.st_dexterity.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -351,15 +365,16 @@
           </div>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-throw-constitution"
-                   name="character-throw-constitution"/>
+                   type="checkbox"
+                   id="st_constitution"
+                   name="st_constitution"
+                   {% if out.stats.st_constitution.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.st_constitution }}
+              {{ out.stats.st_constitution.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -369,15 +384,16 @@
           </div>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-throw-intelligence"
-                   name="character-throw-intelligence"/>
+                   type="checkbox"
+                   id="st_intelligence"
+                   name="st_intelligence"
+                   {% if out.stats.st_intelligence.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.st_intelligence }}
+              {{ out.stats.st_intelligence.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -387,15 +403,16 @@
           </div>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-throw-wisdom"
-                   name="character-throw-wisdom"/>
+                   type="checkbox"
+                   id="st_wisdom"
+                   name="st_wisdom"
+                   {% if out.stats.st_wisdom.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.st_wisdom }}
+              {{ out.stats.st_wisdom.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -405,15 +422,16 @@
           </div>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-throw-charisma"
-                   name="character-throw-charisma"/>
+                   type="checkbox"
+                   id="st_charisma"
+                   name="st_charisma"
+                   {% if out.stats.st_charisma.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.st_charisma }}
+              {{ out.stats.st_charisma.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -424,7 +442,7 @@
         </div>
       </div>
       <div class="col-sm-6 col-md-5 col-lg rounded-5"
-           style="background-color: #D9CAAB;">
+           style="background-color: tan;">
         <div style="text-align: center;">
           <h4>
             STATISTICS
@@ -445,7 +463,7 @@
         <div class="character-panel">
           <div style="width: 25%; float: center;">
             <h5 style="font-weight: 800;">
-              {{ out.stat_initiative }}
+              {{ out.stats.stat_initiative.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: center;">
@@ -480,22 +498,23 @@
         </div>
       </div>
       <div class="col-sm-6 col-md-5 col-lg rounded-5"
-           style="background-color: #D9CAAB;">
+           style="background-color: tan;">
         <div style="text-align: center;">
           <h4>
             SKILLS
           </h4>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-acrobatics"
-                   name="character-skill-acrobatics"/>
+                   type="checkbox"
+                   id="sk_acrobatics"
+                   name="sk_acrobatics"
+                   {% if out.stats.sk_acrobatics.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_acrobatics }}
+              {{ out.stats.sk_acrobatics.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -505,15 +524,16 @@
           </div>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-animal-handling"
-                   name="character-skill-animal-handling"/>
+                   type="checkbox"
+                   id="sk_animal_handling"
+                   name="sk_animal_handling"
+                   {% if out.stats.sk_animal_handling.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_animal_handling }}
+              {{ out.stats.sk_animal_handling.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -523,15 +543,16 @@
           </div>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-arcana"
-                   name="character-skill-arcana"/>
+                   type="checkbox"
+                   id="sk_arcana"
+                   name="sk_arcana"
+                   {% if out.stats.sk_arcana.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_arcana }}
+              {{ out.stats.sk_arcana.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -541,15 +562,16 @@
           </div>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-athletics"
-                   name="character-skill-athletics"/>
+                   type="checkbox"
+                   id="sk_athletics"
+                   name="sk_athletics"
+                   {% if out.stats.sk_athletics.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_athletics }}
+              {{ out.stats.sk_athletics.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -559,15 +581,16 @@
           </div>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-deception"
-                   name="character-skill-deception"/>
+                   type="checkbox"
+                   id="sk_deception"
+                   name="sk_deception"
+                   {% if out.stats.sk_deception.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_deception }}
+              {{ out.stats.sk_deception.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -577,15 +600,16 @@
           </div>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-history"
-                   name="character-skill-history"/>
+                   type="checkbox"
+                   id="sk_history"
+                   name="sk_history"
+                   {% if out.stats.sk_history.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_history }}
+              {{ out.stats.sk_history.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -595,15 +619,16 @@
           </div>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-insight"
-                   name="character-skill-insight"/>
+                   type="checkbox"
+                   id="sk_insight"
+                   name="sk_insight"
+                   {% if out.stats.sk_insight.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_insight }}
+              {{ out.stats.sk_insight.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -613,14 +638,15 @@
           </div>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   name="character-skill-intimidation"/>
+                   type="checkbox"
+                   name="sk_intimidation"
+                   {% if out.stats.sk_intimidation.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_intimidation }}
+              {{ out.stats.sk_intimidation.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -630,15 +656,15 @@
           </div>
         </div>
         <div class="character-panel">
-          <div style="width: 30%; float: left; text-align: center;">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-investigation"
-                   name="character-skill-investigation"/>
+                   type="checkbox"
+                   name="sk_investigation"
+                   {% if out.stats.sk_investigation.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_investigation }}
+              {{ out.stats.sk_investigation.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -649,23 +675,22 @@
         </div>
       </div>
       <div class="col-sm-6 col-md-5 col-lg rounded-5"
-           style="background-color: #D9CAAB;">
-        {% comment %} <div class="character-plate"> {% endcomment %}
-        <div row style="text-align: center;">
+           style="background-color: tan;">
+        <div style="text-align: center;">
           <h4>
             SKILLS
           </h4>
         </div>
-        <div class="row">
-          <div style="width: 30%; float: left; text-align: center;">
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-medicine"
-                   name="character-skill-medicine"/>
+                   type="checkbox"
+                   name="sk_medicine"
+                   {% if out.stats.sk_medicine.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_medicine }}
+              {{ out.stats.sk_medicine.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -674,16 +699,17 @@
             </h5>
           </div>
         </div>
-        <div class="row">
-          <div style="width: 30%; float: left; text-align: center;">
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-nature"
-                   name="character-skill-nature"/>
+                   type="checkbox"
+                   id="sk_nature"
+                   name="sk_nature"
+                   {% if out.stats.sk_nature.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_nature }}
+              {{ out.stats.sk_nature.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -692,16 +718,17 @@
             </h5>
           </div>
         </div>
-        <div class="row">
-          <div style="width: 30%; float: left; text-align: center;">
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-perception"
-                   name="character-skill-perception"/>
+                   type="checkbox"
+                   id="sk_perception"
+                   name="sk_perception"
+                   {% if out.stats.sk_perception.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_perception }}
+              {{ out.stats.sk_perception.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -710,16 +737,17 @@
             </h5>
           </div>
         </div>
-        <div class="row">
-          <div style="width: 30%; float: left; text-align: center;">
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-performance"
-                   name="character-skill-performance"/>
+                   type="checkbox"
+                   id="sk_performance"
+                   name="sk_performance"
+                   {% if out.stats.sk_performance.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_performance }}
+              {{ out.stats.sk_performance.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -728,16 +756,17 @@
             </h5>
           </div>
         </div>
-        <div class="row">
-          <div style="width: 30%; float: left; text-align: center;">
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-persuasion"
-                   name="character-skill-persuasion"/>
+                   type="checkbox"
+                   id="sk_persuasion"
+                   name="sk_persuasion"
+                   {% if out.stats.sk_persuasion.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_persuasion }}
+              {{ out.stats.sk_persuasion.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -746,16 +775,17 @@
             </h5>
           </div>
         </div>
-        <div class="row">
-          <div style="width: 30%; float: left; text-align: center;">
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-religion"
-                   name="character-skill-religion"/>
+                   type="checkbox"
+                   id="sk_religion"
+                   name="sk_religion"
+                   {% if out.stats.sk_religion.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_religion }}
+              {{ out.stats.sk_religion.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -764,16 +794,17 @@
             </h5>
           </div>
         </div>
-        <div class="row">
-          <div style="width: 30%; float: left; text-align: center;">
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-sleight-of-hand"
-                   name="character-skill-sleight-of-hand"/>
+                   type="checkbox"
+                   id="sk_sleight_of_hand"
+                   name="sk_sleight_of_hand"
+                   {% if out.stats.sk_sleight_of_hand.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_sleight_of_hand }}
+              {{ out.stats.sk_sleight_of_hand.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -782,16 +813,17 @@
             </h5>
           </div>
         </div>
-        <div class="row">
-          <div style="width: 30%; float: left; text-align: center;">
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-stealth"
-                   name="character-skill-stealth"/>
+                   type="checkbox"
+                   id="sk_stealth"
+                   name="sk_stealth"
+                   {% if out.stats.sk_stealth.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_stealth }}
+              {{ out.stats.sk_stealth.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -800,16 +832,17 @@
             </h5>
           </div>
         </div>
-        <div class="row">
-          <div style="width: 30%; float: left; text-align: center;">
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
             <input class="form-check-input mt-0"
-                   type="radio"
-                   id="character-skill-survival"
-                   name="character-skill-survival"/>
+                   type="checkbox"
+                   id="flexCheck"
+                   name="sk_survival"
+                   {% if out.stats.sk_survival.checked %} checked{% endif %}/>
           </div>
           <div style="width: 20%; float: left;">
             <h5 style="font-weight: 700;">
-              {{ out.sk_survival }}
+              {{ out.stats.sk_survival.repr }}
             </h5>
           </div>
           <div style="width: 50%; float: left;">
@@ -818,7 +851,6 @@
             </h5>
           </div>
         </div>
-        {% comment %} </div> {% endcomment %}
       </div>
     </div>
   </form>
