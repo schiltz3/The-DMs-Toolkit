@@ -83,6 +83,7 @@ class LootGenerator(View):
                 return render(request, "loot_generator.html", self.context)
         if request.POST.get("save_button") is not None:
             return render(request, "loot_generator.html", self.context)
+        return render(request, "loot_generator.html", self.context)
 
 
 @dataclass
@@ -119,12 +120,12 @@ class GenerateLootInputs:
             bool: Tru if dataclass holds valid data
         """
         if (
-            not self.generator_type.value
-            in Loot_Generator().get_all_random_generators()
+            self.generator_type.value
+            not in Loot_Generator().get_all_random_generators()
         ):
             return False
         if (
-            not self.loot_type.value in Loot_Generator.LOOT_TYPE_DICT.keys()
+            self.loot_type.value not in Loot_Generator.LOOT_TYPE_DICT.keys()
             and self.loot_type.value != "Random"
         ):
             return False
