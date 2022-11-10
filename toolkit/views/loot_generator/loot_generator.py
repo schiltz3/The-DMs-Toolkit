@@ -55,35 +55,34 @@ class LootGenerator(View):
         if request.POST.get("clear_button") is not None:
             self.context["data"] = GenerateLootInputs()
             return render(request, "loot_generator.html", self.context)
-        if form.is_valid():
+        if not form.is_valid():
+            self.context["form"] = form
+            print("Invalid form")
+            return render(request, "loot_generator.html", self.context)
+        if request.POST.get("generate_button") is not None:
             try:
-                if request.POST.get("generate_button") is not None:
-                    generated = self.generator.generate_loot(
-                        generator_key=form.generator_type.value,
-                        level=int(form.average_player_level.value),
-                        approximate_total_value=int(form.total_hoard_value.value),
-                        input_loot_type=form.loot_type.value,
-                    )
-                    loot_object = generated.get("loot_object")
-                    self.context["total_value"] = int(loot_object.Total_Value)
-                    self.context["money"] = int(loot_object.Money)
-                    generated_list = generated.get("armor")
-                    generated_list.extend(generated.get("weapons"))
-                    generated_list.extend(generated.get("general0"))
-                    generated_list.extend(generated.get("magic"))
-                    self.context["generated_list"] = generated_list
-                    return render(request, "loot_generator.html", self.context)
-                if request.POST.get("save_button") is not None:
-                    return render(request, "loot_generator.html", self.context)
+                generated = self.generator.generate_loot(
+                    generator_key=form.generator_type.value,
+                    level=int(form.average_player_level.value),
+                    approximate_total_value=int(form.total_hoard_value.value),
+                    input_loot_type=form.loot_type.value,
+                )
+                loot_object = generated.get("loot_object")
+                self.context["total_value"] = int(loot_object.Total_Value)
+                self.context["money"] = int(loot_object.Money)
+                generated_list = generated.get("armor")
+                generated_list.extend(generated.get("weapons"))
+                generated_list.extend(generated.get("general0"))
+                generated_list.extend(generated.get("magic"))
+                self.context["generated_list"] = generated_list
+                return render(request, "loot_generator.html", self.context)
             except ValueError as e:
                 logger.warning(traceback.format_exc())
                 self.context["form"] = form
                 self.context["error"] = str(e)
                 return render(request, "loot_generator.html", self.context)
-
-        self.context["form"] = form
-        print("Invalid form")
-        return render(request, "loot_generator.html", self.context)
+        if request.POST.get("save_button") is not None:
+            return render(request, "loot_generator.html", self.context)
 
 
 @dataclass
