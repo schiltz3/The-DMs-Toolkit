@@ -13,13 +13,15 @@ class CreateAccount(View):
     a user's credentials from the User database.
     """
 
-    def get(self, request: HttpRequest):
+    @staticmethod
+    def get(request: HttpRequest):
         """GET method for create user page."""
         context = {}
         context["form"] = CreateAccountForm()
         return render(request, "create_account.html", context)
 
-    def post(self, request: HttpRequest):
+    @staticmethod
+    def post(request: HttpRequest):
         """POST method for create user page."""
         form = CreateAccountForm(request.POST)
         context: dict[str, Any] = {"error": None}
@@ -37,7 +39,7 @@ class CreateAccount(View):
 
             return redirect(
                 "confirm_account_creation",
-                email=form.cleaned_data["username"],
+                username=form.cleaned_data["username"],
                 permanent=True,
             )
         context["form"] = form
@@ -95,6 +97,7 @@ def create_user(username: str, email: str, password: str) -> Optional[User]:
     except User.DoesNotExist:
         pass
 
-    a = User(email=email, username=username, password=password)
+    a = User(email=email, username=username)
+    a.set_password(password)
     a.save()
     return a

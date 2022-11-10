@@ -18,16 +18,17 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-from toolkit.views.bootstrap_test import BootstrapTest
-from toolkit.views.CharacterGenerator import CharacterGenerator
+from toolkit.views.character_generator.character_generator import CharacterGenerator
 from toolkit.views.confirm_account_creation import ConfirmAccountCreation
 from toolkit.views.create_account import CreateAccount
-from toolkit.views.EncounterGenerator import EncounterGenerator
+from toolkit.views.encounter_generator.EncounterGenerator import EncounterGenerator
 from toolkit.views.home_page import HomePage
 from toolkit.views.login import Login
-from toolkit.views.LootGenerator import LootGenerator
-
-# from toolkit.views.test_home import TestHome
+from toolkit.views.logout import Logout
+from toolkit.views.loot_generator.loot_generator import LootGenerator
+from toolkit.views.saved_characters import SavedCharacters
+from toolkit.views.saved_encounters import SavedEncounters
+from toolkit.views.saved_loot import SavedLoot
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -36,6 +37,8 @@ urlpatterns = [
     # login
     path("login/<str:username>", Login.as_view(), name="login"),
     path("login/", Login.as_view(), name="login"),
+    # logout
+    path("logout/", Logout.custom_logout, name="logout"),
     # Confirm Account Creation
     path(
         "create_account/confirm_account_creation/",
@@ -59,8 +62,12 @@ urlpatterns = [
     ),
     # Loot Generator
     path("loot_generator/", LootGenerator.as_view(), name="loot_generator"),
-    # test sites
-    path("bootstrap_test/", BootstrapTest.as_view(), name="bootstrap_test"),
+    # Saved Characters
+    path("saved_characters/", SavedCharacters.as_view(), name="saved_characters"),
+    # Saved Loot
+    path("saved_loot/", SavedLoot.as_view(), name="saved_loot"),
+    # Saved Encounters
+    path("saved_encounters/", SavedEncounters.as_view(), name="saved_encounters"),
     # static files
     *static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
 ]

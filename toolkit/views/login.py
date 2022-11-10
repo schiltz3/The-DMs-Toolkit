@@ -10,13 +10,15 @@ class Login(View):
     a user's credentials from the User database.
     """
 
-    def get(self, request, **kwargs):
+    @staticmethod
+    def get(request, **kwargs):
         """GET method for login page."""
         username = kwargs.get("username")
         context = {"username": username}
         return render(request, "login.html", context)
 
-    def post(self, request):
+    @staticmethod
+    def post(request, **kwargs):
         """POST method for login page."""
         username = request.POST.get("username")
         password = request.POST.get("password")

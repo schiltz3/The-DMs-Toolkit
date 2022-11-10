@@ -1,7 +1,15 @@
 {
   "djlint.useEditorIndentation": true,
-  "djlint.configuration": "pyproject.toml",
   "emmet.includeLanguages": {
     "django-html": "html"
-  }
+  },
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    "./Tests",
+    "-p",
+    "test_*.py"
+  ],
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestEnabled": true
 }

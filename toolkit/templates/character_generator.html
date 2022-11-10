@@ -3,4 +3,855 @@
 {% load static %}
 
 {% block application_pane %}
+  <form action {% url "character_generator" %} method="post" class="form">
+    {% csrf_token %}
+    <div class="row mx-0">
+      <div class="col p-0">
+        <div class="character-header">
+          <img src="{% static "Character_Header.png" %}"
+               alt="Character Header"
+               style="width: 45%"/>
+        </div>
+      </div>
+    </div>
+    <div class="row mx-0 pt-3 " style="background-color: #7D8B8C;">
+      <div class="col-7 col-lg-2">
+        <label for="character_name">
+          <h4>Character Name</h4>
+        </label>
+        <input class="form-control"
+               id="character_name"
+               name="character_name"
+               value="{% if data.character_name.value != '' %}{{ data.character_name.value }}{% endif %}"
+               placeholder="Character Name"/>
+        {% if data.character_name.error %}<div class="alert alert-danger">{{ data.character_name.error }}</div>{% endif %}
+      </div>
+      <div class="col-7 col-lg-7">
+        <div class="row gy-3">
+          <div class="col-10 col-lg">
+            <label for="player_name" class="form-label">Player Name</label>
+            <input class="form-control"
+                   id="player_name"
+                   name="player_name"
+                   value="{% if data.player_name.value != '' %}{{ data.player_name.value }}{% endif %}"
+                   placeholder="Player Name"/>
+            {% if data.player_name.error %}<div class="alert alert-danger">{{ data.player_name.error }}</div>{% endif %}
+          </div>
+          <div class="col-10 col-lg-2">
+            <label for="class_select" class="form-label">Class</label>
+            <select class="form-select" id="class_select" name="clazz" aria-label="class">
+              <option selected>
+                {{ data.clazz.value }}
+              </option>
+              <option value="" disabled="disabled">
+                ──────────────
+              </option>
+              {% for choice in clazz_list %}
+                {% if choice != data.clazz.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+              <option value="" disabled="disabled">
+                ──────────────
+              </option>
+              {% for choice in clazz_choices_list %}
+                {% if choice != data.clazz.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+            {% if data.clazz.error %}<div class="alert alert-danger">{{ data.clazz.error }}</div>{% endif %}
+          </div>
+          <div class="col-10 col-lg-2">
+            <label for="background_select" class="form-label">Background</label>
+            <select class="form-select"
+                    id="background_select"
+                    name="background"
+                    aria-label="background">
+              <option selected>
+                {{ data.background.value }}
+              </option>
+              <option value="" disabled="disabled">
+                ──────────────────────────
+              </option>
+              {% for choice in background_list %}
+                {% if choice != data.background.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+              <option value="" disabled="disabled">
+                ──────────────────────────
+              </option>
+              {% for choice in background_choices_list %}
+                {% if choice != data.background.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+            {% if data.background.error %}<div class="alert alert-danger">{{ data.background.error }}</div>{% endif %}
+          </div>
+          <div class="col-10 col-lg-2">
+            <label for="race_select" class="form-label">Race</label>
+            <select class="form-select" id="race_select" name="race" aria-label="race">
+              <option selected>
+                {{ data.race.value }}
+              </option>
+              <option value="" disabled="disabled">
+                ──────────────
+              </option>
+              {% for choice in race_list %}
+                {% if choice != data.race.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+              <option value="" disabled="disabled">
+                ──────────────
+              </option>
+              {% for choice in race_choices_list %}
+                {% if choice != data.race.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+            {% if data.race.error %}<div class="alert alert-danger">{{ data.race.error }}</div>{% endif %}
+          </div>
+          <div class="col-10 col-lg-2">
+            <label for="alignment_select" class="form-label">Alignment</label>
+            <select class="form-select"
+                    id="alignment_select"
+                    name="alignment"
+                    aria-label="alignment">
+              <option selected>
+                {{ data.alignment.value }}
+              </option>
+              <option value="" disabled="disabled">
+                ─────────────────────
+              </option>
+              {% for choice in alignment_list %}
+                {% if choice != data.alignment.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+              <option value="" disabled="disabled">
+                ─────────────────────
+              </option>
+              {% for choice in alignment_choices_list %}
+                {% if choice != data.alignment.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+            {% if data.alignment.error %}<div class="alert alert-danger">{{ data.alignment.error }}</div>{% endif %}
+          </div>
+          <div class="col-10 col-lg-2">
+            <label for="generator_type_select" class="form-label">Generator</label>
+            <select class="form-select"
+                    id="generator_type_select"
+                    name="generator_type"
+                    aria-label="generator_type">
+              <option selected>
+                {{ data.generator_type.value }}
+              </option>
+              {% for choice in generator_type_list %}
+                {% if choice != data.generator_type.value %}
+                  <option value="{{ choice }}">
+                    {{ choice }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+            {% if data.generator_type.error %}<div class="alert alert-danger">{{ data.generator_type.error }}</div>{% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="col-7 col-lg">
+        <div class="row p-3 ">
+          <div class="btn-group" role="group" aria-label="Generate-buttons">
+            <button type="submit"
+                    class="btn btn-lg btn-success"
+                    name="generate_button"
+                    style="--bs-btn-padding-y: 1rem;">
+              GENERATE
+            </button>
+            <button type="submit"
+                    class="btn btn-lg btn-primary"
+                    name="save_button"
+                    style="--bs-btn-padding-y: 1rem;"
+                    disabled>
+              SAVE
+            </button>
+            <button type="submit"
+                    name="clear_button"
+                    class="btn btn-lg btn-secondary"
+                    style="--bs-btn-padding-y: 1rem;">
+              CLEAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mx-0">
+      <div class="character-statblock">
+        <div class="character-stat">
+          <img src=" {% static "Character_UI_Stat.png" %}"
+               alt="Character UI Stat"
+               style="width: 100%"/>
+          <div class="character-stat-title">STRENGTH</div>
+          <div class="character-stat-base">
+            <h3>{{ out.strength }}</h3>
+          </div>
+          <div class="character-stat-bonus">
+            <h4>{{ out.stats.mod_strength.repr }}</h4>
+          </div>
+        </div>
+        <div class="character-stat">
+          <img src="{% static "Character_UI_Stat.png" %}"
+               alt="Character UI Stat"
+               style="width: 100%"/>
+          <div class="character-stat-title">DEXTERITY</div>
+          <div class="character-stat-base">
+            <h3>{{ out.dexterity }}</h3>
+          </div>
+          <div class="character-stat-bonus">
+            <h4>{{ out.stats.mod_dexterity.repr }}</h4>
+          </div>
+        </div>
+        <div class="character-stat">
+          <img src=" {% static "Character_UI_Stat.png" %}"
+               alt="Character UI Stat"
+               style="width: 100%"/>
+          <div class="character-stat-title">CONSTITUTION</div>
+          <div class="character-stat-base">
+            <h3>{{ out.constitution }}</h3>
+          </div>
+          <div class="character-stat-bonus">
+            <h4>{{ out.stats.mod_constitution.repr }}</h4>
+          </div>
+        </div>
+        <div class="character-stat">
+          <img src="{% static "Character_UI_Stat.png" %}"
+               alt="Character UI Stat"
+               style="width: 100%"/>
+          <div class="character-stat-title">
+            INTELLIGENCE
+          </div>
+          <div class="character-stat-base">
+            <h3>
+              {{ out.intelligence }}
+            </h3>
+          </div>
+          <div class="character-stat-bonus">
+            <h4>
+              {{ out.stats.mod_intelligence.repr }}
+            </h4>
+          </div>
+        </div>
+        <div class="character-stat">
+          <img src=" {% static "Character_UI_Stat.png" %}"
+               alt="Character UI Stat"
+               style="width: 100%"/>
+          <div class="character-stat-title">
+            WISDOM
+          </div>
+          <div class="character-stat-base">
+            <h3>
+              {{ out.wisdom }}
+            </h3>
+          </div>
+          <div class="character-stat-bonus">
+            <h4>
+              {{ out.stats.mod_wisdom.repr }}
+            </h4>
+          </div>
+        </div>
+        <div class="character-stat">
+          <img src="{% static "Character_UI_Stat.png" %}"
+               alt="Character UI Stat"
+               style="width: 100%"/>
+          <div class="character-stat-title">
+            CHARISMA
+          </div>
+          <div class="character-stat-base">
+            <h3>
+              {{ out.charisma }}
+            </h3>
+          </div>
+          <div class="character-stat-bonus">
+            <h4>
+              {{ out.stats.mod_charisma.repr }}
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mx-0 gap-3 p-3 justify-content-evenly"
+         style="background-color: #7D8B8C;">
+      <div class="col-sm-6 col-md-5 col-lg rounded-5"
+           style="background-color: tan;">
+        <div style="text-align: center;">
+          <h4>
+            PROFICIENCY
+          </h4>
+        </div>
+        <div class="character-panel">
+          <div style="width: 25%; float: center;">
+            <h5 style="font-weight: 800;">
+              {{ out.proficiency.value }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: center;">
+            <h5>
+              Proficiency Bonus
+            </h5>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <h4>
+            SAVING THROWS
+          </h4>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="st_strength"
+                   name="st_strength"
+                   {% if out.stats.st_strength.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.st_strength.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Strength
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="st_dexterity"
+                   name="st_dexterity"
+                   {% if out.stats.st_dexterity.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.st_dexterity.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Dexterity
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="st_constitution"
+                   name="st_constitution"
+                   {% if out.stats.st_constitution.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.st_constitution.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Constitution
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="st_intelligence"
+                   name="st_intelligence"
+                   {% if out.stats.st_intelligence.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.st_intelligence.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Intelligence
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="st_wisdom"
+                   name="st_wisdom"
+                   {% if out.stats.st_wisdom.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.st_wisdom.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Wisdom
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="st_charisma"
+                   name="st_charisma"
+                   {% if out.stats.st_charisma.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.st_charisma.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Charisma
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-5 col-lg rounded-5"
+           style="background-color: tan;">
+        <div style="text-align: center;">
+          <h4>
+            STATISTICS
+          </h4>
+        </div>
+        <div class="character-panel">
+          <div style="width: 25%; float: center;">
+            <h5 style="font-weight: 800;">
+              {{ out.stat_speed }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: center;">
+            <h5>
+              Speed
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 25%; float: center;">
+            <h5 style="font-weight: 800;">
+              {{ out.stats.stat_initiative.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: center;">
+            <h5>
+              Initiative
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 25%; float: center;">
+            <h5 style="font-weight: 800;">
+              {{ out.stat_hit_points }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: center;">
+            <h5>
+              Hit Points
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 25%; float: center;">
+            <h5 style="font-weight: 800;">
+              {{ out.stat_hit_dice }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: center;">
+            <h5>
+              Hit Dice
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-5 col-lg rounded-5"
+           style="background-color: tan;">
+        <div style="text-align: center;">
+          <h4>
+            SKILLS
+          </h4>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_acrobatics"
+                   name="sk_acrobatics"
+                   {% if out.stats.sk_acrobatics.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_acrobatics.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Acrobatics
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_animal_handling"
+                   name="sk_animal_handling"
+                   {% if out.stats.sk_animal_handling.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_animal_handling.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Animal Handling
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_arcana"
+                   name="sk_arcana"
+                   {% if out.stats.sk_arcana.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_arcana.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Arcana
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_athletics"
+                   name="sk_athletics"
+                   {% if out.stats.sk_athletics.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_athletics.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Athletics
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_deception"
+                   name="sk_deception"
+                   {% if out.stats.sk_deception.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_deception.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Deception
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_history"
+                   name="sk_history"
+                   {% if out.stats.sk_history.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_history.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              History
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_insight"
+                   name="sk_insight"
+                   {% if out.stats.sk_insight.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_insight.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Insight
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   name="sk_intimidation"
+                   {% if out.stats.sk_intimidation.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_intimidation.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Intimidation
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   name="sk_investigation"
+                   {% if out.stats.sk_investigation.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_investigation.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Investigation
+            </h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-5 col-lg rounded-5"
+           style="background-color: tan;">
+        <div style="text-align: center;">
+          <h4>
+            SKILLS
+          </h4>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   name="sk_medicine"
+                   {% if out.stats.sk_medicine.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_medicine.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Medicine
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_nature"
+                   name="sk_nature"
+                   {% if out.stats.sk_nature.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_nature.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Nature
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_perception"
+                   name="sk_perception"
+                   {% if out.stats.sk_perception.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_perception.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Perception
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_performance"
+                   name="sk_performance"
+                   {% if out.stats.sk_performance.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_performance.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Performance
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_persuasion"
+                   name="sk_persuasion"
+                   {% if out.stats.sk_persuasion.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_persuasion.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Persuasion
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_religion"
+                   name="sk_religion"
+                   {% if out.stats.sk_religion.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_religion.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Religion
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_sleight_of_hand"
+                   name="sk_sleight_of_hand"
+                   {% if out.stats.sk_sleight_of_hand.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_sleight_of_hand.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Sleight of Hand
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="sk_stealth"
+                   name="sk_stealth"
+                   {% if out.stats.sk_stealth.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_stealth.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Stealth
+            </h5>
+          </div>
+        </div>
+        <div class="character-panel">
+          <div style="width: 24px; float: left; text-align: center;">
+            <input class="form-check-input mt-0"
+                   type="checkbox"
+                   id="flexCheck"
+                   name="sk_survival"
+                   {% if out.stats.sk_survival.checked %} checked{% endif %}/>
+          </div>
+          <div style="width: 20%; float: left;">
+            <h5 style="font-weight: 700;">
+              {{ out.stats.sk_survival.repr }}
+            </h5>
+          </div>
+          <div style="width: 50%; float: left;">
+            <h5>
+              Survival
+            </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
 {% endblock application_pane %}
