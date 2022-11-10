@@ -226,7 +226,7 @@ class GeneratedCharacterOutputs:
         intelligence=0,
         wisdom=0,
         charisma=0,
-        proficiency=0,
+        proficiency=2,
     ):
         self.strength = strength
         self.dexterity = dexterity
@@ -348,6 +348,10 @@ class GeneratedCharacterOutputs:
         self.stats["sk_performance"].value = self.stats["mod_charisma"].value
         self.stats["sk_persuasion"].value = self.stats["mod_charisma"].value
         self.stats["sk_religion"].value = self.stats["mod_intelligence"].value
+        self.stats["sk_arcana"].value = self.stats["mod_intelligence"].value
+        self.stats["sk_history"].value = self.stats["mod_intelligence"].value
+        self.stats["sk_nature"].value = self.stats["mod_intelligence"].value
+        self.stats["sk_investigation"].value = self.stats["mod_intelligence"].value
 
         for v in self.stats.values():
             v.sk_to_str()
