@@ -3,4 +3,155 @@
 {% load static %}
 
 {% block application_pane %}
+<form action {% url "encounter_generator" %} method="post" class="form">
+    {% csrf_token %}
+<div class="container-fluid">
+    <div>
+        <div class="row">
+            <div class="generator-header">
+                <img src="{% static 'Encounter_Header.png' %}"
+                     alt="Encounter Header"
+                     style="width: 45%"/>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
+                <label for="generator_type_select" class="form-label">Generator</label>
+                <select class="form-select" 
+                        id="generator_type_select" 
+                        name="generator_type" 
+                        aria-label="generator_type">
+                    <option selected>
+                        {{ data.generator_type.value }}
+                    </option>
+                        {% for choice in generator_type_list %}
+                        {% if choice != data.generator_type.value %}
+                            <option value="{{ choice }}">
+                            {{ choice }}
+                            </option>
+                        {% endif %}
+                        {% endfor %}
+                </select>
+                <label for="encounter_type_select" class="form-label">Encounter Type</label>
+                <select class="form-select" 
+                        id="encounter_type_select"
+                        name="encounter_type"
+                        aria-label="encounter_type">
+                    <option selected>
+                        {{ data.encounter_type.value }}
+                        </option>
+                        <option value="" disabled="disabled">
+                        ──────────────
+                        </option>
+                        {% for choice in encounter_type_list %}
+                        {% if choice != data.encounter_type.value %}
+                            <option value="{{ choice }}">
+                            {{ choice }}
+                            </option>
+                        {% endif %}
+                        {% endfor %}
+                </select>
+            </div>
+            <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
+                <label for="encounter_tags_select" class="form-label">Encounter Tags</label>
+                <select class="form-select" 
+                        id="encounter_tags_select"
+                        name="encounter_tags"
+                        aria-label="encounter_tags">
+                    <option selected>
+                        {{ data.encounter_tags.value }}
+                    </option>
+                    <option value="" disabled="disabled">
+                        ──────────────
+                    </option>
+                    {% for choice in encounter_tags_list %}
+                        {% if choice != data.encounter_tags.value %}
+                        <option value="{{ choice }}">
+                            {{ choice }}
+                        </option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="average_player_level_input" class="form-label">Average Player Level</label>
+                <input type="number" class="form-control" 
+                        id="average_player_level_input" 
+                        name="average_player_level" 
+                        value="{% if data.average_player_level.value != 0.0 %}{{ data.average_player_level.value }}{% endif %}"
+                        placeholder="Enter Average Player Level...">
+            </div>
+            <div class="col-lg-6 px-md-4 p-4" style="background-color: #7D8B8C;">
+                <div class="btn-group vertical-center" style="width:100%" role="group" aria-label="Generate-buttons">
+                    <button type="submit"
+                            class="btn btn-lg btn-success"
+                            name="generate_button"
+                            style="--bs-btn-padding-y: 1rem;">
+                      GENERATE
+                    </button>
+                    <button type="submit"
+                            class="btn btn-lg btn-primary"
+                            name="save_button"
+                            style="--bs-btn-padding-y: 1rem;"
+                            disabled>
+                      SAVE
+                    </button>
+                    <button type="submit"
+                            name="clear_button"
+                            class="btn btn-lg btn-secondary"
+                            style="--bs-btn-padding-y: 1rem;">
+                      CLEAR
+                    </button>
+                  </div>
+            </div>
+        </div>
+        <div class="row" style="background-color: #D9CAAB;">
+            <div class="col-sm-3 px-md-4 p-2">
+                <div style="width: 50%; float: left; text-align: left;">
+                    <label for="loot-generation-checkbox" class="form-label"><h4>Loot Generation:</h4></label>
+                </div>
+                <div style="width: 24px; float: left; text-align: left;">
+                    <input class="form-check-input"
+                    type="checkbox"
+                    id="loot-generation-checkbox"
+                    name="loot-generation-checkbox"/>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <div class="data-table table-scrollbar">
+                    <table class="table table-hover">
+                        <thead style="position: sticky; top: 0;">
+                        <tr>
+                            <th style="width: 10%" scope="col" >#</th>
+                            <th style="width: 30%" scope="col">Name</th>
+                            <th style="width: 30%" scope="col">Challenge Rating</th>
+                            <th style="width: 30%" scope="col">Amount</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in generated_list %}
+                            <tr>
+                                <th scope="row">{{forloop.counter}}</th>
+                                <td>{{ item.Name }}</td>
+                                <td>{{ item }}</td>
+                                <td>{{ item.Challenge_Rating</td>
+                                <td>{{ item.Amount }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="background-color: #D9CAAB;">
+            <div class="col-sm-2 px-md-4 p-2">
+                <h4>Total Enemies:</h4>
+            </div>
+            <div class="col-sm-10 px-md-4 p-2" style="background-color: #D9CAAB; text-align: left;">
+                <h4><b>{{ total_enemies }}</b></h4>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
 {% endblock application_pane %}
