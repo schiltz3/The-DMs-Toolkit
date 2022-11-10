@@ -125,7 +125,7 @@ class GenerateLootInputs:
         ):
             return False
         if (
-            self.loot_type.value not in Loot_Generator.LOOT_TYPE_DICT.keys()
+            self.loot_type.value not in Loot_Generator.LOOT_TYPE_DICT
             and self.loot_type.value != "Random"
         ):
             return False
