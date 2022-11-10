@@ -118,9 +118,15 @@ class GenerateLootInputs:
         Returns:
             bool: Tru if dataclass holds valid data
         """
-        if not self.generator_type.value in Loot_Generator().get_all_random_generators():
+        if (
+            not self.generator_type.value
+            in Loot_Generator().get_all_random_generators()
+        ):
             return False
-        if not self.loot_type.value in Loot_Generator.LOOT_TYPE_DICT.keys() and self.loot_type.value != "Random":
+        if (
+            not self.loot_type.value in Loot_Generator.LOOT_TYPE_DICT.keys()
+            and self.loot_type.value != "Random"
+        ):
             return False
         if self.total_hoard_value.value == "":
             return False
