@@ -63,7 +63,6 @@ class CharacterGenerator(View):
 
     def post(self, request: HttpRequest):
         """POST method for create user page."""
-        print(request.POST.get("character_name"))
 
         print(request.POST)
 
@@ -123,6 +122,7 @@ class CharacterGenerator(View):
                     wisdom=stats[4],
                     charisma=stats[5],
                 )
+                output.update_proficiencies_from_dict(request.POST)
                 self.context["out"] = output
                 return render(request, "character_generator.html", self.context)
             except ValueError as e:
@@ -191,108 +191,170 @@ class GenerateCharacterInputs:
 
 
 @dataclass
+class Stat:
+    """A stat element that tracks if it is checked as well as its proficiency"""
+
+    value: int = 0
+    repr: str = ""
+    proficiency: int = 0
+    checked: bool = False
+
+    def sk_to_str(self):
+        """Generates the string to display from the current state
+
+        Returns:
+            Stat: return self for chaining
+        """
+        val = self.value + self.proficiency
+        pos = "+" if self.value + val >= 0 else "-"
+        self.repr = f"{pos} {abs(val)}"
+        return self
+
+    def __post_init__(self):
+        self.sk_to_str()
+
+
 class GeneratedCharacterOutputs:
     """Contain all the non-user intractable elements of the page"""
 
-    calculate: bool = True
-    strength: int = 0
-    dexterity: int = 0
-    constitution: int = 0
-    intelligence: int = 0
-    wisdom: int = 0
-    charisma: int = 0
+    def __init__(
+        self,
+        calculate=True,
+        strength=0,
+        dexterity=0,
+        constitution=0,
+        intelligence=0,
+        wisdom=0,
+        charisma=0,
+        proficiency=2,
+    ):
+        self.strength = strength
+        self.dexterity = dexterity
+        self.constitution = constitution
+        self.intelligence = intelligence
+        self.wisdom = wisdom
+        self.charisma = charisma
 
-    mod_strength: str = "+0"
-    mod_dexterity: str = "+0"
-    mod_constitution: str = "+0"
-    mod_intelligence: str = "+0"
-    mod_wisdom: str = "+0"
-    mod_charisma: str = "+0"
+        self.proficiency: Stat = Stat(value=proficiency)
 
-    proficiency: str = "+0"
+        self.stat_speed: int = 0
+        self.stat_hit_points: int = 0
+        self.stat_hit_dice: int = 0
 
-    st_strength: str = "+0"
-    st_dexterity: str = "+0"
-    st_constitution: str = "+0"
-    st_intelligence: str = "+0"
-    st_wisdom: str = "+0"
-    st_charisma: str = "+0"
+        self.stats = {
+            "stat_initiative": Stat(),
+            "mod_strength": Stat(),
+            "mod_dexterity": Stat(),
+            "mod_constitution": Stat(),
+            "mod_intelligence": Stat(),
+            "mod_wisdom": Stat(),
+            "mod_charisma": Stat(),
+            "st_strength": Stat(),
+            "st_dexterity": Stat(),
+            "st_constitution": Stat(),
+            "st_intelligence": Stat(),
+            "st_wisdom": Stat(),
+            "st_charisma": Stat(),
+            "sk_acrobatics": Stat(),
+            "sk_animal_handling": Stat(),
+            "sk_arcana": Stat(),
+            "sk_athletics": Stat(),
+            "sk_deception": Stat(),
+            "sk_history": Stat(),
+            "sk_insight": Stat(),
+            "sk_intimidation": Stat(),
+            "sk_investigation": Stat(),
+            "sk_medicine": Stat(),
+            "sk_nature": Stat(),
+            "sk_perception": Stat(),
+            "sk_performance": Stat(),
+            "sk_persuasion": Stat(),
+            "sk_religion": Stat(),
+            "sk_sleight_of_hand": Stat(),
+            "sk_stealth": Stat(),
+            "sk_survival": Stat(),
+        }
+        if calculate is True:
+            self.calculate()
 
-    stat_speed: int = 0
-    stat_initiative: str = "0"
-    stat_hit_points: int = 0
-    stat_hit_dice: int = 0
+    def update_proficiencies_from_dict(self, env: dict[str, Any]):
+        """Takes POST request dict and updates checked boxes from it
 
-    sk_acrobatics: str = "+0"
-    sk_animal_handling: str = "+0"
-    sk_arcana: str = "+0"
-    sk_athletics: str = "+0"
-    sk_deception: str = "+0"
-    sk_history: str = "+0"
-    sk_insight: str = "+0"
-    sk_intimidation: str = "+0"
-    sk_investigation: str = "+0"
-    sk_medicine: str = "+0"
-    sk_nature: str = "+0"
-    sk_perception: str = "+0"
-    sk_performance: str = "+0"
-    sk_persuasion: str = "+0"
-    sk_religion: str = "+0"
-    sk_sleight_of_hand: str = "+0"
-    sk_stealth: str = "+0"
-    sk_survival: str = "+0"
+        Args:
+            env (dict[str, Any]): dictionary containing check boxes with same names as dict keys
 
-    def __post_init__(self):
-        if self.calculate is False:
-            return
-        self.mod_strength = Character_Generator.calculate_ability_modifier(
-            self.strength
+        Returns:
+            GeneratedCharacterOutputs: returns self for chaining
+        """
+        for k in self.stats.values():
+            k.proficiency = 0
+            k.checked = False
+
+        for ek in env.keys():
+            sk = self.stats.get(ek)
+            if sk is not None:
+                print(sk)
+                sk.proficiency = self.proficiency.value
+                sk.checked = True
+
+        for k in self.stats.values():
+            k.sk_to_str()
+
+        return self
+
+    def calculate(self):
+        """Calculate all stat values
+
+        Returns:
+            GeneratedCharacterOutputs: returns self for chaining
+        """
+        self.stats[
+            "mod_strength"
+        ].value = Character_Generator.calculate_ability_modifier(self.strength)
+        self.stats[
+            "mod_dexterity"
+        ].value = Character_Generator.calculate_ability_modifier(self.dexterity)
+        self.stats[
+            "mod_constitution"
+        ].value = Character_Generator.calculate_ability_modifier(self.constitution)
+        self.stats[
+            "mod_intelligence"
+        ].value = Character_Generator.calculate_ability_modifier(self.intelligence)
+        self.stats["mod_wisdom"].value = Character_Generator.calculate_ability_modifier(
+            self.wisdom
         )
-        self.mod_dexterity = Character_Generator.calculate_ability_modifier(
-            self.dexterity
-        )
-        self.mod_constitution = Character_Generator.calculate_ability_modifier(
-            self.constitution
-        )
-        self.mod_intelligence = Character_Generator.calculate_ability_modifier(
-            self.intelligence
-        )
-        self.mod_wisdom = Character_Generator.calculate_ability_modifier(self.wisdom)
-        self.mod_charisma = Character_Generator.calculate_ability_modifier(
-            self.charisma
-        )
-        self.st_strength = self.mod_strength
+        self.stats[
+            "mod_charisma"
+        ].value = Character_Generator.calculate_ability_modifier(self.charisma)
 
-        self.st_dexterity = self.mod_dexterity
-        self.st_constitution = self.mod_constitution
-        self.st_intelligence = self.mod_intelligence
-        self.st_charisma = self.mod_charisma
-        self.st_wisdom = self.mod_wisdom
+        self.stats["st_strength"].value = self.stats["mod_strength"].value
+        self.stats["st_dexterity"].value = self.stats["mod_dexterity"].value
+        self.stats["st_constitution"].value = self.stats["mod_constitution"].value
+        self.stats["st_intelligence"].value = self.stats["mod_intelligence"].value
+        self.stats["st_charisma"].value = self.stats["mod_charisma"].value
+        self.stats["st_wisdom"].value = self.stats["mod_wisdom"].value
+        self.stats["stat_initiative"].value = self.stats["mod_dexterity"].value
+        self.stats["sk_athletics"].value = self.stats["mod_strength"].value
+        self.stats["sk_acrobatics"].value = self.stats["mod_dexterity"].value
+        self.stats["sk_sleight_of_hand"].value = self.stats["mod_dexterity"].value
+        self.stats["sk_stealth"].value = self.stats["mod_dexterity"].value
+        self.stats["sk_animal_handling"].value = self.stats["mod_wisdom"].value
+        self.stats["sk_insight"].value = self.stats["mod_wisdom"].value
+        self.stats["sk_medicine"].value = self.stats["mod_wisdom"].value
+        self.stats["sk_perception"].value = self.stats["mod_wisdom"].value
+        self.stats["sk_survival"].value = self.stats["mod_wisdom"].value
+        self.stats["sk_deception"].value = self.stats["mod_charisma"].value
+        self.stats["sk_intimidation"].value = self.stats["mod_charisma"].value
+        self.stats["sk_performance"].value = self.stats["mod_charisma"].value
+        self.stats["sk_persuasion"].value = self.stats["mod_charisma"].value
+        self.stats["sk_religion"].value = self.stats["mod_intelligence"].value
+        self.stats["sk_arcana"].value = self.stats["mod_intelligence"].value
+        self.stats["sk_history"].value = self.stats["mod_intelligence"].value
+        self.stats["sk_nature"].value = self.stats["mod_intelligence"].value
+        self.stats["sk_investigation"].value = self.stats["mod_intelligence"].value
 
-        # TODO: Add proficiency bonus to initiative
-        self.stat_initiative = self.mod_dexterity
+        for v in self.stats.values():
+            v.sk_to_str()
+            v.proficiency = self.proficiency.value
 
-        # TODO: Add proficiency bonuses to these if proficient
-
-        self.sk_athletics = self.mod_strength
-
-        self.sk_acrobatics = self.mod_dexterity
-        self.sk_sleight_of_hand = self.mod_dexterity
-        self.sk_stealth = self.mod_dexterity
-
-        self.sk_arcana = self.mod_intelligence
-        self.sk_history = self.mod_intelligence
-        self.sk_investigation = self.mod_intelligence
-        self.sk_nature = self.mod_intelligence
-        self.sk_religion = self.mod_intelligence
-
-        self.sk_animal_handling = self.mod_wisdom
-        self.sk_insight = self.mod_wisdom
-        self.sk_medicine = self.mod_wisdom
-        self.sk_perception = self.mod_wisdom
-        self.sk_survival = self.mod_wisdom
-
-        self.sk_deception = self.mod_charisma
-        self.sk_intimidation = self.mod_charisma
-        self.sk_performance = self.mod_charisma
-        self.sk_persuasion = self.mod_charisma
+        return self
