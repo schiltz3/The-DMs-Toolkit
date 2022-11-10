@@ -1,0 +1,1832 @@
+[
+    {
+      "model": "auth.user",
+      "fields": {
+        "password": "pbkdf2_sha256$390000$c2xKPRE4dVJcNwBaNvaK2Y$AT6A0oE3PUspYbWmlulh85+pU4wNmKNH5dUzjNqRNm8=",
+        "last_login": "2022-11-10T07:19:00.935Z",
+        "is_superuser": true,
+        "username": "Jeffery",
+        "first_name": "",
+        "last_name": "",
+        "email": "jjmiii@uwm.edu",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-11-10T06:04:28.730Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "3adcylecgnb3cfsvnvqwtc92v6j80t7d",
+      "fields": {
+        "session_data": ".eJxVjDsOwyAQBe9CHSFYYz4p0_sMiF0gOIlAMnYV5e6xJRdJOzPvvZkP21r81tPi58iuTLLLL8NAz1QPER-h3hunVtdlRn4k_LSdTy2m1-1s_w5K6GVfQx6NShatw0wgKEShkZROAkhGEDIrUAAWs5bGuSHTIM3O7UhaRDmwzxfkjzdg:1ot1q0:LOql7RMsZBBXCkv0bwCg1LabPzpWg8vWNJiT8QXRyro",
+        "expire_date": "2022-11-24T07:19:00.941Z"
+      }
+    },
+    {
+      "model": "toolkit.armor",
+      "pk": "Breastplate",
+      "fields": {
+        "Armor_Type": "Medium",
+        "Base_Value": 400.0,
+        "Armor_Class_Change": "14",
+        "Weight": 20,
+        "Stealth": true
+      }
+    },
+    {
+      "model": "toolkit.armor",
+      "pk": "Chain Mail",
+      "fields": {
+        "Armor_Type": "Heavy",
+        "Base_Value": 75.0,
+        "Armor_Class_Change": "16",
+        "Weight": 55,
+        "Stealth": false
+      }
+    },
+    {
+      "model": "toolkit.armor",
+      "pk": "Chain Shirt",
+      "fields": {
+        "Armor_Type": "Medium",
+        "Base_Value": 50.0,
+        "Armor_Class_Change": "13",
+        "Weight": 20,
+        "Stealth": true
+      }
+    },
+    {
+      "model": "toolkit.armor",
+      "pk": "Halfplate",
+      "fields": {
+        "Armor_Type": "Medium",
+        "Base_Value": 750.0,
+        "Armor_Class_Change": "15",
+        "Weight": 40,
+        "Stealth": false
+      }
+    },
+    {
+      "model": "toolkit.armor",
+      "pk": "Hide Armor",
+      "fields": {
+        "Armor_Type": "Medium",
+        "Base_Value": 10.0,
+        "Armor_Class_Change": "12",
+        "Weight": 12,
+        "Stealth": true
+      }
+    },
+    {
+      "model": "toolkit.armor",
+      "pk": "Leather Armor",
+      "fields": {
+        "Armor_Type": "Light",
+        "Base_Value": 10.0,
+        "Armor_Class_Change": "11",
+        "Weight": 10,
+        "Stealth": true
+      }
+    },
+    {
+      "model": "toolkit.armor",
+      "pk": "Padded Armor",
+      "fields": {
+        "Armor_Type": "Light",
+        "Base_Value": 5.0,
+        "Armor_Class_Change": "11",
+        "Weight": 8,
+        "Stealth": false
+      }
+    },
+    {
+      "model": "toolkit.armor",
+      "pk": "Plate Armor",
+      "fields": {
+        "Armor_Type": "Heavy",
+        "Base_Value": 1500.0,
+        "Armor_Class_Change": "18",
+        "Weight": 65,
+        "Stealth": false
+      }
+    },
+    {
+      "model": "toolkit.armor",
+      "pk": "Ring Mail",
+      "fields": {
+        "Armor_Type": "Heavy",
+        "Base_Value": 30.0,
+        "Armor_Class_Change": "14",
+        "Weight": 40,
+        "Stealth": false
+      }
+    },
+    {
+      "model": "toolkit.armor",
+      "pk": "Scale Mail",
+      "fields": {
+        "Armor_Type": "Medium",
+        "Base_Value": 50.0,
+        "Armor_Class_Change": "14",
+        "Weight": 45,
+        "Stealth": false
+      }
+    },
+    {
+      "model": "toolkit.armor",
+      "pk": "Spiked Armor",
+      "fields": {
+        "Armor_Type": "Medium",
+        "Base_Value": 75.0,
+        "Armor_Class_Change": "14",
+        "Weight": 45,
+        "Stealth": false
+      }
+    },
+    {
+      "model": "toolkit.armor",
+      "pk": "Splint Armor",
+      "fields": {
+        "Armor_Type": "Heavy",
+        "Base_Value": 200.0,
+        "Armor_Class_Change": "17",
+        "Weight": 60,
+        "Stealth": false
+      }
+    },
+    {
+      "model": "toolkit.armor",
+      "pk": "Studded Leather",
+      "fields": {
+        "Armor_Type": "Light",
+        "Base_Value": 45.0,
+        "Armor_Class_Change": "12",
+        "Weight": 13,
+        "Stealth": true
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Battleaxe",
+      "fields": {
+        "Damage_Type": "Slashing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d8",
+        "Base_Value": 10.0,
+        "Max_Range": 5,
+        "Weight": 4,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Blowgun",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Martial Ranged",
+        "Damage_Die": "1d6",
+        "Base_Value": 10.0,
+        "Max_Range": 100,
+        "Weight": 1,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Club",
+      "fields": {
+        "Damage_Type": "Bludgeoning",
+        "Weapon_Type": "Simple Melee",
+        "Damage_Die": "1d4",
+        "Base_Value": 0.1,
+        "Max_Range": 5,
+        "Weight": 2,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Dagger",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Simple Melee",
+        "Damage_Die": "1d4",
+        "Base_Value": 2.0,
+        "Max_Range": 60,
+        "Weight": 1,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Dart",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Simple Ranged",
+        "Damage_Die": "1d4",
+        "Base_Value": 0.05,
+        "Max_Range": 60,
+        "Weight": 1,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Flail",
+      "fields": {
+        "Damage_Type": "Bludgeoning",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d8",
+        "Base_Value": 10.0,
+        "Max_Range": 5,
+        "Weight": 2,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Glaive",
+      "fields": {
+        "Damage_Type": "Slashing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d10",
+        "Base_Value": 20.0,
+        "Max_Range": 5,
+        "Weight": 6,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Greataxe",
+      "fields": {
+        "Damage_Type": "Slashing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d12",
+        "Base_Value": 30.0,
+        "Max_Range": 5,
+        "Weight": 7,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Greatclub",
+      "fields": {
+        "Damage_Type": "Bludgeoning",
+        "Weapon_Type": "Simple Melee",
+        "Damage_Die": "1d8",
+        "Base_Value": 0.2,
+        "Max_Range": 5,
+        "Weight": 10,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Greatsword",
+      "fields": {
+        "Damage_Type": "Slashing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "2d6",
+        "Base_Value": 50.0,
+        "Max_Range": 5,
+        "Weight": 6,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Halberd",
+      "fields": {
+        "Damage_Type": "Slashing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d10",
+        "Base_Value": 20.0,
+        "Max_Range": 5,
+        "Weight": 6,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Hand Crossbow",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Martial Ranged",
+        "Damage_Die": "1d6",
+        "Base_Value": 75.0,
+        "Max_Range": 120,
+        "Weight": 3,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Handaxe",
+      "fields": {
+        "Damage_Type": "Slashing",
+        "Weapon_Type": "Simple Melee",
+        "Damage_Die": "1d6",
+        "Base_Value": 5.0,
+        "Max_Range": 60,
+        "Weight": 2,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Heavy Crossbow",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Martial Ranged",
+        "Damage_Die": "1d10",
+        "Base_Value": 50.0,
+        "Max_Range": 400,
+        "Weight": 18,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Javelin",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Simple Melee",
+        "Damage_Die": "1d6",
+        "Base_Value": 0.5,
+        "Max_Range": 120,
+        "Weight": 2,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Lance",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d12",
+        "Base_Value": 10.0,
+        "Max_Range": 5,
+        "Weight": 6,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Light Crossbow",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Simple Ranged",
+        "Damage_Die": "1d8",
+        "Base_Value": 25.0,
+        "Max_Range": 320,
+        "Weight": 5,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Light Hammer",
+      "fields": {
+        "Damage_Type": "Bludgeoning",
+        "Weapon_Type": "Simple Melee",
+        "Damage_Die": "1d4",
+        "Base_Value": 2.0,
+        "Max_Range": 60,
+        "Weight": 2,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Longbow",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Martial Ranged",
+        "Damage_Die": "1d8",
+        "Base_Value": 50.0,
+        "Max_Range": 600,
+        "Weight": 2,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Longsword",
+      "fields": {
+        "Damage_Type": "Slashing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d8",
+        "Base_Value": 15.0,
+        "Max_Range": 5,
+        "Weight": 3,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Mace",
+      "fields": {
+        "Damage_Type": "Bludgeoning",
+        "Weapon_Type": "Simple Melee",
+        "Damage_Die": "1d6",
+        "Base_Value": 5.0,
+        "Max_Range": 5,
+        "Weight": 4,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Maul",
+      "fields": {
+        "Damage_Type": "Bludgeoning",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "2d6",
+        "Base_Value": 10.0,
+        "Max_Range": 5,
+        "Weight": 10,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Morningstar",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d8",
+        "Base_Value": 15.0,
+        "Max_Range": 5,
+        "Weight": 4,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Net",
+      "fields": {
+        "Damage_Type": "Bludgeoning",
+        "Weapon_Type": "Martial Ranged",
+        "Damage_Die": "1d6",
+        "Base_Value": 1.0,
+        "Max_Range": 15,
+        "Weight": 3,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Pike",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d10",
+        "Base_Value": 5.0,
+        "Max_Range": 5,
+        "Weight": 18,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Quarterstaff",
+      "fields": {
+        "Damage_Type": "Bludgeoning",
+        "Weapon_Type": "Simple Melee",
+        "Damage_Die": "1d6",
+        "Base_Value": 0.2,
+        "Max_Range": 5,
+        "Weight": 4,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Rapier",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d8",
+        "Base_Value": 25.0,
+        "Max_Range": 5,
+        "Weight": 2,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Scimitar",
+      "fields": {
+        "Damage_Type": "Slashing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d6",
+        "Base_Value": 25.0,
+        "Max_Range": 5,
+        "Weight": 3,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Shortbow",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Simple Ranged",
+        "Damage_Die": "1d6",
+        "Base_Value": 25.0,
+        "Max_Range": 320,
+        "Weight": 2,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Shortsword",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d6",
+        "Base_Value": 10.0,
+        "Max_Range": 5,
+        "Weight": 2,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Sickle",
+      "fields": {
+        "Damage_Type": "Slashing",
+        "Weapon_Type": "Simple Melee",
+        "Damage_Die": "1d4",
+        "Base_Value": 1.0,
+        "Max_Range": 5,
+        "Weight": 2,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Sling",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Simple Ranged",
+        "Damage_Die": "1d4",
+        "Base_Value": 0.1,
+        "Max_Range": 120,
+        "Weight": 1,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Spear",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Simple Melee",
+        "Damage_Die": "1d6",
+        "Base_Value": 1.0,
+        "Max_Range": 60,
+        "Weight": 3,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Trident",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d6",
+        "Base_Value": 5.0,
+        "Max_Range": 60,
+        "Weight": 4,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "War Pick",
+      "fields": {
+        "Damage_Type": "Piercing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d8",
+        "Base_Value": 5.0,
+        "Max_Range": 5,
+        "Weight": 2,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Warhammer",
+      "fields": {
+        "Damage_Type": "Bludgeoning",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d8",
+        "Base_Value": 15.0,
+        "Max_Range": 5,
+        "Weight": 2,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.weapon",
+      "pk": "Whip",
+      "fields": {
+        "Damage_Type": "Slashing",
+        "Weapon_Type": "Martial Melee",
+        "Damage_Die": "1d4",
+        "Base_Value": 2.0,
+        "Max_Range": 5,
+        "Weight": 3,
+        "Ammo": "",
+        "Special_Characteristics": null
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Abacus",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 2.0,
+        "Weight": 2
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Acid Vial",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 25.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Alchemist's Fire Flask",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 50.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Amulet",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 5.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Antitoxin Vial",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 50.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Backpack",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 2.0,
+        "Weight": 5
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Ball Bearings",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 2
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Barrel",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 2.0,
+        "Weight": 70
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Basket",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 4.0,
+        "Weight": 2
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Bedroll",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 2
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Bell",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Blanket",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.5,
+        "Weight": 5
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Block and Tackle",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 5
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Book",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 25.0,
+        "Weight": 5
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Bucket",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.05,
+        "Weight": 2
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Bullseye Lantern",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 10.0,
+        "Weight": 2
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Caltrops",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 2
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Candle",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.01,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Chain",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 5.0,
+        "Weight": 10
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Chalk",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.01,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Chest",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 5.0,
+        "Weight": 25
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Climber's Kit",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 25.0,
+        "Weight": 12
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Common Clothes",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.5,
+        "Weight": 3
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Component Pouch",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 25.0,
+        "Weight": 2
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Costume",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 5.0,
+        "Weight": 4
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Crossbow Bolt Case",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Crowbar",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 2.0,
+        "Weight": 5
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Crystal",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 10.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Emblem",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 5.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Fine Clothes",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 15.0,
+        "Weight": 6
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Fishing Tackle",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 4
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Glass Bottle",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 2.0,
+        "Weight": 2
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Grappling Hook",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 2.0,
+        "Weight": 4
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Hammer",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 3
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Healer's Kit",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 5.0,
+        "Weight": 3
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Hemp Rope",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 10
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Holy Water Flask",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 25.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Hooded Lantern",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 10.0,
+        "Weight": 2
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Hourglass",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 25.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Hunting Trap",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 5.0,
+        "Weight": 25
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Ink",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 10.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Ink Pen",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.02,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Iron Pot",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 2.0,
+        "Weight": 10
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Iron Spikes",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 5
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Ladder",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.1,
+        "Weight": 25
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Lamp",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.5,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Lock",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 10.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Magnifying Glass",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 100.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Map/Scroll Case",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Mess Kit",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.2,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Miner's Pick",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 2.0,
+        "Weight": 10
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Oil Flask",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.1,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Orb",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 20.0,
+        "Weight": 3
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Paper",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.2,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Parchment",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.1,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Perfume",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 5.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Pitcher",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.02,
+        "Weight": 4
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Piton",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.05,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Poison Vial",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 100.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Pole",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.05,
+        "Weight": 7
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Potion of Healing",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 50.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Pouch",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.5,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Quiver",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Rations",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.5,
+        "Weight": 2
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Reliquary",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 5.0,
+        "Weight": 2
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Robes",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 4
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Rod",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 10.0,
+        "Weight": 2
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Sack",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.01,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Sealing Wax",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.5,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Shovel",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 2.0,
+        "Weight": 5
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Signal Whistle",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.05,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Signet Ring",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 5.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Silk Rope",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 10.0,
+        "Weight": 5
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Sledgehammer",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 2.0,
+        "Weight": 10
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Spellbook",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 50.0,
+        "Weight": 3
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Sprig of Mistletoe",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Spyglass",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1000.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Staff",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 5.0,
+        "Weight": 4
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Tankard",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.02,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Tent",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 2.0,
+        "Weight": 20
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Tinderbox",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.5,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Torch",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.01,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Totem",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Traveler's Clothes",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 2.0,
+        "Weight": 4
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Vial",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 1.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Wand",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 10.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Waterskin",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.2,
+        "Weight": 5
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Whetstone",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 0.01,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Wooden Staff",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 5.0,
+        "Weight": 4
+      }
+    },
+    {
+      "model": "toolkit.genericitem",
+      "pk": "Yew Wand",
+      "fields": {
+        "Description": "Item",
+        "Base_Value": 10.0,
+        "Weight": 1
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Abracadabrus",
+      "fields": {
+        "Rarity": "Very Rare",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Adamantine Armor",
+      "fields": {
+        "Rarity": "Uncommon",
+        "Type": "Armor",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Akmon, Hammer of Purphoros",
+      "fields": {
+        "Rarity": "Artifact",
+        "Type": "Weapon",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Apparatus of Kwalish",
+      "fields": {
+        "Rarity": "Legendary",
+        "Type": "Wondrous Item",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Archeron Blade",
+      "fields": {
+        "Rarity": "Rare",
+        "Type": "Weapon",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Armblade",
+      "fields": {
+        "Rarity": "Common",
+        "Type": "Weapon",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Baba Yaga's Mortar and Pestle",
+      "fields": {
+        "Rarity": "Artifact",
+        "Type": "Wondrous Item",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Badge of Watch",
+      "fields": {
+        "Rarity": "Rare",
+        "Type": "Wondrous Item",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Bag of Devouring",
+      "fields": {
+        "Rarity": "Very Rare",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Bag of Holding",
+      "fields": {
+        "Rarity": "Uncommon",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Bead of Nourishment",
+      "fields": {
+        "Rarity": "Common",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Belashyrra's Beholder Crown",
+      "fields": {
+        "Rarity": "Legendary",
+        "Type": "Wondrous Item",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Candle of Invocation",
+      "fields": {
+        "Rarity": "Very Rare",
+        "Type": "Wondrous Item",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Candle of the Deep",
+      "fields": {
+        "Rarity": "Common",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Cap of Water Breathing",
+      "fields": {
+        "Rarity": "Uncommon",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Cape of the Mountebank",
+      "fields": {
+        "Rarity": "Rare",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Cloak of Invisibility",
+      "fields": {
+        "Rarity": "Legendary",
+        "Type": "Wondrous Item",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Crook of Rao",
+      "fields": {
+        "Rarity": "Artifact",
+        "Type": "Wondrous Item",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Daern's Instant Fortress",
+      "fields": {
+        "Rarity": "Rare",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Dancing Sword",
+      "fields": {
+        "Rarity": "Very Rare",
+        "Type": "Weapon",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Danoth's Visor",
+      "fields": {
+        "Rarity": "Legendary",
+        "Type": "Wondrous Item",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Dark Shard Amulet",
+      "fields": {
+        "Rarity": "Common",
+        "Type": "Wondrous Item",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Decanter of Endless Water",
+      "fields": {
+        "Rarity": "Uncommon",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Dekella, Bident of Thassa",
+      "fields": {
+        "Rarity": "Artifact",
+        "Type": "Weapon",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Draakhorn",
+      "fields": {
+        "Rarity": "Unique",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Eagle Whistle",
+      "fields": {
+        "Rarity": "Rare",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Ear Horn of Healing",
+      "fields": {
+        "Rarity": "Common",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Earworm",
+      "fields": {
+        "Rarity": "Uncommon",
+        "Type": "Wondrous Item",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Efreeti Bottle",
+      "fields": {
+        "Rarity": "Very Rare",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Efreeti Chain",
+      "fields": {
+        "Rarity": "Legendary",
+        "Type": "Armor",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Ephixis, Bow of Nyela",
+      "fields": {
+        "Rarity": "Artifact",
+        "Type": "Weapon",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Gnomengarde Grenade",
+      "fields": {
+        "Rarity": "Unique",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Mask of the Dragon Queen",
+      "fields": {
+        "Rarity": "Unique",
+        "Type": "Wondrous Item",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Orcus Figurine",
+      "fields": {
+        "Rarity": "Unknown",
+        "Type": "Wondrous Item",
+        "Attuned": false
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Radiance",
+      "fields": {
+        "Rarity": "Unknown",
+        "Type": "Wand",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Spider Staff",
+      "fields": {
+        "Rarity": "Unknown",
+        "Type": "Staff",
+        "Attuned": true
+      }
+    },
+    {
+      "model": "toolkit.magicitem",
+      "pk": "Stonky's Ring",
+      "fields": {
+        "Rarity": "Unknown",
+        "Type": "Ring",
+        "Attuned": true
+      }
+    }
+]
+    
