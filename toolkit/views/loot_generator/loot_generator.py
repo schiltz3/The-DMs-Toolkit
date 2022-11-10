@@ -57,7 +57,6 @@ class LootGenerator(View):
             return render(request, "loot_generator.html", self.context)
         if not form.is_valid():
             self.context["form"] = form
-            print("Invalid form")
             return render(request, "loot_generator.html", self.context)
         if request.POST.get("generate_button") is not None:
             try:
