@@ -8,6 +8,8 @@ django.setup()
 
 
 class Account_Creation_Tests(TestCase):
+    """Unit tests for account creation page"""
+    
     def test_create_user_positive(self):
         """Tests if the create user function successfully creates a new user"""
         create_user("test", "test@test.test", "test")
