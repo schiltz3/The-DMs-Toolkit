@@ -1,6 +1,5 @@
 import random
 from typing import Callable
-
 from toolkit.models import Armor, GeneratedLoot, GenericItem, MagicItem, Weapon
 
 Generator = Callable[[int, int], int]
