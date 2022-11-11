@@ -10,7 +10,7 @@ class Account_Creation_Tests(TestCase):
         check = User.objects.filter(username = "test")
         self.assertTrue(check.exists)
         self.assertEqual(check[0].email, "test@test.test")
-        self.assertEqual(check[0].password, "test")
+        self.assertTrue(check[0].check_password("test"))
     def test_create_user_negative(self):
         temp = User(username = "test2", password = "test2", email = "Test2@Test2.Test2")
         temp.save()
