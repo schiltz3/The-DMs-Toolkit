@@ -3,13 +3,16 @@ import logging
 import traceback
 from dataclasses import dataclass, field
 from typing import Any, Optional
+
 from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
+
 from toolkit.models import GeneratedLoot
 from toolkit.views.loot_generator.loot_generation import Loot_Generator
 
 logger = logging.getLogger(__name__)
+
 
 class Element:
     """Contains the value and error to display in templates"""
@@ -35,7 +38,7 @@ class LootGenerator(View):
         self.generator = Loot_Generator()
         gen_keys = self.generator.get_all_random_generators()
         gen_keys = sorted(gen_keys)
-        self.loot = GeneratedLoot(Loot_Type = "default", Total_Value = 0, Money = 0)
+        self.loot = GeneratedLoot(Loot_Type="default", Total_Value=0, Money=0)
         self.context["loot_generator_list"] = gen_keys
         self.context["loot_type_list"] = sorted(self.generator.LOOT_TYPE_DICT)
 
@@ -69,10 +72,10 @@ class LootGenerator(View):
                     generated_list = []
                     generated_list.extend(generated.get("armor"))
                     generated_list.extend(generated.get("weapons"))
-                    generated_list.extend(generated.get("general"))                  
+                    generated_list.extend(generated.get("general"))
                     generated_list.extend(generated.get("magic"))
-                    self.context["generated_list"] = generated_list 
-                    
+                    self.context["generated_list"] = generated_list
+
                     return render(request, "loot_generator.html", self.context)
                 if request.POST.get("generate_and_save_button") is not None:
                     if request.user.is_authenticated:
@@ -92,22 +95,24 @@ class LootGenerator(View):
                     generated_list = []
                     generated_list.extend(generated.get("armor"))
                     generated_list.extend(generated.get("weapons"))
-                    generated_list.extend(generated.get("general"))                  
+                    generated_list.extend(generated.get("general"))
                     generated_list.extend(generated.get("magic"))
                     self.context["generated_list"] = generated_list
 
                     if request.user.is_authenticated:
-                        self.loot = GeneratedLoot(Owner = current_user,
-                        Loot_Type = loot_object.Loot_Type,
-                        Total_Value = self.context["total_value"],
-                        Money = self.context["money"])
+                        self.loot = GeneratedLoot(
+                            Owner=current_user,
+                            Loot_Type=loot_object.Loot_Type,
+                            Total_Value=self.context["total_value"],
+                            Money=self.context["money"],
+                        )
                         self.loot.save()
                         self.loot.Armors.set(generated.get("armor"))
                         self.loot.Weapons.set(generated.get("weapons"))
-                        self.loot.Generic_Items.set(generated.get("general")) 
+                        self.loot.Generic_Items.set(generated.get("general"))
                         self.loot.Magical_Items.set(generated.get("magic"))
                         self.loot.save()
-                    
+
                     return render(request, "loot_generator.html", self.context)
                 if request.POST.get("clear_button") is not None:
                     self.context["data"] = GenerateLootInputs()
