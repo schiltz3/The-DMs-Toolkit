@@ -9,6 +9,7 @@ django.setup()
 
 class Account_Creation_Tests(TestCase):
     def test_create_user_positive(self):
+        """Tests if the create user function successfully creates a new user"""
         create_user("test", "test@test.test", "test")
         check = User.objects.filter(username="test")
         self.assertTrue(check.exists)
@@ -16,6 +17,7 @@ class Account_Creation_Tests(TestCase):
         self.assertTrue(check[0].check_password("test"))
 
     def test_create_user_negative(self):
+        """Tests if the create user function does not create a new user"""
         temp = User(username="test2", password="test2", email="Test2@Test2.Test2")
         temp.save()
         with self.assertRaises(ValueError):
