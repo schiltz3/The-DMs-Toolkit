@@ -3,7 +3,6 @@ import logging
 import traceback
 from dataclasses import dataclass, field
 from typing import Any, Optional
-
 from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
@@ -69,11 +68,20 @@ class LootGenerator(View):
                     self.context["money"] = int(loot_object.Money)
                     generated_list = generated.get("armor")
                     generated_list.extend(generated.get("weapons"))
-                    generated_list.extend(generated.get("general0"))
+                    generated_list.extend(generated.get("general"))
                     generated_list.extend(generated.get("magic"))
                     self.context["generated_list"] = generated_list
+                    if current_user!=None:
+                        loot_object.Owner = current_user
+                        loot_object.Weapons.set(generated.get("weapons"))
+                        loot_object.Armors.set(generated.get("armor"))
+                        loot_object.Generic_Items.set(generated.get("general"))
+                        loot_object.Magical_Items.set(generated.get("magic"))
                     return render(request, "loot_generator.html", self.context)
                 if request.POST.get("save_button") is not None:
+                    if request.user.is_authenticated:
+                        current_user = request.user
+                        loot_object.save()
                     return render(request, "loot_generator.html", self.context)
                 if request.POST.get("clear_button") is not None:
                     self.context["data"] = GenerateLootInputs()
