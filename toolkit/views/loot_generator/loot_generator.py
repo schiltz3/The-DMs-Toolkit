@@ -3,6 +3,7 @@ import logging
 import traceback
 from dataclasses import dataclass, field
 from typing import Any, Optional
+
 from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
@@ -71,7 +72,7 @@ class LootGenerator(View):
                     generated_list.extend(generated.get("general"))
                     generated_list.extend(generated.get("magic"))
                     self.context["generated_list"] = generated_list
-                    if current_user!=None:
+                    if current_user != None:
                         loot_object.Owner = current_user
                         loot_object.Weapons.set(generated.get("weapons"))
                         loot_object.Armors.set(generated.get("armor"))
