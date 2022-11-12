@@ -5,6 +5,8 @@ from typing import Any, Optional
 from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
+from django.contrib.auth.models import User
+from toolkit.models import Character
 
 from toolkit.views.character_generator.character_generation import Character_Generator
 
@@ -124,6 +126,8 @@ class CharacterGenerator(View):
                 )
                 output.update_proficiencies_from_dict(request.POST)
                 self.context["out"] = output
+
+                self.cache_character(request)
                 return render(request, "character_generator.html", self.context)
             except ValueError as e:
                 self.context["form"] = form
@@ -145,6 +149,27 @@ class CharacterGenerator(View):
         )
         self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
+
+    def cache_character(self, request: HttpRequest, out):
+        # user = User.objects.get(pk=request.user.user_id)
+        # request.user.savecache.character =
+        Character(
+            Owner=request.user,
+            Name=request.POST.get("character_name", ""),
+            AccountOwner=request.POST.get("player_name"),
+            Race=request.POST.get("race", ""),
+            Class=request.POST.get("clazz", ""),
+            Background=request.POST.get("background", ""),
+            Alignment=request.POST.get("alignment", ""),
+            Level=0,
+            Experience=0,
+            Strength=out.strength,
+            Dexterity=out.dexterity,
+            Constitution=out.constitution,
+            Intelligence=out.intelligence,
+            Wisdom=out.wisdom,
+            Charisma=out.charisma,
+        )
 
 
 @dataclass
