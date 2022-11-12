@@ -10,8 +10,8 @@
         <div class="col p-0">
           <div class="generator-header">
             <img src="{% static "Character_Header.png" %}"
-                alt="Character Header"
-                style="width: 45%"/>
+                 alt="Character Header"
+                 style="width: 45%"/>
           </div>
         </div>
       </div>
@@ -195,7 +195,7 @@
                     class="btn btn-lg btn-primary"
                     name="save_button"
                     style="--bs-btn-padding-y: 1rem;"
-                    disabled>
+                    {% if user.is_authenticated == false %} disabled{% endif %}>
               SAVE
             </button>
             <button type="submit"
