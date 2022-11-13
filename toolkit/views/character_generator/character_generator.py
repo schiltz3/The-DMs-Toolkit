@@ -2,12 +2,12 @@ import inspect
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
+from django.contrib.auth.models import User
 from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
-from django.contrib.auth.models import User
-from toolkit.models import Character
 
+from toolkit.models import Character
 from toolkit.views.character_generator.character_generation import Character_Generator
 
 
