@@ -71,6 +71,10 @@ class Armor(models.Model):
     def __str__(self):
         return self.Name
 
+    @property
+    def type(self):
+        return "Armor"
+
 
 class Weapon(models.Model):
     """
@@ -102,6 +106,10 @@ class Weapon(models.Model):
     def __str__(self):
         return self.Name
 
+    @property
+    def type(self):
+        return "Weapon"
+
 
 class GenericItem(models.Model):
     """
@@ -122,6 +130,10 @@ class GenericItem(models.Model):
 
     def __str__(self):
         return self.Name
+
+    @property
+    def type(self):
+        return "Generic Item"
 
 
 class MagicItem(models.Model):
@@ -144,6 +156,10 @@ class MagicItem(models.Model):
 
     def __str__(self):
         return self.Name
+
+    @property
+    def type(self):
+        return "Magic Item"
 
 
 class GeneratedLoot(models.Model):

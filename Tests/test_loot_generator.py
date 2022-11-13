@@ -93,6 +93,30 @@ class TestLootGenerator(TestCase):
         )
         self.assertTrue(form.is_valid())
 
+    def test_valid_form_total_hoard_value_empty(self):
+        """Tests to see if a user's input form is valid when given empty total hoard value."""
+        form = self.form.from_dict(
+            {
+                "generator_type": self.generator_type,
+                "loot_type": self.loot_type,
+                "total_hoard_value": "",
+                "average_player_level": self.average_player_level,
+            }
+        )
+        self.assertTrue(form.is_valid())
+
+    def test_valid_form_player_level_empty(self):
+        """Tests to see if a user's input form is valid when given empty player level."""
+        form = self.form.from_dict(
+            {
+                "generator_type": self.generator_type,
+                "loot_type": self.loot_type,
+                "total_hoard_value": self.total_hoard_value,
+                "average_player_level": "",
+            }
+        )
+        self.assertTrue(form.is_valid())
+
     def test_invalid_form_generator_type(self):
         """Tests to see if a user's input form is valid when given bad generator_type."""
         form = self.form.from_dict(
@@ -118,43 +142,19 @@ class TestLootGenerator(TestCase):
         self.assertFalse(form.is_valid())
 
     def test_invalid_form_total_hoard_value(self):
-        """Tests to see if a user's input form is valid when given zero total hoard value."""
+        """Tests to see if a user's input form is valid when given less than zero total hoard value."""
         form = self.form.from_dict(
             {
                 "generator_type": self.generator_type,
                 "loot_type": self.loot_type,
-                "total_hoard_value": 0,
+                "total_hoard_value": -1,
                 "average_player_level": self.average_player_level,
-            }
-        )
-        self.assertFalse(form.is_valid())
-
-    def test_invalid_form_total_hoard_value_empty(self):
-        """Tests to see if a user's input form is valid when given empty total hoard value."""
-        form = self.form.from_dict(
-            {
-                "generator_type": self.generator_type,
-                "loot_type": self.loot_type,
-                "total_hoard_value": "",
-                "average_player_level": self.average_player_level,
-            }
-        )
-        self.assertFalse(form.is_valid())
-
-    def test_invalid_form_player_level_empty(self):
-        """Tests to see if a user's input form is valid when given empty player level."""
-        form = self.form.from_dict(
-            {
-                "generator_type": self.generator_type,
-                "loot_type": self.loot_type,
-                "total_hoard_value": self.total_hoard_value,
-                "average_player_level": "",
             }
         )
         self.assertFalse(form.is_valid())
 
     def test_invalid_form_player_level_zero(self):
-        """Tests to see if a user's input form is valid when given zero player level."""
+        """Tests to see if a user's input form is valid when given zero or less player level."""
         form = self.form.from_dict(
             {
                 "generator_type": self.generator_type,
@@ -211,8 +211,8 @@ class TestLootGenerator(TestCase):
         with self.assertRaises(KeyError):
             self.assertEqual(response.context["total_value"], 0)
 
-    def test_unsuccessful_generate_total_hoard_value(self):
-        """Tests if a user is able to successfully generate loot after giving incorrect hoard value input."""
+    def test_successful_generate_total_hoard_value(self):
+        """Tests if a user is able to successfully generate loot after giving empty hoard value input."""
         response = self.client.post(
             self.loot_generator_url,
             data={
@@ -225,11 +225,10 @@ class TestLootGenerator(TestCase):
             follow=True,
         )
         self.assertEqual(response.status_code, 200)
-        with self.assertRaises(KeyError):
-            self.assertEqual(response.context["total_value"], 0)
+        self.assertNotEqual(response.context["total_value"], 0)
 
-    def test_unsuccessful_generate_average_player_level(self):
-        """Tests if a user is able to successfully generate loot after giving incorrect level input."""
+    def test_successful_generate_average_player_level(self):
+        """Tests if a user is able to successfully generate loot after giving empty level input."""
         response = self.client.post(
             self.loot_generator_url,
             data={
@@ -242,8 +241,23 @@ class TestLootGenerator(TestCase):
             follow=True,
         )
         self.assertEqual(response.status_code, 200)
-        with self.assertRaises(KeyError):
-            self.assertEqual(response.context["total_value"], 0)
+        self.assertNotEqual(response.context["total_value"], 0)
+
+    def test_successful_generate_average_player_level_hoard_value(self):
+        """Tests if a user is able to successfully generate loot after giving empty level input and hoard value."""
+        response = self.client.post(
+            self.loot_generator_url,
+            data={
+                "generate_button": "",
+                "generator_type": self.generator_type,
+                "loot_type": self.loot_type,
+                "total_hoard_value": "",
+                "average_player_level": "",
+            },
+            follow=True,
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertNotEqual(response.context["total_value"], 0)
 
     def test_successful_generate(self):
         """Tests if a user is able to successfully generate loot after giving correct input."""
