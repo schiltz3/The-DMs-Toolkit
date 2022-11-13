@@ -45,7 +45,7 @@ class Character(models.Model):
     Charisma = models.IntegerField()
 
     def __str__(self):
-        return f"Name: {self.Name}, lvl: {self.Level}, Class: {self.Class}"
+        return f"Name: {self.Name}, Owner: {self.Owner}, lvl: {self.Level}, Class: {self.Class}"
 
 
 class Armor(models.Model):
@@ -71,7 +71,7 @@ class Armor(models.Model):
     Stealth = models.BooleanField()
 
     def __str__(self):
-        return "Armor"
+        return self.Name
 
 
 class Weapon(models.Model):
@@ -102,7 +102,7 @@ class Weapon(models.Model):
     # So heavy two handed with reach would be 101100000
 
     def __str__(self):
-        return "Weapon"
+        return self.Name
 
 
 class GenericItem(models.Model):
@@ -123,7 +123,7 @@ class GenericItem(models.Model):
     Weight = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
-        return "Generic"
+        return self.Name
 
 
 class MagicItem(models.Model):
@@ -145,7 +145,7 @@ class MagicItem(models.Model):
     Attuned = models.BooleanField()
 
     def __str__(self):
-        return "Magic"
+        return self.Name
 
 
 class GeneratedLoot(models.Model):
@@ -212,6 +212,9 @@ class Monster(models.Model):
     Gold_Modifier = models.FloatField(blank=True, null=True)
     Creature_Tags = models.ManyToManyField(Tag)
 
+    def __str__(self) -> str:
+        return self.Name
+
 
 class GeneratedEncounter(models.Model):
     """
@@ -237,6 +240,9 @@ class GeneratedEncounter(models.Model):
     )
     Encounter_Tags = models.ManyToManyField(Tag, blank=True)
     Monsters = models.ManyToManyField(Monster)
+
+    def __str__(self) -> str:
+        return f"{self.Encounter_Type},\t{self.Monsters}"
 
 
 
