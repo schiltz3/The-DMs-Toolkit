@@ -70,7 +70,7 @@ class Armor(models.Model):
 
     def __str__(self):
         return self.Name
-    
+
     @property
     def type(self):
         return f"Armor"
@@ -105,7 +105,7 @@ class Weapon(models.Model):
 
     def __str__(self):
         return self.Name
-    
+
     @property
     def type(self):
         return f"Weapon"
@@ -130,7 +130,7 @@ class GenericItem(models.Model):
 
     def __str__(self):
         return self.Name
-    
+
     @property
     def type(self):
         return f"Generic Item"
@@ -156,7 +156,7 @@ class MagicItem(models.Model):
 
     def __str__(self):
         return self.Name
-    
+
     @property
     def type(self):
         return f"Magic Item"

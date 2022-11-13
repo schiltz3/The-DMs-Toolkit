@@ -92,7 +92,7 @@ class TestLootGenerator(TestCase):
             }
         )
         self.assertTrue(form.is_valid())
-        
+
     def test_valid_form_total_hoard_value_empty(self):
         """Tests to see if a user's input form is valid when given empty total hoard value."""
         form = self.form.from_dict(
@@ -242,7 +242,7 @@ class TestLootGenerator(TestCase):
         )
         self.assertEqual(response.status_code, 200)
         self.assertNotEqual(response.context["total_value"], 0)
-        
+
     def test_successful_generate_average_player_level_hoard_value(self):
         """Tests if a user is able to successfully generate loot after giving empty level input and hoard value."""
         response = self.client.post(
