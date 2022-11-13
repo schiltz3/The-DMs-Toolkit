@@ -1,7 +1,6 @@
 from typing import Optional
 
 from django.contrib.auth.models import User
-from django.core.exceptions import ObjectDoesNotExist
 
 from toolkit.models import Character
 from toolkit.views.character_generator.character_elements import (
