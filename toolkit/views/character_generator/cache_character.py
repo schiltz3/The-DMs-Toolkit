@@ -31,8 +31,7 @@ def cache_character(
         Wisdom=output.wisdom,
         Charisma=output.charisma,
     )
-    # one to one relationships get fields passed though at runtime
-    cache = user.cache.character  # type: ignore
+    cache = user.cache.character
     if cache is not None:
         cache.delete()
 
@@ -46,3 +45,11 @@ def save_cached_character(user: User) -> Optional[Character]:
     user.cache.character = None
     user.save()
     return ret
+
+
+def delete_cached_character(user: User):
+    cache = user.cache.character
+    if cache is not None:
+        cache.delete()
+    user.cache.character = None
+    user.save()

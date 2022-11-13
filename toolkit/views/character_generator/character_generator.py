@@ -9,6 +9,7 @@ from toolkit.views.character_generator.character_generation import Character_Gen
 from toolkit.views.character_generator.cache_character import (
     cache_character,
     save_cached_character,
+    delete_cached_character,
 )
 from toolkit.views.character_generator.character_elements import (
     Element,
@@ -162,6 +163,8 @@ class CharacterGenerator(View):
             request.POST.get("clear_button") is not None
             or request.POST.get("close_save_button") is not None
         ):
+            if request.user.is_authenticated:
+                delete_cached_character(request.user)
             self.context["data"] = GenerateCharacterInputs(
                 player_name=Element(request.user.get_username())
             )
