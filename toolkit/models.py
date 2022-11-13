@@ -1,5 +1,7 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 
@@ -257,3 +259,34 @@ class GeneratedEncounter(models.Model):
 
     def __str__(self) -> str:
         return f"{self.Encounter_Type},\t{self.Monsters}"
+
+
+class Cache(models.Model):
+    """
+    The model to cache generated items in before saving
+
+    Args:
+        user (User): user to cache generated items for
+        character (Character): character to cache
+    """
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    character = models.OneToOneField(
+        Character, on_delete=models.CASCADE, null=True, blank=True
+    )
+
+    def __str__(self) -> str:
+        return f"{self.user},\t{self.character}"
+
+
+@receiver(post_save, sender=User)
+def create_user_cache(sender, instance, created, **kwargs):
+    """Create a cache object when creating the user object"""
+    if created:
+        Cache.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_cache(sender, instance, **kwargs):
+    """Save the cache object when saving the user object"""
+    instance.cache.save()
