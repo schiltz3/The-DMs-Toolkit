@@ -274,4 +274,3 @@ def create_user_cache(sender, instance, created, **kwargs):
 def save_user_cache(sender, instance, **kwargs):
     """Save the cache object when saving the user object"""
     instance.cache.save()
-    Cache.save()
