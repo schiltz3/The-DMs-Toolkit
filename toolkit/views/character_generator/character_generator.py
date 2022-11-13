@@ -126,7 +126,9 @@ class CharacterGenerator(View):
                 if request.user.is_authenticated:
                     try:
                         cache_character(
-                            request.user, input=self.context["data"], output=output
+                            request.user,
+                            char_input=self.context["data"],
+                            char_output=output,
                         )
                         self.context["cached"] = True
                     except TypeError as e:

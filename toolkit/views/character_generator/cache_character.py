@@ -12,25 +12,25 @@ from toolkit.views.character_generator.character_elements import (
 
 def cache_character(
     user: User,
-    input: GenerateCharacterInputs,
-    output: GeneratedCharacterOutputs,
+    char_input: GenerateCharacterInputs,
+    char_output: GeneratedCharacterOutputs,
 ):
 
     character = Character(
         Owner=user,
-        Name=input.character_name.value,
-        Race=input.race.value,
-        Class=input.clazz.value,
-        Background=input.background.value,
-        Alignment=input.alignment.value,
+        Name=char_input.character_name.value,
+        Race=char_input.race.value,
+        Class=char_input.clazz.value,
+        Background=char_input.background.value,
+        Alignment=char_input.alignment.value,
         Level=0,
         Experience=0,
-        Strength=output.strength,
-        Dexterity=output.dexterity,
-        Constitution=output.constitution,
-        Intelligence=output.intelligence,
-        Wisdom=output.wisdom,
-        Charisma=output.charisma,
+        Strength=char_output.strength,
+        Dexterity=char_output.dexterity,
+        Constitution=char_output.constitution,
+        Intelligence=char_output.intelligence,
+        Wisdom=char_output.wisdom,
+        Charisma=char_output.charisma,
     )
     cache = user.cache.character
     if cache is not None:
