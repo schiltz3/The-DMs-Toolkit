@@ -1,5 +1,6 @@
 import inspect
 from dataclasses import dataclass, field
+import logging
 from typing import Any, Optional
 
 from django.http.request import HttpRequest
@@ -9,6 +10,8 @@ from django.contrib.auth.models import User
 from toolkit.models import Character
 
 from toolkit.views.character_generator.character_generation import Character_Generator
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -168,7 +171,6 @@ class GeneratedCharacterOutputs:
         for ek in env.keys():
             sk = self.stats.get(ek)
             if sk is not None:
-                print(sk)
                 sk.proficiency = self.proficiency.value
                 sk.checked = True
 
@@ -279,15 +281,14 @@ class CharacterGenerator(View):
     def post(self, request: HttpRequest):
         """POST method for create user page."""
 
-        print(request.POST)
+        logger.info(request.POST)
 
         form = GenerateCharacterInputs.from_dict(request.POST)
-        print(form)
         self.context["data"] = form
         self.context["error"] = None
         if not form.is_valid():
             self.context["form"] = form
-            print("Invalid form")
+            logger.info("Invalid form")
             self.context["data"] = GenerateCharacterInputs(
                 player_name=Element(request.user.get_username())
             )
