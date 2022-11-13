@@ -14,6 +14,13 @@ def cache_character(
     char_input: GenerateCharacterInputs,
     char_output: GeneratedCharacterOutputs,
 ):
+    """Create and cache a character from the character_generator view
+
+    Args:
+        user (User): User to cache the character on
+        char_input (GenerateCharacterInputs): User inputs to save in the character
+        char_output (GeneratedCharacterOutputs): Generated stats to save in the character
+    """
 
     character = Character(
         Owner=user,
@@ -41,6 +48,14 @@ def cache_character(
 
 
 def save_cached_character(user: User) -> Optional[Character]:
+    """Save the cached character to the database
+
+    Args:
+        user (User): User who has the created character
+
+    Returns:
+        Optional[Character]: Character if one is cached, else None
+    """
     ret = user.cache.character
     user.cache.character = None
     user.save()
@@ -48,6 +63,11 @@ def save_cached_character(user: User) -> Optional[Character]:
 
 
 def delete_cached_character(user: User):
+    """Delete cached character
+
+    Args:
+        user (User): User to delete the cache on
+    """
     cache = user.cache.character
     if cache is not None:
         cache.delete()

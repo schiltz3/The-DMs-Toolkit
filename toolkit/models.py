@@ -257,11 +257,13 @@ class Cache(models.Model):
 
 @receiver(post_save, sender=User)
 def create_user_cache(sender, instance, created, **kwargs):
+    """Create a cache object when creating the user object"""
     if created:
         Cache.objects.create(user=instance)
 
 
 @receiver(post_save, sender=User)
 def save_user_cache(sender, instance, **kwargs):
+    """Save the cache object when saving the user object"""
     instance.cache.save()
     Cache.save()
