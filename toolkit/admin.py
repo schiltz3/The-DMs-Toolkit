@@ -11,6 +11,7 @@ from .models import (
     Monster,
     Tag,
     Weapon,
+    Cache,
 )
 
 admin.site.register(Character)
@@ -22,3 +23,4 @@ admin.site.register(GeneratedLoot)
 admin.site.register(Tag)
 admin.site.register(Monster)
 admin.site.register(GeneratedEncounter)
+admin.site.register(Cache)
