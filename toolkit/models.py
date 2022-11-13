@@ -246,6 +246,14 @@ class GeneratedEncounter(models.Model):
 
 
 class Cache(models.Model):
+    """
+    The model to cache generated items in before saving
+
+    Args:
+        user (User): user to cache generated items for
+        character (Character): character to cache
+    """
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     character = models.OneToOneField(
         Character, on_delete=models.CASCADE, null=True, blank=True
