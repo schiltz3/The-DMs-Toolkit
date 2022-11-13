@@ -256,11 +256,14 @@ class Cache(models.Model):
 
 
 @receiver(post_save, sender=User)
-def create_user_savecache(sender, instance, created, **kwargs):
+def create_user_cache(sender, instance, created, **kwargs):
     if created:
         Cache.objects.create(user=instance)
 
 
 @receiver(post_save, sender=User)
-def save_user_savecache(sender, instance, **kwargs):
-    instance.cache.save()
+def save_user_cache(sender, instance, **kwargs):
+    try:
+        instance.cache.save()
+    except:
+        print("Delete user and create new user")
