@@ -1,5 +1,7 @@
+from typing import Optional
 from django.contrib.auth.models import User
 from toolkit.models import Character
+from django.core.exceptions import ObjectDoesNotExist
 
 from toolkit.views.character_generator.character_elements import (
     GenerateCharacterInputs,
@@ -31,13 +33,16 @@ def cache_character(
     )
     # one to one relationships get fields passed though at runtime
     cache = user.cache.character  # type: ignore
-
-    character.save()
     if cache is not None:
         cache.delete()
-    cache = character
+
+    character.save()
+    user.cache.character = character
     user.save()
 
 
-def retrieve_cached_character(self):
-    pass
+def save_cached_character(user: User) -> Optional[Character]:
+    ret = user.cache.character
+    user.cache.character = None
+    user.save()
+    return ret
