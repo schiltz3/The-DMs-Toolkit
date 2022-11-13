@@ -62,8 +62,12 @@ class LootGenerator(View):
             try:
                 generated = self.generator.generate_loot(
                     generator_key=form.generator_type.value,
-                    level=int(form.average_player_level.value),
-                    approximate_total_value=int(form.total_hoard_value.value),
+                    level=1
+                    if form.average_player_level.value == ""
+                    else int(form.average_player_level.value),
+                    approximate_total_value=0
+                    if form.total_hoard_value.value == ""
+                    else int(form.total_hoard_value.value),
                     input_loot_type=form.loot_type.value,
                 )
                 loot_object = generated.get("loot_object")
@@ -91,8 +95,8 @@ class GenerateLootInputs:
 
     generator_type: Element = field(default_factory=lambda: Element("Random"))
     loot_type: Element = field(default_factory=lambda: Element("Random"))
-    total_hoard_value: Element = field(default_factory=lambda: Element(0))
-    average_player_level: Element = field(default_factory=lambda: Element(0))
+    total_hoard_value: Element = field(default_factory=Element)  # Optional
+    average_player_level: Element = field(default_factory=Element)  # Optional
 
     @classmethod
     def from_dict(cls, env: dict[str, Any]):
@@ -128,12 +132,11 @@ class GenerateLootInputs:
             and self.loot_type.value != "Random"
         ):
             return False
-        if self.total_hoard_value.value == "":
+        if self.total_hoard_value.value != "" and int(self.total_hoard_value.value) < 0:
             return False
-        if int(self.total_hoard_value.value) <= 0:
-            return False
-        if self.average_player_level.value == "":
-            return False
-        if not 0 < int(self.average_player_level.value) <= 21:
+        if (
+            self.average_player_level.value != ""
+            and not 0 < int(self.average_player_level.value) <= 21
+        ):
             return False
         return True
