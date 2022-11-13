@@ -245,7 +245,6 @@ class GeneratedEncounter(models.Model):
         return f"{self.Encounter_Type},\t{self.Monsters}"
 
 
-
 class Cache(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     character = models.OneToOneField(
@@ -264,4 +263,4 @@ def create_user_savecache(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=User)
 def save_user_savecache(sender, instance, **kwargs):
-    instance.savecache.save()
+    instance.cache.save()
