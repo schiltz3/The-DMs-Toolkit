@@ -115,8 +115,8 @@
                             <tr>
                                 <th scope="row">{{forloop.counter}}</th>
                                 <td>{{ item.Name }}</td>
-                                <td>{{ item }}</td>
-                                {% if item|stringformat:"s" != "Magic" %} 
+                                <td>{{ item.type }}</td>
+                                {% if item.type != "Magic Item" %} 
                                     <td>{{ item.Base_Value }}</td>
                                 {% else %}
                                     <td>{{ item.Rarity }}</td>
