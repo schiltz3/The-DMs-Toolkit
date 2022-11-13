@@ -1,11 +1,8 @@
 import inspect
 from dataclasses import dataclass, field
-import logging
 from typing import Any, Optional
 
-from django.http.request import HttpRequest
-from django.shortcuts import render
-from django.views import View
+from toolkit.views.character_generator.character_generation import Character_Generator
 
 
 @dataclass

@@ -1,4 +1,3 @@
-from django.http.request import HttpRequest
 from django.contrib.auth.models import User
 from toolkit.models import Character
 
@@ -9,15 +8,10 @@ from toolkit.views.character_generator.character_elements import (
 
 
 def cache_character(
-    request: HttpRequest,
+    user: User,
     input: GenerateCharacterInputs,
     output: GeneratedCharacterOutputs,
 ):
-    user = request.user
-    if type(user) is not User:
-        raise TypeError(
-            f"User is of class {type(user)} when it should be User. Is user not logged in?"
-        )
 
     character = Character(
         Owner=user,

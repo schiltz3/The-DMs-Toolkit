@@ -1,4 +1,5 @@
 import logging
+from django.contrib.auth.models import User
 
 from django.http.request import HttpRequest
 from django.shortcuts import render
@@ -123,9 +124,13 @@ class CharacterGenerator(View):
                 self.context["out"] = output
 
                 if request.user.is_authenticated:
+                    if type(request.user) is not User:
+                        raise TypeError(
+                            f"User is of class {type(request.user)} when it should be User. Is user not logged in?"
+                        )
                     try:
                         cache_character(
-                            request, input=self.context["data"], output=output
+                            request.user, input=self.context["data"], output=output
                         )
                     except TypeError as e:
                         logger.warning(e)
