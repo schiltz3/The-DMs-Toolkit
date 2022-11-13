@@ -1,5 +1,5 @@
 import logging
-from django.contrib.auth.models import User
+from django.contrib import messages
 
 from django.http.request import HttpRequest
 from django.shortcuts import render
@@ -8,7 +8,7 @@ from django.views import View
 from toolkit.views.character_generator.character_generation import Character_Generator
 from toolkit.views.character_generator.cache_character import (
     cache_character,
-    retrieve_cached_character,
+    save_cached_character,
 )
 from toolkit.views.character_generator.character_elements import (
     Element,
@@ -51,6 +51,7 @@ class CharacterGenerator(View):
         self.context["alignment_choices_list"] = sorted(
             self.generator.ALIGNMENT_DICT.get("All")
         )
+        self.context["cached"] = False
 
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
@@ -62,8 +63,6 @@ class CharacterGenerator(View):
 
     def post(self, request: HttpRequest):
         """POST method for create user page."""
-
-        logger.info(request.POST)
 
         form = GenerateCharacterInputs.from_dict(request.POST)
         self.context["data"] = form
@@ -124,14 +123,11 @@ class CharacterGenerator(View):
                 self.context["out"] = output
 
                 if request.user.is_authenticated:
-                    if type(request.user) is not User:
-                        raise TypeError(
-                            f"User is of class {type(request.user)} when it should be User. Is user not logged in?"
-                        )
                     try:
                         cache_character(
                             request.user, input=self.context["data"], output=output
                         )
+                        self.context["cached"] = True
                     except TypeError as e:
                         logger.warning(e)
                 return render(request, "character_generator.html", self.context)
@@ -141,8 +137,31 @@ class CharacterGenerator(View):
                 return render(request, "character_generator.html", self.context)
 
         if request.POST.get("save_button") is not None:
+            self.context["cached"] = True
+            character = None
+            if request.user.is_authenticated:
+                character = save_cached_character(request.user)
+
+            self.context["data"] = GenerateCharacterInputs.from_dict(request.POST)
+            if character:
+                self.context["out"] = GeneratedCharacterOutputs(
+                    calculate=True,
+                    strength=character.Strength,
+                    dexterity=character.Dexterity,
+                    constitution=character.Constitution,
+                    intelligence=character.Intelligence,
+                    wisdom=character.Wisdom,
+                    charisma=character.Charisma,
+                ).update_proficiencies_from_dict(request.POST)
+                messages.success(request, "Character saved successfully!")
+            else:
+                self.context["out"] = GeneratedCharacterOutputs(calculate=False)
             return render(request, "character_generator.html", self.context)
-        if request.POST.get("clear_button") is not None:
+
+        if (
+            request.POST.get("clear_button") is not None
+            or request.POST.get("close_save_button") is not None
+        ):
             self.context["data"] = GenerateCharacterInputs(
                 player_name=Element(request.user.get_username())
             )
