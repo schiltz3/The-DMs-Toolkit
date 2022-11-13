@@ -263,7 +263,5 @@ def create_user_cache(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender=User)
 def save_user_cache(sender, instance, **kwargs):
-    try:
-        instance.cache.save()
-    except:
-        print("Delete user and create new user")
+    instance.cache.save()
+    Cache.save()
