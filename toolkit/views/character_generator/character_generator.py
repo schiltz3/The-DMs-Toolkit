@@ -340,7 +340,7 @@ class CharacterGenerator(View):
                 output.update_proficiencies_from_dict(request.POST)
                 self.context["out"] = output
 
-                self.cache_character(request)
+                self.cache_character(request, input=self.context["data"], output=output)
                 return render(request, "character_generator.html", self.context)
             except ValueError as e:
                 self.context["form"] = form
@@ -363,23 +363,39 @@ class CharacterGenerator(View):
         self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
 
-    def cache_character(self, request: HttpRequest, out):
-        # user = User.objects.get(pk=request.user.user_id)
+    def cache_character(
+        self,
+        request: HttpRequest,
+        input: GenerateCharacterInputs,
+        output: GeneratedCharacterOutputs,
+    ):
+        print(request.user.pk)
+        user = User.objects.get(pk=request.user.pk)
         # request.user.savecache.character =
-        Character(
-            Owner=request.user,
-            Name=request.POST.get("character_name", ""),
-            AccountOwner=request.POST.get("player_name"),
-            Race=request.POST.get("race", ""),
-            Class=request.POST.get("clazz", ""),
-            Background=request.POST.get("background", ""),
-            Alignment=request.POST.get("alignment", ""),
+        print(type(request.user))
+        character = Character(
+            Owner=user,
+            Name=input.character_name.value,
+            Race=input.race.value,
+            Class=input.clazz.value,
+            Background=input.background.value,
+            Alignment=input.alignment.value,
             Level=0,
             Experience=0,
-            Strength=out.strength,
-            Dexterity=out.dexterity,
-            Constitution=out.constitution,
-            Intelligence=out.intelligence,
-            Wisdom=out.wisdom,
-            Charisma=out.charisma,
+            Strength=output.strength,
+            Dexterity=output.dexterity,
+            Constitution=output.constitution,
+            Intelligence=output.intelligence,
+            Wisdom=output.wisdom,
+            Charisma=output.charisma,
         )
+        print(character)
+
+    # character_name: Element = field(default_factory=lambda: Element(""))
+    # player_name: Element = field(default_factory=Element)  # Optional
+    # clazz: Element = field(default_factory=lambda: Element("All"))
+    # background: Element = field(default_factory=lambda: Element("All"))
+    # race: Element = field(default_factory=lambda: Element("All"))
+    # alignment: Element = field(default_factory=lambda: Element("All"))
+    # generator_type: Element = field(default_factory=lambda: Element("3D6"))
+    # experience_points: Element = field(default_factory=lambda: Element(0))
