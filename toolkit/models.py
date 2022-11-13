@@ -43,7 +43,7 @@ class Character(models.Model):
     Charisma = models.IntegerField()
 
     def __str__(self):
-        return self.Name + " Level " + self.Level + " " + self.Class
+        return f"Name: {self.Name}, lvl: {self.Level}, Class: {self.Class}"
 
 
 class Armor(models.Model):
