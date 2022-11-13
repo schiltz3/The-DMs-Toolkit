@@ -29,7 +29,7 @@ def cache_character(
         Class=char_input.clazz.value,
         Background=char_input.background.value,
         Alignment=char_input.alignment.value,
-        Level=0,
+        Level=1,
         Experience=0,
         Strength=char_output.strength,
         Dexterity=char_output.dexterity,
