@@ -3,6 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from .models import (
     Armor,
+    Cache,
     Character,
     GeneratedEncounter,
     GeneratedLoot,
@@ -11,7 +12,6 @@ from .models import (
     Monster,
     Tag,
     Weapon,
-    Cache,
 )
 
 admin.site.register(Character)

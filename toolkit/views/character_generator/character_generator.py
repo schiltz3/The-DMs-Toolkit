@@ -1,21 +1,21 @@
 import logging
-from django.contrib import messages
 
+from django.contrib import messages
 from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
 
-from toolkit.views.character_generator.character_generation import Character_Generator
 from toolkit.views.character_generator.cache_character import (
     cache_character,
-    save_cached_character,
     delete_cached_character,
+    save_cached_character,
 )
 from toolkit.views.character_generator.character_elements import (
     Element,
     GenerateCharacterInputs,
     GeneratedCharacterOutputs,
 )
+from toolkit.views.character_generator.character_generation import Character_Generator
 
 logger = logging.getLogger(__name__)
 
