@@ -17,7 +17,7 @@ def main():
         ) from exc
     is_testing = "test" in sys.argv
     if is_testing:
-        import coverage
+        import coverage  # type: ignore
 
         cov = coverage.coverage(
             source=["toolkit/views"], omit=["*/tests/*", "*/Tests/*"]
