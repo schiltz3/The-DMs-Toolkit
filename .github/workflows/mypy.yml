@@ -19,7 +19,7 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install mypy
-          pip install --upgrade --upgrade-strategy eager -r requirements.txt -e .
+          pip install --upgrade --upgrade-strategy eager -r requirements.txt
       - name: mypy
         run: |
           mypy ./
