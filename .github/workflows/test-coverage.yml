@@ -1,10 +1,11 @@
 name: Test Coverage
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Django CI"]
     branches: ["master"]
-  pull_request:
-    branches: ["master"]
+    types:
+      - completed
 
 jobs:
   fetch:
