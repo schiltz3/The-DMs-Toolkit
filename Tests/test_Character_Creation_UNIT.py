@@ -354,7 +354,7 @@ class Arrange_Tests(unittest.TestCase):
 
     def test_positive_arrange(self):
         """Testing to make sure the arrange algorithm works"""
-        results = self.generator.Arrange("Paladin", [15, 10, 12, 13, 18, 9])
+        results = self.generator.arrange_stats("Paladin", [15, 10, 12, 13, 18, 9])
         self.assertEqual(results[0], 18)
         self.assertEqual(results[1], 12)
         self.assertEqual(results[2], 13)
@@ -374,12 +374,12 @@ class Arrange_Tests(unittest.TestCase):
         with self.assertRaises(
             RuntimeError, msg="Should not accept a non existing class"
         ):
-            self.generator.Arrange("Potato", [18, 16, 14, 12, 10, 8])
+            self.generator.arrange_stats("Potato", [18, 16, 14, 12, 10, 8])
         with self.assertRaises(RuntimeError, msg="Should not accept a too small list"):
-            self.generator.Arrange("Rogue", [18, 16, 14, 12, 10])
+            self.generator.arrange_stats("Rogue", [18, 16, 14, 12, 10])
         with self.assertRaises(RuntimeError, msg="Should not accept a too big list"):
-            self.generator.Arrange("Bard", [18, 16, 14, 12, 10, 8, 6, 4])
+            self.generator.arrange_stats("Bard", [18, 16, 14, 12, 10, 8, 6, 4])
         with self.assertRaises(
             RuntimeError, msg="Should not accept a non integer in the list"
         ):
-            self.generator.Arrange("Warlock", [18, 16, 14, 12, "Test"])
+            self.generator.arrange_stats("Warlock", [18, 16, 14, 12, "Test"])

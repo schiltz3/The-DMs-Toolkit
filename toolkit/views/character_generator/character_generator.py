@@ -105,12 +105,12 @@ class CharacterGenerator(View):
                     )
 
                 if stat_generator_key == "Standard":
-                    stats = Character_Generator.Arrange(
+                    stats = Character_Generator.arrange_stats(
                         form.clazz.value, Character_Generator.STANDARD_ARRAY
                     )
                 else:
                     stats = self.generator.generate_stat_list(stat_generator_key)
-
+                    stats = self.generator.arrange_stats(clazz, stats)
                 output = GeneratedCharacterOutputs(
                     calculate=True,
                     strength=stats[0],
