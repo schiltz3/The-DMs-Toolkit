@@ -39,7 +39,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Debug
-      - run: ls
+        run: ls
       - name: Report results to DeepSource
         run: |
           curl https://deepsource.io/cli | sh
