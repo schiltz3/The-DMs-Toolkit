@@ -17,18 +17,17 @@ class SavedCharacters(View):
         if not request.user.is_authenticated:
             messages.warning(request, "You must be logged in to access this page.")
             return redirect("login")
-        else:
-            User = request.user
-            self.context["char_list"] = Character.objects.filter(Owner=User)
+        User = request.user
+        self.context["char_list"] = Character.objects.filter(Owner=User)
         return render(request, "saved_characters.html", self.context)
-
+    @staticmethod
     def post(self, request: HttpRequest):
         """POST method for saved characters page"""
         if not request.user.is_authenticated:
             messages.warning(request, "You must be logged in to access this page.")
             return redirect("login")
-        elif request.POST.get("Delete") is not None:
+        if request.POST.get("Delete") is not None:
             pass
-        elif request.POST.get("Details") is not None:
+        if request.POST.get("Details") is not None:
             return render(request, "character_generator.html")
         return render(request, "saved_characters.html")
