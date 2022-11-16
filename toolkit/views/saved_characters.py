@@ -12,7 +12,6 @@ class SavedCharacters(View):
     def __init__(self):
         self.context: dict[str, any] = {}
 
-    @staticmethod
     def get(self, request: HttpRequest):
         """GET method for saved characters page"""
         if not request.user.is_authenticated:
@@ -23,7 +22,6 @@ class SavedCharacters(View):
             self.context["char_list"] = Character.objects.filter(Owner=User)
         return render(request, "saved_characters.html", self.context)
 
-    @staticmethod
     def post(self, request: HttpRequest):
         """POST method for saved characters page"""
         if not request.user.is_authenticated:
