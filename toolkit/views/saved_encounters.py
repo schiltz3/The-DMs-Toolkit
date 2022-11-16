@@ -9,6 +9,7 @@ class SavedEncounters(View):
     """A class to handle the retrieval and list of a user's saved characters."""
 
     def __init__(self):
+        super(SavedEncounters,self).__init__()
         self.context: dict[str, any] = {}
 
     def get(self, request: HttpRequest):
