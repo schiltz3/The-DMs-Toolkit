@@ -22,10 +22,10 @@ def cache_loot(
 
     """
     loot = GeneratedLoot(
-        Owner = user,
-        Loot_Type = loot_type_output,
-        Total_Value = total_value_output,
-        Money = money_output,
+        Owner=user,
+        Loot_Type=loot_type_output,
+        Total_Value=total_value_output,
+        Money=money_output,
     )
     loot.save()
     cache = user.cache.loot
