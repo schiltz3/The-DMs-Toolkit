@@ -90,7 +90,9 @@ class LootGenerator(View):
                     try:
                         cache_loot(
                             user=request.user,
-                            loot=loot_object,
+                            loot_type_output=form.loot_type.value,
+                            total_value_output=loot_object.Total_Value,
+                            money_output=loot_object.Money,
                             weapons_output=generated.get("weapons"),
                             armors_output=generated.get("armors"),
                             generic_items_output=generated.get("general"),
