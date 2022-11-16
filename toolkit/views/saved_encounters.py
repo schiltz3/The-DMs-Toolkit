@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.http.request import HttpRequest
 from django.shortcuts import redirect, render
 from django.views import View
+
 from toolkit.models import GeneratedEncounter
 
 
@@ -19,7 +20,8 @@ class SavedEncounters(View):
         User = request.user
         self.context["encounter_list"] = GeneratedEncounter.objects.filter(Owner=User)
         return render(request, "saved_encounters.html", self.context)
-    @staticmethod 
+
+    @staticmethod
     def post(request: HttpRequest):
         """POST method for saved encounter page"""
         if not request.user.is_authenticated:

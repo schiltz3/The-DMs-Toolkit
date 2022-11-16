@@ -20,6 +20,7 @@ class SavedCharacters(View):
         User = request.user
         self.context["char_list"] = Character.objects.filter(Owner=User)
         return render(request, "saved_characters.html", self.context)
+
     @staticmethod
     def post(request: HttpRequest):
         """POST method for saved characters page"""
