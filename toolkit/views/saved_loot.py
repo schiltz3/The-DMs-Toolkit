@@ -2,7 +2,6 @@ from django.contrib import messages
 from django.http.request import HttpRequest
 from django.shortcuts import redirect, render
 from django.views import View
-
 from toolkit.models import GeneratedLoot
 
 

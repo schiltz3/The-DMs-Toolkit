@@ -21,7 +21,7 @@ class SavedCharacters(View):
         self.context["char_list"] = Character.objects.filter(Owner=User)
         return render(request, "saved_characters.html", self.context)
     @staticmethod
-    def post(self, request: HttpRequest):
+    def post(request: HttpRequest):
         """POST method for saved characters page"""
         if not request.user.is_authenticated:
             messages.warning(request, "You must be logged in to access this page.")
