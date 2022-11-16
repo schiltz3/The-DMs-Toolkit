@@ -27,7 +27,7 @@ def cache_loot(
         Total_Value=total_value_output,
         Money=money_output,
     )
-    loot.save()
+    loot.save_base()
     cache = user.cache.loot
     if cache is not None:
         cache.delete()
