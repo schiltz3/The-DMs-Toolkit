@@ -188,6 +188,9 @@ class GeneratedLoot(models.Model):
     Armors = models.ManyToManyField(Armor, blank=True)
     Generic_Items = models.ManyToManyField(GenericItem, blank=True)
     Magical_Items = models.ManyToManyField(MagicItem, blank=True)
+    
+    def __str__(self):
+        return f"Weapons: {self.Weapons}, Armors: {self.Armors}, Generics: {self.Generic_Items}, Magics: {self.Magical_Items}"
 
 
 class Tag(models.Model):
@@ -273,6 +276,9 @@ class Cache(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     character = models.OneToOneField(
         Character, on_delete=models.CASCADE, null=True, blank=True
+    )
+    loot = models.OneToOneField(
+        GeneratedLoot, on_delete=models.CASCADE, null=True, blank=True
     )
 
     def __str__(self) -> str:

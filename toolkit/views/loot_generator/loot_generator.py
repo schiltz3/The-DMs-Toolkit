@@ -4,9 +4,16 @@ import traceback
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
+from django.contrib import messages
 from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
+
+from toolkit.views.loot_generator.cache_loot import (
+    cache_loot,
+    delete_cached_loot,
+    save_cached_loot,
+)
 
 from toolkit.views.loot_generator.loot_generation import Loot_Generator
 
@@ -41,6 +48,7 @@ class LootGenerator(View):
         loot_type_list = ["Random"]
         loot_type_list.extend(sorted(self.generator.LOOT_TYPE_DICT))
         self.context["loot_type_list"] = loot_type_list
+        self.context["cached"] = False
 
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
@@ -75,9 +83,23 @@ class LootGenerator(View):
                 self.context["money"] = int(loot_object.Money)
                 generated_list = generated.get("armor")
                 generated_list.extend(generated.get("weapons"))
-                generated_list.extend(generated.get("general0"))
+                generated_list.extend(generated.get("general"))
                 generated_list.extend(generated.get("magic"))
                 self.context["generated_list"] = generated_list
+                
+                if request.user.is_authenticated:
+                    try:
+                        cache_loot(
+                            user=request.user,
+                            loot=loot_object,
+                            weapons_output=generated.get("weapons"),
+                            armors_output=generated.get("armors"),
+                            generic_items_output=generated.get("general"),
+                            magic_items_output=generated.get("magic"),
+                        )
+                        self.context["cached"] = True
+                    except TypeError as e:
+                        logger.warning(e)
                 return render(request, "loot_generator.html", self.context)
             except ValueError as e:
                 logger.warning(traceback.format_exc())
@@ -85,6 +107,13 @@ class LootGenerator(View):
                 self.context["error"] = str(e)
                 return render(request, "loot_generator.html", self.context)
         if request.POST.get("save_button") is not None:
+            self.context["cached"] = True
+            loot = None
+            if request.user.is_authenticated:
+                loot = save_cached_loot(request.user)
+                messages.success(request, "Loot saved successfully!")
+            else:
+                self.context["form"] = form
             return render(request, "loot_generator.html", self.context)
         return render(request, "loot_generator.html", self.context)
 
