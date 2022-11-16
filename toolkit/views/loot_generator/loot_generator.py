@@ -14,7 +14,6 @@ from toolkit.views.loot_generator.cache_loot import (
     delete_cached_loot,
     save_cached_loot,
 )
-
 from toolkit.views.loot_generator.loot_generation import Loot_Generator
 
 logger = logging.getLogger(__name__)
@@ -86,7 +85,7 @@ class LootGenerator(View):
                 generated_list.extend(generated.get("general"))
                 generated_list.extend(generated.get("magic"))
                 self.context["generated_list"] = generated_list
-                
+
                 if request.user.is_authenticated:
                     try:
                         cache_loot(

@@ -2,7 +2,8 @@ from typing import Optional
 
 from django.contrib.auth.models import User
 
-from toolkit.models import GeneratedLoot, Weapon, Armor, GenericItem, MagicItem
+from toolkit.models import Armor, GeneratedLoot, GenericItem, MagicItem, Weapon
+
 
 def cache_loot(
     user: User,
@@ -16,7 +17,7 @@ def cache_loot(
 
     Args:
         user (User): User to cache the character on
-        
+
     """
     cache = user.cache.loot
     if cache is not None:

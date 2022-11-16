@@ -188,7 +188,7 @@ class GeneratedLoot(models.Model):
     Armors = models.ManyToManyField(Armor, blank=True)
     Generic_Items = models.ManyToManyField(GenericItem, blank=True)
     Magical_Items = models.ManyToManyField(MagicItem, blank=True)
-    
+
     def __str__(self):
         return f"Weapons: {self.Weapons}, Armors: {self.Armors}, Generics: {self.Generic_Items}, Magics: {self.Magical_Items}"
 
