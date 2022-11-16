@@ -3,144 +3,143 @@
 {% load static %}
 
 {% block application_pane %}
-<form action {% url "loot_generator" %} method="post" class="form">
-    {% csrf_token %}
-<div class="container-fluid">
-    <div>
-        <div class="row">
-            <div class="generator-header">
-                <img src="{% static 'Loot_Header.png' %}"
-                     alt="Loot Header"
-                     style="width: 45%"/>
-              </div>
+    <form action {% url "loot_generator" %} method="post" class="form">
+        {% csrf_token %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="generator-header">
+                    <img src="{% static 'Loot_Header.png' %}"
+                        alt="Loot Header"
+                        style="width: 45%"/>
+                </div>
+            </div>
         </div>
         <div class="row mx-0 pt-3 justify-content-center"
-         style="background-color: #7D8B8C;">
-      <div class="col-3">{% include "elements/messages.html" %}</div>
-    </div>
-        <div class="row">
-            <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
-                <label for="generator_type_select" class="form-label">Generator</label>
-                <select class="form-select" 
-                        id="generator_type_select" 
-                        name="generator_type" 
-                        aria-label="generator_type">
-                    <option selected>
-                        {{ data.generator_type.value }}
-                    </option>
-                        {% for choice in generator_type_list %}
-                        {% if choice != data.generator_type.value %}
-                            <option value="{{ choice }}">
-                            {{ choice }}
-                            </option>
-                        {% endif %}
-                        {% endfor %}
-                </select>
-                <label for="loot_type_select" class="form-label">Loot Type</label>
-                <select class="form-select" 
-                        id="loot_type_select"
-                        name="loot_type"
-                        aria-label="loot_type">
-                    <option selected>
-                        {{ data.loot_type.value }}
+            style="background-color: #7D8B8C;">
+        <div class="col-3">{% include "elements/messages.html" %}</div>
+        </div>
+            <div class="row">
+                <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
+                    <label for="generator_type_select" class="form-label">Generator</label>
+                    <select class="form-select" 
+                            id="generator_type_select" 
+                            name="generator_type" 
+                            aria-label="generator_type">
+                        <option selected>
+                            {{ data.generator_type.value }}
                         </option>
-                        <option value="" disabled="disabled">
-                        ──────────────
-                        </option>
-                        {% for choice in loot_type_list %}
-                        {% if choice != data.loot_type.value %}
-                            <option value="{{ choice }}">
-                            {{ choice }}
+                            {% for choice in generator_type_list %}
+                            {% if choice != data.generator_type.value %}
+                                <option value="{{ choice }}">
+                                {{ choice }}
+                                </option>
+                            {% endif %}
+                            {% endfor %}
+                    </select>
+                    <label for="loot_type_select" class="form-label">Loot Type</label>
+                    <select class="form-select" 
+                            id="loot_type_select"
+                            name="loot_type"
+                            aria-label="loot_type">
+                        <option selected>
+                            {{ data.loot_type.value }}
                             </option>
-                        {% endif %}
-                        {% endfor %}
-                </select>
-            </div>
-            <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
-                <label for="total_hoard_value_input" class="form-label">Total Hoard Value</label>
-                <input type="number" class="form-control" 
-                        id="total_hoard_value_input" 
-                        name="total_hoard_value" 
-                        value="{{ data.total_hoard_value.value }}"
-                        placeholder="Enter Approximate Hoard Value...">
-                <label for="average_player_level_input" class="form-label">Average Player Level</label>
-                <input type="number" class="form-control" 
-                        id="average_player_level_input" 
-                        name="average_player_level" 
-                        value="{{ data.average_player_level.value }}"
-                        placeholder="Enter Average Player Level...">
-            </div>
-            <div class="col-lg-6 px-md-4 p-4" style="background-color: #7D8B8C;">
-                <div class="btn-group vertical-center" style="width:100%" role="group" aria-label="Generate-buttons">
-                    <button type="submit"
-                            class="btn btn-lg btn-success"
-                            name="generate_button"
-                            style="--bs-btn-padding-y: 1rem;">
-                        GENERATE
-                    </button>
-                    <button type="submit"
-                            class="btn btn-lg btn-primary"
-                            name="save_button"
-                            style="--bs-btn-padding-y: 1rem;"
-                            {% if user.is_authenticated == False or cached == False %}disabled{% endif %}>
-                        SAVE
-                    </button>
-                    <button type="submit"
-                            name="clear_button"
-                            class="btn btn-lg btn-secondary"
-                            style="--bs-btn-padding-y: 1rem;">
-                        CLEAR
-                    </button>
+                            <option value="" disabled="disabled">
+                            ──────────────
+                            </option>
+                            {% for choice in loot_type_list %}
+                            {% if choice != data.loot_type.value %}
+                                <option value="{{ choice }}">
+                                {{ choice }}
+                                </option>
+                            {% endif %}
+                            {% endfor %}
+                    </select>
+                </div>
+                <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
+                    <label for="total_hoard_value_input" class="form-label">Total Hoard Value</label>
+                    <input type="number" class="form-control" 
+                            id="total_hoard_value_input" 
+                            name="total_hoard_value" 
+                            value="{{ data.total_hoard_value.value }}"
+                            placeholder="Enter Approximate Hoard Value...">
+                    <label for="average_player_level_input" class="form-label">Average Player Level</label>
+                    <input type="number" class="form-control" 
+                            id="average_player_level_input" 
+                            name="average_player_level" 
+                            value="{{ data.average_player_level.value }}"
+                            placeholder="Enter Average Player Level...">
+                </div>
+                <div class="col-lg-6 px-md-4 p-4" style="background-color: #7D8B8C;">
+                    <div class="btn-group vertical-center" style="width:100%" role="group" aria-label="Generate-buttons">
+                        <button type="submit"
+                                class="btn btn-lg btn-success"
+                                name="generate_button"
+                                style="--bs-btn-padding-y: 1rem;">
+                            GENERATE
+                        </button>
+                        <button type="submit"
+                                class="btn btn-lg btn-primary"
+                                name="save_button"
+                                style="--bs-btn-padding-y: 1rem;"
+                                {% if user.is_authenticated == False or cached == False %}disabled{% endif %}>
+                            SAVE
+                        </button>
+                        <button type="submit"
+                                name="clear_button"
+                                class="btn btn-lg btn-secondary"
+                                style="--bs-btn-padding-y: 1rem;">
+                            CLEAR
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-2 px-md-4 p-2" style="background-color: #D9CAAB;">
-                <h4>Gold Pieces:</h4>
+            <div class="row">
+                <div class="col-sm-2 px-md-4 p-2" style="background-color: #D9CAAB;">
+                    <h4>Gold Pieces:</h4>
+                </div>
+                <div class="col-sm-10 px-md-4 p-2" style="background-color: #D9CAAB; text-align: left;">
+                    <h4><b>{{ money }}gp</b></h4>
+                </div>
             </div>
-            <div class="col-sm-10 px-md-4 p-2" style="background-color: #D9CAAB; text-align: left;">
-                <h4><b>{{ money }}gp</b></h4>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col-sm-12">
-                <div class="data-table table-scrollbar">
-                    <table class="table table-hover">
-                        <thead style="position: sticky; top: 0;">
-                        <tr>
-                            <th style="width: 10%" scope="col" >#</th>
-                            <th style="width: 30%" scope="col">Name</th>
-                            <th style="width: 30%" scope="col">Type</th>
-                            <th style="width: 30%" scope="col">Value</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for item in generated_list %}
+            <div class="row text-center">
+                <div class="col-sm-12">
+                    <div class="data-table table-scrollbar">
+                        <table class="table table-hover">
+                            <thead style="position: sticky; top: 0;">
                             <tr>
-                                <th scope="row">{{forloop.counter}}</th>
-                                <td>{{ item.Name }}</td>
-                                <td>{{ item.type }}</td>
-                                {% if item.type != "Magic Item" %} 
-                                    <td>{{ item.Base_Value }}</td>
-                                {% else %}
-                                    <td>{{ item.Rarity }}</td>
-                                {% endif %}
+                                <th style="width: 10%" scope="col" >#</th>
+                                <th style="width: 30%" scope="col">Name</th>
+                                <th style="width: 30%" scope="col">Type</th>
+                                <th style="width: 30%" scope="col">Value</th>
                             </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            {% for item in generated_list %}
+                                <tr>
+                                    <th scope="row">{{forloop.counter}}</th>
+                                    <td>{{ item.Name }}</td>
+                                    <td>{{ item.type }}</td>
+                                    {% if item.type != "Magic Item" %} 
+                                        <td>{{ item.Base_Value }}</td>
+                                    {% else %}
+                                        <td>{{ item.Rarity }}</td>
+                                    {% endif %}
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2 px-md-4 p-2" style="background-color: #D9CAAB;">
+                    <h4>Total Value:</h4>
+                </div>
+                <div class="col-sm-10 px-md-4 p-2" style="background-color: #D9CAAB; text-align: left;">
+                    <h4><b>{{ total_value }}gp</b></h4>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-2 px-md-4 p-2" style="background-color: #D9CAAB;">
-                <h4>Total Value:</h4>
-            </div>
-            <div class="col-sm-10 px-md-4 p-2" style="background-color: #D9CAAB; text-align: left;">
-                <h4><b>{{ total_value }}gp</b></h4>
-            </div>
-        </div>
-    </div>
-</div>
-</form>
+    </form>
 {% endblock application_pane %}
