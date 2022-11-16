@@ -7,9 +7,7 @@ from toolkit.models import Armor, GeneratedLoot, GenericItem, MagicItem, Weapon
 
 def cache_loot(
     user: User,
-    loot_type_output: str,
-    total_value_output: float,
-    money_output: float,
+    loot: GeneratedLoot,
     weapons_output: list[Weapon],
     armors_output: list[Armor],
     generic_items_output: list[GenericItem],
@@ -21,12 +19,6 @@ def cache_loot(
         user (User): User to cache the character on
 
     """
-    loot = GeneratedLoot(
-        Owner=user,
-        Loot_Type=loot_type_output,
-        Total_Value=total_value_output,
-        Money=money_output,
-    )
     loot.save_base()
     cache = user.cache.loot
     if cache is not None:
