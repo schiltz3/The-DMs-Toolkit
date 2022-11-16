@@ -10,6 +10,7 @@ exclude_patterns = ["toolkit/migrations/**"]
 [[analyzers]]
 name = "python"
 enabled = true
+
 [[analyzers]]
 name = "test-coverage"
 enabled = true
