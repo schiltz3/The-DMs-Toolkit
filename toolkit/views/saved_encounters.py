@@ -8,7 +8,7 @@ from toolkit.models import GeneratedEncounter
 
 class SavedEncounters(View):
     """A class to handle the retrieval and list of a user's saved characters."""
-    
+
     def __init__(self):
         self.context: dict[str, any] = {}
 
@@ -19,7 +19,9 @@ class SavedEncounters(View):
             return redirect("login")
         else:
             User = request.user
-            self.context["encounter_list"] = GeneratedEncounter.objects.filter(Owner=User)
+            self.context["encounter_list"] = GeneratedEncounter.objects.filter(
+                Owner=User
+            )
         return render(request, "saved_encounters.html", self.context)
 
     def post(self, request: HttpRequest):
