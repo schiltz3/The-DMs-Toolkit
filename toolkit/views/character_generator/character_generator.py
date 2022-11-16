@@ -110,7 +110,6 @@ class CharacterGenerator(View):
                     )
                 else:
                     stats = self.generator.generate_stat_list(stat_generator_key)
-                    stats = self.generator.arrange_stats(clazz, stats)
                 output = GeneratedCharacterOutputs(
                     calculate=True,
                     strength=stats[0],
