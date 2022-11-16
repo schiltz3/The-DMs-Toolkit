@@ -31,6 +31,7 @@ def cache_loot(
         loot.Generic_Items.set(generic_items_output)
     if magic_items_output is not None:
         loot.Magical_Items.set(magic_items_output)
+    loot.save()
     user.cache.loot = loot
     user.save()
 
