@@ -1,30 +1,5 @@
 [
     {
-      "model": "auth.user",
-      "fields": {
-        "password": "pbkdf2_sha256$390000$c2xKPRE4dVJcNwBaNvaK2Y$AT6A0oE3PUspYbWmlulh85+pU4wNmKNH5dUzjNqRNm8=",
-        "last_login": "2022-11-10T07:19:00.935Z",
-        "is_superuser": true,
-        "username": "Jeffery",
-        "first_name": "",
-        "last_name": "",
-        "email": "jjmiii@uwm.edu",
-        "is_staff": true,
-        "is_active": true,
-        "date_joined": "2022-11-10T06:04:28.730Z",
-        "groups": [],
-        "user_permissions": []
-      }
-    },
-    {
-      "model": "sessions.session",
-      "pk": "3adcylecgnb3cfsvnvqwtc92v6j80t7d",
-      "fields": {
-        "session_data": ".eJxVjDsOwyAQBe9CHSFYYz4p0_sMiF0gOIlAMnYV5e6xJRdJOzPvvZkP21r81tPi58iuTLLLL8NAz1QPER-h3hunVtdlRn4k_LSdTy2m1-1s_w5K6GVfQx6NShatw0wgKEShkZROAkhGEDIrUAAWs5bGuSHTIM3O7UhaRDmwzxfkjzdg:1ot1q0:LOql7RMsZBBXCkv0bwCg1LabPzpWg8vWNJiT8QXRyro",
-        "expire_date": "2022-11-24T07:19:00.941Z"
-      }
-    },
-    {
       "model": "toolkit.armor",
       "pk": "Breastplate",
       "fields": {
