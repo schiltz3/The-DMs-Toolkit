@@ -1,8 +1,9 @@
 from typing import Optional
 
 from django.contrib.auth.models import User
-from toolkit.models import Armor, GeneratedLoot, GenericItem, MagicItem, Weapon
+
 from toolkit.cache import get_cache
+from toolkit.models import Armor, GeneratedLoot, GenericItem, MagicItem, Weapon
 
 
 def cache_loot(
