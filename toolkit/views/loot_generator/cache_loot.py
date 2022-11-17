@@ -1,8 +1,8 @@
 from typing import Optional
 
 from django.contrib.auth.models import User
-
 from toolkit.models import Armor, GeneratedLoot, GenericItem, MagicItem, Weapon
+from toolkit.cache import get_cache
 
 
 def cache_loot(
@@ -21,9 +21,10 @@ def cache_loot(
     """
     loot.save_base()
     loot.Owner = user
-    cache = user.cache.loot
-    if cache is not None:
-        cache.delete()
+    cache = get_cache(user)
+    loot_cache = cache.loot
+    if loot_cache is not None:
+        loot_cache.delete()
     if weapons_output is not None:
         loot.Weapons.set(weapons_output)
     if armors_output is not None:
@@ -33,7 +34,7 @@ def cache_loot(
     if magic_items_output is not None:
         loot.Magical_Items.set(magic_items_output)
     loot.save()
-    user.cache.loot = loot
+    cache.loot = loot
     user.save()
 
 
