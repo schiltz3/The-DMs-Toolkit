@@ -257,6 +257,7 @@ class GeneratedEncounter(models.Model):
     Reward = models.OneToOneField(
         GeneratedLoot, on_delete=models.SET_NULL, null=True, blank=True
     )
+    Average_CR = models.FloatField()
     Encounter_Tags = models.ManyToManyField(Tag, blank=True)
     Monsters = models.ManyToManyField(Monster)
 
