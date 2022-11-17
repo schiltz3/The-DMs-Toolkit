@@ -33,6 +33,7 @@ from toolkit.views.loot_generator.loot_generator_view import LootGenerator
 from toolkit.views.saved.saved_characters import SavedCharacters
 from toolkit.views.saved.saved_encounters import SavedEncounters
 from toolkit.views.saved.saved_loot import SavedLoot
+from toolkit.views.account.change_password import ChangePassword
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -72,6 +73,8 @@ urlpatterns = [
     path("saved_loot/", SavedLoot.as_view(), name="saved_loot"),
     # Saved Encounters
     path("saved_encounters/", SavedEncounters.as_view(), name="saved_encounters"),
+    # hehe
+    path("changed_password", ChangePassword.as_view(), name="change_password"),
     # static files
     *static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
 ]
