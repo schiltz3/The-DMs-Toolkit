@@ -111,8 +111,14 @@ img {
 
 .banner { 
     background-color: #D9CAAB; 
-    width: 100%; 
+    width: 425px; 
     min-height: 85px;
+}
+
+.banner img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
  
 .character-row {
