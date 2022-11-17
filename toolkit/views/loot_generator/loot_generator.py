@@ -89,7 +89,7 @@ class LootGenerator(View):
                             user=request.user,
                             loot=loot_object,
                             weapons_output=generated.get("weapons"),
-                            armors_output=generated.get("armor"),
+                            armors_output=generated.get("armors"),
                             generic_items_output=generated.get("general"),
                             magic_items_output=generated.get("magic"),
                         )
