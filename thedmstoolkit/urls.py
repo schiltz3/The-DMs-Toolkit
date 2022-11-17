@@ -18,17 +18,17 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
+from toolkit.views.account.confirm_account_creation import ConfirmAccountCreation
+from toolkit.views.account.create_account import CreateAccount
+from toolkit.views.account.login import Login
+from toolkit.views.account.logout import Logout
 from toolkit.views.character_generator.character_generator_view import (
     CharacterGenerator,
 )
-from toolkit.views.account.confirm_account_creation import ConfirmAccountCreation
-from toolkit.views.account.create_account import CreateAccount
 from toolkit.views.encounter_generator.encounter_generator_view import (
     EncounterGenerator,
 )
 from toolkit.views.home_page import HomePage
-from toolkit.views.account.login import Login
-from toolkit.views.account.logout import Logout
 from toolkit.views.loot_generator.loot_generator_view import LootGenerator
 from toolkit.views.saved.saved_characters import SavedCharacters
 from toolkit.views.saved.saved_encounters import SavedEncounters
