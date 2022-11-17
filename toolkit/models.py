@@ -5,6 +5,7 @@ from django.dispatch import receiver
 
 # Create your models here.
 
+
 class Proficiencies(models.Model):
     """
     Proficiencies
@@ -15,10 +16,11 @@ class Proficiencies(models.Model):
     Returns:
         _type_: _description_
     """
-    
-    Name = models.CharField(max_length=20, blank = True)
-    Stat = models.CharField(max_length=20, blank = True)
-    
+
+    Name = models.CharField(max_length=20, blank=True)
+    Stat = models.CharField(max_length=20, blank=True)
+
+
 class Character(models.Model):
     """
     Creates Characters
@@ -57,6 +59,7 @@ class Character(models.Model):
     Wisdom = models.IntegerField()
     Charisma = models.IntegerField()
     Character_Proficiencies = models.ManyToManyField(Proficiencies, blank=True)
+
     def __str__(self):
         return f"Name: {self.Name}, Owner: {self.Owner}, lvl: {self.Level}, Class: {self.Class}"
 
@@ -215,6 +218,7 @@ class Tag(models.Model):
     """
 
     Name = models.CharField(primary_key=True, max_length=30)
+
     def __str__(self) -> str:
         return f"{self.Name}"
 
