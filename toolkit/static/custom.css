@@ -35,6 +35,7 @@ body {
 
 .title-bar {
     align-items: center;
+    text-align: center;
     color: white;
     display: flex;
     justify-content: center;
