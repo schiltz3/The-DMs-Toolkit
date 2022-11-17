@@ -5,7 +5,20 @@ from django.dispatch import receiver
 
 # Create your models here.
 
+class Proficiencies(models.Model):
+    """
+    Proficiencies
 
+    Args:
+        models (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
+    
+    Name = models.CharField(max_length=20, blank = True)
+    Stat = models.CharField(max_length=20, blank = True)
+    
 class Character(models.Model):
     """
     Creates Characters
@@ -43,7 +56,7 @@ class Character(models.Model):
     Intelligence = models.IntegerField()
     Wisdom = models.IntegerField()
     Charisma = models.IntegerField()
-
+    Character_Proficiencies = models.ManyToManyField(Proficiencies, blank=True)
     def __str__(self):
         return f"Name: {self.Name}, Owner: {self.Owner}, lvl: {self.Level}, Class: {self.Class}"
 
@@ -190,7 +203,7 @@ class GeneratedLoot(models.Model):
     Magical_Items = models.ManyToManyField(MagicItem, blank=True)
 
     def __str__(self) -> str:
-        return f"{self.Loot_Type},\t{self.Total_Value}"
+        return f"{self.Owner},\t{self.Loot_Type},\tTotal Value: {self.Total_Value}"
 
 
 class Tag(models.Model):
@@ -202,6 +215,8 @@ class Tag(models.Model):
     """
 
     Name = models.CharField(primary_key=True, max_length=30)
+    def __str__(self) -> str:
+        return f"{self.Name}"
 
 
 class Monster(models.Model):
@@ -229,7 +244,7 @@ class Monster(models.Model):
     Type = models.CharField(max_length=20)
     Alignment = models.CharField(max_length=20)
     Gold_Modifier = models.FloatField(blank=True, null=True)
-    Creature_Tags = models.ManyToManyField(Tag)
+    Creature_Tags = models.ManyToManyField(Tag, blank=True)
 
     def __str__(self) -> str:
         return self.Name
@@ -262,7 +277,7 @@ class GeneratedEncounter(models.Model):
     Monsters = models.ManyToManyField(Monster)
 
     def __str__(self) -> str:
-        return f"{self.Encounter_Type},\t{self.Monsters}"
+        return f"{self.Owner},\t{self.Encounter_Type},\t{self.Monsters}"
 
 
 class Cache(models.Model):
