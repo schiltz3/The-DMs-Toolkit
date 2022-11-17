@@ -1,6 +1,6 @@
 from django.http.request import HttpRequest
-from django.views import View
 from django.shortcuts import redirect
+from django.views import View
 
 
 class ChangePassword(View):

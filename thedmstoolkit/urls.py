@@ -18,6 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
+from toolkit.views.account.change_password import ChangePassword
 from toolkit.views.account.confirm_account_creation import ConfirmAccountCreation
 from toolkit.views.account.create_account import CreateAccount
 from toolkit.views.account.login import Login
@@ -33,7 +34,6 @@ from toolkit.views.loot_generator.loot_generator_view import LootGenerator
 from toolkit.views.saved.saved_characters import SavedCharacters
 from toolkit.views.saved.saved_encounters import SavedEncounters
 from toolkit.views.saved.saved_loot import SavedLoot
-from toolkit.views.account.change_password import ChangePassword
 
 urlpatterns = [
     path("admin/", admin.site.urls),
