@@ -20,6 +20,7 @@ def cache_loot(
 
     """
     loot.save_base()
+    loot.Owner = user
     cache = user.cache.loot
     if cache is not None:
         cache.delete()
