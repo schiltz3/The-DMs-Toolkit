@@ -77,7 +77,8 @@ class LootGenerator(View):
                 loot_object = generated.get("loot_object")
                 self.context["total_value"] = int(loot_object.Total_Value)
                 self.context["money"] = int(loot_object.Money)
-                generated_list = generated.get("armor")
+                generated_list = []
+                generated_list.extend(generated.get("armor"))
                 generated_list.extend(generated.get("weapons"))
                 generated_list.extend(generated.get("general"))
                 generated_list.extend(generated.get("magic"))
