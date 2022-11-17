@@ -1,7 +1,7 @@
 from django.test import Client, TestCase
 from django.urls import reverse
 
-from toolkit.views.create_account import CreateAccountForm
+from toolkit.views.account.create_account import CreateAccountForm
 
 
 class TestCreateAccount(TestCase):

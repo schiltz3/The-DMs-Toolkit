@@ -21,18 +21,18 @@ from django.urls import path
 from toolkit.views.character_generator.character_generator_view import (
     CharacterGenerator,
 )
-from toolkit.views.confirm_account_creation import ConfirmAccountCreation
-from toolkit.views.create_account import CreateAccount
+from toolkit.views.account.confirm_account_creation import ConfirmAccountCreation
+from toolkit.views.account.create_account import CreateAccount
 from toolkit.views.encounter_generator.encounter_generator_view import (
     EncounterGenerator,
 )
 from toolkit.views.home_page import HomePage
-from toolkit.views.login import Login
-from toolkit.views.logout import Logout
+from toolkit.views.account.login import Login
+from toolkit.views.account.logout import Logout
 from toolkit.views.loot_generator.loot_generator_view import LootGenerator
-from toolkit.views.saved_characters import SavedCharacters
-from toolkit.views.saved_encounters import SavedEncounters
-from toolkit.views.saved_loot import SavedLoot
+from toolkit.views.saved.saved_characters import SavedCharacters
+from toolkit.views.saved.saved_encounters import SavedEncounters
+from toolkit.views.saved.saved_loot import SavedLoot
 
 urlpatterns = [
     path("admin/", admin.site.urls),
