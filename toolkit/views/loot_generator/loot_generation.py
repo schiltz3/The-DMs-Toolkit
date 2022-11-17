@@ -213,7 +213,7 @@ class Loot_Generator:
             "loot_object": current_loot,
             "armor": self.armor_list,
             "weapons": self.weapon_list,
-            "general0": self.gen_list,
+            "general": self.gen_list,
             "magic": self.magic_list,
         }
         return loot_dict
