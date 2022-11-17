@@ -2,7 +2,7 @@ import random
 from typing import Callable, Optional, Union
 
 from toolkit.models import Monster, Tag
-from toolkit.views.loot_generator.loot_generation import Loot_Generator
+from toolkit.views.loot_generator.loot_generator_backend import Loot_Generator
 
 Generator = Callable[[int, int], int]
 

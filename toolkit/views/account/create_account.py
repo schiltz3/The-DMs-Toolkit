@@ -36,15 +36,12 @@ class CreateAccount(View):
                 context["form"] = form
                 context["error"] = str(e)
                 return render(request, "create_account.html", context)
-
             return redirect(
                 "confirm_account_creation",
                 username=form.cleaned_data["username"],
                 permanent=True,
             )
         context["form"] = form
-        print("Invalid form")
-
         return render(request, "create_account.html", context)
 
 

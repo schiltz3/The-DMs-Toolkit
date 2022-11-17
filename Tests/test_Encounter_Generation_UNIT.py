@@ -1,7 +1,7 @@
 import django
 from django.test import TestCase
 
-import toolkit.views.encounter_generator.encounter_generation as enc_gen
+import toolkit.views.encounter_generator.encounter_generator_backend as enc_gen
 from toolkit.models import Armor, GenericItem, MagicItem, Monster, Tag, Weapon
 
 django.setup()

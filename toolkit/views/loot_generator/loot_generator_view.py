@@ -4,11 +4,17 @@ import traceback
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
+from django.contrib import messages
 from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
 
-from toolkit.views.loot_generator.loot_generation import Loot_Generator
+from toolkit.views.loot_generator.cache_loot import (
+    cache_loot,
+    delete_cached_loot,
+    save_cached_loot,
+)
+from toolkit.views.loot_generator.loot_generator_backend import Loot_Generator
 
 logger = logging.getLogger(__name__)
 
@@ -41,6 +47,7 @@ class LootGenerator(View):
         loot_type_list = ["Random"]
         loot_type_list.extend(sorted(self.generator.LOOT_TYPE_DICT))
         self.context["loot_type_list"] = loot_type_list
+        self.context["cached"] = False
 
     def get(self, request: HttpRequest):
         """GET method for the character generation."""
@@ -52,9 +59,6 @@ class LootGenerator(View):
         form = GenerateLootInputs.from_dict(request.POST)
         self.context["data"] = form
         self.context["error"] = None
-        if request.POST.get("clear_button") is not None:
-            self.context["data"] = GenerateLootInputs()
-            return render(request, "loot_generator.html", self.context)
         if not form.is_valid():
             self.context["form"] = form
             return render(request, "loot_generator.html", self.context)
@@ -62,18 +66,37 @@ class LootGenerator(View):
             try:
                 generated = self.generator.generate_loot(
                     generator_key=form.generator_type.value,
-                    level=int(form.average_player_level.value),
-                    approximate_total_value=int(form.total_hoard_value.value),
+                    level=1
+                    if form.average_player_level.value == ""
+                    else int(form.average_player_level.value),
+                    approximate_total_value=0
+                    if form.total_hoard_value.value == ""
+                    else int(form.total_hoard_value.value),
                     input_loot_type=form.loot_type.value,
                 )
                 loot_object = generated.get("loot_object")
                 self.context["total_value"] = int(loot_object.Total_Value)
                 self.context["money"] = int(loot_object.Money)
-                generated_list = generated.get("armor")
+                generated_list = []
+                generated_list.extend(generated.get("armor"))
                 generated_list.extend(generated.get("weapons"))
-                generated_list.extend(generated.get("general0"))
+                generated_list.extend(generated.get("general"))
                 generated_list.extend(generated.get("magic"))
                 self.context["generated_list"] = generated_list
+
+                if request.user.is_authenticated:
+                    try:
+                        cache_loot(
+                            user=request.user,
+                            loot=loot_object,
+                            weapons_output=generated.get("weapons"),
+                            armors_output=generated.get("armor"),
+                            generic_items_output=generated.get("general"),
+                            magic_items_output=generated.get("magic"),
+                        )
+                        self.context["cached"] = True
+                    except TypeError as e:
+                        logger.warning(e)
                 return render(request, "loot_generator.html", self.context)
             except ValueError as e:
                 logger.warning(traceback.format_exc())
@@ -81,6 +104,17 @@ class LootGenerator(View):
                 self.context["error"] = str(e)
                 return render(request, "loot_generator.html", self.context)
         if request.POST.get("save_button") is not None:
+            self.context["cached"] = True
+            if request.user.is_authenticated:
+                save_cached_loot(request.user)
+                messages.success(request, "Loot saved successfully!")
+            else:
+                self.context["form"] = form
+            return render(request, "loot_generator.html", self.context)
+        if request.POST.get("clear_button") is not None:
+            if request.user.is_authenticated:
+                delete_cached_loot(request.user)
+            self.context["data"] = GenerateLootInputs()
             return render(request, "loot_generator.html", self.context)
         return render(request, "loot_generator.html", self.context)
 
@@ -91,8 +125,8 @@ class GenerateLootInputs:
 
     generator_type: Element = field(default_factory=lambda: Element("Random"))
     loot_type: Element = field(default_factory=lambda: Element("Random"))
-    total_hoard_value: Element = field(default_factory=lambda: Element(0))
-    average_player_level: Element = field(default_factory=lambda: Element(0))
+    total_hoard_value: Element = field(default_factory=Element)  # Optional
+    average_player_level: Element = field(default_factory=Element)  # Optional
 
     @classmethod
     def from_dict(cls, env: dict[str, Any]):
@@ -128,12 +162,11 @@ class GenerateLootInputs:
             and self.loot_type.value != "Random"
         ):
             return False
-        if self.total_hoard_value.value == "":
+        if self.total_hoard_value.value != "" and int(self.total_hoard_value.value) < 0:
             return False
-        if int(self.total_hoard_value.value) <= 0:
-            return False
-        if self.average_player_level.value == "":
-            return False
-        if not 0 < int(self.average_player_level.value) <= 21:
+        if (
+            self.average_player_level.value != ""
+            and not 0 < int(self.average_player_level.value) <= 21
+        ):
             return False
         return True

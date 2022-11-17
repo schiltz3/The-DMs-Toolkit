@@ -1,7 +1,24 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
+
+
+class Proficiencies(models.Model):
+    """
+    Proficiencies
+
+    Args:
+        models (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
+
+    Name = models.CharField(max_length=20, blank=True)
+    Stat = models.CharField(max_length=20, blank=True)
 
 
 class Character(models.Model):
@@ -41,9 +58,12 @@ class Character(models.Model):
     Intelligence = models.IntegerField()
     Wisdom = models.IntegerField()
     Charisma = models.IntegerField()
+    Character_Proficiencies = models.ManyToManyField(
+        Proficiencies, blank=True, default=""
+    )
 
     def __str__(self):
-        return self.Name + " Level " + self.Level + " " + self.Class
+        return f"Name: {self.Name}, Owner: {self.Owner}, lvl: {self.Level}, Class: {self.Class}"
 
 
 class Armor(models.Model):
@@ -69,6 +89,10 @@ class Armor(models.Model):
     Stealth = models.BooleanField()
 
     def __str__(self):
+        return self.Name
+
+    @property
+    def type(self):
         return "Armor"
 
 
@@ -100,6 +124,10 @@ class Weapon(models.Model):
     # So heavy two handed with reach would be 101100000
 
     def __str__(self):
+        return self.Name
+
+    @property
+    def type(self):
         return "Weapon"
 
 
@@ -121,7 +149,11 @@ class GenericItem(models.Model):
     Weight = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
-        return "Generic"
+        return self.Name
+
+    @property
+    def type(self):
+        return "Generic Item"
 
 
 class MagicItem(models.Model):
@@ -143,7 +175,11 @@ class MagicItem(models.Model):
     Attuned = models.BooleanField()
 
     def __str__(self):
-        return "Magic"
+        return self.Name
+
+    @property
+    def type(self):
+        return "Magic Item"
 
 
 class GeneratedLoot(models.Model):
@@ -171,6 +207,9 @@ class GeneratedLoot(models.Model):
     Generic_Items = models.ManyToManyField(GenericItem, blank=True)
     Magical_Items = models.ManyToManyField(MagicItem, blank=True)
 
+    def __str__(self) -> str:
+        return f"{self.Owner},\t{self.Loot_Type},\tTotal Value: {self.Total_Value}"
+
 
 class Tag(models.Model):
     """
@@ -181,6 +220,9 @@ class Tag(models.Model):
     """
 
     Name = models.CharField(primary_key=True, max_length=30)
+
+    def __str__(self) -> str:
+        return f"{self.Name}"
 
 
 class Monster(models.Model):
@@ -208,7 +250,10 @@ class Monster(models.Model):
     Type = models.CharField(max_length=20)
     Alignment = models.CharField(max_length=20)
     Gold_Modifier = models.FloatField(blank=True, null=True)
-    Creature_Tags = models.ManyToManyField(Tag)
+    Creature_Tags = models.ManyToManyField(Tag, blank=True)
+
+    def __str__(self) -> str:
+        return self.Name
 
 
 class GeneratedEncounter(models.Model):
@@ -233,5 +278,46 @@ class GeneratedEncounter(models.Model):
     Reward = models.OneToOneField(
         GeneratedLoot, on_delete=models.SET_NULL, null=True, blank=True
     )
+    Average_CR = models.FloatField(default=0)
     Encounter_Tags = models.ManyToManyField(Tag, blank=True)
     Monsters = models.ManyToManyField(Monster)
+
+    def __str__(self) -> str:
+        return f"{self.Owner},\t{self.Encounter_Type},\t{self.Monsters}"
+
+
+class Cache(models.Model):
+    """
+    The model to cache generated items in before saving
+
+    Args:
+        user (User): user to cache generated items for
+        character (Character): character to cache
+    """
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    character = models.OneToOneField(
+        Character, on_delete=models.CASCADE, null=True, blank=True
+    )
+    loot = models.OneToOneField(
+        GeneratedLoot, on_delete=models.CASCADE, null=True, blank=True
+    )
+    encounter = models.OneToOneField(
+        GeneratedEncounter, on_delete=models.CASCADE, null=True, blank=True
+    )
+
+    def __str__(self) -> str:
+        return f"{self.user},\t{self.character},\t{self.loot},\t{self.encounter}"
+
+
+@receiver(post_save, sender=User)
+def create_user_cache(sender, instance, created, **kwargs):
+    """Create a cache object when creating the user object"""
+    if created:
+        Cache.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_cache(sender, instance, **kwargs):
+    """Save the cache object when saving the user object"""
+    instance.cache.save()

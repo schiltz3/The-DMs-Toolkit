@@ -5,14 +5,20 @@
 {% block application_pane %}
   <form action {% url "character_generator" %} method="post" class="form">
     {% csrf_token %}
-    <div class="row mx-0">
-      <div class="col p-0">
-        <div class="character-header">
-          <img src="{% static "Character_Header.png" %}"
-               alt="Character Header"
-               style="width: 45%"/>
+    <div class="container-fluid" style="background-color: #D9CAAB;">
+      <div class="row mx-0">
+        <div class="col p-0">
+          <div class="generator-header">
+            <img src="{% static "Character_Header.png" %}"
+                 alt="Character Header"
+                 style="width: 45%"/>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="row mx-0 pt-3 justify-content-center"
+         style="background-color: #7D8B8C;">
+      <div class="col-3">{% include "elements/messages.html" %}</div>
     </div>
     <div class="row mx-0 pt-3 " style="background-color: #7D8B8C;">
       <div class="col-7 col-lg-2">
@@ -193,7 +199,7 @@
                     class="btn btn-lg btn-primary"
                     name="save_button"
                     style="--bs-btn-padding-y: 1rem;"
-                    disabled>
+                    {% if user.is_authenticated == False or cached == False %}disabled{% endif %}>
               SAVE
             </button>
             <button type="submit"
@@ -241,7 +247,9 @@
             <h3>{{ out.constitution }}</h3>
           </div>
           <div class="character-stat-bonus">
-            <h4>{{ out.stats.mod_constitution.repr }}</h4>
+            <h4>
+              {{ out.stats.mod_constitution.repr }}
+            </h4>
           </div>
         </div>
         <div class="character-stat">

@@ -447,7 +447,7 @@ class Character_Generator:
         return generated
 
     @staticmethod
-    def Arrange(current_class, stat_array):
+    def arrange_stats(current_class: str, stat_array: list[int]):
         """
         Given a class and a 6 number array it
         arranges the numbers in an optimal allocation for any given class
