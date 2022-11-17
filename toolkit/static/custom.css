@@ -108,9 +108,9 @@ img {
     max-width: 100%;
 }
 
-.generator-header {
-    background-color: #D9CAAB;
-    display:flex;
+.banner { 
+    background-color: #D9CAAB; 
+    width: 100%; 
     min-height: 85px;
 }
  

@@ -5,12 +5,14 @@
 {% block application_pane %}
     <form action {% url "loot_generator" %} method="post" class="form">
         {% csrf_token %}
-        <div class="container-fluid">
-            <div class="row">
-                <div class="generator-header">
-                    <img src="{% static 'Loot_Header.png' %}"
+        <div class="container-fluid" style="background-color: #D9CAAB;">
+            <div class="row mx-0">
+                <div class="col p-0">
+                    <div class="banner">
+                        <img src="{% static "Loot_Header.png" %}"
                         alt="Loot Header"
-                        style="width: 45%"/>
+                        style="height: 85px;"/>
+                    </div>
                 </div>
             </div>
         </div>
