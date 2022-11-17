@@ -2,7 +2,9 @@ import inspect
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
-from toolkit.views.character_generator.character_generation import Character_Generator
+from toolkit.views.character_generator.character_generator_backend import (
+    Character_Generator,
+)
 
 
 @dataclass

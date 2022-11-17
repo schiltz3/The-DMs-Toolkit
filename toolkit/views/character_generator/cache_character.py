@@ -2,8 +2,8 @@ from typing import Optional
 
 from django.contrib.auth.models import User
 
-from toolkit.cache import get_cache
 from toolkit.models import Character
+from toolkit.utilities.cache import get_cache
 from toolkit.views.character_generator.character_elements import (
     GenerateCharacterInputs,
     GeneratedCharacterOutputs,
