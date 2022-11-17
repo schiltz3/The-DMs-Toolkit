@@ -58,7 +58,7 @@ class Character(models.Model):
     Intelligence = models.IntegerField()
     Wisdom = models.IntegerField()
     Charisma = models.IntegerField()
-    Character_Proficiencies = models.ManyToManyField(Proficiencies, blank=True)
+    Character_Proficiencies = models.ManyToManyField(Proficiencies, blank=True, null=True)
 
     def __str__(self):
         return f"Name: {self.Name}, Owner: {self.Owner}, lvl: {self.Level}, Class: {self.Class}"
