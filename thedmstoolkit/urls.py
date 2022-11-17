@@ -23,6 +23,7 @@ from toolkit.views.account.confirm_account_creation import ConfirmAccountCreatio
 from toolkit.views.account.create_account import CreateAccount
 from toolkit.views.account.login import Login
 from toolkit.views.account.logout import Logout
+from toolkit.views.account.reset_password import ResetPassword
 from toolkit.views.character_generator.character_generator_view import (
     CharacterGenerator,
 )
@@ -34,7 +35,6 @@ from toolkit.views.loot_generator.loot_generator_view import LootGenerator
 from toolkit.views.saved.saved_characters import SavedCharacters
 from toolkit.views.saved.saved_encounters import SavedEncounters
 from toolkit.views.saved.saved_loot import SavedLoot
-from toolkit.views.account.reset_password import ResetPassword
 
 urlpatterns = [
     path("admin/", admin.site.urls),

@@ -1,4 +1,5 @@
 import random
+
 from django.http.request import HttpRequest
 from django.shortcuts import redirect
 from django.views import View
