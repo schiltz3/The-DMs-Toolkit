@@ -18,10 +18,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
+from toolkit.views.account.change_password import ChangePassword
 from toolkit.views.account.confirm_account_creation import ConfirmAccountCreation
 from toolkit.views.account.create_account import CreateAccount
 from toolkit.views.account.login import Login
 from toolkit.views.account.logout import Logout
+from toolkit.views.account.reset_password import ResetPassword
 from toolkit.views.character_generator.character_generator_view import (
     CharacterGenerator,
 )
@@ -72,6 +74,14 @@ urlpatterns = [
     path("saved_loot/", SavedLoot.as_view(), name="saved_loot"),
     # Saved Encounters
     path("saved_encounters/", SavedEncounters.as_view(), name="saved_encounters"),
+    # hehe
+    path("changed_password", ChangePassword.as_view(), name="change_password"),
+    # reset password
+    path(
+        "reset_password",
+        ResetPassword.as_view(),
+        name="reset_password",
+    ),
     # static files
     *static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
 ]
