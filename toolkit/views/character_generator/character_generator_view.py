@@ -15,7 +15,9 @@ from toolkit.views.character_generator.character_elements import (
     GenerateCharacterInputs,
     GeneratedCharacterOutputs,
 )
-from toolkit.views.character_generator.character_generation import Character_Generator
+from toolkit.views.character_generator.character_generator_backend import (
+    Character_Generator,
+)
 
 logger = logging.getLogger(__name__)
 

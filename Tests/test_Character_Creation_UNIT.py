@@ -3,7 +3,7 @@ import unittest
 import django
 from django.test import TestCase
 
-import toolkit.views.character_generator.character_generation as Char_Gen
+import toolkit.views.character_generator.character_generator_backend as Char_Gen
 
 django.setup()
 

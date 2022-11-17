@@ -14,7 +14,7 @@ from toolkit.views.loot_generator.cache_loot import (
     delete_cached_loot,
     save_cached_loot,
 )
-from toolkit.views.loot_generator.loot_generation import Loot_Generator
+from toolkit.views.loot_generator.loot_generator_backend import Loot_Generator
 
 logger = logging.getLogger(__name__)
 

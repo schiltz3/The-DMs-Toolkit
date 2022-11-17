@@ -2,7 +2,7 @@ from django.test import Client, TestCase
 from django.urls import reverse
 
 from toolkit.models import Armor, GenericItem, MagicItem, User, Weapon
-from toolkit.views.loot_generator.loot_generator import GenerateLootInputs
+from toolkit.views.loot_generator.loot_generator_view import GenerateLootInputs
 
 
 class TestLootGenerator(TestCase):
