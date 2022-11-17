@@ -75,8 +75,8 @@ class LootGenerator(View):
                     input_loot_type=form.loot_type.value,
                 )
                 loot_object = generated.get("loot_object")
-                self.context["total_value"] = int(loot_object.Total_Value)
-                self.context["money"] = int(loot_object.Money)
+                self.context["total_value"] = round(loot_object.Total_Value, 3)
+                self.context["money"] = round(loot_object.Money, 3)
                 generated_list = []
                 generated_list.extend(generated.get("armor"))
                 generated_list.extend(generated.get("weapons"))
