@@ -39,11 +39,7 @@ class Race(models.Model):
     Name = models.CharField(max_length=20)
     Speed = models.IntegerField(default=30)
     Size = models.CharField(max_length=20)
-    Monster = "Monster"
-    Rare = "Rare"
-    Common = "Common"
-    Options = [(Monster, "Monster"), (Rare, "Rare"), (Common, "Common")]
-
+    Options = models.CharField(max_length=10)
     def __str__(self):
         return self.Name
 
@@ -56,11 +52,8 @@ class Clazz(models.Model):
         Proficiencies = Many to Many
     """
 
-    Name = models.CharField
-    Magic = "Magic"
-    Martial = "Martial"
-    Divine = "Divine"
-    Options = [(Magic, "Magic"), (Martial, "Martial"), (Divine, "Divine")]
+    Name = models.CharField(max_length=20)
+    Options = models.CharField(max_length=10)
     Proficiencies = models.ManyToManyField(Proficiencies)
     StatPrecedence = models.CharField(max_length=20)
 
