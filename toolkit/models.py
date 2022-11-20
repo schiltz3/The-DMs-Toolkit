@@ -40,6 +40,7 @@ class Race(models.Model):
     Speed = models.IntegerField(default=30)
     Size = models.CharField(max_length=20)
     Options = models.CharField(max_length=10)
+
     def __str__(self):
         return self.Name
 

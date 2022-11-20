@@ -1,7 +1,9 @@
 import random
 from math import ceil
 from typing import Callable, Optional, Union
-from toolkit.models import Race, Clazz
+
+from toolkit.models import Clazz, Race
+
 Generator = Callable[[int, int], int]
 
 
@@ -188,9 +190,9 @@ class Character_Generator:
         if generator_key not in self.generators:
             raise RuntimeError("Generator does not exist")
         if race_option != "All":
-            race_list = (Race.objects.filter(Options = race_option))
+            race_list = Race.objects.filter(Options=race_option)
         else:
-            race_list = (Race.objects.all())
+            race_list = Race.objects.all()
         race: Race = race_list[self.generators[generator_key](0, len(race_list) - 1)]
         return race
 
@@ -213,10 +215,12 @@ class Character_Generator:
         if generator_key not in self.generators:
             raise RuntimeError("Generator does not exist")
         if class_option != "All":
-            class_list = Clazz.objects.filter(Options = class_option)
+            class_list = Clazz.objects.filter(Options=class_option)
         else:
             class_list = Clazz.objects.all()
-        clazz: Clazz = class_list[self.generators[generator_key](0, len(class_list) - 1)]
+        clazz: Clazz = class_list[
+            self.generators[generator_key](0, len(class_list) - 1)
+        ]
         return clazz
 
     def generate_alignment(self, alignment_list: list[str], generator_key: str) -> str:
@@ -325,13 +329,9 @@ class Character_Generator:
             else:
                 generated["Stats"] = self.generate_stat_list(stat_generator_key)
         if "Race" in generations_list:
-            generated["Race"] = self.generate_race(
-                race_key, generator_key
-            )
+            generated["Race"] = self.generate_race(race_key, generator_key)
         if "Class" in generations_list:
-            generated["Class"] = self.generate_class(
-                class_key, generator_key
-            )
+            generated["Class"] = self.generate_class(class_key, generator_key)
         if "Alignment" in generations_list:
             generated["Alignment"] = self.generate_alignment(
                 Character_Generator.ALIGNMENT_DICT[alignment_key], generator_key
@@ -355,7 +355,7 @@ class Character_Generator:
         Returns:
             List of stat values in the Strength Dexterity Constitution Intelligence Wisdom Charisma order
         """
-        
+
         if len(stat_array) != 6:
             raise RuntimeError("Not a valid list")
         for i in stat_array:
@@ -366,12 +366,12 @@ class Character_Generator:
         if len(stat_array) != 6:
             raise RuntimeError("Not a valid list")
         stat_array = sorted(stat_array)
-        clazz = Clazz.objects.get(Name = current_class)
-        vals = clazz.StatPrecedence.split(',')
-        int_vals=[]
+        clazz = Clazz.objects.get(Name=current_class)
+        vals = clazz.StatPrecedence.split(",")
+        int_vals = []
         for x in vals:
             int_vals.append(int(x))
-            
+
         results: list[int] = []
         results.append(int_vals[0])
         results.append(int_vals[1])
