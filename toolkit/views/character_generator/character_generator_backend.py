@@ -373,12 +373,12 @@ class Character_Generator:
             int_vals.append(int(x))
             
         results: list[int] = []
-        results.append[int_vals[0]]
-        results.append[int_vals[1]]
-        results.append[int_vals[2]]
-        results.append[int_vals[3]]
-        results.append[int_vals[4]]
-        results.append[int_vals[5]]
+        results.append(int_vals[0])
+        results.append(int_vals[1])
+        results.append(int_vals[2])
+        results.append(int_vals[3])
+        results.append(int_vals[4])
+        results.append(int_vals[5])
         """ if current_class == "Artificer":
             results.append(stat_array[0])
             results.append(stat_array[3])
