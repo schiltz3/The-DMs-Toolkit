@@ -327,6 +327,7 @@ class TestLootGenerator(TestCase):
         self.assertIsNotNone(cache.loot)
         
     def test_save_not_logged_in(self):
+        """Tests to see if a user can save generated loot while not logged in"""
         response = self.client.post(
             self.loot_generator_url,
             data={
