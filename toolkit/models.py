@@ -37,7 +37,8 @@ class Race(models.Model):
     """
 
     Name = models.CharField(max_length=20)
-    Speed = models.IntegerField()
+    Speed = models.IntegerField(default=30)
+    Size = models.CharField(max_length=20)
     Monster = "Monster"
     Rare = "Rare"
     Common = "Common"
