@@ -55,6 +55,7 @@ class Clazz(models.Model):
     Divine = "Divine"
     Options = [(Magic, "Magic"), (Martial, "Martial"), (Divine, "Divine")] 
     Proficiencies = models.ManyToManyField(Proficiencies)
+    StatPrecedence = models.CharField(max_length=20)
     def __str__(self):
         return self.Name
 
@@ -83,8 +84,8 @@ class Character(models.Model):
 
     Name = models.CharField(max_length=20)
     Owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    Race = models.ForeignKey(Race,on_delete=models.SET_NULL, null = True, blank=True,default="")
-    Class = models.ForeignKey(Clazz, on_delete=models.SET_NULL,null = True,blank=True, default="" )
+    Race = models.ForeignKey(Race,on_delete=models.SET_NULL, null = True, blank=True,default=None)
+    Class = models.ForeignKey(Clazz, on_delete=models.SET_NULL,null = True,blank=True, default=None)
     Background = models.CharField(max_length=22)
     Alignment = models.CharField(max_length=17)
     Level = models.IntegerField()
@@ -286,9 +287,9 @@ class Monster(models.Model):
     Size = models.CharField(max_length=20)
     Type = models.CharField(max_length=20)
     Alignment = models.CharField(max_length=20)
-    Armor_Class = models.IntegerField()
-    Hitpoints = models.IntegerField()
-    Initiative = models.IntegerField()
+    Armor_Class = models.IntegerField(blank=True, null=True)
+    Hitpoints = models.IntegerField(blank=True, null=True)
+    Initiative = models.IntegerField(blank=True, null=True)
     Gold_Modifier = models.FloatField(blank=True, null=True)
     Creature_Tags = models.ManyToManyField(Tag, blank=True)
     Source = models.CharField(max_length=30)
