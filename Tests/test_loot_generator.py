@@ -1,7 +1,15 @@
 from django.test import Client, TestCase
 from django.urls import reverse
 
-from toolkit.models import Armor, GenericItem, MagicItem, User, Weapon, GeneratedLoot, Cache
+from toolkit.models import (
+    Armor,
+    Cache,
+    GeneratedLoot,
+    GenericItem,
+    MagicItem,
+    User,
+    Weapon,
+)
 from toolkit.views.loot_generator.loot_generator_view import GenerateLootInputs
 
 
@@ -275,7 +283,7 @@ class TestLootGenerator(TestCase):
         )
         self.assertEqual(response.status_code, 200)
         self.assertNotEqual(response.context["total_value"], 0)
-        
+
     def test_save_cache(self):
         """Tests to see if a user can save generated loot in it's cache to the database."""
         self.client.force_login(self.test_user)
@@ -306,7 +314,7 @@ class TestLootGenerator(TestCase):
         cache = Cache.objects.get(user=self.test_user)
         self.assertIsNone(cache.loot)
         self.assertIsNotNone(GeneratedLoot.objects.filter(Owner=self.test_user))
-        
+
     def test_generate_cache(self):
         """Tests to see if a user can save generated loot to it's cache."""
         self.client.force_login(self.test_user)
@@ -325,7 +333,7 @@ class TestLootGenerator(TestCase):
         self.assertTrue(response.context["cached"])
         cache = Cache.objects.get(user=self.test_user)
         self.assertIsNotNone(cache.loot)
-        
+
     def test_save_not_logged_in(self):
         response = self.client.post(
             self.loot_generator_url,
