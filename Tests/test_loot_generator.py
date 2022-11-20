@@ -1,7 +1,7 @@
 from django.test import Client, TestCase
 from django.urls import reverse
 
-from toolkit.models import Armor, GenericItem, MagicItem, User, Weapon
+from toolkit.models import Armor, GenericItem, MagicItem, User, Weapon, GeneratedLoot, Cache
 from toolkit.views.loot_generator.loot_generator_view import GenerateLootInputs
 
 
@@ -61,6 +61,7 @@ class TestLootGenerator(TestCase):
         self.item.delete()
         self.weapon.delete()
         self.armor.delete()
+        self.test_user.delete()
 
     def test_can_access_loot_page(self):
         """Tests to see if a user is able to access the loot page."""
@@ -274,10 +275,21 @@ class TestLootGenerator(TestCase):
         )
         self.assertEqual(response.status_code, 200)
         self.assertNotEqual(response.context["total_value"], 0)
-
-    # Will be further developed when save functionality is implemented
-    def test_save(self):
-        """Tests to see if a user can click the save button."""
+        
+    def test_save_cache(self):
+        """Tests to see if a user can save generated loot in it's cache to the database."""
+        self.client.force_login(self.test_user)
+        response = self.client.post(
+            self.loot_generator_url,
+            data={
+                "generate_button": "",
+                "generator_type": self.generator_type,
+                "loot_type": self.loot_type,
+                "total_hoard_value": self.total_hoard_value,
+                "average_player_level": self.average_player_level,
+            },
+            follow=True,
+        )
         response = self.client.post(
             self.loot_generator_url,
             data={
@@ -290,6 +302,57 @@ class TestLootGenerator(TestCase):
             follow=True,
         )
         self.assertEqual(response.status_code, 200)
+        self.assertFalse(response.context["cached"])
+        cache = Cache.objects.get(user=self.test_user)
+        self.assertIsNone(cache.loot)
+        self.assertIsNotNone(GeneratedLoot.objects.filter(Owner=self.test_user))
+        
+    def test_generate_cache(self):
+        """Tests to see if a user can save generated loot to it's cache."""
+        self.client.force_login(self.test_user)
+        response = self.client.post(
+            self.loot_generator_url,
+            data={
+                "generate_button": "",
+                "generator_type": self.generator_type,
+                "loot_type": self.loot_type,
+                "total_hoard_value": self.total_hoard_value,
+                "average_player_level": self.average_player_level,
+            },
+            follow=True,
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context["cached"])
+        cache = Cache.objects.get(user=self.test_user)
+        self.assertIsNotNone(cache.loot)
+        
+    def test_save_not_logged_in(self):
+        response = self.client.post(
+            self.loot_generator_url,
+            data={
+                "generate_button": "",
+                "generator_type": self.generator_type,
+                "loot_type": self.loot_type,
+                "total_hoard_value": self.total_hoard_value,
+                "average_player_level": self.average_player_level,
+            },
+            follow=True,
+        )
+        response = self.client.post(
+            self.loot_generator_url,
+            data={
+                "save_button": "",
+                "generator_type": self.generator_type,
+                "loot_type": self.loot_type,
+                "total_hoard_value": self.total_hoard_value,
+                "average_player_level": self.average_player_level,
+            },
+            follow=True,
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(response.context["cached"])
+        cache = Cache.objects.get(user=self.test_user)
+        self.assertIsNone(cache.loot)
 
     def test_clear(self):
         """Tests to see if a user is able to click the clear button and reset all inputs."""
@@ -305,3 +368,33 @@ class TestLootGenerator(TestCase):
             follow=True,
         )
         self.assertEqual(response.status_code, 200)
+
+    def test_clear_cache(self):
+        """Tests to see if a user can clear generated loot in it's cache."""
+        self.client.force_login(self.test_user)
+        response = self.client.post(
+            self.loot_generator_url,
+            data={
+                "generate_button": "",
+                "generator_type": self.generator_type,
+                "loot_type": self.loot_type,
+                "total_hoard_value": self.total_hoard_value,
+                "average_player_level": self.average_player_level,
+            },
+            follow=True,
+        )
+        response = self.client.post(
+            self.loot_generator_url,
+            data={
+                "clear_button": "",
+                "generator_type": self.generator_type,
+                "loot_type": self.loot_type,
+                "total_hoard_value": self.total_hoard_value,
+                "average_player_level": self.average_player_level,
+            },
+            follow=True,
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(response.context["cached"])
+        cache = Cache.objects.get(user=self.test_user)
+        self.assertIsNone(cache.loot)
