@@ -18,9 +18,9 @@ def frac(f):
     Initiative: .init, 
     Creature_Tags: 
         [
-            if .unique == "" then empty else .unique end, 
+            if ."unique?" == "" then empty else ."unique?" end, 
             if .environment == "" then empty else .environment end,
-            if .legendary == "" then empty else .legendary end,
+            if ."legendary?" == "" then empty else ."legendary?" end,
             if .tags == "" then empty else .tags end,
             if ."lair?" == "" then empty else ."lair?" end
         ],
