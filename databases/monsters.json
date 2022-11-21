@@ -435,7 +435,7 @@
     "Creature_Tags": [
       "unique",
       "Elf",
-      null
+      "lair"
     ],
     "Source": "Princes of the Apocalypse: 192"
   },
@@ -808,7 +808,7 @@
     "Creature_Tags": [
       "unique",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Princes of the Apocalypse: 214"
   },
@@ -867,7 +867,7 @@
     "Creature_Tags": [
       "unique",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Princes of the Apocalypse: 216"
   },
@@ -883,7 +883,7 @@
     "Creature_Tags": [
       "unique",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Princes of the Apocalypse: 218"
   },
@@ -1034,7 +1034,7 @@
     "Creature_Tags": [
       "unique",
       "Tiefling",
-      null
+      "lair"
     ],
     "Source": "Princes of the Apocalypse: 203"
   },
@@ -1094,7 +1094,7 @@
     "Creature_Tags": [
       "unique",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Princes of the Apocalypse: 221"
   },
@@ -1334,7 +1334,7 @@
     "Creature_Tags": [
       "aquatic, coast",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 13, Princes of the Apocalypse Online Supplement v1.0: 6, Systems Reference Document (SRD): 261"
   },
@@ -1379,7 +1379,7 @@
     "Creature_Tags": [
       "swamp",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 88, Princes of the Apocalypse Online Supplement v1.0: 7, Systems Reference Document (SRD): 281"
   },
@@ -1395,7 +1395,7 @@
     "Creature_Tags": [
       "desert, dungeon",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 84"
   },
@@ -1411,7 +1411,7 @@
     "Creature_Tags": [
       "desert",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "HotDQ supplement: 4, Monster Manual: 91, Systems Reference Document (SRD): 283"
   },
@@ -1427,7 +1427,7 @@
     "Creature_Tags": [
       "cave, underground",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 105, Systems Reference Document (SRD): 291"
   },
@@ -1443,7 +1443,7 @@
     "Creature_Tags": [
       "coast",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 108, Princes of the Apocalypse Online Supplement v1.0: 7, Systems Reference Document (SRD): 294"
   },
@@ -1459,7 +1459,7 @@
     "Creature_Tags": [
       "cave, desert, grassland",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 111, Systems Reference Document (SRD): 296"
   },
@@ -1475,7 +1475,7 @@
     "Creature_Tags": [
       "mountain, ruins",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 114, Systems Reference Document (SRD): 299"
   },
@@ -1491,7 +1491,7 @@
     "Creature_Tags": [
       "forest",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 94, Systems Reference Document (SRD): 285"
   },
@@ -1507,7 +1507,7 @@
     "Creature_Tags": [
       "mountain",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Basic Rules v1: 8, Monster Manual: 98, Systems Reference Document (SRD): 287"
   },
@@ -1523,7 +1523,7 @@
     "Creature_Tags": [
       "arctic, mountain",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 117, Systems Reference Document (SRD): 302"
   },
@@ -1539,7 +1539,7 @@
     "Creature_Tags": [
       "arctic, cave, underground",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "HotDQ supplement: 5, Monster Manual: 101, Systems Reference Document (SRD): 289"
   },
@@ -1583,7 +1583,7 @@
     "Creature_Tags": [
       "swamp",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 87, Systems Reference Document (SRD): 280"
   },
@@ -1599,7 +1599,7 @@
     "Creature_Tags": [
       "desert",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 90, Systems Reference Document (SRD): 282"
   },
@@ -1615,7 +1615,7 @@
     "Creature_Tags": [
       "cave, underground",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 104, Systems Reference Document (SRD): 290"
   },
@@ -1631,7 +1631,7 @@
     "Creature_Tags": [
       "coast",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 107, Systems Reference Document (SRD): 293"
   },
@@ -1647,7 +1647,7 @@
     "Creature_Tags": [
       "cave, desert, grassland",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 110, Systems Reference Document (SRD): 295"
   },
@@ -1663,7 +1663,7 @@
     "Creature_Tags": [
       "mountain, ruins",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 113, Systems Reference Document (SRD): 298"
   },
@@ -1679,7 +1679,7 @@
     "Creature_Tags": [
       "forest",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 93, Systems Reference Document (SRD): 284"
   },
@@ -1695,7 +1695,7 @@
     "Creature_Tags": [
       "mountain",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 97, Systems Reference Document (SRD): 286"
   },
@@ -1711,7 +1711,7 @@
     "Creature_Tags": [
       "arctic, mountain",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 116, Systems Reference Document (SRD): 301"
   },
@@ -1727,7 +1727,7 @@
     "Creature_Tags": [
       "arctic, cave, underground",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 100, Systems Reference Document (SRD): 288"
   },
@@ -1743,7 +1743,7 @@
     "Creature_Tags": [
       "dungeon, ruins",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 281, Systems Reference Document (SRD): 347"
   },
@@ -2105,7 +2105,7 @@
     "Creature_Tags": [
       "cave, dungeon, underground",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 28"
   },
@@ -2805,7 +2805,7 @@
     "Creature_Tags": [
       "cave, dungeon, underground",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 29"
   },
@@ -2880,7 +2880,7 @@
     "Creature_Tags": [
       "unique",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 49"
   },
@@ -2896,7 +2896,7 @@
     "Creature_Tags": [
       "dungeon",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 48"
   },
@@ -4463,7 +4463,7 @@
     "Creature_Tags": [
       "dungeon, ruins",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 282, Systems Reference Document (SRD): 348"
   },
@@ -4912,7 +4912,7 @@
       "aquatic, coast",
       "legendary",
       "Titan",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 197, Systems Reference Document (SRD): 324"
   },
@@ -5032,7 +5032,7 @@
     "Creature_Tags": [
       "dungeon, ruins, urban",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 202"
   },
@@ -5435,7 +5435,7 @@
     "Creature_Tags": [
       "desert, dungeon",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 229, Systems Reference Document (SRD): 334"
   },
@@ -7109,7 +7109,7 @@
     "Creature_Tags": [
       "forest, ruins",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 294, Systems Reference Document (SRD): 351"
   },
@@ -7126,7 +7126,7 @@
       "dungeon, ruins, urban",
       "legendary",
       "Shapechanger",
-      null
+      "lair"
     ],
     "Source": "HotDQ supplement: 20, Monster Manual: 297, Systems Reference Document (SRD): 352"
   },
@@ -7157,7 +7157,7 @@
       "dungeon, ruins, urban",
       "legendary",
       "Shapechanger",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 298"
   },
@@ -7174,7 +7174,7 @@
       "dungeon, ruins, urban",
       "legendary",
       "Shapechanger",
-      null
+      "lair"
     ],
     "Source": "Monster Manual: 298"
   },
@@ -7985,7 +7985,7 @@
       "planar",
       "legendary",
       "Demon",
-      null
+      "lair"
     ],
     "Source": "Mordenkainen's Tome of Foes: 143"
   },
@@ -8183,7 +8183,7 @@
       "planar",
       "legendary",
       "Demon",
-      null
+      "lair"
     ],
     "Source": "Mordenkainen's Tome of Foes: 144"
   },
@@ -8601,7 +8601,7 @@
       "planar",
       "legendary",
       "Demon",
-      null
+      "lair"
     ],
     "Source": "Mordenkainen's Tome of Foes: 146"
   },
@@ -8633,7 +8633,7 @@
       "planar",
       "legendary",
       "Devil",
-      null
+      "lair"
     ],
     "Source": "Mordenkainen's Tome of Foes: 173"
   },
@@ -8769,7 +8769,7 @@
       "planar",
       "legendary",
       "Demon",
-      null
+      "lair"
     ],
     "Source": "Mordenkainen's Tome of Foes: 149"
   },
@@ -8876,7 +8876,7 @@
       "planar",
       "legendary",
       "Demon",
-      null
+      "lair"
     ],
     "Source": "Mordenkainen's Tome of Foes: 151"
   },
@@ -8994,7 +8994,7 @@
     "Creature_Tags": [
       "planar",
       "Yugoloth",
-      null
+      "lair"
     ],
     "Source": "Mordenkainen's Tome of Foes: 250"
   },
@@ -9217,7 +9217,7 @@
       "planar",
       "legendary",
       "Demon",
-      null
+      "lair"
     ],
     "Source": "Mordenkainen's Tome of Foes: 153"
   },
@@ -9812,7 +9812,7 @@
       "planar",
       "legendary",
       "Demon",
-      null
+      "lair"
     ],
     "Source": "Mordenkainen's Tome of Foes: 155"
   },
@@ -9859,7 +9859,7 @@
       "planar",
       "legendary",
       "Devil",
-      null
+      "lair"
     ],
     "Source": "Mordenkainen's Tome of Foes: 180"
   },
@@ -9877,7 +9877,7 @@
       "planar",
       "legendary",
       "Demon",
-      null
+      "lair"
     ],
     "Source": "Mordenkainen's Tome of Foes: 157"
   },
@@ -9917,7 +9917,7 @@
     "Creature_Tags": [
       "unique",
       "legendary",
-      null
+      "lair"
     ],
     "Source": "Storm King's Thunder: 241"
   },
