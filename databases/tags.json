@@ -1,0 +1,326 @@
+[
+  {
+    "model": "toolkit.tag",
+    "pk": "Aarakocra"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Any Race"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Bullywug"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Cloud Giant"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Cloud giant"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Damaran Human"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Demon"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Demon, Orc"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Demon, Shapechanger"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Derro"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Devil"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Devil, Shapechanger"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Dwarf"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Earth genasi"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Elf"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Fire Giant"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Fire genasi"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Firenewt"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Frost Giant"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Gith"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Gnoll"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Gnome"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Gnome, Shapechanger"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Goblinoid"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Grimlock"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Grung"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Half-Dragon"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Half-black dragon"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Half-dragon"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Half-elf"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Halfling"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "High-elf"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Hill Giant"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Human"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Human, Shapechanger"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Kenku"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Kobold"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Kuo-toa"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Lizardfolk"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Meazel"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Merfolk"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Mongrelfolk"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Nagpa"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Orc"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Quaggoth"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Sahuagin"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Saurial"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Shapechanger"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Shapechanger, Yuan-ti"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Shield dwarf"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Stone Giant"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Storm Giant"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Swarm"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Tabaxi"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Thri-kreen"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Tiefling"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Titan"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Tortle"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Troglodyte"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Water genasi"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Xvart"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Yuan-ti"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "Yugoloth"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "any"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "aquatic"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "arctic"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "cave"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "coast"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "desert"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "dungeon"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "forest"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "grassland"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "lair"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "legendary"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "mountain"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "planar"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "ruins"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "swamp"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "underground"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "unique"
+  },
+  {
+    "model": "toolkit.tag",
+    "pk": "urban"
+  }
+]

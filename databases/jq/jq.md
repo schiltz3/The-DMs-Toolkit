@@ -1,8 +1,9 @@
 use command
 
-```
-jq $(cat .\databases\monsters.jq) .\databases\monsters-1668973282154.json > .\databases\monsters.json
-```
+monsters.jq
+`jq -f ./databases/jq/monsters.jq ./databases/sources/monsters-1668973282154.json > ./databases/monsters.json`
+
+
 
 To run the monster database through the `monsters.jq` transformation and output it to `monsters.json`
 
