@@ -2,7 +2,7 @@ from typing import Optional
 
 from django.contrib.auth.models import User
 
-from toolkit.models import Armor, GeneratedEncounter, Monster
+from toolkit.models import GeneratedEncounter, Monster
 from toolkit.utilities.cache import get_cache
 
 
