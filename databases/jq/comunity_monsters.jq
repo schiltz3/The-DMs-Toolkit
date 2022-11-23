@@ -25,7 +25,7 @@ def frac(f):
     Creature_Tags:
       [
         if .tags == "" then empty else .tags | split(", ") | .[] end,
-        if .environment == "" then empty else .environment | split(", ") | .[] end,
+        if .environment == "" then empty else .environment | split(", ") | .[] | split(",") | .[] end,
         if .lair == "" then empty else .lair end,
         if .unique == "" then empty else .unique end,
         if .legendary == "" then empty else .legendary end
