@@ -9,7 +9,7 @@ from loguru import logger
 
 def set_up_parser():
     parser = ArgumentParser(
-        prog="clean monsters",
+        prog="clean_monsters",
         description="Clean monsters.json generatored by running monsters-1668973282154.json though jq with monsters.jq as the filters",
     )
     parser.add_argument("input")
