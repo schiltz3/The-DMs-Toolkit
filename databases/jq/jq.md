@@ -22,3 +22,6 @@ To run the monster database through the `monsters.jq` transformation and output 
     "Source":str}
 ```
 Creature_Tags is the aggregation of `unique, legendary, environment, tags and lair`
+
+## Note:
+File must use `LF` end of line sequence
