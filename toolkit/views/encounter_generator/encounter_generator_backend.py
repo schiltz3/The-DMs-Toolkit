@@ -50,6 +50,14 @@ class Encounter_Generator:
         self.highest_loot_modifier = 0
         self.generator_key = "Random"
 
+    def get_all_random_generators(self):
+        """
+        Gives the list of random generator keys
+        Returns:
+            List: a list of all generator keys
+        """
+        return list(self.Generators.keys())
+
     def get_tags(self):
         """Get Current Tags
 
