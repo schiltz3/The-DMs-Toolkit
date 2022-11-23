@@ -2,7 +2,7 @@
 | map(
     {
         "model": "toolkit.tag",
-        "pk":.
-        
+        "pk":.,
+        "fields": {}
     }
 )
