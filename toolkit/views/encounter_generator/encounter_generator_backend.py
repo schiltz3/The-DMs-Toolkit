@@ -392,10 +392,8 @@ class Encounter_Generator:
             raise ValueError("Illegal loot generate value")
         self.change_average_level(average_level)
         self.set_encounter_type(encounter_type)
-
         if encounter_type == "Random":
             self.generate_encounter_type()
-
         for x in tags:
             self.add_tag(x)
         if self.encounter_type == "Average Encounter":
@@ -416,6 +414,7 @@ class Encounter_Generator:
         current_encounter = GeneratedEncounter(
             Encounter_Type=self.encounter_type,
             Number_Of_Characters=len(self.monster_list),
+            Average_Character_Levels=average_level,
         )
         encounter_dict = {
             "encounter_object": current_encounter,

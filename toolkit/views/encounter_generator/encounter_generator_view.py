@@ -89,7 +89,7 @@ class EncounterGenerator(View):
                         cache_encounter(
                             user=request.user,
                             encounter=encounter_object,
-                            monsters_output=generated.get("monsters"),
+                            monster_output=generated.get("monsters"),
                         )
                         self.context["cached"] = True
                     except TypeError as e:

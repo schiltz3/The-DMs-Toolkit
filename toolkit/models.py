@@ -280,7 +280,7 @@ class GeneratedEncounter(models.Model):
     )
     Average_CR = models.FloatField(default=0)
     Encounter_Tags = models.ManyToManyField(Tag, blank=True)
-    Monsters = models.ManyToManyField(Monster)
+    Monsters = models.ManyToManyField(Monster, blank=True)
 
     def __str__(self) -> str:
         return f"{self.Owner},\t{self.Encounter_Type},\t{self.Monsters}"

@@ -26,7 +26,7 @@ def cache_encounter(
     if monster_output is not None:
         encounter.Monsters.set(monster_output)
     encounter.save()
-    cache.loot = encounter
+    cache.encounter = encounter
     user.save()
 
 
@@ -37,7 +37,7 @@ def save_cached_encounter(user: User) -> Optional[GeneratedEncounter]:
         user (User): User who has the created encounter
 
     Returns:
-        Optional[Loot]: Encounter if one is cached, else None
+        Optional[Encounter]: Encounter if one is cached, else None
     """
     ret = user.cache.encounter
     user.cache.encounter = None

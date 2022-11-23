@@ -94,7 +94,7 @@
                             class="btn btn-lg btn-primary"
                             name="save_button"
                             style="--bs-btn-padding-y: 1rem;"
-                            disabled>
+                            {% if user.is_authenticated == False or cached == False %}disabled{% endif %}>
                       SAVE
                     </button>
                     <button type="submit"
