@@ -1,6 +1,6 @@
 [
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Baphomet",
     "fields": {
       "Challenge_Rating": 23,
@@ -19,7 +19,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bridesmaid of Zuggtmoy",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -34,7 +34,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Chamberlain of Zuggtmoy",
     "fields": {
       "Challenge_Rating": 2,
@@ -49,7 +49,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Chuul Spore Servant",
     "fields": {
       "Challenge_Rating": 4,
@@ -64,7 +64,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Demogorgon",
     "fields": {
       "Challenge_Rating": 26,
@@ -83,7 +83,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Derro",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -101,7 +101,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Derro Savant",
     "fields": {
       "Challenge_Rating": 3,
@@ -119,7 +119,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Droki",
     "fields": {
       "Challenge_Rating": 2,
@@ -137,7 +137,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Drow Spore Servant",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -152,7 +152,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Soulblade",
     "fields": {
       "Challenge_Rating": 1,
@@ -169,7 +169,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Spore Servant",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -184,7 +184,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Stone Guard",
     "fields": {
       "Challenge_Rating": 2,
@@ -201,7 +201,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Xarrorn",
     "fields": {
       "Challenge_Rating": 2,
@@ -218,7 +218,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Female Steeder",
     "fields": {
       "Challenge_Rating": 1,
@@ -233,7 +233,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Fraz-Urb'luu",
     "fields": {
       "Challenge_Rating": 23,
@@ -252,7 +252,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Graz'zt",
     "fields": {
       "Challenge_Rating": 24,
@@ -272,7 +272,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Grisha",
     "fields": {
       "Challenge_Rating": 2,
@@ -290,7 +290,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hook Horror Servant",
     "fields": {
       "Challenge_Rating": 3,
@@ -305,7 +305,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ixitxachitl",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -320,7 +320,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Juiblex",
     "fields": {
       "Challenge_Rating": 23,
@@ -339,7 +339,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Male Steeder",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -354,7 +354,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Narrak",
     "fields": {
       "Challenge_Rating": 2,
@@ -372,7 +372,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Orcus",
     "fields": {
       "Challenge_Rating": 26,
@@ -391,7 +391,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "The Pudding King",
     "fields": {
       "Challenge_Rating": 4,
@@ -410,7 +410,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Troglodyte Champion of Laogzed",
     "fields": {
       "Challenge_Rating": 3,
@@ -427,7 +427,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vampiric Ixitxachitl",
     "fields": {
       "Challenge_Rating": 2,
@@ -442,7 +442,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yeenoghu",
     "fields": {
       "Challenge_Rating": 24,
@@ -461,7 +461,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yestabrod",
     "fields": {
       "Challenge_Rating": 4,
@@ -479,7 +479,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Zuggtmoy",
     "fields": {
       "Challenge_Rating": 23,
@@ -498,7 +498,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Aerisi Kalinoth",
     "fields": {
       "Challenge_Rating": 7,
@@ -516,7 +516,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Aerisi Kalinoth (in lair)",
     "fields": {
       "Challenge_Rating": 9,
@@ -535,7 +535,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Air Elemental Myrmidon",
     "fields": {
       "Challenge_Rating": 7,
@@ -563,7 +563,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bastian Thermandar",
     "fields": {
       "Challenge_Rating": 8,
@@ -581,7 +581,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Black Earth Guard",
     "fields": {
       "Challenge_Rating": 2,
@@ -608,7 +608,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Black Earth Priest",
     "fields": {
       "Challenge_Rating": 3,
@@ -635,7 +635,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Burrow Shark",
     "fields": {
       "Challenge_Rating": 4,
@@ -662,7 +662,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Crushing Wave Priest",
     "fields": {
       "Challenge_Rating": 2,
@@ -685,7 +685,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Crushing Wave Reaver",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -708,7 +708,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dark Tide Knight",
     "fields": {
       "Challenge_Rating": 3,
@@ -731,7 +731,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Drannin Splithelm",
     "fields": {
       "Challenge_Rating": 7,
@@ -749,7 +749,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Earth Elemental Myrmidon",
     "fields": {
       "Challenge_Rating": 7,
@@ -777,7 +777,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Elizar Dryflagon",
     "fields": {
       "Challenge_Rating": 5,
@@ -795,7 +795,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Eternal Flame Guardian",
     "fields": {
       "Challenge_Rating": 2,
@@ -820,7 +820,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Eternal Flame Priest",
     "fields": {
       "Challenge_Rating": 3,
@@ -845,7 +845,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Fathomer",
     "fields": {
       "Challenge_Rating": 2,
@@ -868,7 +868,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Feathergale knight",
     "fields": {
       "Challenge_Rating": 1,
@@ -893,7 +893,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Fire Elemental Myrmidon",
     "fields": {
       "Challenge_Rating": 7,
@@ -920,7 +920,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Flamewrath",
     "fields": {
       "Challenge_Rating": 6,
@@ -945,7 +945,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gar Shatterkeel",
     "fields": {
       "Challenge_Rating": 9,
@@ -963,7 +963,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gar Shatterkeel (in lair)",
     "fields": {
       "Challenge_Rating": 13,
@@ -981,7 +981,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ghald",
     "fields": {
       "Challenge_Rating": 7,
@@ -999,7 +999,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hellenrae",
     "fields": {
       "Challenge_Rating": 5,
@@ -1017,7 +1017,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Howling Hatred Initiate",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -1042,7 +1042,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Howling Hatred Priest",
     "fields": {
       "Challenge_Rating": 2,
@@ -1067,7 +1067,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hurricane",
     "fields": {
       "Challenge_Rating": 2,
@@ -1092,7 +1092,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Imix",
     "fields": {
       "Challenge_Rating": 19,
@@ -1111,7 +1111,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Marlos Urnrayle",
     "fields": {
       "Challenge_Rating": 8,
@@ -1128,7 +1128,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Marlos Urnrayle (in lair)",
     "fields": {
       "Challenge_Rating": 12,
@@ -1145,7 +1145,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Miraj Vizann",
     "fields": {
       "Challenge_Rating": 6,
@@ -1163,7 +1163,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "OgrÃ©moch",
     "fields": {
       "Challenge_Rating": 20,
@@ -1182,7 +1182,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Olhydra",
     "fields": {
       "Challenge_Rating": 18,
@@ -1201,7 +1201,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "One-Eyed Shiver",
     "fields": {
       "Challenge_Rating": 3,
@@ -1224,7 +1224,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Oreioth",
     "fields": {
       "Challenge_Rating": 2,
@@ -1242,7 +1242,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Razerblast",
     "fields": {
       "Challenge_Rating": 5,
@@ -1267,7 +1267,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sacred Stone Monk",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -1294,7 +1294,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Shoalar Quanderil",
     "fields": {
       "Challenge_Rating": 4,
@@ -1312,7 +1312,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Skyweaver",
     "fields": {
       "Challenge_Rating": 3,
@@ -1337,7 +1337,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Stonemelder",
     "fields": {
       "Challenge_Rating": 4,
@@ -1364,7 +1364,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Thurl Merosska",
     "fields": {
       "Challenge_Rating": 3,
@@ -1382,7 +1382,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vanifer",
     "fields": {
       "Challenge_Rating": 9,
@@ -1400,7 +1400,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vanifer (in lair)",
     "fields": {
       "Challenge_Rating": 12,
@@ -1419,7 +1419,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Water Elemental Myrmidon",
     "fields": {
       "Challenge_Rating": 7,
@@ -1447,7 +1447,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Wiggan Nettlebee",
     "fields": {
       "Challenge_Rating": 2,
@@ -1465,7 +1465,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Windharrow",
     "fields": {
       "Challenge_Rating": 3,
@@ -1483,7 +1483,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yan-C-Bin",
     "fields": {
       "Challenge_Rating": 18,
@@ -1502,7 +1502,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ambush Drake",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -1525,7 +1525,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Azbara Jos",
     "fields": {
       "Challenge_Rating": 4,
@@ -1543,7 +1543,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Blagothkus",
     "fields": {
       "Challenge_Rating": 9,
@@ -1561,7 +1561,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Captain Othelstan",
     "fields": {
       "Challenge_Rating": 5,
@@ -1579,7 +1579,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dragonclaw",
     "fields": {
       "Challenge_Rating": 1,
@@ -1598,7 +1598,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dragonwing",
     "fields": {
       "Challenge_Rating": 2,
@@ -1617,7 +1617,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dralmorrer Borngray",
     "fields": {
       "Challenge_Rating": 3,
@@ -1635,7 +1635,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Frulam Mondath",
     "fields": {
       "Challenge_Rating": 2,
@@ -1653,7 +1653,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Jamna Gleamsilver",
     "fields": {
       "Challenge_Rating": 1,
@@ -1671,7 +1671,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Langdedrosa Cyanwrath",
     "fields": {
       "Challenge_Rating": 4,
@@ -1689,7 +1689,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Pharblex Spattergoo",
     "fields": {
       "Challenge_Rating": 3,
@@ -1707,7 +1707,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Rath Modar",
     "fields": {
       "Challenge_Rating": 6,
@@ -1725,7 +1725,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Rezmir",
     "fields": {
       "Challenge_Rating": 7,
@@ -1743,7 +1743,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Talis the White",
     "fields": {
       "Challenge_Rating": 5,
@@ -1761,7 +1761,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Aarakocra",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -1780,7 +1780,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Aboleth",
     "fields": {
       "Challenge_Rating": 10,
@@ -1800,7 +1800,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Abominable Yeti",
     "fields": {
       "Challenge_Rating": 9,
@@ -1819,7 +1819,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Acolyte",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -1845,7 +1845,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Adult Black Dragon",
     "fields": {
       "Challenge_Rating": 14,
@@ -1864,7 +1864,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Adult Blue Dracolich",
     "fields": {
       "Challenge_Rating": 17,
@@ -1884,7 +1884,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Adult Blue Dragon",
     "fields": {
       "Challenge_Rating": 16,
@@ -1903,7 +1903,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Adult Brass Dragon",
     "fields": {
       "Challenge_Rating": 13,
@@ -1923,7 +1923,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Adult Bronze Dragon",
     "fields": {
       "Challenge_Rating": 15,
@@ -1942,7 +1942,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Adult Copper Dragon",
     "fields": {
       "Challenge_Rating": 14,
@@ -1963,7 +1963,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Adult Gold Dragon",
     "fields": {
       "Challenge_Rating": 17,
@@ -1983,7 +1983,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Adult Green Dragon",
     "fields": {
       "Challenge_Rating": 15,
@@ -2002,7 +2002,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Adult Red Dragon",
     "fields": {
       "Challenge_Rating": 17,
@@ -2021,7 +2021,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Adult Silver Dragon",
     "fields": {
       "Challenge_Rating": 16,
@@ -2041,7 +2041,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Adult White Dragon",
     "fields": {
       "Challenge_Rating": 13,
@@ -2062,7 +2062,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Air Elemental",
     "fields": {
       "Challenge_Rating": 5,
@@ -2090,7 +2090,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Allosaurus",
     "fields": {
       "Challenge_Rating": 2,
@@ -2109,7 +2109,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ancient Black Dragon",
     "fields": {
       "Challenge_Rating": 21,
@@ -2128,7 +2128,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ancient Blue Dragon",
     "fields": {
       "Challenge_Rating": 23,
@@ -2147,7 +2147,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ancient Brass Dragon",
     "fields": {
       "Challenge_Rating": 20,
@@ -2167,7 +2167,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ancient Bronze Dragon",
     "fields": {
       "Challenge_Rating": 22,
@@ -2186,7 +2186,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ancient Copper Dragon",
     "fields": {
       "Challenge_Rating": 21,
@@ -2207,7 +2207,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ancient Gold Dragon",
     "fields": {
       "Challenge_Rating": 24,
@@ -2227,7 +2227,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ancient Green Dragon",
     "fields": {
       "Challenge_Rating": 22,
@@ -2246,7 +2246,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ancient Red Dragon",
     "fields": {
       "Challenge_Rating": 24,
@@ -2265,7 +2265,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ancient Silver Dragon",
     "fields": {
       "Challenge_Rating": 23,
@@ -2285,7 +2285,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ancient White Dragon",
     "fields": {
       "Challenge_Rating": 20,
@@ -2306,7 +2306,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Androsphinx",
     "fields": {
       "Challenge_Rating": 17,
@@ -2326,7 +2326,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Animated Armor",
     "fields": {
       "Challenge_Rating": 1,
@@ -2345,7 +2345,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ankheg",
     "fields": {
       "Challenge_Rating": 2,
@@ -2365,7 +2365,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ankylosaurus",
     "fields": {
       "Challenge_Rating": 3,
@@ -2382,7 +2382,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ape",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -2399,7 +2399,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Arcanaloth",
     "fields": {
       "Challenge_Rating": 12,
@@ -2418,7 +2418,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Archmage",
     "fields": {
       "Challenge_Rating": 12,
@@ -2437,7 +2437,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Assassin",
     "fields": {
       "Challenge_Rating": 8,
@@ -2466,7 +2466,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Awakened Shrub",
     "fields": {
       "Challenge_Rating": 0,
@@ -2484,7 +2484,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Awakened Tree",
     "fields": {
       "Challenge_Rating": 2,
@@ -2501,7 +2501,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Axe Beak",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -2518,7 +2518,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Azer",
     "fields": {
       "Challenge_Rating": 2,
@@ -2536,7 +2536,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Baboon",
     "fields": {
       "Challenge_Rating": 0,
@@ -2554,7 +2554,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Badger",
     "fields": {
       "Challenge_Rating": 0,
@@ -2571,7 +2571,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Balor",
     "fields": {
       "Challenge_Rating": 19,
@@ -2590,7 +2590,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bandit",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -2615,7 +2615,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bandit Captain",
     "fields": {
       "Challenge_Rating": 2,
@@ -2640,7 +2640,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Banshee",
     "fields": {
       "Challenge_Rating": 4,
@@ -2660,7 +2660,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Barbed Devil",
     "fields": {
       "Challenge_Rating": 5,
@@ -2679,7 +2679,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Barlgura",
     "fields": {
       "Challenge_Rating": 5,
@@ -2698,7 +2698,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Basilisk",
     "fields": {
       "Challenge_Rating": 3,
@@ -2725,7 +2725,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bat",
     "fields": {
       "Challenge_Rating": 0,
@@ -2746,7 +2746,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bearded Devil",
     "fields": {
       "Challenge_Rating": 3,
@@ -2765,7 +2765,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Behir",
     "fields": {
       "Challenge_Rating": 11,
@@ -2784,7 +2784,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Beholder",
     "fields": {
       "Challenge_Rating": 13,
@@ -2804,7 +2804,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Beholder (in lair)",
     "fields": {
       "Challenge_Rating": 14,
@@ -2825,7 +2825,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Beholder Zombie",
     "fields": {
       "Challenge_Rating": 5,
@@ -2844,7 +2844,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Berserker",
     "fields": {
       "Challenge_Rating": 2,
@@ -2869,7 +2869,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Black Bear",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -2889,7 +2889,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Black Dragon Wyrmling",
     "fields": {
       "Challenge_Rating": 2,
@@ -2906,7 +2906,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Black Pudding",
     "fields": {
       "Challenge_Rating": 4,
@@ -2923,7 +2923,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Blink Dog",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -2941,7 +2941,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Blood Hawk",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -2960,7 +2960,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Blue Dragon Wyrmling",
     "fields": {
       "Challenge_Rating": 3,
@@ -2977,7 +2977,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Blue Slaad",
     "fields": {
       "Challenge_Rating": 7,
@@ -2994,7 +2994,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Boar",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -3012,7 +3012,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bone Devil",
     "fields": {
       "Challenge_Rating": 9,
@@ -3031,7 +3031,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bone Naga",
     "fields": {
       "Challenge_Rating": 4,
@@ -3049,7 +3049,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Brass Dragon Wyrmling",
     "fields": {
       "Challenge_Rating": 1,
@@ -3067,7 +3067,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bronze Dragon Wyrmling",
     "fields": {
       "Challenge_Rating": 2,
@@ -3084,7 +3084,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Brown Bear",
     "fields": {
       "Challenge_Rating": 1,
@@ -3102,7 +3102,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bugbear",
     "fields": {
       "Challenge_Rating": 1,
@@ -3125,7 +3125,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bugbear Chief",
     "fields": {
       "Challenge_Rating": 3,
@@ -3148,7 +3148,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bulette",
     "fields": {
       "Challenge_Rating": 5,
@@ -3169,7 +3169,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bullywug",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -3188,7 +3188,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cambion",
     "fields": {
       "Challenge_Rating": 5,
@@ -3207,7 +3207,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Camel",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -3224,7 +3224,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Carrion Crawler",
     "fields": {
       "Challenge_Rating": 2,
@@ -3243,7 +3243,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cat",
     "fields": {
       "Challenge_Rating": 0,
@@ -3260,7 +3260,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Centaur",
     "fields": {
       "Challenge_Rating": 2,
@@ -3279,7 +3279,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Chain Devil",
     "fields": {
       "Challenge_Rating": 8,
@@ -3298,7 +3298,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Chasme",
     "fields": {
       "Challenge_Rating": 6,
@@ -3317,7 +3317,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Chimera",
     "fields": {
       "Challenge_Rating": 6,
@@ -3334,7 +3334,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Chuul",
     "fields": {
       "Challenge_Rating": 4,
@@ -3352,7 +3352,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Clay Golem",
     "fields": {
       "Challenge_Rating": 9,
@@ -3371,7 +3371,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cloaker",
     "fields": {
       "Challenge_Rating": 8,
@@ -3390,7 +3390,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cloud Giant",
     "fields": {
       "Challenge_Rating": 9,
@@ -3408,7 +3408,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cockatrice",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -3427,7 +3427,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Commoner",
     "fields": {
       "Challenge_Rating": 0,
@@ -3445,7 +3445,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Constrictor Snake",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -3463,7 +3463,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Copper Dragon Wyrmling",
     "fields": {
       "Challenge_Rating": 1,
@@ -3482,7 +3482,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Couatl",
     "fields": {
       "Challenge_Rating": 4,
@@ -3499,7 +3499,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Crab",
     "fields": {
       "Challenge_Rating": 0,
@@ -3517,7 +3517,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Crawling Claw",
     "fields": {
       "Challenge_Rating": 0,
@@ -3536,7 +3536,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Crocodile",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -3555,7 +3555,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cult Fanatic",
     "fields": {
       "Challenge_Rating": 2,
@@ -3574,7 +3574,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cultist",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -3593,7 +3593,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cyclops",
     "fields": {
       "Challenge_Rating": 6,
@@ -3615,7 +3615,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dao",
     "fields": {
       "Challenge_Rating": 11,
@@ -3636,7 +3636,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Darkmantle",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -3654,7 +3654,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Death Dog",
     "fields": {
       "Challenge_Rating": 1,
@@ -3673,7 +3673,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Death Knight",
     "fields": {
       "Challenge_Rating": 17,
@@ -3701,7 +3701,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Death Slaad",
     "fields": {
       "Challenge_Rating": 10,
@@ -3719,7 +3719,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Death Tyrant",
     "fields": {
       "Challenge_Rating": 14,
@@ -3739,7 +3739,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Death Tyrant (in lair)",
     "fields": {
       "Challenge_Rating": 15,
@@ -3760,7 +3760,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Deep Gnome (Svirfneblin)",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -3781,7 +3781,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Deer",
     "fields": {
       "Challenge_Rating": 0,
@@ -3799,7 +3799,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Demilich",
     "fields": {
       "Challenge_Rating": 18,
@@ -3817,7 +3817,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Demilich (Acererak)",
     "fields": {
       "Challenge_Rating": 21,
@@ -3835,7 +3835,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Demilich (Acererak in lair)",
     "fields": {
       "Challenge_Rating": 23,
@@ -3854,7 +3854,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Demilich (in lair)",
     "fields": {
       "Challenge_Rating": 20,
@@ -3873,7 +3873,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Deva",
     "fields": {
       "Challenge_Rating": 10,
@@ -3890,7 +3890,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dire Wolf",
     "fields": {
       "Challenge_Rating": 1,
@@ -3910,7 +3910,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Displacer Beast",
     "fields": {
       "Challenge_Rating": 3,
@@ -3928,7 +3928,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Djinni",
     "fields": {
       "Challenge_Rating": 11,
@@ -3949,7 +3949,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Doppelganger",
     "fields": {
       "Challenge_Rating": 3,
@@ -3969,7 +3969,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Draft Horse",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -3986,7 +3986,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dragon Turtle",
     "fields": {
       "Challenge_Rating": 17,
@@ -4003,7 +4003,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dretch",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -4022,7 +4022,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Drider",
     "fields": {
       "Challenge_Rating": 6,
@@ -4040,7 +4040,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Drow",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -4060,7 +4060,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Drow Elite Warrior",
     "fields": {
       "Challenge_Rating": 5,
@@ -4080,7 +4080,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Drow Mage",
     "fields": {
       "Challenge_Rating": 7,
@@ -4100,7 +4100,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Drow Priestess of Lolth",
     "fields": {
       "Challenge_Rating": 8,
@@ -4120,7 +4120,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Druid",
     "fields": {
       "Challenge_Rating": 2,
@@ -4146,7 +4146,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dryad",
     "fields": {
       "Challenge_Rating": 1,
@@ -4163,7 +4163,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar",
     "fields": {
       "Challenge_Rating": 1,
@@ -4182,7 +4182,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duodrone",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -4199,7 +4199,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dust Mephit",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -4219,7 +4219,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Eagle",
     "fields": {
       "Challenge_Rating": 0,
@@ -4238,7 +4238,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Earth Elemental",
     "fields": {
       "Challenge_Rating": 5,
@@ -4266,7 +4266,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Efreeti",
     "fields": {
       "Challenge_Rating": 11,
@@ -4286,7 +4286,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Elephant",
     "fields": {
       "Challenge_Rating": 4,
@@ -4303,7 +4303,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Elk",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -4321,7 +4321,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Empyrean",
     "fields": {
       "Challenge_Rating": 23,
@@ -4340,7 +4340,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Erinyes",
     "fields": {
       "Challenge_Rating": 12,
@@ -4359,7 +4359,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ettercap",
     "fields": {
       "Challenge_Rating": 2,
@@ -4381,7 +4381,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ettin",
     "fields": {
       "Challenge_Rating": 4,
@@ -4401,7 +4401,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Faerie Dragon (blue)",
     "fields": {
       "Challenge_Rating": 2,
@@ -4422,7 +4422,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Faerie Dragon (green)",
     "fields": {
       "Challenge_Rating": 2,
@@ -4443,7 +4443,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Faerie Dragon (indigo)",
     "fields": {
       "Challenge_Rating": 2,
@@ -4464,7 +4464,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Faerie Dragon (orange)",
     "fields": {
       "Challenge_Rating": 1,
@@ -4485,7 +4485,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Faerie Dragon (red)",
     "fields": {
       "Challenge_Rating": 1,
@@ -4506,7 +4506,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Faerie Dragon (violet)",
     "fields": {
       "Challenge_Rating": 2,
@@ -4527,7 +4527,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Faerie Dragon (yellow)",
     "fields": {
       "Challenge_Rating": 1,
@@ -4548,7 +4548,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Fire Elemental",
     "fields": {
       "Challenge_Rating": 5,
@@ -4573,7 +4573,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Fire Giant",
     "fields": {
       "Challenge_Rating": 9,
@@ -4591,7 +4591,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Fire Snake",
     "fields": {
       "Challenge_Rating": 1,
@@ -4609,7 +4609,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Flameskull",
     "fields": {
       "Challenge_Rating": 4,
@@ -4627,7 +4627,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Flesh Golem",
     "fields": {
       "Challenge_Rating": 5,
@@ -4645,7 +4645,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Flumph",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -4663,7 +4663,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Flying Snake",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -4681,7 +4681,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Flying Sword",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -4700,7 +4700,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Fomorian",
     "fields": {
       "Challenge_Rating": 8,
@@ -4718,7 +4718,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Frog",
     "fields": {
       "Challenge_Rating": 0,
@@ -4738,7 +4738,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Frost Giant",
     "fields": {
       "Challenge_Rating": 8,
@@ -4757,7 +4757,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Galeb Duhr",
     "fields": {
       "Challenge_Rating": 6,
@@ -4778,7 +4778,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gargoyle",
     "fields": {
       "Challenge_Rating": 2,
@@ -4796,7 +4796,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gas Spore",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -4815,7 +4815,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gelatinous Cube",
     "fields": {
       "Challenge_Rating": 2,
@@ -4832,7 +4832,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ghast",
     "fields": {
       "Challenge_Rating": 2,
@@ -4860,7 +4860,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ghost",
     "fields": {
       "Challenge_Rating": 4,
@@ -4882,7 +4882,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ghoul",
     "fields": {
       "Challenge_Rating": 1,
@@ -4910,7 +4910,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Ape",
     "fields": {
       "Challenge_Rating": 7,
@@ -4927,7 +4927,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Badger",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -4945,7 +4945,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Bat",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -4967,7 +4967,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Boar",
     "fields": {
       "Challenge_Rating": 2,
@@ -4985,7 +4985,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Centipede",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -5010,7 +5010,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Constrictor Snake",
     "fields": {
       "Challenge_Rating": 2,
@@ -5029,7 +5029,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Crab",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -5047,7 +5047,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Crocodile",
     "fields": {
       "Challenge_Rating": 5,
@@ -5066,7 +5066,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Eagle",
     "fields": {
       "Challenge_Rating": 1,
@@ -5084,7 +5084,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Elk",
     "fields": {
       "Challenge_Rating": 2,
@@ -5102,7 +5102,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Fire Beetle",
     "fields": {
       "Challenge_Rating": 0,
@@ -5127,7 +5127,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Frog",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -5147,7 +5147,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Goat",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -5166,7 +5166,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Hyena",
     "fields": {
       "Challenge_Rating": 1,
@@ -5186,7 +5186,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Lizard",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -5211,7 +5211,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Octopus",
     "fields": {
       "Challenge_Rating": 1,
@@ -5228,7 +5228,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Owl",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -5247,7 +5247,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Poisonous Snake",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -5266,7 +5266,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Rat",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -5291,7 +5291,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Scorpion",
     "fields": {
       "Challenge_Rating": 3,
@@ -5315,7 +5315,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Sea Horse",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -5332,7 +5332,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Shark",
     "fields": {
       "Challenge_Rating": 5,
@@ -5349,7 +5349,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Spider",
     "fields": {
       "Challenge_Rating": 1,
@@ -5376,7 +5376,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Toad",
     "fields": {
       "Challenge_Rating": 1,
@@ -5396,7 +5396,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Vulture",
     "fields": {
       "Challenge_Rating": 1,
@@ -5415,7 +5415,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Wasp",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -5432,7 +5432,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Weasel",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -5450,7 +5450,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Wolf Spider",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -5477,7 +5477,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gibbering Mouther",
     "fields": {
       "Challenge_Rating": 2,
@@ -5497,7 +5497,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Githyanki Knight",
     "fields": {
       "Challenge_Rating": 8,
@@ -5516,7 +5516,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Githyanki Warrior",
     "fields": {
       "Challenge_Rating": 3,
@@ -5534,7 +5534,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Githzerai Monk",
     "fields": {
       "Challenge_Rating": 2,
@@ -5552,7 +5552,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Githzerai Zerth",
     "fields": {
       "Challenge_Rating": 6,
@@ -5570,7 +5570,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Glabrezu",
     "fields": {
       "Challenge_Rating": 9,
@@ -5589,7 +5589,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gladiator",
     "fields": {
       "Challenge_Rating": 5,
@@ -5607,7 +5607,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gnoll",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -5635,7 +5635,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gnoll Fang of Yeenoghu",
     "fields": {
       "Challenge_Rating": 4,
@@ -5663,7 +5663,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gnoll Pack Lord",
     "fields": {
       "Challenge_Rating": 2,
@@ -5691,7 +5691,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Goat",
     "fields": {
       "Challenge_Rating": 0,
@@ -5709,7 +5709,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Goblin",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -5733,7 +5733,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Goblin Boss",
     "fields": {
       "Challenge_Rating": 1,
@@ -5757,7 +5757,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gold Dragon Wyrmling",
     "fields": {
       "Challenge_Rating": 3,
@@ -5775,7 +5775,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gorgon",
     "fields": {
       "Challenge_Rating": 5,
@@ -5793,7 +5793,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Goristro",
     "fields": {
       "Challenge_Rating": 17,
@@ -5812,7 +5812,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gray Ooze",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -5829,7 +5829,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gray Slaad",
     "fields": {
       "Challenge_Rating": 9,
@@ -5846,7 +5846,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Green Dragon Wyrmling",
     "fields": {
       "Challenge_Rating": 2,
@@ -5863,7 +5863,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Green Hag",
     "fields": {
       "Challenge_Rating": 3,
@@ -5881,7 +5881,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Green Hag (coven)",
     "fields": {
       "Challenge_Rating": 5,
@@ -5899,7 +5899,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Green Slaad",
     "fields": {
       "Challenge_Rating": 8,
@@ -5916,7 +5916,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Grell",
     "fields": {
       "Challenge_Rating": 3,
@@ -5934,7 +5934,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Grick",
     "fields": {
       "Challenge_Rating": 2,
@@ -5953,7 +5953,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Grick Alpha",
     "fields": {
       "Challenge_Rating": 7,
@@ -5972,7 +5972,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Griffon",
     "fields": {
       "Challenge_Rating": 2,
@@ -5992,7 +5992,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Grimlock",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -6012,7 +6012,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Guard",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -6030,7 +6030,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Guardian Naga",
     "fields": {
       "Challenge_Rating": 10,
@@ -6050,7 +6050,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gynosphinx",
     "fields": {
       "Challenge_Rating": 11,
@@ -6070,7 +6070,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Half-Ogre",
     "fields": {
       "Challenge_Rating": 1,
@@ -6096,7 +6096,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Half-Red Dragon Veteran",
     "fields": {
       "Challenge_Rating": 5,
@@ -6119,7 +6119,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Harpy",
     "fields": {
       "Challenge_Rating": 1,
@@ -6138,7 +6138,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hawk",
     "fields": {
       "Challenge_Rating": 0,
@@ -6156,7 +6156,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hell Hound",
     "fields": {
       "Challenge_Rating": 3,
@@ -6175,7 +6175,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Helmed Horror",
     "fields": {
       "Challenge_Rating": 4,
@@ -6194,7 +6194,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hezrou",
     "fields": {
       "Challenge_Rating": 8,
@@ -6213,7 +6213,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hill Giant",
     "fields": {
       "Challenge_Rating": 5,
@@ -6232,7 +6232,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hippogriff",
     "fields": {
       "Challenge_Rating": 1,
@@ -6249,7 +6249,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hobgoblin",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -6271,7 +6271,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hobgoblin Captain",
     "fields": {
       "Challenge_Rating": 3,
@@ -6293,7 +6293,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hobgoblin Warlord",
     "fields": {
       "Challenge_Rating": 6,
@@ -6315,7 +6315,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Homunculus",
     "fields": {
       "Challenge_Rating": 0,
@@ -6333,7 +6333,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hook Horror",
     "fields": {
       "Challenge_Rating": 3,
@@ -6351,7 +6351,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Horned Devil",
     "fields": {
       "Challenge_Rating": 11,
@@ -6370,7 +6370,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hunter Shark",
     "fields": {
       "Challenge_Rating": 2,
@@ -6387,7 +6387,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hydra",
     "fields": {
       "Challenge_Rating": 8,
@@ -6412,7 +6412,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hyena",
     "fields": {
       "Challenge_Rating": 0,
@@ -6430,7 +6430,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ice Devil",
     "fields": {
       "Challenge_Rating": 14,
@@ -6449,7 +6449,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ice Mephit",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -6469,7 +6469,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Imp",
     "fields": {
       "Challenge_Rating": 1,
@@ -6489,7 +6489,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Intellect Devourer",
     "fields": {
       "Challenge_Rating": 2,
@@ -6507,7 +6507,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Invisible Stalker",
     "fields": {
       "Challenge_Rating": 6,
@@ -6536,7 +6536,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Iron Golem",
     "fields": {
       "Challenge_Rating": 16,
@@ -6555,7 +6555,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Jackal",
     "fields": {
       "Challenge_Rating": 0,
@@ -6573,7 +6573,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Jackalwere",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -6593,7 +6593,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kenku",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -6618,7 +6618,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Killer Whale",
     "fields": {
       "Challenge_Rating": 3,
@@ -6635,7 +6635,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Knight",
     "fields": {
       "Challenge_Rating": 3,
@@ -6653,7 +6653,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kobold",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -6674,7 +6674,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kraken",
     "fields": {
       "Challenge_Rating": 23,
@@ -6695,7 +6695,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kuo-toa",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -6714,7 +6714,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kuo-toa Archpriest",
     "fields": {
       "Challenge_Rating": 6,
@@ -6733,7 +6733,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kuo-toa Monitor",
     "fields": {
       "Challenge_Rating": 3,
@@ -6752,7 +6752,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kuo-toa Whip",
     "fields": {
       "Challenge_Rating": 1,
@@ -6771,7 +6771,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Lamia",
     "fields": {
       "Challenge_Rating": 4,
@@ -6789,7 +6789,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Lemure",
     "fields": {
       "Challenge_Rating": 0,
@@ -6808,7 +6808,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Lich",
     "fields": {
       "Challenge_Rating": 21,
@@ -6828,7 +6828,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Lich (in lair)",
     "fields": {
       "Challenge_Rating": 22,
@@ -6849,7 +6849,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Lion",
     "fields": {
       "Challenge_Rating": 1,
@@ -6866,7 +6866,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Lizard",
     "fields": {
       "Challenge_Rating": 0,
@@ -6891,7 +6891,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Lizard King/Queen",
     "fields": {
       "Challenge_Rating": 4,
@@ -6913,7 +6913,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Lizardfolk",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -6935,7 +6935,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Lizardfolk Shaman",
     "fields": {
       "Challenge_Rating": 2,
@@ -6957,7 +6957,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mage",
     "fields": {
       "Challenge_Rating": 6,
@@ -6975,7 +6975,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Magma Mephit",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -6996,7 +6996,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Magmin",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -7016,7 +7016,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mammoth",
     "fields": {
       "Challenge_Rating": 6,
@@ -7033,7 +7033,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Manes",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -7052,7 +7052,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Manticore",
     "fields": {
       "Challenge_Rating": 3,
@@ -7074,7 +7074,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Marid",
     "fields": {
       "Challenge_Rating": 11,
@@ -7095,7 +7095,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Marilith",
     "fields": {
       "Challenge_Rating": 16,
@@ -7114,7 +7114,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mastiff",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -7131,7 +7131,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Medusa",
     "fields": {
       "Challenge_Rating": 6,
@@ -7152,7 +7152,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Merfolk",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -7170,7 +7170,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Merrow",
     "fields": {
       "Challenge_Rating": 2,
@@ -7187,7 +7187,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mezzoloth",
     "fields": {
       "Challenge_Rating": 5,
@@ -7206,7 +7206,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mimic",
     "fields": {
       "Challenge_Rating": 2,
@@ -7224,7 +7224,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mind Flayer",
     "fields": {
       "Challenge_Rating": 7,
@@ -7243,7 +7243,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mind Flayer Arcanist",
     "fields": {
       "Challenge_Rating": 8,
@@ -7262,7 +7262,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Minotaur",
     "fields": {
       "Challenge_Rating": 3,
@@ -7282,7 +7282,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Minotaur Skeleton",
     "fields": {
       "Challenge_Rating": 2,
@@ -7301,7 +7301,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Monodrone",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -7318,7 +7318,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mud Mephit",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -7340,7 +7340,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mule",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -7357,7 +7357,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mummy",
     "fields": {
       "Challenge_Rating": 3,
@@ -7375,7 +7375,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mummy Lord",
     "fields": {
       "Challenge_Rating": 15,
@@ -7395,7 +7395,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Myconid Adult",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -7412,7 +7412,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Myconid Sovereign",
     "fields": {
       "Challenge_Rating": 2,
@@ -7429,7 +7429,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Myconid Sprout",
     "fields": {
       "Challenge_Rating": 0,
@@ -7446,7 +7446,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Nalfeshnee",
     "fields": {
       "Challenge_Rating": 13,
@@ -7465,7 +7465,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Needle Blight",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -7484,7 +7484,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Night Hag",
     "fields": {
       "Challenge_Rating": 5,
@@ -7502,7 +7502,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Night Hag (coven)",
     "fields": {
       "Challenge_Rating": 7,
@@ -7520,7 +7520,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Nightmare",
     "fields": {
       "Challenge_Rating": 3,
@@ -7538,7 +7538,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Noble",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -7556,7 +7556,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Nothic",
     "fields": {
       "Challenge_Rating": 2,
@@ -7575,7 +7575,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Nycaloth",
     "fields": {
       "Challenge_Rating": 9,
@@ -7594,7 +7594,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ochre Jelly",
     "fields": {
       "Challenge_Rating": 2,
@@ -7611,7 +7611,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Octopus",
     "fields": {
       "Challenge_Rating": 0,
@@ -7628,7 +7628,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ogre",
     "fields": {
       "Challenge_Rating": 2,
@@ -7648,7 +7648,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ogre Zombie",
     "fields": {
       "Challenge_Rating": 2,
@@ -7668,7 +7668,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Oni",
     "fields": {
       "Challenge_Rating": 7,
@@ -7688,7 +7688,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Orc",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -7715,7 +7715,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Orc Eye of Gruumsh",
     "fields": {
       "Challenge_Rating": 2,
@@ -7742,7 +7742,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Orc War Chief",
     "fields": {
       "Challenge_Rating": 4,
@@ -7769,7 +7769,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Orog",
     "fields": {
       "Challenge_Rating": 2,
@@ -7796,7 +7796,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Otyugh",
     "fields": {
       "Challenge_Rating": 5,
@@ -7817,7 +7817,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Owl",
     "fields": {
       "Challenge_Rating": 0,
@@ -7835,7 +7835,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Owlbear",
     "fields": {
       "Challenge_Rating": 3,
@@ -7853,7 +7853,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Panther",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -7870,7 +7870,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Pegasus",
     "fields": {
       "Challenge_Rating": 2,
@@ -7887,7 +7887,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Pentadrone",
     "fields": {
       "Challenge_Rating": 2,
@@ -7904,7 +7904,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Peryton",
     "fields": {
       "Challenge_Rating": 2,
@@ -7921,7 +7921,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Phase Spider",
     "fields": {
       "Challenge_Rating": 3,
@@ -7947,7 +7947,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Piercer",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -7965,7 +7965,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Pit Fiend",
     "fields": {
       "Challenge_Rating": 20,
@@ -7984,7 +7984,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Pixie",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -8004,7 +8004,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Planetar",
     "fields": {
       "Challenge_Rating": 16,
@@ -8021,7 +8021,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Plesiosaurus",
     "fields": {
       "Challenge_Rating": 2,
@@ -8038,7 +8038,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Poisonous Snake",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -8058,7 +8058,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Polar Bear",
     "fields": {
       "Challenge_Rating": 2,
@@ -8076,7 +8076,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Poltergeist",
     "fields": {
       "Challenge_Rating": 2,
@@ -8095,7 +8095,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Pony",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -8112,7 +8112,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Priest",
     "fields": {
       "Challenge_Rating": 2,
@@ -8130,7 +8130,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Pseudodragon",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -8147,7 +8147,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Pteranodon",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -8164,7 +8164,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Purple Worm",
     "fields": {
       "Challenge_Rating": 15,
@@ -8181,7 +8181,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Quadrone",
     "fields": {
       "Challenge_Rating": 1,
@@ -8198,7 +8198,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Quaggoth",
     "fields": {
       "Challenge_Rating": 2,
@@ -8217,7 +8217,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Quaggoth Spore Servant",
     "fields": {
       "Challenge_Rating": 1,
@@ -8234,7 +8234,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Quaggoth Thonot",
     "fields": {
       "Challenge_Rating": 3,
@@ -8253,7 +8253,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Quasit",
     "fields": {
       "Challenge_Rating": 1,
@@ -8273,7 +8273,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Quipper",
     "fields": {
       "Challenge_Rating": 0,
@@ -8290,7 +8290,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Rakshasa",
     "fields": {
       "Challenge_Rating": 13,
@@ -8308,7 +8308,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Rat",
     "fields": {
       "Challenge_Rating": 0,
@@ -8335,7 +8335,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Raven",
     "fields": {
       "Challenge_Rating": 0,
@@ -8353,7 +8353,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Red Dragon Wyrmling",
     "fields": {
       "Challenge_Rating": 4,
@@ -8370,7 +8370,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Red Slaad",
     "fields": {
       "Challenge_Rating": 5,
@@ -8387,7 +8387,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Reef Shark",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -8404,7 +8404,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Remorhaz",
     "fields": {
       "Challenge_Rating": 11,
@@ -8421,7 +8421,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Revenant",
     "fields": {
       "Challenge_Rating": 5,
@@ -8449,7 +8449,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Rhinoceros",
     "fields": {
       "Challenge_Rating": 2,
@@ -8466,7 +8466,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Riding Horse",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -8483,7 +8483,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Roc",
     "fields": {
       "Challenge_Rating": 11,
@@ -8502,7 +8502,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Roper",
     "fields": {
       "Challenge_Rating": 5,
@@ -8520,7 +8520,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Rug of Smothering",
     "fields": {
       "Challenge_Rating": 2,
@@ -8539,7 +8539,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Rust Monster",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -8557,7 +8557,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Saber-Toothed Tiger",
     "fields": {
       "Challenge_Rating": 2,
@@ -8575,7 +8575,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sahuagin",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -8594,7 +8594,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sahuagin Baron",
     "fields": {
       "Challenge_Rating": 5,
@@ -8613,7 +8613,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sahuagin Priestess",
     "fields": {
       "Challenge_Rating": 2,
@@ -8632,7 +8632,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Salamander",
     "fields": {
       "Challenge_Rating": 5,
@@ -8650,7 +8650,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Satyr",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -8669,7 +8669,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Scarecrow",
     "fields": {
       "Challenge_Rating": 1,
@@ -8687,7 +8687,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Scorpion",
     "fields": {
       "Challenge_Rating": 0,
@@ -8708,7 +8708,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Scout",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -8732,7 +8732,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sea Hag",
     "fields": {
       "Challenge_Rating": 2,
@@ -8751,7 +8751,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sea Hag (coven)",
     "fields": {
       "Challenge_Rating": 4,
@@ -8770,7 +8770,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sea Horse",
     "fields": {
       "Challenge_Rating": 0,
@@ -8787,7 +8787,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Shadow",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -8807,7 +8807,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Shadow Demon",
     "fields": {
       "Challenge_Rating": 4,
@@ -8826,7 +8826,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Shambling Mound",
     "fields": {
       "Challenge_Rating": 5,
@@ -8844,7 +8844,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Shield Guardian",
     "fields": {
       "Challenge_Rating": 7,
@@ -8863,7 +8863,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Shrieker",
     "fields": {
       "Challenge_Rating": 0,
@@ -8882,7 +8882,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Silver Dragon Wyrmling",
     "fields": {
       "Challenge_Rating": 2,
@@ -8900,7 +8900,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Skeleton",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -8919,7 +8919,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Slaad Tadpole",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -8936,7 +8936,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Smoke Mephit",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -8955,7 +8955,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Solar",
     "fields": {
       "Challenge_Rating": 21,
@@ -8973,7 +8973,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Spectator",
     "fields": {
       "Challenge_Rating": 3,
@@ -8994,7 +8994,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Specter",
     "fields": {
       "Challenge_Rating": 1,
@@ -9013,7 +9013,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Spider",
     "fields": {
       "Challenge_Rating": 0,
@@ -9039,7 +9039,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Spined Devil",
     "fields": {
       "Challenge_Rating": 2,
@@ -9058,7 +9058,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Spirit Naga",
     "fields": {
       "Challenge_Rating": 8,
@@ -9078,7 +9078,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sprite",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -9097,7 +9097,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Spy",
     "fields": {
       "Challenge_Rating": 1,
@@ -9124,7 +9124,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Steam Mephit",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -9143,7 +9143,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Stirge",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -9161,7 +9161,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Stone Giant",
     "fields": {
       "Challenge_Rating": 7,
@@ -9180,7 +9180,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Stone Golem",
     "fields": {
       "Challenge_Rating": 10,
@@ -9199,7 +9199,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Storm Giant",
     "fields": {
       "Challenge_Rating": 13,
@@ -9220,7 +9220,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Succubus/Incubus",
     "fields": {
       "Challenge_Rating": 4,
@@ -9240,7 +9240,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Swarm of Bats",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -9264,7 +9264,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Swarm of Insects",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -9290,7 +9290,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Swarm of Poisonous Snakes",
     "fields": {
       "Challenge_Rating": 2,
@@ -9312,7 +9312,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Swarm of Quippers",
     "fields": {
       "Challenge_Rating": 1,
@@ -9330,7 +9330,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Swarm of Rats",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -9354,7 +9354,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Swarm of Ravens",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -9376,7 +9376,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tarrasque",
     "fields": {
       "Challenge_Rating": 30,
@@ -9408,7 +9408,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Thri-kreen",
     "fields": {
       "Challenge_Rating": 1,
@@ -9427,7 +9427,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Thug",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -9450,7 +9450,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tiger",
     "fields": {
       "Challenge_Rating": 1,
@@ -9468,7 +9468,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Treant",
     "fields": {
       "Challenge_Rating": 9,
@@ -9486,7 +9486,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tribal Warrior",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -9510,7 +9510,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Triceratops",
     "fields": {
       "Challenge_Rating": 5,
@@ -9528,7 +9528,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tridrone",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -9545,7 +9545,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Troglodyte",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -9565,7 +9565,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Troll",
     "fields": {
       "Challenge_Rating": 5,
@@ -9586,7 +9586,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Twig Blight",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -9605,7 +9605,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tyrannosaurus Rex",
     "fields": {
       "Challenge_Rating": 8,
@@ -9622,7 +9622,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ultroloth",
     "fields": {
       "Challenge_Rating": 13,
@@ -9641,7 +9641,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Umber Hulk",
     "fields": {
       "Challenge_Rating": 5,
@@ -9659,7 +9659,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Unicorn",
     "fields": {
       "Challenge_Rating": 5,
@@ -9679,7 +9679,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vampire",
     "fields": {
       "Challenge_Rating": 13,
@@ -9701,7 +9701,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vampire Spawn",
     "fields": {
       "Challenge_Rating": 5,
@@ -9720,7 +9720,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vampire Spellcaster",
     "fields": {
       "Challenge_Rating": 15,
@@ -9742,7 +9742,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vampire Warrior",
     "fields": {
       "Challenge_Rating": 15,
@@ -9764,7 +9764,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Veteran",
     "fields": {
       "Challenge_Rating": 3,
@@ -9782,7 +9782,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vine Blight",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -9801,7 +9801,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Violet Fungus",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -9820,7 +9820,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vrock",
     "fields": {
       "Challenge_Rating": 6,
@@ -9839,7 +9839,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vulture",
     "fields": {
       "Challenge_Rating": 0,
@@ -9858,7 +9858,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Warhorse",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -9876,7 +9876,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Warhorse Skeleton",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -9894,7 +9894,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Water Elemental",
     "fields": {
       "Challenge_Rating": 5,
@@ -9922,7 +9922,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Water Weird",
     "fields": {
       "Challenge_Rating": 3,
@@ -9945,7 +9945,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Weasel",
     "fields": {
       "Challenge_Rating": 0,
@@ -9962,7 +9962,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Werebear",
     "fields": {
       "Challenge_Rating": 5,
@@ -9984,7 +9984,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Wereboar",
     "fields": {
       "Challenge_Rating": 4,
@@ -10006,7 +10006,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Wererat",
     "fields": {
       "Challenge_Rating": 2,
@@ -10030,7 +10030,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Weretiger",
     "fields": {
       "Challenge_Rating": 4,
@@ -10050,7 +10050,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Werewolf",
     "fields": {
       "Challenge_Rating": 3,
@@ -10072,7 +10072,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "White Dragon Wyrmling",
     "fields": {
       "Challenge_Rating": 2,
@@ -10091,7 +10091,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Wight",
     "fields": {
       "Challenge_Rating": 3,
@@ -10119,7 +10119,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Will-o'-Wisp",
     "fields": {
       "Challenge_Rating": 2,
@@ -10136,7 +10136,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Winged Kobold",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -10155,7 +10155,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Winter Wolf",
     "fields": {
       "Challenge_Rating": 3,
@@ -10175,7 +10175,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Wolf",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -10195,7 +10195,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Worg",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -10215,7 +10215,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Wraith",
     "fields": {
       "Challenge_Rating": 5,
@@ -10235,7 +10235,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Wyvern",
     "fields": {
       "Challenge_Rating": 6,
@@ -10254,7 +10254,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Xorn",
     "fields": {
       "Challenge_Rating": 5,
@@ -10273,7 +10273,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yeti",
     "fields": {
       "Challenge_Rating": 3,
@@ -10292,7 +10292,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yochlol",
     "fields": {
       "Challenge_Rating": 10,
@@ -10312,7 +10312,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Young Black Dragon",
     "fields": {
       "Challenge_Rating": 7,
@@ -10329,7 +10329,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Young Blue Dragon",
     "fields": {
       "Challenge_Rating": 9,
@@ -10346,7 +10346,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Young Brass Dragon",
     "fields": {
       "Challenge_Rating": 6,
@@ -10364,7 +10364,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Young Bronze Dragon",
     "fields": {
       "Challenge_Rating": 8,
@@ -10381,7 +10381,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Young Copper Dragon",
     "fields": {
       "Challenge_Rating": 7,
@@ -10400,7 +10400,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Young Gold Dragon",
     "fields": {
       "Challenge_Rating": 10,
@@ -10418,7 +10418,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Young Green Dragon",
     "fields": {
       "Challenge_Rating": 8,
@@ -10435,7 +10435,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Young Red Dragon",
     "fields": {
       "Challenge_Rating": 10,
@@ -10452,7 +10452,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Young Red Shadow Dragon",
     "fields": {
       "Challenge_Rating": 13,
@@ -10469,7 +10469,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Young Remorhaz",
     "fields": {
       "Challenge_Rating": 5,
@@ -10487,7 +10487,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Young Silver Dragon",
     "fields": {
       "Challenge_Rating": 9,
@@ -10505,7 +10505,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Young White Dragon",
     "fields": {
       "Challenge_Rating": 6,
@@ -10524,7 +10524,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yuan-ti Abomination",
     "fields": {
       "Challenge_Rating": 7,
@@ -10547,7 +10547,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yuan-ti Malison",
     "fields": {
       "Challenge_Rating": 3,
@@ -10570,7 +10570,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yuan-ti Pureblood",
     "fields": {
       "Challenge_Rating": 1,
@@ -10592,7 +10592,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Zombie",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -10621,7 +10621,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Abyssal Wretch",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -10639,7 +10639,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Adult Kruthik",
     "fields": {
       "Challenge_Rating": 2,
@@ -10657,7 +10657,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Adult Oblex",
     "fields": {
       "Challenge_Rating": 5,
@@ -10674,7 +10674,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Air Elemental Myrmidon",
     "fields": {
       "Challenge_Rating": 7,
@@ -10691,7 +10691,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Alkilith",
     "fields": {
       "Challenge_Rating": 11,
@@ -10710,7 +10710,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Allip",
     "fields": {
       "Challenge_Rating": 5,
@@ -10728,7 +10728,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Amnizu",
     "fields": {
       "Challenge_Rating": 18,
@@ -10746,7 +10746,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Armanite",
     "fields": {
       "Challenge_Rating": 7,
@@ -10764,7 +10764,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Astral Dreadnought",
     "fields": {
       "Challenge_Rating": 21,
@@ -10783,7 +10783,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Autumn Eladrin",
     "fields": {
       "Challenge_Rating": 10,
@@ -10801,7 +10801,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bael",
     "fields": {
       "Challenge_Rating": 19,
@@ -10821,7 +10821,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Balhannoth",
     "fields": {
       "Challenge_Rating": 11,
@@ -10841,7 +10841,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Baphomet",
     "fields": {
       "Challenge_Rating": 23,
@@ -10862,7 +10862,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Berbalang",
     "fields": {
       "Challenge_Rating": 2,
@@ -10879,7 +10879,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Black Abishai",
     "fields": {
       "Challenge_Rating": 7,
@@ -10897,7 +10897,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Blue Abishai",
     "fields": {
       "Challenge_Rating": 17,
@@ -10915,7 +10915,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Boneclaw",
     "fields": {
       "Challenge_Rating": 12,
@@ -10934,7 +10934,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bronze Scout",
     "fields": {
       "Challenge_Rating": 1,
@@ -10951,7 +10951,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bulezau",
     "fields": {
       "Challenge_Rating": 3,
@@ -10969,7 +10969,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cadaver Collector",
     "fields": {
       "Challenge_Rating": 14,
@@ -10987,7 +10987,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Canoloth",
     "fields": {
       "Challenge_Rating": 8,
@@ -11005,7 +11005,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Choker",
     "fields": {
       "Challenge_Rating": 1,
@@ -11023,7 +11023,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Corpse Flower",
     "fields": {
       "Challenge_Rating": 8,
@@ -11043,7 +11043,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Deathlock",
     "fields": {
       "Challenge_Rating": 4,
@@ -11058,7 +11058,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Deathlock Mastermind",
     "fields": {
       "Challenge_Rating": 8,
@@ -11073,7 +11073,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Deathlock Wight",
     "fields": {
       "Challenge_Rating": 3,
@@ -11088,7 +11088,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Demogorgon",
     "fields": {
       "Challenge_Rating": 26,
@@ -11109,7 +11109,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Derro",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -11128,7 +11128,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Derro Savant",
     "fields": {
       "Challenge_Rating": 3,
@@ -11147,7 +11147,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dhergoloth",
     "fields": {
       "Challenge_Rating": 7,
@@ -11165,7 +11165,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dire Troll",
     "fields": {
       "Challenge_Rating": 13,
@@ -11186,7 +11186,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Drow Arachnomancer",
     "fields": {
       "Challenge_Rating": 13,
@@ -11205,7 +11205,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Drow Favored Consort",
     "fields": {
       "Challenge_Rating": 18,
@@ -11224,7 +11224,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Drow House Captain",
     "fields": {
       "Challenge_Rating": 9,
@@ -11243,7 +11243,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Drow Inquisitor",
     "fields": {
       "Challenge_Rating": 14,
@@ -11262,7 +11262,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Drow Matron Mother",
     "fields": {
       "Challenge_Rating": 20,
@@ -11282,7 +11282,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Drow Shadowblade",
     "fields": {
       "Challenge_Rating": 11,
@@ -11301,7 +11301,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Despot",
     "fields": {
       "Challenge_Rating": 12,
@@ -11320,7 +11320,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Hammerer",
     "fields": {
       "Challenge_Rating": 2,
@@ -11338,7 +11338,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Kavalrachni",
     "fields": {
       "Challenge_Rating": 2,
@@ -11357,7 +11357,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Mind Master",
     "fields": {
       "Challenge_Rating": 2,
@@ -11376,7 +11376,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Screamer",
     "fields": {
       "Challenge_Rating": 3,
@@ -11394,7 +11394,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Soulblade",
     "fields": {
       "Challenge_Rating": 1,
@@ -11413,7 +11413,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Stone Guard",
     "fields": {
       "Challenge_Rating": 2,
@@ -11432,7 +11432,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Warlord",
     "fields": {
       "Challenge_Rating": 6,
@@ -11451,7 +11451,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Xarrorn",
     "fields": {
       "Challenge_Rating": 2,
@@ -11470,7 +11470,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dybbuk",
     "fields": {
       "Challenge_Rating": 4,
@@ -11488,7 +11488,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Earth Elemental Myrmidon",
     "fields": {
       "Challenge_Rating": 7,
@@ -11505,7 +11505,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Eidolon",
     "fields": {
       "Challenge_Rating": 12,
@@ -11523,7 +11523,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Elder Oblex",
     "fields": {
       "Challenge_Rating": 10,
@@ -11540,7 +11540,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Elder Tempest",
     "fields": {
       "Challenge_Rating": 23,
@@ -11558,7 +11558,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Female Steeder",
     "fields": {
       "Challenge_Rating": 1,
@@ -11576,7 +11576,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Fire Elemental Myrmidon",
     "fields": {
       "Challenge_Rating": 7,
@@ -11593,7 +11593,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Fraz-Urb'luu",
     "fields": {
       "Challenge_Rating": 23,
@@ -11613,7 +11613,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Fraz-Urb'luu (in lair)",
     "fields": {
       "Challenge_Rating": 24,
@@ -11634,7 +11634,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Frost Salamander",
     "fields": {
       "Challenge_Rating": 9,
@@ -11651,7 +11651,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Geryon",
     "fields": {
       "Challenge_Rating": 22,
@@ -11672,7 +11672,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giff",
     "fields": {
       "Challenge_Rating": 3,
@@ -11687,7 +11687,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Githyanki Gish",
     "fields": {
       "Challenge_Rating": 10,
@@ -11705,7 +11705,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Githyanki Kith'rak",
     "fields": {
       "Challenge_Rating": 12,
@@ -11723,7 +11723,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Githyanki Supreme Commander",
     "fields": {
       "Challenge_Rating": 14,
@@ -11742,7 +11742,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Githzerai Anarch",
     "fields": {
       "Challenge_Rating": 16,
@@ -11761,7 +11761,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Githzerai Enlightened",
     "fields": {
       "Challenge_Rating": 10,
@@ -11779,7 +11779,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gloom Weaver",
     "fields": {
       "Challenge_Rating": 9,
@@ -11798,7 +11798,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gray Render",
     "fields": {
       "Challenge_Rating": 12,
@@ -11815,7 +11815,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Graz'zt",
     "fields": {
       "Challenge_Rating": 24,
@@ -11836,7 +11836,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Green Abishai",
     "fields": {
       "Challenge_Rating": 15,
@@ -11854,7 +11854,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hellfire Engine",
     "fields": {
       "Challenge_Rating": 16,
@@ -11871,7 +11871,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Howler",
     "fields": {
       "Challenge_Rating": 8,
@@ -11888,7 +11888,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hutijin",
     "fields": {
       "Challenge_Rating": 21,
@@ -11908,7 +11908,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hydroloth",
     "fields": {
       "Challenge_Rating": 9,
@@ -11926,7 +11926,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Iron Cobra",
     "fields": {
       "Challenge_Rating": 4,
@@ -11943,7 +11943,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Juiblex",
     "fields": {
       "Challenge_Rating": 23,
@@ -11964,7 +11964,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kruthik Hive Lord",
     "fields": {
       "Challenge_Rating": 5,
@@ -11982,7 +11982,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Leviathan",
     "fields": {
       "Challenge_Rating": 20,
@@ -12001,7 +12001,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Male Steeder",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -12019,7 +12019,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Marut",
     "fields": {
       "Challenge_Rating": 25,
@@ -12036,7 +12036,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Maurezhi",
     "fields": {
       "Challenge_Rating": 7,
@@ -12054,7 +12054,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Meazel",
     "fields": {
       "Challenge_Rating": 1,
@@ -12073,7 +12073,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Merregon",
     "fields": {
       "Challenge_Rating": 4,
@@ -12091,7 +12091,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Merrenoloth",
     "fields": {
       "Challenge_Rating": 3,
@@ -12110,7 +12110,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Moloch",
     "fields": {
       "Challenge_Rating": 21,
@@ -12130,7 +12130,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Molydeus",
     "fields": {
       "Challenge_Rating": 21,
@@ -12149,7 +12149,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Nabassu",
     "fields": {
       "Challenge_Rating": 15,
@@ -12167,7 +12167,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Nagpa",
     "fields": {
       "Challenge_Rating": 17,
@@ -12184,7 +12184,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Narzugon",
     "fields": {
       "Challenge_Rating": 13,
@@ -12202,7 +12202,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Nightwalker",
     "fields": {
       "Challenge_Rating": 20,
@@ -12219,7 +12219,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Nupperibo",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -12237,7 +12237,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Oaken Bolter",
     "fields": {
       "Challenge_Rating": 5,
@@ -12254,7 +12254,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Oblex Spawn",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -12271,7 +12271,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ogre Battering Ram",
     "fields": {
       "Challenge_Rating": 4,
@@ -12291,7 +12291,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ogre Bolt Launcher",
     "fields": {
       "Challenge_Rating": 2,
@@ -12311,7 +12311,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ogre Chain Brute",
     "fields": {
       "Challenge_Rating": 3,
@@ -12331,7 +12331,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ogre Howdah",
     "fields": {
       "Challenge_Rating": 2,
@@ -12351,7 +12351,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Oinoloth",
     "fields": {
       "Challenge_Rating": 12,
@@ -12369,7 +12369,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Orcus",
     "fields": {
       "Challenge_Rating": 26,
@@ -12390,7 +12390,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Orthon",
     "fields": {
       "Challenge_Rating": 10,
@@ -12408,7 +12408,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Phoenix",
     "fields": {
       "Challenge_Rating": 16,
@@ -12426,7 +12426,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Red Abishai",
     "fields": {
       "Challenge_Rating": 19,
@@ -12444,7 +12444,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Retriever",
     "fields": {
       "Challenge_Rating": 14,
@@ -12461,7 +12461,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Rot Troll",
     "fields": {
       "Challenge_Rating": 9,
@@ -12482,7 +12482,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Rutterkin",
     "fields": {
       "Challenge_Rating": 2,
@@ -12500,7 +12500,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sacred Statue",
     "fields": {
       "Challenge_Rating": 0,
@@ -12518,7 +12518,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Shadow Dancer",
     "fields": {
       "Challenge_Rating": 7,
@@ -12537,7 +12537,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sibriex",
     "fields": {
       "Challenge_Rating": 18,
@@ -12556,7 +12556,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Skulk",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -12573,7 +12573,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Skull Lord",
     "fields": {
       "Challenge_Rating": 15,
@@ -12591,7 +12591,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Soul Monger",
     "fields": {
       "Challenge_Rating": 11,
@@ -12610,7 +12610,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Spirit Troll",
     "fields": {
       "Challenge_Rating": 11,
@@ -12631,7 +12631,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Spring Eladrin",
     "fields": {
       "Challenge_Rating": 10,
@@ -12649,7 +12649,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Star Spawn Grue",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -12666,7 +12666,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Star Spawn Hulk",
     "fields": {
       "Challenge_Rating": 10,
@@ -12683,7 +12683,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Star Spawn Larva Mage",
     "fields": {
       "Challenge_Rating": 16,
@@ -12700,7 +12700,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Star Spawn Mangler",
     "fields": {
       "Challenge_Rating": 5,
@@ -12717,7 +12717,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Star Spawn Seer",
     "fields": {
       "Challenge_Rating": 13,
@@ -12734,7 +12734,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Steel Predator",
     "fields": {
       "Challenge_Rating": 16,
@@ -12751,7 +12751,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Stone Cursed",
     "fields": {
       "Challenge_Rating": 1,
@@ -12768,7 +12768,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Stone Defender",
     "fields": {
       "Challenge_Rating": 4,
@@ -12785,7 +12785,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Summer Eladrin",
     "fields": {
       "Challenge_Rating": 10,
@@ -12803,7 +12803,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sword Wraith Commander",
     "fields": {
       "Challenge_Rating": 8,
@@ -12820,7 +12820,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sword Wraith Warrior",
     "fields": {
       "Challenge_Rating": 3,
@@ -12837,7 +12837,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "The Angry",
     "fields": {
       "Challenge_Rating": 13,
@@ -12854,7 +12854,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "The Hungry",
     "fields": {
       "Challenge_Rating": 11,
@@ -12871,7 +12871,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "The Lonely",
     "fields": {
       "Challenge_Rating": 9,
@@ -12888,7 +12888,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "The Lost",
     "fields": {
       "Challenge_Rating": 7,
@@ -12905,7 +12905,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "The Wretched",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -12922,7 +12922,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Titivilus",
     "fields": {
       "Challenge_Rating": 16,
@@ -12942,7 +12942,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tortle",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -12964,7 +12964,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tortle Druid",
     "fields": {
       "Challenge_Rating": 2,
@@ -12986,7 +12986,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vampiric Mist",
     "fields": {
       "Challenge_Rating": 3,
@@ -13001,7 +13001,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Venom Troll",
     "fields": {
       "Challenge_Rating": 7,
@@ -13022,7 +13022,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Wastrilith",
     "fields": {
       "Challenge_Rating": 13,
@@ -13041,7 +13041,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Water Elemental Myrmidon",
     "fields": {
       "Challenge_Rating": 7,
@@ -13059,7 +13059,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "White Abishai",
     "fields": {
       "Challenge_Rating": 6,
@@ -13077,7 +13077,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Winter Eladrin",
     "fields": {
       "Challenge_Rating": 10,
@@ -13095,7 +13095,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yagnoloth",
     "fields": {
       "Challenge_Rating": 11,
@@ -13113,7 +13113,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yeenoghu",
     "fields": {
       "Challenge_Rating": 24,
@@ -13134,7 +13134,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Young Kruthik",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -13152,7 +13152,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Zaratan",
     "fields": {
       "Challenge_Rating": 22,
@@ -13170,7 +13170,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Zariel",
     "fields": {
       "Challenge_Rating": 26,
@@ -13191,7 +13191,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Zuggtmoy",
     "fields": {
       "Challenge_Rating": 23,
@@ -13212,7 +13212,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Crag Cat",
     "fields": {
       "Challenge_Rating": 1,
@@ -13227,7 +13227,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hulking Crab",
     "fields": {
       "Challenge_Rating": 5,
@@ -13242,7 +13242,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Iymrith the Dragon",
     "fields": {
       "Challenge_Rating": 23,
@@ -13261,7 +13261,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Maegera the Dawn Titan",
     "fields": {
       "Challenge_Rating": 23,
@@ -13279,7 +13279,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Purple Wormling",
     "fields": {
       "Challenge_Rating": 2,
@@ -13294,7 +13294,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tressym",
     "fields": {
       "Challenge_Rating": 0,
@@ -13309,7 +13309,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Uthgardt Shaman",
     "fields": {
       "Challenge_Rating": 2,
@@ -13326,7 +13326,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yakfolk Priest",
     "fields": {
       "Challenge_Rating": 4,
@@ -13341,7 +13341,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yakfolk Warrior",
     "fields": {
       "Challenge_Rating": 3,
@@ -13356,7 +13356,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Baba Lysaga",
     "fields": {
       "Challenge_Rating": 11,
@@ -13375,7 +13375,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Baba Lysaga's Creeping Hut",
     "fields": {
       "Challenge_Rating": 11,
@@ -13392,7 +13392,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Barovian Witch",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -13409,7 +13409,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Broom of Animated Attack",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -13424,7 +13424,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ezmerelda d'Avenir",
     "fields": {
       "Challenge_Rating": 8,
@@ -13441,7 +13441,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Guardian Portrait",
     "fields": {
       "Challenge_Rating": 1,
@@ -13456,7 +13456,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Izek Strazni",
     "fields": {
       "Challenge_Rating": 5,
@@ -13473,7 +13473,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Madam Eva",
     "fields": {
       "Challenge_Rating": 10,
@@ -13490,7 +13490,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mongrelfolk",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -13507,7 +13507,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Phantom Warrior",
     "fields": {
       "Challenge_Rating": 3,
@@ -13522,7 +13522,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Pidlewick II",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -13539,7 +13539,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Rahadin",
     "fields": {
       "Challenge_Rating": 10,
@@ -13557,7 +13557,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Rictavio",
     "fields": {
       "Challenge_Rating": 5,
@@ -13575,7 +13575,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Strahd von Zarovich",
     "fields": {
       "Challenge_Rating": 15,
@@ -13593,7 +13593,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Strahd Zombie",
     "fields": {
       "Challenge_Rating": 1,
@@ -13608,7 +13608,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Strahd's Animated Armor",
     "fields": {
       "Challenge_Rating": 6,
@@ -13625,7 +13625,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tree Blight",
     "fields": {
       "Challenge_Rating": 7,
@@ -13640,7 +13640,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vladimir Horngaard",
     "fields": {
       "Challenge_Rating": 7,
@@ -13657,7 +13657,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Wereraven",
     "fields": {
       "Challenge_Rating": 2,
@@ -13675,7 +13675,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Animated Table",
     "fields": {
       "Challenge_Rating": 2,
@@ -13690,7 +13690,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Centaur Mummy",
     "fields": {
       "Challenge_Rating": 6,
@@ -13705,7 +13705,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Choker",
     "fields": {
       "Challenge_Rating": 1,
@@ -13720,7 +13720,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Deathlock Wight",
     "fields": {
       "Challenge_Rating": 3,
@@ -13735,7 +13735,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dread Warrior",
     "fields": {
       "Challenge_Rating": 1,
@@ -13750,7 +13750,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Duergar Spy",
     "fields": {
       "Challenge_Rating": 2,
@@ -13767,7 +13767,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Crayfish",
     "fields": {
       "Challenge_Rating": 2,
@@ -13782,7 +13782,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Ice Toad",
     "fields": {
       "Challenge_Rating": 3,
@@ -13797,7 +13797,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Lightning Eel",
     "fields": {
       "Challenge_Rating": 3,
@@ -13812,7 +13812,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Skeleton",
     "fields": {
       "Challenge_Rating": 7,
@@ -13827,7 +13827,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Subterranean Lizard",
     "fields": {
       "Challenge_Rating": 4,
@@ -13842,7 +13842,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Greater Zombie",
     "fields": {
       "Challenge_Rating": 5,
@@ -13857,7 +13857,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kalka-Kylla",
     "fields": {
       "Challenge_Rating": 3,
@@ -13874,7 +13874,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kelpie",
     "fields": {
       "Challenge_Rating": 4,
@@ -13889,7 +13889,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Leucrotta",
     "fields": {
       "Challenge_Rating": 3,
@@ -13904,7 +13904,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Malformed Kraken",
     "fields": {
       "Challenge_Rating": 10,
@@ -13921,7 +13921,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Nereid",
     "fields": {
       "Challenge_Rating": 2,
@@ -13936,7 +13936,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ooze Master",
     "fields": {
       "Challenge_Rating": 10,
@@ -13953,7 +13953,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sea Lion",
     "fields": {
       "Challenge_Rating": 5,
@@ -13968,7 +13968,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sharwyn Hucrele",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -13986,7 +13986,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sir Braford",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -14004,7 +14004,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Siren",
     "fields": {
       "Challenge_Rating": 3,
@@ -14019,7 +14019,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tarul Var",
     "fields": {
       "Challenge_Rating": 13,
@@ -14036,7 +14036,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tecuziztecatl",
     "fields": {
       "Challenge_Rating": 4,
@@ -14053,7 +14053,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Thayan Apprentice",
     "fields": {
       "Challenge_Rating": 2,
@@ -14070,7 +14070,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Thayan Warrior",
     "fields": {
       "Challenge_Rating": 2,
@@ -14087,7 +14087,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Thorn Slinger",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -14102,7 +14102,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vampiric Mist",
     "fields": {
       "Challenge_Rating": 3,
@@ -14117,7 +14117,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "White Maw",
     "fields": {
       "Challenge_Rating": 10,
@@ -14134,7 +14134,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yusdrayl",
     "fields": {
       "Challenge_Rating": 1,
@@ -14152,7 +14152,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dragonfang",
     "fields": {
       "Challenge_Rating": 5,
@@ -14171,7 +14171,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dragonsoul",
     "fields": {
       "Challenge_Rating": 7,
@@ -14190,7 +14190,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dragonwing",
     "fields": {
       "Challenge_Rating": 2,
@@ -14209,7 +14209,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ice Toad",
     "fields": {
       "Challenge_Rating": 1,
@@ -14226,7 +14226,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Naergoth Bladelord",
     "fields": {
       "Challenge_Rating": 11,
@@ -14243,7 +14243,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Neronvain",
     "fields": {
       "Challenge_Rating": 9,
@@ -14260,7 +14260,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Severin",
     "fields": {
       "Challenge_Rating": 11,
@@ -14279,7 +14279,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tiamat",
     "fields": {
       "Challenge_Rating": 30,
@@ -14297,7 +14297,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Acererak",
     "fields": {
       "Challenge_Rating": 23,
@@ -14315,7 +14315,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Albino Dwarf Warrior",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -14332,7 +14332,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Aldani (Lobsterfolk)",
     "fields": {
       "Challenge_Rating": 1,
@@ -14347,7 +14347,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Almiraj",
     "fields": {
       "Challenge_Rating": 0,
@@ -14362,7 +14362,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ankylosaurus Zombie",
     "fields": {
       "Challenge_Rating": 3,
@@ -14377,7 +14377,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Artus Cimber",
     "fields": {
       "Challenge_Rating": 7,
@@ -14395,7 +14395,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Assassin Vine",
     "fields": {
       "Challenge_Rating": 3,
@@ -14410,7 +14410,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Atropal",
     "fields": {
       "Challenge_Rating": 13,
@@ -14428,7 +14428,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Chwinga",
     "fields": {
       "Challenge_Rating": 0,
@@ -14443,7 +14443,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dragonbait",
     "fields": {
       "Challenge_Rating": 5,
@@ -14461,7 +14461,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Eblis",
     "fields": {
       "Challenge_Rating": 1,
@@ -14476,7 +14476,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Flying Monkey",
     "fields": {
       "Challenge_Rating": 0,
@@ -14491,7 +14491,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Four-Armed Gargoyle",
     "fields": {
       "Challenge_Rating": 10,
@@ -14506,7 +14506,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Snapping Turtle",
     "fields": {
       "Challenge_Rating": 3,
@@ -14521,7 +14521,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Girallon Zombie",
     "fields": {
       "Challenge_Rating": 3,
@@ -14536,7 +14536,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Jaculi",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -14551,7 +14551,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kamadan",
     "fields": {
       "Challenge_Rating": 4,
@@ -14566,7 +14566,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Liara Portyr",
     "fields": {
       "Challenge_Rating": 4,
@@ -14584,7 +14584,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mantrap",
     "fields": {
       "Challenge_Rating": 1,
@@ -14599,7 +14599,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mwaxanare",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -14617,7 +14617,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Pterafolk",
     "fields": {
       "Challenge_Rating": 1,
@@ -14632,7 +14632,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ras Nsi",
     "fields": {
       "Challenge_Rating": 7,
@@ -14651,7 +14651,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Stone Juggernaut",
     "fields": {
       "Challenge_Rating": 12,
@@ -14666,7 +14666,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Su-monster",
     "fields": {
       "Challenge_Rating": 1,
@@ -14681,7 +14681,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tabaxi Hunter",
     "fields": {
       "Challenge_Rating": 1,
@@ -14698,7 +14698,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tabaxi Ministrel",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -14715,7 +14715,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tri-flower Frond",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -14730,7 +14730,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tyrannosaurus Zombie",
     "fields": {
       "Challenge_Rating": 8,
@@ -14745,7 +14745,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Volothamp \"Volo\" Geddarm",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -14763,7 +14763,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Xandala",
     "fields": {
       "Challenge_Rating": 7,
@@ -14781,7 +14781,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yellow Musk Creeper",
     "fields": {
       "Challenge_Rating": 2,
@@ -14796,7 +14796,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yellow Musk Zombie",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -14811,7 +14811,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Zindar",
     "fields": {
       "Challenge_Rating": 8,
@@ -14829,7 +14829,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Zorbo",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -14844,7 +14844,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Decapus",
     "fields": {
       "Challenge_Rating": 4,
@@ -14859,7 +14859,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Geonid",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -14876,7 +14876,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Topi",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -14891,7 +14891,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Abjurer",
     "fields": {
       "Challenge_Rating": 9,
@@ -14909,7 +14909,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Alhoon",
     "fields": {
       "Challenge_Rating": 10,
@@ -14926,7 +14926,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Annis Hag",
     "fields": {
       "Challenge_Rating": 6,
@@ -14944,7 +14944,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Apprentice Wizard",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -14962,7 +14962,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Archdruid",
     "fields": {
       "Challenge_Rating": 12,
@@ -14983,7 +14983,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Archer",
     "fields": {
       "Challenge_Rating": 3,
@@ -15002,7 +15002,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Aurochs",
     "fields": {
       "Challenge_Rating": 2,
@@ -15020,7 +15020,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Babau",
     "fields": {
       "Challenge_Rating": 4,
@@ -15039,7 +15039,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Banderhobb",
     "fields": {
       "Challenge_Rating": 5,
@@ -15056,7 +15056,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bard",
     "fields": {
       "Challenge_Rating": 2,
@@ -15074,7 +15074,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Barghest",
     "fields": {
       "Challenge_Rating": 4,
@@ -15095,7 +15095,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bheur Hag",
     "fields": {
       "Challenge_Rating": 7,
@@ -15112,7 +15112,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Blackguard",
     "fields": {
       "Challenge_Rating": 8,
@@ -15131,7 +15131,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Bodak",
     "fields": {
       "Challenge_Rating": 6,
@@ -15150,7 +15150,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Boggle",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -15170,7 +15170,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Brontosaurus",
     "fields": {
       "Challenge_Rating": 5,
@@ -15188,7 +15188,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Catoblepas",
     "fields": {
       "Challenge_Rating": 5,
@@ -15205,7 +15205,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cave Fisher",
     "fields": {
       "Challenge_Rating": 3,
@@ -15222,7 +15222,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Champion",
     "fields": {
       "Challenge_Rating": 9,
@@ -15241,7 +15241,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Chitine",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -15258,7 +15258,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Choldrith",
     "fields": {
       "Challenge_Rating": 3,
@@ -15275,7 +15275,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cloud Giant Smiling One",
     "fields": {
       "Challenge_Rating": 11,
@@ -15293,7 +15293,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Conjurer",
     "fields": {
       "Challenge_Rating": 6,
@@ -15311,7 +15311,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cow",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -15328,7 +15328,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cow (Ox)",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -15345,7 +15345,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Cranium Rat",
     "fields": {
       "Challenge_Rating": 0,
@@ -15363,7 +15363,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Darkling",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -15383,7 +15383,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Darkling Elder",
     "fields": {
       "Challenge_Rating": 2,
@@ -15403,7 +15403,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Death Kiss",
     "fields": {
       "Challenge_Rating": 10,
@@ -15420,7 +15420,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Deep Scion",
     "fields": {
       "Challenge_Rating": 3,
@@ -15439,7 +15439,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Deinonychus",
     "fields": {
       "Challenge_Rating": 1,
@@ -15457,7 +15457,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Devourer",
     "fields": {
       "Challenge_Rating": 13,
@@ -15474,7 +15474,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dimetrodon",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -15491,7 +15491,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Diviner",
     "fields": {
       "Challenge_Rating": 8,
@@ -15509,7 +15509,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Dolphin",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -15527,7 +15527,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Draegloth",
     "fields": {
       "Challenge_Rating": 7,
@@ -15545,7 +15545,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Elder Brain",
     "fields": {
       "Challenge_Rating": 14,
@@ -15562,7 +15562,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Enchanter",
     "fields": {
       "Challenge_Rating": 5,
@@ -15580,7 +15580,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Evoker",
     "fields": {
       "Challenge_Rating": 9,
@@ -15598,7 +15598,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Fire Giant Dreadnought",
     "fields": {
       "Challenge_Rating": 14,
@@ -15617,7 +15617,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Firenewt Warlock of Imix",
     "fields": {
       "Challenge_Rating": 1,
@@ -15637,7 +15637,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Firenewt Warrior",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -15657,7 +15657,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Flail Snail",
     "fields": {
       "Challenge_Rating": 3,
@@ -15676,7 +15676,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Flind",
     "fields": {
       "Challenge_Rating": 9,
@@ -15696,7 +15696,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Froghemoth",
     "fields": {
       "Challenge_Rating": 10,
@@ -15714,7 +15714,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Frost Giant Everlasting One",
     "fields": {
       "Challenge_Rating": 12,
@@ -15733,7 +15733,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gauth",
     "fields": {
       "Challenge_Rating": 6,
@@ -15750,7 +15750,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gazer",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -15767,7 +15767,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Giant Strider",
     "fields": {
       "Challenge_Rating": 1,
@@ -15786,7 +15786,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Girallon",
     "fields": {
       "Challenge_Rating": 4,
@@ -15803,7 +15803,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gnoll Flesh Gnawer",
     "fields": {
       "Challenge_Rating": 1,
@@ -15823,7 +15823,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gnoll Hunter",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -15843,7 +15843,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Gnoll Witherling",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -15862,7 +15862,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Grung",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -15880,7 +15880,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Grung Elite Warrior",
     "fields": {
       "Challenge_Rating": 2,
@@ -15898,7 +15898,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Grung Wildling",
     "fields": {
       "Challenge_Rating": 1,
@@ -15916,7 +15916,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Guard Drake",
     "fields": {
       "Challenge_Rating": 2,
@@ -15934,7 +15934,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hadrosaurus",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -15952,7 +15952,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hobgoblin Devastator",
     "fields": {
       "Challenge_Rating": 4,
@@ -15971,7 +15971,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Hobgoblin Iron Shadow",
     "fields": {
       "Challenge_Rating": 2,
@@ -15990,7 +15990,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Illusionist",
     "fields": {
       "Challenge_Rating": 3,
@@ -16008,7 +16008,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ki-rin",
     "fields": {
       "Challenge_Rating": 12,
@@ -16028,7 +16028,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kobold Dragonshield",
     "fields": {
       "Challenge_Rating": 1,
@@ -16050,7 +16050,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kobold Inventor",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -16072,7 +16072,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kobold Scale Sorcerer",
     "fields": {
       "Challenge_Rating": 1,
@@ -16094,7 +16094,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Korred",
     "fields": {
       "Challenge_Rating": 7,
@@ -16111,7 +16111,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Kraken Priest",
     "fields": {
       "Challenge_Rating": 5,
@@ -16130,7 +16130,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Leucrotta",
     "fields": {
       "Challenge_Rating": 3,
@@ -16148,7 +16148,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Martial Arts Adept",
     "fields": {
       "Challenge_Rating": 3,
@@ -16166,7 +16166,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Master Thief",
     "fields": {
       "Challenge_Rating": 5,
@@ -16184,7 +16184,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Maw Demon",
     "fields": {
       "Challenge_Rating": 1,
@@ -16202,7 +16202,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Meenlock",
     "fields": {
       "Challenge_Rating": 2,
@@ -16221,7 +16221,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mind Flayer Lich (Illithilich)",
     "fields": {
       "Challenge_Rating": 22,
@@ -16238,7 +16238,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mindwitness",
     "fields": {
       "Challenge_Rating": 5,
@@ -16255,7 +16255,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Morkoth",
     "fields": {
       "Challenge_Rating": 11,
@@ -16273,7 +16273,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Mouth of Grolantor",
     "fields": {
       "Challenge_Rating": 6,
@@ -16291,7 +16291,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Necromancer",
     "fields": {
       "Challenge_Rating": 9,
@@ -16310,7 +16310,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Neogi",
     "fields": {
       "Challenge_Rating": 3,
@@ -16328,7 +16328,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Neogi Hatchling",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -16346,7 +16346,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Neogi Master",
     "fields": {
       "Challenge_Rating": 4,
@@ -16364,7 +16364,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Neothelid",
     "fields": {
       "Challenge_Rating": 13,
@@ -16381,7 +16381,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Nilbog",
     "fields": {
       "Challenge_Rating": 1,
@@ -16400,7 +16400,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Orc Blade of Ilneval",
     "fields": {
       "Challenge_Rating": 4,
@@ -16421,7 +16421,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Orc Claw of Luthic",
     "fields": {
       "Challenge_Rating": 2,
@@ -16440,7 +16440,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Orc Hand of Yurtrus",
     "fields": {
       "Challenge_Rating": 2,
@@ -16461,7 +16461,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Orc Nurtured One of Yurtrus",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -16482,7 +16482,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Orc Red Fang of Shargaas",
     "fields": {
       "Challenge_Rating": 3,
@@ -16504,7 +16504,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Quetzalcoatlus",
     "fields": {
       "Challenge_Rating": 2,
@@ -16523,7 +16523,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Quickling",
     "fields": {
       "Challenge_Rating": 1,
@@ -16540,7 +16540,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Redcap",
     "fields": {
       "Challenge_Rating": 3,
@@ -16559,7 +16559,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Rothe",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -16577,7 +16577,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Sea Spawn",
     "fields": {
       "Challenge_Rating": 1,
@@ -16595,7 +16595,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Shadow Mastiff",
     "fields": {
       "Challenge_Rating": 2,
@@ -16614,7 +16614,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Shadow Mastiff Alpha",
     "fields": {
       "Challenge_Rating": 2,
@@ -16633,7 +16633,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Shoosuva",
     "fields": {
       "Challenge_Rating": 8,
@@ -16653,7 +16653,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Slithering Tracker",
     "fields": {
       "Challenge_Rating": 3,
@@ -16671,7 +16671,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Spawn of Kyuss",
     "fields": {
       "Challenge_Rating": 5,
@@ -16689,7 +16689,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Stegosaurus",
     "fields": {
       "Challenge_Rating": 4,
@@ -16707,7 +16707,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Stench Kow",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -16724,7 +16724,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Stone Giant Dreamwalker",
     "fields": {
       "Challenge_Rating": 10,
@@ -16744,7 +16744,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Storm Giant Quintessent",
     "fields": {
       "Challenge_Rating": 16,
@@ -16766,7 +16766,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Swarm of Cranium Rats",
     "fields": {
       "Challenge_Rating": 5,
@@ -16785,7 +16785,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Swarm of Rot Grubs",
     "fields": {
       "Challenge_Rating": 0.5,
@@ -16804,7 +16804,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Swashbuckler",
     "fields": {
       "Challenge_Rating": 3,
@@ -16823,7 +16823,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tanarukk",
     "fields": {
       "Challenge_Rating": 5,
@@ -16844,7 +16844,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Thorny",
     "fields": {
       "Challenge_Rating": 1,
@@ -16862,7 +16862,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Tlincalli",
     "fields": {
       "Challenge_Rating": 5,
@@ -16879,7 +16879,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Transmuter",
     "fields": {
       "Challenge_Rating": 5,
@@ -16897,7 +16897,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Trapper",
     "fields": {
       "Challenge_Rating": 3,
@@ -16914,7 +16914,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Ulitharid",
     "fields": {
       "Challenge_Rating": 9,
@@ -16931,7 +16931,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vargouille",
     "fields": {
       "Challenge_Rating": 1,
@@ -16950,7 +16950,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vegepygmy",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -16968,7 +16968,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Vegepygmy Chief",
     "fields": {
       "Challenge_Rating": 2,
@@ -16986,7 +16986,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Velociraptor",
     "fields": {
       "Challenge_Rating": 0.25,
@@ -17004,7 +17004,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "War Priest",
     "fields": {
       "Challenge_Rating": 9,
@@ -17023,7 +17023,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Warlock of the Archfey",
     "fields": {
       "Challenge_Rating": 4,
@@ -17045,7 +17045,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Warlock of the Fiend",
     "fields": {
       "Challenge_Rating": 7,
@@ -17066,7 +17066,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Warlock of the Great Old One",
     "fields": {
       "Challenge_Rating": 6,
@@ -17088,7 +17088,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Warlord",
     "fields": {
       "Challenge_Rating": 12,
@@ -17106,7 +17106,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Wood Woad",
     "fields": {
       "Challenge_Rating": 5,
@@ -17123,7 +17123,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Xvart",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -17142,7 +17142,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Xvart Speaker",
     "fields": {
       "Challenge_Rating": 0.125,
@@ -17161,7 +17161,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Xvart Warlock of Raxivort",
     "fields": {
       "Challenge_Rating": 1,
@@ -17180,7 +17180,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yeth Hound",
     "fields": {
       "Challenge_Rating": 4,
@@ -17198,7 +17198,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yuan-ti Anathema",
     "fields": {
       "Challenge_Rating": 12,
@@ -17219,7 +17219,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yuan-ti Broodguard",
     "fields": {
       "Challenge_Rating": 2,
@@ -17239,7 +17239,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yuan-ti Mind Whisperer",
     "fields": {
       "Challenge_Rating": 4,
@@ -17260,7 +17260,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yuan-ti Nightmare Speaker",
     "fields": {
       "Challenge_Rating": 4,
@@ -17281,7 +17281,7 @@
     }
   },
   {
-    "model": "toolkit.Monster",
+    "model": "toolkit.monster",
     "pk": "Yuan-ti Pit Master",
     "fields": {
       "Challenge_Rating": 5,

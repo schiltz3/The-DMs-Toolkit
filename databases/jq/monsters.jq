@@ -11,7 +11,7 @@ def frac(f):
 
 [.[] | 
 {
-  model: "toolkit.Monster",
+  model: "toolkit.monster",
   pk: .name,
   fields: {
     Challenge_Rating: frac(.cr),
