@@ -412,6 +412,6 @@ class Encounter_Generator:
         encounter_dict = {
             "encounter_object": current_encounter,
             "monsters": self.monster_list,
-            "monster_count": len(self.monster_list),
+            "monster_count": monster_count,
         }
         return encounter_dict

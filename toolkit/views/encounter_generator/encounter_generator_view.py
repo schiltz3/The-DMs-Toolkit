@@ -3,6 +3,7 @@ import logging
 import traceback
 from dataclasses import dataclass, field
 from typing import Any, Optional
+from toolkit.models import Tag
 
 from django.contrib import messages
 from django.http.request import HttpRequest
@@ -47,6 +48,8 @@ class EncounterGenerator(View):
         encounter_type_list = ["Random"]
         encounter_type_list.extend(sorted(self.generator.ENCOUNTER_TYPE_LIST))
         self.context["encounter_type_list"] = encounter_type_list
+        encounter_tags_list = Tag.objects.all()
+        self.context["encounter_tags_list"] = encounter_tags_list
         self.context["cached"] = False
 
     def get(self, request: HttpRequest):
@@ -69,14 +72,15 @@ class EncounterGenerator(View):
                     if form.average_player_level.value == ""
                     else int(form.average_player_level.value),
                     encounter_type=form.encounter_type.value,
-                    tags=None,
+                    tags = None
+                    if form.encounter_tags.value == "No Tags"
+                    else [form.encounter_tags.value],
                     generator_key=form.generator_type.value,
                     loot_generate=False,
                 )
                 encounter_object = generated.get("encounter_object")
-                self.context["total_enemies"] = int(generated.get("monster_count"))
-                generated_list = []
-                generated_list.extend(generated.get("monsters"))
+                self.context["total_monsters"] = int(generated.get("monster_count"))
+                generated_list = generated.get("monsters")
                 self.context["generated_list"] = generated_list
 
                 if request.user.is_authenticated:
@@ -118,7 +122,7 @@ class GenerateEncounterInputs:
 
     generator_type: Element = field(default_factory=lambda: Element("Random"))
     encounter_type: Element = field(default_factory=lambda: Element("Random"))
-    tags: Element = field(default_factory=lambda: Element("All"))
+    encounter_tags: Element = field(default_factory=lambda: Element("No Tags"))
     average_player_level: Element = field(default_factory=Element)  # Optional
 
     @classmethod
