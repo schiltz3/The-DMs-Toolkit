@@ -75,8 +75,8 @@ class LootGenerator(View):
                     input_loot_type=form.loot_type.value,
                 )
                 loot_object = generated.get("loot_object")
-                self.context["total_value"] = int(loot_object.Total_Value)
-                self.context["money"] = int(loot_object.Money)
+                self.context["total_value"] = round(loot_object.Total_Value, 3)
+                self.context["money"] = round(loot_object.Money, 3)
                 generated_list = []
                 generated_list.extend(generated.get("armor"))
                 generated_list.extend(generated.get("weapons"))
@@ -104,16 +104,17 @@ class LootGenerator(View):
                 self.context["error"] = str(e)
                 return render(request, "loot_generator.html", self.context)
         if request.POST.get("save_button") is not None:
-            self.context["cached"] = True
             if request.user.is_authenticated:
                 save_cached_loot(request.user)
                 messages.success(request, "Loot saved successfully!")
+                self.context["cached"] = False
             else:
                 self.context["form"] = form
             return render(request, "loot_generator.html", self.context)
         if request.POST.get("clear_button") is not None:
             if request.user.is_authenticated:
                 delete_cached_loot(request.user)
+                self.context["cached"] = False
             self.context["data"] = GenerateLootInputs()
             return render(request, "loot_generator.html", self.context)
         return render(request, "loot_generator.html", self.context)
