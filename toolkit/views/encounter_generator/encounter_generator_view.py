@@ -74,7 +74,7 @@ class EncounterGenerator(View):
                     input_encounter_type=form.encounter_type.value,
                 )
                 encounter_object = generated.get("encounter_object")
-                self.context["total_enemies"] = int(encounter_object.Total_Enemues)
+                self.context["total_enemies"] = int(generated.get("monster_count"))
                 generated_list = []
                 generated_list.extend(generated.get("monsters"))
                 self.context["generated_list"] = generated_list
