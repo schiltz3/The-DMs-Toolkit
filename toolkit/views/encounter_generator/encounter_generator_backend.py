@@ -58,6 +58,10 @@ class Encounter_Generator:
         """
         return list(self.Generators.keys())
 
+    def generate_encounter_type(self):
+        """Generate a random encounter type"""
+        self.encounter_type = self.ENCOUNTER_TYPE_LIST[self.Generators[self.generator_key](0, len(self.ENCOUNTER_TYPE_LIST) - 1)]
+
     def get_tags(self):
         """Get Current Tags
 
@@ -183,7 +187,7 @@ class Encounter_Generator:
         Raises:
             ValueError: If encounter_type is not a valid encounter type
         """
-        if encounter_type not in self.ENCOUNTER_TYPE_LIST:
+        if encounter_type not in self.ENCOUNTER_TYPE_LIST and encounter_type != "Random":
             raise ValueError("Not a valid encounter type")
         self.encounter_type = encounter_type
 
@@ -388,6 +392,10 @@ class Encounter_Generator:
             raise ValueError("Illegal loot generate value")
         self.change_average_level(average_level)
         self.set_encounter_type(encounter_type)
+
+        if encounter_type == "Random":
+            self.generate_encounter_type()
+
         for x in tags:
             self.add_tag(x)
         if self.encounter_type == "Average Encounter":

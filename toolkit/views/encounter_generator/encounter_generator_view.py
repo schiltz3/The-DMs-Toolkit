@@ -48,7 +48,8 @@ class EncounterGenerator(View):
         encounter_type_list = ["Random"]
         encounter_type_list.extend(sorted(self.generator.ENCOUNTER_TYPE_LIST))
         self.context["encounter_type_list"] = encounter_type_list
-        encounter_tags_list = Tag.objects.all()
+        encounter_tags_list = ["All"]
+        encounter_tags_list.extend(Tag.objects.all())
         self.context["encounter_tags_list"] = encounter_tags_list
         self.context["cached"] = False
 
@@ -73,7 +74,7 @@ class EncounterGenerator(View):
                     else int(form.average_player_level.value),
                     encounter_type=form.encounter_type.value,
                     tags = None
-                    if form.encounter_tags.value == "No Tags"
+                    if form.encounter_tags.value == "All"
                     else [form.encounter_tags.value],
                     generator_key=form.generator_type.value,
                     loot_generate=False,
@@ -122,7 +123,7 @@ class GenerateEncounterInputs:
 
     generator_type: Element = field(default_factory=lambda: Element("Random"))
     encounter_type: Element = field(default_factory=lambda: Element("Random"))
-    encounter_tags: Element = field(default_factory=lambda: Element("No Tags"))
+    encounter_tags: Element = field(default_factory=lambda: Element("All"))
     average_player_level: Element = field(default_factory=Element)  # Optional
 
     @classmethod
