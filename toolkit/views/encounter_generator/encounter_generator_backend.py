@@ -1,7 +1,7 @@
 import random
 from typing import Callable, Optional, Union
 
-from toolkit.models import Monster, Tag
+from toolkit.models import Monster, Tag, GeneratedEncounter
 from toolkit.views.loot_generator.loot_generator_backend import Loot_Generator
 
 Generator = Callable[[int, int], int]
@@ -404,3 +404,14 @@ class Encounter_Generator:
             self.generate_monster()
         if loot_generate:
             self.generate_loot()
+
+        current_encounter = GeneratedEncounter(
+            Encounter_Type=self.encounter_type,
+            Number_Of_Characters=len(self.monster_list),
+        )
+        encounter_dict = {
+            "encounter_object": current_encounter,
+            "monsters": self.monster_list,
+            "monster_count": len(self.monster_list),
+        }
+        return encounter_dict

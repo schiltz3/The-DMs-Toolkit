@@ -65,13 +65,13 @@ class EncounterGenerator(View):
         if request.POST.get("generate_button") is not None:
             try:
                 generated = self.generator.generate_encounter(
-                    generator_key=form.generator_type.value,
                     average_level=1
                     if form.average_player_level.value == ""
                     else int(form.average_player_level.value),
                     encounter_type=form.encounter_type.value,
                     tags=None,
-                    input_encounter_type=form.encounter_type.value,
+                    generator_key=form.generator_type.value,
+                    loot_generate=False,
                 )
                 encounter_object = generated.get("encounter_object")
                 self.context["total_enemies"] = int(generated.get("monster_count"))
@@ -118,7 +118,7 @@ class GenerateEncounterInputs:
 
     generator_type: Element = field(default_factory=lambda: Element("Random"))
     encounter_type: Element = field(default_factory=lambda: Element("Random"))
-    tags: Element = field(default_factory=Element)
+    tags: Element = field(default_factory=lambda: Element("All"))
     average_player_level: Element = field(default_factory=Element)  # Optional
 
     @classmethod
