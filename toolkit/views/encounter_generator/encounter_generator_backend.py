@@ -1,7 +1,7 @@
 import random
 from typing import Callable, Optional, Union
 
-from toolkit.models import Monster, Tag, GeneratedEncounter
+from toolkit.models import GeneratedEncounter, Monster, Tag
 from toolkit.views.loot_generator.loot_generator_backend import Loot_Generator
 
 Generator = Callable[[int, int], int]
@@ -60,7 +60,9 @@ class Encounter_Generator:
 
     def generate_encounter_type(self):
         """Generate a random encounter type"""
-        self.encounter_type = self.ENCOUNTER_TYPE_LIST[self.Generators[self.generator_key](0, len(self.ENCOUNTER_TYPE_LIST) - 1)]
+        self.encounter_type = self.ENCOUNTER_TYPE_LIST[
+            self.Generators[self.generator_key](0, len(self.ENCOUNTER_TYPE_LIST) - 1)
+        ]
 
     def get_tags(self):
         """Get Current Tags
@@ -187,7 +189,10 @@ class Encounter_Generator:
         Raises:
             ValueError: If encounter_type is not a valid encounter type
         """
-        if encounter_type not in self.ENCOUNTER_TYPE_LIST and encounter_type != "Random":
+        if (
+            encounter_type not in self.ENCOUNTER_TYPE_LIST
+            and encounter_type != "Random"
+        ):
             raise ValueError("Not a valid encounter type")
         self.encounter_type = encounter_type
 
