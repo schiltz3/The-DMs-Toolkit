@@ -11,9 +11,9 @@
       "Hitpoints": 333,
       "Initiative": 2,
       "Creature_Tags": [
+        "Demon",
         "unique",
-        "legendary",
-        "Demon"
+        "legendary"
       ],
       "Source": "Out of the Abyss: 235"
     }
@@ -75,9 +75,9 @@
       "Hitpoints": 496,
       "Initiative": 2,
       "Creature_Tags": [
+        "Demon",
         "unique",
-        "legendary",
-        "Demon"
+        "legendary"
       ],
       "Source": "Out of the Abyss: 236"
     }
@@ -94,8 +94,8 @@
       "Hitpoints": 13,
       "Initiative": 2,
       "Creature_Tags": [
-        "underground",
-        "Derro"
+        "Derro",
+        "underground"
       ],
       "Source": "Out of the Abyss: 224"
     }
@@ -112,8 +112,8 @@
       "Hitpoints": 49,
       "Initiative": 2,
       "Creature_Tags": [
-        "underground",
-        "Derro"
+        "Derro",
+        "underground"
       ],
       "Source": "Out of the Abyss: 225"
     }
@@ -130,8 +130,8 @@
       "Hitpoints": 31,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
-        "Derro"
+        "Derro",
+        "unique"
       ],
       "Source": "Out of the Abyss: 231"
     }
@@ -244,9 +244,9 @@
       "Hitpoints": 350,
       "Initiative": 1,
       "Creature_Tags": [
+        "Demon",
         "unique",
-        "legendary",
-        "Demon"
+        "legendary"
       ],
       "Source": "Out of the Abyss: 238"
     }
@@ -263,9 +263,10 @@
       "Hitpoints": 378,
       "Initiative": 2,
       "Creature_Tags": [
+        "Demon",
+        "Shapechanger",
         "unique",
-        "legendary",
-        "Demon, Shapechanger"
+        "legendary"
       ],
       "Source": "Out of the Abyss: 241"
     }
@@ -282,8 +283,8 @@
       "Hitpoints": 33,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "Damaran Human"
+        "Damaran Human",
+        "unique"
       ],
       "Source": "Out of the Abyss: 232"
     }
@@ -330,9 +331,9 @@
       "Hitpoints": 350,
       "Initiative": 0,
       "Creature_Tags": [
+        "Demon",
         "unique",
-        "legendary",
-        "Demon"
+        "legendary"
       ],
       "Source": "Out of the Abyss: 243"
     }
@@ -364,8 +365,8 @@
       "Hitpoints": 40,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "Derro"
+        "Derro",
+        "unique"
       ],
       "Source": "Out of the Abyss: 232"
     }
@@ -382,9 +383,9 @@
       "Hitpoints": 405,
       "Initiative": 2,
       "Creature_Tags": [
+        "Demon",
         "unique",
-        "legendary",
-        "Demon"
+        "legendary"
       ],
       "Source": "Out of the Abyss: 245"
     }
@@ -401,8 +402,9 @@
       "Hitpoints": 49,
       "Initiative": 4,
       "Creature_Tags": [
-        "unique",
-        "Gnome, Shapechanger"
+        "Gnome",
+        "Shapechanger",
+        "unique"
       ],
       "Source": "Out of the Abyss: 233"
     }
@@ -451,9 +453,9 @@
       "Hitpoints": 348,
       "Initiative": 3,
       "Creature_Tags": [
+        "Demon",
         "unique",
-        "legendary",
-        "Demon"
+        "legendary"
       ],
       "Source": "Out of the Abyss: 247"
     }
@@ -488,9 +490,9 @@
       "Hitpoints": 304,
       "Initiative": 2,
       "Creature_Tags": [
+        "Demon",
         "unique",
-        "legendary",
-        "Demon"
+        "legendary"
       ],
       "Source": "Out of the Abyss: 249"
     }
@@ -507,8 +509,8 @@
       "Hitpoints": 66,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
-        "Elf"
+        "Elf",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 192"
     }
@@ -525,9 +527,9 @@
       "Hitpoints": 66,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
         "Elf",
-        "lair"
+        "lair",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 192"
     }
@@ -572,8 +574,8 @@
       "Hitpoints": 78,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "Fire genasi"
+        "Fire genasi",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 201"
     }
@@ -590,6 +592,7 @@
       "Hitpoints": 39,
       "Initiative": 0,
       "Creature_Tags": [
+        "Human",
         "arctic",
         "cave",
         "coast",
@@ -599,8 +602,7 @@
         "grassland",
         "mountain",
         "ruins",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 195"
     }
@@ -617,6 +619,7 @@
       "Hitpoints": 45,
       "Initiative": 0,
       "Creature_Tags": [
+        "Human",
         "arctic",
         "cave",
         "coast",
@@ -626,8 +629,7 @@
         "grassland",
         "mountain",
         "ruins",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 195"
     }
@@ -644,6 +646,7 @@
       "Hitpoints": 82,
       "Initiative": 1,
       "Creature_Tags": [
+        "Human",
         "arctic",
         "cave",
         "coast",
@@ -653,8 +656,7 @@
         "grassland",
         "mountain",
         "ruins",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 196"
     }
@@ -671,13 +673,13 @@
       "Hitpoints": 52,
       "Initiative": 0,
       "Creature_Tags": [
+        "Human",
         "aquatic",
         "cave",
         "coast",
         "grassland",
         "swamp",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 205"
     }
@@ -694,13 +696,13 @@
       "Hitpoints": 22,
       "Initiative": 2,
       "Creature_Tags": [
+        "Human",
         "aquatic",
         "cave",
         "coast",
         "grassland",
         "swamp",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 205"
     }
@@ -717,13 +719,13 @@
       "Hitpoints": 58,
       "Initiative": 3,
       "Creature_Tags": [
+        "Human",
         "aquatic",
         "cave",
         "coast",
         "grassland",
         "swamp",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 205"
     }
@@ -740,8 +742,8 @@
       "Hitpoints": 93,
       "Initiative": 0,
       "Creature_Tags": [
-        "unique",
-        "Shield dwarf"
+        "Shield dwarf",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 210"
     }
@@ -786,8 +788,8 @@
       "Hitpoints": 71,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 202"
     }
@@ -804,6 +806,7 @@
       "Hitpoints": 45,
       "Initiative": 1,
       "Creature_Tags": [
+        "Human",
         "cave",
         "desert",
         "dungeon",
@@ -811,8 +814,7 @@
         "grassland",
         "mountain",
         "ruins",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 200"
     }
@@ -829,6 +831,7 @@
       "Hitpoints": 52,
       "Initiative": 2,
       "Creature_Tags": [
+        "Human",
         "cave",
         "desert",
         "dungeon",
@@ -836,8 +839,7 @@
         "grassland",
         "mountain",
         "ruins",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 200"
     }
@@ -854,13 +856,13 @@
       "Hitpoints": 52,
       "Initiative": 0,
       "Creature_Tags": [
+        "Human",
         "aquatic",
         "cave",
         "coast",
         "grassland",
         "swamp",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 207"
     }
@@ -877,6 +879,7 @@
       "Hitpoints": 33,
       "Initiative": 2,
       "Creature_Tags": [
+        "Human",
         "arctic",
         "cave",
         "coast",
@@ -884,8 +887,7 @@
         "dungeon",
         "grassland",
         "mountain",
-        "ruins",
-        "Human"
+        "ruins"
       ],
       "Source": "Princes of the Apocalypse: 189"
     }
@@ -929,6 +931,7 @@
       "Hitpoints": 105,
       "Initiative": 2,
       "Creature_Tags": [
+        "Human",
         "cave",
         "desert",
         "dungeon",
@@ -936,8 +939,7 @@
         "grassland",
         "mountain",
         "ruins",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 201"
     }
@@ -954,8 +956,8 @@
       "Hitpoints": 112,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 208"
     }
@@ -972,8 +974,8 @@
       "Hitpoints": 112,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 208"
     }
@@ -990,8 +992,8 @@
       "Hitpoints": 102,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
-        "Sahuagin"
+        "Sahuagin",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 210"
     }
@@ -1008,8 +1010,8 @@
       "Hitpoints": 78,
       "Initiative": 4,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 198"
     }
@@ -1026,6 +1028,7 @@
       "Hitpoints": 9,
       "Initiative": 2,
       "Creature_Tags": [
+        "Human",
         "arctic",
         "cave",
         "coast",
@@ -1033,8 +1036,7 @@
         "dungeon",
         "grassland",
         "mountain",
-        "ruins",
-        "Human"
+        "ruins"
       ],
       "Source": "Princes of the Apocalypse: 190"
     }
@@ -1051,6 +1053,7 @@
       "Hitpoints": 45,
       "Initiative": 3,
       "Creature_Tags": [
+        "Human",
         "arctic",
         "cave",
         "coast",
@@ -1058,8 +1061,7 @@
         "dungeon",
         "grassland",
         "mountain",
-        "ruins",
-        "Human"
+        "ruins"
       ],
       "Source": "Princes of the Apocalypse: 190"
     }
@@ -1076,6 +1078,7 @@
       "Hitpoints": 33,
       "Initiative": 3,
       "Creature_Tags": [
+        "Human",
         "arctic",
         "cave",
         "coast",
@@ -1083,8 +1086,7 @@
         "dungeon",
         "grassland",
         "mountain",
-        "ruins",
-        "Human"
+        "ruins"
       ],
       "Source": "Princes of the Apocalypse: 191"
     }
@@ -1101,9 +1103,9 @@
       "Hitpoints": 325,
       "Initiative": 7,
       "Creature_Tags": [
+        "lair",
         "unique",
-        "legendary",
-        "lair"
+        "legendary"
       ],
       "Source": "Princes of the Apocalypse: 214"
     }
@@ -1154,8 +1156,8 @@
       "Hitpoints": 82,
       "Initiative": 0,
       "Creature_Tags": [
-        "unique",
-        "Earth genasi"
+        "Earth genasi",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 198"
     }
@@ -1172,9 +1174,9 @@
       "Hitpoints": 526,
       "Initiative": 0,
       "Creature_Tags": [
+        "lair",
         "unique",
-        "legendary",
-        "lair"
+        "legendary"
       ],
       "Source": "Princes of the Apocalypse: 216"
     }
@@ -1191,9 +1193,9 @@
       "Hitpoints": 324,
       "Initiative": 6,
       "Creature_Tags": [
+        "lair",
         "unique",
-        "legendary",
-        "lair"
+        "legendary"
       ],
       "Source": "Princes of the Apocalypse: 218"
     }
@@ -1210,13 +1212,13 @@
       "Hitpoints": 49,
       "Initiative": 2,
       "Creature_Tags": [
+        "Human",
         "aquatic",
         "cave",
         "coast",
         "grassland",
         "swamp",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 207"
     }
@@ -1233,8 +1235,8 @@
       "Hitpoints": 39,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 212"
     }
@@ -1251,6 +1253,7 @@
       "Hitpoints": 112,
       "Initiative": 0,
       "Creature_Tags": [
+        "Human",
         "cave",
         "desert",
         "dungeon",
@@ -1258,8 +1261,7 @@
         "grassland",
         "mountain",
         "ruins",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 201"
     }
@@ -1276,6 +1278,7 @@
       "Hitpoints": 22,
       "Initiative": 2,
       "Creature_Tags": [
+        "Human",
         "arctic",
         "cave",
         "coast",
@@ -1285,8 +1288,7 @@
         "grassland",
         "mountain",
         "ruins",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 196"
     }
@@ -1303,8 +1305,8 @@
       "Hitpoints": 60,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "Water genasi"
+        "Water genasi",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 208"
     }
@@ -1321,6 +1323,7 @@
       "Hitpoints": 44,
       "Initiative": 2,
       "Creature_Tags": [
+        "Human",
         "arctic",
         "cave",
         "coast",
@@ -1328,8 +1331,7 @@
         "dungeon",
         "grassland",
         "mountain",
-        "ruins",
-        "Human"
+        "ruins"
       ],
       "Source": "Princes of the Apocalypse: 191"
     }
@@ -1346,6 +1348,7 @@
       "Hitpoints": 75,
       "Initiative": 0,
       "Creature_Tags": [
+        "Human",
         "arctic",
         "cave",
         "coast",
@@ -1355,8 +1358,7 @@
         "grassland",
         "mountain",
         "ruins",
-        "underground",
-        "Human"
+        "underground"
       ],
       "Source": "Princes of the Apocalypse: 197"
     }
@@ -1373,8 +1375,8 @@
       "Hitpoints": 71,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 192"
     }
@@ -1391,8 +1393,8 @@
       "Hitpoints": 112,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
-        "Tiefling"
+        "Tiefling",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 203"
     }
@@ -1409,9 +1411,9 @@
       "Hitpoints": 112,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
         "Tiefling",
-        "lair"
+        "lair",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 203"
     }
@@ -1456,8 +1458,8 @@
       "Hitpoints": 36,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "Halfling"
+        "Halfling",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 212"
     }
@@ -1474,8 +1476,8 @@
       "Hitpoints": 55,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
-        "Half-elf"
+        "Half-elf",
+        "unique"
       ],
       "Source": "Princes of the Apocalypse: 192"
     }
@@ -1492,9 +1494,9 @@
       "Hitpoints": 283,
       "Initiative": 7,
       "Creature_Tags": [
+        "lair",
         "unique",
-        "legendary",
-        "lair"
+        "legendary"
       ],
       "Source": "Princes of the Apocalypse: 221"
     }
@@ -1534,8 +1536,8 @@
       "Hitpoints": 39,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Hoard of the Dragon Queen: 88"
     }
@@ -1552,8 +1554,8 @@
       "Hitpoints": 138,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "Cloud giant"
+        "Cloud giant",
+        "unique"
       ],
       "Source": "Hoard of the Dragon Queen: 89"
     }
@@ -1570,8 +1572,8 @@
       "Hitpoints": 93,
       "Initiative": 0,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Hoard of the Dragon Queen: 89"
     }
@@ -1588,9 +1590,9 @@
       "Hitpoints": 16,
       "Initiative": 3,
       "Creature_Tags": [
+        "Human",
         "dungeon",
-        "urban",
-        "Human"
+        "urban"
       ],
       "Source": "Hoard of the Dragon Queen: 89, Rise of Tiamat: 89"
     }
@@ -1607,9 +1609,9 @@
       "Hitpoints": 32,
       "Initiative": 3,
       "Creature_Tags": [
+        "Human",
         "dungeon",
-        "urban",
-        "Human"
+        "urban"
       ],
       "Source": "Hoard of the Dragon Queen: 89"
     }
@@ -1626,8 +1628,8 @@
       "Hitpoints": 52,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "High-elf"
+        "High-elf",
+        "unique"
       ],
       "Source": "Hoard of the Dragon Queen: 90"
     }
@@ -1644,8 +1646,8 @@
       "Hitpoints": 44,
       "Initiative": 0,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Hoard of the Dragon Queen: 90"
     }
@@ -1662,8 +1664,8 @@
       "Hitpoints": 22,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
-        "Gnome"
+        "Gnome",
+        "unique"
       ],
       "Source": "Hoard of the Dragon Queen: 91"
     }
@@ -1680,8 +1682,8 @@
       "Hitpoints": 57,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "Half-Dragon"
+        "Half-Dragon",
+        "unique"
       ],
       "Source": "Hoard of the Dragon Queen: 91"
     }
@@ -1698,8 +1700,8 @@
       "Hitpoints": 59,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "Bullywug"
+        "Bullywug",
+        "unique"
       ],
       "Source": "Hoard of the Dragon Queen: 91"
     }
@@ -1716,8 +1718,8 @@
       "Hitpoints": 71,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Hoard of the Dragon Queen: 92, Rise of Tiamat: 91"
     }
@@ -1734,8 +1736,8 @@
       "Hitpoints": 90,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
-        "Half-black dragon"
+        "Half-black dragon",
+        "unique"
       ],
       "Source": "Hoard of the Dragon Queen: 93"
     }
@@ -1752,8 +1754,8 @@
       "Hitpoints": 58,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "Half-elf"
+        "Half-elf",
+        "unique"
       ],
       "Source": "Hoard of the Dragon Queen: 93"
     }
@@ -1770,9 +1772,9 @@
       "Hitpoints": 13,
       "Initiative": 2,
       "Creature_Tags": [
+        "Aarakocra",
         "mountain",
-        "planar",
-        "Aarakocra"
+        "planar"
       ],
       "Source": "Monster Manual: 12, Princes of the Apocalypse Online Supplement v1.0: 6"
     }
@@ -1791,8 +1793,8 @@
       "Creature_Tags": [
         "aquatic",
         "coast",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 13, Princes of the Apocalypse Online Supplement v1.0: 6, Systems Reference Document (SRD): 261"
     }
@@ -1828,6 +1830,7 @@
       "Hitpoints": 9,
       "Initiative": 0,
       "Creature_Tags": [
+        "any",
         "arctic",
         "desert",
         "dungeon",
@@ -1836,8 +1839,7 @@
         "mountain",
         "swamp",
         "underground",
-        "urban",
-        "any"
+        "urban"
       ],
       "Source": "Basic Rules v1: 53, HotDQ supplement: 4, Monster Manual: 342, Systems Reference Document (SRD): 395"
     }
@@ -1855,8 +1857,8 @@
       "Initiative": 2,
       "Creature_Tags": [
         "swamp",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 88, Princes of the Apocalypse Online Supplement v1.0: 7, Systems Reference Document (SRD): 281"
     }
@@ -1875,8 +1877,8 @@
       "Creature_Tags": [
         "desert",
         "dungeon",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 84"
     }
@@ -1894,8 +1896,8 @@
       "Initiative": 0,
       "Creature_Tags": [
         "desert",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "HotDQ supplement: 4, Monster Manual: 91, Systems Reference Document (SRD): 283"
     }
@@ -1914,8 +1916,8 @@
       "Creature_Tags": [
         "cave",
         "underground",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 105, Systems Reference Document (SRD): 291"
     }
@@ -1933,8 +1935,8 @@
       "Initiative": 0,
       "Creature_Tags": [
         "coast",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 108, Princes of the Apocalypse Online Supplement v1.0: 7, Systems Reference Document (SRD): 294"
     }
@@ -1954,8 +1956,8 @@
         "cave",
         "desert",
         "grassland",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 111, Systems Reference Document (SRD): 296"
     }
@@ -1974,8 +1976,8 @@
       "Creature_Tags": [
         "mountain",
         "ruins",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 114, Systems Reference Document (SRD): 299"
     }
@@ -1993,8 +1995,8 @@
       "Initiative": 1,
       "Creature_Tags": [
         "forest",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 94, Systems Reference Document (SRD): 285"
     }
@@ -2012,8 +2014,8 @@
       "Initiative": 0,
       "Creature_Tags": [
         "mountain",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Basic Rules v1: 8, Monster Manual: 98, Systems Reference Document (SRD): 287"
     }
@@ -2032,8 +2034,8 @@
       "Creature_Tags": [
         "arctic",
         "mountain",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 117, Systems Reference Document (SRD): 302"
     }
@@ -2053,8 +2055,8 @@
         "arctic",
         "cave",
         "underground",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "HotDQ supplement: 5, Monster Manual: 101, Systems Reference Document (SRD): 289"
     }
@@ -2119,8 +2121,8 @@
       "Initiative": 2,
       "Creature_Tags": [
         "swamp",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 87, Systems Reference Document (SRD): 280"
     }
@@ -2138,8 +2140,8 @@
       "Initiative": 0,
       "Creature_Tags": [
         "desert",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 90, Systems Reference Document (SRD): 282"
     }
@@ -2158,8 +2160,8 @@
       "Creature_Tags": [
         "cave",
         "underground",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 104, Systems Reference Document (SRD): 290"
     }
@@ -2177,8 +2179,8 @@
       "Initiative": 0,
       "Creature_Tags": [
         "coast",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 107, Systems Reference Document (SRD): 293"
     }
@@ -2198,8 +2200,8 @@
         "cave",
         "desert",
         "grassland",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 110, Systems Reference Document (SRD): 295"
     }
@@ -2218,8 +2220,8 @@
       "Creature_Tags": [
         "mountain",
         "ruins",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 113, Systems Reference Document (SRD): 298"
     }
@@ -2237,8 +2239,8 @@
       "Initiative": 1,
       "Creature_Tags": [
         "forest",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 93, Systems Reference Document (SRD): 284"
     }
@@ -2256,8 +2258,8 @@
       "Initiative": 0,
       "Creature_Tags": [
         "mountain",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 97, Systems Reference Document (SRD): 286"
     }
@@ -2276,8 +2278,8 @@
       "Creature_Tags": [
         "arctic",
         "mountain",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 116, Systems Reference Document (SRD): 301"
     }
@@ -2297,8 +2299,8 @@
         "arctic",
         "cave",
         "underground",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 100, Systems Reference Document (SRD): 288"
     }
@@ -2317,8 +2319,8 @@
       "Creature_Tags": [
         "dungeon",
         "ruins",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 281, Systems Reference Document (SRD): 347"
     }
@@ -2408,9 +2410,9 @@
       "Hitpoints": 104,
       "Initiative": 1,
       "Creature_Tags": [
+        "Yugoloth",
         "dungeon",
-        "planar",
-        "Yugoloth"
+        "planar"
       ],
       "Source": "Monster Manual: 313"
     }
@@ -2427,9 +2429,9 @@
       "Hitpoints": 99,
       "Initiative": 2,
       "Creature_Tags": [
+        "any",
         "ruins",
-        "urban",
-        "any"
+        "urban"
       ],
       "Source": "Monster Manual: 342, Systems Reference Document (SRD): 395"
     }
@@ -2446,6 +2448,7 @@
       "Hitpoints": 78,
       "Initiative": 3,
       "Creature_Tags": [
+        "any",
         "arctic",
         "cave",
         "coast",
@@ -2457,8 +2460,7 @@
         "ruins",
         "swamp",
         "underground",
-        "urban",
-        "any"
+        "urban"
       ],
       "Source": "HotDQ supplement: 6, Monster Manual: 343, Princes of the Apocalypse Online Supplement v1.0: 8, Systems Reference Document (SRD): 396"
     }
@@ -2580,9 +2582,9 @@
       "Hitpoints": 262,
       "Initiative": 2,
       "Creature_Tags": [
+        "Demon",
         "dungeon",
-        "planar",
-        "Demon"
+        "planar"
       ],
       "Source": "Monster Manual: 55, Systems Reference Document (SRD): 270"
     }
@@ -2599,6 +2601,7 @@
       "Hitpoints": 11,
       "Initiative": 1,
       "Creature_Tags": [
+        "any",
         "arctic",
         "coast",
         "desert",
@@ -2606,8 +2609,7 @@
         "grassland",
         "mountain",
         "ruins",
-        "urban",
-        "any"
+        "urban"
       ],
       "Source": "Basic Rules v1: 53, HotDQ supplement: 6, Monster Manual: 343, Systems Reference Document (SRD): 396"
     }
@@ -2624,6 +2626,7 @@
       "Hitpoints": 65,
       "Initiative": 3,
       "Creature_Tags": [
+        "any",
         "arctic",
         "coast",
         "desert",
@@ -2631,8 +2634,7 @@
         "grassland",
         "mountain",
         "ruins",
-        "urban",
-        "any"
+        "urban"
       ],
       "Source": "Monster Manual: 344, Princes of the Apocalypse Online Supplement v1.0: 9, Systems Reference Document (SRD): 397"
     }
@@ -2669,9 +2671,9 @@
       "Hitpoints": 110,
       "Initiative": 3,
       "Creature_Tags": [
+        "Devil",
         "dungeon",
-        "planar",
-        "Devil"
+        "planar"
       ],
       "Source": "Monster Manual: 70, Systems Reference Document (SRD): 274"
     }
@@ -2688,9 +2690,9 @@
       "Hitpoints": 68,
       "Initiative": 2,
       "Creature_Tags": [
+        "Demon",
         "dungeon",
-        "planar",
-        "Demon"
+        "planar"
       ],
       "Source": "Monster Manual: 56, Princes of the Apocalypse Online Supplement v1.0: 9"
     }
@@ -2755,9 +2757,9 @@
       "Hitpoints": 52,
       "Initiative": 2,
       "Creature_Tags": [
+        "Devil",
         "dungeon",
-        "planar",
-        "Devil"
+        "planar"
       ],
       "Source": "Monster Manual: 70, Systems Reference Document (SRD): 274"
     }
@@ -2816,8 +2818,8 @@
         "cave",
         "dungeon",
         "underground",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 28"
     }
@@ -2853,6 +2855,7 @@
       "Hitpoints": 67,
       "Initiative": 1,
       "Creature_Tags": [
+        "any",
         "arctic",
         "cave",
         "desert",
@@ -2860,8 +2863,7 @@
         "grassland",
         "mountain",
         "swamp",
-        "urban",
-        "any"
+        "urban"
       ],
       "Source": "Basic Rules v1: 53, HotDQ supplement: 6, Monster Manual: 344, Systems Reference Document (SRD): 397"
     }
@@ -3021,9 +3023,9 @@
       "Hitpoints": 142,
       "Initiative": 3,
       "Creature_Tags": [
+        "Devil",
         "dungeon",
-        "planar",
-        "Devil"
+        "planar"
       ],
       "Source": "Monster Manual: 71, Systems Reference Document (SRD): 275"
     }
@@ -3111,13 +3113,13 @@
       "Hitpoints": 27,
       "Initiative": 2,
       "Creature_Tags": [
+        "Goblinoid",
         "cave",
         "dungeon",
         "forest",
         "mountain",
         "ruins",
-        "urban",
-        "Goblinoid"
+        "urban"
       ],
       "Source": "Basic Rules v1: 13, Monster Manual: 33, Systems Reference Document (SRD): 266"
     }
@@ -3134,13 +3136,13 @@
       "Hitpoints": 65,
       "Initiative": 2,
       "Creature_Tags": [
+        "Goblinoid",
         "cave",
         "dungeon",
         "forest",
         "mountain",
         "ruins",
-        "urban",
-        "Goblinoid"
+        "urban"
       ],
       "Source": "Monster Manual: 33"
     }
@@ -3178,9 +3180,9 @@
       "Hitpoints": 11,
       "Initiative": 1,
       "Creature_Tags": [
+        "Bullywug",
         "coast",
-        "swamp",
-        "Bullywug"
+        "swamp"
       ],
       "Source": "HotDQ supplement: 7, Monster Manual: 35"
     }
@@ -3288,9 +3290,9 @@
       "Hitpoints": 85,
       "Initiative": 2,
       "Creature_Tags": [
+        "Devil",
         "dungeon",
-        "planar",
-        "Devil"
+        "planar"
       ],
       "Source": "Monster Manual: 72, Systems Reference Document (SRD): 275"
     }
@@ -3307,9 +3309,9 @@
       "Hitpoints": 84,
       "Initiative": 2,
       "Creature_Tags": [
+        "Demon",
         "dungeon",
-        "planar",
-        "Demon"
+        "planar"
       ],
       "Source": "Monster Manual: 57"
     }
@@ -3436,8 +3438,8 @@
       "Hitpoints": 4,
       "Initiative": 0,
       "Creature_Tags": [
-        "urban",
-        "any"
+        "any",
+        "urban"
       ],
       "Source": "Basic Rules v1: 54, HotDQ supplement: 7, Monster Manual: 345, Systems Reference Document (SRD): 398"
     }
@@ -3564,9 +3566,9 @@
       "Hitpoints": 33,
       "Initiative": 2,
       "Creature_Tags": [
+        "any",
         "dungeon",
-        "urban",
-        "any"
+        "urban"
       ],
       "Source": "Monster Manual: 345, Princes of the Apocalypse Online Supplement v1.0: 12, Systems Reference Document (SRD): 398"
     }
@@ -3583,9 +3585,9 @@
       "Hitpoints": 9,
       "Initiative": 1,
       "Creature_Tags": [
+        "any",
         "dungeon",
-        "urban",
-        "any"
+        "urban"
       ],
       "Source": "Basic Rules v1: 54, HotDQ supplement: 7, Monster Manual: 345, Systems Reference Document (SRD): 398"
     }
@@ -3710,8 +3712,8 @@
       "Hitpoints": 170,
       "Initiative": 2,
       "Creature_Tags": [
-        "planar",
-        "Shapechanger"
+        "Shapechanger",
+        "planar"
       ],
       "Source": "Monster Manual: 278"
     }
@@ -3751,8 +3753,8 @@
         "cave",
         "dungeon",
         "underground",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 29"
     }
@@ -3769,11 +3771,11 @@
       "Hitpoints": 16,
       "Initiative": 2,
       "Creature_Tags": [
+        "Gnome",
         "cave",
         "dungeon",
         "planar",
-        "underground",
-        "Gnome"
+        "underground"
       ],
       "Source": "Monster Manual: 164, Princes of the Apocalypse Online Supplement v1.0: 13"
     }
@@ -3844,9 +3846,9 @@
       "Hitpoints": 80,
       "Initiative": 5,
       "Creature_Tags": [
+        "lair",
         "unique",
-        "legendary",
-        "lair"
+        "legendary"
       ],
       "Source": "Monster Manual: 49"
     }
@@ -3864,8 +3866,8 @@
       "Initiative": 5,
       "Creature_Tags": [
         "dungeon",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 48"
     }
@@ -3958,10 +3960,10 @@
       "Hitpoints": 52,
       "Initiative": 4,
       "Creature_Tags": [
+        "Shapechanger",
         "dungeon",
         "ruins",
-        "urban",
-        "Shapechanger"
+        "urban"
       ],
       "Source": "Basic Rules v1: 17, HotDQ supplement: 8, Monster Manual: 82, Systems Reference Document (SRD): 279"
     }
@@ -4012,9 +4014,9 @@
       "Hitpoints": 18,
       "Initiative": 0,
       "Creature_Tags": [
+        "Demon",
         "dungeon",
-        "planar",
-        "Demon"
+        "planar"
       ],
       "Source": "Monster Manual: 57, Systems Reference Document (SRD): 270"
     }
@@ -4049,10 +4051,10 @@
       "Hitpoints": 13,
       "Initiative": 2,
       "Creature_Tags": [
+        "Elf",
         "dungeon",
         "underground",
-        "urban",
-        "Elf"
+        "urban"
       ],
       "Source": "Monster Manual: 128, Systems Reference Document (SRD): 307"
     }
@@ -4069,10 +4071,10 @@
       "Hitpoints": 71,
       "Initiative": 4,
       "Creature_Tags": [
+        "Elf",
         "dungeon",
         "underground",
-        "urban",
-        "Elf"
+        "urban"
       ],
       "Source": "Monster Manual: 128"
     }
@@ -4089,10 +4091,10 @@
       "Hitpoints": 45,
       "Initiative": 2,
       "Creature_Tags": [
+        "Elf",
         "dungeon",
         "underground",
-        "urban",
-        "Elf"
+        "urban"
       ],
       "Source": "Monster Manual: 129, Princes of the Apocalypse Online Supplement v1.0: 15"
     }
@@ -4109,10 +4111,10 @@
       "Hitpoints": 71,
       "Initiative": 2,
       "Creature_Tags": [
+        "Elf",
         "dungeon",
         "underground",
-        "urban",
-        "Elf"
+        "urban"
       ],
       "Source": "Monster Manual: 129"
     }
@@ -4129,6 +4131,7 @@
       "Hitpoints": 27,
       "Initiative": 1,
       "Creature_Tags": [
+        "any",
         "arctic",
         "cave",
         "coast",
@@ -4137,8 +4140,7 @@
         "grassland",
         "mountain",
         "swamp",
-        "underground",
-        "any"
+        "underground"
       ],
       "Source": "Monster Manual: 346, Princes of the Apocalypse Online Supplement v1.0: 15, Systems Reference Document (SRD): 351"
     }
@@ -4172,9 +4174,9 @@
       "Hitpoints": 26,
       "Initiative": 0,
       "Creature_Tags": [
+        "Dwarf",
         "dungeon",
-        "underground",
-        "Dwarf"
+        "underground"
       ],
       "Source": "Monster Manual: 122, Princes of the Apocalypse Online Supplement v1.0: 16, Systems Reference Document (SRD): 305"
     }
@@ -4330,9 +4332,9 @@
       "Hitpoints": 313,
       "Initiative": 5,
       "Creature_Tags": [
+        "Titan",
         "planar",
-        "legendary",
-        "Titan"
+        "legendary"
       ],
       "Source": "Monster Manual: 130"
     }
@@ -4349,9 +4351,9 @@
       "Hitpoints": 153,
       "Initiative": 3,
       "Creature_Tags": [
+        "Devil",
         "dungeon",
-        "planar",
-        "Devil"
+        "planar"
       ],
       "Source": "Monster Manual: 73, Systems Reference Document (SRD): 276"
     }
@@ -5506,9 +5508,9 @@
       "Hitpoints": 91,
       "Initiative": 2,
       "Creature_Tags": [
+        "Gith",
         "planar",
-        "swamp",
-        "Gith"
+        "swamp"
       ],
       "Source": "Monster Manual: 160"
     }
@@ -5525,8 +5527,8 @@
       "Hitpoints": 49,
       "Initiative": 2,
       "Creature_Tags": [
-        "planar",
-        "Gith"
+        "Gith",
+        "planar"
       ],
       "Source": "Monster Manual: 160"
     }
@@ -5543,8 +5545,8 @@
       "Hitpoints": 38,
       "Initiative": 2,
       "Creature_Tags": [
-        "planar",
-        "Gith"
+        "Gith",
+        "planar"
       ],
       "Source": "Monster Manual: 161"
     }
@@ -5561,8 +5563,8 @@
       "Hitpoints": 84,
       "Initiative": 4,
       "Creature_Tags": [
-        "planar",
-        "Gith"
+        "Gith",
+        "planar"
       ],
       "Source": "Monster Manual: 161"
     }
@@ -5579,9 +5581,9 @@
       "Hitpoints": 157,
       "Initiative": 2,
       "Creature_Tags": [
+        "Demon",
         "dungeon",
-        "planar",
-        "Demon"
+        "planar"
       ],
       "Source": "Monster Manual: 58, Systems Reference Document (SRD): 271"
     }
@@ -5598,8 +5600,8 @@
       "Hitpoints": 112,
       "Initiative": 2,
       "Creature_Tags": [
-        "urban",
-        "any"
+        "any",
+        "urban"
       ],
       "Source": "Monster Manual: 346, Systems Reference Document (SRD): 399"
     }
@@ -5616,6 +5618,7 @@
       "Hitpoints": 22,
       "Initiative": 1,
       "Creature_Tags": [
+        "Gnoll",
         "arctic",
         "cave",
         "coast",
@@ -5626,8 +5629,7 @@
         "mountain",
         "ruins",
         "swamp",
-        "urban",
-        "Gnoll"
+        "urban"
       ],
       "Source": "Basic Rules v1: 30, Monster Manual: 163, Systems Reference Document (SRD): 314"
     }
@@ -5644,6 +5646,7 @@
       "Hitpoints": 65,
       "Initiative": 2,
       "Creature_Tags": [
+        "Gnoll",
         "arctic",
         "cave",
         "coast",
@@ -5654,8 +5657,7 @@
         "mountain",
         "ruins",
         "swamp",
-        "urban",
-        "Gnoll"
+        "urban"
       ],
       "Source": "Monster Manual: 163"
     }
@@ -5672,6 +5674,7 @@
       "Hitpoints": 49,
       "Initiative": 2,
       "Creature_Tags": [
+        "Gnoll",
         "arctic",
         "cave",
         "coast",
@@ -5682,8 +5685,7 @@
         "mountain",
         "ruins",
         "swamp",
-        "urban",
-        "Gnoll"
+        "urban"
       ],
       "Source": "Monster Manual: 163, Princes of the Apocalypse Online Supplement v1.0: 18"
     }
@@ -5718,14 +5720,14 @@
       "Hitpoints": 7,
       "Initiative": 2,
       "Creature_Tags": [
+        "Goblinoid",
         "cave",
         "dungeon",
         "forest",
         "grassland",
         "mountain",
         "ruins",
-        "urban",
-        "Goblinoid"
+        "urban"
       ],
       "Source": "Basic Rules v1: 30, Monster Manual: 166, Systems Reference Document (SRD): 266"
     }
@@ -5742,14 +5744,14 @@
       "Hitpoints": 21,
       "Initiative": 2,
       "Creature_Tags": [
+        "Goblinoid",
         "cave",
         "dungeon",
         "forest",
         "grassland",
         "mountain",
         "ruins",
-        "urban",
-        "Goblinoid"
+        "urban"
       ],
       "Source": "Monster Manual: 166"
     }
@@ -5802,9 +5804,9 @@
       "Hitpoints": 310,
       "Initiative": 0,
       "Creature_Tags": [
+        "Demon",
         "dungeon",
-        "planar",
-        "Demon"
+        "planar"
       ],
       "Source": "Monster Manual: 59"
     }
@@ -6001,10 +6003,10 @@
       "Hitpoints": 11,
       "Initiative": 1,
       "Creature_Tags": [
+        "Grimlock",
         "cave",
         "dungeon",
-        "underground",
-        "Grimlock"
+        "underground"
       ],
       "Source": "Monster Manual: 175, Systems Reference Document (SRD): 318"
     }
@@ -6021,8 +6023,8 @@
       "Hitpoints": 11,
       "Initiative": 1,
       "Creature_Tags": [
-        "urban",
-        "any"
+        "any",
+        "urban"
       ],
       "Source": "Basic Rules v1: 54, HotDQ supplement: 11, Monster Manual: 347, Systems Reference Document (SRD): 335"
     }
@@ -6061,8 +6063,8 @@
       "Creature_Tags": [
         "dungeon",
         "ruins",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 282, Systems Reference Document (SRD): 348"
     }
@@ -6105,13 +6107,13 @@
       "Hitpoints": 65,
       "Initiative": 1,
       "Creature_Tags": [
+        "Human",
         "arctic",
         "coast",
         "desert",
         "grassland",
         "mountain",
-        "urban",
-        "Human"
+        "urban"
       ],
       "Source": "Monster Manual: 180"
     }
@@ -6203,9 +6205,9 @@
       "Hitpoints": 136,
       "Initiative": 3,
       "Creature_Tags": [
+        "Demon",
         "dungeon",
-        "planar",
-        "Demon"
+        "planar"
       ],
       "Source": "Monster Manual: 60, Princes of the Apocalypse Online Supplement v1.0: 19, Systems Reference Document (SRD): 271"
     }
@@ -6258,12 +6260,12 @@
       "Hitpoints": 11,
       "Initiative": 1,
       "Creature_Tags": [
+        "Goblinoid",
         "arctic",
         "coast",
         "grassland",
         "mountain",
-        "urban",
-        "Goblinoid"
+        "urban"
       ],
       "Source": "Basic Rules v1: 32, HotDQ supplement: 12, Monster Manual: 186, Systems Reference Document (SRD): 322"
     }
@@ -6280,12 +6282,12 @@
       "Hitpoints": 39,
       "Initiative": 2,
       "Creature_Tags": [
+        "Goblinoid",
         "arctic",
         "coast",
         "grassland",
         "mountain",
-        "urban",
-        "Goblinoid"
+        "urban"
       ],
       "Source": "HotDQ supplement: 12, Monster Manual: 186, Princes of the Apocalypse Online Supplement v1.0: 20"
     }
@@ -6302,12 +6304,12 @@
       "Hitpoints": 97,
       "Initiative": 2,
       "Creature_Tags": [
+        "Goblinoid",
         "arctic",
         "coast",
         "grassland",
         "mountain",
-        "urban",
-        "Goblinoid"
+        "urban"
       ],
       "Source": "Monster Manual: 187"
     }
@@ -6360,9 +6362,9 @@
       "Hitpoints": 178,
       "Initiative": 3,
       "Creature_Tags": [
+        "Devil",
         "dungeon",
-        "planar",
-        "Devil"
+        "planar"
       ],
       "Source": "Monster Manual: 74, Systems Reference Document (SRD): 276"
     }
@@ -6439,9 +6441,9 @@
       "Hitpoints": 180,
       "Initiative": 2,
       "Creature_Tags": [
+        "Devil",
         "dungeon",
-        "planar",
-        "Devil"
+        "planar"
       ],
       "Source": "Monster Manual: 75, Systems Reference Document (SRD): 277"
     }
@@ -6478,9 +6480,10 @@
       "Hitpoints": 10,
       "Initiative": 3,
       "Creature_Tags": [
+        "Devil",
+        "Shapechanger",
         "dungeon",
-        "planar",
-        "Devil, Shapechanger"
+        "planar"
       ],
       "Source": "Monster Manual: 76, Player's Handbook: 306, Systems Reference Document (SRD): 277"
     }
@@ -6581,10 +6584,10 @@
       "Hitpoints": 18,
       "Initiative": 2,
       "Creature_Tags": [
+        "Shapechanger",
         "desert",
         "grassland",
-        "urban",
-        "Shapechanger"
+        "urban"
       ],
       "Source": "Monster Manual: 193, Princes of the Apocalypse Online Supplement v1.0: 21"
     }
@@ -6601,6 +6604,7 @@
       "Hitpoints": 13,
       "Initiative": 3,
       "Creature_Tags": [
+        "Kenku",
         "arctic",
         "coast",
         "desert",
@@ -6608,8 +6612,7 @@
         "grassland",
         "mountain",
         "ruins",
-        "urban",
-        "Kenku"
+        "urban"
       ],
       "Source": "Monster Manual: 194, Princes of the Apocalypse Online Supplement v1.0: 21"
     }
@@ -6643,8 +6646,8 @@
       "Hitpoints": 52,
       "Initiative": 0,
       "Creature_Tags": [
-        "urban",
-        "any"
+        "any",
+        "urban"
       ],
       "Source": "Basic Rules v1: 54, HotDQ supplement: 12, Monster Manual: 347, Systems Reference Document (SRD): 400"
     }
@@ -6661,11 +6664,11 @@
       "Hitpoints": 5,
       "Initiative": 2,
       "Creature_Tags": [
+        "Kobold",
         "cave",
         "dungeon",
         "mountain",
-        "underground",
-        "Kobold"
+        "underground"
       ],
       "Source": "Basic Rules v1: 34, HotDQ supplement: 13, Monster Manual: 195, Systems Reference Document (SRD): 324"
     }
@@ -6682,11 +6685,11 @@
       "Hitpoints": 472,
       "Initiative": 0,
       "Creature_Tags": [
+        "Titan",
         "aquatic",
         "coast",
-        "legendary",
-        "Titan",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 197, Systems Reference Document (SRD): 324"
     }
@@ -6703,9 +6706,9 @@
       "Hitpoints": 18,
       "Initiative": 0,
       "Creature_Tags": [
+        "Kuo-toa",
         "aquatic",
-        "coast",
-        "Kuo-toa"
+        "coast"
       ],
       "Source": "Monster Manual: 199, Princes of the Apocalypse Online Supplement v1.0: 22"
     }
@@ -6722,9 +6725,9 @@
       "Hitpoints": 97,
       "Initiative": 2,
       "Creature_Tags": [
+        "Kuo-toa",
         "aquatic",
-        "coast",
-        "Kuo-toa"
+        "coast"
       ],
       "Source": "Monster Manual: 200, Princes of the Apocalypse Online Supplement v1.0: 22"
     }
@@ -6741,9 +6744,9 @@
       "Hitpoints": 65,
       "Initiative": 0,
       "Creature_Tags": [
+        "Kuo-toa",
         "aquatic",
-        "coast",
-        "Kuo-toa"
+        "coast"
       ],
       "Source": "Monster Manual: 198"
     }
@@ -6760,9 +6763,9 @@
       "Hitpoints": 65,
       "Initiative": 0,
       "Creature_Tags": [
+        "Kuo-toa",
         "aquatic",
-        "coast",
-        "Kuo-toa"
+        "coast"
       ],
       "Source": "Monster Manual: 200, Princes of the Apocalypse Online Supplement v1.0: 23"
     }
@@ -6797,9 +6800,9 @@
       "Hitpoints": 13,
       "Initiative": -3,
       "Creature_Tags": [
+        "Devil",
         "dungeon",
-        "planar",
-        "Devil"
+        "planar"
       ],
       "Source": "Monster Manual: 76, Systems Reference Document (SRD): 278"
     }
@@ -6839,8 +6842,8 @@
         "dungeon",
         "ruins",
         "urban",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 202"
     }
@@ -6899,12 +6902,12 @@
       "Hitpoints": 75,
       "Initiative": 1,
       "Creature_Tags": [
+        "Lizardfolk",
         "coast",
         "dungeon",
         "forest",
         "grassland",
-        "swamp",
-        "Lizardfolk"
+        "swamp"
       ],
       "Source": "Monster Manual: 205, Princes of the Apocalypse Online Supplement v1.0: 24"
     }
@@ -6921,12 +6924,12 @@
       "Hitpoints": 22,
       "Initiative": 0,
       "Creature_Tags": [
+        "Lizardfolk",
         "coast",
         "dungeon",
         "forest",
         "grassland",
-        "swamp",
-        "Lizardfolk"
+        "swamp"
       ],
       "Source": "Basic Rules v1: 35, HotDQ supplement: 13, Monster Manual: 204, Systems Reference Document (SRD): 326"
     }
@@ -6943,12 +6946,12 @@
       "Hitpoints": 27,
       "Initiative": 0,
       "Creature_Tags": [
+        "Lizardfolk",
         "coast",
         "dungeon",
         "forest",
         "grassland",
-        "swamp",
-        "Lizardfolk"
+        "swamp"
       ],
       "Source": "Monster Manual: 205, Princes of the Apocalypse Online Supplement v1.0: 24"
     }
@@ -6965,8 +6968,8 @@
       "Hitpoints": 40,
       "Initiative": 2,
       "Creature_Tags": [
-        "urban",
-        "any"
+        "any",
+        "urban"
       ],
       "Source": "Basic Rules v1: 55, HotDQ supplement: 13, Monster Manual: 347, Systems Reference Document (SRD): 400"
     }
@@ -7041,9 +7044,9 @@
       "Hitpoints": 9,
       "Initiative": -1,
       "Creature_Tags": [
+        "Demon",
         "dungeon",
-        "planar",
-        "Demon"
+        "planar"
       ],
       "Source": "Monster Manual: 60"
     }
@@ -7103,9 +7106,9 @@
       "Hitpoints": 189,
       "Initiative": 5,
       "Creature_Tags": [
+        "Demon",
         "dungeon",
-        "planar",
-        "Demon"
+        "planar"
       ],
       "Source": "Monster Manual: 61, Systems Reference Document (SRD): 272"
     }
@@ -7160,8 +7163,8 @@
       "Hitpoints": 11,
       "Initiative": 1,
       "Creature_Tags": [
-        "aquatic",
-        "Merfolk"
+        "Merfolk",
+        "aquatic"
       ],
       "Source": "Basic Rules v1: 35, Monster Manual: 218, Systems Reference Document (SRD): 332"
     }
@@ -7195,9 +7198,9 @@
       "Hitpoints": 75,
       "Initiative": 0,
       "Creature_Tags": [
+        "Yugoloth",
         "dungeon",
-        "planar",
-        "Yugoloth"
+        "planar"
       ],
       "Source": "Monster Manual: 313, Princes of the Apocalypse Online Supplement v1.0: 26"
     }
@@ -7214,8 +7217,8 @@
       "Hitpoints": 58,
       "Initiative": 1,
       "Creature_Tags": [
-        "dungeon",
-        "Shapechanger"
+        "Shapechanger",
+        "dungeon"
       ],
       "Source": "Monster Manual: 220, Systems Reference Document (SRD): 319"
     }
@@ -7385,8 +7388,8 @@
       "Creature_Tags": [
         "desert",
         "dungeon",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 229, Systems Reference Document (SRD): 334"
     }
@@ -7454,9 +7457,9 @@
       "Hitpoints": 184,
       "Initiative": 0,
       "Creature_Tags": [
+        "Demon",
         "dungeon",
-        "planar",
-        "Demon"
+        "planar"
       ],
       "Source": "Monster Manual: 62, Systems Reference Document (SRD): 272"
     }
@@ -7546,8 +7549,8 @@
       "Hitpoints": 9,
       "Initiative": 1,
       "Creature_Tags": [
-        "urban",
-        "any"
+        "any",
+        "urban"
       ],
       "Source": "HotDQ supplement: 13, Monster Manual: 348, Princes of the Apocalypse Online Supplement v1.0: 26, Systems Reference Document (SRD): 401"
     }
@@ -7583,9 +7586,9 @@
       "Hitpoints": 123,
       "Initiative": 0,
       "Creature_Tags": [
+        "Yugoloth",
         "dungeon",
-        "planar",
-        "Yugoloth"
+        "planar"
       ],
       "Source": "Monster Manual: 314, Princes of the Apocalypse Online Supplement v1.0: 27"
     }
@@ -7696,6 +7699,7 @@
       "Hitpoints": 15,
       "Initiative": 1,
       "Creature_Tags": [
+        "Orc",
         "arctic",
         "coast",
         "desert",
@@ -7705,8 +7709,7 @@
         "mountain",
         "ruins",
         "swamp",
-        "urban",
-        "Orc"
+        "urban"
       ],
       "Source": "Basic Rules v1: 39, HotDQ supplement: 14, Monster Manual: 246, Systems Reference Document (SRD): 308"
     }
@@ -7723,6 +7726,7 @@
       "Hitpoints": 45,
       "Initiative": 1,
       "Creature_Tags": [
+        "Orc",
         "arctic",
         "coast",
         "desert",
@@ -7732,8 +7736,7 @@
         "mountain",
         "ruins",
         "swamp",
-        "urban",
-        "Orc"
+        "urban"
       ],
       "Source": "Monster Manual: 247, Princes of the Apocalypse Online Supplement v1.0: 28"
     }
@@ -7750,6 +7753,7 @@
       "Hitpoints": 93,
       "Initiative": 1,
       "Creature_Tags": [
+        "Orc",
         "arctic",
         "coast",
         "desert",
@@ -7759,8 +7763,7 @@
         "mountain",
         "ruins",
         "swamp",
-        "urban",
-        "Orc"
+        "urban"
       ],
       "Source": "Monster Manual: 246"
     }
@@ -7777,6 +7780,7 @@
       "Hitpoints": 42,
       "Initiative": 1,
       "Creature_Tags": [
+        "Orc",
         "arctic",
         "coast",
         "desert",
@@ -7786,8 +7790,7 @@
         "mountain",
         "ruins",
         "swamp",
-        "urban",
-        "Orc"
+        "urban"
       ],
       "Source": "Monster Manual: 247, Princes of the Apocalypse Online Supplement v1.0: 28"
     }
@@ -7973,9 +7976,9 @@
       "Hitpoints": 300,
       "Initiative": 2,
       "Creature_Tags": [
+        "Devil",
         "dungeon",
-        "planar",
-        "Devil"
+        "planar"
       ],
       "Source": "Monster Manual: 77, Systems Reference Document (SRD): 278"
     }
@@ -8120,8 +8123,8 @@
       "Hitpoints": 27,
       "Initiative": 0,
       "Creature_Tags": [
-        "urban",
-        "any"
+        "any",
+        "urban"
       ],
       "Source": "Basic Rules v1: 55, HotDQ supplement: 15, Monster Manual: 348, Systems Reference Document (SRD): 401"
     }
@@ -8206,9 +8209,9 @@
       "Hitpoints": 45,
       "Initiative": 1,
       "Creature_Tags": [
+        "Quaggoth",
         "dungeon",
-        "urban",
-        "Quaggoth"
+        "urban"
       ],
       "Source": "Monster Manual: 256"
     }
@@ -8242,9 +8245,9 @@
       "Hitpoints": 45,
       "Initiative": 1,
       "Creature_Tags": [
+        "Quaggoth",
         "dungeon",
-        "urban",
-        "Quaggoth"
+        "urban"
       ],
       "Source": "Monster Manual: 256"
     }
@@ -8261,9 +8264,10 @@
       "Hitpoints": 7,
       "Initiative": 3,
       "Creature_Tags": [
+        "Demon",
+        "Shapechanger",
         "dungeon",
-        "planar",
-        "Demon, Shapechanger"
+        "planar"
       ],
       "Source": "Monster Manual: 63, Player's Handbook: 309, Systems Reference Document (SRD): 273"
     }
@@ -8582,9 +8586,9 @@
       "Hitpoints": 22,
       "Initiative": 0,
       "Creature_Tags": [
+        "Sahuagin",
         "aquatic",
-        "coast",
-        "Sahuagin"
+        "coast"
       ],
       "Source": "Monster Manual: 263, Systems Reference Document (SRD): 343"
     }
@@ -8601,9 +8605,9 @@
       "Hitpoints": 76,
       "Initiative": 2,
       "Creature_Tags": [
+        "Sahuagin",
         "aquatic",
-        "coast",
-        "Sahuagin"
+        "coast"
       ],
       "Source": "Monster Manual: 264"
     }
@@ -8620,9 +8624,9 @@
       "Hitpoints": 33,
       "Initiative": 0,
       "Creature_Tags": [
+        "Sahuagin",
         "aquatic",
-        "coast",
-        "Sahuagin"
+        "coast"
       ],
       "Source": "Monster Manual: 264"
     }
@@ -8715,14 +8719,14 @@
       "Hitpoints": 16,
       "Initiative": 2,
       "Creature_Tags": [
+        "any",
         "arctic",
         "coast",
         "desert",
         "forest",
         "grassland",
         "mountain",
-        "swamp",
-        "any"
+        "swamp"
       ],
       "Source": "HotDQ supplement: 16, Monster Manual: 349, Princes of the Apocalypse Online Supplement v1.0: 31, Systems Reference Document (SRD): 401"
     }
@@ -8814,9 +8818,9 @@
       "Hitpoints": 66,
       "Initiative": 3,
       "Creature_Tags": [
+        "Demon",
         "dungeon",
-        "planar",
-        "Demon"
+        "planar"
       ],
       "Source": "Monster Manual: 64, Princes of the Apocalypse Online Supplement v1.0: 32"
     }
@@ -9046,9 +9050,9 @@
       "Hitpoints": 22,
       "Initiative": 2,
       "Creature_Tags": [
+        "Devil",
         "dungeon",
-        "planar",
-        "Devil"
+        "planar"
       ],
       "Source": "Monster Manual: 78"
     }
@@ -9104,6 +9108,7 @@
       "Hitpoints": 27,
       "Initiative": 2,
       "Creature_Tags": [
+        "any",
         "arctic",
         "cave",
         "coast",
@@ -9113,8 +9118,7 @@
         "mountain",
         "ruins",
         "swamp",
-        "urban",
-        "any"
+        "urban"
       ],
       "Source": "HotDQ supplement: 17, Monster Manual: 349, Princes of the Apocalypse Online Supplement v1.0: 33, Systems Reference Document (SRD): 402"
     }
@@ -9227,10 +9231,10 @@
       "Hitpoints": 66,
       "Initiative": 3,
       "Creature_Tags": [
+        "Shapechanger",
         "dungeon",
         "planar",
-        "urban",
-        "Shapechanger"
+        "urban"
       ],
       "Source": "Monster Manual: 285, Systems Reference Document (SRD): 349"
     }
@@ -9247,14 +9251,14 @@
       "Hitpoints": 22,
       "Initiative": 2,
       "Creature_Tags": [
+        "Swarm",
         "cave",
         "dungeon",
         "forest",
         "ruins",
         "swamp",
         "underground",
-        "urban",
-        "Swarm"
+        "urban"
       ],
       "Source": "Basic Rules v1: 45, Monster Manual: 337, Systems Reference Document (SRD): 389"
     }
@@ -9271,6 +9275,7 @@
       "Hitpoints": 22,
       "Initiative": 1,
       "Creature_Tags": [
+        "Swarm",
         "cave",
         "dungeon",
         "forest",
@@ -9279,8 +9284,7 @@
         "ruins",
         "swamp",
         "underground",
-        "urban",
-        "Swarm"
+        "urban"
       ],
       "Source": "Basic Rules v1: 45, HotDQ supplement: 18, Monster Manual: 338, Systems Reference Document (SRD): 389"
     }
@@ -9297,12 +9301,12 @@
       "Hitpoints": 36,
       "Initiative": 4,
       "Creature_Tags": [
+        "Swarm",
         "desert",
         "dungeon",
         "forest",
         "grassland",
-        "swamp",
-        "Swarm"
+        "swamp"
       ],
       "Source": "Basic Rules v1: 46, Monster Manual: 338, Systems Reference Document (SRD): 390"
     }
@@ -9319,8 +9323,8 @@
       "Hitpoints": 28,
       "Initiative": 3,
       "Creature_Tags": [
-        "aquatic",
-        "Swarm"
+        "Swarm",
+        "aquatic"
       ],
       "Source": "Basic Rules v1: 46, Monster Manual: 338, Systems Reference Document (SRD): 390"
     }
@@ -9337,14 +9341,14 @@
       "Hitpoints": 24,
       "Initiative": 0,
       "Creature_Tags": [
+        "Swarm",
         "cave",
         "dungeon",
         "forest",
         "grassland",
         "ruins",
         "swamp",
-        "urban",
-        "Swarm"
+        "urban"
       ],
       "Source": "Basic Rules v1: 46, HotDQ supplement: 19, Monster Manual: 339, Systems Reference Document (SRD): 390"
     }
@@ -9361,12 +9365,12 @@
       "Hitpoints": 24,
       "Initiative": 2,
       "Creature_Tags": [
+        "Swarm",
         "forest",
         "grassland",
         "mountain",
         "ruins",
-        "urban",
-        "Swarm"
+        "urban"
       ],
       "Source": "Basic Rules v1: 46, Monster Manual: 339, Systems Reference Document (SRD): 391"
     }
@@ -9383,6 +9387,7 @@
       "Hitpoints": 676,
       "Initiative": 0,
       "Creature_Tags": [
+        "Titan",
         "aquatic",
         "arctic",
         "cave",
@@ -9397,8 +9402,7 @@
         "swamp",
         "underground",
         "urban",
-        "legendary",
-        "Titan"
+        "legendary"
       ],
       "Source": "Monster Manual: 286, Systems Reference Document (SRD): 350"
     }
@@ -9415,9 +9419,9 @@
       "Hitpoints": 33,
       "Initiative": 2,
       "Creature_Tags": [
+        "Thri-kreen",
         "desert",
-        "grassland",
-        "Thri-kreen"
+        "grassland"
       ],
       "Source": "Monster Manual: 288"
     }
@@ -9434,13 +9438,13 @@
       "Hitpoints": 32,
       "Initiative": 0,
       "Creature_Tags": [
+        "any",
         "arctic",
         "cave",
         "coast",
         "forest",
         "grassland",
-        "urban",
-        "any"
+        "urban"
       ],
       "Source": "Basic Rules v1: 55, Monster Manual: 350, Systems Reference Document (SRD): 402"
     }
@@ -9493,14 +9497,14 @@
       "Hitpoints": 11,
       "Initiative": 0,
       "Creature_Tags": [
+        "any",
         "arctic",
         "cave",
         "desert",
         "forest",
         "grassland",
         "mountain",
-        "swamp",
-        "any"
+        "swamp"
       ],
       "Source": "Monster Manual: 350, Princes of the Apocalypse Online Supplement v1.0: 34, Systems Reference Document (SRD): 402"
     }
@@ -9552,10 +9556,10 @@
       "Hitpoints": 13,
       "Initiative": 0,
       "Creature_Tags": [
+        "Troglodyte",
         "cave",
         "dungeon",
-        "underground",
-        "Troglodyte"
+        "underground"
       ],
       "Source": "HotDQ supplement: 19, Monster Manual: 290, Princes of the Apocalypse Online Supplement v1.0: 34"
     }
@@ -9629,9 +9633,9 @@
       "Hitpoints": 153,
       "Initiative": 3,
       "Creature_Tags": [
+        "Yugoloth",
         "dungeon",
-        "planar",
-        "Yugoloth"
+        "planar"
       ],
       "Source": "Monster Manual: 314"
     }
@@ -9668,8 +9672,8 @@
       "Creature_Tags": [
         "forest",
         "ruins",
-        "legendary",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 294, Systems Reference Document (SRD): 351"
     }
@@ -9686,12 +9690,12 @@
       "Hitpoints": 144,
       "Initiative": 4,
       "Creature_Tags": [
+        "Shapechanger",
         "dungeon",
         "ruins",
         "urban",
-        "legendary",
-        "Shapechanger",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "HotDQ supplement: 20, Monster Manual: 297, Systems Reference Document (SRD): 352"
     }
@@ -9727,12 +9731,12 @@
       "Hitpoints": 144,
       "Initiative": 4,
       "Creature_Tags": [
+        "Shapechanger",
         "dungeon",
         "ruins",
         "urban",
-        "legendary",
-        "Shapechanger",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 298"
     }
@@ -9749,12 +9753,12 @@
       "Hitpoints": 144,
       "Initiative": 4,
       "Creature_Tags": [
+        "Shapechanger",
         "dungeon",
         "ruins",
         "urban",
-        "legendary",
-        "Shapechanger",
-        "lair"
+        "lair",
+        "legendary"
       ],
       "Source": "Monster Manual: 298"
     }
@@ -9771,8 +9775,8 @@
       "Hitpoints": 58,
       "Initiative": 1,
       "Creature_Tags": [
-        "urban",
-        "any"
+        "any",
+        "urban"
       ],
       "Source": "HotDQ supplement: 21, Monster Manual: 350, Princes of the Apocalypse Online Supplement v1.0: 35, Systems Reference Document (SRD): 321"
     }
@@ -9827,9 +9831,9 @@
       "Hitpoints": 104,
       "Initiative": 2,
       "Creature_Tags": [
+        "Demon",
         "dungeon",
-        "planar",
-        "Demon"
+        "planar"
       ],
       "Source": "Monster Manual: 64, Princes of the Apocalypse Online Supplement v1.0: 36, Systems Reference Document (SRD): 273"
     }
@@ -9969,11 +9973,12 @@
       "Hitpoints": 135,
       "Initiative": 0,
       "Creature_Tags": [
+        "Human",
+        "Shapechanger",
         "cave",
         "forest",
         "mountain",
-        "urban",
-        "Human, Shapechanger"
+        "urban"
       ],
       "Source": "Monster Manual: 208, Systems Reference Document (SRD): 326"
     }
@@ -9990,11 +9995,12 @@
       "Hitpoints": 78,
       "Initiative": 0,
       "Creature_Tags": [
+        "Human",
+        "Shapechanger",
         "forest",
         "grassland",
         "swamp",
-        "urban",
-        "Human, Shapechanger"
+        "urban"
       ],
       "Source": "Monster Manual: 209, Princes of the Apocalypse Online Supplement v1.0: 37, Systems Reference Document (SRD): 327"
     }
@@ -10011,13 +10017,14 @@
       "Hitpoints": 33,
       "Initiative": 2,
       "Creature_Tags": [
+        "Human",
+        "Shapechanger",
         "cave",
         "dungeon",
         "ruins",
         "swamp",
         "underground",
-        "urban",
-        "Human, Shapechanger"
+        "urban"
       ],
       "Source": "Monster Manual: 209, Systems Reference Document (SRD): 327"
     }
@@ -10034,9 +10041,10 @@
       "Hitpoints": 120,
       "Initiative": 2,
       "Creature_Tags": [
+        "Human",
+        "Shapechanger",
         "forest",
-        "urban",
-        "Human, Shapechanger"
+        "urban"
       ],
       "Source": "Monster Manual: 210, Systems Reference Document (SRD): 328"
     }
@@ -10053,11 +10061,12 @@
       "Hitpoints": 58,
       "Initiative": 1,
       "Creature_Tags": [
+        "Human",
+        "Shapechanger",
         "dungeon",
         "forest",
         "grassland",
-        "urban",
-        "Human, Shapechanger"
+        "urban"
       ],
       "Source": "Basic Rules v1: 49, Monster Manual: 211, Systems Reference Document (SRD): 328"
     }
@@ -10138,9 +10147,9 @@
       "Hitpoints": 7,
       "Initiative": 3,
       "Creature_Tags": [
+        "Kobold",
         "mountain",
-        "underground",
-        "Kobold"
+        "underground"
       ],
       "Source": "HotDQ supplement: 23, Monster Manual: 195"
     }
@@ -10294,9 +10303,10 @@
       "Hitpoints": 136,
       "Initiative": 2,
       "Creature_Tags": [
+        "Demon",
+        "Shapechanger",
         "dungeon",
-        "planar",
-        "Demon, Shapechanger"
+        "planar"
       ],
       "Source": "Monster Manual: 65"
     }
@@ -10525,12 +10535,13 @@
       "Hitpoints": 127,
       "Initiative": 3,
       "Creature_Tags": [
+        "Shapechanger",
+        "Yuan-ti",
         "desert",
         "forest",
         "mountain",
         "ruins",
-        "swamp",
-        "Shapechanger, Yuan-ti"
+        "swamp"
       ],
       "Source": "Monster Manual: 308"
     }
@@ -10547,12 +10558,13 @@
       "Hitpoints": 66,
       "Initiative": 2,
       "Creature_Tags": [
+        "Shapechanger",
+        "Yuan-ti",
         "desert",
         "forest",
         "mountain",
         "ruins",
-        "swamp",
-        "Shapechanger, Yuan-ti"
+        "swamp"
       ],
       "Source": "HotDQ supplement: 23, Monster Manual: 309"
     }
@@ -10569,12 +10581,12 @@
       "Hitpoints": 40,
       "Initiative": 1,
       "Creature_Tags": [
+        "Yuan-ti",
         "desert",
         "forest",
         "mountain",
         "ruins",
-        "swamp",
-        "Yuan-ti"
+        "swamp"
       ],
       "Source": "HotDQ supplement: 24, Monster Manual: 310"
     }
@@ -10620,8 +10632,8 @@
       "Hitpoints": 18,
       "Initiative": 1,
       "Creature_Tags": [
-        "planar",
-        "Demon"
+        "Demon",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 136"
     }
@@ -10690,9 +10702,9 @@
       "Hitpoints": 157,
       "Initiative": 4,
       "Creature_Tags": [
+        "Demon",
         "ruins",
-        "urban",
-        "Demon"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 130"
     }
@@ -10727,8 +10739,8 @@
       "Hitpoints": 202,
       "Initiative": 1,
       "Creature_Tags": [
-        "planar",
-        "Devil"
+        "Devil",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 164"
     }
@@ -10745,8 +10757,8 @@
       "Hitpoints": 84,
       "Initiative": 4,
       "Creature_Tags": [
-        "planar",
-        "Demon"
+        "Demon",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 131"
     }
@@ -10763,9 +10775,9 @@
       "Hitpoints": 297,
       "Initiative": -2,
       "Creature_Tags": [
+        "Titan",
         "planar",
-        "legendary",
-        "Titan"
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 117"
     }
@@ -10782,8 +10794,8 @@
       "Hitpoints": 127,
       "Initiative": 3,
       "Creature_Tags": [
-        "planar",
-        "Elf"
+        "Elf",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 195"
     }
@@ -10800,10 +10812,10 @@
       "Hitpoints": 189,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
+        "Devil",
         "planar",
-        "legendary",
-        "Devil"
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 170"
     }
@@ -10840,11 +10852,11 @@
       "Hitpoints": 275,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "planar",
-        "legendary",
         "Demon",
-        "lair"
+        "planar",
+        "lair",
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 143"
     }
@@ -10878,8 +10890,8 @@
       "Hitpoints": 58,
       "Initiative": 3,
       "Creature_Tags": [
-        "planar",
-        "Devil"
+        "Devil",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 160"
     }
@@ -10896,8 +10908,8 @@
       "Hitpoints": 195,
       "Initiative": 2,
       "Creature_Tags": [
-        "planar",
-        "Devil"
+        "Devil",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 161"
     }
@@ -10950,8 +10962,8 @@
       "Hitpoints": 52,
       "Initiative": 2,
       "Creature_Tags": [
-        "planar",
-        "Demon"
+        "Demon",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 131"
     }
@@ -10986,8 +10998,8 @@
       "Hitpoints": 120,
       "Initiative": 0,
       "Creature_Tags": [
-        "planar",
-        "Yugoloth"
+        "Yugoloth",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 247"
     }
@@ -11087,11 +11099,11 @@
       "Hitpoints": 406,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "planar",
-        "legendary",
         "Demon",
-        "lair"
+        "planar",
+        "lair",
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 144"
     }
@@ -11108,9 +11120,9 @@
       "Hitpoints": 13,
       "Initiative": 2,
       "Creature_Tags": [
+        "Derro",
         "underground",
-        "urban",
-        "Derro"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 158"
     }
@@ -11127,9 +11139,9 @@
       "Hitpoints": 36,
       "Initiative": 2,
       "Creature_Tags": [
+        "Derro",
         "underground",
-        "urban",
-        "Derro"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 159"
     }
@@ -11146,8 +11158,8 @@
       "Hitpoints": 119,
       "Initiative": 0,
       "Creature_Tags": [
-        "planar",
-        "Yugoloth"
+        "Yugoloth",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 248"
     }
@@ -11185,9 +11197,9 @@
       "Hitpoints": 162,
       "Initiative": 3,
       "Creature_Tags": [
+        "Elf",
         "underground",
-        "urban",
-        "Elf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 182"
     }
@@ -11204,9 +11216,9 @@
       "Hitpoints": 225,
       "Initiative": 5,
       "Creature_Tags": [
+        "Elf",
         "underground",
-        "urban",
-        "Elf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 183"
     }
@@ -11223,9 +11235,9 @@
       "Hitpoints": 162,
       "Initiative": 4,
       "Creature_Tags": [
+        "Elf",
         "underground",
-        "urban",
-        "Elf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 184"
     }
@@ -11242,9 +11254,9 @@
       "Hitpoints": 143,
       "Initiative": 2,
       "Creature_Tags": [
+        "Elf",
         "underground",
-        "urban",
-        "Elf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 184"
     }
@@ -11261,10 +11273,10 @@
       "Hitpoints": 262,
       "Initiative": 4,
       "Creature_Tags": [
+        "Elf",
         "underground",
         "urban",
-        "legendary",
-        "Elf"
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 186"
     }
@@ -11281,9 +11293,9 @@
       "Hitpoints": 150,
       "Initiative": 5,
       "Creature_Tags": [
+        "Elf",
         "underground",
-        "urban",
-        "Elf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 187"
     }
@@ -11300,9 +11312,9 @@
       "Hitpoints": 119,
       "Initiative": -3,
       "Creature_Tags": [
+        "Dwarf",
         "underground",
-        "urban",
-        "Dwarf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 188"
     }
@@ -11337,9 +11349,9 @@
       "Hitpoints": 26,
       "Initiative": 0,
       "Creature_Tags": [
+        "Dwarf",
         "underground",
-        "urban",
-        "Dwarf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 189"
     }
@@ -11356,9 +11368,9 @@
       "Hitpoints": 39,
       "Initiative": 3,
       "Creature_Tags": [
+        "Dwarf",
         "underground",
-        "urban",
-        "Dwarf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 189"
     }
@@ -11393,9 +11405,9 @@
       "Hitpoints": 18,
       "Initiative": 3,
       "Creature_Tags": [
+        "Dwarf",
         "underground",
-        "urban",
-        "Dwarf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 190"
     }
@@ -11412,9 +11424,9 @@
       "Hitpoints": 39,
       "Initiative": 0,
       "Creature_Tags": [
+        "Dwarf",
         "underground",
-        "urban",
-        "Dwarf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 191"
     }
@@ -11431,9 +11443,9 @@
       "Hitpoints": 75,
       "Initiative": 0,
       "Creature_Tags": [
+        "Dwarf",
         "underground",
-        "urban",
-        "Dwarf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 192"
     }
@@ -11450,9 +11462,9 @@
       "Hitpoints": 26,
       "Initiative": 0,
       "Creature_Tags": [
+        "Dwarf",
         "underground",
-        "urban",
-        "Dwarf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 193"
     }
@@ -11469,8 +11481,8 @@
       "Hitpoints": 37,
       "Initiative": 4,
       "Creature_Tags": [
-        "planar",
-        "Demon"
+        "Demon",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 132"
     }
@@ -11592,10 +11604,10 @@
       "Hitpoints": 337,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
+        "Demon",
         "planar",
-        "legendary",
-        "Demon"
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 146"
     }
@@ -11612,11 +11624,11 @@
       "Hitpoints": 337,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "planar",
-        "legendary",
         "Demon",
-        "lair"
+        "planar",
+        "lair",
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 146"
     }
@@ -11650,11 +11662,11 @@
       "Hitpoints": 300,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
-        "planar",
-        "legendary",
         "Devil",
-        "lair"
+        "planar",
+        "lair",
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 173"
     }
@@ -11686,8 +11698,8 @@
       "Hitpoints": 123,
       "Initiative": 2,
       "Creature_Tags": [
-        "planar",
-        "Gith"
+        "Gith",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 205"
     }
@@ -11704,8 +11716,8 @@
       "Hitpoints": 180,
       "Initiative": 3,
       "Creature_Tags": [
-        "planar",
-        "Gith"
+        "Gith",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 205"
     }
@@ -11722,9 +11734,9 @@
       "Hitpoints": 187,
       "Initiative": 3,
       "Creature_Tags": [
+        "Gith",
         "planar",
-        "legendary",
-        "Gith"
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 206"
     }
@@ -11741,9 +11753,9 @@
       "Hitpoints": 144,
       "Initiative": 5,
       "Creature_Tags": [
+        "Gith",
         "planar",
-        "legendary",
-        "Gith"
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 207"
     }
@@ -11760,8 +11772,8 @@
       "Hitpoints": 112,
       "Initiative": 4,
       "Creature_Tags": [
-        "planar",
-        "Gith"
+        "Gith",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 208"
     }
@@ -11778,9 +11790,9 @@
       "Hitpoints": 104,
       "Initiative": 4,
       "Creature_Tags": [
+        "Elf",
         "planar",
-        "urban",
-        "Elf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 224"
     }
@@ -11814,11 +11826,11 @@
       "Hitpoints": 346,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "planar",
-        "legendary",
         "Demon",
-        "lair"
+        "planar",
+        "lair",
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 149"
     }
@@ -11835,8 +11847,8 @@
       "Hitpoints": 187,
       "Initiative": 3,
       "Creature_Tags": [
-        "planar",
-        "Devil"
+        "Devil",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 162"
     }
@@ -11887,10 +11899,10 @@
       "Hitpoints": 200,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
+        "Devil",
         "planar",
-        "legendary",
-        "Devil"
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 175"
     }
@@ -11907,8 +11919,8 @@
       "Hitpoints": 135,
       "Initiative": 5,
       "Creature_Tags": [
-        "planar",
-        "Yugoloth"
+        "Yugoloth",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 249"
     }
@@ -11942,11 +11954,11 @@
       "Hitpoints": 350,
       "Initiative": 0,
       "Creature_Tags": [
-        "unique",
-        "planar",
-        "legendary",
         "Demon",
-        "lair"
+        "planar",
+        "lair",
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 151"
     }
@@ -12035,8 +12047,8 @@
       "Hitpoints": 88,
       "Initiative": 3,
       "Creature_Tags": [
-        "planar",
-        "Demon"
+        "Demon",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 133"
     }
@@ -12053,9 +12065,9 @@
       "Hitpoints": 35,
       "Initiative": 3,
       "Creature_Tags": [
+        "Meazel",
         "planar",
-        "underground",
-        "Meazel"
+        "underground"
       ],
       "Source": "Mordenkainen's Tome of Foes: 214"
     }
@@ -12072,8 +12084,8 @@
       "Hitpoints": 45,
       "Initiative": 2,
       "Creature_Tags": [
-        "planar",
-        "Devil"
+        "Devil",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 166"
     }
@@ -12090,8 +12102,8 @@
       "Hitpoints": 40,
       "Initiative": 3,
       "Creature_Tags": [
-        "planar",
         "Yugoloth",
+        "planar",
         "lair"
       ],
       "Source": "Mordenkainen's Tome of Foes: 250"
@@ -12109,10 +12121,10 @@
       "Hitpoints": 253,
       "Initiative": 4,
       "Creature_Tags": [
-        "unique",
+        "Devil",
         "planar",
-        "legendary",
-        "Devil"
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 177"
     }
@@ -12129,9 +12141,9 @@
       "Hitpoints": 216,
       "Initiative": 6,
       "Creature_Tags": [
+        "Demon",
         "planar",
-        "legendary",
-        "Demon"
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 134"
     }
@@ -12148,8 +12160,8 @@
       "Hitpoints": 190,
       "Initiative": 2,
       "Creature_Tags": [
-        "planar",
-        "Demon"
+        "Demon",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 135"
     }
@@ -12183,8 +12195,8 @@
       "Hitpoints": 112,
       "Initiative": 0,
       "Creature_Tags": [
-        "planar",
-        "Devil"
+        "Devil",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 167"
     }
@@ -12218,8 +12230,8 @@
       "Hitpoints": 11,
       "Initiative": 0,
       "Creature_Tags": [
-        "planar",
-        "Devil"
+        "Devil",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 168"
     }
@@ -12350,8 +12362,8 @@
       "Hitpoints": 126,
       "Initiative": 3,
       "Creature_Tags": [
-        "planar",
-        "Yugoloth"
+        "Yugoloth",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 251"
     }
@@ -12368,11 +12380,11 @@
       "Hitpoints": 405,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "planar",
-        "legendary",
         "Demon",
-        "lair"
+        "planar",
+        "lair",
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 153"
     }
@@ -12389,8 +12401,8 @@
       "Hitpoints": 105,
       "Initiative": 3,
       "Creature_Tags": [
-        "planar",
-        "Devil"
+        "Devil",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 169"
     }
@@ -12425,8 +12437,8 @@
       "Hitpoints": 255,
       "Initiative": 3,
       "Creature_Tags": [
-        "planar",
-        "Devil"
+        "Devil",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 162"
     }
@@ -12481,8 +12493,8 @@
       "Hitpoints": 37,
       "Initiative": 2,
       "Creature_Tags": [
-        "planar",
-        "Demon"
+        "Demon",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 136"
     }
@@ -12517,9 +12529,9 @@
       "Hitpoints": 71,
       "Initiative": 3,
       "Creature_Tags": [
+        "Elf",
         "planar",
-        "urban",
-        "Elf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 225"
     }
@@ -12536,9 +12548,9 @@
       "Hitpoints": 150,
       "Initiative": -4,
       "Creature_Tags": [
+        "Demon",
         "planar",
-        "legendary",
-        "Demon"
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 137"
     }
@@ -12590,9 +12602,9 @@
       "Hitpoints": 123,
       "Initiative": 3,
       "Creature_Tags": [
+        "Elf",
         "planar",
-        "urban",
-        "Elf"
+        "urban"
       ],
       "Source": "Mordenkainen's Tome of Foes: 226"
     }
@@ -12630,8 +12642,8 @@
       "Hitpoints": 127,
       "Initiative": 3,
       "Creature_Tags": [
-        "planar",
-        "Elf"
+        "Elf",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 196"
     }
@@ -12784,8 +12796,8 @@
       "Hitpoints": 127,
       "Initiative": 5,
       "Creature_Tags": [
-        "planar",
-        "Elf"
+        "Elf",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 196"
     }
@@ -12921,10 +12933,10 @@
       "Hitpoints": 127,
       "Initiative": 6,
       "Creature_Tags": [
-        "unique",
+        "Devil",
         "planar",
-        "legendary",
-        "Devil"
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 179"
     }
@@ -12941,12 +12953,12 @@
       "Hitpoints": 22,
       "Initiative": 0,
       "Creature_Tags": [
+        "Tortle",
         "coast",
         "forest",
         "grassland",
         "mountain",
-        "swamp",
-        "Tortle"
+        "swamp"
       ],
       "Source": "Mordenkainen's Tome of Foes: 242"
     }
@@ -12963,12 +12975,12 @@
       "Hitpoints": 33,
       "Initiative": 0,
       "Creature_Tags": [
+        "Tortle",
         "coast",
         "forest",
         "grassland",
         "mountain",
-        "swamp",
-        "Tortle"
+        "swamp"
       ],
       "Source": "Mordenkainen's Tome of Foes: 242"
     }
@@ -13021,9 +13033,9 @@
       "Hitpoints": 157,
       "Initiative": 4,
       "Creature_Tags": [
+        "Demon",
         "aquatic",
-        "planar",
-        "Demon"
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 139"
     }
@@ -13058,8 +13070,8 @@
       "Hitpoints": 68,
       "Initiative": 0,
       "Creature_Tags": [
-        "planar",
-        "Devil"
+        "Devil",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 163"
     }
@@ -13076,8 +13088,8 @@
       "Hitpoints": 127,
       "Initiative": 0,
       "Creature_Tags": [
-        "planar",
-        "Elf"
+        "Elf",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 197"
     }
@@ -13094,8 +13106,8 @@
       "Hitpoints": 147,
       "Initiative": 2,
       "Creature_Tags": [
-        "planar",
-        "Yugoloth"
+        "Yugoloth",
+        "planar"
       ],
       "Source": "Mordenkainen's Tome of Foes: 252"
     }
@@ -13112,11 +13124,11 @@
       "Hitpoints": 333,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
-        "planar",
-        "legendary",
         "Demon",
-        "lair"
+        "planar",
+        "lair",
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 155"
     }
@@ -13169,11 +13181,11 @@
       "Hitpoints": 580,
       "Initiative": 7,
       "Creature_Tags": [
-        "unique",
-        "planar",
-        "legendary",
         "Devil",
-        "lair"
+        "planar",
+        "lair",
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 180"
     }
@@ -13190,11 +13202,11 @@
       "Hitpoints": 304,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "planar",
-        "legendary",
         "Demon",
-        "lair"
+        "planar",
+        "lair",
+        "unique",
+        "legendary"
       ],
       "Source": "Mordenkainen's Tome of Foes: 157"
     }
@@ -13241,9 +13253,9 @@
       "Hitpoints": 481,
       "Initiative": 0,
       "Creature_Tags": [
+        "lair",
         "unique",
-        "legendary",
-        "lair"
+        "legendary"
       ],
       "Source": "Storm King's Thunder: 241"
     }
@@ -13355,8 +13367,9 @@
       "Hitpoints": 120,
       "Initiative": 0,
       "Creature_Tags": [
-        "unique",
-        "Human, Shapechanger"
+        "Human",
+        "Shapechanger",
+        "unique"
       ],
       "Source": "Curse of Strahd: 228"
     }
@@ -13537,8 +13550,8 @@
       "Hitpoints": 135,
       "Initiative": 6,
       "Creature_Tags": [
-        "unique",
-        "Elf"
+        "Elf",
+        "unique"
       ],
       "Source": "Curse of Strahd: 237"
     }
@@ -13555,8 +13568,8 @@
       "Hitpoints": 77,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Curse of Strahd: 238"
     }
@@ -13655,7 +13668,8 @@
       "Hitpoints": 31,
       "Initiative": 2,
       "Creature_Tags": [
-        "Human, Shapechanger"
+        "Human",
+        "Shapechanger"
       ],
       "Source": "Curse of Strahd: 242"
     }
@@ -13965,8 +13979,8 @@
       "Hitpoints": 13,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Tales from the Yawning Portal: 242"
     }
@@ -13983,8 +13997,8 @@
       "Hitpoints": 19,
       "Initiative": -1,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Tales from the Yawning Portal: 243"
     }
@@ -14131,8 +14145,8 @@
       "Hitpoints": 16,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "Kobold"
+        "Kobold",
+        "unique"
       ],
       "Source": "Tales from the Yawning Portal: 248"
     }
@@ -14149,9 +14163,9 @@
       "Hitpoints": 78,
       "Initiative": 3,
       "Creature_Tags": [
+        "Human",
         "dungeon",
-        "urban",
-        "Human"
+        "urban"
       ],
       "Source": "Rise of Tiamat: 89"
     }
@@ -14168,9 +14182,9 @@
       "Hitpoints": 110,
       "Initiative": 4,
       "Creature_Tags": [
+        "Human",
         "dungeon",
-        "urban",
-        "Human"
+        "urban"
       ],
       "Source": "Rise of Tiamat: 89"
     }
@@ -14187,9 +14201,9 @@
       "Hitpoints": 33,
       "Initiative": 3,
       "Creature_Tags": [
+        "Human",
         "dungeon",
-        "urban",
-        "Human"
+        "urban"
       ],
       "Source": "Rise of Tiamat: 90"
     }
@@ -14257,9 +14271,9 @@
       "Hitpoints": 150,
       "Initiative": 1,
       "Creature_Tags": [
+        "Human",
         "unique",
-        "legendary",
-        "Human"
+        "legendary"
       ],
       "Source": "Rise of Tiamat: 92"
     }
@@ -14374,8 +14388,8 @@
       "Hitpoints": 82,
       "Initiative": 2,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Tomb of Annihilation: 212"
     }
@@ -14407,8 +14421,8 @@
       "Hitpoints": 225,
       "Initiative": -3,
       "Creature_Tags": [
-        "legendary",
-        "Titan"
+        "Titan",
+        "legendary"
       ],
       "Source": "Tomb of Annihilation: 214"
     }
@@ -14440,8 +14454,8 @@
       "Hitpoints": 120,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "Saurial"
+        "Saurial",
+        "unique"
       ],
       "Source": "Tomb of Annihilation: 218"
     }
@@ -14563,8 +14577,8 @@
       "Hitpoints": 84,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Tomb of Annihilation: 227"
     }
@@ -14596,8 +14610,8 @@
       "Hitpoints": 13,
       "Initiative": 0,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Tomb of Annihilation: 228"
     }
@@ -14629,8 +14643,9 @@
       "Hitpoints": 127,
       "Initiative": 3,
       "Creature_Tags": [
-        "unique",
-        "Shapechanger, Yuan-ti"
+        "Shapechanger",
+        "Yuan-ti",
+        "unique"
       ],
       "Source": "Tomb of Annihilation: 230"
     }
@@ -14741,8 +14756,8 @@
       "Hitpoints": 31,
       "Initiative": 1,
       "Creature_Tags": [
-        "unique",
-        "Human"
+        "Human",
+        "unique"
       ],
       "Source": "Tomb of Annihilation: 235"
     }
@@ -14759,8 +14774,8 @@
       "Hitpoints": 71,
       "Initiative": 0,
       "Creature_Tags": [
-        "unique",
-        "Half-elf"
+        "Half-elf",
+        "unique"
       ],
       "Source": "Tomb of Annihilation: 236"
     }
@@ -14807,8 +14822,8 @@
       "Hitpoints": 110,
       "Initiative": 0,
       "Creature_Tags": [
-        "unique",
-        "Half-dragon"
+        "Half-dragon",
+        "unique"
       ],
       "Source": "Tomb of Annihilation: 239"
     }
@@ -14887,8 +14902,8 @@
       "Hitpoints": 84,
       "Initiative": 2,
       "Creature_Tags": [
-        "urban",
-        "Any Race"
+        "Any Race",
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 209"
     }
@@ -14940,8 +14955,8 @@
       "Hitpoints": 9,
       "Initiative": 0,
       "Creature_Tags": [
-        "urban",
-        "Any Race"
+        "Any Race",
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 209"
     }
@@ -14958,11 +14973,11 @@
       "Hitpoints": 132,
       "Initiative": 2,
       "Creature_Tags": [
+        "Any Race",
         "forest",
         "mountain",
         "swamp",
-        "aquatic",
-        "Any Race"
+        "aquatic"
       ],
       "Source": "Volo's Guide to Monsters: 210"
     }
@@ -14979,9 +14994,9 @@
       "Hitpoints": 75,
       "Initiative": 4,
       "Creature_Tags": [
+        "Any Race",
         "forest",
-        "urban",
-        "Any Race"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 210"
     }
@@ -15016,9 +15031,9 @@
       "Hitpoints": 82,
       "Initiative": 3,
       "Creature_Tags": [
+        "Demon",
         "underground",
-        "urban",
-        "Demon"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 136"
     }
@@ -15052,8 +15067,8 @@
       "Hitpoints": 44,
       "Initiative": 2,
       "Creature_Tags": [
-        "urban",
-        "Any Race"
+        "Any Race",
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 211"
     }
@@ -15070,11 +15085,11 @@
       "Hitpoints": 90,
       "Initiative": 2,
       "Creature_Tags": [
+        "Shapechanger",
         "forest",
         "grassland",
         "mountain",
-        "underground",
-        "Shapechanger"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 123, Tales from the Yawning Portal: 230"
     }
@@ -15108,9 +15123,9 @@
       "Hitpoints": 153,
       "Initiative": 0,
       "Creature_Tags": [
+        "Any Race",
         "underground",
-        "urban",
-        "Any Race"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 211"
     }
@@ -15218,9 +15233,9 @@
       "Hitpoints": 143,
       "Initiative": 2,
       "Creature_Tags": [
+        "Any Race",
         "desert",
-        "urban",
-        "Any Race"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 212, Tales from the Yawning Portal: 231, Tomb of Annihilation: 216"
     }
@@ -15271,8 +15286,8 @@
       "Hitpoints": 262,
       "Initiative": 1,
       "Creature_Tags": [
-        "mountain",
-        "Cloud Giant"
+        "Cloud Giant",
+        "mountain"
       ],
       "Source": "Volo's Guide to Monsters: 146"
     }
@@ -15289,8 +15304,8 @@
       "Hitpoints": 40,
       "Initiative": 2,
       "Creature_Tags": [
-        "urban",
-        "Any Race"
+        "Any Race",
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 212, Tales from the Yawning Portal: 232"
     }
@@ -15416,9 +15431,9 @@
       "Hitpoints": 67,
       "Initiative": 1,
       "Creature_Tags": [
+        "Shapechanger",
         "coast",
-        "aquatic",
-        "Shapechanger"
+        "aquatic"
       ],
       "Source": "Volo's Guide to Monsters: 135"
     }
@@ -15487,8 +15502,8 @@
       "Hitpoints": 67,
       "Initiative": 2,
       "Creature_Tags": [
-        "urban",
-        "Any Race"
+        "Any Race",
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 213"
     }
@@ -15523,8 +15538,8 @@
       "Hitpoints": 123,
       "Initiative": 2,
       "Creature_Tags": [
-        "underground",
-        "Demon"
+        "Demon",
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 141"
     }
@@ -15558,8 +15573,8 @@
       "Hitpoints": 40,
       "Initiative": 2,
       "Creature_Tags": [
-        "urban",
-        "Any Race"
+        "Any Race",
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 213, Tales from the Yawning Portal: 234"
     }
@@ -15576,8 +15591,8 @@
       "Hitpoints": 66,
       "Initiative": 2,
       "Creature_Tags": [
-        "urban",
-        "Any Race"
+        "Any Race",
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 214, Tales from the Yawning Portal: 235"
     }
@@ -15594,9 +15609,9 @@
       "Hitpoints": 187,
       "Initiative": -1,
       "Creature_Tags": [
+        "Fire Giant",
         "mountain",
-        "underground",
-        "Fire Giant"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 147"
     }
@@ -15613,10 +15628,10 @@
       "Hitpoints": 33,
       "Initiative": 0,
       "Creature_Tags": [
+        "Firenewt",
         "grassland",
         "mountain",
-        "underground",
-        "Firenewt"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 143, Tomb of Annihilation: 219"
     }
@@ -15633,10 +15648,10 @@
       "Hitpoints": 22,
       "Initiative": 1,
       "Creature_Tags": [
+        "Firenewt",
         "grassland",
         "mountain",
-        "underground",
-        "Firenewt"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 142, Tomb of Annihilation: 219"
     }
@@ -15672,10 +15687,10 @@
       "Hitpoints": 127,
       "Initiative": 0,
       "Creature_Tags": [
+        "Gnoll",
         "arctic",
         "forest",
-        "grassland",
-        "Gnoll"
+        "grassland"
       ],
       "Source": "Volo's Guide to Monsters: 153"
     }
@@ -15710,9 +15725,9 @@
       "Hitpoints": 189,
       "Initiative": -1,
       "Creature_Tags": [
+        "Frost Giant",
         "arctic",
-        "coast",
-        "Frost Giant"
+        "coast"
       ],
       "Source": "Volo's Guide to Monsters: 148"
     }
@@ -15799,10 +15814,10 @@
       "Hitpoints": 22,
       "Initiative": 2,
       "Creature_Tags": [
+        "Gnoll",
         "arctic",
         "forest",
-        "grassland",
-        "Gnoll"
+        "grassland"
       ],
       "Source": "Volo's Guide to Monsters: 154"
     }
@@ -15819,10 +15834,10 @@
       "Hitpoints": 22,
       "Initiative": 2,
       "Creature_Tags": [
+        "Gnoll",
         "arctic",
         "forest",
-        "grassland",
-        "Gnoll"
+        "grassland"
       ],
       "Source": "Volo's Guide to Monsters: 154"
     }
@@ -15858,8 +15873,8 @@
       "Hitpoints": 11,
       "Initiative": 2,
       "Creature_Tags": [
-        "forest",
-        "Grung"
+        "Grung",
+        "forest"
       ],
       "Source": "Volo's Guide to Monsters: 156, Tomb of Annihilation: 223"
     }
@@ -15876,8 +15891,8 @@
       "Hitpoints": 49,
       "Initiative": 3,
       "Creature_Tags": [
-        "forest",
-        "Grung"
+        "Grung",
+        "forest"
       ],
       "Source": "Volo's Guide to Monsters: 157, Tomb of Annihilation: 223"
     }
@@ -15894,8 +15909,8 @@
       "Hitpoints": 27,
       "Initiative": 3,
       "Creature_Tags": [
-        "forest",
-        "Grung"
+        "Grung",
+        "forest"
       ],
       "Source": "Volo's Guide to Monsters: 157, Tomb of Annihilation: 224"
     }
@@ -15948,9 +15963,9 @@
       "Hitpoints": 45,
       "Initiative": 1,
       "Creature_Tags": [
+        "Goblinoid",
         "forest",
-        "grassland",
-        "Goblinoid"
+        "grassland"
       ],
       "Source": "Volo's Guide to Monsters: 161"
     }
@@ -15967,9 +15982,9 @@
       "Hitpoints": 32,
       "Initiative": 3,
       "Creature_Tags": [
+        "Goblinoid",
         "forest",
-        "grassland",
-        "Goblinoid"
+        "grassland"
       ],
       "Source": "Volo's Guide to Monsters: 162"
     }
@@ -15986,8 +16001,8 @@
       "Hitpoints": 38,
       "Initiative": 2,
       "Creature_Tags": [
-        "urban",
-        "Any Race"
+        "Any Race",
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 214, Tales from the Yawning Portal: 237"
     }
@@ -16024,12 +16039,12 @@
       "Hitpoints": 44,
       "Initiative": 2,
       "Creature_Tags": [
+        "Kobold",
         "forest",
         "grassland",
         "mountain",
         "underground",
-        "urban",
-        "Kobold"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 165"
     }
@@ -16046,12 +16061,12 @@
       "Hitpoints": 13,
       "Initiative": 2,
       "Creature_Tags": [
+        "Kobold",
         "forest",
         "grassland",
         "mountain",
         "underground",
-        "urban",
-        "Kobold"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 166, Tomb of Annihilation: 226"
     }
@@ -16068,12 +16083,12 @@
       "Hitpoints": 27,
       "Initiative": 2,
       "Creature_Tags": [
+        "Kobold",
         "forest",
         "grassland",
         "mountain",
         "underground",
-        "urban",
-        "Kobold"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 167, Tomb of Annihilation: 226"
     }
@@ -16107,9 +16122,9 @@
       "Hitpoints": 75,
       "Initiative": 0,
       "Creature_Tags": [
+        "Any Race",
         "coast",
-        "aquatic",
-        "Any Race"
+        "aquatic"
       ],
       "Source": "Volo's Guide to Monsters: 215"
     }
@@ -16144,8 +16159,8 @@
       "Hitpoints": 60,
       "Initiative": 3,
       "Creature_Tags": [
-        "urban",
-        "Any Race"
+        "Any Race",
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 216, Tales from the Yawning Portal: 240"
     }
@@ -16162,8 +16177,8 @@
       "Hitpoints": 84,
       "Initiative": 4,
       "Creature_Tags": [
-        "urban",
-        "Any Race"
+        "Any Race",
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 216"
     }
@@ -16180,8 +16195,8 @@
       "Hitpoints": 33,
       "Initiative": -1,
       "Creature_Tags": [
-        "underground",
-        "Demon"
+        "Demon",
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 137"
     }
@@ -16269,8 +16284,8 @@
       "Hitpoints": 105,
       "Initiative": 0,
       "Creature_Tags": [
-        "grassland",
-        "Hill Giant"
+        "Hill Giant",
+        "grassland"
       ],
       "Source": "Volo's Guide to Monsters: 149"
     }
@@ -16287,9 +16302,9 @@
       "Hitpoints": 66,
       "Initiative": 2,
       "Creature_Tags": [
+        "Any Race",
         "desert",
-        "urban",
-        "Any Race"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 217, Tales from the Yawning Portal: 241"
     }
@@ -16377,9 +16392,9 @@
       "Hitpoints": 7,
       "Initiative": 2,
       "Creature_Tags": [
+        "Goblinoid",
         "grassland",
-        "underground",
-        "Goblinoid"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 182"
     }
@@ -16396,11 +16411,11 @@
       "Hitpoints": 60,
       "Initiative": 0,
       "Creature_Tags": [
+        "Orc",
         "forest",
         "grassland",
         "mountain",
-        "underground",
-        "Orc"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 183"
     }
@@ -16417,9 +16432,9 @@
       "Hitpoints": 45,
       "Initiative": 2,
       "Creature_Tags": [
+        "Orc",
         "mountain",
-        "underground",
-        "Orc"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 183"
     }
@@ -16436,11 +16451,11 @@
       "Hitpoints": 30,
       "Initiative": 0,
       "Creature_Tags": [
+        "Orc",
         "forest",
         "grassland",
         "mountain",
-        "underground",
-        "Orc"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 184"
     }
@@ -16457,11 +16472,11 @@
       "Hitpoints": 30,
       "Initiative": -1,
       "Creature_Tags": [
+        "Orc",
         "forest",
         "grassland",
         "mountain",
-        "underground",
-        "Orc"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 184"
     }
@@ -16478,12 +16493,12 @@
       "Hitpoints": 52,
       "Initiative": 3,
       "Creature_Tags": [
+        "Orc",
         "forest",
         "grassland",
         "mountain",
         "underground",
-        "urban",
-        "Orc"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 185"
     }
@@ -16629,10 +16644,10 @@
       "Hitpoints": 110,
       "Initiative": 1,
       "Creature_Tags": [
+        "Demon",
         "arctic",
         "forest",
-        "grassland",
-        "Demon"
+        "grassland"
       ],
       "Source": "Volo's Guide to Monsters: 137"
     }
@@ -16720,10 +16735,10 @@
       "Hitpoints": 161,
       "Initiative": 2,
       "Creature_Tags": [
+        "Stone Giant",
         "coast",
         "grassland",
-        "mountain",
-        "Stone Giant"
+        "mountain"
       ],
       "Source": "Volo's Guide to Monsters: 150"
     }
@@ -16740,12 +16755,12 @@
       "Hitpoints": 230,
       "Initiative": 2,
       "Creature_Tags": [
+        "Storm Giant",
         "arctic",
         "coast",
         "desert",
         "mountain",
-        "aquatic",
-        "Storm Giant"
+        "aquatic"
       ],
       "Source": "Volo's Guide to Monsters: 151"
     }
@@ -16762,9 +16777,9 @@
       "Hitpoints": 36,
       "Initiative": 2,
       "Creature_Tags": [
+        "Swarm",
         "underground",
-        "urban",
-        "Swarm"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 133"
     }
@@ -16781,9 +16796,9 @@
       "Hitpoints": 22,
       "Initiative": -2,
       "Creature_Tags": [
+        "Swarm",
         "swamp",
-        "underground",
-        "Swarm"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 208"
     }
@@ -16800,9 +16815,9 @@
       "Hitpoints": 66,
       "Initiative": 4,
       "Creature_Tags": [
+        "Any Race",
         "coast",
-        "urban",
-        "Any Race"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 217"
     }
@@ -16819,10 +16834,11 @@
       "Hitpoints": 95,
       "Initiative": 1,
       "Creature_Tags": [
+        "Demon",
+        "Orc",
         "grassland",
         "mountain",
-        "underground",
-        "Demon, Orc"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 186"
     }
@@ -16874,8 +16890,8 @@
       "Hitpoints": 40,
       "Initiative": 2,
       "Creature_Tags": [
-        "urban",
-        "Any Race"
+        "Any Race",
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 218, Tales from the Yawning Portal: 247"
     }
@@ -16999,9 +17015,9 @@
       "Hitpoints": 117,
       "Initiative": 0,
       "Creature_Tags": [
+        "Any Race",
         "desert",
-        "urban",
-        "Any Race"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 218"
     }
@@ -17018,12 +17034,12 @@
       "Hitpoints": 49,
       "Initiative": 1,
       "Creature_Tags": [
+        "Any Race",
         "arctic",
         "forest",
         "mountain",
         "swamp",
-        "urban",
-        "Any Race"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 219"
     }
@@ -17040,11 +17056,11 @@
       "Hitpoints": 78,
       "Initiative": 2,
       "Creature_Tags": [
+        "Any Race",
         "arctic",
         "desert",
         "underground",
-        "urban",
-        "Any Race"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 219"
     }
@@ -17061,12 +17077,12 @@
       "Hitpoints": 91,
       "Initiative": 2,
       "Creature_Tags": [
+        "Any Race",
         "arctic",
         "grassland",
         "mountain",
         "underground",
-        "urban",
-        "Any Race"
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 220"
     }
@@ -17083,8 +17099,8 @@
       "Hitpoints": 229,
       "Initiative": 3,
       "Creature_Tags": [
-        "urban",
-        "Any Race"
+        "Any Race",
+        "urban"
       ],
       "Source": "Volo's Guide to Monsters: 220"
     }
@@ -17118,9 +17134,9 @@
       "Hitpoints": 7,
       "Initiative": 2,
       "Creature_Tags": [
+        "Xvart",
         "grassland",
-        "underground",
-        "Xvart"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 200"
     }
@@ -17137,9 +17153,9 @@
       "Hitpoints": 7,
       "Initiative": 2,
       "Creature_Tags": [
+        "Xvart",
         "grassland",
-        "underground",
-        "Xvart"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 200"
     }
@@ -17156,9 +17172,9 @@
       "Hitpoints": 22,
       "Initiative": 2,
       "Creature_Tags": [
+        "Xvart",
         "grassland",
-        "underground",
-        "Xvart"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 200"
     }
@@ -17193,10 +17209,11 @@
       "Hitpoints": 189,
       "Initiative": 1,
       "Creature_Tags": [
+        "Shapechanger",
+        "Yuan-ti",
         "desert",
         "forest",
-        "underground",
-        "Shapechanger, Yuan-ti"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 202"
     }
@@ -17213,10 +17230,10 @@
       "Hitpoints": 45,
       "Initiative": 2,
       "Creature_Tags": [
+        "Yuan-ti",
         "desert",
         "forest",
-        "underground",
-        "Yuan-ti"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 203, Tomb of Annihilation: 238"
     }
@@ -17233,10 +17250,11 @@
       "Hitpoints": 71,
       "Initiative": 2,
       "Creature_Tags": [
+        "Shapechanger",
+        "Yuan-ti",
         "desert",
         "forest",
-        "underground",
-        "Shapechanger, Yuan-ti"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 204"
     }
@@ -17253,10 +17271,11 @@
       "Hitpoints": 71,
       "Initiative": 2,
       "Creature_Tags": [
+        "Shapechanger",
+        "Yuan-ti",
         "desert",
         "forest",
-        "underground",
-        "Shapechanger, Yuan-ti"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 205, Tomb of Annihilation: 239"
     }
@@ -17273,10 +17292,11 @@
       "Hitpoints": 88,
       "Initiative": 2,
       "Creature_Tags": [
+        "Shapechanger",
+        "Yuan-ti",
         "desert",
         "forest",
-        "underground",
-        "Shapechanger, Yuan-ti"
+        "underground"
       ],
       "Source": "Volo's Guide to Monsters: 206"
     }

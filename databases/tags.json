@@ -29,23 +29,11 @@
   },
   {
     "model": "toolkit.tag",
-    "pk": "Demon, Orc"
-  },
-  {
-    "model": "toolkit.tag",
-    "pk": "Demon, Shapechanger"
-  },
-  {
-    "model": "toolkit.tag",
     "pk": "Derro"
   },
   {
     "model": "toolkit.tag",
     "pk": "Devil"
-  },
-  {
-    "model": "toolkit.tag",
-    "pk": "Devil, Shapechanger"
   },
   {
     "model": "toolkit.tag",
@@ -86,10 +74,6 @@
   {
     "model": "toolkit.tag",
     "pk": "Gnome"
-  },
-  {
-    "model": "toolkit.tag",
-    "pk": "Gnome, Shapechanger"
   },
   {
     "model": "toolkit.tag",
@@ -134,10 +118,6 @@
   {
     "model": "toolkit.tag",
     "pk": "Human"
-  },
-  {
-    "model": "toolkit.tag",
-    "pk": "Human, Shapechanger"
   },
   {
     "model": "toolkit.tag",
@@ -190,10 +170,6 @@
   {
     "model": "toolkit.tag",
     "pk": "Shapechanger"
-  },
-  {
-    "model": "toolkit.tag",
-    "pk": "Shapechanger, Yuan-ti"
   },
   {
     "model": "toolkit.tag",
