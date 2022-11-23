@@ -3,19 +3,21 @@ import logging
 import traceback
 from dataclasses import dataclass, field
 from typing import Any, Optional
-from toolkit.models import Tag
 
 from django.contrib import messages
 from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
 
+from toolkit.models import Tag
 from toolkit.views.encounter_generator.cache_encounter import (
     cache_encounter,
     delete_cached_encounter,
     save_cached_encounter,
 )
-from toolkit.views.encounter_generator.encounter_generator_backend import Encounter_Generator
+from toolkit.views.encounter_generator.encounter_generator_backend import (
+    Encounter_Generator,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -73,7 +75,7 @@ class EncounterGenerator(View):
                     if form.average_player_level.value == ""
                     else int(form.average_player_level.value),
                     encounter_type=form.encounter_type.value,
-                    tags = None
+                    tags=None
                     if form.encounter_tags.value == "All"
                     else [form.encounter_tags.value],
                     generator_key=form.generator_type.value,
