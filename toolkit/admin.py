@@ -5,16 +5,16 @@ from .models import (
     Armor,
     Cache,
     Character,
+    Clazz,
     GeneratedEncounter,
     GeneratedLoot,
     GenericItem,
     MagicItem,
     Monster,
+    Proficiencies,
+    Race,
     Tag,
     Weapon,
-    Clazz,
-    Race,
-    Proficiencies
 )
 
 admin.site.register(Character)
