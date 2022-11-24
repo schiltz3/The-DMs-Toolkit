@@ -118,8 +118,7 @@ class PositiveTests(TestCase):
         )
 
     def test_generate(self):
-        """_summary_
-        """        
+        """_summary_"""
         Monster = Race(Name="A", Options="Monster", Speed=30)
         Monster.save()
         Common = Race(Name="B", Options="Common", Speed=30)
@@ -138,7 +137,7 @@ class PositiveTests(TestCase):
             Name="Wizard", Options="Magic", StatPrecedence="0,1,2,3,4,5", HitDice=8
         )
         wizard.save()
-        #Testing the wider generate function
+        # Testing the wider generate function
         test_generated = self.generator.generate()
         self.assertEqual(len(test_generated), 5)
         self.assertTrue(test_generated["Race"] in Race.objects.all())
