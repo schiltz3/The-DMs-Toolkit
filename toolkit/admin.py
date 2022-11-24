@@ -12,6 +12,9 @@ from .models import (
     Monster,
     Tag,
     Weapon,
+    Clazz,
+    Race,
+    Proficiencies
 )
 
 admin.site.register(Character)
@@ -24,3 +27,6 @@ admin.site.register(Tag)
 admin.site.register(Monster)
 admin.site.register(GeneratedEncounter)
 admin.site.register(Cache)
+admin.site.register(Clazz)
+admin.site.register(Race)
+admin.site.register(Proficiencies)

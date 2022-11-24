@@ -56,6 +56,7 @@ class Clazz(models.Model):
     Name = models.CharField(max_length=20)
     Options = models.CharField(max_length=10)
     Proficiencies = models.ManyToManyField(Proficiencies)
+    HitDice = models.IntegerField()
     StatPrecedence = models.CharField(max_length=20)
 
     def __str__(self):

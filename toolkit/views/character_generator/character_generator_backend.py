@@ -218,6 +218,8 @@ class Character_Generator:
             class_list = Clazz.objects.filter(Options=class_option)
         else:
             class_list = Clazz.objects.all()
+        if not class_list.exists():
+            raise RuntimeError("Class does not exist")
         clazz: Clazz = class_list[
             self.generators[generator_key](0, len(class_list) - 1)
         ]
@@ -355,7 +357,9 @@ class Character_Generator:
         Returns:
             List of stat values in the Strength Dexterity Constitution Intelligence Wisdom Charisma order
         """
-
+        check_class = Clazz.objects.filter(Name=current_class)
+        if not check_class.exists():
+            raise RuntimeError("Class does not exist")
         if len(stat_array) != 6:
             raise RuntimeError("Not a valid list")
         for i in stat_array:
@@ -366,108 +370,17 @@ class Character_Generator:
         if len(stat_array) != 6:
             raise RuntimeError("Not a valid list")
         stat_array = sorted(stat_array)
-        clazz = Clazz.objects.get(Name=current_class)
+        clazz = check_class[0]
         vals = clazz.StatPrecedence.split(",")
         int_vals = []
         for x in vals:
             int_vals.append(int(x))
 
         results: list[int] = []
-        results.append(int_vals[0])
-        results.append(int_vals[1])
-        results.append(int_vals[2])
-        results.append(int_vals[3])
-        results.append(int_vals[4])
-        results.append(int_vals[5])
-        """ if current_class == "Artificer":
-            results.append(stat_array[0])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[5])
-            results.append(stat_array[2])
-            results.append(stat_array[1])
-        elif current_class == "Barbarian":
-            results.append(stat_array[5])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[0])
-            results.append(stat_array[2])
-            results.append(stat_array[1])
-        elif current_class == "Bard":
-            results.append(stat_array[1])
-            results.append(stat_array[4])
-            results.append(stat_array[3])
-            results.append(stat_array[0])
-            results.append(stat_array[1])
-            results.append(stat_array[5])
-        elif current_class == "Cleric":
-            results.append(stat_array[3])
-            results.append(stat_array[2])
-            results.append(stat_array[4])
-            results.append(stat_array[0])
-            results.append(stat_array[5])
-            results.append(stat_array[1])
-        elif current_class == "Druid":
-            results.append(stat_array[2])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[1])
-            results.append(stat_array[5])
-            results.append(stat_array[0])
-        elif current_class == "Fighter":
-            results.append(stat_array[5])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[0])
-            results.append(stat_array[2])
-            results.append(stat_array[1])
-        elif current_class == "Monk":
-            results.append(stat_array[2])
-            results.append(stat_array[5])
-            results.append(stat_array[3])
-            results.append(stat_array[1])
-            results.append(stat_array[4])
-            results.append(stat_array[0])
-        elif current_class == "Paladin":
-            results.append(stat_array[5])
-            results.append(stat_array[2])
-            results.append(stat_array[3])
-            results.append(stat_array[0])
-            results.append(stat_array[1])
-            results.append(stat_array[4])
-        elif current_class == "Ranger":
-            results.append(stat_array[2])
-            results.append(stat_array[5])
-            results.append(stat_array[4])
-            results.append(stat_array[1])
-            results.append(stat_array[3])
-            results.append(stat_array[0])
-        elif current_class == "Rogue":
-            results.append(stat_array[0])
-            results.append(stat_array[5])
-            results.append(stat_array[4])
-            results.append(stat_array[3])
-            results.append(stat_array[1])
-            results.append(stat_array[2])
-        elif current_class == "Sorcerer":
-            results.append(stat_array[0])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[2])
-            results.append(stat_array[1])
-            results.append(stat_array[5])
-        elif current_class == "Warlock":
-            results.append(stat_array[1])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[2])
-            results.append(stat_array[0])
-            results.append(stat_array[5])
-        elif current_class == "Wizard":
-            results.append(stat_array[0])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[5])
-            results.append(stat_array[2])
-            results.append(stat_array[1]) """
+        results.append(stat_array[int_vals[0]])
+        results.append(stat_array[int_vals[1]])
+        results.append(stat_array[int_vals[2]])
+        results.append(stat_array[int_vals[3]])
+        results.append(stat_array[int_vals[4]])
+        results.append(stat_array[int_vals[5]])
         return results
