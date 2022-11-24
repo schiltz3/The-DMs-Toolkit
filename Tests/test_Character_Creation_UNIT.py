@@ -61,11 +61,11 @@ class PositiveTests(TestCase):
 
     def test_generate_class(self):
         """Tests the generate class method"""
-        fighter = Clazz(Name = "Fighter", Options = "Martial", StatPrecedence = "0,1,2,3,4,5")
+        fighter = Clazz(Name = "Fighter", Options = "Martial", StatPrecedence = "0,1,2,3,4,5", HitDice = 8)
         fighter.save()
-        cleric = Clazz(Name = "Cleric", Options = "Divine", StatPrecedence = "0,1,2,3,4,5")
+        cleric = Clazz(Name = "Cleric", Options = "Divine", StatPrecedence = "0,1,2,3,4,5", HitDice = 8)
         cleric.save()
-        wizard = Clazz(Name = "Wizard", Options = "Magic", StatPrecedence = "0,1,2,3,4,5")
+        wizard = Clazz(Name = "Wizard", Options = "Magic", StatPrecedence = "0,1,2,3,4,5", HitDice = 8)
         wizard.save()
         test_class = self.generator.generate_class(
             "All", "Random"
@@ -133,11 +133,11 @@ class PositiveTests(TestCase):
         Common.save()
         Rare = Race(Name = "C", Options = "Rare", Speed = 30)
         Rare.save()
-        fighter = Clazz(Name = "Fighter", Options = "Martial")
+        fighter = Clazz(Name = "Fighter", Options = "Martial", StatPrecedence = "0,1,2,3,4,5", HitDice = 8)
         fighter.save()
-        cleric = Clazz(Name = "Cleric", Options = "Divine")
+        cleric = Clazz(Name = "Cleric", Options = "Divine", StatPrecedence = "0,1,2,3,4,5", HitDice = 8)
         cleric.save()
-        wizard = Clazz(Name = "Wizard", Options = "Magic")
+        wizard = Clazz(Name = "Wizard", Options = "Magic", StatPrecedence = "0,1,2,3,4,5", HitDice = 8)
         wizard.save()
         """Testing the wider generate function"""
         test_generated = self.generator.generate()
@@ -269,8 +269,13 @@ class Negative_Tests(TestCase):
         Too many inputs
         Too few inputs
         """
-        fighter = Clazz(Name = "Fighter", Options = "Martial",StatPrecedence = "0,1,2,3,4,5")
+        fighter = Clazz(Name = "Fighter", Options = "Martial", StatPrecedence = "0,1,2,3,4,5", HitDice = 8)
         fighter.save()
+        cleric = Clazz(Name = "Cleric", Options = "Divine", StatPrecedence = "0,1,2,3,4,5", HitDice = 8)
+        cleric.save()
+        wizard = Clazz(Name = "Wizard", Options = "Magic", StatPrecedence = "0,1,2,3,4,5", HitDice = 8)
+        wizard.save()
+        
         with self.assertRaises(RuntimeError, msg="Should not accept nonexisting keys"):
             self.generator.generate_class(
                 "Fighter", "GARBAGE"
@@ -381,7 +386,7 @@ class Arrange_Tests(unittest.TestCase):
 
     def test_positive_arrange(self):
         """Testing to make sure the arrange algorithm works"""
-        Paladin = Clazz(Name = "Paladin", Options = "Divine", StatPrecedence = "5,2,3,0,1,4")
+        Paladin = Clazz(Name = "Paladin", Options = "Divine", StatPrecedence = "5,2,3,0,1,4", HitDice= 10)
         Paladin.save()
         results = self.generator.arrange_stats("Paladin", [15, 10, 12, 13, 18, 9])
         self.assertEqual(results[0], 18)
