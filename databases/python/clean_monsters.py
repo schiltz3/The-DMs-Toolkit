@@ -1,4 +1,6 @@
+import re
 from argparse import ArgumentParser
+from fractions import Fraction
 from json import dump, dumps, load
 from pathlib import Path
 from sys import stdout
@@ -41,11 +43,28 @@ def convert(value, f: Callable[[Any], str]):
 default_parser = lambda v: v
 
 
+@logger.catch
+def parse_ac(value: str):
+    try:
+        r = int(value)
+    except ValueError:
+        values = value.split(" ")[0].split(",")
+        return parse_ac(values[0])
+    return r
+
+
+def parse_init(value: str):
+    fraction = r"\d+\/\d+"
+    if re.match(fraction, value):
+        return float(Fraction(value))
+    return int(value)
+
+
 parsers: dict[str, dict[str, Callable]] = {
     "Challenge_Rating": {"str": float, "float": default_parser},
-    "Armor_Class": {"str": int},
+    "Armor_Class": {"str": parse_ac},
     "Hitpoints": {"str": int},
-    "Initiative": {"str": int},
+    "Initiative": {"str": parse_init},
     "Creature_Tags": {"str": str.title},
     "Alignment": {"str": str.title},
 }
@@ -83,20 +102,19 @@ if __name__ == "__main__":
                             for value in values
                         ]
                     case value:
-                        try:
-                            fields[k] = convert(v, parsers[k][type(v).__name__])
-                        except KeyError as e:
-                            logger.info(f"{k} has no parsing option for {e}")
-                            fields[k] = convert(v, default_parser)
+                        parser = parsers[k].get(
+                            type(v).__name__,
+                            parsers[k].get("default", default_parser),
+                        )
+                        fields[k] = convert(v, parser)
     output_path = args.output
     if output_path:
         output_path = Path(output_path)
         try:
-            with open("  " + output_path, "w") as of:
+            with open(output_path, "w") as of:
                 dump(monsters, of, indent=4)
-        except (TypeError, OSError) as e:
-            # TODO: make red
-            logger.error("Unable to open output file")
+        except OSError as e:
+            logger.error(f"Unable to open output file `{output_path}`")
     elif args.inplace:
         with open(path, "w") as of:
             dump(monsters, of, indent=4)
