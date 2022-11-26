@@ -9,7 +9,8 @@ from typing import Any, Callable, cast
 from loguru import logger
 
 
-def set_up_parser():
+def set_up_arg_parser():
+    """Sets up the cmd line argument parser"""
     parser = ArgumentParser(
         prog="clean_monsters",
         description="Clean monsters.json generatored by running monsters-1668973282154.json though jq with monsters.jq as the filters",
@@ -31,6 +32,10 @@ def set_up_parser():
 
 
 def convert(value, f: Callable[[Any], str]):
+    """
+    Tries to call f on the input value. Printing the before and after or an error message if it failed. returns the
+    input value if it failed
+    """
     p_str = value
     try:
         value = f(value)
@@ -45,6 +50,7 @@ default_parser = lambda v: v
 
 @logger.catch
 def parse_ac(value: str):
+    """Parse armor class field"""
     try:
         r = int(value)
     except ValueError:
@@ -54,10 +60,11 @@ def parse_ac(value: str):
 
 
 def parse_frac(value: str):
+    """Parse strings that could be a fraction"""
     fraction = r"\d+\/\d+"
     if re.match(fraction, value):
         return float(Fraction(value))
-    return int(value)
+    return float(value)
 
 
 parsers: dict[str, dict[str, Callable]] = {
@@ -71,7 +78,7 @@ parsers: dict[str, dict[str, Callable]] = {
 
 
 if __name__ == "__main__":
-    args = set_up_parser().parse_args()
+    args = set_up_arg_parser().parse_args()
     v = args.verbose
     vv = args.vv
     path = Path(args.input)
