@@ -196,6 +196,22 @@ class Character_Generator:
         race: Race = race_list[self.generators[generator_key](0, len(race_list) - 1)]
         return race
 
+    def get_classes(self):
+        """Get all classes from database
+
+        Returns:
+            BaseManager[Clazz]: All class object in database
+        """
+        return Clazz.objects.all()
+
+    def get_races(self):
+        """Get all races from database
+
+        Returns:
+            BaseManager[Race]: All race object in database
+        """
+        return Race.objects.all()
+
     def generate_class(self, class_option, generator_key: str) -> Clazz:
         """
         Returns a random class from the provided list
