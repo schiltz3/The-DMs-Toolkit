@@ -320,4 +320,6 @@ def create_user_cache(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_cache(sender, instance, **kwargs):
     """Save the cache object when saving the user object"""
+    if not hasattr(instance, "cache"):
+        instance.cache = Cache()
     instance.cache.save()
