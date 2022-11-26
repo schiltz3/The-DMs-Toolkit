@@ -132,12 +132,12 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {% for item in generated_list %}
+                        {% for key, value in generated_dict.items %}
                             <tr>
                                 <th scope="row">{{forloop.counter}}</th>
-                                <td>{{ item.Name }}</td>
-                                <td>{{ item.Challenge_Rating }}</td>
-                                <td> 1 </td>
+                                <td>{{ key.Name }}</td>
+                                <td>{{ key.Challenge_Rating }}</td>
+                                <td>{{ value }} </td>
                             </tr>
                         {% endfor %}
                         </tbody>

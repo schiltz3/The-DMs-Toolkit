@@ -84,8 +84,11 @@ class EncounterGenerator(View):
                 encounter_object = generated.get("encounter_object")
                 self.context["total_monsters"] = int(generated.get("monster_count"))
                 generated_list = generated.get("monsters")
-                self.context["generated_list"] = generated_list
-
+                generated_list.sort(key=lambda x: x.Name)
+                generated_dict = dict()
+                for i in generated_list:
+                    generated_dict[i] = generated_dict.get(i, 0) + 1
+                self.context["generated_dict"] = generated_dict
                 if request.user.is_authenticated:
                     try:
                         cache_encounter(
