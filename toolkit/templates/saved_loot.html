@@ -34,7 +34,7 @@
                         {% for loot in loot_list %}
                             <tr>
                                 <td>{{ loot.Loot_Type }}</td>
-                                <td>{{ loot.Total_Value }}</td>
+                                <td>{{ loot.Total_Value|stringformat:".2f" }}</td>
                                 <td>{{ redirect }}</td>
                                 <td>{{ select }}</td>
                             </tr>
