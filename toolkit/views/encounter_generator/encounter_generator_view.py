@@ -85,7 +85,7 @@ class EncounterGenerator(View):
                 self.context["total_monsters"] = int(generated.get("monster_count"))
                 generated_list: list[Monster] = generated.get("monsters")
                 generated_list.sort(key=lambda x: x.Name)
-                generated_dict: dict[Monster, int] = dict()
+                generated_dict: dict[Monster, int] = {}
                 for i in generated_list:
                     generated_dict[i] = generated_dict.get(i, 0) + 1
                 self.context["generated_dict"] = generated_dict
