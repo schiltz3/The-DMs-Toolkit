@@ -225,7 +225,7 @@ class Encounter_Generator:
             )
         self.dropped_loot = loot
 
-    def generate_monster(self):
+    def generate_monster(self, tag_type):
         """Main function of the method, generates a monster randomly from the databases and adds it to the list
 
         Raises:
@@ -242,7 +242,6 @@ class Encounter_Generator:
                     (self.average_party_level + (self.average_party_level - 1)) / 2
                 )
             )
-
         elif self.encounter_type == "Horde":
             monster_possibilities = Monster.objects.filter(
                 Challenge_Rating__lte=(
@@ -283,7 +282,6 @@ class Encounter_Generator:
             monster_possibilities = monster_possibilities.filter(
                 Challenge_Rating__gte=self.average_party_level - 1
             )
-
         elif self.encounter_type == "Minor Boss":
             if 10 > self.average_party_level > 3:
                 monster_possibilities = Monster.objects.filter(
@@ -304,7 +302,6 @@ class Encounter_Generator:
             monster_possibilities = monster_possibilities.filter(
                 Challenge_Rating__gt=self.average_party_level
             )
-
         elif self.encounter_type == "Major Boss":
             if 10 > self.average_party_level < 4:
                 monster_possibilities = Monster.objects.filter(
@@ -329,14 +326,20 @@ class Encounter_Generator:
                     Challenge_Rating__gt=self.average_party_level
                 )
 
-        for x in self.tags:
-            monster_possibilities = monster_possibilities.filter(Creature_Tags=x)
+        if tag_type:
+            for x in self.tags:
+                monster_possibilities = monster_possibilities.filter(Creature_Tags=x)
+        else:
+            for x in self.tags:
+                final_monster_list = final_monster_list.union(
+                    final_monster_list, monster_possibilities.filter(Creature_Tags=x)
+                )
+            monster_possibilities = final_monster_list
         if len(monster_possibilities) > 1:
             monster_possibilities = list(monster_possibilities)
             toAdd = monster_possibilities[
                 self.Generators[self.generator_key](0, (len(monster_possibilities) - 1))
             ]
-
         elif len(monster_possibilities) == 1:
             toAdd = monster_possibilities[0]
         else:
@@ -351,6 +354,7 @@ class Encounter_Generator:
 
     def generate_encounter(
         self,
+        tag_type=False,
         average_level=1,
         encounter_type="Average Encounter",
         tags=None,
@@ -393,6 +397,6 @@ class Encounter_Generator:
         else:
             monster_count = 1
         for x in range(monster_count):
-            self.generate_monster()
+            self.generate_monster(tag_type)
         if loot_generate:
             self.generate_loot()

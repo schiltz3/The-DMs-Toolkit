@@ -1,0 +1,42 @@
+[
+    {
+        "model": "toolkit.race",
+        "pk": 1,
+        "fields": {
+            "Name": "Human",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Common"
+        }
+    },
+    {
+        "model": "toolkit.race",
+        "pk": 2,
+        "fields": {
+            "Name": "Elf",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Common"
+        }
+    },
+    {
+        "model": "toolkit.race",
+        "pk": 3,
+        "fields": {
+            "Name": "Bugbear",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Monster"
+        }
+    },
+    {
+        "model": "toolkit.race",
+        "pk": 4,
+        "fields": {
+            "Name": "Changeling",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Uncommon"
+        }
+    }
+]
