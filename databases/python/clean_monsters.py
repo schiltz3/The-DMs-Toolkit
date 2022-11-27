@@ -53,7 +53,7 @@ def parse_ac(value: str):
     return r
 
 
-def parse_init(value: str):
+def parse_frac(value: str):
     fraction = r"\d+\/\d+"
     if re.match(fraction, value):
         return float(Fraction(value))
@@ -61,10 +61,10 @@ def parse_init(value: str):
 
 
 parsers: dict[str, dict[str, Callable]] = {
-    "Challenge_Rating": {"str": float, "float": default_parser},
-    "Armor_Class": {"str": parse_ac},
-    "Hitpoints": {"str": int},
-    "Initiative": {"str": parse_init},
+    "Challenge_Rating": {"str": parse_frac, "float": default_parser},
+    "Armor_Class": {"str": parse_ac, "int": default_parser},
+    "Hitpoints": {"str": int, "int": default_parser},
+    "Initiative": {"str": parse_frac, "int": default_parser},
     "Creature_Tags": {"str": str.title},
     "Alignment": {"str": str.title},
 }
