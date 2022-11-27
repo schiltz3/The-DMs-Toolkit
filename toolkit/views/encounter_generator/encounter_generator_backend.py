@@ -1,5 +1,5 @@
 import random
-from typing import Callable, Optional, Union
+from typing import Callable, Union
 
 from django.db.models.query import QuerySet
 
@@ -365,7 +365,6 @@ class Encounter_Generator:
                     )
                 monster_possibilities = final_monster_list
             if len(monster_possibilities) > 1:
-                # monster_possibilities = list(monster_possibilities)
                 toAdd = monster_possibilities[
                     self.Generators[self.generator_key](
                         0, (len(monster_possibilities) - 1)
