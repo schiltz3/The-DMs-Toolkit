@@ -9,7 +9,7 @@ from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
 
-from toolkit.models import Tag
+from toolkit.models import GeneratedEncounter, Monster, Tag
 from toolkit.views.encounter_generator.cache_encounter import (
     cache_encounter,
     delete_cached_encounter,
@@ -81,11 +81,11 @@ class EncounterGenerator(View):
                     generator_key=form.generator_type.value,
                     loot_generate=False,
                 )
-                encounter_object = generated.get("encounter_object")
+                encounter_object: GeneratedEncounter = generated.get("encounter_object")
                 self.context["total_monsters"] = int(generated.get("monster_count"))
-                generated_list = generated.get("monsters")
+                generated_list: list[Monster] = generated.get("monsters")
                 generated_list.sort(key=lambda x: x.Name)
-                generated_dict = dict()
+                generated_dict: dict[Monster, int] = dict()
                 for i in generated_list:
                     generated_dict[i] = generated_dict.get(i, 0) + 1
                 self.context["generated_dict"] = generated_dict

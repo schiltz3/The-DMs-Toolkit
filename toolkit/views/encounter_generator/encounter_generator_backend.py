@@ -373,7 +373,7 @@ class Encounter_Generator:
         tags=None,
         generator_key="Random",
         loot_generate=False,
-    ):
+    ) -> dict[str, Union[GeneratedEncounter, list[Monster], int]]:
         """Outwards facing component of the generate encounter, generates a somewhat random amount of monsters
 
         Args:
@@ -421,7 +421,7 @@ class Encounter_Generator:
             Number_Of_Characters=len(self.monster_list),
             Average_Character_Levels=average_level,
         )
-        encounter_dict = {
+        encounter_dict: dict[str, Union[GeneratedEncounter, list[Monster], int]] = {
             "encounter_object": current_encounter,
             "monsters": self.monster_list,
             "monster_count": monster_count,
