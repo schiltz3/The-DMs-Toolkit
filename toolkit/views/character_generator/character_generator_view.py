@@ -1,4 +1,5 @@
 import logging
+import traceback
 
 from django.contrib import messages
 from django.http.request import HttpRequest
@@ -146,7 +147,8 @@ class CharacterGenerator(View):
                     except TypeError as e:
                         logger.warning(e)
                 return render(request, "character_generator.html", self.context)
-            except (ValueError, RuntimeError) as e:
+            except (ValueError, RuntimeError):
+                logger.warning(traceback.format_exc())
                 self.context["form"] = form
                 messages.error(request, "Unable to generate character")
                 return render(request, "character_generator.html", self.context)
