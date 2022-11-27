@@ -3,20 +3,24 @@
 {% load static %}
 
 {% block application_pane %}
-<form action {% url "encounter_generator" %} method="post" class="form">
-    {% csrf_token %}
-    <div class="container-fluid" style="background-color: #D9CAAB; overflow: clip;">
-        <div class="row mx-0">
-            <div class="col p-0">
-                <div class="banner">
-                    <img src="{% static "Encounter_Header.png" %}"
-                    alt="Encounter Header"
-                    style="height: 85px;"/>
+    <form action {% url "encounter_generator" %} method="post" class="form">
+        {% csrf_token %}
+        <div class="container-fluid" style="background-color: #D9CAAB; overflow: clip;">
+            <div class="row mx-0">
+                <div class="col p-0">
+                    <div class="banner">
+                        <img src="{% static "Encounter_Header.png" %}"
+                        alt="Encounter Header"
+                        style="height: 85px;"/>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-3">{% include "elements/messages.html" %}</div>
+        <div class="row mx-0 pt-3 justify-content-center" style="background-color: #7D8B8C;">
+            <div class="col-3">
+                {% include "elements/messages.html" %}
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
                 <label for="generator_type_select" class="form-label">Generator</label>
@@ -88,22 +92,22 @@
                             class="btn btn-lg btn-success"
                             name="generate_button"
                             style="--bs-btn-padding-y: 1rem;">
-                      GENERATE
+                        GENERATE
                     </button>
                     <button type="submit"
                             class="btn btn-lg btn-primary"
                             name="save_button"
                             style="--bs-btn-padding-y: 1rem;"
                             {% if user.is_authenticated == False or cached == False %}disabled{% endif %}>
-                      SAVE
+                        SAVE
                     </button>
                     <button type="submit"
                             name="clear_button"
                             class="btn btn-lg btn-secondary"
                             style="--bs-btn-padding-y: 1rem;">
-                      CLEAR
+                        CLEAR
                     </button>
-                  </div>
+                    </div>
             </div>
         </div>
         <div class="row" style="background-color: #D9CAAB;">
@@ -153,5 +157,5 @@
                 <h4><b>{{ total_monsters }}</b></h4>
             </div>
         </div>
-</form>
+    </form>
 {% endblock application_pane %}
