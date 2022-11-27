@@ -13,6 +13,8 @@ class Character_Generator:
     for the various character generation methods
     """
 
+    CLASS_OPTIONS = ("All", "Martial", "Magic", "Divine")
+    RACE_OPTIONS = ("All", "Common", "Uncommon", "Monster")
     ALIGNMENT_DICT: dict[str, list] = {
         "Good": ["Lawful Good", "Neutral Good", "Chaotic Good"],
         "Neutral": ["Lawful Neutral", "True Neutral", "Chaotic Neutral"],
