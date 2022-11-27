@@ -321,7 +321,9 @@ class Generate_Test(TestCase):
         """Test encounter generate method"""
         self.encounter1.generate_encounter(tag_type=True)
         self.assertIn(self.mon1, self.encounter1.monster_list)
-        self.encounter2.generate_encounter(tag_type = True, average_level=9, loot_generate=True)
+        self.encounter2.generate_encounter(
+            tag_type=True, average_level=9, loot_generate=True
+        )
         self.assertIn(self.mon2, self.encounter2.monster_list)
         self.assertNotEqual(None, self.encounter2.dropped_loot)
 

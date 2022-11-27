@@ -12,7 +12,8 @@ class Character_Generator:
     Contains all the lists and Dictionaries
     for the various character generation methods
     """
-    CLASS_OPTIONS = ("All", "Martial", "Magic","Divine")
+
+    CLASS_OPTIONS = ("All", "Martial", "Magic", "Divine")
     RACE_OPTIONS = ("All", "Common", "Uncommon", "Monster")
     ALIGNMENT_DICT: dict[str, list] = {
         "Good": ["Lawful Good", "Neutral Good", "Chaotic Good"],
@@ -60,7 +61,7 @@ class Character_Generator:
     STANDARD_ARRAY: list[int] = [15, 14, 13, 12, 10, 8]
 
     def __init__(self):
-        
+
         self.generators: dict[str, Generator] = {}
         # Unlimited Generators have a minimum range of [1,max_int]
         self.UnlimitedGenerators: dict[str, Generator] = {"Random": random.randint}
