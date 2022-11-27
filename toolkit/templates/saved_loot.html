@@ -3,45 +3,46 @@
 {% load static %}
 
 {% block application_pane %}
-<div class="container-fluid">
-    <div>
-        <div class="row">
-            <div class="generator-header">
-                <img src="{% static 'Loot_Header.png' %}"
-                     alt="Loot Header"
-                     style="width: 45%"/>
-              </div>
-        </div>
-        <div class="row">
-            <div class="col" style="background-color: #D9CAAB;text-align:center;">
-                <h4>Saved Loot:</h4>
+<div class="container-fluid" style="background-color: #D9CAAB; overflow: clip;">
+    <div class="row mx-0">
+        <div class="col p-0">
+            <div class="banner">
+                <img src="{% static "Loot_Header.png" %}"
+                alt="Loot Header"
+                style="height: 85px;"/>
             </div>
-
         </div>
-        <div class="row text-center">
-            <div class="col-sm-12">
-                <div class="data-table table-scrollbar">
-                    <table class="table table-hover">
-                        <thead style="position: sticky; top: 0;">
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col" style="background-color: #7D8B8C; text-align:center;">
+            <h4>Saved Loot:</h4>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-sm-12">
+            <div class="data-table table-scrollbar">
+                <table class="table table-hover">
+                    <thead style="position: sticky; top: 0;">
+                    <tr>
+                        <th style="width: 40%" scope="col">Loot Type</th>
+                        <th style="width: 40%" scope="col">Total Value</th>
+                        <th style="width: 10%" scope="col">Details</th>
+                        <th style="width: 10%" scope="col">Select</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for loot in loot_list %}
                         <tr>
-                            <th style="width: 40%" scope="col">Loot Type</th>
-                            <th style="width: 40%" scope="col">Total Value</th>
-                            <th style="width: 10%" scope="col">Details</th>
-                            <th style="width: 10%" scope="col">Select</th>
+                            <td>{{ loot.Loot_Type }}</td>
+                            <td>{{ loot.Total_Value }}</td>
+                            <td>{{ redirect }}</td>
+                            <td>{{ select }}</td>
                         </tr>
-                        </thead>
-                        <tbody>
-                        {% for loot in loot_list %}
-                            <tr>
-                                <td>{{ loot.Loot_Type }}</td>
-                                <td>{{ loot.Total_Value }}</td>
-                                <td>{{ redirect }}</td>
-                                <td>{{ select }}</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
+                    {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
