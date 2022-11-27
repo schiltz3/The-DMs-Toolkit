@@ -83,7 +83,7 @@ class Encounter_Generator:
             ValueError: If the tag is a tag object and not in the database
             ValueError: If the tag is not a string or tag object
         """
-        
+
         if type(tag) is str:
             check = list(Tag.objects.filter(Name=tag))
             valid = False
