@@ -17,7 +17,7 @@ def cache_loot(
     """Create and cache a loot object from the loot_generator view
 
     Args:
-        user (User): User to cache the character on
+        user (User): User to cache the loot on
 
     """
     loot.save_base()
