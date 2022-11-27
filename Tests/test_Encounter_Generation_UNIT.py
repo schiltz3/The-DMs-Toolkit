@@ -245,14 +245,14 @@ class Monsters_And_CR_Tests(TestCase):
     def test_monster_generate_positive(self):
         """Tests for generate monster"""
         self.encounter.average_party_level = 9
-        self.encounter.generate_monster()
+        self.encounter.generate_monster(True)
         self.assertIn(self.mon2, self.encounter.monster_list)
 
     def test_monster_generate_negative(self):
         """Tests for generate monster"""
         self.encounter.average_party_level = 20
         with self.assertRaises(RuntimeError):
-            self.encounter.generate_monster()
+            self.encounter.generate_monster(True)
 
 
 class Generate_Test(TestCase):
@@ -319,9 +319,9 @@ class Generate_Test(TestCase):
 
     def test_generate_positive(self):
         """Test encounter generate method"""
-        self.encounter1.generate_encounter()
+        self.encounter1.generate_encounter(tag_type=True)
         self.assertIn(self.mon1, self.encounter1.monster_list)
-        self.encounter2.generate_encounter(average_level=9, loot_generate=True)
+        self.encounter2.generate_encounter(tag_type = True, average_level=9, loot_generate=True)
         self.assertIn(self.mon2, self.encounter2.monster_list)
         self.assertNotEqual(None, self.encounter2.dropped_loot)
 
