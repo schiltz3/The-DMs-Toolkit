@@ -325,18 +325,21 @@ class Encounter_Generator:
                 monster_possibilities = monster_possibilities.filter(
                     Challenge_Rating__gt=self.average_party_level
                 )
-        
+
         if tag_type:
             for x in self.tags:
                 monster_possibilities = monster_possibilities.filter(Creature_Tags=x)
-        else: 
+        else:
             for x in self.tags:
-                final_monster_list = final_monster_list.union(final_monster_list,monster_possibilities.filter(Creature_Tags=x))
-            monster_possibilities=final_monster_list
+                final_monster_list = final_monster_list.union(
+                    final_monster_list, monster_possibilities.filter(Creature_Tags=x)
+                )
+            monster_possibilities = final_monster_list
         if len(monster_possibilities) > 1:
             monster_possibilities = list(monster_possibilities)
             toAdd = monster_possibilities[
-            self.Generators[self.generator_key](0, (len(monster_possibilities) - 1))]
+                self.Generators[self.generator_key](0, (len(monster_possibilities) - 1))
+            ]
         elif len(monster_possibilities) == 1:
             toAdd = monster_possibilities[0]
         else:
@@ -351,7 +354,7 @@ class Encounter_Generator:
 
     def generate_encounter(
         self,
-        tag_type = False,
+        tag_type=False,
         average_level=1,
         encounter_type="Average Encounter",
         tags=None,
