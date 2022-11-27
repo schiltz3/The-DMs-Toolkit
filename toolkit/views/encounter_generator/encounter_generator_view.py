@@ -9,7 +9,7 @@ from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
 
-from toolkit.models import Tag, Monster
+from toolkit.models import Monster, Tag
 from toolkit.views.encounter_generator.cache_encounter import (
     cache_encounter,
     delete_cached_encounter,
