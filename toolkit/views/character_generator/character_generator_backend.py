@@ -401,7 +401,7 @@ class Character_Generator:
             raise RuntimeError("Not a valid list")
         stat_array = sorted(stat_array)
         clazz = check_class[0]
-        int_vals = map(int, clazz.StatPrecedence.split(","))
+        int_vals = list(map(int, clazz.StatPrecedence.split(",")))
 
         results: list[int] = []
         results.append(stat_array[int_vals[0]])
