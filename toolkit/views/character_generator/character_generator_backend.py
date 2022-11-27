@@ -210,7 +210,7 @@ class Character_Generator:
         Returns:
             BaseManager[Clazz]: All class object in database
         """
-        return Clazz.objects.all()
+        return Clazz.objects.all().order_by("Name")
 
     def get_races(self):
         """Get all races from database
@@ -218,7 +218,7 @@ class Character_Generator:
         Returns:
             BaseManager[Race]: All race object in database
         """
-        return Race.objects.all()
+        return Race.objects.all().order_by("Name")
 
     def generate_class(self, class_option, generator_key: str) -> Clazz:
         """

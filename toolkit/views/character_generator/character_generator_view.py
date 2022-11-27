@@ -35,9 +35,9 @@ class CharacterGenerator(View):
         self.generator = Character_Generator()
         self.context["out"] = GeneratedCharacterOutputs(calculate=True)
         # TODO: Make sure is correct "group"
-        self.context["clazz_list"] = sorted(self.generator.get_classes())
+        self.context["clazz_list"] = sorted(self.generator.CLASS_OPTIONS)
         self.context["background_list"] = sorted(self.generator.BACKGROUND_DICT)
-        self.context["race_list"] = sorted(self.generator.get_races())
+        self.context["race_list"] = sorted(self.generator.RACE_OPTIONS)
         self.context["alignment_list"] = sorted(self.generator.ALIGNMENT_DICT)
 
         gen_keys = self.generator.get_all_random_generators()
@@ -45,11 +45,11 @@ class CharacterGenerator(View):
         gen_keys = sorted(gen_keys)
         self.context["generator_type_list"] = gen_keys
 
-        self.context["clazz_choices_list"] = sorted(self.generator.get_classes())
+        self.context["clazz_choices_list"] = self.generator.get_classes()
         self.context["background_choices_list"] = sorted(
             self.generator.BACKGROUND_DICT.get("All")
         )
-        self.context["race_choices_list"] = sorted(self.generator.get_races())
+        self.context["race_choices_list"] = self.generator.get_races()
         self.context["alignment_choices_list"] = sorted(
             self.generator.ALIGNMENT_DICT.get("All")
         )
