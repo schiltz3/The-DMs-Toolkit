@@ -34,9 +34,10 @@ class CharacterGenerator(View):
         self.context: dict[str, any] = {}
         self.generator = Character_Generator()
         self.context["out"] = GeneratedCharacterOutputs(calculate=True)
-        self.context["clazz_list"] = sorted(self.generator.CLASS_DICT)
+        # TODO: Make sure is correct "group"
+        self.context["clazz_list"] = sorted(self.generator.CLASS_OPTIONS)
         self.context["background_list"] = sorted(self.generator.BACKGROUND_DICT)
-        self.context["race_list"] = sorted(self.generator.RACE_DICT)
+        self.context["race_list"] = sorted(self.generator.RACE_OPTIONS)
         self.context["alignment_list"] = sorted(self.generator.ALIGNMENT_DICT)
 
         gen_keys = self.generator.get_all_random_generators()
@@ -44,13 +45,11 @@ class CharacterGenerator(View):
         gen_keys = sorted(gen_keys)
         self.context["generator_type_list"] = gen_keys
 
-        self.context["clazz_choices_list"] = sorted(
-            self.generator.CLASS_DICT.get("All")
-        )
+        self.context["clazz_choices_list"] = self.generator.get_classes()
         self.context["background_choices_list"] = sorted(
             self.generator.BACKGROUND_DICT.get("All")
         )
-        self.context["race_choices_list"] = sorted(self.generator.RACE_DICT.get("All"))
+        self.context["race_choices_list"] = self.generator.get_races()
         self.context["alignment_choices_list"] = sorted(
             self.generator.ALIGNMENT_DICT.get("All")
         )
@@ -69,7 +68,6 @@ class CharacterGenerator(View):
 
         form = GenerateCharacterInputs.from_dict(request.POST)
         self.context["data"] = form
-        self.context["error"] = None
         if not form.is_valid():
             self.context["form"] = form
             logger.info("Invalid form")
@@ -81,38 +79,50 @@ class CharacterGenerator(View):
         if request.POST.get("generate_button") is not None:
             try:
                 generator_key = "Random"
-                stat_generator_key = form.generator_type.value
 
-                race = form.race.value
-                if race in self.generator.RACE_DICT:
+                try:
                     form.race.value = self.generator.generate_race(
-                        Character_Generator.RACE_DICT[race], generator_key
+                        form.race.value, generator_key
                     )
-                clazz = form.clazz.value
-                if clazz in self.generator.CLASS_DICT:
+                except ValueError:
+                    form.race.error = "Unable to generate Race"
+                try:
                     form.clazz.value = self.generator.generate_class(
-                        Character_Generator.CLASS_DICT[clazz], generator_key
+                        form.clazz.value, generator_key
                     )
+                except (ValueError, RuntimeError):
+                    form.clazz.error = "Unable to generate Class"
                 alignment = form.alignment.value
                 if alignment in self.generator.ALIGNMENT_DICT:
-                    form.alignment.value = self.generator.generate_alignment(
-                        Character_Generator.ALIGNMENT_DICT[alignment],
-                        generator_key,
-                    )
+                    try:
+                        form.alignment.value = self.generator.generate_alignment(
+                            Character_Generator.ALIGNMENT_DICT[alignment],
+                            generator_key,
+                        )
+                    except ValueError:
+                        form.alignment.error = "Unable to generate Alignment"
                 background = form.background.value
                 if background in self.generator.BACKGROUND_DICT:
-                    form.background.value = self.generator.generate_background(
-                        Character_Generator.BACKGROUND_DICT[background],
-                        generator_key,
-                    )
+                    try:
+                        form.background.value = self.generator.generate_background(
+                            Character_Generator.BACKGROUND_DICT[background],
+                            generator_key,
+                        )
+                    except ValueError:
+                        form.background.error = "Unable to generate Background"
 
-                if stat_generator_key == "Standard":
-                    stats = Character_Generator.arrange_stats(
-                        form.clazz.value, Character_Generator.STANDARD_ARRAY
-                    )
-                else:
-                    stats = self.generator.generate_stat_list(stat_generator_key)
-                    stats = self.generator.arrange_stats(form.clazz.value, stats)
+                stat_generator_key = form.generator_type.value
+                try:
+                    if stat_generator_key == "Standard":
+                        stats = Character_Generator.arrange_stats(
+                            form.clazz.value, Character_Generator.STANDARD_ARRAY
+                        )
+                    else:
+                        stats = self.generator.generate_stat_list(stat_generator_key)
+                        stats = self.generator.arrange_stats(form.clazz.value, stats)
+                except ValueError:
+                    form.generator_type.error = "Unable to use specified generator"
+
                 output = GeneratedCharacterOutputs(
                     calculate=True,
                     strength=stats[0],
@@ -136,9 +146,9 @@ class CharacterGenerator(View):
                     except TypeError as e:
                         logger.warning(e)
                 return render(request, "character_generator.html", self.context)
-            except ValueError as e:
+            except (ValueError, RuntimeError) as e:
                 self.context["form"] = form
-                self.context["error"] = str(e)
+                messages.error(request, "Unable to generate character")
                 return render(request, "character_generator.html", self.context)
 
         if request.POST.get("save_button") is not None:
