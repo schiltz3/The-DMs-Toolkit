@@ -1,7 +1,7 @@
 import random
 from typing import Callable, Optional, Union
 
-from toolkit.models import Monster, Tag
+from toolkit.models import GeneratedEncounter, Monster, Tag
 from toolkit.views.loot_generator.loot_generator_backend import Loot_Generator
 
 Generator = Callable[[int, int], int]
@@ -49,6 +49,20 @@ class Encounter_Generator:
         self.dropped_loot = None
         self.highest_loot_modifier = 0
         self.generator_key = "Random"
+
+    def get_all_random_generators(self):
+        """
+        Gives the list of random generator keys
+        Returns:
+            List: a list of all generator keys
+        """
+        return list(self.Generators.keys())
+
+    def generate_encounter_type(self):
+        """Generate a random encounter type"""
+        self.encounter_type = self.ENCOUNTER_TYPE_LIST[
+            self.Generators[self.generator_key](0, len(self.ENCOUNTER_TYPE_LIST) - 1)
+        ]
 
     def get_tags(self):
         """Get Current Tags
@@ -175,7 +189,10 @@ class Encounter_Generator:
         Raises:
             ValueError: If encounter_type is not a valid encounter type
         """
-        if encounter_type not in self.ENCOUNTER_TYPE_LIST:
+        if (
+            encounter_type not in self.ENCOUNTER_TYPE_LIST
+            and encounter_type != "Random"
+        ):
             raise ValueError("Not a valid encounter type")
         self.encounter_type = encounter_type
 
@@ -360,7 +377,7 @@ class Encounter_Generator:
         tags=None,
         generator_key="Random",
         loot_generate=False,
-    ):
+    ) -> dict[str, Union[GeneratedEncounter, list[Monster], int]]:
         """Outwards facing component of the generate encounter, generates a somewhat random amount of monsters
 
         Args:
@@ -384,6 +401,8 @@ class Encounter_Generator:
             raise ValueError("Illegal loot generate value")
         self.change_average_level(average_level)
         self.set_encounter_type(encounter_type)
+        if encounter_type == "Random":
+            self.generate_encounter_type()
         for x in tags:
             self.add_tag(x)
         if self.encounter_type == "Average Encounter":
@@ -400,3 +419,15 @@ class Encounter_Generator:
             self.generate_monster(tag_type)
         if loot_generate:
             self.generate_loot()
+
+        current_encounter = GeneratedEncounter(
+            Encounter_Type=self.encounter_type,
+            Number_Of_Characters=len(self.monster_list),
+            Average_Character_Levels=average_level,
+        )
+        encounter_dict: dict[str, Union[GeneratedEncounter, list[Monster], int]] = {
+            "encounter_object": current_encounter,
+            "monsters": self.monster_list,
+            "monster_count": monster_count,
+        }
+        return encounter_dict

@@ -65,7 +65,7 @@ class CharacterGenerator(View):
         return render(request, "character_generator.html", self.context)
 
     def post(self, request: HttpRequest):
-        """POST method for create user page."""
+        """POST method for the character generation."""
 
         form = GenerateCharacterInputs.from_dict(request.POST)
         self.context["data"] = form

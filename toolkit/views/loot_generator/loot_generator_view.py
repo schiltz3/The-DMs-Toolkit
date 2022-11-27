@@ -50,12 +50,12 @@ class LootGenerator(View):
         self.context["cached"] = False
 
     def get(self, request: HttpRequest):
-        """GET method for the character generation."""
+        """GET method for the loot generation."""
         self.context["data"] = GenerateLootInputs()
         return render(request, "loot_generator.html", self.context)
 
     def post(self, request: HttpRequest):
-        """POST method for create user page."""
+        """POST method for the loot generation."""
         form = GenerateLootInputs.from_dict(request.POST)
         self.context["data"] = form
         self.context["error"] = None
@@ -137,7 +137,7 @@ class GenerateLootInputs:
             env (dict[str, Any]): Any dictionary
 
         Returns:
-            GeneratedLootInputs: new GeneratedCharacterInputs with args from env
+            GeneratedLootInputs: new GeneratedLootInputs with args from env
         """
         return cls(
             **{
