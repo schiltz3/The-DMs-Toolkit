@@ -204,7 +204,8 @@ class Character_Generator:
         race: Race = race_list[self.generators[generator_key](0, len(race_list) - 1)]
         return race
 
-    def get_classes(self):
+    @staticmethod
+    def get_classes():
         """Get all classes from database
 
         Returns:
@@ -212,7 +213,8 @@ class Character_Generator:
         """
         return Clazz.objects.all().order_by("Name")
 
-    def get_races(self):
+    @staticmethod
+    def get_races():
         """Get all races from database
 
         Returns:
