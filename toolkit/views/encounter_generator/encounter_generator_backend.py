@@ -347,9 +347,6 @@ class Encounter_Generator:
                 )
 
         for x in self.tags:
-            print("---------------Your tag, schizo: " + str(x))
-
-        for x in self.tags:
             monster_possibilities = monster_possibilities.filter(Creature_Tags=x)
         if len(monster_possibilities) > 1:
             monster_possibilities = list(monster_possibilities)
