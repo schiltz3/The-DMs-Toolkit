@@ -192,7 +192,7 @@ class Character_Generator:
         if race_option != "All":
             race_list = Race.objects.filter(Options=race_option)
             if not race_list.exists():
-                race_list = Race.objects.filter(Name = race_option)
+                race_list = Race.objects.filter(Name=race_option)
             elif not race_list.exists():
                 raise ValueError("No matching race")
         else:
@@ -223,7 +223,7 @@ class Character_Generator:
         if class_option != "All":
             class_list = Clazz.objects.filter(Options=class_option)
             if not class_list.exists():
-                class_list = Clazz.objects.filter(Name = class_option)
+                class_list = Clazz.objects.filter(Name=class_option)
             elif not class_list.exists():
                 raise ValueError("No matching classes")
         else:
