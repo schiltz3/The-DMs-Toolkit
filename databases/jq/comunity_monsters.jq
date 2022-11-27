@@ -1,21 +1,9 @@
-
-def frac(f):
-  if f == "1/2" then .5
-  else
-    if f == "1/4" then .25
-    else
-      if f == "1/8" then .125
-      else f
-      end
-    end
-  end;
-
 [.[] | 
 {
   model: "toolkit.monster",
   pk: .name,
   fields: {
-    Challenge_Rating: frac(.cr),
+    Challenge_Rating: .cr,
     Size: .size,
     Type: .type,
     Alignment: .alignment,
