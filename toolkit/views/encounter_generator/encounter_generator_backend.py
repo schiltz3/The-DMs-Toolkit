@@ -1,8 +1,6 @@
 import random
 from typing import Callable, Union
 
-from django.db.models.query import QuerySet
-
 from toolkit.models import GeneratedEncounter, Monster, Tag
 from toolkit.views.loot_generator.loot_generator_backend import Loot_Generator
 
