@@ -1,5 +1,5 @@
 import random
-from typing import Callable, Optional, Union
+from typing import Callable, Union
 
 from toolkit.models import GeneratedEncounter, Monster, Tag
 from toolkit.views.loot_generator.loot_generator_backend import Loot_Generator
@@ -242,13 +242,15 @@ class Encounter_Generator:
             )
         self.dropped_loot = loot
 
-    def generate_monster(self, tag_type):
+    def generate_monster(self, tag_type: bool):
         """Main function of the method, generates a monster randomly from the databases and adds it to the list
 
         Raises:
             RuntimeError: If there are no monsters suitable to be generated
         """
 
+        monster_possibilities = None
+        toAdd = None
         if self.encounter_type == "Average Encounter":
             monster_possibilities = Monster.objects.filter(
                 Challenge_Rating__lte=(self.average_party_level + 1)
@@ -343,30 +345,40 @@ class Encounter_Generator:
                     Challenge_Rating__gt=self.average_party_level
                 )
 
-        if tag_type:
-            for x in self.tags:
-                monster_possibilities = monster_possibilities.filter(Creature_Tags=x)
-        else:
-            for x in self.tags:
-                final_monster_list = final_monster_list.union(
-                    final_monster_list, monster_possibilities.filter(Creature_Tags=x)
+        if monster_possibilities and monster_possibilities.exists():
+            if tag_type:
+                for x in self.tags:
+                    monster_possibilities = monster_possibilities.filter(
+                        Creature_Tags=x
+                    )
+            elif len(self.tags) > 0:
+                final_monster_list = monster_possibilities.filter(
+                    Creature_Tags=self.tags[0]
                 )
-            monster_possibilities = final_monster_list
-        if len(monster_possibilities) > 1:
-            monster_possibilities = list(monster_possibilities)
-            toAdd = monster_possibilities[
-                self.Generators[self.generator_key](0, (len(monster_possibilities) - 1))
-            ]
-        elif len(monster_possibilities) == 1:
-            toAdd = monster_possibilities[0]
+
+                for _, x in enumerate(self.tags, 1):
+                    final_monster_list = final_monster_list.union(
+                        final_monster_list,
+                        monster_possibilities.filter(Creature_Tags=x),
+                    )
+                monster_possibilities = final_monster_list
+            if len(monster_possibilities) > 1:
+                toAdd = monster_possibilities[
+                    self.Generators[self.generator_key](
+                        0, (len(monster_possibilities) - 1)
+                    )
+                ]
+            elif len(monster_possibilities) == 1:
+                toAdd = monster_possibilities[0]
         else:
             raise RuntimeError("No monsters with those tags at your levels")
-        if (
-            toAdd.Gold_Modifier is not None
-            and toAdd.Gold_Modifier > self.highest_loot_modifier
-        ):
-            self.highest_loot_modifier = toAdd.Gold_Modifier
-        self.monster_list.append(toAdd)
+        if toAdd:
+            if (
+                toAdd.Gold_Modifier is not None
+                and toAdd.Gold_Modifier > self.highest_loot_modifier
+            ):
+                self.highest_loot_modifier = toAdd.Gold_Modifier
+            self.monster_list.append(toAdd)
         self.calculate_average_cr()
 
     def generate_encounter(
