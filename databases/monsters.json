@@ -379,7 +379,7 @@
       "Size": "Huge",
       "Type": "Fiend",
       "Alignment": "Chaotic Evil",
-      "Armor_Class": "17 (20 with Wand of Orcus)",
+      "Armor_Class": 17,
       "Hitpoints": 405,
       "Initiative": 2,
       "Creature_Tags": [
@@ -2352,7 +2352,7 @@
       "Size": "Large",
       "Type": "Monstrosity",
       "Alignment": "Unaligned",
-      "Armor_Class": "14, 11 while prone",
+      "Armor_Class": 14,
       "Hitpoints": 39,
       "Initiative": 0,
       "Creature_Tags": [
@@ -2425,7 +2425,7 @@
       "Size": "Medium",
       "Type": "Humanoid",
       "Alignment": "Any",
-      "Armor_Class": "12 (15 with mage armor)",
+      "Armor_Class": 12,
       "Hitpoints": 99,
       "Initiative": 2,
       "Creature_Tags": [
@@ -4087,7 +4087,7 @@
       "Size": "Medium",
       "Type": "Humanoid",
       "Alignment": "Neutral Evil",
-      "Armor_Class": "12 (15 with mage armor)",
+      "Armor_Class": 12,
       "Hitpoints": 45,
       "Initiative": 2,
       "Creature_Tags": [
@@ -4153,7 +4153,7 @@
       "Size": "Medium",
       "Type": "Fey",
       "Alignment": "Neutral",
-      "Armor_Class": "11 (16 with barkskin)",
+      "Armor_Class": 11,
       "Hitpoints": 22,
       "Initiative": 1,
       "Creature_Tags": [
@@ -6964,7 +6964,7 @@
       "Size": "Medium",
       "Type": "Humanoid",
       "Alignment": "Any",
-      "Armor_Class": "12 (15 with mage armor)",
+      "Armor_Class": 12,
       "Hitpoints": 40,
       "Initiative": 2,
       "Creature_Tags": [
@@ -9969,7 +9969,7 @@
       "Size": "Medium",
       "Type": "Humanoid",
       "Alignment": "Neutral Good",
-      "Armor_Class": "10 in humanoid form, 11 in bear and hybrid form",
+      "Armor_Class": 10,
       "Hitpoints": 135,
       "Initiative": 0,
       "Creature_Tags": [
@@ -9991,7 +9991,7 @@
       "Size": "Medium",
       "Type": "Humanoid",
       "Alignment": "Neutral Evil",
-      "Armor_Class": "10 in humanoid form, 11 in boar and hybrid form",
+      "Armor_Class": 10,
       "Hitpoints": 78,
       "Initiative": 0,
       "Creature_Tags": [
@@ -10057,7 +10057,7 @@
       "Size": "Medium",
       "Type": "Humanoid",
       "Alignment": "Chaotic Evil",
-      "Armor_Class": "11 in humanoid form, 12 in wolf or hybrid form",
+      "Armor_Class": 11,
       "Hitpoints": 58,
       "Initiative": 1,
       "Creature_Tags": [
