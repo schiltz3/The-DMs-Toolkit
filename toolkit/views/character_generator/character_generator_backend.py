@@ -191,8 +191,14 @@ class Character_Generator:
             raise RuntimeError("Generator does not exist")
         if race_option != "All":
             race_list = Race.objects.filter(Options=race_option)
+            if not race_list.exists():
+                race_list = Race.objects.filter(Name=race_option)
+            elif not race_list.exists():
+                raise ValueError("No matching race")
         else:
             race_list = Race.objects.all()
+        if not race_list.exists():
+            raise RuntimeError("race does not exist")
         race: Race = race_list[self.generators[generator_key](0, len(race_list) - 1)]
         return race
 
@@ -232,6 +238,10 @@ class Character_Generator:
             raise RuntimeError("Generator does not exist")
         if class_option != "All":
             class_list = Clazz.objects.filter(Options=class_option)
+            if not class_list.exists():
+                class_list = Clazz.objects.filter(Name=class_option)
+            elif not class_list.exists():
+                raise ValueError("No matching classes")
         else:
             class_list = Clazz.objects.all()
         if not class_list.exists():
