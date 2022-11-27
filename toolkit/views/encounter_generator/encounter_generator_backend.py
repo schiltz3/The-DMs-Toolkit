@@ -83,7 +83,7 @@ class Encounter_Generator:
             ValueError: If the tag is a tag object and not in the database
             ValueError: If the tag is not a string or tag object
         """
-
+        
         if type(tag) is str:
             check = list(Tag.objects.filter(Name=tag))
             valid = False
@@ -345,6 +345,9 @@ class Encounter_Generator:
                 monster_possibilities = monster_possibilities.filter(
                     Challenge_Rating__gt=self.average_party_level
                 )
+
+        for x in self.tags:
+            print("---------------Your tag, schizo: " + str(x))
 
         for x in self.tags:
             monster_possibilities = monster_possibilities.filter(Creature_Tags=x)

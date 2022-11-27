@@ -9,7 +9,7 @@ from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
 
-from toolkit.models import Monster, Tag
+from toolkit.models import Tag
 from toolkit.views.encounter_generator.cache_encounter import (
     cache_encounter,
     delete_cached_encounter,
@@ -52,12 +52,7 @@ class EncounterGenerator(View):
         self.context["encounter_type_list"] = encounter_type_list
         encounter_tags_list = ["All"]
         encounter_tags_list.extend(Tag.objects.all())
-        available_tags_list = ["All"]
-        available_tags_list.extend(Tag.objects.all())
-        included_tags_list = []
         self.context["encounter_tags_list"] = encounter_tags_list
-        self.context["available_tags_list"] = available_tags_list
-        self.context["included_tags_list"] = included_tags_list
         self.context["cached"] = False
 
     def get(self, request: HttpRequest):
@@ -73,11 +68,6 @@ class EncounterGenerator(View):
         if not form.is_valid():
             self.context["form"] = form
             return render(request, "encounter_generator.html", self.context)
-
-        if request.POST.get("add_tag_button") is not None:
-            self.context["included_tags_list"].append(form.available_tags.value)
-            return render(request, "encounter_generator.html", self.context)
-
         if request.POST.get("generate_button") is not None:
             try:
                 generated = self.generator.generate_encounter(
@@ -87,7 +77,7 @@ class EncounterGenerator(View):
                     encounter_type=form.encounter_type.value,
                     tags=None
                     if form.encounter_tags.value == "All"
-                    else [form.encounter_tags.value],
+                    else request.POST.getlist("encounter_tags"),
                     generator_key=form.generator_type.value,
                     loot_generate=False,
                 )
@@ -146,8 +136,6 @@ class GenerateEncounterInputs:
     encounter_type: Element = field(default_factory=lambda: Element("Random"))
     encounter_tags: Element = field(default_factory=lambda: Element("All"))
     average_player_level: Element = field(default_factory=Element)  # Optional
-    available_tags: Element = field(default_factory=lambda: Element("All"))
-    removable_tags: Element = field(default_factory=Element)
 
     @classmethod
     def from_dict(cls, env: dict[str, Any]):

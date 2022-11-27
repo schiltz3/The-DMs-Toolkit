@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-2 px-md-4 p-2" style="background-color: #7D8B8C;">
+            <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
                 <label for="generator_type_select" class="form-label">Generator</label>
                 <select class="form-select" 
                         id="generator_type_select" 
@@ -59,12 +59,19 @@
                         {% endfor %}
                 </select>
             </div>
-            <div class="col-sm-2 px-md-4 p-2" style="background-color: #7D8B8C;">
+            <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
+                <label for="average_player_level_input" class="form-label">Average Player Level</label>
+                <input type="number" class="form-control" 
+                        id="average_player_level_input" 
+                        name="average_player_level" 
+                        value="{% if data.average_player_level.value != 0.0 %}{{ data.average_player_level.value }}{% endif %}"
+                        placeholder="Enter Average Player Level...">
                 <label for="encounter_tags_select" class="form-label">Encounter Tags</label>
-                <select class="form-select" 
+                <select class="form-select"
+                        multiple 
                         id="encounter_tags_select"
                         name="encounter_tags"
-                        aria-label="encounter_tags">
+                        aria-label="multiple encounter_tags">
                     <option selected>
                         {{ data.encounter_tags.value }}
                     </option>
@@ -79,69 +86,7 @@
                         {% endif %}
                     {% endfor %}
                 </select>
-                <label for="average_player_level_input" class="form-label">Average Player Level</label>
-                <input type="number" class="form-control" 
-                        id="average_player_level_input" 
-                        name="average_player_level" 
-                        value="{% if data.average_player_level.value != 0.0 %}{{ data.average_player_level.value }}{% endif %}"
-                        placeholder="Enter Average Player Level...">
             </div>
-            <div class="col-sm-1 px-md-4 p-2" style="background-color: #7D8B8C;">
-                <label for="available_tags_select" class="form-label">Add Tag</label>
-                <select class="form-select" 
-                        id="available_tags_select"
-                        name="available_tags"
-                        aria-label="available_tags_tag">
-                    <option selected>
-                        {{ data.available_tags.value }}
-                    </option>
-                    <option value="" disabled="disabled">
-                        ──────────────
-                    </option>
-                    {% for choice in available_tags_list %}
-                        {% if choice != data.available_tags.value %}
-                        <option value="{{ choice }}">
-                            {{ choice }}
-                        </option>
-                        {% endif %}
-                    {% endfor %}
-                </select>
-                <label for="remove_tag_select" class="form-label">Remove Tag</label>
-                <select class="form-select" 
-                        id="remove_tag_select"
-                        name="remove_tag"
-                        aria-label="remove_tag">
-                    <option selected>
-                        {{ data.included_tags.value }}
-                    </option>
-                    <option value="" disabled="disabled">
-                        ──────────────
-                    </option>
-                    {% for choice in included_tags_list %}
-                        {% if choice != data.included_tags.value %}
-                        <option value="{{ choice }}">
-                            {{ choice }}
-                        </option>
-                        {% endif %}
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="col-sm-1 px-md-4 p-4" style="background-color: #7D8B8C;">
-                <div class="btn-group-vertical" style="width:100%" role="group" aria-label="Tag-buttons">
-                    <button type="submit"
-                    class="btn btn-lg btn-primary"
-                    name="add_tag_button"
-                    style="--bs-btn-padding-y: 1rem;">
-                        +
-                    </button>
-                    <button type="submit"
-                    class="btn btn-lg btn-primary"
-                    name="remove_tag_button"
-                    style="--bs-btn-padding-y: 1rem;">
-                        -
-                    </button>
-                </div>
-            </div>    
             <div class="col-lg-6 px-md-4 p-4" style="background-color: #7D8B8C;">
                 <div class="btn-group vertical-center" style="width:100%" role="group" aria-label="Generate-buttons">
                     <button type="submit"
@@ -169,8 +114,7 @@
         <div class="row" style="background-color: #D9CAAB;">
             <div class="col-sm-3 px-md-4 p-2">
                 <div style="width: 50%; float: left; text-align: left;">
-                    <h4>Tags:</h4>
-                    <h5>Your Tags Listed Here</h5>
+                    <h4>Monsters:</h4>
                 </div>
             </div>
         </div>
