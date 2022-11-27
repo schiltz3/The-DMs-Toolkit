@@ -105,6 +105,12 @@ class EncounterGenerator(View):
                 self.context["form"] = form
                 self.context["error"] = str(e)
                 return render(request, "encounter_generator.html", self.context)
+            except RuntimeError as e:
+                messages.success(request, "No monsters with those tags at your levels.")
+                logger.warning(traceback.format_exc())
+                self.context["form"] = form
+                self.context["error"] = str(e)
+                return render(request, "encounter_generator.html", self.context)
         if request.POST.get("save_button") is not None:
             if request.user.is_authenticated:
                 save_cached_encounter(request.user)
