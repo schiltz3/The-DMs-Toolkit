@@ -11,12 +11,12 @@ from loguru import logger
 
 def set_up_arg_parser():
     """Sets up the cmd line argument parser"""
-    parser = ArgumentParser(
+    arg_parser = ArgumentParser(
         prog="clean_monsters",
         description="Clean monsters.json generatored by running monsters-1668973282154.json though jq with monsters.jq as the filters",
     )
-    parser.add_argument("input")
-    group = parser.add_mutually_exclusive_group()
+    arg_parser.add_argument("input")
+    group = arg_parser.add_mutually_exclusive_group()
     group.add_argument("-o", "--output")
     group.add_argument(
         "-i",
@@ -24,11 +24,11 @@ def set_up_arg_parser():
         help="Cleans file in place. WARNING: this will overwrite the input file",
         action="store_true",
     )
-    parser.add_argument(
+    arg_parser.add_argument(
         "-v", "--verbose", help="Info level verbosity", action="store_true"
     )
-    parser.add_argument("-vv", help="Debug level verbosity", action="store_true")
-    return parser
+    arg_parser.add_argument("-vv", help="Debug level verbosity", action="store_true")
+    return arg_parser
 
 
 def convert(v, f: Callable[[Any], str]):
