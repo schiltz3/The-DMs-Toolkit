@@ -45,7 +45,9 @@ def convert(value, f: Callable[[Any], str]):
     return value
 
 
-default_parser = lambda v: v
+def default_parser(v):
+    """Used to ignore type or when type can not be converted"""
+    return v
 
 
 @logger.catch
@@ -105,10 +107,10 @@ if __name__ == "__main__":
                 match v:
                     case [*values]:
                         fields[k] = [
-                            convert(value, parsers[k][type(value).__name__])
-                            for value in values
+                            convert(val, parsers[k][type(val).__name__])
+                            for val in values
                         ]
-                    case value:
+                    case val:
                         parser = parsers[k].get(
                             type(v).__name__,
                             parsers[k].get("default", default_parser),
