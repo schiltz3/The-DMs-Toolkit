@@ -107,8 +107,7 @@ if __name__ == "__main__":
                     continue
                 if isinstance(v, list):
                     fields[k] = [
-                        convert(val, parsers[k][type(val).__name__])
-                        for val in v
+                        convert(val, parsers[k][type(val).__name__]) for val in v
                     ]
                 else:
                     parser = parsers[k].get(
