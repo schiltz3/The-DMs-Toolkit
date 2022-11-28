@@ -3,16 +3,23 @@
 {% load static %}
 
 {% block application_pane %}
-<form action {% url "loot_generator" %} method="post" class="form">
-    {% csrf_token %}
-<div class="container-fluid">
-    <div>
-        <div class="row">
-            <div class="generator-header">
-                <img src="{% static 'Loot_Header.png' %}"
-                     alt="Loot Header"
-                     style="width: 45%"/>
-              </div>
+    <form action {% url "loot_generator" %} method="post" class="form">
+        {% csrf_token %}
+        <div class="container-fluid" style="background-color: #D9CAAB; overflow: clip;">
+            <div class="row mx-0">
+                <div class="col p-0">
+                    <div class="banner">
+                        <img src="{% static "Loot_Header.png" %}"
+                        alt="Loot Header"
+                        style="height: 85px;"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mx-0 pt-3 justify-content-center" style="background-color: #7D8B8C;">
+            <div class="col-3">
+                {% include "elements/messages.html" %}
+            </div>
         </div>
         <div class="row">
             <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
@@ -53,12 +60,12 @@
                 </select>
             </div>
             <div class="col-sm-3 px-md-4 p-2" style="background-color: #7D8B8C;">
-                <label for="total_hoard_value_input" class="form-label">Total Hoard Value</label>
+                <label for="total_hoard_value_input" class="form-label">Target Hoard Value</label>
                 <input type="number" class="form-control" 
                         id="total_hoard_value_input" 
                         name="total_hoard_value" 
                         value="{{ data.total_hoard_value.value }}"
-                        placeholder="Enter Approximate Hoard Value...">
+                        placeholder="Enter Target Hoard Value...">
                 <label for="average_player_level_input" class="form-label">Average Player Level</label>
                 <input type="number" class="form-control" 
                         id="average_player_level_input" 
@@ -78,7 +85,7 @@
                             class="btn btn-lg btn-primary"
                             name="save_button"
                             style="--bs-btn-padding-y: 1rem;"
-                            disabled>
+                            {% if user.is_authenticated == False or cached == False %}disabled{% endif %}>
                         SAVE
                     </button>
                     <button type="submit"
@@ -136,7 +143,5 @@
                 <h4><b>{{ total_value }}gp</b></h4>
             </div>
         </div>
-    </div>
-</div>
-</form>
+    </form>
 {% endblock application_pane %}

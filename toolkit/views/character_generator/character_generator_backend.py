@@ -2,6 +2,8 @@ import random
 from math import ceil
 from typing import Callable, Optional, Union
 
+from toolkit.models import Clazz, Race
+
 Generator = Callable[[int, int], int]
 
 
@@ -11,114 +13,8 @@ class Character_Generator:
     for the various character generation methods
     """
 
-    RACE_DICT: dict[str, list] = {
-        "Rare": [
-            "Aasimar",
-            "Animal Hybrid",
-            "Aarakocra",
-            "Centaur",
-            "Changeling",
-            "Dragonborn",
-            "Kalashtar",
-            "Elephantine",
-            "Fairy",
-            "Firbolg",
-            "Genasi",
-            "Geth",
-            "Goliath",
-            "Harengon",
-            "Hexed Lineage",
-            "Kenku",
-            "Leonine",
-            "Minotaur",
-            "Owlin",
-            "Reborn Lineage",
-            "Satyr",
-            "Yuan-Ti",
-            "Shifter",
-            "Tabaxi",
-            "Tiefling",
-            "Triton",
-            "Tortle",
-            "Vedalken",
-            "Warforged",
-            "Locathah",
-        ],
-        "Monster": ["Bugbear", "Goblin", "Hobgoblin", "Kobold", "Lizardfolk", "Orc"],
-        "Common": [
-            "Dwarf",
-            "Elf",
-            "Gnome",
-            "Half-Elf",
-            "Half-Orc",
-            "Halfling",
-            "Human",
-        ],
-        "All": [
-            "Aasimar",
-            "Animal Hybrid",
-            "Aarakocra",
-            "Centaur",
-            "Changeling",
-            "Dragonborn",
-            "Kalashtar",
-            "Elephantine",
-            "Fairy",
-            "Firbolg",
-            "Genasi",
-            "Geth",
-            "Goliath",
-            "Harengon",
-            "Hexed Lineage",
-            "Kenku",
-            "Leonine",
-            "Minotaur",
-            "Owlin",
-            "Reborn Lineage",
-            "Satyr",
-            "Yuan-Ti",
-            "Shifter",
-            "Tabaxi",
-            "Tiefling",
-            "Triton",
-            "Tortle",
-            "Vedalken",
-            "Warforged",
-            "Locathah",
-            "Bugbear",
-            "Goblin",
-            "Hobgoblin",
-            "Kobold",
-            "Lizardfolk",
-            "Orc",
-            "Dwarf",
-            "Elf",
-            "Gnome",
-            "Half-Elf",
-            "Half-Orc",
-            "Halfling",
-            "Human",
-        ],
-    }
-    CLASS_DICT: dict[str, list] = {
-        "Martial": ["Fighter", "Monk", "Ranger", "Rogue"],
-        "Divine": ["Cleric", "Paladin", "Warlock"],
-        "Magic": ["Artificer", "Bard", "Druid", "Sorcerer", "Wizard"],
-        "All": [
-            "Fighter",
-            "Monk",
-            "Ranger",
-            "Rogue",
-            "Cleric",
-            "Paladin",
-            "Warlock",
-            "Artificer",
-            "Bard",
-            "Druid",
-            "Sorcerer",
-            "Wizard",
-        ],
-    }
+    CLASS_OPTIONS = ("All", "Martial", "Magic", "Divine")
+    RACE_OPTIONS = ("All", "Common", "Uncommon", "Monster")
     ALIGNMENT_DICT: dict[str, list] = {
         "Good": ["Lawful Good", "Neutral Good", "Chaotic Good"],
         "Neutral": ["Lawful Neutral", "True Neutral", "Chaotic Neutral"],
@@ -279,7 +175,7 @@ class Character_Generator:
             i = i + 1
         return stat_list
 
-    def generate_race(self, race_list: list[str], generator_key: str) -> str:
+    def generate_race(self, race_option, generator_key: str) -> Race:
         """
         Generates a race from the provided list
         Args:
@@ -295,13 +191,38 @@ class Character_Generator:
         """
         if generator_key not in self.generators:
             raise RuntimeError("Generator does not exist")
-        for x in race_list:
-            if x not in Character_Generator.RACE_DICT["All"]:
-                raise RuntimeError("Invalid List")
-        race: str = race_list[self.generators[generator_key](0, len(race_list) - 1)]
+        if race_option != "All":
+            race_list = Race.objects.filter(Options=race_option)
+            if not race_list.exists():
+                race_list = Race.objects.filter(Name=race_option)
+            elif not race_list.exists():
+                raise ValueError("No matching race")
+        else:
+            race_list = Race.objects.all()
+        if not race_list.exists():
+            raise RuntimeError("race does not exist")
+        race: Race = race_list[self.generators[generator_key](0, len(race_list) - 1)]
         return race
 
-    def generate_class(self, class_list: list[str], generator_key: str) -> str:
+    @staticmethod
+    def get_classes():
+        """Get all classes from database
+
+        Returns:
+            BaseManager[Clazz]: All class object in database
+        """
+        return Clazz.objects.all().order_by("Name")
+
+    @staticmethod
+    def get_races():
+        """Get all races from database
+
+        Returns:
+            BaseManager[Race]: All race object in database
+        """
+        return Race.objects.all().order_by("Name")
+
+    def generate_class(self, class_option, generator_key: str) -> Clazz:
         """
         Returns a random class from the provided list
         Args:
@@ -317,10 +238,21 @@ class Character_Generator:
         """
         if generator_key not in self.generators:
             raise RuntimeError("Generator does not exist")
-        for x in class_list:
-            if x not in Character_Generator.CLASS_DICT["All"]:
-                raise RuntimeError("Invalid List")
-        clazz: str = class_list[self.generators[generator_key](0, len(class_list) - 1)]
+        if generator_key not in self.generators:
+            raise RuntimeError("Generator does not exist")
+        if class_option != "All":
+            class_list = Clazz.objects.filter(Options=class_option)
+            if not class_list.exists():
+                class_list = Clazz.objects.filter(Name=class_option)
+            elif not class_list.exists():
+                raise ValueError("No matching classes")
+        else:
+            class_list = Clazz.objects.all()
+        if not class_list.exists():
+            raise RuntimeError("Class does not exist")
+        clazz: Clazz = class_list[
+            self.generators[generator_key](0, len(class_list) - 1)
+        ]
         return clazz
 
     def generate_alignment(self, alignment_list: list[str], generator_key: str) -> str:
@@ -381,7 +313,7 @@ class Character_Generator:
         background_key="All",
         generator_key="Random",
         stat_list: Optional[list[int]] = None,
-    ) -> dict[str, Union[list[int], str]]:
+    ) -> dict[str, Union[list[int], str, Clazz, Race]]:
         """Given generator parameters, return a dictionary of character characteristics
 
         Args:
@@ -422,20 +354,16 @@ class Character_Generator:
 
         if generations_list is None:
             generations_list = Character_Generator.get_all_generators()
-        generated: dict[str, Union[list[int], str]] = {}
+        generated: dict[str, Union[list[int], str, Race, Clazz]] = {}
         if "Stats" in generations_list:
             if type(stat_list) is list:
                 generated["Stats"] = stat_list
             else:
                 generated["Stats"] = self.generate_stat_list(stat_generator_key)
         if "Race" in generations_list:
-            generated["Race"] = self.generate_race(
-                Character_Generator.RACE_DICT[race_key], generator_key
-            )
+            generated["Race"] = self.generate_race(race_key, generator_key)
         if "Class" in generations_list:
-            generated["Class"] = self.generate_class(
-                Character_Generator.CLASS_DICT[class_key], generator_key
-            )
+            generated["Class"] = self.generate_class(class_key, generator_key)
         if "Alignment" in generations_list:
             generated["Alignment"] = self.generate_alignment(
                 Character_Generator.ALIGNMENT_DICT[alignment_key], generator_key
@@ -447,7 +375,7 @@ class Character_Generator:
         return generated
 
     @staticmethod
-    def Arrange(current_class, stat_array):
+    def arrange_stats(current_class: str, stat_array: list[int]):
         """
         Given a class and a 6 number array it
         arranges the numbers in an optimal allocation for any given class
@@ -459,8 +387,9 @@ class Character_Generator:
         Returns:
             List of stat values in the Strength Dexterity Constitution Intelligence Wisdom Charisma order
         """
-        if current_class not in Character_Generator.CLASS_DICT["All"]:
-            raise RuntimeError("Not a valid class")
+        check_class = Clazz.objects.filter(Name=current_class)
+        if not check_class.exists():
+            raise RuntimeError("Class does not exist")
         if len(stat_array) != 6:
             raise RuntimeError("Not a valid list")
         for i in stat_array:
@@ -471,96 +400,14 @@ class Character_Generator:
         if len(stat_array) != 6:
             raise RuntimeError("Not a valid list")
         stat_array = sorted(stat_array)
-        results = []
-        if current_class == "Artificer":
-            results.append(stat_array[0])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[5])
-            results.append(stat_array[2])
-            results.append(stat_array[1])
-        elif current_class == "Barbarian":
-            results.append(stat_array[5])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[0])
-            results.append(stat_array[2])
-            results.append(stat_array[1])
-        elif current_class == "Bard":
-            results.append(stat_array[1])
-            results.append(stat_array[4])
-            results.append(stat_array[3])
-            results.append(stat_array[0])
-            results.append(stat_array[1])
-            results.append(stat_array[5])
-        elif current_class == "Cleric":
-            results.append(stat_array[3])
-            results.append(stat_array[2])
-            results.append(stat_array[4])
-            results.append(stat_array[0])
-            results.append(stat_array[5])
-            results.append(stat_array[1])
-        elif current_class == "Druid":
-            results.append(stat_array[2])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[1])
-            results.append(stat_array[5])
-            results.append(stat_array[0])
-        elif current_class == "Fighter":
-            results.append(stat_array[5])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[0])
-            results.append(stat_array[2])
-            results.append(stat_array[1])
-        elif current_class == "Monk":
-            results.append(stat_array[2])
-            results.append(stat_array[5])
-            results.append(stat_array[3])
-            results.append(stat_array[1])
-            results.append(stat_array[4])
-            results.append(stat_array[0])
-        elif current_class == "Paladin":
-            results.append(stat_array[5])
-            results.append(stat_array[2])
-            results.append(stat_array[3])
-            results.append(stat_array[0])
-            results.append(stat_array[1])
-            results.append(stat_array[4])
-        elif current_class == "Ranger":
-            results.append(stat_array[2])
-            results.append(stat_array[5])
-            results.append(stat_array[4])
-            results.append(stat_array[1])
-            results.append(stat_array[3])
-            results.append(stat_array[0])
-        elif current_class == "Rogue":
-            results.append(stat_array[0])
-            results.append(stat_array[5])
-            results.append(stat_array[4])
-            results.append(stat_array[3])
-            results.append(stat_array[1])
-            results.append(stat_array[2])
-        elif current_class == "Sorcerer":
-            results.append(stat_array[0])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[2])
-            results.append(stat_array[1])
-            results.append(stat_array[5])
-        elif current_class == "Warlock":
-            results.append(stat_array[1])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[2])
-            results.append(stat_array[0])
-            results.append(stat_array[5])
-        elif current_class == "Wizard":
-            results.append(stat_array[0])
-            results.append(stat_array[3])
-            results.append(stat_array[4])
-            results.append(stat_array[5])
-            results.append(stat_array[2])
-            results.append(stat_array[1])
+        clazz = check_class[0]
+        int_vals = list(map(int, clazz.StatPrecedence.split(",")))
+
+        results: list[int] = []
+        results.append(stat_array[int_vals[0]])
+        results.append(stat_array[int_vals[1]])
+        results.append(stat_array[int_vals[2]])
+        results.append(stat_array[int_vals[3]])
+        results.append(stat_array[int_vals[4]])
+        results.append(stat_array[int_vals[5]])
         return results

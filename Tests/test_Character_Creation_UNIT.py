@@ -3,7 +3,8 @@ import unittest
 import django
 from django.test import TestCase
 
-import toolkit.views.character_generator.character_generation as Char_Gen
+import toolkit.views.character_generator.character_generator_backend as Char_Gen
+from toolkit.models import Clazz, Race
 
 django.setup()
 
@@ -33,49 +34,49 @@ class PositiveTests(TestCase):
 
     def test_generate_race(self):
         """Tests the generate race method"""
-        test_race = self.generator.generate_race(
-            Char_Gen.Character_Generator.RACE_DICT["All"], "Random"
-        )
-        self.assertTrue(test_race in Char_Gen.Character_Generator.RACE_DICT["All"])
+        Monster = Race(Name="A", Options="Monster", Speed=30)
+        Monster.save()
+        Common = Race(Name="B", Options="Common", Speed=30)
+        Common.save()
+        Rare = Race(Name="C", Options="Rare", Speed=30)
+        Rare.save()
+        test_race = self.generator.generate_race("All", "Random")
+        self.assertTrue(test_race in Race.objects.all())
 
-        test_race = self.generator.generate_race(
-            Char_Gen.Character_Generator.RACE_DICT["Common"], "Random"
-        )
-        self.assertTrue(test_race in Char_Gen.Character_Generator.RACE_DICT["Common"])
+        test_race = self.generator.generate_race("Common", "Random")
+        self.assertEqual(test_race, Common)
 
-        test_race = self.generator.generate_race(
-            Char_Gen.Character_Generator.RACE_DICT["Monster"], "Random"
-        )
-        self.assertTrue(test_race in Char_Gen.Character_Generator.RACE_DICT["Monster"])
+        test_race = self.generator.generate_race("Monster", "Random")
+        self.assertEqual(test_race, Monster)
 
-        test_race = self.generator.generate_race(
-            Char_Gen.Character_Generator.RACE_DICT["Rare"], "Random"
-        )
-        self.assertTrue(test_race in Char_Gen.Character_Generator.RACE_DICT["Rare"])
+        test_race = self.generator.generate_race("Rare", "Random")
+        self.assertEqual(test_race, Rare)
 
     def test_generate_class(self):
         """Tests the generate class method"""
-        test_class = self.generator.generate_class(
-            Char_Gen.Character_Generator.CLASS_DICT["All"], "Random"
+        fighter = Clazz(
+            Name="Fighter", Options="Martial", StatPrecedence="0,1,2,3,4,5", HitDice=8
         )
-        self.assertTrue(test_class in Char_Gen.Character_Generator.CLASS_DICT["All"])
+        fighter.save()
+        cleric = Clazz(
+            Name="Cleric", Options="Divine", StatPrecedence="0,1,2,3,4,5", HitDice=8
+        )
+        cleric.save()
+        wizard = Clazz(
+            Name="Wizard", Options="Magic", StatPrecedence="0,1,2,3,4,5", HitDice=8
+        )
+        wizard.save()
+        test_class = self.generator.generate_class("All", "Random")
+        self.assertTrue(test_class in Clazz.objects.all())
 
-        test_class = self.generator.generate_class(
-            Char_Gen.Character_Generator.CLASS_DICT["Martial"], "Random"
-        )
-        self.assertTrue(
-            test_class in Char_Gen.Character_Generator.CLASS_DICT["Martial"]
-        )
+        test_class = self.generator.generate_class("Martial", "Random")
+        self.assertEqual(test_class, fighter)
 
-        test_class = self.generator.generate_class(
-            Char_Gen.Character_Generator.CLASS_DICT["Magic"], "Random"
-        )
-        self.assertTrue(test_class in Char_Gen.Character_Generator.CLASS_DICT["Magic"])
+        test_class = self.generator.generate_class("Divine", "Random")
+        self.assertEqual(cleric, test_class)
 
-        test_class = self.generator.generate_class(
-            Char_Gen.Character_Generator.CLASS_DICT["Divine"], "Random"
-        )
-        self.assertTrue(test_class in Char_Gen.Character_Generator.CLASS_DICT["Divine"])
+        test_class = self.generator.generate_class("Magic", "Random")
+        self.assertEqual(test_class, wizard)
 
     def test_generate_alignment(self):
         """Testing the generate alignment method"""
@@ -117,15 +118,30 @@ class PositiveTests(TestCase):
         )
 
     def test_generate(self):
-        """Testing the wider generate function"""
+        """_summary_"""
+        Monster = Race(Name="A", Options="Monster", Speed=30)
+        Monster.save()
+        Common = Race(Name="B", Options="Common", Speed=30)
+        Common.save()
+        Rare = Race(Name="C", Options="Rare", Speed=30)
+        Rare.save()
+        fighter = Clazz(
+            Name="Fighter", Options="Martial", StatPrecedence="0,1,2,3,4,5", HitDice=8
+        )
+        fighter.save()
+        cleric = Clazz(
+            Name="Cleric", Options="Divine", StatPrecedence="0,1,2,3,4,5", HitDice=8
+        )
+        cleric.save()
+        wizard = Clazz(
+            Name="Wizard", Options="Magic", StatPrecedence="0,1,2,3,4,5", HitDice=8
+        )
+        wizard.save()
+        # Testing the wider generate function
         test_generated = self.generator.generate()
         self.assertEqual(len(test_generated), 5)
-        self.assertTrue(
-            test_generated["Race"] in Char_Gen.Character_Generator.RACE_DICT["All"]
-        )
-        self.assertTrue(
-            test_generated["Class"] in Char_Gen.Character_Generator.CLASS_DICT["All"]
-        )
+        self.assertTrue(test_generated["Race"] in Race.objects.all())
+        self.assertTrue(test_generated["Class"] in Clazz.objects.all())
         self.assertTrue(
             test_generated["Alignment"]
             in Char_Gen.Character_Generator.ALIGNMENT_DICT["All"]
@@ -141,9 +157,7 @@ class PositiveTests(TestCase):
 
         test_generated = self.generator.generate(["Race"])
         self.assertEqual(len(test_generated), 1)
-        self.assertTrue(
-            test_generated["Race"] in Char_Gen.Character_Generator.RACE_DICT["All"]
-        )
+        self.assertTrue(test_generated["Race"] in Race.objects.all())
 
         test_generated = self.generator.generate(
             ["Class", "Alignment", "Background", "Stats", "Race"],
@@ -156,12 +170,8 @@ class PositiveTests(TestCase):
             [12, 12, 12, 12, 12, 12],
         )
         self.assertEqual(len(test_generated), 5)
-        self.assertTrue(
-            test_generated["Race"] in Char_Gen.Character_Generator.RACE_DICT["Monster"]
-        )
-        self.assertTrue(
-            test_generated["Class"] in Char_Gen.Character_Generator.CLASS_DICT["Magic"]
-        )
+        self.assertTrue(test_generated["Race"] in Race.objects.all())
+        self.assertTrue(test_generated["Class"] in Clazz.objects.all())
         self.assertTrue(
             test_generated["Alignment"]
             in Char_Gen.Character_Generator.ALIGNMENT_DICT["Evil"]
@@ -220,22 +230,21 @@ class Negative_Tests(TestCase):
         Too many inputs
         Too few inputs
         """
-        with self.assertRaises(RuntimeError, msg="Should not accept nonexisting keys"):
-            self.generator.generate_race(
-                Char_Gen.Character_Generator.RACE_DICT["All"], "GARBAGE"
-            )
+        Monster = Race(Name="A", Options="Monster", Speed=30)
+        Monster.save()
+        Common = Race(Name="B", Options="Common", Speed=30)
+        Common.save()
+        Rare = Race(Name="C", Options="Rare", Speed=30)
+        Rare.save()
+
         with self.assertRaises(
-            RuntimeError, msg="Should not accept unapproved items in lists"
+            RuntimeError, msg="Should not accept nonexisting race filters"
         ):
-            self.generator.generate_race(["Potato"], "Random")
+            self.generator.generate_race("Fighter", "GARBAGE")
         with self.assertRaises(Exception, msg="Should not accept that many inputs"):
-            self.generator.generate_stat_list(
-                Char_Gen.Character_Generator.RACE_DICT["All"], "Random", "too many"
-            )
+            self.generator.generate_stat_list("All", "Random", "too many")
         with self.assertRaises(Exception, msg="Should not accept that few inputs"):
-            self.generator.generate_stat_list(
-                Char_Gen.Character_Generator.RACE_DICT["All"]
-            )
+            self.generator.generate_stat_list("All")
 
     def test_generate_class(self):
         """
@@ -244,22 +253,29 @@ class Negative_Tests(TestCase):
         Too many inputs
         Too few inputs
         """
+        fighter = Clazz(
+            Name="Fighter", Options="Martial", StatPrecedence="0,1,2,3,4,5", HitDice=8
+        )
+        fighter.save()
+        cleric = Clazz(
+            Name="Cleric", Options="Divine", StatPrecedence="0,1,2,3,4,5", HitDice=8
+        )
+        cleric.save()
+        wizard = Clazz(
+            Name="Wizard", Options="Magic", StatPrecedence="0,1,2,3,4,5", HitDice=8
+        )
+        wizard.save()
+
         with self.assertRaises(RuntimeError, msg="Should not accept nonexisting keys"):
-            self.generator.generate_class(
-                Char_Gen.Character_Generator.CLASS_DICT["All"], "GARBAGE"
-            )
+            self.generator.generate_class("Fighter", "GARBAGE")
         with self.assertRaises(
-            RuntimeError, msg="Should not accept nonapproved items in the list"
+            RuntimeError, msg="Should not accept not in database item"
         ):
-            self.generator.generate_class(["Musician"], "Random")
+            self.generator.generate_class("Musician", "Random")
         with self.assertRaises(Exception, msg="Should not accept that many inputs"):
-            self.generator.generate_class(
-                Char_Gen.Character_Generator.CLASS_DICT["All"], "Random", "too many"
-            )
+            self.generator.generate_class("Fighter", "Random", "too many")
         with self.assertRaises(Exception, msg="Should not accept that few inputs"):
-            self.generator.generate_class(
-                Char_Gen.Character_Generator.CLASS_DICT["All"]
-            )
+            self.generator.generate_class("Fighter")
 
     def test_generate_alignment(self):
         """
@@ -354,7 +370,11 @@ class Arrange_Tests(unittest.TestCase):
 
     def test_positive_arrange(self):
         """Testing to make sure the arrange algorithm works"""
-        results = self.generator.Arrange("Paladin", [15, 10, 12, 13, 18, 9])
+        Paladin = Clazz(
+            Name="Paladin", Options="Divine", StatPrecedence="5,2,3,0,1,4", HitDice=10
+        )
+        Paladin.save()
+        results = self.generator.arrange_stats("Paladin", [15, 10, 12, 13, 18, 9])
         self.assertEqual(results[0], 18)
         self.assertEqual(results[1], 12)
         self.assertEqual(results[2], 13)
@@ -374,12 +394,12 @@ class Arrange_Tests(unittest.TestCase):
         with self.assertRaises(
             RuntimeError, msg="Should not accept a non existing class"
         ):
-            self.generator.Arrange("Potato", [18, 16, 14, 12, 10, 8])
+            self.generator.arrange_stats("Potato", [18, 16, 14, 12, 10, 8])
         with self.assertRaises(RuntimeError, msg="Should not accept a too small list"):
-            self.generator.Arrange("Rogue", [18, 16, 14, 12, 10])
+            self.generator.arrange_stats("Rogue", [18, 16, 14, 12, 10])
         with self.assertRaises(RuntimeError, msg="Should not accept a too big list"):
-            self.generator.Arrange("Bard", [18, 16, 14, 12, 10, 8, 6, 4])
+            self.generator.arrange_stats("Bard", [18, 16, 14, 12, 10, 8, 6, 4])
         with self.assertRaises(
             RuntimeError, msg="Should not accept a non integer in the list"
         ):
-            self.generator.Arrange("Warlock", [18, 16, 14, 12, "Test"])
+            self.generator.arrange_stats("Warlock", [18, 16, 14, 12, "Test"])

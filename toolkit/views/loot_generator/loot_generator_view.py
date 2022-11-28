@@ -4,11 +4,17 @@ import traceback
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
+from django.contrib import messages
 from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
 
-from toolkit.views.loot_generator.loot_generation import Loot_Generator
+from toolkit.views.loot_generator.cache_loot import (
+    cache_loot,
+    delete_cached_loot,
+    save_cached_loot,
+)
+from toolkit.views.loot_generator.loot_generator_backend import Loot_Generator
 
 logger = logging.getLogger(__name__)
 
@@ -41,20 +47,18 @@ class LootGenerator(View):
         loot_type_list = ["Random"]
         loot_type_list.extend(sorted(self.generator.LOOT_TYPE_DICT))
         self.context["loot_type_list"] = loot_type_list
+        self.context["cached"] = False
 
     def get(self, request: HttpRequest):
-        """GET method for the character generation."""
+        """GET method for the loot generation."""
         self.context["data"] = GenerateLootInputs()
         return render(request, "loot_generator.html", self.context)
 
     def post(self, request: HttpRequest):
-        """POST method for create user page."""
+        """POST method for the loot generation."""
         form = GenerateLootInputs.from_dict(request.POST)
         self.context["data"] = form
         self.context["error"] = None
-        if request.POST.get("clear_button") is not None:
-            self.context["data"] = GenerateLootInputs()
-            return render(request, "loot_generator.html", self.context)
         if not form.is_valid():
             self.context["form"] = form
             return render(request, "loot_generator.html", self.context)
@@ -71,13 +75,28 @@ class LootGenerator(View):
                     input_loot_type=form.loot_type.value,
                 )
                 loot_object = generated.get("loot_object")
-                self.context["total_value"] = int(loot_object.Total_Value)
-                self.context["money"] = int(loot_object.Money)
-                generated_list = generated.get("armor")
+                self.context["total_value"] = round(loot_object.Total_Value, 3)
+                self.context["money"] = round(loot_object.Money, 3)
+                generated_list = []
+                generated_list.extend(generated.get("armor"))
                 generated_list.extend(generated.get("weapons"))
-                generated_list.extend(generated.get("general0"))
+                generated_list.extend(generated.get("general"))
                 generated_list.extend(generated.get("magic"))
                 self.context["generated_list"] = generated_list
+
+                if request.user.is_authenticated:
+                    try:
+                        cache_loot(
+                            user=request.user,
+                            loot=loot_object,
+                            weapons_output=generated.get("weapons"),
+                            armors_output=generated.get("armor"),
+                            generic_items_output=generated.get("general"),
+                            magic_items_output=generated.get("magic"),
+                        )
+                        self.context["cached"] = True
+                    except TypeError as e:
+                        logger.warning(e)
                 return render(request, "loot_generator.html", self.context)
             except ValueError as e:
                 logger.warning(traceback.format_exc())
@@ -85,6 +104,18 @@ class LootGenerator(View):
                 self.context["error"] = str(e)
                 return render(request, "loot_generator.html", self.context)
         if request.POST.get("save_button") is not None:
+            if request.user.is_authenticated:
+                save_cached_loot(request.user)
+                messages.success(request, "Loot saved successfully!")
+                self.context["cached"] = False
+            else:
+                self.context["form"] = form
+            return render(request, "loot_generator.html", self.context)
+        if request.POST.get("clear_button") is not None:
+            if request.user.is_authenticated:
+                delete_cached_loot(request.user)
+                self.context["cached"] = False
+            self.context["data"] = GenerateLootInputs()
             return render(request, "loot_generator.html", self.context)
         return render(request, "loot_generator.html", self.context)
 
@@ -106,7 +137,7 @@ class GenerateLootInputs:
             env (dict[str, Any]): Any dictionary
 
         Returns:
-            GeneratedLootInputs: new GeneratedCharacterInputs with args from env
+            GeneratedLootInputs: new GeneratedLootInputs with args from env
         """
         return cls(
             **{

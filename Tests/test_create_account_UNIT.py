@@ -2,7 +2,7 @@ import django
 from django.test import TestCase
 
 from toolkit.models import User
-from toolkit.views.create_account import create_user
+from toolkit.views.account.create_account import create_user
 
 django.setup()
 

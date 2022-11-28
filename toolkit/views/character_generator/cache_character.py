@@ -3,6 +3,7 @@ from typing import Optional
 from django.contrib.auth.models import User
 
 from toolkit.models import Character
+from toolkit.utilities.cache import get_cache
 from toolkit.views.character_generator.character_elements import (
     GenerateCharacterInputs,
     GeneratedCharacterOutputs,
@@ -38,12 +39,13 @@ def cache_character(
         Wisdom=char_output.wisdom,
         Charisma=char_output.charisma,
     )
-    cache = user.cache.character
-    if cache is not None:
-        cache.delete()
+    cache = get_cache(user)
+    character_cache = cache.character
+    if character_cache is not None:
+        character_cache.delete()
 
     character.save()
-    user.cache.character = character
+    cache.character = character
     user.save()
 
 

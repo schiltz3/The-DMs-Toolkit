@@ -2,7 +2,9 @@ import inspect
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
-from toolkit.views.character_generator.character_generation import Character_Generator
+from toolkit.views.character_generator.character_generator_backend import (
+    Character_Generator,
+)
 
 
 @dataclass
@@ -75,7 +77,11 @@ class Stat:
             Stat: return self for chaining
         """
         val = self.value + self.proficiency
-        pos = "+" if self.value + val >= 0 else "-"
+        pos = ""
+        if self.value > 0:
+            pos = "+"
+        if self.value < 0:
+            pos = "-"
         self.repr = f"{pos} {abs(val)}"
         return self
 

@@ -6,6 +6,63 @@ from django.dispatch import receiver
 # Create your models here.
 
 
+class Proficiencies(models.Model):
+    """
+    Proficiencies
+
+    Args:
+        Name-String
+        Stat- relevant stat
+
+    Returns:
+        Proficiency object
+    """
+
+    Name = models.CharField(max_length=20, blank=True)
+    Stat = models.CharField(max_length=20, blank=True)
+
+    def __str__(self):
+        return self.Name
+
+
+class Race(models.Model):
+    """_summary_
+
+    Args:
+        Name = String
+        Speed = Integer
+
+    Returns:
+        Race object
+    """
+
+    Name = models.CharField(max_length=20)
+    Speed = models.IntegerField(default=30)
+    Size = models.CharField(max_length=20)
+    Options = models.CharField(max_length=10)
+
+    def __str__(self):
+        return self.Name
+
+
+class Clazz(models.Model):
+    """Creates Class
+
+    Args:
+        Name = String
+        Proficiencies = Many to Many
+    """
+
+    Name = models.CharField(max_length=20)
+    Options = models.CharField(max_length=10)
+    Proficiencies = models.ManyToManyField(Proficiencies)
+    HitDice = models.IntegerField()
+    StatPrecedence = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.Name
+
+
 class Character(models.Model):
     """
     Creates Characters
@@ -31,8 +88,12 @@ class Character(models.Model):
 
     Name = models.CharField(max_length=20)
     Owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    Race = models.CharField(max_length=15)
-    Class = models.CharField(max_length=9)
+    Race = models.ForeignKey(
+        Race, on_delete=models.SET_NULL, null=True, blank=True, default=None
+    )
+    Class = models.ForeignKey(
+        Clazz, on_delete=models.SET_NULL, null=True, blank=True, default=None
+    )
     Background = models.CharField(max_length=22)
     Alignment = models.CharField(max_length=17)
     Level = models.IntegerField()
@@ -43,6 +104,9 @@ class Character(models.Model):
     Intelligence = models.IntegerField()
     Wisdom = models.IntegerField()
     Charisma = models.IntegerField()
+    Character_Proficiencies = models.ManyToManyField(
+        Proficiencies, blank=True, default=""
+    )
 
     def __str__(self):
         return f"Name: {self.Name}, Owner: {self.Owner}, lvl: {self.Level}, Class: {self.Class}"
@@ -189,6 +253,9 @@ class GeneratedLoot(models.Model):
     Generic_Items = models.ManyToManyField(GenericItem, blank=True)
     Magical_Items = models.ManyToManyField(MagicItem, blank=True)
 
+    def __str__(self) -> str:
+        return f"{self.Owner},\t{self.Loot_Type},\tTotal Value: {self.Total_Value}"
+
 
 class Tag(models.Model):
     """
@@ -199,6 +266,9 @@ class Tag(models.Model):
     """
 
     Name = models.CharField(primary_key=True, max_length=30)
+
+    def __str__(self) -> str:
+        return f"{self.Name}"
 
 
 class Monster(models.Model):
@@ -221,12 +291,16 @@ class Monster(models.Model):
     """
 
     Name = models.CharField(primary_key=True, max_length=30)
-    Size = models.CharField(max_length=20)
     Challenge_Rating = models.FloatField()
+    Size = models.CharField(max_length=20)
     Type = models.CharField(max_length=20)
     Alignment = models.CharField(max_length=20)
+    Armor_Class = models.IntegerField(blank=True, null=True)
+    Hitpoints = models.IntegerField(blank=True, null=True)
+    Initiative = models.IntegerField(blank=True, null=True)
     Gold_Modifier = models.FloatField(blank=True, null=True)
-    Creature_Tags = models.ManyToManyField(Tag)
+    Creature_Tags = models.ManyToManyField(Tag, blank=True)
+    Source = models.CharField(max_length=30)
 
     def __str__(self) -> str:
         return self.Name
@@ -254,11 +328,28 @@ class GeneratedEncounter(models.Model):
     Reward = models.OneToOneField(
         GeneratedLoot, on_delete=models.SET_NULL, null=True, blank=True
     )
+    Average_CR = models.FloatField(default=0)
     Encounter_Tags = models.ManyToManyField(Tag, blank=True)
-    Monsters = models.ManyToManyField(Monster)
+    Monsters = models.ManyToManyField(Monster, blank=True)
 
     def __str__(self) -> str:
-        return f"{self.Encounter_Type},\t{self.Monsters}"
+        return f"{self.Owner},\t{self.Encounter_Type},\t{self.Monsters}"
+
+
+class Source(models.Model):
+    """Source database
+
+    Args:
+        Type, name, shortname link =  strings
+    """
+
+    Type = models.CharField(max_length=20)
+    Name = models.CharField(max_length=20)
+    ShortName = models.CharField(max_length=20)
+    Link = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.Name
 
 
 class Cache(models.Model):
@@ -274,9 +365,15 @@ class Cache(models.Model):
     character = models.OneToOneField(
         Character, on_delete=models.CASCADE, null=True, blank=True
     )
+    loot = models.OneToOneField(
+        GeneratedLoot, on_delete=models.CASCADE, null=True, blank=True
+    )
+    encounter = models.OneToOneField(
+        GeneratedEncounter, on_delete=models.CASCADE, null=True, blank=True
+    )
 
     def __str__(self) -> str:
-        return f"{self.user},\t{self.character}"
+        return f"{self.user},\t{self.character},\t{self.loot},\t{self.encounter}"
 
 
 @receiver(post_save, sender=User)
@@ -289,4 +386,6 @@ def create_user_cache(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_cache(sender, instance, **kwargs):
     """Save the cache object when saving the user object"""
+    if not hasattr(instance, "cache"):
+        instance.cache = Cache()
     instance.cache.save()
