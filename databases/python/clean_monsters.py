@@ -37,12 +37,13 @@ def convert(value, f: Callable[[Any], str]):
     input value if it failed
     """
     p_str = value
+    r_value = value
     try:
-        value = f(value)
+        r_value = f(value)
     except ValueError:
         logger.error(f"Value: `{value}` can not be converted")
-    logger.debug(f"{p_str} -> {value}")
-    return value
+    logger.debug(f"{p_str} -> {r_value}")
+    return r_value
 
 
 def default_parser(v):
@@ -104,18 +105,17 @@ if __name__ == "__main__":
             for k, v in fields.items():
                 if k not in parsers:
                     continue
-                match v:
-                    case [*values]:
-                        fields[k] = [
-                            convert(val, parsers[k][type(val).__name__])
-                            for val in values
-                        ]
-                    case val:
-                        parser = parsers[k].get(
-                            type(v).__name__,
-                            parsers[k].get("default", default_parser),
-                        )
-                        fields[k] = convert(v, parser)
+                if isinstance(v, list):
+                    fields[k] = [
+                        convert(val, parsers[k][type(val).__name__])
+                        for val in v
+                    ]
+                else:
+                    parser = parsers[k].get(
+                        type(v).__name__,
+                        parsers[k].get("default", default_parser),
+                    )
+                    fields[k] = convert(v, parser)
     output_path = args.output
     if output_path:
         output_path = Path(output_path)
