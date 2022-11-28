@@ -77,7 +77,11 @@ class Stat:
             Stat: return self for chaining
         """
         val = self.value + self.proficiency
-        pos = "+" if self.value + val >= 0 else "-"
+        pos = ""
+        if self.value > 0:
+            pos = "+"
+        if self.value < 0:
+            pos = "-"
         self.repr = f"{pos} {abs(val)}"
         return self
 

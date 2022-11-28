@@ -5,11 +5,14 @@ from .models import (
     Armor,
     Cache,
     Character,
+    Clazz,
     GeneratedEncounter,
     GeneratedLoot,
     GenericItem,
     MagicItem,
     Monster,
+    Proficiencies,
+    Race,
     Tag,
     Weapon,
 )
@@ -24,3 +27,6 @@ admin.site.register(Tag)
 admin.site.register(Monster)
 admin.site.register(GeneratedEncounter)
 admin.site.register(Cache)
+admin.site.register(Clazz)
+admin.site.register(Race)
+admin.site.register(Proficiencies)
