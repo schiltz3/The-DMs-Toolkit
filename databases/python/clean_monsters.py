@@ -31,17 +31,17 @@ def set_up_arg_parser():
     return parser
 
 
-def convert(value, f: Callable[[Any], str]):
+def convert(v, f: Callable[[Any], str]):
     """
     Tries to call f on the input value. Printing the before and after or an error message if it failed. returns the
     input value if it failed
     """
-    p_str = value
-    r_value = value
+    p_str = v
+    r_value = v
     try:
-        r_value = f(value)
+        r_value = f(v)
     except ValueError:
-        logger.error(f"Value: `{value}` can not be converted")
+        logger.error(f"Value: `{v}` can not be converted")
     logger.debug(f"{p_str} -> {r_value}")
     return r_value
 
@@ -52,22 +52,22 @@ def default_parser(v):
 
 
 @logger.catch
-def parse_ac(value: str):
+def parse_ac(v: str):
     """Parse armor class field"""
     try:
-        r = int(value)
+        r = int(v)
     except ValueError:
-        values = value.split(" ")[0].split(",")
+        values = v.split(" ")[0].split(",")
         return parse_ac(values[0])
     return r
 
 
-def parse_frac(value: str):
+def parse_frac(v: str):
     """Parse strings that could be a fraction"""
     fraction = r"\d+\/\d+"
-    if re.match(fraction, value):
-        return float(Fraction(value))
-    return float(value)
+    if re.match(fraction, v):
+        return float(Fraction(v))
+    return float(v)
 
 
 parsers: dict[str, dict[str, Callable]] = {
@@ -82,15 +82,15 @@ parsers: dict[str, dict[str, Callable]] = {
 
 if __name__ == "__main__":
     args = set_up_arg_parser().parse_args()
-    v = args.verbose
-    vv = args.vv
+    verbose = args.verbose
+    vverbose = args.vv
     path = Path(args.input)
     level = "DEBUG"
-    if not (v or vv):
+    if not (verbose or vverbose):
         logger.disable(__name__)
-    elif v:
+    elif verbose:
         level = "INFO"
-    elif vv:
+    elif vverbose:
         level = "DEBUG"
 
     logger.configure(
@@ -102,19 +102,19 @@ if __name__ == "__main__":
         for monster in monsters:
             monster = cast(dict, monster)
             fields = monster.get("fields")
-            for k, v in fields.items():
+            for k, value in fields.items():
                 if k not in parsers:
                     continue
-                if isinstance(v, list):
+                if isinstance(value, list):
                     fields[k] = [
-                        convert(val, parsers[k][type(val).__name__]) for val in v
+                        convert(val, parsers[k][type(val).__name__]) for val in value
                     ]
                 else:
                     parser = parsers[k].get(
-                        type(v).__name__,
+                        type(verbose).__name__,
                         parsers[k].get("default", default_parser),
                     )
-                    fields[k] = convert(v, parser)
+                    fields[k] = convert(value, parser)
     output_path = args.output
     if output_path:
         output_path = Path(output_path)
