@@ -100,7 +100,8 @@ class EncounterGenerator(View):
                     except TypeError as e:
                         logger.warning(e)
                 return render(request, "encounter_generator.html", self.context)
-            except ValueError as e:
+            except (ValueError, ZeroDivisionError) as e:
+                messages.error(request, "Unable to generate encounter")
                 logger.warning(traceback.format_exc())
                 self.context["form"] = form
                 self.context["error"] = str(e)
