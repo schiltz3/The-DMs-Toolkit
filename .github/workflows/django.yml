@@ -35,13 +35,7 @@ jobs:
           python manage.py test
       - name: Debug
         run: ls
-  upload:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - uses: actions/checkout@v3
-      - name: Debug
-        run: ls
+
       - name: Report results to DeepSource
         run: |
           curl https://deepsource.io/cli | sh
