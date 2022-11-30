@@ -1,3 +1,5 @@
 -r prod.txt
 
 black ~= 22.8
+loguru ~= 0.6.0
+mypy
