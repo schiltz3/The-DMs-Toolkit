@@ -65,19 +65,26 @@ class GenerateCharacterInputs:
             not in Character_Generator().get_all_random_generators()
         ):
             return False
+        print(type(self.clazz.value))
         if (
             self.clazz.value not in Character_Generator.CLASS_OPTIONS
             and not Clazz.objects.filter(Name=self.clazz.value).exists()
         ):
             return False
-        if self.background.value not in Character_Generator.BACKGROUND_DICT:
+        if (
+            self.background.value != "All" and
+            self.background.value not in Character_Generator.BACKGROUND_DICT.get("All")
+        ):
             return False
         if (
             self.race.value not in Character_Generator.RACE_OPTIONS
             and not Race.objects.filter(Name=self.race.value).exists()
         ):
             return False
-        if self.alignment.value not in Character_Generator.ALIGNMENT_DICT:
+        if (
+            self.alignment.value != "All" and
+            self.alignment.value not in Character_Generator.ALIGNMENT_DICT.get("All")
+        ):
             return False
         return True
 

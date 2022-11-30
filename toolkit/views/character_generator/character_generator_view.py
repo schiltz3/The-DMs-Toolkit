@@ -71,7 +71,7 @@ class CharacterGenerator(View):
         self.context["data"] = form
         if not form.is_valid():
             self.context["form"] = form
-            # logger.info("Invalid form")
+            logger.info("Invalid form")
             self.context["data"] = GenerateCharacterInputs(
                 player_name=Element(request.user.get_username())
             )
