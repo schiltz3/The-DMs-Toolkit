@@ -65,6 +65,7 @@ class TestCharacterGenerator(TestCase):
 
     def test_form_valid_clazz(self):
         """Tests to see if the form is valid given all clazz options"""
+        print(self.clazz_list)
         for clazz in self.clazz_list:
             form = self.form.from_dict(
                 {
