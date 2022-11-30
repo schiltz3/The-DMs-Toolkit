@@ -11,10 +11,6 @@ exclude_patterns = ["toolkit/migrations/**"]
 name = "python"
 enabled = true
 
-[[analyzers]]
-name = "test-coverage"
-enabled = true
-
   [analyzers.meta]
   runtime_version = "3.x.x"
 
