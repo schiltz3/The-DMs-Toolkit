@@ -2,11 +2,9 @@ import inspect
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
+from toolkit.models import Clazz, Race
 from toolkit.views.character_generator.character_generator_backend import (
     Character_Generator,
-)
-from toolkit.models import (
-    Clazz, Race
 )
 
 
@@ -61,15 +59,25 @@ class GenerateCharacterInputs:
             bool: Tru if dataclass holds valid data
         """
         self.character_name.value = self.character_name.value.strip()
-        if (self.generator_type.value != "All" and self.generator_type.value not in Character_Generator().get_all_random_generators()):
+        if (
+            self.generator_type.value != "All"
+            and self.generator_type.value
+            not in Character_Generator().get_all_random_generators()
+        ):
             return False
-        if (self.clazz.value not in Character_Generator.CLASS_OPTIONS and not Clazz.objects.filter(Name=self.clazz.value).exists()):
+        if (
+            self.clazz.value not in Character_Generator.CLASS_OPTIONS
+            and not Clazz.objects.filter(Name=self.clazz.value).exists()
+        ):
             return False
-        if (self.background.value not in Character_Generator.BACKGROUND_DICT):
+        if self.background.value not in Character_Generator.BACKGROUND_DICT:
             return False
-        if (self.race.value not in Character_Generator.RACE_OPTIONS and not Race.objects.filter(Name=self.race.value).exists()):
+        if (
+            self.race.value not in Character_Generator.RACE_OPTIONS
+            and not Race.objects.filter(Name=self.race.value).exists()
+        ):
             return False
-        if (self.alignment.value not in Character_Generator.ALIGNMENT_DICT):
+        if self.alignment.value not in Character_Generator.ALIGNMENT_DICT:
             return False
         return True
 
