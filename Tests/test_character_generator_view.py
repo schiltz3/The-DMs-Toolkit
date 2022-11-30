@@ -360,7 +360,7 @@ class TestCharacterGenerator(TestCase):
         self.assertTrue(response.context["cached"])
         cache = Cache.objects.get(user=self.test_user)
         self.assertIsNotNone(cache.character)
-        
+
     def test_save_not_logged_in(self):
         """Tests to see if a user can save a generated loot while not logged in"""
         response = self.client.post(
