@@ -298,3 +298,139 @@ class TestCharacterGenerator(TestCase):
         self.assertEqual(response.status_code, 200)
         output: GeneratedCharacterOutputs = response.context["out"]
         self.assertEqual(output.strength, self.no_output.strength)
+
+    def test_save_cache(self):
+        """Tests to see if a user can save a generated character in it's cache to the database."""
+        self.client.force_login(self.test_user)
+        response = self.client.post(
+            self.character_generator_url,
+            data={
+                "generate_button": "",
+                "character_name": self.name,
+                "player_name": "",
+                "clazz": self.all,
+                "background": self.all,
+                "race": self.all,
+                "alignment": self.all,
+                "generator_type": self.gen_keys[0],
+                "experience_points": 0,
+            },
+            follow=True,
+        )
+        response = self.client.post(
+            self.character_generator_url,
+            data={
+                "save_button": "",
+                "character_name": self.name,
+                "player_name": "",
+                "clazz": self.all,
+                "background": self.all,
+                "race": self.all,
+                "alignment": self.all,
+                "generator_type": self.gen_keys[0],
+                "experience_points": 0,
+            },
+            follow=True,
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(response.context["cached"])
+        cache = Cache.objects.get(user=self.test_user)
+        self.assertIsNone(cache.character)
+        self.assertIsNotNone(Character.objects.filter(Owner=self.test_user))
+
+    def test_generate_cache(self):
+        """Tests to see if a user can save a generated character to it's cache."""
+        self.client.force_login(self.test_user)
+        response = self.client.post(
+            self.character_generator_url,
+            data={
+                "generate_button": "",
+                "character_name": self.name,
+                "player_name": "",
+                "clazz": self.all,
+                "background": self.all,
+                "race": self.all,
+                "alignment": self.all,
+                "generator_type": self.gen_keys[0],
+                "experience_points": 0,
+            },
+            follow=True,
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.context["cached"])
+        cache = Cache.objects.get(user=self.test_user)
+        self.assertIsNotNone(cache.character)
+        
+    def test_save_not_logged_in(self):
+        """Tests to see if a user can save a generated loot while not logged in"""
+        response = self.client.post(
+            self.character_generator_url,
+            data={
+                "generate_button": "",
+                "character_name": self.name,
+                "player_name": "",
+                "clazz": self.all,
+                "background": self.all,
+                "race": self.all,
+                "alignment": self.all,
+                "generator_type": self.gen_keys[0],
+                "experience_points": 0,
+            },
+            follow=True,
+        )
+        response = self.client.post(
+            self.character_generator_url,
+            data={
+                "save_button": "",
+                "character_name": self.name,
+                "player_name": "",
+                "clazz": self.all,
+                "background": self.all,
+                "race": self.all,
+                "alignment": self.all,
+                "generator_type": self.gen_keys[0],
+                "experience_points": 0,
+            },
+            follow=True,
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertFalse(response.context["cached"])
+        cache = Cache.objects.get(user=self.test_user)
+        self.assertIsNone(cache.character)
+
+    def test_clear(self):
+        """Tests to see if a user is able to click the clear button and reset all inputs."""
+        response = self.client.post(
+            self.character_generator_url,
+            data={
+                "clear_button": "",
+                "character_name": self.name,
+                "player_name": "",
+                "clazz": self.all,
+                "background": self.all,
+                "race": self.all,
+                "alignment": self.all,
+                "generator_type": self.gen_keys[0],
+                "experience_points": 0,
+            },
+            follow=True,
+        )
+        self.assertEqual(response.status_code, 200)
+
+    def test_no_button(self):
+        """Tests post method after no button press"""
+        response = self.client.post(
+            self.character_generator_url,
+            data={
+                "character_name": self.name,
+                "player_name": "",
+                "clazz": self.all,
+                "background": self.all,
+                "race": self.all,
+                "alignment": self.all,
+                "generator_type": self.gen_keys[0],
+                "experience_points": 0,
+            },
+            follow=True,
+        )
+        self.assertEqual(response.status_code, 200)
