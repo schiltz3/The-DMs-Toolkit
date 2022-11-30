@@ -1,4 +1,5 @@
 import logging
+
 from django.test import Client, TestCase
 from django.urls import reverse
 
@@ -17,10 +18,20 @@ class TestCharacterGenerator(TestCase):
         Function to set up all tests with information needed within
         each individual test case.
         """
-        logging.disable(logging.CRITICAL) # Disable logging so it doesn't print when running tests
+        logging.disable(
+            logging.CRITICAL
+        )  # Disable logging so it doesn't print when running tests
         self.client = Client()
         self.form = GenerateCharacterInputs()
-        self.no_output = GeneratedCharacterOutputs(strength=0, dexterity=0, constitution=0, intelligence=0, wisdom=0, charisma=0, proficiency=2,)
+        self.no_output = GeneratedCharacterOutputs(
+            strength=0,
+            dexterity=0,
+            constitution=0,
+            intelligence=0,
+            wisdom=0,
+            charisma=0,
+            proficiency=2,
+        )
         self.username = "dummy"
         self.password = "password"
         self.name = "Test"
@@ -45,7 +56,7 @@ class TestCharacterGenerator(TestCase):
         self.test_user.delete()
         self.race.delete()
         self.clazz.save()
-        logging.disable(logging.NOTSET) # Re-enable logging after running tests
+        logging.disable(logging.NOTSET)  # Re-enable logging after running tests
 
     def test_can_access_character_page(self):
         """Tests to see if a user is able to access the character generator page."""
@@ -161,7 +172,7 @@ class TestCharacterGenerator(TestCase):
             }
         )
         self.assertFalse(form.is_valid())
-            
+
     def test_successful_generate_3D6(self):
         """Tests if a user is able to successfully generate character for all correct input."""
         response = self.client.post(
@@ -182,7 +193,7 @@ class TestCharacterGenerator(TestCase):
         self.assertEqual(response.status_code, 200)
         output: GeneratedCharacterOutputs = response.context["out"]
         self.assertNotEqual(output.strength, self.no_output.strength)
-        
+
     def test_successful_generate_Standard(self):
         """Tests if a user is able to successfully generate character for all correct input."""
         response = self.client.post(
@@ -203,7 +214,7 @@ class TestCharacterGenerator(TestCase):
         self.assertEqual(response.status_code, 200)
         output: GeneratedCharacterOutputs = response.context["out"]
         self.assertNotEqual(output.strength, self.no_output.strength)
-        
+
     def test_unsuccessful_generate_character_clazz(self):
         """Tests if a user is able to successfully generate character for incorrect clazz input."""
         response = self.client.post(
@@ -224,7 +235,7 @@ class TestCharacterGenerator(TestCase):
         self.assertEqual(response.status_code, 200)
         output: GeneratedCharacterOutputs = response.context["out"]
         self.assertEqual(output.strength, self.no_output.strength)
-        
+
     def test_unsuccessful_generate_character_background(self):
         """Tests if a user is able to successfully generate character for incorrect background input."""
         response = self.client.post(
@@ -245,7 +256,7 @@ class TestCharacterGenerator(TestCase):
         self.assertEqual(response.status_code, 200)
         output: GeneratedCharacterOutputs = response.context["out"]
         self.assertEqual(output.strength, self.no_output.strength)
-        
+
     def test_unsuccessful_generate_character_race(self):
         """Tests if a user is able to successfully generate character for incorrect race input."""
         response = self.client.post(
@@ -266,7 +277,7 @@ class TestCharacterGenerator(TestCase):
         self.assertEqual(response.status_code, 200)
         output: GeneratedCharacterOutputs = response.context["out"]
         self.assertEqual(output.strength, self.no_output.strength)
-    
+
     def test_unsuccessful_generate_character_alignment(self):
         """Tests if a user is able to successfully generate character for incorrect alignment input."""
         response = self.client.post(
