@@ -1,5 +1,5 @@
 django ~= 4.1
 django_stubs[compatible-mypy]
-mypy ~= 0.961
+mypy ~= 0.991
 django-extensions ~= 3.2.0
 djlint ~= 1.17
