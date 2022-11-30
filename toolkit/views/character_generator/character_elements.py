@@ -70,7 +70,7 @@ class GenerateCharacterInputs:
             and not Clazz.objects.filter(Name=self.clazz.value).exists()
         ):
             return False
-        background_list = Character_Generator().BACKGROUND_DICT.get("All")
+        background_list: list[str] = Character_Generator.BACKGROUND_DICT.get("All")
         if (
             self.background.value != "All"
             and self.background.value not in background_list
@@ -81,7 +81,7 @@ class GenerateCharacterInputs:
             and not Race.objects.filter(Name=self.race.value).exists()
         ):
             return False
-        alignment_list = Character_Generator().ALIGNMENT_DICT.get("All")
+        alignment_list: list[str] = Character_Generator.ALIGNMENT_DICT.get("All")
         if self.alignment.value != "All" and self.alignment.value not in alignment_list:
             return False
         return True
