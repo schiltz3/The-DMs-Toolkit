@@ -65,7 +65,6 @@ class GenerateCharacterInputs:
             not in Character_Generator().get_all_random_generators()
         ):
             return False
-        print(type(self.clazz.value))
         if (
             self.clazz.value not in Character_Generator.CLASS_OPTIONS
             and not Clazz.objects.filter(Name=self.clazz.value).exists()

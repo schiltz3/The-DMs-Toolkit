@@ -34,9 +34,9 @@ class TestCharacterGenerator(TestCase):
         self.test_user.set_password(self.password)
         self.test_user.save()
         self.character_generator_url = reverse("character_generator")
-        self.clazz_list = list(Clazz.objects.all())
+        self.clazz_list = Character_Generator.get_classes()
         self.background_list = Character_Generator.BACKGROUND_DICT.get("All")
-        self.race_list = list(Race.objects.all())
+        self.race_list = Character_Generator.get_races()
         self.alignment_list = Character_Generator.ALIGNMENT_DICT.get("All")
         self.gen_keys = [
             "3D6",
@@ -68,7 +68,6 @@ class TestCharacterGenerator(TestCase):
 
     def test_form_valid_clazz(self):
         """Tests to see if the form is valid given all clazz options"""
-        print(self.clazz_list)
         for clazz in self.clazz_list:
             form = self.form.from_dict(
                 {
