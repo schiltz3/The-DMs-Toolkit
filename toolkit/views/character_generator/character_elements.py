@@ -60,7 +60,7 @@ class GenerateCharacterInputs:
         """
         self.character_name.value = self.character_name.value.strip()
         if (
-            self.generator_type.value != "All"
+            self.generator_type.value != "Standard"
             and self.generator_type.value
             not in Character_Generator().get_all_random_generators()
         ):
