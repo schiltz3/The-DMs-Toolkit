@@ -5,6 +5,8 @@ from toolkit.models import (
     Cache,
     Character,
     User,
+    Clazz,
+    Race,
 )
 from toolkit.views.character_generator.character_elements import GenerateCharacterInputs, GeneratedCharacterOutputs
 from toolkit.views.character_generator.character_generator_backend import Character_Generator
@@ -27,18 +29,11 @@ class TestCharacterGenerator(TestCase):
         self.test_user.set_password(self.password)
         self.test_user.save()
         self.character_generator_url = reverse("character_generator")
-        self.clazz_list = Character_Generator.get_classes()
-        self.background_list = sorted(
-            Character_Generator.BACKGROUND_DICT.get("All")
-        )
-        self.race_list = Character_Generator.get_races()
-        self.alignment_list = sorted(
-            Character_Generator.ALIGNMENT_DICT.get("All")
-        )
-        self.gen_keys = []
-        self.gen_keys.append("Standard")
-        self.gen_keys.append("3D6")
-        self.gen_keys = sorted(self.gen_keys)
+        self.clazz_list = list(Clazz.objects.all())
+        self.background_list = Character_Generator.BACKGROUND_DICT.get("All")
+        self.race_list = list(Race.objects.all())
+        self.alignment_list = Character_Generator.ALIGNMENT_DICT.get("All")
+        self.gen_keys = ["3D6", "Standard",]
 
     def tearDown(self):
         """Function to clean up test database after each individual test."""
@@ -82,7 +77,7 @@ class TestCharacterGenerator(TestCase):
             
     def test_form_valid_background(self):
         """Tests to see if the form is valid given all background options"""
-        for background in self.clazz_list:
+        for background in self.background_list:
             form = self.form.from_dict(
                 {
                     "character_name": self.name,
@@ -116,6 +111,7 @@ class TestCharacterGenerator(TestCase):
 
     def test_form_valid_alignment(self):
         """Tests to see if the form is valid given all alignment options"""
+        print(self.clazz_list)
         for alignment in self.alignment_list:
             form = self.form.from_dict(
                 {
