@@ -73,7 +73,7 @@ class GenerateCharacterInputs:
         background_list = Character_Generator.BACKGROUND_DICT.get("All")
         if (
             self.background.value != "All"
-            and background_list != None
+            and background_list is not None
             and self.background.value not in background_list
         ):
             return False
@@ -85,7 +85,7 @@ class GenerateCharacterInputs:
         alignment_list = Character_Generator.ALIGNMENT_DICT.get("All")
         if (
             self.alignment.value != "All"
-            and alignment_list != None
+            and alignment_list is not None
             and self.alignment.value not in alignment_list
         ):
             return False
