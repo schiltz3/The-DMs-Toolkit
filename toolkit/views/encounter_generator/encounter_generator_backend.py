@@ -373,7 +373,7 @@ class Encounter_Generator:
             else:
                 raise RuntimeError("No monsters with those tags at your levels")
         else:
-                raise RuntimeError("No monsters with those tags at your levels")
+            raise RuntimeError("No monsters with those tags at your levels")
         if toAdd:
             if (
                 toAdd.Gold_Modifier is not None
