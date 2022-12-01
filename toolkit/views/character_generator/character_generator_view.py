@@ -154,11 +154,10 @@ class CharacterGenerator(View):
                 return render(request, "character_generator.html", self.context)
 
         if request.POST.get("save_button") is not None:
-            self.context["cached"] = True
             character = None
             if request.user.is_authenticated:
                 character = save_cached_character(request.user)
-
+                self.context["cached"] = False
             self.context["data"] = GenerateCharacterInputs.from_dict(request.POST)
             if character:
                 self.context["out"] = GeneratedCharacterOutputs(
@@ -181,6 +180,7 @@ class CharacterGenerator(View):
         ):
             if request.user.is_authenticated:
                 delete_cached_character(request.user)
+                self.context["cached"] = False
             self.context["data"] = GenerateCharacterInputs(
                 player_name=Element(request.user.get_username())
             )

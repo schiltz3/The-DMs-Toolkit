@@ -2,6 +2,7 @@ import inspect
 from dataclasses import dataclass, field
 from typing import Any, Optional
 
+from toolkit.models import Clazz, Race
 from toolkit.views.character_generator.character_generator_backend import (
     Character_Generator,
 )
@@ -58,6 +59,36 @@ class GenerateCharacterInputs:
             bool: Tru if dataclass holds valid data
         """
         self.character_name.value = self.character_name.value.strip()
+        if (
+            self.generator_type.value != "Standard"
+            and self.generator_type.value
+            not in Character_Generator().get_all_random_generators()
+        ):
+            return False
+        if (
+            self.clazz.value not in Character_Generator.CLASS_OPTIONS
+            and not Clazz.objects.filter(Name=self.clazz.value).exists()
+        ):
+            return False
+        background_list = Character_Generator.BACKGROUND_DICT.get("All")
+        if (
+            self.background.value != "All"
+            and background_list is not None
+            and self.background.value not in background_list
+        ):
+            return False
+        if (
+            self.race.value not in Character_Generator.RACE_OPTIONS
+            and not Race.objects.filter(Name=self.race.value).exists()
+        ):
+            return False
+        alignment_list = Character_Generator.ALIGNMENT_DICT.get("All")
+        if (
+            self.alignment.value != "All"
+            and alignment_list is not None
+            and self.alignment.value not in alignment_list
+        ):
+            return False
         return True
 
 

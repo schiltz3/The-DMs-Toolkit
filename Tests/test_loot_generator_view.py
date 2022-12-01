@@ -81,7 +81,7 @@ class TestLootGenerator(TestCase):
         self.assertTemplateUsed(response, "loot_generator.html")
 
     def test_user_can_access_loot_page(self):
-        """Tests to see if a user is able to access the loot page."""
+        """Tests to see if a logged in user is able to access the loot page."""
         self.client.login(username=self.username, password=self.password)
         response = self.client.get(
             self.loot_generator_url,
