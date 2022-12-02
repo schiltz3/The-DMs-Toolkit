@@ -48,4 +48,4 @@ class SavedLoot(View):
             except ValueError:
                 messages.error(request, "Can not get access Loot's database key")
         self.context["loot_list"] = GeneratedLoot.objects.filter(Owner=User)
-        return render(request, "saved_loot.html")
+        return render(request, "saved_loot.html", self.context)
