@@ -155,30 +155,30 @@ class GeneratedCharacterOutputs:
             "mod_intelligence": Stat(),
             "mod_wisdom": Stat(),
             "mod_charisma": Stat(),
-            "st_strength": Stat(),
-            "st_dexterity": Stat(),
-            "st_constitution": Stat(),
-            "st_intelligence": Stat(),
-            "st_wisdom": Stat(),
-            "st_charisma": Stat(),
-            "sk_acrobatics": Stat(),
-            "sk_animal_handling": Stat(),
-            "sk_arcana": Stat(),
-            "sk_athletics": Stat(),
-            "sk_deception": Stat(),
-            "sk_history": Stat(),
-            "sk_insight": Stat(),
-            "sk_intimidation": Stat(),
-            "sk_investigation": Stat(),
-            "sk_medicine": Stat(),
-            "sk_nature": Stat(),
-            "sk_perception": Stat(),
-            "sk_performance": Stat(),
-            "sk_persuasion": Stat(),
-            "sk_religion": Stat(),
-            "sk_sleight_of_hand": Stat(),
-            "sk_stealth": Stat(),
-            "sk_survival": Stat(),
+            "strength": Stat(),
+            "dexterity": Stat(),
+            "constitution": Stat(),
+            "intelligence": Stat(),
+            "wisdom": Stat(),
+            "charisma": Stat(),
+            "acrobatics": Stat(),
+            "animal_handling": Stat(),
+            "arcana": Stat(),
+            "athletics": Stat(),
+            "deception": Stat(),
+            "history": Stat(),
+            "insight": Stat(),
+            "intimidation": Stat(),
+            "investigation": Stat(),
+            "medicine": Stat(),
+            "nature": Stat(),
+            "perception": Stat(),
+            "performance": Stat(),
+            "persuasion": Stat(),
+            "religion": Stat(),
+            "sleight_of_hand": Stat(),
+            "stealth": Stat(),
+            "survival": Stat(),
         }
         if calculate is True:
             self.calculate()
@@ -192,9 +192,9 @@ class GeneratedCharacterOutputs:
         Returns:
             GeneratedCharacterOutputs: returns self for chaining
         """
-        for k in self.stats.values():
-            k.proficiency = 0
-            k.checked = False
+        for stat in self.stats.values():
+            stat.proficiency = 0
+            stat.checked = False
 
         for ek in env.keys():
             sk = self.stats.get(ek)
@@ -232,31 +232,31 @@ class GeneratedCharacterOutputs:
             "mod_charisma"
         ].value = Character_Generator.calculate_ability_modifier(self.charisma)
 
-        self.stats["st_strength"].value = self.stats["mod_strength"].value
-        self.stats["st_dexterity"].value = self.stats["mod_dexterity"].value
-        self.stats["st_constitution"].value = self.stats["mod_constitution"].value
-        self.stats["st_intelligence"].value = self.stats["mod_intelligence"].value
-        self.stats["st_charisma"].value = self.stats["mod_charisma"].value
-        self.stats["st_wisdom"].value = self.stats["mod_wisdom"].value
+        self.stats["strength"].value = self.stats["mod_strength"].value
+        self.stats["dexterity"].value = self.stats["mod_dexterity"].value
+        self.stats["constitution"].value = self.stats["mod_constitution"].value
+        self.stats["intelligence"].value = self.stats["mod_intelligence"].value
+        self.stats["charisma"].value = self.stats["mod_charisma"].value
+        self.stats["wisdom"].value = self.stats["mod_wisdom"].value
         self.stats["stat_initiative"].value = self.stats["mod_dexterity"].value
-        self.stats["sk_athletics"].value = self.stats["mod_strength"].value
-        self.stats["sk_acrobatics"].value = self.stats["mod_dexterity"].value
-        self.stats["sk_sleight_of_hand"].value = self.stats["mod_dexterity"].value
-        self.stats["sk_stealth"].value = self.stats["mod_dexterity"].value
-        self.stats["sk_animal_handling"].value = self.stats["mod_wisdom"].value
-        self.stats["sk_insight"].value = self.stats["mod_wisdom"].value
-        self.stats["sk_medicine"].value = self.stats["mod_wisdom"].value
-        self.stats["sk_perception"].value = self.stats["mod_wisdom"].value
-        self.stats["sk_survival"].value = self.stats["mod_wisdom"].value
-        self.stats["sk_deception"].value = self.stats["mod_charisma"].value
-        self.stats["sk_intimidation"].value = self.stats["mod_charisma"].value
-        self.stats["sk_performance"].value = self.stats["mod_charisma"].value
-        self.stats["sk_persuasion"].value = self.stats["mod_charisma"].value
-        self.stats["sk_religion"].value = self.stats["mod_intelligence"].value
-        self.stats["sk_arcana"].value = self.stats["mod_intelligence"].value
-        self.stats["sk_history"].value = self.stats["mod_intelligence"].value
-        self.stats["sk_nature"].value = self.stats["mod_intelligence"].value
-        self.stats["sk_investigation"].value = self.stats["mod_intelligence"].value
+        self.stats["athletics"].value = self.stats["mod_strength"].value
+        self.stats["acrobatics"].value = self.stats["mod_dexterity"].value
+        self.stats["sleight_of_hand"].value = self.stats["mod_dexterity"].value
+        self.stats["stealth"].value = self.stats["mod_dexterity"].value
+        self.stats["animal_handling"].value = self.stats["mod_wisdom"].value
+        self.stats["insight"].value = self.stats["mod_wisdom"].value
+        self.stats["medicine"].value = self.stats["mod_wisdom"].value
+        self.stats["perception"].value = self.stats["mod_wisdom"].value
+        self.stats["survival"].value = self.stats["mod_wisdom"].value
+        self.stats["deception"].value = self.stats["mod_charisma"].value
+        self.stats["intimidation"].value = self.stats["mod_charisma"].value
+        self.stats["performance"].value = self.stats["mod_charisma"].value
+        self.stats["persuasion"].value = self.stats["mod_charisma"].value
+        self.stats["religion"].value = self.stats["mod_intelligence"].value
+        self.stats["arcana"].value = self.stats["mod_intelligence"].value
+        self.stats["history"].value = self.stats["mod_intelligence"].value
+        self.stats["nature"].value = self.stats["mod_intelligence"].value
+        self.stats["investigation"].value = self.stats["mod_intelligence"].value
 
         for v in self.stats.values():
             v.sk_to_str()

@@ -22,14 +22,20 @@ class SavedCharacters(View):
         self.context["char_list"] = Character.objects.filter(Owner=User)
         return render(request, "saved_characters.html", self.context)
 
-    @staticmethod
-    def post(request: HttpRequest):
+    def post(self, request: HttpRequest):
         """POST method for saved characters page"""
+        print("GOT POST")
         if not request.user.is_authenticated:
             messages.warning(request, "You must be logged in to access this page.")
             return redirect("login")
-        if request.POST.get("Delete") is not None:
-            pass
-        if request.POST.get("Details") is not None:
-            return render(request, "character_generator.html")
-        return render(request, "saved_characters.html")
+        User = request.user
+        self.context["char_list"] = Character.objects.filter(Owner=User)
+        view = request.POST.get("View")
+        if view is not None:
+            try:
+                pk = int(view)
+                return redirect("character_generator", pk=pk)
+            except ValueError:
+                messages.error("Can not get access character's database key")
+            print(view)
+        return render(request, "saved_characters.html", self.context)

@@ -62,6 +62,12 @@ urlpatterns = [
     path(
         "character_generator/", CharacterGenerator.as_view(), name="character_generator"
     ),
+    # View Saved Character
+    path(
+        "character_generator/<int:pk>",
+        CharacterGenerator.as_view(),
+        name="character_generator",
+    ),
     # Encounter Generator
     path(
         "encounter_generator/", EncounterGenerator.as_view(), name="encounter_generator"

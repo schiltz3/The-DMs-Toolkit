@@ -1,6 +1,7 @@
 import logging
 import traceback
 
+from toolkit.models import Character
 from django.contrib import messages
 from django.http.request import HttpRequest
 from django.shortcuts import render
@@ -56,22 +57,50 @@ class CharacterGenerator(View):
         )
         self.context["cached"] = False
 
-    def get(self, request: HttpRequest):
+    def get(self, request: HttpRequest, **kwargs):
         """GET method for the character generation."""
-        self.context["data"] = GenerateCharacterInputs(
-            player_name=Element(request.user.get_username())
-        )
-        self.context["out"] = GeneratedCharacterOutputs(calculate=False)
+        pk = kwargs.get("pk")
+        if pk and request.user.is_authenticated:
+            character = Character.objects.filter(pk = pk, Owner=request.user).first()
+            if character:
+                messages.warning("The character you are trying to view can not be found")
+            else:
+                self.context["data"] = GenerateCharacterInputs(
+                    alignment=Element(character.Alignment),
+                    background=Element(character.Background),
+                    character_name=Element(character.Name),
+                    clazz=Element(character.Class),
+                    experience_points=Element(character.Experience),
+                    player_name=Element(character.Owner),
+                    race=Element(character.Race),
+                )
+                out = GeneratedCharacterOutputs(
+                    charisma=character.Charisma,
+                    constitution=character.Constitution,
+                    dexterity=character.Dexterity,
+                    intelligence=character.Intelligence,
+                    strength=character.Strength,
+                    wisdom=character.Wisdom,
+                    calculate=True)
+                proficiencies =character.Character_Proficiencies.aggregate() 
+                if proficiencies:
+                    print(proficiencies)
+                    out.update_proficiencies_from_dict(request.POST)
+                self.context["out"] = out
+        else:
+            self.context["data"] = GenerateCharacterInputs(
+                player_name=Element(request.user.get_username())
+            )
+            self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
 
-    def post(self, request: HttpRequest):
+    def post(self, request: HttpRequest, **kwargs):
         """POST method for the character generation."""
 
         form = GenerateCharacterInputs.from_dict(request.POST)
         self.context["data"] = form
         if not form.is_valid():
             self.context["form"] = form
-            logger.info("Invalid form")
             self.context["data"] = GenerateCharacterInputs(
                 player_name=Element(request.user.get_username())
             )
