@@ -3,6 +3,11 @@
 {% load static %}
 
 {% block application_pane %}
+<form action
+        {% url "saved_loot" %}
+        method="post"
+        class="form">
+    {% csrf_token %}
 <div class="container-fluid" style="background-color: #D9CAAB; overflow: clip;">
     <div class="row mx-0">
         <div class="col p-0">
@@ -47,5 +52,6 @@
         </div>
     </div>
 </div>
+</form>
 {% endblock application_pane %}
 

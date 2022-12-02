@@ -22,14 +22,13 @@ class SavedEncounters(View):
         self.context["encounter_list"] = GeneratedEncounter.objects.filter(Owner=User)
         return render(request, "saved_encounters.html", self.context)
 
-    @staticmethod
     def post(self, request: HttpRequest):
         """POST method for saved encounter page"""
         if not request.user.is_authenticated:
             messages.warning(request, "You must be logged in to access this page.")
             return redirect("login")
         User = request.user
-        self.context["char_list"] = GeneratedEncounter.objects.filter(Owner=User)
+        self.context["encounter_list"] = GeneratedEncounter.objects.filter(Owner=User)
         view = request.POST.get("View")
         delete = request.POST.get("Delete")
         if view is not None:
