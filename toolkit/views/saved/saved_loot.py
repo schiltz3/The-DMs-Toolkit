@@ -42,8 +42,9 @@ class SavedLoot(View):
                     check.delete()
                 else:
                     messages.warning(
-                    request, "The Loot you are trying to delete can not be found")
-                
+                        request, "The Loot you are trying to delete can not be found"
+                    )
+
             except ValueError:
                 messages.error(request, "Can not get access Loot's database key")
         self.context["loot_list"] = GeneratedLoot.objects.filter(Owner=User)
