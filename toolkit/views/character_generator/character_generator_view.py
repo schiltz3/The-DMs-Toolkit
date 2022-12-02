@@ -61,11 +61,9 @@ class CharacterGenerator(View):
         """GET method for the character generation."""
         pk = kwargs.get("pk")
         if pk and request.user.is_authenticated:
-            character = Character.objects.filter(pk=pk, Owner=request.user).first()
-            if character:
-                messages.warning(
-                    "The character you are trying to view can not be found"
-                )
+            character = Character.objects.filter(pk = pk, Owner=request.user).first()
+            if not character:
+                messages.warning(request, "The character you are trying to view can not be found")
             else:
                 self.context["data"] = GenerateCharacterInputs(
                     alignment=Element(character.Alignment),
