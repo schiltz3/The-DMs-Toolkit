@@ -36,7 +36,159 @@
             "Name": "Changeling",
             "Speed": 30,
             "Size": "Medium",
-            "Options": "Uncommon"
+            "Options": "Rare"
+        }
+    },
+    {
+        "model": "toolkit.race",
+        "pk": 5,
+        "fields": {
+            "Name": "Dwarf",
+            "Speed": 25,
+            "Size": "Medium",
+            "Options": "Common"
+        }
+    },
+    {
+        "model": "toolkit.race",
+        "pk": 6,
+        "fields": {
+            "Name": "Gnome",
+            "Speed": 25,
+            "Size": "Small",
+            "Options": "Common"
+        }
+    },
+    {
+        "model": "toolkit.race",
+        "pk": 7,
+        "fields": {
+            "Name": "Human",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Common"
+        }
+    },
+    {
+        "model": "toolkit.race",
+        "pk": 8,
+        "fields": {
+            "Name": "Halfling",
+            "Speed": 25,
+            "Size": "Small",
+            "Options": "Common"
+        }
+    },
+    {
+        "model": "toolkit.race",
+        "pk": 9,
+        "fields": {
+            "Name": "Human",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Common"
+        }
+    },
+    {
+        "model": "toolkit.race",
+        "pk": 10,
+        "fields": {
+            "Name": "Half-Elf",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Common"
+        }
+    },{
+        "model": "toolkit.race",
+        "pk": 11,
+        "fields": {
+            "Name": "Half-Orc",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Common"
+        }
+    },{
+        "model": "toolkit.race",
+        "pk": 12,
+        "fields": {
+            "Name": "Goliath",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Rare"
+        }
+    },{
+        "model": "toolkit.race",
+        "pk": 13,
+        "fields": {
+            "Name": "Dragonborn",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Rare"
+        }
+    },{
+        "model": "toolkit.race",
+        "pk": 14,
+        "fields": {
+            "Name": "Tiefling",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Rare"
+        }
+    },{
+        "model": "toolkit.race",
+        "pk": 15,
+        "fields": {
+            "Name": "Kenku",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Rare"
+        }
+    },
+    {
+        "model": "toolkit.race",
+        "pk": 16,
+        "fields": {
+            "Name": "Orc",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Monster"
+        }
+    },
+    {
+        "model": "toolkit.race",
+        "pk": 17,
+        "fields": {
+            "Name": "Kobold",
+            "Speed": 25,
+            "Size": "Small",
+            "Options": "Monster"
+        }
+    },{
+        "model": "toolkit.race",
+        "pk": 18,
+        "fields": {
+            "Name": "Lizardfolk",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Monster"
+        }
+    },{
+        "model": "toolkit.race",
+        "pk": 19,
+        "fields": {
+            "Name": "Firbolg",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Rare"
+        }
+    },{
+        "model": "toolkit.race",
+        "pk": 20,
+        "fields": {
+            "Name": "Triton",
+            "Speed": 30,
+            "Size": "Medium",
+            "Options": "Rare"
         }
     }
 ]
