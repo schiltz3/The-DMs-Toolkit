@@ -1,12 +1,12 @@
 import logging
 import traceback
 
-from toolkit.models import Character
 from django.contrib import messages
 from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
 
+from toolkit.models import Character
 from toolkit.views.character_generator.cache_character import (
     cache_character,
     delete_cached_character,
@@ -61,9 +61,11 @@ class CharacterGenerator(View):
         """GET method for the character generation."""
         pk = kwargs.get("pk")
         if pk and request.user.is_authenticated:
-            character = Character.objects.filter(pk = pk, Owner=request.user).first()
+            character = Character.objects.filter(pk=pk, Owner=request.user).first()
             if character:
-                messages.warning("The character you are trying to view can not be found")
+                messages.warning(
+                    "The character you are trying to view can not be found"
+                )
             else:
                 self.context["data"] = GenerateCharacterInputs(
                     alignment=Element(character.Alignment),
@@ -81,8 +83,9 @@ class CharacterGenerator(View):
                     intelligence=character.Intelligence,
                     strength=character.Strength,
                     wisdom=character.Wisdom,
-                    calculate=True)
-                proficiencies =character.Character_Proficiencies.aggregate() 
+                    calculate=True,
+                )
+                proficiencies = character.Character_Proficiencies.aggregate()
                 if proficiencies:
                     print(proficiencies)
                     out.update_proficiencies_from_dict(request.POST)

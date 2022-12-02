@@ -49,7 +49,7 @@ def cache_character(
     for stat_k, stat_v in char_output.stats.items():
         if stat_v.checked:
             stat = stat_k.replace("_", " ").title()
-            #add this stat to the character
+            # add this stat to the character
     cache.character = character
     user.save()
 
