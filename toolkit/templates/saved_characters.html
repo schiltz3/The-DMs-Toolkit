@@ -3,50 +3,60 @@
 {% load static %}
 
 {% block application_pane %}
-<div class="container-fluid" style="background-color: #D9CAAB; overflow: clip;">
-    <div class="row mx-0">
-        <div class="col p-0">
-            <div class="banner">
-                <img src="{% static "Character_Header.png" %}"
-                alt="Character Header"
-                style="height: 85px;"/>
+  <form action
+        {% url "saved_characters" %}
+        method="post"
+        class="form">
+    {% csrf_token %}
+    <div class="container-fluid"
+         style="background-color: #D9CAAB;
+                overflow: clip;">
+
+        <div class="row mx-0">
+            <div class="col p-0">
+                <div class="banner">
+                    <img src="{% static "Character_Header.png" %}"
+                         alt="Character Header"
+                         style="height: 85px;"/>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col" style="background-color: #7D8B8C; text-align:center;">
-            <h4>Saved Characters:</h4>
-        </div>
-    </div>
-    <div class="row text-center">
-        <div class="col-sm-12">
-            <div class="data-table table-scrollbar">
-                <table class="table table-hover">
-                    <thead style="position: sticky; top: 0;">
-                    <tr>
-                        <th style="width: 30%" scope="col">Name</th>
-                        <th style="width: 30%" scope="col">Class</th>
-                        <th style="width: 20%" scope="col">Level</th>
-                        <th style="width: 10%" scope="col">Details</th>
-                        <th style="width: 10%" scope="col">Select</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for character in char_list %}
-                        <tr>
-                            <td>{{ character.Name }}</td>
-                            <td>{{ character.Class }}</td>
-                            <td>{{ character.Level }}</td>
-                            <td>{{ redirect }}</td>
-                            <td>{{ select }}</td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col" style="background-color: #7D8B8C; text-align:center;">
+                <h4>Saved Characters:</h4>
             </div>
         </div>
-    </div>
-</div>
-{% endblock application_pane %}
+        <div class="row text-center">
+            <div class="col-sm-12">
+                <div class="data-table table-scrollbar">
+                    <table class="table table-hover">
+                        <thead style="position: sticky; top: 0;">
+                            <tr>
+                                <th style="width: 20%" scope="col">Name</th>
+                                <th style="width: 30%" scope="col">Class</th>
+                                <th style="width: 20%" scope="col">Level</th>
+                                <th style="width: 10%" scope="col">Details</th>
+                                <th style="width: 10%" scope="col">Select</th>
+                                <th style="width: 10%" scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for character in char_list %}
+                                <tr>
+                                    <td>{{ character.Name }}</td>
+                                    <td>{{ character.Class }}</td>
+                                    <td>{{ character.Level }}</td>
+                                    <td>{{ redirect }}</td>
+                                    <td>{{ select }}</td>
+                                    <td><button type="submit" value="{{ character.pk }}" name="View" class="btn btn-primary btn-sm">View</button></td>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    {% endblock application_pane %}

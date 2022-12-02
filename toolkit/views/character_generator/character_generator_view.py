@@ -6,6 +6,7 @@ from django.http.request import HttpRequest
 from django.shortcuts import render
 from django.views import View
 
+from toolkit.models import Character
 from toolkit.views.character_generator.cache_character import (
     cache_character,
     delete_cached_character,
@@ -56,22 +57,49 @@ class CharacterGenerator(View):
         )
         self.context["cached"] = False
 
-    def get(self, request: HttpRequest):
+    def get(self, request: HttpRequest, **kwargs):
         """GET method for the character generation."""
-        self.context["data"] = GenerateCharacterInputs(
-            player_name=Element(request.user.get_username())
-        )
-        self.context["out"] = GeneratedCharacterOutputs(calculate=False)
+        pk = kwargs.get("pk")
+        if pk and request.user.is_authenticated:
+            character = Character.objects.filter(pk=pk, Owner=request.user).first()
+            if not character:
+                messages.warning(
+                    request, "The character you are trying to view can not be found"
+                )
+            else:
+                self.context["data"] = GenerateCharacterInputs(
+                    alignment=Element(character.Alignment),
+                    background=Element(character.Background),
+                    character_name=Element(character.Name),
+                    clazz=Element(character.Class),
+                    experience_points=Element(character.Experience),
+                    player_name=Element(character.Owner),
+                    race=Element(character.Race),
+                )
+                out = GeneratedCharacterOutputs(
+                    charisma=character.Charisma,
+                    constitution=character.Constitution,
+                    dexterity=character.Dexterity,
+                    intelligence=character.Intelligence,
+                    strength=character.Strength,
+                    wisdom=character.Wisdom,
+                    calculate=True,
+                )
+                self.context["out"] = out
+        else:
+            self.context["data"] = GenerateCharacterInputs(
+                player_name=Element(request.user.get_username())
+            )
+            self.context["out"] = GeneratedCharacterOutputs(calculate=False)
         return render(request, "character_generator.html", self.context)
 
-    def post(self, request: HttpRequest):
+    def post(self, request: HttpRequest, **kwargs):
         """POST method for the character generation."""
 
         form = GenerateCharacterInputs.from_dict(request.POST)
         self.context["data"] = form
         if not form.is_valid():
             self.context["form"] = form
-            logger.info("Invalid form")
             self.context["data"] = GenerateCharacterInputs(
                 player_name=Element(request.user.get_username())
             )
@@ -154,11 +182,10 @@ class CharacterGenerator(View):
                 return render(request, "character_generator.html", self.context)
 
         if request.POST.get("save_button") is not None:
-            self.context["cached"] = True
             character = None
             if request.user.is_authenticated:
                 character = save_cached_character(request.user)
-
+                self.context["cached"] = False
             self.context["data"] = GenerateCharacterInputs.from_dict(request.POST)
             if character:
                 self.context["out"] = GeneratedCharacterOutputs(
@@ -181,6 +208,7 @@ class CharacterGenerator(View):
         ):
             if request.user.is_authenticated:
                 delete_cached_character(request.user)
+                self.context["cached"] = False
             self.context["data"] = GenerateCharacterInputs(
                 player_name=Element(request.user.get_username())
             )

@@ -12,10 +12,15 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.9
+      - uses: actions/cache@v3
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ hashFiles('dev-requirements.txt') }}
       - name: Install Dependencies
         run: |
-          pip install mypy
-          pip install -r requirements.txt
+          pip install -r requirements/all.txt
+          pip install --upgrade --upgrade-strategy eager -r requirements.txt
+          pip install --upgrade --upgrade-strategy eager -r requirements/test.txt
       - name: mypy
         run: |
           mypy ./

@@ -370,6 +370,8 @@ class Encounter_Generator:
                 ]
             elif len(monster_possibilities) == 1:
                 toAdd = monster_possibilities[0]
+            else:
+                raise RuntimeError("No monsters with those tags at your levels")
         else:
             raise RuntimeError("No monsters with those tags at your levels")
         if toAdd:

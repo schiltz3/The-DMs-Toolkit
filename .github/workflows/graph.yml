@@ -10,35 +10,42 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v3
-      with:
-        python-version: '3.9'
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Install graphviz
-      run: |
-        sudo apt install graphviz
-    - name: Install pydot
-      run: |
-        pip install pydot
-    - name: Install Roboto Font
-      run: |
-        sudo apt install fonts-roboto
-    - name: Create Graphs
-      run: |
-        mkdir -p docs/graphs
-        python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.pdf"
-        python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.svg"
-    
-    - name: Push changes
-      run: |
-        git config --global user.name 'John Schiltz'
-        git config --global user.email '45466247+schiltz3@users.noreply.github.com'
-        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-        git add docs/graphs/*
-        git commit -am "Automated Graph Generation"
-        git push
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.9"
+      - uses: actions/cache@v3
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ hashFiles('dev-requirements.txt') }}
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade --upgrade-strategy eager -r requirements.txt
+      - name: Install graphviz
+        run: |
+          sudo apt install graphviz
+      - name: Install pydot
+        run: |
+          pip install pydot
+      - name: Install Roboto Font
+        run: |
+          sudo apt install fonts-roboto
+      - name: Create Graphs
+        run: |
+          mkdir -p docs/graphs
+          python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.pdf"
+          python manage.py graph_models --pydot -a -o "docs/graphs/CS595_database_graph.svg"
+
+      - name: Check for modified files
+        id: git-check
+        run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
+      - name: Push changes
+        if: steps.git-check.outputs.modified == 'true'
+        run: |
+          git config --global user.name 'John Schiltz'
+          git config --global user.email '45466247+schiltz3@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git commit -am "Automated Graph Generation"
+          git push
