@@ -37,7 +37,7 @@ class SavedLoot(View):
         elif delete is not None:
             try:
                 pk = int(delete)
-                check = GeneratedLoot.objects.filter(pk = pk, Owner = User).first()
+                check = GeneratedLoot.objects.filter(pk=pk, Owner=User).first()
                 if check is not None:
                     check.delete()
                 else:

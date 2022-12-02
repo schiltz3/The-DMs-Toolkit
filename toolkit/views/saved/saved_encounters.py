@@ -36,12 +36,14 @@ class SavedEncounters(View):
         elif delete is not None:
             try:
                 pk = int(delete)
-                check = GeneratedEncounter.objects.filter(pk = pk, Owner = User).first()
+                check = GeneratedEncounter.objects.filter(pk=pk, Owner=User).first()
                 if check is not None:
                     check.delete()
                 else:
                     messages.warning(
-                    request, "The Encounter you are trying to delete can not be found")
+                        request,
+                        "The Encounter you are trying to delete can not be found",
+                    )
             except ValueError:
                 messages.error(request, "Can not get access Encounter's database key")
         self.context["encounter_list"] = GeneratedEncounter.objects.filter(Owner=User)

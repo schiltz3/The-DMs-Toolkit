@@ -42,12 +42,14 @@ class SavedCharacters(View):
         elif delete is not None:
             try:
                 pk = int(delete)
-                check = Character.objects.filter(pk = pk, Owner = User).first()
+                check = Character.objects.filter(pk=pk, Owner=User).first()
                 if check is not None:
                     check.delete()
                 else:
                     messages.warning(
-                    request, "The character you are trying to delete can not be found")
+                        request,
+                        "The character you are trying to delete can not be found",
+                    )
             except ValueError:
                 messages.error(request, "Can not get access character's database key")
         return render(request, "saved_characters.html", self.context)
