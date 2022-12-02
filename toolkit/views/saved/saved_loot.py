@@ -38,12 +38,13 @@ class SavedLoot(View):
         elif delete is not None:
             try:
                 pk = int(delete)
-                check = GeneratedLoot.objects.filter(pk = pk, Owner = User).first()
+                check = GeneratedLoot.objects.filter(pk=pk, Owner=User).first()
                 if check is not None:
                     check.delete()
                 else:
                     messages.warning(
-                    request, "The Loot you are trying to delete can not be found")
+                        request, "The Loot you are trying to delete can not be found"
+                    )
             except ValueError:
                 messages.error(request, "Can not get access Loot's database key")
         return render(request, "saved_loot.html")
