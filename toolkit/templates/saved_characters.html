@@ -37,9 +37,8 @@
                                 <th style="width: 20%" scope="col">Name</th>
                                 <th style="width: 30%" scope="col">Class</th>
                                 <th style="width: 20%" scope="col">Level</th>
-                                <th style="width: 10%" scope="col">Details</th>
-                                <th style="width: 10%" scope="col">Select</th>
-                                <th style="width: 10%" scope="col">Action</th>
+                                <th style="width: 10%" scope="col">Delete</th>
+                                <th style="width: 10%" scope="col">View</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -48,8 +47,7 @@
                                     <td>{{ character.Name }}</td>
                                     <td>{{ character.Class }}</td>
                                     <td>{{ character.Level }}</td>
-                                    <td>{{ redirect }}</td>
-                                    <td>{{ select }}</td>
+                                    <td><button type="submit" value="{{ character.pk }}" name="Delete" class="btn btn-danger btn-sm">Delete</button></td>
                                     <td><button type="submit" value="{{ character.pk }}" name="View" class="btn btn-primary btn-sm">View</button></td>
                                 {% endfor %}
                             </tbody>

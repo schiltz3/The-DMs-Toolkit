@@ -23,13 +23,26 @@ class SavedEncounters(View):
         return render(request, "saved_encounters.html", self.context)
 
     @staticmethod
-    def post(request: HttpRequest):
+    def post(self, request: HttpRequest):
         """POST method for saved encounter page"""
         if not request.user.is_authenticated:
             messages.warning(request, "You must be logged in to access this page.")
             return redirect("login")
-        if request.POST.get("Delete") is not None:
+        User = request.user
+        self.context["char_list"] = GeneratedEncounter.objects.filter(Owner=User)
+        view = request.POST.get("View")
+        delete = request.POST.get("Delete")
+        if view is not None:
             pass
-        if request.POST.get("Details") is not None:
-            return render(request, "encounter_generator.html")
+        elif delete is not None:
+            try:
+                pk = int(delete)
+                check = GeneratedEncounter.objects.filter(pk = pk, Owner = User).first()
+                if check is not None:
+                    check.delete()
+                else:
+                    messages.warning(
+                    request, "The Encounter you are trying to delete can not be found")
+            except ValueError:
+                messages.error(request, "Can not get access Encounter's database key")
         return render(request, "saved_encounters.html")
