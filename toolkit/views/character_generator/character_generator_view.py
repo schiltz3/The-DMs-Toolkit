@@ -85,10 +85,6 @@ class CharacterGenerator(View):
                     wisdom=character.Wisdom,
                     calculate=True,
                 )
-                proficiencies = character.Character_Proficiencies.aggregate()
-                if proficiencies:
-                    print(proficiencies)
-                    out.update_proficiencies_from_dict(request.POST)
                 self.context["out"] = out
         else:
             self.context["data"] = GenerateCharacterInputs(
