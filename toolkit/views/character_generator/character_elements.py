@@ -85,6 +85,9 @@ class GenerateCharacterInputs:
         alignment_list = Character_Generator.ALIGNMENT_DICT.get("All")
         if (
             self.alignment.value != "All"
+            and self.alignment.value != "Good"
+            and self.alignment.value != "Evil"
+            and self.alignment.value != "Neutral"
             and alignment_list is not None
             and self.alignment.value not in alignment_list
         ):
