@@ -44,4 +44,5 @@ class SavedEncounters(View):
                     request, "The Encounter you are trying to delete can not be found")
             except ValueError:
                 messages.error(request, "Can not get access Encounter's database key")
+        self.context["encounter_list"] = GeneratedEncounter.objects.filter(Owner=User)
         return render(request, "saved_encounters.html")
