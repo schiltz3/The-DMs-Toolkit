@@ -3,6 +3,11 @@
 {% load static %}
 
 {% block application_pane %}
+<form action
+        {% url "saved_loot" %}
+        method="post"
+        class="form">
+    {% csrf_token %}
 <div class="container-fluid" style="background-color: #D9CAAB; overflow: clip;">
     <div class="row mx-0">
         <div class="col p-0">
@@ -28,8 +33,8 @@
                     <tr>
                         <th style="width: 40%" scope="col">Loot Type</th>
                         <th style="width: 40%" scope="col">Total Value</th>
-                        <th style="width: 10%" scope="col">Details</th>
-                        <th style="width: 10%" scope="col">Select</th>
+                        <th style="width: 10%" scope="col">Delete</th>
+                        <th style="width: 10%" scope="col">View</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -37,7 +42,7 @@
                         <tr>
                             <td>{{ loot.Loot_Type }}</td>
                             <td>{{ loot.Total_Value|floatformat:2 }}</td>
-                            <td>{{ redirect }}</td>
+                            <td><button type="submit" value="{{ loot.pk }}" name="Delete" class="btn btn-danger btn-sm">Delete</button></td>
                             <td>{{ select }}</td>
                         </tr>
                     {% endfor %}
@@ -47,5 +52,6 @@
         </div>
     </div>
 </div>
+</form>
 {% endblock application_pane %}
 

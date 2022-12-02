@@ -31,6 +31,7 @@ class SavedCharacters(View):
         User = request.user
         self.context["char_list"] = Character.objects.filter(Owner=User)
         view = request.POST.get("View")
+        delete = request.POST.get("Delete")
         if view is not None:
             try:
                 pk = int(view)
@@ -38,4 +39,17 @@ class SavedCharacters(View):
             except ValueError:
                 messages.error(request, "Can not get access character's database key")
             print(view)
+        elif delete is not None:
+            try:
+                pk = int(delete)
+                check = Character.objects.filter(pk=pk, Owner=User).first()
+                if check is not None:
+                    check.delete()
+                else:
+                    messages.warning(
+                        request,
+                        "The character you are trying to delete can not be found",
+                    )
+            except ValueError:
+                messages.error(request, "Can not get access character's database key")
         return render(request, "saved_characters.html", self.context)

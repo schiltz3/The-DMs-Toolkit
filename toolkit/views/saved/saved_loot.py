@@ -23,14 +23,29 @@ class SavedLoot(View):
         self.context["loot_list"] = GeneratedLoot.objects.filter(Owner=User)
         return render(request, "saved_loot.html", self.context)
 
-    @staticmethod
-    def post(request: HttpRequest):
+    def post(self, request: HttpRequest):
         """POST method for saved loot page"""
         if not request.user.is_authenticated:
             messages.warning(request, "You must be logged in to access this page.")
             return redirect("login")
-        if request.POST.get("Delete") is not None:
+        User = request.user
+        self.context["loot_list"] = GeneratedLoot.objects.filter(Owner=User)
+        view = request.POST.get("View")
+        delete = request.POST.get("Delete")
+        if view is not None:
             pass
-        if request.POST.get("Details") is not None:
-            return render(request, "loot_generator.html")
-        return render(request, "saved_loot.html")
+        elif delete is not None:
+            try:
+                pk = int(delete)
+                check = GeneratedLoot.objects.filter(pk=pk, Owner=User).first()
+                if check is not None:
+                    check.delete()
+                else:
+                    messages.warning(
+                        request, "The Loot you are trying to delete can not be found"
+                    )
+
+            except ValueError:
+                messages.error(request, "Can not get access Loot's database key")
+        self.context["loot_list"] = GeneratedLoot.objects.filter(Owner=User)
+        return render(request, "saved_loot.html", self.context)
