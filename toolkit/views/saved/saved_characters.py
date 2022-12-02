@@ -36,6 +36,6 @@ class SavedCharacters(View):
                 pk = int(view)
                 return redirect("character_generator", pk=pk)
             except ValueError:
-                messages.error("Can not get access character's database key")
+                messages.error(request,"Can not get access character's database key")
             print(view)
         return render(request, "saved_characters.html", self.context)
