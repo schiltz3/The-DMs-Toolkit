@@ -4,6 +4,14 @@
 # The-DMs-Toolkit
 #### UW-Milwaukee Capstone Project
 
+## To run the project for the first time
+
+1. Clone repo
+2. Have python 3.9 or higher installed
+3. Run `python -m pip install -r requrements.txt`
+4. Run `python manage.py loaddata <each json file in .\databases>`
+5. Run `python manage.py runserver`
+
 ---
 
 ## Documents
