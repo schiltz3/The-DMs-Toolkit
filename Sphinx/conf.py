@@ -2,7 +2,6 @@
 #
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
-
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -11,24 +10,33 @@
 #
 import os
 import sys
+import django
 
 sys.path.insert(0, os.path.abspath(".."))
-
+# sys.path.insert(0, os.path.abspath("../.."))
+# sys.path.append("E:/git/The-DMs-Toolkit/toolkit/views/character_generator")
+# sys.path.append("E:/git/The-DMs-Toolkit/toolkit/views/account")
+# sys.path.append("E:/git/The-DMs-Toolkit/toolkit/views/saved/saved_loot")
+os.environ["DJANGO_SETTINGS_MODULE"] = "thedmstoolkit.settings"
+django.setup()
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "The DM's Toolkit"
 copyright = "2022, Ronen Loundy, Jeffery Meverden, John Tabor, John Schiltz"
 author = "Ronen Loundy, Jeffery Meverden, John Tabor, John Schiltz"
-release = "0.1"
+release = "o.1"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx.ext.githubpages", "sphinx.ext.autodoc"]
+extensions = [
+    "sphinx.ext.autodoc",
+]
 
 templates_path = ["_templates"]
-exclude_patterns = ["_build", "databases"]
+exclude_patterns = ["_build", "migrations", ".\Tests"]
+apidoc_excluded_paths = ["migrations", "Tests"]
 
 
 # -- Options for HTML output -------------------------------------------------
