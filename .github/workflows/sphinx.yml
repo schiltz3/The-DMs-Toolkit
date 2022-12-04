@@ -29,9 +29,13 @@ jobs:
           cd Sphinx
           sphinx-build . _build
           cd ..
+      - name: Debug
+        run: |
+          ls Sphinx/
+          ls Sphinx/_build
+          ls Sphinx/_build/html
       - name: Move docs to published folder
         run: |
-          rm -rf docs
           mkdir -p docs
           cp -a Sphinx/_build/html/. docs/
           cp Sphinx/_config.yml docs/
