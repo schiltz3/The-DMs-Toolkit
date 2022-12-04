@@ -9,6 +9,13 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
       - uses: actions/cache@v3
         with:
           path: ${{ env.pythonLocation }}
@@ -16,9 +23,6 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install --upgrade --upgrade-strategy eager -r requirements/prod.txt
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
       - uses: ammaraskar/sphinx-action@master
         with:
           docs-folder: "Sphinx/"
