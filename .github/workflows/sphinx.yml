@@ -24,10 +24,6 @@ jobs:
         run: |
           pip install --upgrade --upgrade-strategy eager -r requirements/prod.txt
           pip install -r Sphinx/requirements.txt
-      - name: Debug
-        run: |
-          python -V
-          pip list
       - name: Make Docs
         run: | 
           cd Sphinx
@@ -35,7 +31,7 @@ jobs:
           cd ..
       - name: Move docs to published folder
         run: |
-          [ -f docs ] && rm -r docs
+          rm -rf docs
           mkdir -p docs
           cp -a Sphinx/_build/html/. docs/
           cp Sphinx/_config.yml docs/
