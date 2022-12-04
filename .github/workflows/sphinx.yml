@@ -9,6 +9,13 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/cache@v3
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ hashFiles('dev-requirements.txt') }}
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade --upgrade-strategy eager -r requirements/prod.txt
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
