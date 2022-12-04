@@ -23,15 +23,14 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install --upgrade --upgrade-strategy eager -r requirements/prod.txt
-
-      - name: debug
+          pip install -r Sphinx/requirements.txt
+      - name: Debug
         run: |
           python -V
           pip list
-      - uses: ammaraskar/sphinx-action@master
-        with:
-          docs-folder: "Sphinx/"
-
+      - name: Make Docs
+        run: | 
+          make html
       - name: Move docs to published folder
         run: |
           rm -r docs
