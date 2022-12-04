@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>toolkit.migrations package &mdash; The DM&#39;s Toolkit o.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> The DM's Toolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">toolkit.migrations package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0001_initial">toolkit.migrations.0001_initial module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0002_character">toolkit.migrations.0002_character module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0002_character.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0002_character.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0002_character.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0003_user_alter_character_accountowner_delete_account">toolkit.migrations.0003_user_alter_character_accountowner_delete_account module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0003_user_alter_character_accountowner_delete_account.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0003_user_alter_character_accountowner_delete_account.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0003_user_alter_character_accountowner_delete_account.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0004_alter_character_accountowner_delete_user">toolkit.migrations.0004_alter_character_accountowner_delete_user module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0004_alter_character_accountowner_delete_user.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0004_alter_character_accountowner_delete_user.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0004_alter_character_accountowner_delete_user.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more">toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0006_alter_weapon_ammo_and_more">toolkit.migrations.0006_alter_weapon_ammo_and_more module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0006_alter_weapon_ammo_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0006_alter_weapon_ammo_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0006_alter_weapon_ammo_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more">toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0008_alter_monster_gold_modifier">toolkit.migrations.0008_alter_monster_gold_modifier module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0008_alter_monster_gold_modifier.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0008_alter_monster_gold_modifier.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0008_alter_monster_gold_modifier.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0009_remove_armor_description_and_more">toolkit.migrations.0009_remove_armor_description_and_more module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0009_remove_armor_description_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0009_remove_armor_description_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0009_remove_armor_description_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0010_savecache">toolkit.migrations.0010_savecache module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0010_savecache.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0010_savecache.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0010_savecache.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0011_alter_savecache_character">toolkit.migrations.0011_alter_savecache_character module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0011_alter_savecache_character.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0011_alter_savecache_character.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0011_alter_savecache_character.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0012_rename_savecache_cache">toolkit.migrations.0012_rename_savecache_cache module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0012_rename_savecache_cache.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0012_rename_savecache_cache.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0012_rename_savecache_cache.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0013_cache_loot">toolkit.migrations.0013_cache_loot module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0013_cache_loot.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0013_cache_loot.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0013_cache_loot.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0013_generatedencounter_average_cr">toolkit.migrations.0013_generatedencounter_average_cr module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0013_generatedencounter_average_cr.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0013_generatedencounter_average_cr.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0013_generatedencounter_average_cr.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0014_cache_encounter">toolkit.migrations.0014_cache_encounter module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0014_cache_encounter.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0014_cache_encounter.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0014_cache_encounter.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0015_merge_20221116_2125">toolkit.migrations.0015_merge_20221116_2125 module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0015_merge_20221116_2125.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0015_merge_20221116_2125.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0015_merge_20221116_2125.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more">toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0017_alter_character_character_proficiencies">toolkit.migrations.0017_alter_character_character_proficiencies module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0017_alter_character_character_proficiencies.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0017_alter_character_character_proficiencies.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0017_alter_character_character_proficiencies.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0018_alter_generatedencounter_monsters">toolkit.migrations.0018_alter_generatedencounter_monsters module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0018_alter_generatedencounter_monsters.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0018_alter_generatedencounter_monsters.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0018_alter_generatedencounter_monsters.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more">toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more">toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0020_race_size_alter_race_speed">toolkit.migrations.0020_race_size_alter_race_speed module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0020_race_size_alter_race_speed.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0020_race_size_alter_race_speed.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0020_race_size_alter_race_speed.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0021_clazz_options_race_options">toolkit.migrations.0021_clazz_options_race_options module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0021_clazz_options_race_options.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0021_clazz_options_race_options.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0021_clazz_options_race_options.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0022_clazz_name">toolkit.migrations.0022_clazz_name module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0022_clazz_name.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0022_clazz_name.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0022_clazz_name.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0023_clazz_hitdice">toolkit.migrations.0023_clazz_hitdice module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0023_clazz_hitdice.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0023_clazz_hitdice.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0023_clazz_hitdice.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations.0024_merge_20221127_1523">toolkit.migrations.0024_merge_20221127_1523 module</a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0024_merge_20221127_1523.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.migrations.0024_merge_20221127_1523.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.migrations.0024_merge_20221127_1523.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The DM's Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">toolkit.migrations package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/toolkit.migrations.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="toolkit-migrations-package">
+<h1>toolkit.migrations package<a class="headerlink" href="#toolkit-migrations-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-toolkit.migrations.0001_initial">
+<span id="toolkit-migrations-0001-initial-module"></span><h2>toolkit.migrations.0001_initial module<a class="headerlink" href="#module-toolkit.migrations.0001_initial" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0001_initial.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0001_initial.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0001_initial.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#toolkit.migrations.0001_initial.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0001_initial.Migration.initial">
+<span class="sig-name descname"><span class="pre">initial</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#toolkit.migrations.0001_initial.Migration.initial" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0001_initial.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Account',</span> <span class="pre">fields=[('Email',</span> <span class="pre">&lt;django.db.models.fields.EmailField&gt;),</span> <span class="pre">('Username',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Password',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0001_initial.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0002_character">
+<span id="toolkit-migrations-0002-character-module"></span><h2>toolkit.migrations.0002_character module<a class="headerlink" href="#module-toolkit.migrations.0002_character" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0002_character.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0002_character.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0002_character.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0001_initial')]</span></em><a class="headerlink" href="#toolkit.migrations.0002_character.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0002_character.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Character',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('Name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Race',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Class',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Background',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Alignment',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Level',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Experience',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Strength',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Dexterity',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Constitution',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Intelligence',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Wisdom',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Charisma',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('AccountOwner',</span> <span class="pre">&lt;django.db.models.fields.related.ForeignKey&gt;)]&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0002_character.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0003_user_alter_character_accountowner_delete_account">
+<span id="toolkit-migrations-0003-user-alter-character-accountowner-delete-account-module"></span><h2>toolkit.migrations.0003_user_alter_character_accountowner_delete_account module<a class="headerlink" href="#module-toolkit.migrations.0003_user_alter_character_accountowner_delete_account" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0003_user_alter_character_accountowner_delete_account.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0003_user_alter_character_accountowner_delete_account.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0003_user_alter_character_accountowner_delete_account.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0002_character')]</span></em><a class="headerlink" href="#toolkit.migrations.0003_user_alter_character_accountowner_delete_account.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0003_user_alter_character_accountowner_delete_account.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='User',</span> <span class="pre">fields=[('email',</span> <span class="pre">&lt;django.db.models.fields.EmailField&gt;),</span> <span class="pre">('username',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('password',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='character',</span> <span class="pre">name='AccountOwner',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;DeleteModel</span>&#160; <span class="pre">name='Account'&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0003_user_alter_character_accountowner_delete_account.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0004_alter_character_accountowner_delete_user">
+<span id="toolkit-migrations-0004-alter-character-accountowner-delete-user-module"></span><h2>toolkit.migrations.0004_alter_character_accountowner_delete_user module<a class="headerlink" href="#module-toolkit.migrations.0004_alter_character_accountowner_delete_user" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0004_alter_character_accountowner_delete_user.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0004_alter_character_accountowner_delete_user.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0004_alter_character_accountowner_delete_user.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('auth',</span> <span class="pre">'__first__'),</span> <span class="pre">('toolkit',</span> <span class="pre">'0003_user_alter_character_accountowner_delete_account')]</span></em><a class="headerlink" href="#toolkit.migrations.0004_alter_character_accountowner_delete_user.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0004_alter_character_accountowner_delete_user.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='character',</span> <span class="pre">name='AccountOwner',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;DeleteModel</span>&#160; <span class="pre">name='User'&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0004_alter_character_accountowner_delete_user.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more">
+<span id="toolkit-migrations-0005-armor-genericitem-magicitem-tag-weapon-monster-and-more-module"></span><h2>toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more module<a class="headerlink" href="#module-toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0004_alter_character_accountowner_delete_user')]</span></em><a class="headerlink" href="#toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Armor',</span> <span class="pre">fields=[('Name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Description',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Armor_Type',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Base_Value',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('Armor_Class_Change',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Weight',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Stealth',</span> <span class="pre">&lt;django.db.models.fields.BooleanField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='GenericItem',</span> <span class="pre">fields=[('Name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Description',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Base_Value',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='MagicItem',</span> <span class="pre">fields=[('Name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Rarity',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Effect_Description',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Visual_Description',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Tag',</span> <span class="pre">fields=[('Name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Weapon',</span> <span class="pre">fields=[('Name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Damage_Type',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Weapon_Type',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Damage_Die',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Base_Value',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('Max_Range',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Weight',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Ammo',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Special_Characteristics',</span> <span class="pre">&lt;django.db.models.fields.BinaryField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Monster',</span> <span class="pre">fields=[('Name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Description',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Challenge_Rating',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('Strength',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Dexterity',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Constitution',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Intelligence',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Wisdom',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Charisma',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Gold_Modifier',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('Creature_Tags',</span> <span class="pre">&lt;django.db.models.fields.related.ManyToManyField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='GeneratedLoot',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('Loot_Type',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Total_Value',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('Money',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('Armors',</span> <span class="pre">&lt;django.db.models.fields.related.ManyToManyField&gt;),</span> <span class="pre">('Generic_Items',</span> <span class="pre">&lt;django.db.models.fields.related.ManyToManyField&gt;),</span> <span class="pre">('Magical_Items',</span> <span class="pre">&lt;django.db.models.fields.related.ManyToManyField&gt;),</span> <span class="pre">('Weapons',</span> <span class="pre">&lt;django.db.models.fields.related.ManyToManyField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='GeneratedEncounter',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('Encounter_Type',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Number_Of_Characters',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;),</span> <span class="pre">('Average_Character_Levels',</span> <span class="pre">&lt;django.db.models.fields.FloatField&gt;),</span> <span class="pre">('Encounter_Tags',</span> <span class="pre">&lt;django.db.models.fields.related.ManyToManyField&gt;),</span> <span class="pre">('Monsters',</span> <span class="pre">&lt;django.db.models.fields.related.ManyToManyField&gt;),</span> <span class="pre">('Reward',</span> <span class="pre">&lt;django.db.models.fields.related.OneToOneField&gt;)]&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0006_alter_weapon_ammo_and_more">
+<span id="toolkit-migrations-0006-alter-weapon-ammo-and-more-module"></span><h2>toolkit.migrations.0006_alter_weapon_ammo_and_more module<a class="headerlink" href="#module-toolkit.migrations.0006_alter_weapon_ammo_and_more" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0006_alter_weapon_ammo_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0006_alter_weapon_ammo_and_more.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0006_alter_weapon_ammo_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0005_armor_genericitem_magicitem_tag_weapon_monster_and_more')]</span></em><a class="headerlink" href="#toolkit.migrations.0006_alter_weapon_ammo_and_more.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0006_alter_weapon_ammo_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='weapon',</span> <span class="pre">name='Ammo',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='weapon',</span> <span class="pre">name='Special_Characteristics',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0006_alter_weapon_ammo_and_more.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more">
+<span id="toolkit-migrations-0007-remove-character-accountowner-character-owner-and-more-module"></span><h2>toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more module<a class="headerlink" href="#module-toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('auth',</span> <span class="pre">'__first__'),</span> <span class="pre">('toolkit',</span> <span class="pre">'0006_alter_weapon_ammo_and_more')]</span></em><a class="headerlink" href="#toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RemoveField</span>&#160; <span class="pre">model_name='character',</span> <span class="pre">name='AccountOwner'&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='character',</span> <span class="pre">name='Owner',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='generatedencounter',</span> <span class="pre">name='Owner',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='generatedloot',</span> <span class="pre">name='Owner',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='weapon',</span> <span class="pre">name='Ammo',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;,</span> <span class="pre">preserve_default=False&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0008_alter_monster_gold_modifier">
+<span id="toolkit-migrations-0008-alter-monster-gold-modifier-module"></span><h2>toolkit.migrations.0008_alter_monster_gold_modifier module<a class="headerlink" href="#module-toolkit.migrations.0008_alter_monster_gold_modifier" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0008_alter_monster_gold_modifier.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0008_alter_monster_gold_modifier.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0008_alter_monster_gold_modifier.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0007_remove_character_accountowner_character_owner_and_more')]</span></em><a class="headerlink" href="#toolkit.migrations.0008_alter_monster_gold_modifier.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0008_alter_monster_gold_modifier.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Gold_Modifier',</span> <span class="pre">field=&lt;django.db.models.fields.FloatField&gt;&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0008_alter_monster_gold_modifier.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0009_remove_armor_description_and_more">
+<span id="toolkit-migrations-0009-remove-armor-description-and-more-module"></span><h2>toolkit.migrations.0009_remove_armor_description_and_more module<a class="headerlink" href="#module-toolkit.migrations.0009_remove_armor_description_and_more" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0009_remove_armor_description_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0009_remove_armor_description_and_more.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0009_remove_armor_description_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0008_alter_monster_gold_modifier')]</span></em><a class="headerlink" href="#toolkit.migrations.0009_remove_armor_description_and_more.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0009_remove_armor_description_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RemoveField</span>&#160; <span class="pre">model_name='armor',</span> <span class="pre">name='Description'&gt;,</span> <span class="pre">&lt;RemoveField</span>&#160; <span class="pre">model_name='magicitem',</span> <span class="pre">name='Effect_Description'&gt;,</span> <span class="pre">&lt;RemoveField</span>&#160; <span class="pre">model_name='magicitem',</span> <span class="pre">name='Visual_Description'&gt;,</span> <span class="pre">&lt;RemoveField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Charisma'&gt;,</span> <span class="pre">&lt;RemoveField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Constitution'&gt;,</span> <span class="pre">&lt;RemoveField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Description'&gt;,</span> <span class="pre">&lt;RemoveField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Dexterity'&gt;,</span> <span class="pre">&lt;RemoveField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Intelligence'&gt;,</span> <span class="pre">&lt;RemoveField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Strength'&gt;,</span> <span class="pre">&lt;RemoveField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Wisdom'&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='genericitem',</span> <span class="pre">name='Weight',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='magicitem',</span> <span class="pre">name='Attuned',</span> <span class="pre">field=&lt;django.db.models.fields.BooleanField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='magicitem',</span> <span class="pre">name='Type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Alignment',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Size',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Type',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='armor',</span> <span class="pre">name='Armor_Class_Change',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='weapon',</span> <span class="pre">name='Special_Characteristics',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0009_remove_armor_description_and_more.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0010_savecache">
+<span id="toolkit-migrations-0010-savecache-module"></span><h2>toolkit.migrations.0010_savecache module<a class="headerlink" href="#module-toolkit.migrations.0010_savecache" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0010_savecache.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0010_savecache.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0010_savecache.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('auth',</span> <span class="pre">'__first__'),</span> <span class="pre">('toolkit',</span> <span class="pre">'0009_remove_armor_description_and_more')]</span></em><a class="headerlink" href="#toolkit.migrations.0010_savecache.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0010_savecache.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='SaveCache',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('character',</span> <span class="pre">&lt;django.db.models.fields.related.OneToOneField&gt;),</span> <span class="pre">('user',</span> <span class="pre">&lt;django.db.models.fields.related.OneToOneField&gt;)]&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0010_savecache.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0011_alter_savecache_character">
+<span id="toolkit-migrations-0011-alter-savecache-character-module"></span><h2>toolkit.migrations.0011_alter_savecache_character module<a class="headerlink" href="#module-toolkit.migrations.0011_alter_savecache_character" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0011_alter_savecache_character.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0011_alter_savecache_character.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0011_alter_savecache_character.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0010_savecache')]</span></em><a class="headerlink" href="#toolkit.migrations.0011_alter_savecache_character.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0011_alter_savecache_character.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='savecache',</span> <span class="pre">name='character',</span> <span class="pre">field=&lt;django.db.models.fields.related.OneToOneField&gt;&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0011_alter_savecache_character.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0012_rename_savecache_cache">
+<span id="toolkit-migrations-0012-rename-savecache-cache-module"></span><h2>toolkit.migrations.0012_rename_savecache_cache module<a class="headerlink" href="#module-toolkit.migrations.0012_rename_savecache_cache" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0012_rename_savecache_cache.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0012_rename_savecache_cache.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0012_rename_savecache_cache.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('auth',</span> <span class="pre">'__first__'),</span> <span class="pre">('toolkit',</span> <span class="pre">'0011_alter_savecache_character')]</span></em><a class="headerlink" href="#toolkit.migrations.0012_rename_savecache_cache.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0012_rename_savecache_cache.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;RenameModel</span>&#160; <span class="pre">old_name='SaveCache',</span> <span class="pre">new_name='Cache'&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0012_rename_savecache_cache.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0013_cache_loot">
+<span id="toolkit-migrations-0013-cache-loot-module"></span><h2>toolkit.migrations.0013_cache_loot module<a class="headerlink" href="#module-toolkit.migrations.0013_cache_loot" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0013_cache_loot.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0013_cache_loot.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0013_cache_loot.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0012_rename_savecache_cache')]</span></em><a class="headerlink" href="#toolkit.migrations.0013_cache_loot.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0013_cache_loot.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='cache',</span> <span class="pre">name='loot',</span> <span class="pre">field=&lt;django.db.models.fields.related.OneToOneField&gt;&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0013_cache_loot.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0013_generatedencounter_average_cr">
+<span id="toolkit-migrations-0013-generatedencounter-average-cr-module"></span><h2>toolkit.migrations.0013_generatedencounter_average_cr module<a class="headerlink" href="#module-toolkit.migrations.0013_generatedencounter_average_cr" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0013_generatedencounter_average_cr.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0013_generatedencounter_average_cr.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0013_generatedencounter_average_cr.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0012_rename_savecache_cache')]</span></em><a class="headerlink" href="#toolkit.migrations.0013_generatedencounter_average_cr.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0013_generatedencounter_average_cr.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='generatedencounter',</span> <span class="pre">name='Average_CR',</span> <span class="pre">field=&lt;django.db.models.fields.FloatField&gt;,</span> <span class="pre">preserve_default=False&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0013_generatedencounter_average_cr.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0014_cache_encounter">
+<span id="toolkit-migrations-0014-cache-encounter-module"></span><h2>toolkit.migrations.0014_cache_encounter module<a class="headerlink" href="#module-toolkit.migrations.0014_cache_encounter" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0014_cache_encounter.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0014_cache_encounter.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0014_cache_encounter.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0013_cache_loot')]</span></em><a class="headerlink" href="#toolkit.migrations.0014_cache_encounter.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0014_cache_encounter.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='cache',</span> <span class="pre">name='encounter',</span> <span class="pre">field=&lt;django.db.models.fields.related.OneToOneField&gt;&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0014_cache_encounter.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0015_merge_20221116_2125">
+<span id="toolkit-migrations-0015-merge-20221116-2125-module"></span><h2>toolkit.migrations.0015_merge_20221116_2125 module<a class="headerlink" href="#module-toolkit.migrations.0015_merge_20221116_2125" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0015_merge_20221116_2125.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0015_merge_20221116_2125.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0015_merge_20221116_2125.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0013_generatedencounter_average_cr'),</span> <span class="pre">('toolkit',</span> <span class="pre">'0014_cache_encounter')]</span></em><a class="headerlink" href="#toolkit.migrations.0015_merge_20221116_2125.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0015_merge_20221116_2125.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#toolkit.migrations.0015_merge_20221116_2125.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more">
+<span id="toolkit-migrations-0016-proficiencies-alter-generatedencounter-average-cr-and-more-module"></span><h2>toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more module<a class="headerlink" href="#module-toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0015_merge_20221116_2125')]</span></em><a class="headerlink" href="#toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Proficiencies',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('Name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Stat',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='generatedencounter',</span> <span class="pre">name='Average_CR',</span> <span class="pre">field=&lt;django.db.models.fields.FloatField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Creature_Tags',</span> <span class="pre">field=&lt;django.db.models.fields.related.ManyToManyField&gt;&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='character',</span> <span class="pre">name='Character_Proficiencies',</span> <span class="pre">field=&lt;django.db.models.fields.related.ManyToManyField&gt;&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0017_alter_character_character_proficiencies">
+<span id="toolkit-migrations-0017-alter-character-character-proficiencies-module"></span><h2>toolkit.migrations.0017_alter_character_character_proficiencies module<a class="headerlink" href="#module-toolkit.migrations.0017_alter_character_character_proficiencies" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0017_alter_character_character_proficiencies.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0017_alter_character_character_proficiencies.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0017_alter_character_character_proficiencies.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0016_proficiencies_alter_generatedencounter_average_cr_and_more')]</span></em><a class="headerlink" href="#toolkit.migrations.0017_alter_character_character_proficiencies.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0017_alter_character_character_proficiencies.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='character',</span> <span class="pre">name='Character_Proficiencies',</span> <span class="pre">field=&lt;django.db.models.fields.related.ManyToManyField&gt;&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0017_alter_character_character_proficiencies.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0018_alter_generatedencounter_monsters">
+<span id="toolkit-migrations-0018-alter-generatedencounter-monsters-module"></span><h2>toolkit.migrations.0018_alter_generatedencounter_monsters module<a class="headerlink" href="#module-toolkit.migrations.0018_alter_generatedencounter_monsters" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0018_alter_generatedencounter_monsters.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0018_alter_generatedencounter_monsters.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0018_alter_generatedencounter_monsters.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0017_alter_character_character_proficiencies')]</span></em><a class="headerlink" href="#toolkit.migrations.0018_alter_generatedencounter_monsters.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0018_alter_generatedencounter_monsters.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AlterField</span>&#160; <span class="pre">model_name='generatedencounter',</span> <span class="pre">name='Monsters',</span> <span class="pre">field=&lt;django.db.models.fields.related.ManyToManyField&gt;&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0018_alter_generatedencounter_monsters.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more">
+<span id="toolkit-migrations-0018-race-source-monster-armor-class-monster-hitpoints-and-more-module"></span><h2>toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more module<a class="headerlink" href="#module-toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0017_alter_character_character_proficiencies')]</span></em><a class="headerlink" href="#toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;CreateModel</span>&#160; <span class="pre">name='Race',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('Name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Speed',</span> <span class="pre">&lt;django.db.models.fields.IntegerField&gt;)]&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Source',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('Type',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Name',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('ShortName',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;),</span> <span class="pre">('Link',</span> <span class="pre">&lt;django.db.models.fields.CharField&gt;)]&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Armor_Class',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Hitpoints',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Initiative',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Source',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;CreateModel</span>&#160; <span class="pre">name='Clazz',</span> <span class="pre">fields=[('id',</span> <span class="pre">&lt;django.db.models.fields.BigAutoField&gt;),</span> <span class="pre">('Proficiencies',</span> <span class="pre">&lt;django.db.models.fields.related.ManyToManyField&gt;)]&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='character',</span> <span class="pre">name='Class',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='character',</span> <span class="pre">name='Race',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more">
+<span id="toolkit-migrations-0019-clazz-statprecedence-alter-character-class-and-more-module"></span><h2>toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more module<a class="headerlink" href="#module-toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0018_race_source_monster_armor_class_monster_hitpoints_and_more')]</span></em><a class="headerlink" href="#toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='clazz',</span> <span class="pre">name='StatPrecedence',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='character',</span> <span class="pre">name='Class',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='character',</span> <span class="pre">name='Race',</span> <span class="pre">field=&lt;django.db.models.fields.related.ForeignKey&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Armor_Class',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Hitpoints',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='monster',</span> <span class="pre">name='Initiative',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0020_race_size_alter_race_speed">
+<span id="toolkit-migrations-0020-race-size-alter-race-speed-module"></span><h2>toolkit.migrations.0020_race_size_alter_race_speed module<a class="headerlink" href="#module-toolkit.migrations.0020_race_size_alter_race_speed" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0020_race_size_alter_race_speed.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0020_race_size_alter_race_speed.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0020_race_size_alter_race_speed.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0019_clazz_statprecedence_alter_character_class_and_more')]</span></em><a class="headerlink" href="#toolkit.migrations.0020_race_size_alter_race_speed.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0020_race_size_alter_race_speed.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='race',</span> <span class="pre">name='Size',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AlterField</span>&#160; <span class="pre">model_name='race',</span> <span class="pre">name='Speed',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0020_race_size_alter_race_speed.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0021_clazz_options_race_options">
+<span id="toolkit-migrations-0021-clazz-options-race-options-module"></span><h2>toolkit.migrations.0021_clazz_options_race_options module<a class="headerlink" href="#module-toolkit.migrations.0021_clazz_options_race_options" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0021_clazz_options_race_options.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0021_clazz_options_race_options.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0021_clazz_options_race_options.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0020_race_size_alter_race_speed')]</span></em><a class="headerlink" href="#toolkit.migrations.0021_clazz_options_race_options.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0021_clazz_options_race_options.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='clazz',</span> <span class="pre">name='Options',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;,</span> <span class="pre">preserve_default=False&gt;,</span> <span class="pre">&lt;AddField</span>&#160; <span class="pre">model_name='race',</span> <span class="pre">name='Options',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;,</span> <span class="pre">preserve_default=False&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0021_clazz_options_race_options.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0022_clazz_name">
+<span id="toolkit-migrations-0022-clazz-name-module"></span><h2>toolkit.migrations.0022_clazz_name module<a class="headerlink" href="#module-toolkit.migrations.0022_clazz_name" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0022_clazz_name.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0022_clazz_name.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0022_clazz_name.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0021_clazz_options_race_options')]</span></em><a class="headerlink" href="#toolkit.migrations.0022_clazz_name.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0022_clazz_name.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='clazz',</span> <span class="pre">name='Name',</span> <span class="pre">field=&lt;django.db.models.fields.CharField&gt;,</span> <span class="pre">preserve_default=False&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0022_clazz_name.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0023_clazz_hitdice">
+<span id="toolkit-migrations-0023-clazz-hitdice-module"></span><h2>toolkit.migrations.0023_clazz_hitdice module<a class="headerlink" href="#module-toolkit.migrations.0023_clazz_hitdice" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0023_clazz_hitdice.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0023_clazz_hitdice.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0023_clazz_hitdice.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0022_clazz_name')]</span></em><a class="headerlink" href="#toolkit.migrations.0023_clazz_hitdice.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0023_clazz_hitdice.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&lt;AddField</span>&#160; <span class="pre">model_name='clazz',</span> <span class="pre">name='HitDice',</span> <span class="pre">field=&lt;django.db.models.fields.IntegerField&gt;,</span> <span class="pre">preserve_default=False&gt;]</span></em><a class="headerlink" href="#toolkit.migrations.0023_clazz_hitdice.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations.0024_merge_20221127_1523">
+<span id="toolkit-migrations-0024-merge-20221127-1523-module"></span><h2>toolkit.migrations.0024_merge_20221127_1523 module<a class="headerlink" href="#module-toolkit.migrations.0024_merge_20221127_1523" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.migrations.0024_merge_20221127_1523.Migration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Migration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.migrations.0024_merge_20221127_1523.Migration" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Migration</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0024_merge_20221127_1523.Migration.dependencies">
+<span class="sig-name descname"><span class="pre">dependencies</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('toolkit',</span> <span class="pre">'0018_alter_generatedencounter_monsters'),</span> <span class="pre">('toolkit',</span> <span class="pre">'0023_clazz_hitdice')]</span></em><a class="headerlink" href="#toolkit.migrations.0024_merge_20221127_1523.Migration.dependencies" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.migrations.0024_merge_20221127_1523.Migration.operations">
+<span class="sig-name descname"><span class="pre">operations</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#toolkit.migrations.0024_merge_20221127_1523.Migration.operations" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.migrations">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-toolkit.migrations" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ronen Loundy, Jeffery Meverden, John Tabor, John Schiltz.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

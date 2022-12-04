@@ -265,3 +265,6 @@ GitHub.sublime-settings
 !.vscode/extensions.json 
 .history
 bin/
+
+# Sphinx
+Sphinx/_build

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>toolkit.views.account package &mdash; The DM&#39;s Toolkit o.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> The DM's Toolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">toolkit.views.account package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-toolkit.views.account.change_password">toolkit.views.account.change_password module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.account.change_password.ChangePassword"><code class="docutils literal notranslate"><span class="pre">ChangePassword</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.account.change_password.ChangePassword.get"><code class="docutils literal notranslate"><span class="pre">ChangePassword.get()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.account.change_password.ChangePassword.get_hehe"><code class="docutils literal notranslate"><span class="pre">ChangePassword.get_hehe()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.account.change_password.ChangePassword.post"><code class="docutils literal notranslate"><span class="pre">ChangePassword.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.account.confirm_account_creation">toolkit.views.account.confirm_account_creation module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.account.confirm_account_creation.ConfirmAccountCreation"><code class="docutils literal notranslate"><span class="pre">ConfirmAccountCreation</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.account.confirm_account_creation.ConfirmAccountCreation.get"><code class="docutils literal notranslate"><span class="pre">ConfirmAccountCreation.get()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.account.confirm_account_creation.ConfirmAccountCreation.post"><code class="docutils literal notranslate"><span class="pre">ConfirmAccountCreation.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.account.create_account">toolkit.views.account.create_account module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.account.create_account.CreateAccount"><code class="docutils literal notranslate"><span class="pre">CreateAccount</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.account.create_account.CreateAccount.get"><code class="docutils literal notranslate"><span class="pre">CreateAccount.get()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.account.create_account.CreateAccount.post"><code class="docutils literal notranslate"><span class="pre">CreateAccount.post()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.views.account.create_account.CreateAccountForm"><code class="docutils literal notranslate"><span class="pre">CreateAccountForm</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.account.create_account.CreateAccountForm.base_fields"><code class="docutils literal notranslate"><span class="pre">CreateAccountForm.base_fields</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.account.create_account.CreateAccountForm.declared_fields"><code class="docutils literal notranslate"><span class="pre">CreateAccountForm.declared_fields</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.account.create_account.CreateAccountForm.media"><code class="docutils literal notranslate"><span class="pre">CreateAccountForm.media</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.views.account.create_account.create_user"><code class="docutils literal notranslate"><span class="pre">create_user()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.account.login">toolkit.views.account.login module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.account.login.Login"><code class="docutils literal notranslate"><span class="pre">Login</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.account.login.Login.get"><code class="docutils literal notranslate"><span class="pre">Login.get()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.account.login.Login.post"><code class="docutils literal notranslate"><span class="pre">Login.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.account.logout">toolkit.views.account.logout module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.account.logout.Logout"><code class="docutils literal notranslate"><span class="pre">Logout</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.account.logout.Logout.custom_logout"><code class="docutils literal notranslate"><span class="pre">Logout.custom_logout()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.account.reset_password">toolkit.views.account.reset_password module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.account.reset_password.ResetPassword"><code class="docutils literal notranslate"><span class="pre">ResetPassword</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.account.reset_password.ResetPassword.get"><code class="docutils literal notranslate"><span class="pre">ResetPassword.get()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.account.reset_password.ResetPassword.post"><code class="docutils literal notranslate"><span class="pre">ResetPassword.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.account">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The DM's Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">toolkit.views.account package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/toolkit.views.account.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="toolkit-views-account-package">
+<h1>toolkit.views.account package<a class="headerlink" href="#toolkit-views-account-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-toolkit.views.account.change_password">
+<span id="toolkit-views-account-change-password-module"></span><h2>toolkit.views.account.change_password module<a class="headerlink" href="#module-toolkit.views.account.change_password" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.account.change_password.ChangePassword">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ChangePassword</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.change_password.ChangePassword" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.account.change_password.ChangePassword.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.change_password.ChangePassword.get" title="Permalink to this definition"></a></dt>
+<dd><p>hehe</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.account.change_password.ChangePassword.get_hehe">
+<span class="sig-name descname"><span class="pre">get_hehe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#toolkit.views.account.change_password.ChangePassword.get_hehe" title="Permalink to this definition"></a></dt>
+<dd><p>get’s a good string</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.account.change_password.ChangePassword.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.change_password.ChangePassword.post" title="Permalink to this definition"></a></dt>
+<dd><p>hehe</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.account.confirm_account_creation">
+<span id="toolkit-views-account-confirm-account-creation-module"></span><h2>toolkit.views.account.confirm_account_creation module<a class="headerlink" href="#module-toolkit.views.account.confirm_account_creation" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.account.confirm_account_creation.ConfirmAccountCreation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ConfirmAccountCreation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.confirm_account_creation.ConfirmAccountCreation" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></p>
+<p>A class to handle the confirm account creation page’s GET and POST requests.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.account.confirm_account_creation.ConfirmAccountCreation.get">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.confirm_account_creation.ConfirmAccountCreation.get" title="Permalink to this definition"></a></dt>
+<dd><p>GET method for confirm account creation page.
+Args:</p>
+<blockquote>
+<div><p>request (HttpRequest):
+kwargs (dict[str, str]): username</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.account.confirm_account_creation.ConfirmAccountCreation.post">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.confirm_account_creation.ConfirmAccountCreation.post" title="Permalink to this definition"></a></dt>
+<dd><p>POST method for confirm account creation page.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.account.create_account">
+<span id="toolkit-views-account-create-account-module"></span><h2>toolkit.views.account.create_account module<a class="headerlink" href="#module-toolkit.views.account.create_account" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.account.create_account.CreateAccount">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CreateAccount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.create_account.CreateAccount" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></p>
+<p>A class to handle the create user page’s GET and POST requests. As well as retrieve
+a user’s credentials from the User database.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.account.create_account.CreateAccount.get">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.create_account.CreateAccount.get" title="Permalink to this definition"></a></dt>
+<dd><p>GET method for create user page.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.account.create_account.CreateAccount.post">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.create_account.CreateAccount.post" title="Permalink to this definition"></a></dt>
+<dd><p>POST method for create user page.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.account.create_account.CreateAccountForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CreateAccountForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_order=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.create_account.CreateAccountForm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Form</span></code></p>
+<p>Creates a new form for the Create Account template.
+Takes the POST request returned as an argument to create a new filled out form</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>username (str):
+email (str):
+password (str):</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.account.create_account.CreateAccountForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'email':</span> <span class="pre">&lt;django.forms.fields.EmailField</span> <span class="pre">object&gt;,</span> <span class="pre">'password':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'username':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#toolkit.views.account.create_account.CreateAccountForm.base_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.account.create_account.CreateAccountForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'email':</span> <span class="pre">&lt;django.forms.fields.EmailField</span> <span class="pre">object&gt;,</span> <span class="pre">'password':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;,</span> <span class="pre">'username':</span> <span class="pre">&lt;django.forms.fields.CharField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#toolkit.views.account.create_account.CreateAccountForm.declared_fields" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit.views.account.create_account.CreateAccountForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#toolkit.views.account.create_account.CreateAccountForm.media" title="Permalink to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toolkit.views.account.create_account.create_user">
+<span class="sig-name descname"><span class="pre">create_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">User</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#toolkit.views.account.create_account.create_user" title="Permalink to this definition"></a></dt>
+<dd><p>Create a new user object and save in database
+if one does not already exist for that email</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>username (str): A valid username containing only alpha-numeric characters
+email (str): A valid email
+password (str): A valid password</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Raises an error if no user is found</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[Account]: Returns None if account already exists,
+otherwise returns the new account</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.account.login">
+<span id="toolkit-views-account-login-module"></span><h2>toolkit.views.account.login module<a class="headerlink" href="#module-toolkit.views.account.login" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.account.login.Login">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.login.Login" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></p>
+<p>A class to handle the login page’s GET and POST requests. As well as retrieve
+a user’s credentials from the User database.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.account.login.Login.get">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.login.Login.get" title="Permalink to this definition"></a></dt>
+<dd><p>GET method for login page.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.account.login.Login.post">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.login.Login.post" title="Permalink to this definition"></a></dt>
+<dd><p>POST method for login page.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.account.logout">
+<span id="toolkit-views-account-logout-module"></span><h2>toolkit.views.account.logout module<a class="headerlink" href="#module-toolkit.views.account.logout" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.account.logout.Logout">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Logout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.logout.Logout" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></p>
+<p>View to handle logout requests started from user navbar dropdown selection.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.account.logout.Logout.custom_logout">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">custom_logout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.logout.Logout.custom_logout" title="Permalink to this definition"></a></dt>
+<dd><p>Logout a user if they are logged in. Redirects back to home page.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.account.reset_password">
+<span id="toolkit-views-account-reset-password-module"></span><h2>toolkit.views.account.reset_password module<a class="headerlink" href="#module-toolkit.views.account.reset_password" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.account.reset_password.ResetPassword">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ResetPassword</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.reset_password.ResetPassword" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></p>
+<p>hehe</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.account.reset_password.ResetPassword.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.reset_password.ResetPassword.get" title="Permalink to this definition"></a></dt>
+<dd><p>hehe</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.account.reset_password.ResetPassword.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.account.reset_password.ResetPassword.post" title="Permalink to this definition"></a></dt>
+<dd><p>hehe</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.account">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-toolkit.views.account" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ronen Loundy, Jeffery Meverden, John Tabor, John Schiltz.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

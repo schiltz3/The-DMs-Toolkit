@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tests package &mdash; The DM&#39;s Toolkit o.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> The DM's Toolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Tests package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-Tests.test_character_generator_backend_UNIT">Tests.test_character_generator_backend_UNIT module</a><ul>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.Arrange_Tests"><code class="docutils literal notranslate"><span class="pre">Arrange_Tests</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.Arrange_Tests.setUp"><code class="docutils literal notranslate"><span class="pre">Arrange_Tests.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.Arrange_Tests.test_negative_arrange"><code class="docutils literal notranslate"><span class="pre">Arrange_Tests.test_negative_arrange()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.Arrange_Tests.test_positive_arrange"><code class="docutils literal notranslate"><span class="pre">Arrange_Tests.test_positive_arrange()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests"><code class="docutils literal notranslate"><span class="pre">Negative_Tests</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.setUp"><code class="docutils literal notranslate"><span class="pre">Negative_Tests.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate"><code class="docutils literal notranslate"><span class="pre">Negative_Tests.test_generate()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_alignment"><code class="docutils literal notranslate"><span class="pre">Negative_Tests.test_generate_alignment()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_background"><code class="docutils literal notranslate"><span class="pre">Negative_Tests.test_generate_background()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_class"><code class="docutils literal notranslate"><span class="pre">Negative_Tests.test_generate_class()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_race"><code class="docutils literal notranslate"><span class="pre">Negative_Tests.test_generate_race()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_stats"><code class="docutils literal notranslate"><span class="pre">Negative_Tests.test_generate_stats()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.PositiveTests"><code class="docutils literal notranslate"><span class="pre">PositiveTests</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.setUp"><code class="docutils literal notranslate"><span class="pre">PositiveTests.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_generate()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_alignment"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_generate_alignment()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_background"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_generate_background()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_class"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_generate_class()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_race"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_generate_race()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_stats"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_generate_stats()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-Tests.test_character_generator_view">Tests.test_character_generator_view module</a><ul>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.setUp"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.tearDown"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.tearDown()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_can_access_character_page"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_can_access_character_page()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_clear"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_clear()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_alignment"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_form_invalid_alignment()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_background"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_form_invalid_background()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_clazz"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_form_invalid_clazz()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_generator"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_form_invalid_generator()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_race"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_form_invalid_race()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_form_valid"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_form_valid()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_generate_cache"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_generate_cache()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_no_button"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_no_button()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_save_cache"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_save_cache()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_save_not_logged_in"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_save_not_logged_in()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_successful_generate_3D6"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_successful_generate_3D6()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_successful_generate_Standard"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_successful_generate_Standard()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_unsuccessful_generate_character_alignment"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_unsuccessful_generate_character_alignment()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_unsuccessful_generate_character_background"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_unsuccessful_generate_character_background()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_unsuccessful_generate_character_clazz"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_unsuccessful_generate_character_clazz()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_unsuccessful_generate_character_race"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_unsuccessful_generate_character_race()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_user_can_access_character_page"><code class="docutils literal notranslate"><span class="pre">TestCharacterGenerator.test_user_can_access_character_page()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-Tests.test_create_account_UNIT">Tests.test_create_account_UNIT module</a><ul>
+<li><a class="reference internal" href="#Tests.test_create_account_UNIT.Account_Creation_Tests"><code class="docutils literal notranslate"><span class="pre">Account_Creation_Tests</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_create_account_UNIT.Account_Creation_Tests.test_create_user_negative"><code class="docutils literal notranslate"><span class="pre">Account_Creation_Tests.test_create_user_negative()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_create_account_UNIT.Account_Creation_Tests.test_create_user_positive"><code class="docutils literal notranslate"><span class="pre">Account_Creation_Tests.test_create_user_positive()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-Tests.test_create_account_view">Tests.test_create_account_view module</a><ul>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount.setUp"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount.test_can_access_create_account_page"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount.test_can_access_create_account_page()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount.test_confirm_creation_redirect_login"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount.test_confirm_creation_redirect_login()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount.test_form_invalid_email"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount.test_form_invalid_email()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount.test_form_invalid_no_email"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount.test_form_invalid_no_email()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount.test_form_invalid_no_password"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount.test_form_invalid_no_password()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount.test_form_invalid_no_username"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount.test_form_invalid_no_username()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount.test_form_valid"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount.test_form_valid()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount.test_successful_account_creation"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount.test_successful_account_creation()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount.test_unsuccessful_account_creation_email"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount.test_unsuccessful_account_creation_email()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount.test_unsuccessful_account_creation_no_email"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount.test_unsuccessful_account_creation_no_email()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount.test_unsuccessful_account_creation_no_password"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount.test_unsuccessful_account_creation_no_password()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_create_account_view.TestCreateAccount.test_unsuccessful_account_creation_no_username"><code class="docutils literal notranslate"><span class="pre">TestCreateAccount.test_unsuccessful_account_creation_no_username()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-Tests.test_encounter_generator_backend_UNIT">Tests.test_encounter_generator_backend_UNIT module</a><ul>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests"><code class="docutils literal notranslate"><span class="pre">Encounter_Type_Tests</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests.setUp"><code class="docutils literal notranslate"><span class="pre">Encounter_Type_Tests.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests.test_get_encounter_type"><code class="docutils literal notranslate"><span class="pre">Encounter_Type_Tests.test_get_encounter_type()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests.test_set_encounter_type_negative"><code class="docutils literal notranslate"><span class="pre">Encounter_Type_Tests.test_set_encounter_type_negative()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests.test_set_encounter_type_positive"><code class="docutils literal notranslate"><span class="pre">Encounter_Type_Tests.test_set_encounter_type_positive()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Generate_Test"><code class="docutils literal notranslate"><span class="pre">Generate_Test</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Generate_Test.setUp"><code class="docutils literal notranslate"><span class="pre">Generate_Test.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Generate_Test.test_generate_negative"><code class="docutils literal notranslate"><span class="pre">Generate_Test.test_generate_negative()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Generate_Test.test_generate_positive"><code class="docutils literal notranslate"><span class="pre">Generate_Test.test_generate_positive()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Level_Tests"><code class="docutils literal notranslate"><span class="pre">Level_Tests</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Level_Tests.setUp"><code class="docutils literal notranslate"><span class="pre">Level_Tests.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Level_Tests.test_get_level"><code class="docutils literal notranslate"><span class="pre">Level_Tests.test_get_level()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Level_Tests.test_set_level_negative"><code class="docutils literal notranslate"><span class="pre">Level_Tests.test_set_level_negative()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Level_Tests.test_set_level_positive"><code class="docutils literal notranslate"><span class="pre">Level_Tests.test_set_level_positive()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Loot_Tests"><code class="docutils literal notranslate"><span class="pre">Loot_Tests</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Loot_Tests.setUp"><code class="docutils literal notranslate"><span class="pre">Loot_Tests.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Loot_Tests.test_generate_loot"><code class="docutils literal notranslate"><span class="pre">Loot_Tests.test_generate_loot()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Loot_Tests.test_get_loot"><code class="docutils literal notranslate"><span class="pre">Loot_Tests.test_get_loot()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Loot_Tests.test_get_loot_modifier"><code class="docutils literal notranslate"><span class="pre">Loot_Tests.test_get_loot_modifier()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests"><code class="docutils literal notranslate"><span class="pre">Monsters_And_CR_Tests</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.setUp"><code class="docutils literal notranslate"><span class="pre">Monsters_And_CR_Tests.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_calculate_cr_positive"><code class="docutils literal notranslate"><span class="pre">Monsters_And_CR_Tests.test_calculate_cr_positive()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_get_average_cr"><code class="docutils literal notranslate"><span class="pre">Monsters_And_CR_Tests.test_get_average_cr()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_get_monster_list"><code class="docutils literal notranslate"><span class="pre">Monsters_And_CR_Tests.test_get_monster_list()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_monster_generate_negative"><code class="docutils literal notranslate"><span class="pre">Monsters_And_CR_Tests.test_monster_generate_negative()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_monster_generate_positive"><code class="docutils literal notranslate"><span class="pre">Monsters_And_CR_Tests.test_monster_generate_positive()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests"><code class="docutils literal notranslate"><span class="pre">Tag_Tests</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.setUp"><code class="docutils literal notranslate"><span class="pre">Tag_Tests.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_add_tags_negative"><code class="docutils literal notranslate"><span class="pre">Tag_Tests.test_add_tags_negative()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_add_tags_positive"><code class="docutils literal notranslate"><span class="pre">Tag_Tests.test_add_tags_positive()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_get_tags_negative"><code class="docutils literal notranslate"><span class="pre">Tag_Tests.test_get_tags_negative()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_get_tags_positive"><code class="docutils literal notranslate"><span class="pre">Tag_Tests.test_get_tags_positive()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_remove_tags_negative"><code class="docutils literal notranslate"><span class="pre">Tag_Tests.test_remove_tags_negative()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_remove_tags_positive"><code class="docutils literal notranslate"><span class="pre">Tag_Tests.test_remove_tags_positive()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-Tests.test_login_view">Tests.test_login_view module</a><ul>
+<li><a class="reference internal" href="#Tests.test_login_view.TestLogin"><code class="docutils literal notranslate"><span class="pre">TestLogin</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_login_view.TestLogin.setUp"><code class="docutils literal notranslate"><span class="pre">TestLogin.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_login_view.TestLogin.tearDown"><code class="docutils literal notranslate"><span class="pre">TestLogin.tearDown()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_login_view.TestLogin.test_can_access_login_page"><code class="docutils literal notranslate"><span class="pre">TestLogin.test_can_access_login_page()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_login_view.TestLogin.test_can_access_login_page_filled_username"><code class="docutils literal notranslate"><span class="pre">TestLogin.test_can_access_login_page_filled_username()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_login_view.TestLogin.test_successful_login"><code class="docutils literal notranslate"><span class="pre">TestLogin.test_successful_login()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_login_view.TestLogin.test_unsuccessful_login_no_password"><code class="docutils literal notranslate"><span class="pre">TestLogin.test_unsuccessful_login_no_password()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_login_view.TestLogin.test_unsuccessful_login_no_username"><code class="docutils literal notranslate"><span class="pre">TestLogin.test_unsuccessful_login_no_username()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_login_view.TestLogin.test_unsuccessful_login_no_username_password"><code class="docutils literal notranslate"><span class="pre">TestLogin.test_unsuccessful_login_no_username_password()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_login_view.TestLogin.test_unsuccessful_login_wrong_password"><code class="docutils literal notranslate"><span class="pre">TestLogin.test_unsuccessful_login_wrong_password()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_login_view.TestLogin.test_unsuccessful_login_wrong_username"><code class="docutils literal notranslate"><span class="pre">TestLogin.test_unsuccessful_login_wrong_username()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-Tests.test_loot_generator_backend_UNIT">Tests.test_loot_generator_backend_UNIT module</a><ul>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests"><code class="docutils literal notranslate"><span class="pre">PositiveTests</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.setUp"><code class="docutils literal notranslate"><span class="pre">PositiveTests.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_armor"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_armor()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_check_value"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_check_value()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_currency"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_currency()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_generate"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_generate()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_generate_loot_type"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_generate_loot_type()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_generic"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_generic()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_magic"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_magic()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_random"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_random()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_total_value"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_total_value()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_weapons"><code class="docutils literal notranslate"><span class="pre">PositiveTests.test_weapons()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.negative_tests"><code class="docutils literal notranslate"><span class="pre">negative_tests</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.negative_tests.setUp"><code class="docutils literal notranslate"><span class="pre">negative_tests.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_backend_UNIT.negative_tests.test_generate"><code class="docutils literal notranslate"><span class="pre">negative_tests.test_generate()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-Tests.test_loot_generator_view">Tests.test_loot_generator_view module</a><ul>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator</span></code></a><ul>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.setUp"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.setUp()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.tearDown"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.tearDown()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_can_access_loot_page"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_can_access_loot_page()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_clear"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_clear()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_clear_cache"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_clear_cache()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_generate_cache"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_generate_cache()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_generator_type"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_invalid_form_generator_type()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_loot_type"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_invalid_form_loot_type()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_player_level_high"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_invalid_form_player_level_high()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_player_level_zero"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_invalid_form_player_level_zero()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_total_hoard_value"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_invalid_form_total_hoard_value()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_save_cache"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_save_cache()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_save_not_logged_in"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_save_not_logged_in()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_successful_generate"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_successful_generate()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_successful_generate_average_player_level"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_successful_generate_average_player_level()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_successful_generate_average_player_level_hoard_value"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_successful_generate_average_player_level_hoard_value()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_successful_generate_total_hoard_value"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_successful_generate_total_hoard_value()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_unsuccessful_generate_generator_type"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_unsuccessful_generate_generator_type()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_unsuccessful_generate_loot_type"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_unsuccessful_generate_loot_type()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_user_can_access_loot_page"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_user_can_access_loot_page()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_valid_form"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_valid_form()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_valid_form_player_level_empty"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_valid_form_player_level_empty()</span></code></a></li>
+<li><a class="reference internal" href="#Tests.test_loot_generator_view.TestLootGenerator.test_valid_form_total_hoard_value_empty"><code class="docutils literal notranslate"><span class="pre">TestLootGenerator.test_valid_form_total_hoard_value_empty()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-Tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The DM's Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Tests package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Tests.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tests-package">
+<h1>Tests package<a class="headerlink" href="#tests-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-Tests.test_character_generator_backend_UNIT">
+<span id="tests-test-character-generator-backend-unit-module"></span><h2>Tests.test_character_generator_backend_UNIT module<a class="headerlink" href="#module-Tests.test_character_generator_backend_UNIT" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.Arrange_Tests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Arrange_Tests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.Arrange_Tests" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Contains the various methods testing the arrange method for character creation</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>TestCase (_type_): Django Test Case</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.Arrange_Tests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.Arrange_Tests.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Set up a generator for each test</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.Arrange_Tests.test_negative_arrange">
+<span class="sig-name descname"><span class="pre">test_negative_arrange</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.Arrange_Tests.test_negative_arrange" title="Permalink to this definition"></a></dt>
+<dd><dl class="simple">
+<dt>Test the rejected cases of the arrange method:</dt><dd><p>Non existing character
+Too small stat array
+Too Big stat array
+Non integer in the stat array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.Arrange_Tests.test_positive_arrange">
+<span class="sig-name descname"><span class="pre">test_positive_arrange</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.Arrange_Tests.test_positive_arrange" title="Permalink to this definition"></a></dt>
+<dd><p>Testing to make sure the arrange algorithm works</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.Negative_Tests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Negative_Tests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Test the various cases where errors should be raised</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>unittest (_type_): _description_</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.Negative_Tests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Set up a generator for each test</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate">
+<span class="sig-name descname"><span class="pre">test_generate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate" title="Permalink to this definition"></a></dt>
+<dd><p>Tests too small stat lists
+Unapproved item in list
+Tests too large stat numbers
+Too many inputs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_alignment">
+<span class="sig-name descname"><span class="pre">test_generate_alignment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_alignment" title="Permalink to this definition"></a></dt>
+<dd><p>Tests nonexisting keys
+Unapproved item in list
+Too many inputs
+Too few inputs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_background">
+<span class="sig-name descname"><span class="pre">test_generate_background</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_background" title="Permalink to this definition"></a></dt>
+<dd><p>Tests nonexisting keys
+Unapproved item in list
+Too many inputs
+Too few inputs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_class">
+<span class="sig-name descname"><span class="pre">test_generate_class</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_class" title="Permalink to this definition"></a></dt>
+<dd><p>Tests nonexisting keys
+Unapproved item in list
+Too many inputs
+Too few inputs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_race">
+<span class="sig-name descname"><span class="pre">test_generate_race</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_race" title="Permalink to this definition"></a></dt>
+<dd><p>Tests nonexisting keys
+Unapproved item in list
+Too many inputs
+Too few inputs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_stats">
+<span class="sig-name descname"><span class="pre">test_generate_stats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.Negative_Tests.test_generate_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Tests nonexisting keys
+Too many inputs
+Too few inputs</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.PositiveTests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PositiveTests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.PositiveTests" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Testing for positive results from various character generation classes</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.PositiveTests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Set up a generator for each test</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate">
+<span class="sig-name descname"><span class="pre">test_generate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate" title="Permalink to this definition"></a></dt>
+<dd><p>_summary_</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_alignment">
+<span class="sig-name descname"><span class="pre">test_generate_alignment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_alignment" title="Permalink to this definition"></a></dt>
+<dd><p>Testing the generate alignment method</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_background">
+<span class="sig-name descname"><span class="pre">test_generate_background</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_background" title="Permalink to this definition"></a></dt>
+<dd><p>Testing the generate background function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_class">
+<span class="sig-name descname"><span class="pre">test_generate_class</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_class" title="Permalink to this definition"></a></dt>
+<dd><p>Tests the generate class method</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_race">
+<span class="sig-name descname"><span class="pre">test_generate_race</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_race" title="Permalink to this definition"></a></dt>
+<dd><p>Tests the generate race method</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_stats">
+<span class="sig-name descname"><span class="pre">test_generate_stats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_backend_UNIT.PositiveTests.test_generate_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Tests the Random stat generation method</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Tests.test_character_generator_view">
+<span id="tests-test-character-generator-view-module"></span><h2>Tests.test_character_generator_view module<a class="headerlink" href="#module-Tests.test_character_generator_view" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TestCharacterGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Testing for character generator page.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Function to set up all tests with information needed within
+each individual test case.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.tearDown">
+<span class="sig-name descname"><span class="pre">tearDown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.tearDown" title="Permalink to this definition"></a></dt>
+<dd><p>Function to clean up test database after each individual test.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_can_access_character_page">
+<span class="sig-name descname"><span class="pre">test_can_access_character_page</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_can_access_character_page" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user is able to access the character generator page.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_clear">
+<span class="sig-name descname"><span class="pre">test_clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_clear" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user is able to click the clear button and reset all inputs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_alignment">
+<span class="sig-name descname"><span class="pre">test_form_invalid_alignment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_alignment" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if the form is invalid given invalid alignment</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_background">
+<span class="sig-name descname"><span class="pre">test_form_invalid_background</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_background" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if the form is invalid given invalid background</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_clazz">
+<span class="sig-name descname"><span class="pre">test_form_invalid_clazz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_clazz" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if the form is invalid given invalid clazz</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_generator">
+<span class="sig-name descname"><span class="pre">test_form_invalid_generator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_generator" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if the form is invalid given invalid background</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_race">
+<span class="sig-name descname"><span class="pre">test_form_invalid_race</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_form_invalid_race" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if the form is invalid given invalid race</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_form_valid">
+<span class="sig-name descname"><span class="pre">test_form_valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_form_valid" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if the form is valid given all correct input</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_generate_cache">
+<span class="sig-name descname"><span class="pre">test_generate_cache</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_generate_cache" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user can save a generated character to it’s cache.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_no_button">
+<span class="sig-name descname"><span class="pre">test_no_button</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_no_button" title="Permalink to this definition"></a></dt>
+<dd><p>Tests post method after no button press</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_save_cache">
+<span class="sig-name descname"><span class="pre">test_save_cache</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_save_cache" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user can save a generated character in it’s cache to the database.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_save_not_logged_in">
+<span class="sig-name descname"><span class="pre">test_save_not_logged_in</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_save_not_logged_in" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user can save a generated loot while not logged in</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_successful_generate_3D6">
+<span class="sig-name descname"><span class="pre">test_successful_generate_3D6</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_successful_generate_3D6" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully generate character for all correct input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_successful_generate_Standard">
+<span class="sig-name descname"><span class="pre">test_successful_generate_Standard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_successful_generate_Standard" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully generate character for all correct input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_unsuccessful_generate_character_alignment">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_generate_character_alignment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_unsuccessful_generate_character_alignment" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully generate character for incorrect alignment input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_unsuccessful_generate_character_background">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_generate_character_background</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_unsuccessful_generate_character_background" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully generate character for incorrect background input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_unsuccessful_generate_character_clazz">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_generate_character_clazz</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_unsuccessful_generate_character_clazz" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully generate character for incorrect clazz input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_unsuccessful_generate_character_race">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_generate_character_race</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_unsuccessful_generate_character_race" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully generate character for incorrect race input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_character_generator_view.TestCharacterGenerator.test_user_can_access_character_page">
+<span class="sig-name descname"><span class="pre">test_user_can_access_character_page</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_character_generator_view.TestCharacterGenerator.test_user_can_access_character_page" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a logged in user is able to access the character generator page.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Tests.test_create_account_UNIT">
+<span id="tests-test-create-account-unit-module"></span><h2>Tests.test_create_account_UNIT module<a class="headerlink" href="#module-Tests.test_create_account_UNIT" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_create_account_UNIT.Account_Creation_Tests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Account_Creation_Tests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_UNIT.Account_Creation_Tests" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Unit tests for account creation page</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_UNIT.Account_Creation_Tests.test_create_user_negative">
+<span class="sig-name descname"><span class="pre">test_create_user_negative</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_UNIT.Account_Creation_Tests.test_create_user_negative" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if the create user function does not create a new user</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_UNIT.Account_Creation_Tests.test_create_user_positive">
+<span class="sig-name descname"><span class="pre">test_create_user_positive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_UNIT.Account_Creation_Tests.test_create_user_positive" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if the create user function successfully creates a new user</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Tests.test_create_account_view">
+<span id="tests-test-create-account-view-module"></span><h2>Tests.test_create_account_view module<a class="headerlink" href="#module-Tests.test_create_account_view" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TestCreateAccount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Testing for create account and confirm account creation page.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Function to set up all tests with information needed within
+each individual test case.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount.test_can_access_create_account_page">
+<span class="sig-name descname"><span class="pre">test_can_access_create_account_page</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount.test_can_access_create_account_page" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user is able to access the create user page.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount.test_confirm_creation_redirect_login">
+<span class="sig-name descname"><span class="pre">test_confirm_creation_redirect_login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount.test_confirm_creation_redirect_login" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to redirect to the login page after confirming account creation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount.test_form_invalid_email">
+<span class="sig-name descname"><span class="pre">test_form_invalid_email</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount.test_form_invalid_email" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if the form is valid after giving incorrect credentials.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount.test_form_invalid_no_email">
+<span class="sig-name descname"><span class="pre">test_form_invalid_no_email</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount.test_form_invalid_no_email" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if the form is valid after giving incorrect credentials.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount.test_form_invalid_no_password">
+<span class="sig-name descname"><span class="pre">test_form_invalid_no_password</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount.test_form_invalid_no_password" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if the form is valid after giving incorrect credentials.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount.test_form_invalid_no_username">
+<span class="sig-name descname"><span class="pre">test_form_invalid_no_username</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount.test_form_invalid_no_username" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if the form is valid after giving incorrect credentials.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount.test_form_valid">
+<span class="sig-name descname"><span class="pre">test_form_valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount.test_form_valid" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if the form is valid after giving correct credentials.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount.test_successful_account_creation">
+<span class="sig-name descname"><span class="pre">test_successful_account_creation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount.test_successful_account_creation" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully create a new account giving correct credentials</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount.test_unsuccessful_account_creation_email">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_account_creation_email</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount.test_unsuccessful_account_creation_email" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully create a new account giving incorrect credentials</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount.test_unsuccessful_account_creation_no_email">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_account_creation_no_email</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount.test_unsuccessful_account_creation_no_email" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully create a new account giving incorrect credentials</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount.test_unsuccessful_account_creation_no_password">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_account_creation_no_password</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount.test_unsuccessful_account_creation_no_password" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully create a new account giving incorrect credentials</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_create_account_view.TestCreateAccount.test_unsuccessful_account_creation_no_username">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_account_creation_no_username</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_create_account_view.TestCreateAccount.test_unsuccessful_account_creation_no_username" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully create a new account giving incorrect credentials</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Tests.test_encounter_generator_backend_UNIT">
+<span id="tests-test-encounter-generator-backend-unit-module"></span><h2>Tests.test_encounter_generator_backend_UNIT module<a class="headerlink" href="#module-Tests.test_encounter_generator_backend_UNIT" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Encounter_Type_Tests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Tests for Encounter Type methods</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>TestCase (_type_): Django Test Module</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Tests setup</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests.test_get_encounter_type">
+<span class="sig-name descname"><span class="pre">test_get_encounter_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests.test_get_encounter_type" title="Permalink to this definition"></a></dt>
+<dd><p>Tests get encounter types</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests.test_set_encounter_type_negative">
+<span class="sig-name descname"><span class="pre">test_set_encounter_type_negative</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests.test_set_encounter_type_negative" title="Permalink to this definition"></a></dt>
+<dd><p>Tests set encounter types</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests.test_set_encounter_type_positive">
+<span class="sig-name descname"><span class="pre">test_set_encounter_type_positive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Encounter_Type_Tests.test_set_encounter_type_positive" title="Permalink to this definition"></a></dt>
+<dd><p>Tests set encounter types</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Generate_Test">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Generate_Test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Generate_Test" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Tests for generate encounter</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>TestCase (_type_): Django Test Module</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Generate_Test.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Generate_Test.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Test setup</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Generate_Test.test_generate_negative">
+<span class="sig-name descname"><span class="pre">test_generate_negative</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Generate_Test.test_generate_negative" title="Permalink to this definition"></a></dt>
+<dd><p>Test encounter generate</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Generate_Test.test_generate_positive">
+<span class="sig-name descname"><span class="pre">test_generate_positive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Generate_Test.test_generate_positive" title="Permalink to this definition"></a></dt>
+<dd><p>Test encounter generate method</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Level_Tests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Level_Tests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Level_Tests" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Tests for Level methods</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>TestCase (_type_): Django Test Module</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Level_Tests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Level_Tests.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Tests Setup</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Level_Tests.test_get_level">
+<span class="sig-name descname"><span class="pre">test_get_level</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Level_Tests.test_get_level" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for get level</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Level_Tests.test_set_level_negative">
+<span class="sig-name descname"><span class="pre">test_set_level_negative</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Level_Tests.test_set_level_negative" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for set level</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Level_Tests.test_set_level_positive">
+<span class="sig-name descname"><span class="pre">test_set_level_positive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Level_Tests.test_set_level_positive" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for set level</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Loot_Tests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Loot_Tests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Loot_Tests" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Tests for loot methods</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>TestCase (_type_): Django Test Module</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Loot_Tests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Loot_Tests.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Test setup</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Loot_Tests.test_generate_loot">
+<span class="sig-name descname"><span class="pre">test_generate_loot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Loot_Tests.test_generate_loot" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for generating loot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Loot_Tests.test_get_loot">
+<span class="sig-name descname"><span class="pre">test_get_loot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Loot_Tests.test_get_loot" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for returning loot</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Loot_Tests.test_get_loot_modifier">
+<span class="sig-name descname"><span class="pre">test_get_loot_modifier</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Loot_Tests.test_get_loot_modifier" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for getting loot modifier</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Monsters_And_CR_Tests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Tests for Challenge Rating and Monster Methods</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>TestCase (_type_): Django Test Module</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Test Setup</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_calculate_cr_positive">
+<span class="sig-name descname"><span class="pre">test_calculate_cr_positive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_calculate_cr_positive" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for calculate CR</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_get_average_cr">
+<span class="sig-name descname"><span class="pre">test_get_average_cr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_get_average_cr" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for retrieve CR</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_get_monster_list">
+<span class="sig-name descname"><span class="pre">test_get_monster_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_get_monster_list" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for retrieve monster list</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_monster_generate_negative">
+<span class="sig-name descname"><span class="pre">test_monster_generate_negative</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_monster_generate_negative" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for generate monster</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_monster_generate_positive">
+<span class="sig-name descname"><span class="pre">test_monster_generate_positive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Monsters_And_CR_Tests.test_monster_generate_positive" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for generate monster</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Tag_Tests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Tag_Tests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Tests for Tag methods</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>TestCase (_type_): Django Test Module</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Tag_Tests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Setting up for tests</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_add_tags_negative">
+<span class="sig-name descname"><span class="pre">test_add_tags_negative</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_add_tags_negative" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for adding tags</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_add_tags_positive">
+<span class="sig-name descname"><span class="pre">test_add_tags_positive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_add_tags_positive" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for adding tags</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_get_tags_negative">
+<span class="sig-name descname"><span class="pre">test_get_tags_negative</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_get_tags_negative" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for getting tag negative</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_get_tags_positive">
+<span class="sig-name descname"><span class="pre">test_get_tags_positive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_get_tags_positive" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for getting tag</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_remove_tags_negative">
+<span class="sig-name descname"><span class="pre">test_remove_tags_negative</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_remove_tags_negative" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for removing tags</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_remove_tags_positive">
+<span class="sig-name descname"><span class="pre">test_remove_tags_positive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_encounter_generator_backend_UNIT.Tag_Tests.test_remove_tags_positive" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for removing tags</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Tests.test_login_view">
+<span id="tests-test-login-view-module"></span><h2>Tests.test_login_view module<a class="headerlink" href="#module-Tests.test_login_view" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_login_view.TestLogin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TestLogin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_login_view.TestLogin" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Testing for login page.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_login_view.TestLogin.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_login_view.TestLogin.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Function to set up all tests with information needed within
+each individual test case.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_login_view.TestLogin.tearDown">
+<span class="sig-name descname"><span class="pre">tearDown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_login_view.TestLogin.tearDown" title="Permalink to this definition"></a></dt>
+<dd><p>Function to clean up test database after each individual test.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_login_view.TestLogin.test_can_access_login_page">
+<span class="sig-name descname"><span class="pre">test_can_access_login_page</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_login_view.TestLogin.test_can_access_login_page" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user is able to access the login page.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_login_view.TestLogin.test_can_access_login_page_filled_username">
+<span class="sig-name descname"><span class="pre">test_can_access_login_page_filled_username</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_login_view.TestLogin.test_can_access_login_page_filled_username" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user is able to access the login page given the username as context.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_login_view.TestLogin.test_successful_login">
+<span class="sig-name descname"><span class="pre">test_successful_login</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_login_view.TestLogin.test_successful_login" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to login successfully after giving correct credentials.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_login_view.TestLogin.test_unsuccessful_login_no_password">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_login_no_password</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_login_view.TestLogin.test_unsuccessful_login_no_password" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to login after giving no password.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_login_view.TestLogin.test_unsuccessful_login_no_username">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_login_no_username</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_login_view.TestLogin.test_unsuccessful_login_no_username" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to login after giving no username.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_login_view.TestLogin.test_unsuccessful_login_no_username_password">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_login_no_username_password</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_login_view.TestLogin.test_unsuccessful_login_no_username_password" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to login after giving no username or password.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_login_view.TestLogin.test_unsuccessful_login_wrong_password">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_login_wrong_password</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_login_view.TestLogin.test_unsuccessful_login_wrong_password" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to login after giving incorrect password.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_login_view.TestLogin.test_unsuccessful_login_wrong_username">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_login_wrong_username</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_login_view.TestLogin.test_unsuccessful_login_wrong_username" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to login after giving incorrect username.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Tests.test_loot_generator_backend_UNIT">
+<span id="tests-test-loot-generator-backend-unit-module"></span><h2>Tests.test_loot_generator_backend_UNIT module<a class="headerlink" href="#module-Tests.test_loot_generator_backend_UNIT" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.PositiveTests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PositiveTests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Loot Tests that should succeed</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>TestCase (_type_): Django Tests</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.PositiveTests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Set up a generator for each test</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.PositiveTests.test_armor">
+<span class="sig-name descname"><span class="pre">test_armor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_armor" title="Permalink to this definition"></a></dt>
+<dd><p>tests for generate armor</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.PositiveTests.test_check_value">
+<span class="sig-name descname"><span class="pre">test_check_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_check_value" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for the check value function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.PositiveTests.test_currency">
+<span class="sig-name descname"><span class="pre">test_currency</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_currency" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for generate currency</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.PositiveTests.test_generate">
+<span class="sig-name descname"><span class="pre">test_generate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_generate" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for the overall generate loot function</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.PositiveTests.test_generate_loot_type">
+<span class="sig-name descname"><span class="pre">test_generate_loot_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_generate_loot_type" title="Permalink to this definition"></a></dt>
+<dd><p>Tests for the generate loot type</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.PositiveTests.test_generic">
+<span class="sig-name descname"><span class="pre">test_generic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_generic" title="Permalink to this definition"></a></dt>
+<dd><p>tests for generate generic items</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.PositiveTests.test_magic">
+<span class="sig-name descname"><span class="pre">test_magic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_magic" title="Permalink to this definition"></a></dt>
+<dd><p>tests for generate magic items</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.PositiveTests.test_random">
+<span class="sig-name descname"><span class="pre">test_random</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_random" title="Permalink to this definition"></a></dt>
+<dd><p>tests for generate random item of any type</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.PositiveTests.test_total_value">
+<span class="sig-name descname"><span class="pre">test_total_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_total_value" title="Permalink to this definition"></a></dt>
+<dd><p>tests for generate a random total value</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.PositiveTests.test_weapons">
+<span class="sig-name descname"><span class="pre">test_weapons</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.PositiveTests.test_weapons" title="Permalink to this definition"></a></dt>
+<dd><p>tests for generate weapons</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.negative_tests">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">negative_tests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.negative_tests" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Tests that should raise exceptions
+Args:</p>
+<blockquote>
+<div><p>TestCase (_type_): Django tests</p>
+</div></blockquote>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.negative_tests.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.negative_tests.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Set up a generator for each test</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_backend_UNIT.negative_tests.test_generate">
+<span class="sig-name descname"><span class="pre">test_generate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_backend_UNIT.negative_tests.test_generate" title="Permalink to this definition"></a></dt>
+<dd><p>Tests on the various inputs of the generate loot function</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Tests.test_loot_generator_view">
+<span id="tests-test-loot-generator-view-module"></span><h2>Tests.test_loot_generator_view module<a class="headerlink" href="#module-Tests.test_loot_generator_view" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TestLootGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methodName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'runTest'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">TestCase</span></code></p>
+<p>Testing for loot generator page.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.setUp">
+<span class="sig-name descname"><span class="pre">setUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.setUp" title="Permalink to this definition"></a></dt>
+<dd><p>Function to set up all tests with information needed within
+each individual test case.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.tearDown">
+<span class="sig-name descname"><span class="pre">tearDown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.tearDown" title="Permalink to this definition"></a></dt>
+<dd><p>Function to clean up test database after each individual test.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_can_access_loot_page">
+<span class="sig-name descname"><span class="pre">test_can_access_loot_page</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_can_access_loot_page" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user is able to access the loot page.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_clear">
+<span class="sig-name descname"><span class="pre">test_clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_clear" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user is able to click the clear button and reset all inputs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_clear_cache">
+<span class="sig-name descname"><span class="pre">test_clear_cache</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_clear_cache" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user can clear generated loot in it’s cache.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_generate_cache">
+<span class="sig-name descname"><span class="pre">test_generate_cache</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_generate_cache" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user can save generated loot to it’s cache.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_generator_type">
+<span class="sig-name descname"><span class="pre">test_invalid_form_generator_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_generator_type" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user’s input form is valid when given bad generator_type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_loot_type">
+<span class="sig-name descname"><span class="pre">test_invalid_form_loot_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_loot_type" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user’s input form is valid when given bad loot_type.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_player_level_high">
+<span class="sig-name descname"><span class="pre">test_invalid_form_player_level_high</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_player_level_high" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user’s input form is valid when given 22 or higher player level.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_player_level_zero">
+<span class="sig-name descname"><span class="pre">test_invalid_form_player_level_zero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_player_level_zero" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user’s input form is valid when given zero or less player level.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_total_hoard_value">
+<span class="sig-name descname"><span class="pre">test_invalid_form_total_hoard_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_invalid_form_total_hoard_value" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user’s input form is valid when given less than zero total hoard value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_save_cache">
+<span class="sig-name descname"><span class="pre">test_save_cache</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_save_cache" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user can save generated loot in it’s cache to the database.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_save_not_logged_in">
+<span class="sig-name descname"><span class="pre">test_save_not_logged_in</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_save_not_logged_in" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user can save generated loot while not logged in</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_successful_generate">
+<span class="sig-name descname"><span class="pre">test_successful_generate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_successful_generate" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully generate loot after giving correct input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_successful_generate_average_player_level">
+<span class="sig-name descname"><span class="pre">test_successful_generate_average_player_level</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_successful_generate_average_player_level" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully generate loot after giving empty level input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_successful_generate_average_player_level_hoard_value">
+<span class="sig-name descname"><span class="pre">test_successful_generate_average_player_level_hoard_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_successful_generate_average_player_level_hoard_value" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully generate loot after giving empty level input and hoard value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_successful_generate_total_hoard_value">
+<span class="sig-name descname"><span class="pre">test_successful_generate_total_hoard_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_successful_generate_total_hoard_value" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully generate loot after giving empty hoard value input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_unsuccessful_generate_generator_type">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_generate_generator_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_unsuccessful_generate_generator_type" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully generate loot after giving incorrect generator type input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_unsuccessful_generate_loot_type">
+<span class="sig-name descname"><span class="pre">test_unsuccessful_generate_loot_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_unsuccessful_generate_loot_type" title="Permalink to this definition"></a></dt>
+<dd><p>Tests if a user is able to successfully generate loot after giving incorrect loot type input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_user_can_access_loot_page">
+<span class="sig-name descname"><span class="pre">test_user_can_access_loot_page</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_user_can_access_loot_page" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a logged in user is able to access the loot page.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_valid_form">
+<span class="sig-name descname"><span class="pre">test_valid_form</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_valid_form" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user’s input form is valid.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_valid_form_player_level_empty">
+<span class="sig-name descname"><span class="pre">test_valid_form_player_level_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_valid_form_player_level_empty" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user’s input form is valid when given empty player level.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Tests.test_loot_generator_view.TestLootGenerator.test_valid_form_total_hoard_value_empty">
+<span class="sig-name descname"><span class="pre">test_valid_form_total_hoard_value_empty</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Tests.test_loot_generator_view.TestLootGenerator.test_valid_form_total_hoard_value_empty" title="Permalink to this definition"></a></dt>
+<dd><p>Tests to see if a user’s input form is valid when given empty total hoard value.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-Tests">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Tests" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ronen Loundy, Jeffery Meverden, John Tabor, John Schiltz.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

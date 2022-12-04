@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>toolkit package &mdash; The DM&#39;s Toolkit o.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> The DM's Toolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">toolkit package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-toolkit.admin">toolkit.admin module</a></li>
+<li><a class="reference internal" href="#module-toolkit.apps">toolkit.apps module</a><ul>
+<li><a class="reference internal" href="#toolkit.apps.ToolkitConfig"><code class="docutils literal notranslate"><span class="pre">ToolkitConfig</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.apps.ToolkitConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">ToolkitConfig.default_auto_field</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.apps.ToolkitConfig.name"><code class="docutils literal notranslate"><span class="pre">ToolkitConfig.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.models">toolkit.models module</a><ul>
+<li><a class="reference internal" href="#toolkit.models.Armor"><code class="docutils literal notranslate"><span class="pre">Armor</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.Armor.Armor_Class_Change"><code class="docutils literal notranslate"><span class="pre">Armor.Armor_Class_Change</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Armor.Armor_Type"><code class="docutils literal notranslate"><span class="pre">Armor.Armor_Type</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Armor.Base_Value"><code class="docutils literal notranslate"><span class="pre">Armor.Base_Value</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Armor.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Armor.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Armor.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Armor.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Armor.Name"><code class="docutils literal notranslate"><span class="pre">Armor.Name</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Armor.Stealth"><code class="docutils literal notranslate"><span class="pre">Armor.Stealth</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Armor.Weight"><code class="docutils literal notranslate"><span class="pre">Armor.Weight</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Armor.generatedloot_set"><code class="docutils literal notranslate"><span class="pre">Armor.generatedloot_set</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Armor.objects"><code class="docutils literal notranslate"><span class="pre">Armor.objects</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Armor.type"><code class="docutils literal notranslate"><span class="pre">Armor.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.Cache"><code class="docutils literal notranslate"><span class="pre">Cache</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.Cache.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Cache.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Cache.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Cache.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Cache.character"><code class="docutils literal notranslate"><span class="pre">Cache.character</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Cache.character_id"><code class="docutils literal notranslate"><span class="pre">Cache.character_id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Cache.encounter"><code class="docutils literal notranslate"><span class="pre">Cache.encounter</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Cache.encounter_id"><code class="docutils literal notranslate"><span class="pre">Cache.encounter_id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Cache.id"><code class="docutils literal notranslate"><span class="pre">Cache.id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Cache.loot"><code class="docutils literal notranslate"><span class="pre">Cache.loot</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Cache.loot_id"><code class="docutils literal notranslate"><span class="pre">Cache.loot_id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Cache.objects"><code class="docutils literal notranslate"><span class="pre">Cache.objects</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Cache.user"><code class="docutils literal notranslate"><span class="pre">Cache.user</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Cache.user_id"><code class="docutils literal notranslate"><span class="pre">Cache.user_id</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.Character"><code class="docutils literal notranslate"><span class="pre">Character</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.Character.Alignment"><code class="docutils literal notranslate"><span class="pre">Character.Alignment</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Background"><code class="docutils literal notranslate"><span class="pre">Character.Background</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Character_Proficiencies"><code class="docutils literal notranslate"><span class="pre">Character.Character_Proficiencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Charisma"><code class="docutils literal notranslate"><span class="pre">Character.Charisma</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Class"><code class="docutils literal notranslate"><span class="pre">Character.Class</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Class_id"><code class="docutils literal notranslate"><span class="pre">Character.Class_id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Constitution"><code class="docutils literal notranslate"><span class="pre">Character.Constitution</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Dexterity"><code class="docutils literal notranslate"><span class="pre">Character.Dexterity</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Character.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Experience"><code class="docutils literal notranslate"><span class="pre">Character.Experience</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Intelligence"><code class="docutils literal notranslate"><span class="pre">Character.Intelligence</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Level"><code class="docutils literal notranslate"><span class="pre">Character.Level</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Character.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Name"><code class="docutils literal notranslate"><span class="pre">Character.Name</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Owner"><code class="docutils literal notranslate"><span class="pre">Character.Owner</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Owner_id"><code class="docutils literal notranslate"><span class="pre">Character.Owner_id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Race"><code class="docutils literal notranslate"><span class="pre">Character.Race</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Race_id"><code class="docutils literal notranslate"><span class="pre">Character.Race_id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Strength"><code class="docutils literal notranslate"><span class="pre">Character.Strength</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.Wisdom"><code class="docutils literal notranslate"><span class="pre">Character.Wisdom</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.cache"><code class="docutils literal notranslate"><span class="pre">Character.cache</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.id"><code class="docutils literal notranslate"><span class="pre">Character.id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Character.objects"><code class="docutils literal notranslate"><span class="pre">Character.objects</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.Clazz"><code class="docutils literal notranslate"><span class="pre">Clazz</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.Clazz.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Clazz.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Clazz.HitDice"><code class="docutils literal notranslate"><span class="pre">Clazz.HitDice</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Clazz.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Clazz.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Clazz.Name"><code class="docutils literal notranslate"><span class="pre">Clazz.Name</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Clazz.Options"><code class="docutils literal notranslate"><span class="pre">Clazz.Options</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Clazz.Proficiencies"><code class="docutils literal notranslate"><span class="pre">Clazz.Proficiencies</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Clazz.StatPrecedence"><code class="docutils literal notranslate"><span class="pre">Clazz.StatPrecedence</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Clazz.character_set"><code class="docutils literal notranslate"><span class="pre">Clazz.character_set</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Clazz.id"><code class="docutils literal notranslate"><span class="pre">Clazz.id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Clazz.objects"><code class="docutils literal notranslate"><span class="pre">Clazz.objects</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.Average_CR"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.Average_CR</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.Average_Character_Levels"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.Average_Character_Levels</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.Encounter_Tags"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.Encounter_Tags</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.Encounter_Type"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.Encounter_Type</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.Monsters"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.Monsters</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.Number_Of_Characters"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.Number_Of_Characters</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.Owner"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.Owner</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.Owner_id"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.Owner_id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.Reward"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.Reward</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.Reward_id"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.Reward_id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.cache"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.cache</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.id"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedEncounter.objects"><code class="docutils literal notranslate"><span class="pre">GeneratedEncounter.objects</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.Armors"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.Armors</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.Generic_Items"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.Generic_Items</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.Loot_Type"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.Loot_Type</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.Magical_Items"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.Magical_Items</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.Money"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.Money</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.Owner"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.Owner</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.Owner_id"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.Owner_id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.Total_Value"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.Total_Value</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.Weapons"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.Weapons</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.cache"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.cache</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.generatedencounter"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.generatedencounter</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.id"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GeneratedLoot.objects"><code class="docutils literal notranslate"><span class="pre">GeneratedLoot.objects</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.GenericItem"><code class="docutils literal notranslate"><span class="pre">GenericItem</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.GenericItem.Base_Value"><code class="docutils literal notranslate"><span class="pre">GenericItem.Base_Value</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GenericItem.Description"><code class="docutils literal notranslate"><span class="pre">GenericItem.Description</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GenericItem.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">GenericItem.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GenericItem.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">GenericItem.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GenericItem.Name"><code class="docutils literal notranslate"><span class="pre">GenericItem.Name</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GenericItem.Weight"><code class="docutils literal notranslate"><span class="pre">GenericItem.Weight</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GenericItem.generatedloot_set"><code class="docutils literal notranslate"><span class="pre">GenericItem.generatedloot_set</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GenericItem.objects"><code class="docutils literal notranslate"><span class="pre">GenericItem.objects</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.GenericItem.type"><code class="docutils literal notranslate"><span class="pre">GenericItem.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.MagicItem"><code class="docutils literal notranslate"><span class="pre">MagicItem</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.MagicItem.Attuned"><code class="docutils literal notranslate"><span class="pre">MagicItem.Attuned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.MagicItem.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">MagicItem.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.MagicItem.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">MagicItem.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.MagicItem.Name"><code class="docutils literal notranslate"><span class="pre">MagicItem.Name</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.MagicItem.Rarity"><code class="docutils literal notranslate"><span class="pre">MagicItem.Rarity</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.MagicItem.Type"><code class="docutils literal notranslate"><span class="pre">MagicItem.Type</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.MagicItem.generatedloot_set"><code class="docutils literal notranslate"><span class="pre">MagicItem.generatedloot_set</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.MagicItem.objects"><code class="docutils literal notranslate"><span class="pre">MagicItem.objects</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.MagicItem.type"><code class="docutils literal notranslate"><span class="pre">MagicItem.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.Monster"><code class="docutils literal notranslate"><span class="pre">Monster</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.Monster.Alignment"><code class="docutils literal notranslate"><span class="pre">Monster.Alignment</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.Armor_Class"><code class="docutils literal notranslate"><span class="pre">Monster.Armor_Class</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.Challenge_Rating"><code class="docutils literal notranslate"><span class="pre">Monster.Challenge_Rating</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.Creature_Tags"><code class="docutils literal notranslate"><span class="pre">Monster.Creature_Tags</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Monster.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.Gold_Modifier"><code class="docutils literal notranslate"><span class="pre">Monster.Gold_Modifier</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.Hitpoints"><code class="docutils literal notranslate"><span class="pre">Monster.Hitpoints</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.Initiative"><code class="docutils literal notranslate"><span class="pre">Monster.Initiative</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Monster.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.Name"><code class="docutils literal notranslate"><span class="pre">Monster.Name</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.Size"><code class="docutils literal notranslate"><span class="pre">Monster.Size</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.Source"><code class="docutils literal notranslate"><span class="pre">Monster.Source</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.Type"><code class="docutils literal notranslate"><span class="pre">Monster.Type</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.generatedencounter_set"><code class="docutils literal notranslate"><span class="pre">Monster.generatedencounter_set</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Monster.objects"><code class="docutils literal notranslate"><span class="pre">Monster.objects</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.Proficiencies"><code class="docutils literal notranslate"><span class="pre">Proficiencies</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.Proficiencies.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Proficiencies.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Proficiencies.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Proficiencies.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Proficiencies.Name"><code class="docutils literal notranslate"><span class="pre">Proficiencies.Name</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Proficiencies.Stat"><code class="docutils literal notranslate"><span class="pre">Proficiencies.Stat</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Proficiencies.character_set"><code class="docutils literal notranslate"><span class="pre">Proficiencies.character_set</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Proficiencies.clazz_set"><code class="docutils literal notranslate"><span class="pre">Proficiencies.clazz_set</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Proficiencies.id"><code class="docutils literal notranslate"><span class="pre">Proficiencies.id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Proficiencies.objects"><code class="docutils literal notranslate"><span class="pre">Proficiencies.objects</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.Race"><code class="docutils literal notranslate"><span class="pre">Race</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.Race.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Race.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Race.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Race.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Race.Name"><code class="docutils literal notranslate"><span class="pre">Race.Name</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Race.Options"><code class="docutils literal notranslate"><span class="pre">Race.Options</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Race.Size"><code class="docutils literal notranslate"><span class="pre">Race.Size</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Race.Speed"><code class="docutils literal notranslate"><span class="pre">Race.Speed</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Race.character_set"><code class="docutils literal notranslate"><span class="pre">Race.character_set</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Race.id"><code class="docutils literal notranslate"><span class="pre">Race.id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Race.objects"><code class="docutils literal notranslate"><span class="pre">Race.objects</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.Source"><code class="docutils literal notranslate"><span class="pre">Source</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.Source.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Source.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Source.Link"><code class="docutils literal notranslate"><span class="pre">Source.Link</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Source.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Source.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Source.Name"><code class="docutils literal notranslate"><span class="pre">Source.Name</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Source.ShortName"><code class="docutils literal notranslate"><span class="pre">Source.ShortName</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Source.Type"><code class="docutils literal notranslate"><span class="pre">Source.Type</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Source.id"><code class="docutils literal notranslate"><span class="pre">Source.id</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Source.objects"><code class="docutils literal notranslate"><span class="pre">Source.objects</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.Tag"><code class="docutils literal notranslate"><span class="pre">Tag</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.Tag.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Tag.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Tag.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Tag.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Tag.Name"><code class="docutils literal notranslate"><span class="pre">Tag.Name</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Tag.generatedencounter_set"><code class="docutils literal notranslate"><span class="pre">Tag.generatedencounter_set</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Tag.monster_set"><code class="docutils literal notranslate"><span class="pre">Tag.monster_set</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Tag.objects"><code class="docutils literal notranslate"><span class="pre">Tag.objects</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.Weapon"><code class="docutils literal notranslate"><span class="pre">Weapon</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.models.Weapon.Ammo"><code class="docutils literal notranslate"><span class="pre">Weapon.Ammo</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Weapon.Base_Value"><code class="docutils literal notranslate"><span class="pre">Weapon.Base_Value</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Weapon.Damage_Die"><code class="docutils literal notranslate"><span class="pre">Weapon.Damage_Die</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Weapon.Damage_Type"><code class="docutils literal notranslate"><span class="pre">Weapon.Damage_Type</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Weapon.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Weapon.DoesNotExist</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Weapon.Max_Range"><code class="docutils literal notranslate"><span class="pre">Weapon.Max_Range</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Weapon.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Weapon.MultipleObjectsReturned</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Weapon.Name"><code class="docutils literal notranslate"><span class="pre">Weapon.Name</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Weapon.Special_Characteristics"><code class="docutils literal notranslate"><span class="pre">Weapon.Special_Characteristics</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Weapon.Weapon_Type"><code class="docutils literal notranslate"><span class="pre">Weapon.Weapon_Type</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Weapon.Weight"><code class="docutils literal notranslate"><span class="pre">Weapon.Weight</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Weapon.generatedloot_set"><code class="docutils literal notranslate"><span class="pre">Weapon.generatedloot_set</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Weapon.objects"><code class="docutils literal notranslate"><span class="pre">Weapon.objects</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.Weapon.type"><code class="docutils literal notranslate"><span class="pre">Weapon.type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.models.create_user_cache"><code class="docutils literal notranslate"><span class="pre">create_user_cache()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.models.save_user_cache"><code class="docutils literal notranslate"><span class="pre">save_user_cache()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The DM's Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">toolkit package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/toolkit.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="toolkit-package">
+<h1>toolkit package<a class="headerlink" href="#toolkit-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="toolkit.migrations.html">toolkit.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0001_initial">toolkit.migrations.0001_initial module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0002_character">toolkit.migrations.0002_character module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0002_character.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0002_character.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0002_character.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0003_user_alter_character_accountowner_delete_account">toolkit.migrations.0003_user_alter_character_accountowner_delete_account module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0003_user_alter_character_accountowner_delete_account.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0003_user_alter_character_accountowner_delete_account.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0003_user_alter_character_accountowner_delete_account.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0004_alter_character_accountowner_delete_user">toolkit.migrations.0004_alter_character_accountowner_delete_user module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0004_alter_character_accountowner_delete_user.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0004_alter_character_accountowner_delete_user.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0004_alter_character_accountowner_delete_user.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more">toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0005_armor_genericitem_magicitem_tag_weapon_monster_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0006_alter_weapon_ammo_and_more">toolkit.migrations.0006_alter_weapon_ammo_and_more module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0006_alter_weapon_ammo_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0006_alter_weapon_ammo_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0006_alter_weapon_ammo_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more">toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0007_remove_character_accountowner_character_owner_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0008_alter_monster_gold_modifier">toolkit.migrations.0008_alter_monster_gold_modifier module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0008_alter_monster_gold_modifier.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0008_alter_monster_gold_modifier.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0008_alter_monster_gold_modifier.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0009_remove_armor_description_and_more">toolkit.migrations.0009_remove_armor_description_and_more module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0009_remove_armor_description_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0009_remove_armor_description_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0009_remove_armor_description_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0010_savecache">toolkit.migrations.0010_savecache module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0010_savecache.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0010_savecache.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0010_savecache.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0011_alter_savecache_character">toolkit.migrations.0011_alter_savecache_character module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0011_alter_savecache_character.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0011_alter_savecache_character.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0011_alter_savecache_character.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0012_rename_savecache_cache">toolkit.migrations.0012_rename_savecache_cache module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0012_rename_savecache_cache.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0012_rename_savecache_cache.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0012_rename_savecache_cache.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0013_cache_loot">toolkit.migrations.0013_cache_loot module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0013_cache_loot.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0013_cache_loot.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0013_cache_loot.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0013_generatedencounter_average_cr">toolkit.migrations.0013_generatedencounter_average_cr module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0013_generatedencounter_average_cr.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0013_generatedencounter_average_cr.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0013_generatedencounter_average_cr.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0014_cache_encounter">toolkit.migrations.0014_cache_encounter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0014_cache_encounter.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0014_cache_encounter.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0014_cache_encounter.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0015_merge_20221116_2125">toolkit.migrations.0015_merge_20221116_2125 module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0015_merge_20221116_2125.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0015_merge_20221116_2125.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0015_merge_20221116_2125.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more">toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0016_proficiencies_alter_generatedencounter_average_cr_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0017_alter_character_character_proficiencies">toolkit.migrations.0017_alter_character_character_proficiencies module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0017_alter_character_character_proficiencies.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0017_alter_character_character_proficiencies.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0017_alter_character_character_proficiencies.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0018_alter_generatedencounter_monsters">toolkit.migrations.0018_alter_generatedencounter_monsters module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0018_alter_generatedencounter_monsters.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0018_alter_generatedencounter_monsters.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0018_alter_generatedencounter_monsters.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more">toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0018_race_source_monster_armor_class_monster_hitpoints_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more">toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0019_clazz_statprecedence_alter_character_class_and_more.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0020_race_size_alter_race_speed">toolkit.migrations.0020_race_size_alter_race_speed module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0020_race_size_alter_race_speed.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0020_race_size_alter_race_speed.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0020_race_size_alter_race_speed.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0021_clazz_options_race_options">toolkit.migrations.0021_clazz_options_race_options module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0021_clazz_options_race_options.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0021_clazz_options_race_options.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0021_clazz_options_race_options.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0022_clazz_name">toolkit.migrations.0022_clazz_name module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0022_clazz_name.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0022_clazz_name.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0022_clazz_name.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0023_clazz_hitdice">toolkit.migrations.0023_clazz_hitdice module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0023_clazz_hitdice.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0023_clazz_hitdice.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0023_clazz_hitdice.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations.0024_merge_20221127_1523">toolkit.migrations.0024_merge_20221127_1523 module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0024_merge_20221127_1523.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0024_merge_20221127_1523.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.migrations.html#toolkit.migrations.0024_merge_20221127_1523.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.migrations.html#module-toolkit.migrations">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toolkit.utilities.html">toolkit.utilities package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.utilities.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.utilities.html#module-toolkit.utilities.cache">toolkit.utilities.cache module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.utilities.html#toolkit.utilities.cache.get_cache"><code class="docutils literal notranslate"><span class="pre">get_cache()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.utilities.html#module-toolkit.utilities">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="toolkit.views.html">toolkit.views package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.views.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.views.account.html">toolkit.views.account package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.account.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.account.html#module-toolkit.views.account.change_password">toolkit.views.account.change_password module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.account.html#module-toolkit.views.account.confirm_account_creation">toolkit.views.account.confirm_account_creation module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.account.html#module-toolkit.views.account.create_account">toolkit.views.account.create_account module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.account.html#module-toolkit.views.account.login">toolkit.views.account.login module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.account.html#module-toolkit.views.account.logout">toolkit.views.account.logout module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.account.html#module-toolkit.views.account.reset_password">toolkit.views.account.reset_password module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.account.html#module-toolkit.views.account">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.views.character_generator.html">toolkit.views.character_generator package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.character_generator.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.character_generator.html#module-toolkit.views.character_generator.cache_character">toolkit.views.character_generator.cache_character module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.character_generator.html#module-toolkit.views.character_generator.character_elements">toolkit.views.character_generator.character_elements module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.character_generator.html#module-toolkit.views.character_generator.character_generator_backend">toolkit.views.character_generator.character_generator_backend module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.character_generator.html#module-toolkit.views.character_generator.character_generator_view">toolkit.views.character_generator.character_generator_view module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.character_generator.html#module-toolkit.views.character_generator">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.views.encounter_generator.html">toolkit.views.encounter_generator package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.encounter_generator.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.encounter_generator.html#module-toolkit.views.encounter_generator.cache_encounter">toolkit.views.encounter_generator.cache_encounter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.encounter_generator.html#module-toolkit.views.encounter_generator.encounter_generator_backend">toolkit.views.encounter_generator.encounter_generator_backend module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.encounter_generator.html#module-toolkit.views.encounter_generator.encounter_generator_view">toolkit.views.encounter_generator.encounter_generator_view module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.encounter_generator.html#module-toolkit.views.encounter_generator">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.views.loot_generator.html">toolkit.views.loot_generator package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.loot_generator.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.loot_generator.html#module-toolkit.views.loot_generator.cache_loot">toolkit.views.loot_generator.cache_loot module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.loot_generator.html#module-toolkit.views.loot_generator.loot_generator_backend">toolkit.views.loot_generator.loot_generator_backend module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.loot_generator.html#module-toolkit.views.loot_generator.loot_generator_view">toolkit.views.loot_generator.loot_generator_view module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.loot_generator.html#module-toolkit.views.loot_generator">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.views.saved.html">toolkit.views.saved package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.saved.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.saved.html#module-toolkit.views.saved.saved_characters">toolkit.views.saved.saved_characters module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.saved.html#module-toolkit.views.saved.saved_encounters">toolkit.views.saved.saved_encounters module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.saved.html#module-toolkit.views.saved.saved_loot">toolkit.views.saved.saved_loot module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.saved.html#module-toolkit.views.saved">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.views.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.views.html#module-toolkit.views.home_page">toolkit.views.home_page module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.views.html#toolkit.views.home_page.HomePage"><code class="docutils literal notranslate"><span class="pre">HomePage</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="toolkit.views.html#toolkit.views.home_page.HomePage.get"><code class="docutils literal notranslate"><span class="pre">HomePage.get()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.views.html#module-toolkit.views">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-toolkit.admin">
+<span id="toolkit-admin-module"></span><h2>toolkit.admin module<a class="headerlink" href="#module-toolkit.admin" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-toolkit.apps">
+<span id="toolkit-apps-module"></span><h2>toolkit.apps module<a class="headerlink" href="#module-toolkit.apps" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.apps.ToolkitConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ToolkitConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.apps.ToolkitConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.apps.ToolkitConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#toolkit.apps.ToolkitConfig.default_auto_field" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.apps.ToolkitConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'toolkit'</span></em><a class="headerlink" href="#toolkit.apps.ToolkitConfig.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.models">
+<span id="toolkit-models-module"></span><h2>toolkit.models module<a class="headerlink" href="#module-toolkit.models" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.Armor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Armor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.Armor" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The Model for armor used to store armor to pull from when generating loot</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>models:
+Name (String): max_length = 30, primary_key
+Description (String): max_length = 255
+Armor_Type (String): max_length = 6
+Base_Value (Double): How much it is worth based on GP
+Armor_Class_Change (Integer): How much this armor changed AC
+Weight (Integer): How much it weighs
+Stealth (Boolean): Whether or not it affects stealth True = gives disadvantage</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Armor.Armor_Class_Change">
+<span class="sig-name descname"><span class="pre">Armor_Class_Change</span></span><a class="headerlink" href="#toolkit.models.Armor.Armor_Class_Change" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Armor.Armor_Type">
+<span class="sig-name descname"><span class="pre">Armor_Type</span></span><a class="headerlink" href="#toolkit.models.Armor.Armor_Type" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Armor.Base_Value">
+<span class="sig-name descname"><span class="pre">Base_Value</span></span><a class="headerlink" href="#toolkit.models.Armor.Base_Value" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Armor.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.Armor.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Armor.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.Armor.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Armor.Name">
+<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#toolkit.models.Armor.Name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Armor.Stealth">
+<span class="sig-name descname"><span class="pre">Stealth</span></span><a class="headerlink" href="#toolkit.models.Armor.Stealth" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Armor.Weight">
+<span class="sig-name descname"><span class="pre">Weight</span></span><a class="headerlink" href="#toolkit.models.Armor.Weight" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Armor.generatedloot_set">
+<span class="sig-name descname"><span class="pre">generatedloot_set</span></span><a class="headerlink" href="#toolkit.models.Armor.generatedloot_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Armor.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.Armor.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit.models.Armor.type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#toolkit.models.Armor.type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.Cache">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.Cache" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The model to cache generated items in before saving</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>user (User): user to cache generated items for
+character (Character): character to cache</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Cache.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.Cache.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Cache.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.Cache.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Cache.character">
+<span class="sig-name descname"><span class="pre">character</span></span><a class="headerlink" href="#toolkit.models.Cache.character" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a one-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Restaurant.place</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Cache.character_id">
+<span class="sig-name descname"><span class="pre">character_id</span></span><a class="headerlink" href="#toolkit.models.Cache.character_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Cache.encounter">
+<span class="sig-name descname"><span class="pre">encounter</span></span><a class="headerlink" href="#toolkit.models.Cache.encounter" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a one-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Restaurant.place</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Cache.encounter_id">
+<span class="sig-name descname"><span class="pre">encounter_id</span></span><a class="headerlink" href="#toolkit.models.Cache.encounter_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Cache.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#toolkit.models.Cache.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Cache.loot">
+<span class="sig-name descname"><span class="pre">loot</span></span><a class="headerlink" href="#toolkit.models.Cache.loot" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a one-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Restaurant.place</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Cache.loot_id">
+<span class="sig-name descname"><span class="pre">loot_id</span></span><a class="headerlink" href="#toolkit.models.Cache.loot_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Cache.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.Cache.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Cache.user">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#toolkit.models.Cache.user" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a one-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Restaurant.place</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Cache.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#toolkit.models.Cache.user_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.Character">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Character</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.Character" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Creates Characters</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>Name (String): max_length = 20, What is the character’s name
+AccountOwner (ForeignKey): On delete of the owner delete all characters owned by them, Who owns this character
+Race (String): max_length = 15, What race is the character
+Class (String): max_length = 9, What class is the character
+Background (String): max_length = 22, Where did this character come from
+Alignment (String): max_length = 27, Character’s Alignment
+Level (Integer): Character’s Level
+Experience (Integer): Character’s progress to the next level
+Strength (Integer): Monster’s strength
+Dexterity (Integer): Monster’s Dexterity
+Constitution (Integer): Monster’s Constitution
+Intelligence (Integer): Monster’s Intelligence
+Wisdom (Integer): Monster’s Wisdom
+Charisma (Integer): Monster’s Charisma</p>
+</dd>
+<dt>Returns:</dt><dd><p>_type_: _description_</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Alignment">
+<span class="sig-name descname"><span class="pre">Alignment</span></span><a class="headerlink" href="#toolkit.models.Character.Alignment" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Background">
+<span class="sig-name descname"><span class="pre">Background</span></span><a class="headerlink" href="#toolkit.models.Character.Background" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Character_Proficiencies">
+<span class="sig-name descname"><span class="pre">Character_Proficiencies</span></span><a class="headerlink" href="#toolkit.models.Character.Character_Proficiencies" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Charisma">
+<span class="sig-name descname"><span class="pre">Charisma</span></span><a class="headerlink" href="#toolkit.models.Character.Charisma" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Class">
+<span class="sig-name descname"><span class="pre">Class</span></span><a class="headerlink" href="#toolkit.models.Character.Class" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Class_id">
+<span class="sig-name descname"><span class="pre">Class_id</span></span><a class="headerlink" href="#toolkit.models.Character.Class_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Constitution">
+<span class="sig-name descname"><span class="pre">Constitution</span></span><a class="headerlink" href="#toolkit.models.Character.Constitution" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Dexterity">
+<span class="sig-name descname"><span class="pre">Dexterity</span></span><a class="headerlink" href="#toolkit.models.Character.Dexterity" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Character.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.Character.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Experience">
+<span class="sig-name descname"><span class="pre">Experience</span></span><a class="headerlink" href="#toolkit.models.Character.Experience" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Intelligence">
+<span class="sig-name descname"><span class="pre">Intelligence</span></span><a class="headerlink" href="#toolkit.models.Character.Intelligence" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Level">
+<span class="sig-name descname"><span class="pre">Level</span></span><a class="headerlink" href="#toolkit.models.Character.Level" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Character.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.Character.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Name">
+<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#toolkit.models.Character.Name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Owner">
+<span class="sig-name descname"><span class="pre">Owner</span></span><a class="headerlink" href="#toolkit.models.Character.Owner" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Owner_id">
+<span class="sig-name descname"><span class="pre">Owner_id</span></span><a class="headerlink" href="#toolkit.models.Character.Owner_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Race">
+<span class="sig-name descname"><span class="pre">Race</span></span><a class="headerlink" href="#toolkit.models.Character.Race" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Race_id">
+<span class="sig-name descname"><span class="pre">Race_id</span></span><a class="headerlink" href="#toolkit.models.Character.Race_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Strength">
+<span class="sig-name descname"><span class="pre">Strength</span></span><a class="headerlink" href="#toolkit.models.Character.Strength" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.Wisdom">
+<span class="sig-name descname"><span class="pre">Wisdom</span></span><a class="headerlink" href="#toolkit.models.Character.Wisdom" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.cache">
+<span class="sig-name descname"><span class="pre">cache</span></span><a class="headerlink" href="#toolkit.models.Character.cache" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the reverse side of a one-to-one
+relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Place.restaurant</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#toolkit.models.Character.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Character.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.Character.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.Clazz">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Clazz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.Clazz" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Creates Class</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>Name = String
+Proficiencies = Many to Many</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Clazz.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.Clazz.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Clazz.HitDice">
+<span class="sig-name descname"><span class="pre">HitDice</span></span><a class="headerlink" href="#toolkit.models.Clazz.HitDice" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Clazz.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.Clazz.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Clazz.Name">
+<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#toolkit.models.Clazz.Name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Clazz.Options">
+<span class="sig-name descname"><span class="pre">Options</span></span><a class="headerlink" href="#toolkit.models.Clazz.Options" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Clazz.Proficiencies">
+<span class="sig-name descname"><span class="pre">Proficiencies</span></span><a class="headerlink" href="#toolkit.models.Clazz.Proficiencies" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Clazz.StatPrecedence">
+<span class="sig-name descname"><span class="pre">StatPrecedence</span></span><a class="headerlink" href="#toolkit.models.Clazz.StatPrecedence" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Clazz.character_set">
+<span class="sig-name descname"><span class="pre">character_set</span></span><a class="headerlink" href="#toolkit.models.Clazz.character_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Clazz.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#toolkit.models.Clazz.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Clazz.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.Clazz.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GeneratedEncounter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.GeneratedEncounter" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The Model for the end result of generating a encounter roll</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>models:
+Encounter_Type (String): max_length = 20, What kind of encounter
+Number_Of_Characters (Integer): How many characters to generate the encounter
+Average_Character_Levels (Double): Average Character level of the characters
+Reward (GeneratedLoot): Optional, Rewards of this encounter
+Encounter_Tags(Tag): Optional, What tags are included in the generation
+Monsters (Monster): What monsters are generated</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.Average_CR">
+<span class="sig-name descname"><span class="pre">Average_CR</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.Average_CR" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.Average_Character_Levels">
+<span class="sig-name descname"><span class="pre">Average_Character_Levels</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.Average_Character_Levels" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.Encounter_Tags">
+<span class="sig-name descname"><span class="pre">Encounter_Tags</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.Encounter_Tags" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.Encounter_Type">
+<span class="sig-name descname"><span class="pre">Encounter_Type</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.Encounter_Type" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.Monsters">
+<span class="sig-name descname"><span class="pre">Monsters</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.Monsters" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.Number_Of_Characters">
+<span class="sig-name descname"><span class="pre">Number_Of_Characters</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.Number_Of_Characters" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.Owner">
+<span class="sig-name descname"><span class="pre">Owner</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.Owner" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.Owner_id">
+<span class="sig-name descname"><span class="pre">Owner_id</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.Owner_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.Reward">
+<span class="sig-name descname"><span class="pre">Reward</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.Reward" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a one-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Restaurant.place</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.Reward_id">
+<span class="sig-name descname"><span class="pre">Reward_id</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.Reward_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.cache">
+<span class="sig-name descname"><span class="pre">cache</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.cache" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the reverse side of a one-to-one
+relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Place.restaurant</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#toolkit.models.GeneratedEncounter.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedEncounter.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.GeneratedEncounter.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GeneratedLoot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.GeneratedLoot" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The Model for the end result of generating a loot roll</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>models:
+Loot_Type (String): max_length = 20, What kind of loot source
+Total_Value (Double): How much is it worth in total (GP)
+Money (Double): How much straight money (GP)
+Weapons (Weapon): No Input is acceptable, Which weapons are added if any
+Armors (Armor): No Input is acceptable, Which armors are added if any
+Generic_Items (GenericItem): No Input is acceptable, Which non magical items are added if any
+Magical_Items (MagicItem): No Input is acceptable, Which magic items are added if any</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.Armors">
+<span class="sig-name descname"><span class="pre">Armors</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.Armors" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.Generic_Items">
+<span class="sig-name descname"><span class="pre">Generic_Items</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.Generic_Items" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.Loot_Type">
+<span class="sig-name descname"><span class="pre">Loot_Type</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.Loot_Type" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.Magical_Items">
+<span class="sig-name descname"><span class="pre">Magical_Items</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.Magical_Items" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.Money">
+<span class="sig-name descname"><span class="pre">Money</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.Money" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.Owner">
+<span class="sig-name descname"><span class="pre">Owner</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.Owner" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.Owner_id">
+<span class="sig-name descname"><span class="pre">Owner_id</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.Owner_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.Total_Value">
+<span class="sig-name descname"><span class="pre">Total_Value</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.Total_Value" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.Weapons">
+<span class="sig-name descname"><span class="pre">Weapons</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.Weapons" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.cache">
+<span class="sig-name descname"><span class="pre">cache</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.cache" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the reverse side of a one-to-one
+relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Place.restaurant</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.generatedencounter">
+<span class="sig-name descname"><span class="pre">generatedencounter</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.generatedencounter" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related object on the reverse side of a one-to-one
+relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Restaurant</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">place</span> <span class="o">=</span> <span class="n">OneToOneField</span><span class="p">(</span><span class="n">Place</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;restaurant&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Place.restaurant</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseOneToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#toolkit.models.GeneratedLoot.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GeneratedLoot.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.GeneratedLoot.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.GenericItem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GenericItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.GenericItem" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The Model for generic normal items used to store items to pull from when generating loot</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>models:
+Name (String): max_length = 30, primary_key
+Description (String): max_length = 255, What is it
+Base_Value (Double): How much it is worth based on GP</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GenericItem.Base_Value">
+<span class="sig-name descname"><span class="pre">Base_Value</span></span><a class="headerlink" href="#toolkit.models.GenericItem.Base_Value" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GenericItem.Description">
+<span class="sig-name descname"><span class="pre">Description</span></span><a class="headerlink" href="#toolkit.models.GenericItem.Description" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.GenericItem.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.GenericItem.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.GenericItem.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.GenericItem.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GenericItem.Name">
+<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#toolkit.models.GenericItem.Name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GenericItem.Weight">
+<span class="sig-name descname"><span class="pre">Weight</span></span><a class="headerlink" href="#toolkit.models.GenericItem.Weight" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GenericItem.generatedloot_set">
+<span class="sig-name descname"><span class="pre">generatedloot_set</span></span><a class="headerlink" href="#toolkit.models.GenericItem.generatedloot_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.GenericItem.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.GenericItem.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit.models.GenericItem.type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#toolkit.models.GenericItem.type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.MagicItem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MagicItem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.MagicItem" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The Model for magical items used to store magical items to pull from when generating loot</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>models:
+Name (String): max_length = 30, primary_key
+Rarity (String): max_length = 20, What is the rarity of the item
+Effect_Description (String): max_length = 255, What does it do
+Visual_Description (String): max_length = 255, What does look like</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.MagicItem.Attuned">
+<span class="sig-name descname"><span class="pre">Attuned</span></span><a class="headerlink" href="#toolkit.models.MagicItem.Attuned" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.MagicItem.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.MagicItem.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.MagicItem.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.MagicItem.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.MagicItem.Name">
+<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#toolkit.models.MagicItem.Name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.MagicItem.Rarity">
+<span class="sig-name descname"><span class="pre">Rarity</span></span><a class="headerlink" href="#toolkit.models.MagicItem.Rarity" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.MagicItem.Type">
+<span class="sig-name descname"><span class="pre">Type</span></span><a class="headerlink" href="#toolkit.models.MagicItem.Type" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.MagicItem.generatedloot_set">
+<span class="sig-name descname"><span class="pre">generatedloot_set</span></span><a class="headerlink" href="#toolkit.models.MagicItem.generatedloot_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.MagicItem.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.MagicItem.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit.models.MagicItem.type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#toolkit.models.MagicItem.type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.Monster">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Monster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.Monster" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The Model for the storing of monsters to be used as for the encounter generator</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>models:
+Name (String): max_length = 30, Primary Key Name of Monster
+Description (String): max_length = 255, What is the monster
+Challenge_Rating (Double): How strong is it
+Strength (Integer): Monster’s strength
+Dexterity (Integer): Monster’s Dexterity
+Constitution (Integer): Monster’s Constitution
+Intelligence (Integer): Monster’s Intelligence
+Wisdom (Integer): Monster’s Wisdom
+Charisma (Integer): Monster’s Charisma
+Gold_Modifier (Double): No Input is acceptable, How much gold is this likely to have
+Creature_Tags (Tag): No Input is acceptable, When and where should this monster be</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Monster.Alignment">
+<span class="sig-name descname"><span class="pre">Alignment</span></span><a class="headerlink" href="#toolkit.models.Monster.Alignment" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Monster.Armor_Class">
+<span class="sig-name descname"><span class="pre">Armor_Class</span></span><a class="headerlink" href="#toolkit.models.Monster.Armor_Class" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Monster.Challenge_Rating">
+<span class="sig-name descname"><span class="pre">Challenge_Rating</span></span><a class="headerlink" href="#toolkit.models.Monster.Challenge_Rating" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Monster.Creature_Tags">
+<span class="sig-name descname"><span class="pre">Creature_Tags</span></span><a class="headerlink" href="#toolkit.models.Monster.Creature_Tags" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Monster.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.Monster.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Monster.Gold_Modifier">
+<span class="sig-name descname"><span class="pre">Gold_Modifier</span></span><a class="headerlink" href="#toolkit.models.Monster.Gold_Modifier" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Monster.Hitpoints">
+<span class="sig-name descname"><span class="pre">Hitpoints</span></span><a class="headerlink" href="#toolkit.models.Monster.Hitpoints" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Monster.Initiative">
+<span class="sig-name descname"><span class="pre">Initiative</span></span><a class="headerlink" href="#toolkit.models.Monster.Initiative" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Monster.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.Monster.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Monster.Name">
+<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#toolkit.models.Monster.Name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Monster.Size">
+<span class="sig-name descname"><span class="pre">Size</span></span><a class="headerlink" href="#toolkit.models.Monster.Size" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Monster.Source">
+<span class="sig-name descname"><span class="pre">Source</span></span><a class="headerlink" href="#toolkit.models.Monster.Source" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Monster.Type">
+<span class="sig-name descname"><span class="pre">Type</span></span><a class="headerlink" href="#toolkit.models.Monster.Type" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Monster.generatedencounter_set">
+<span class="sig-name descname"><span class="pre">generatedencounter_set</span></span><a class="headerlink" href="#toolkit.models.Monster.generatedencounter_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Monster.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.Monster.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.Proficiencies">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Proficiencies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.Proficiencies" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>Name-String
+Stat- relevant stat</p>
+</dd>
+<dt>Returns:</dt><dd><p>Proficiency object</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Proficiencies.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.Proficiencies.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Proficiencies.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.Proficiencies.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Proficiencies.Name">
+<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#toolkit.models.Proficiencies.Name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Proficiencies.Stat">
+<span class="sig-name descname"><span class="pre">Stat</span></span><a class="headerlink" href="#toolkit.models.Proficiencies.Stat" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Proficiencies.character_set">
+<span class="sig-name descname"><span class="pre">character_set</span></span><a class="headerlink" href="#toolkit.models.Proficiencies.character_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Proficiencies.clazz_set">
+<span class="sig-name descname"><span class="pre">clazz_set</span></span><a class="headerlink" href="#toolkit.models.Proficiencies.clazz_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Proficiencies.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#toolkit.models.Proficiencies.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Proficiencies.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.Proficiencies.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.Race">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Race</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.Race" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>_summary_</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>Name = String
+Speed = Integer</p>
+</dd>
+<dt>Returns:</dt><dd><p>Race object</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Race.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.Race.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Race.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.Race.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Race.Name">
+<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#toolkit.models.Race.Name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Race.Options">
+<span class="sig-name descname"><span class="pre">Options</span></span><a class="headerlink" href="#toolkit.models.Race.Options" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Race.Size">
+<span class="sig-name descname"><span class="pre">Size</span></span><a class="headerlink" href="#toolkit.models.Race.Size" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Race.Speed">
+<span class="sig-name descname"><span class="pre">Speed</span></span><a class="headerlink" href="#toolkit.models.Race.Speed" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Race.character_set">
+<span class="sig-name descname"><span class="pre">character_set</span></span><a class="headerlink" href="#toolkit.models.Race.character_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Race.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#toolkit.models.Race.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Race.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.Race.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.Source">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Source</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.Source" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Source database</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>Type, name, shortname link =  strings</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Source.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.Source.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Source.Link">
+<span class="sig-name descname"><span class="pre">Link</span></span><a class="headerlink" href="#toolkit.models.Source.Link" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Source.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.Source.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Source.Name">
+<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#toolkit.models.Source.Name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Source.ShortName">
+<span class="sig-name descname"><span class="pre">ShortName</span></span><a class="headerlink" href="#toolkit.models.Source.ShortName" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Source.Type">
+<span class="sig-name descname"><span class="pre">Type</span></span><a class="headerlink" href="#toolkit.models.Source.Type" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Source.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#toolkit.models.Source.id" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Source.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.Source.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.Tag">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.Tag" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Database to store the tags which will help generate monsters</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>Name (String): max_length = 30, Primary Key</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Tag.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.Tag.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Tag.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.Tag.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Tag.Name">
+<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#toolkit.models.Tag.Name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Tag.generatedencounter_set">
+<span class="sig-name descname"><span class="pre">generatedencounter_set</span></span><a class="headerlink" href="#toolkit.models.Tag.generatedencounter_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Tag.monster_set">
+<span class="sig-name descname"><span class="pre">monster_set</span></span><a class="headerlink" href="#toolkit.models.Tag.monster_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Tag.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.Tag.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.models.Weapon">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Weapon</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.Weapon" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>The Model for weapons used to store weapons to pull from when generating loot</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>models:
+Name (String): max_length = 30, primary_key
+Damage_Type (String): max_length = 30, What kind of damage does the weapon deal
+Damage_Die (String): max_length = 14, What die to roll for damage
+Base_Value (Double): How much it is worth based on GP
+Max_Range (Integer): How far is the max range, non disadvantage range for ranged weapons is Max_Range/4
+Weight (Integer): How much it weighs
+Ammo (String): No Input is acceptable, max_length = 7, What type of ammo Arrows, Bullets, or Darts</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.Ammo">
+<span class="sig-name descname"><span class="pre">Ammo</span></span><a class="headerlink" href="#toolkit.models.Weapon.Ammo" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.Base_Value">
+<span class="sig-name descname"><span class="pre">Base_Value</span></span><a class="headerlink" href="#toolkit.models.Weapon.Base_Value" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.Damage_Die">
+<span class="sig-name descname"><span class="pre">Damage_Die</span></span><a class="headerlink" href="#toolkit.models.Weapon.Damage_Die" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.Damage_Type">
+<span class="sig-name descname"><span class="pre">Damage_Type</span></span><a class="headerlink" href="#toolkit.models.Weapon.Damage_Type" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#toolkit.models.Weapon.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.Max_Range">
+<span class="sig-name descname"><span class="pre">Max_Range</span></span><a class="headerlink" href="#toolkit.models.Weapon.Max_Range" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#toolkit.models.Weapon.MultipleObjectsReturned" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.Name">
+<span class="sig-name descname"><span class="pre">Name</span></span><a class="headerlink" href="#toolkit.models.Weapon.Name" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.Special_Characteristics">
+<span class="sig-name descname"><span class="pre">Special_Characteristics</span></span><a class="headerlink" href="#toolkit.models.Weapon.Special_Characteristics" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.Weapon_Type">
+<span class="sig-name descname"><span class="pre">Weapon_Type</span></span><a class="headerlink" href="#toolkit.models.Weapon.Weapon_Type" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.Weight">
+<span class="sig-name descname"><span class="pre">Weight</span></span><a class="headerlink" href="#toolkit.models.Weapon.Weight" title="Permalink to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.generatedloot_set">
+<span class="sig-name descname"><span class="pre">generatedloot_set</span></span><a class="headerlink" href="#toolkit.models.Weapon.generatedloot_set" title="Permalink to this definition"></a></dt>
+<dd><p>Accessor to the related objects manager on the forward and reverse sides of
+a many-to-many relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Pizza</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">toppings</span> <span class="o">=</span> <span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Topping</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;pizzas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Pizza.toppings</span></code> and <code class="docutils literal notranslate"><span class="pre">Topping.pizzas</span></code> are <code class="docutils literal notranslate"><span class="pre">ManyToManyDescriptor</span></code>
+instances.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager
+class built by <code class="docutils literal notranslate"><span class="pre">create_forward_many_to_many_manager()</span></code> defined below.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#toolkit.models.Weapon.objects" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="toolkit.models.Weapon.type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">type</span></span><a class="headerlink" href="#toolkit.models.Weapon.type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toolkit.models.create_user_cache">
+<span class="sig-name descname"><span class="pre">create_user_cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sender</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">created</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.create_user_cache" title="Permalink to this definition"></a></dt>
+<dd><p>Create a cache object when creating the user object</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toolkit.models.save_user_cache">
+<span class="sig-name descname"><span class="pre">save_user_cache</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sender</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.models.save_user_cache" title="Permalink to this definition"></a></dt>
+<dd><p>Save the cache object when saving the user object</p>
+</dd></dl>
+
+</section>
+<section id="module-toolkit">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-toolkit" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ronen Loundy, Jeffery Meverden, John Tabor, John Schiltz.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

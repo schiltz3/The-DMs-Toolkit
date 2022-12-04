@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>toolkit.views.character_generator package &mdash; The DM&#39;s Toolkit o.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> The DM's Toolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">toolkit.views.character_generator package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-toolkit.views.character_generator.cache_character">toolkit.views.character_generator.cache_character module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.character_generator.cache_character.cache_character"><code class="docutils literal notranslate"><span class="pre">cache_character()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.cache_character.delete_cached_character"><code class="docutils literal notranslate"><span class="pre">delete_cached_character()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.cache_character.save_cached_character"><code class="docutils literal notranslate"><span class="pre">save_cached_character()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.character_generator.character_elements">toolkit.views.character_generator.character_elements module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Element"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Element.error"><code class="docutils literal notranslate"><span class="pre">Element.error</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Element.value"><code class="docutils literal notranslate"><span class="pre">Element.value</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs"><code class="docutils literal notranslate"><span class="pre">GenerateCharacterInputs</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.alignment"><code class="docutils literal notranslate"><span class="pre">GenerateCharacterInputs.alignment</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.background"><code class="docutils literal notranslate"><span class="pre">GenerateCharacterInputs.background</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.character_name"><code class="docutils literal notranslate"><span class="pre">GenerateCharacterInputs.character_name</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.clazz"><code class="docutils literal notranslate"><span class="pre">GenerateCharacterInputs.clazz</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.experience_points"><code class="docutils literal notranslate"><span class="pre">GenerateCharacterInputs.experience_points</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.from_dict"><code class="docutils literal notranslate"><span class="pre">GenerateCharacterInputs.from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.generator_type"><code class="docutils literal notranslate"><span class="pre">GenerateCharacterInputs.generator_type</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.is_valid"><code class="docutils literal notranslate"><span class="pre">GenerateCharacterInputs.is_valid()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.player_name"><code class="docutils literal notranslate"><span class="pre">GenerateCharacterInputs.player_name</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.race"><code class="docutils literal notranslate"><span class="pre">GenerateCharacterInputs.race</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GeneratedCharacterOutputs"><code class="docutils literal notranslate"><span class="pre">GeneratedCharacterOutputs</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GeneratedCharacterOutputs.calculate"><code class="docutils literal notranslate"><span class="pre">GeneratedCharacterOutputs.calculate()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GeneratedCharacterOutputs.update_proficiencies_from_dict"><code class="docutils literal notranslate"><span class="pre">GeneratedCharacterOutputs.update_proficiencies_from_dict()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Stat"><code class="docutils literal notranslate"><span class="pre">Stat</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Stat.checked"><code class="docutils literal notranslate"><span class="pre">Stat.checked</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Stat.proficiency"><code class="docutils literal notranslate"><span class="pre">Stat.proficiency</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Stat.repr"><code class="docutils literal notranslate"><span class="pre">Stat.repr</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Stat.sk_to_str"><code class="docutils literal notranslate"><span class="pre">Stat.sk_to_str()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Stat.value"><code class="docutils literal notranslate"><span class="pre">Stat.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.character_generator.character_generator_backend">toolkit.views.character_generator.character_generator_backend module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator"><code class="docutils literal notranslate"><span class="pre">Character_Generator</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.ALIGNMENT_DICT"><code class="docutils literal notranslate"><span class="pre">Character_Generator.ALIGNMENT_DICT</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.BACKGROUND_DICT"><code class="docutils literal notranslate"><span class="pre">Character_Generator.BACKGROUND_DICT</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.CLASS_OPTIONS"><code class="docutils literal notranslate"><span class="pre">Character_Generator.CLASS_OPTIONS</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.GENERATOR_LIST"><code class="docutils literal notranslate"><span class="pre">Character_Generator.GENERATOR_LIST</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.RACE_OPTIONS"><code class="docutils literal notranslate"><span class="pre">Character_Generator.RACE_OPTIONS</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.STANDARD_ARRAY"><code class="docutils literal notranslate"><span class="pre">Character_Generator.STANDARD_ARRAY</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.arrange_stats"><code class="docutils literal notranslate"><span class="pre">Character_Generator.arrange_stats()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.calculate_ability_modifier"><code class="docutils literal notranslate"><span class="pre">Character_Generator.calculate_ability_modifier()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.generate"><code class="docutils literal notranslate"><span class="pre">Character_Generator.generate()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_alignment"><code class="docutils literal notranslate"><span class="pre">Character_Generator.generate_alignment()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_background"><code class="docutils literal notranslate"><span class="pre">Character_Generator.generate_background()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_class"><code class="docutils literal notranslate"><span class="pre">Character_Generator.generate_class()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_race"><code class="docutils literal notranslate"><span class="pre">Character_Generator.generate_race()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_stat_list"><code class="docutils literal notranslate"><span class="pre">Character_Generator.generate_stat_list()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_all_generators"><code class="docutils literal notranslate"><span class="pre">Character_Generator.get_all_generators()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_all_random_generators"><code class="docutils literal notranslate"><span class="pre">Character_Generator.get_all_random_generators()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_classes"><code class="docutils literal notranslate"><span class="pre">Character_Generator.get_classes()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_limited_generators"><code class="docutils literal notranslate"><span class="pre">Character_Generator.get_limited_generators()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_proficiency_modifier"><code class="docutils literal notranslate"><span class="pre">Character_Generator.get_proficiency_modifier()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_races"><code class="docutils literal notranslate"><span class="pre">Character_Generator.get_races()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_unlimited_generators"><code class="docutils literal notranslate"><span class="pre">Character_Generator.get_unlimited_generators()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.three_d_six"><code class="docutils literal notranslate"><span class="pre">Character_Generator.three_d_six()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.character_generator.character_generator_view">toolkit.views.character_generator.character_generator_view module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_view.CharacterGenerator"><code class="docutils literal notranslate"><span class="pre">CharacterGenerator</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_view.CharacterGenerator.get"><code class="docutils literal notranslate"><span class="pre">CharacterGenerator.get()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.character_generator.character_generator_view.CharacterGenerator.post"><code class="docutils literal notranslate"><span class="pre">CharacterGenerator.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.character_generator">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The DM's Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">toolkit.views.character_generator package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/toolkit.views.character_generator.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="toolkit-views-character-generator-package">
+<h1>toolkit.views.character_generator package<a class="headerlink" href="#toolkit-views-character-generator-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-toolkit.views.character_generator.cache_character">
+<span id="toolkit-views-character-generator-cache-character-module"></span><h2>toolkit.views.character_generator.cache_character module<a class="headerlink" href="#module-toolkit.views.character_generator.cache_character" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.cache_character.cache_character">
+<span class="sig-name descname"><span class="pre">cache_character</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">char_input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs" title="toolkit.views.character_generator.character_elements.GenerateCharacterInputs"><span class="pre">GenerateCharacterInputs</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">char_output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toolkit.views.character_generator.character_elements.GeneratedCharacterOutputs" title="toolkit.views.character_generator.character_elements.GeneratedCharacterOutputs"><span class="pre">GeneratedCharacterOutputs</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.cache_character.cache_character" title="Permalink to this definition"></a></dt>
+<dd><p>Create and cache a character from the character_generator view</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>user (User): User to cache the character on
+char_input (GenerateCharacterInputs): User inputs to save in the character
+char_output (GeneratedCharacterOutputs): Generated stats to save in the character</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.cache_character.delete_cached_character">
+<span class="sig-name descname"><span class="pre">delete_cached_character</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.cache_character.delete_cached_character" title="Permalink to this definition"></a></dt>
+<dd><p>Delete cached character</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>user (User): User to delete the cache on</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.cache_character.save_cached_character">
+<span class="sig-name descname"><span class="pre">save_cached_character</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="toolkit.html#toolkit.models.Character" title="toolkit.models.Character"><span class="pre">Character</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#toolkit.views.character_generator.cache_character.save_cached_character" title="Permalink to this definition"></a></dt>
+<dd><p>Save the cached character to the database</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>user (User): User who has the created character</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[Character]: Character if one is cached, else None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.character_generator.character_elements">
+<span id="toolkit-views-character-generator-character-elements-module"></span><h2>toolkit.views.character_generator.character_elements module<a class="headerlink" href="#module-toolkit.views.character_generator.character_elements" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.Element">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_elements.Element" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Contains the value and error to display in templates</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.Element.error">
+<span class="sig-name descname"><span class="pre">error</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.Element.error" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.Element.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.Element.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GenerateCharacterInputs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GenerateCharacterInputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">character_name:</span> <span class="pre">~toolkit.views.character_generator.character_elements.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">player_name:</span> <span class="pre">~toolkit.views.character_generator.character_elements.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clazz:</span> <span class="pre">~toolkit.views.character_generator.character_elements.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background:</span> <span class="pre">~toolkit.views.character_generator.character_elements.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">race:</span> <span class="pre">~toolkit.views.character_generator.character_elements.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alignment:</span> <span class="pre">~toolkit.views.character_generator.character_elements.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator_type:</span> <span class="pre">~toolkit.views.character_generator.character_elements.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experience_points:</span> <span class="pre">~toolkit.views.character_generator.character_elements.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class which holds all the user intractable for the character generator page</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GenerateCharacterInputs.alignment">
+<span class="sig-name descname"><span class="pre">alignment</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Element" title="toolkit.views.character_generator.character_elements.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.alignment" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GenerateCharacterInputs.background">
+<span class="sig-name descname"><span class="pre">background</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Element" title="toolkit.views.character_generator.character_elements.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.background" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GenerateCharacterInputs.character_name">
+<span class="sig-name descname"><span class="pre">character_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Element" title="toolkit.views.character_generator.character_elements.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.character_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GenerateCharacterInputs.clazz">
+<span class="sig-name descname"><span class="pre">clazz</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Element" title="toolkit.views.character_generator.character_elements.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.clazz" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GenerateCharacterInputs.experience_points">
+<span class="sig-name descname"><span class="pre">experience_points</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Element" title="toolkit.views.character_generator.character_elements.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.experience_points" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GenerateCharacterInputs.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.from_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a dictionary, and pulls out the correct args for GenerateCharacterInputs
+then returns a new GenerateCharacterInputs with the args filled out
+Args:</p>
+<blockquote>
+<div><p>env (dict[str, Any]): Any dictionary</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>GeneratedCharacterInputs: new GeneratedCharacterInputs with args from env</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GenerateCharacterInputs.generator_type">
+<span class="sig-name descname"><span class="pre">generator_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Element" title="toolkit.views.character_generator.character_elements.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.generator_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GenerateCharacterInputs.is_valid">
+<span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.is_valid" title="Permalink to this definition"></a></dt>
+<dd><p>Determine if Dataclass holds all valid data</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>bool: Tru if dataclass holds valid data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GenerateCharacterInputs.player_name">
+<span class="sig-name descname"><span class="pre">player_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Element" title="toolkit.views.character_generator.character_elements.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.player_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GenerateCharacterInputs.race">
+<span class="sig-name descname"><span class="pre">race</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.character_generator.character_elements.Element" title="toolkit.views.character_generator.character_elements.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GenerateCharacterInputs.race" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GeneratedCharacterOutputs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GeneratedCharacterOutputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">calculate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dexterity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constitution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intelligence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wisdom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">charisma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proficiency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GeneratedCharacterOutputs" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Contain all the non-user intractable elements of the page</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GeneratedCharacterOutputs.calculate">
+<span class="sig-name descname"><span class="pre">calculate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GeneratedCharacterOutputs.calculate" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate all stat values</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>GeneratedCharacterOutputs: returns self for chaining</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.GeneratedCharacterOutputs.update_proficiencies_from_dict">
+<span class="sig-name descname"><span class="pre">update_proficiencies_from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_elements.GeneratedCharacterOutputs.update_proficiencies_from_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Takes POST request dict and updates checked boxes from it</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>env (dict[str, Any]): dictionary containing check boxes with same names as dict keys</p>
+</dd>
+<dt>Returns:</dt><dd><p>GeneratedCharacterOutputs: returns self for chaining</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.Stat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Stat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">proficiency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checked</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_elements.Stat" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A stat element that tracks if it is checked as well as its proficiency</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.Stat.checked">
+<span class="sig-name descname"><span class="pre">checked</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.Stat.checked" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.Stat.proficiency">
+<span class="sig-name descname"><span class="pre">proficiency</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.Stat.proficiency" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.Stat.repr">
+<span class="sig-name descname"><span class="pre">repr</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.Stat.repr" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.Stat.sk_to_str">
+<span class="sig-name descname"><span class="pre">sk_to_str</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_elements.Stat.sk_to_str" title="Permalink to this definition"></a></dt>
+<dd><p>Generates the string to display from the current state</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Stat: return self for chaining</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_elements.Stat.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#toolkit.views.character_generator.character_elements.Stat.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.character_generator.character_generator_backend">
+<span id="toolkit-views-character-generator-character-generator-backend-module"></span><h2>toolkit.views.character_generator.character_generator_backend module<a class="headerlink" href="#module-toolkit.views.character_generator.character_generator_backend" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Character_Generator</span></span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Contains all the lists and Dictionaries
+for the various character generation methods</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.ALIGNMENT_DICT">
+<span class="sig-name descname"><span class="pre">ALIGNMENT_DICT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'All':</span> <span class="pre">['Lawful</span> <span class="pre">Good',</span> <span class="pre">'Neutral</span> <span class="pre">Good',</span> <span class="pre">'Chaotic</span> <span class="pre">Good',</span> <span class="pre">'Lawful</span> <span class="pre">Neutral',</span> <span class="pre">'True</span> <span class="pre">Neutral',</span> <span class="pre">'Chaotic</span> <span class="pre">Neutral',</span> <span class="pre">'Lawful</span> <span class="pre">Evil',</span> <span class="pre">'Neutral</span> <span class="pre">Evil',</span> <span class="pre">'Chaotic</span> <span class="pre">Evil'],</span> <span class="pre">'Evil':</span> <span class="pre">['Lawful</span> <span class="pre">Evil',</span> <span class="pre">'Neutral</span> <span class="pre">Evil',</span> <span class="pre">'Chaotic</span> <span class="pre">Evil'],</span> <span class="pre">'Good':</span> <span class="pre">['Lawful</span> <span class="pre">Good',</span> <span class="pre">'Neutral</span> <span class="pre">Good',</span> <span class="pre">'Chaotic</span> <span class="pre">Good'],</span> <span class="pre">'Neutral':</span> <span class="pre">['Lawful</span> <span class="pre">Neutral',</span> <span class="pre">'True</span> <span class="pre">Neutral',</span> <span class="pre">'Chaotic</span> <span class="pre">Neutral']}</span></em><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.ALIGNMENT_DICT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.BACKGROUND_DICT">
+<span class="sig-name descname"><span class="pre">BACKGROUND_DICT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'All':</span> <span class="pre">['Acolyte',</span> <span class="pre">'Athlete',</span> <span class="pre">'Barbarian</span> <span class="pre">Tribe</span> <span class="pre">Member',</span> <span class="pre">'Charlatan',</span> <span class="pre">'City</span> <span class="pre">Watch',</span> <span class="pre">'Criminal',</span> <span class="pre">'Clan</span> <span class="pre">Crafter',</span> <span class="pre">'Entertainer',</span> <span class="pre">'Faction</span> <span class="pre">Agent',</span> <span class="pre">'Far</span> <span class="pre">Traveler',</span> <span class="pre">'Fisher',</span> <span class="pre">'Folk</span> <span class="pre">Hero',</span> <span class="pre">'Gladiator',</span> <span class="pre">'Hermit',</span> <span class="pre">'Knight',</span> <span class="pre">'Noble',</span> <span class="pre">'Outlander',</span> <span class="pre">'Pirate',</span> <span class="pre">'Sage',</span> <span class="pre">'Sailor',</span> <span class="pre">'Soldier',</span> <span class="pre">'Urchin']}</span></em><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.BACKGROUND_DICT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.CLASS_OPTIONS">
+<span class="sig-name descname"><span class="pre">CLASS_OPTIONS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('All',</span> <span class="pre">'Martial',</span> <span class="pre">'Magic',</span> <span class="pre">'Divine')</span></em><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.CLASS_OPTIONS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.GENERATOR_LIST">
+<span class="sig-name descname"><span class="pre">GENERATOR_LIST</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Stats',</span> <span class="pre">'Race',</span> <span class="pre">'Class',</span> <span class="pre">'Alignment',</span> <span class="pre">'Background']</span></em><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.GENERATOR_LIST" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.RACE_OPTIONS">
+<span class="sig-name descname"><span class="pre">RACE_OPTIONS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('All',</span> <span class="pre">'Common',</span> <span class="pre">'Uncommon',</span> <span class="pre">'Monster')</span></em><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.RACE_OPTIONS" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.STANDARD_ARRAY">
+<span class="sig-name descname"><span class="pre">STANDARD_ARRAY</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[15,</span> <span class="pre">14,</span> <span class="pre">13,</span> <span class="pre">12,</span> <span class="pre">10,</span> <span class="pre">8]</span></em><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.STANDARD_ARRAY" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.arrange_stats">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arrange_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.arrange_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Given a class and a 6 number array it
+arranges the numbers in an optimal allocation for any given class</p>
+<dl class="simple">
+<dt>Raises:</dt><dd><p>RuntimeError: If the class does not exist
+RuntimeError: If the Array of integers is the wrong size</p>
+</dd>
+<dt>Returns:</dt><dd><p>List of stat values in the Strength Dexterity Constitution Intelligence Wisdom Charisma order</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.calculate_ability_modifier">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate_ability_modifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.calculate_ability_modifier" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a stat and returns the ability modifier as a string</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>stat (int): the stat</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: ability modifier string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.generate">
+<span class="sig-name descname"><span class="pre">generate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generations_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_generator_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">race_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alignment_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'All'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stat_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="toolkit.html#toolkit.models.Clazz" title="toolkit.models.Clazz"><span class="pre">toolkit.models.Clazz</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="toolkit.html#toolkit.models.Race" title="toolkit.models.Race"><span class="pre">toolkit.models.Race</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.generate" title="Permalink to this definition"></a></dt>
+<dd><p>Given generator parameters, return a dictionary of character characteristics</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>generations_list (str, optional): A list of the various generations to do. Defaults to “All”.
+stat_generator_key (Optional[str], optional): A generator name from limited_generators(). Defaults to None.
+race_key (str, optional): A race category, from the RACE_DICT. Defaults to “All”.
+class_key (str, optional): A class category from the CLASS_DICT. Defaults to “All”.
+alignment_key (str, optional): A alignment category from the ALIGNMENT_DICT. Defaults to “All”.
+stat_list (list[int], optional): A list of 6 numbers between 1 and 20 to use as stats. Defaults to None.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: _description_
+RuntimeError: Not all numbers are in the passed stat array are valid</p>
+</dd>
+<dt>Returns:</dt><dd><p>dict[str, list[int] | str]: Generated Characteristics</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_alignment">
+<span class="sig-name descname"><span class="pre">generate_alignment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alignment_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_alignment" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Returns a random alignment from the provided list</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Args:</dt><dd><p>AlignmentList (List): List of alignments from alignment dictionary
+generator_key (str): key required to specify which randomizer you want</p>
+</dd>
+<dt>Raises:</dt><dd><p>RuntimeError: If the key provided is the wrong type
+RuntimeError: If there is an unauthorized item in the passed list</p>
+</dd>
+<dt>Returns:</dt><dd><p>String: Alignment</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_background">
+<span class="sig-name descname"><span class="pre">generate_background</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">background_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_background" title="Permalink to this definition"></a></dt>
+<dd><blockquote>
+<div><p>Generate a random background</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Args:</dt><dd><p>background_list (str): background
+generator_key (str): key required to specify which randomizer you want</p>
+</dd>
+<dt>Raises:</dt><dd><p>RuntimeError: If the key provided is the wrong type
+RuntimeError: If there is an unauthorized item in the passed list</p>
+</dd>
+<dt>Returns:</dt><dd><p>String: Background</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_class">
+<span class="sig-name descname"><span class="pre">generate_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">class_option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="toolkit.html#toolkit.models.Clazz" title="toolkit.models.Clazz"><span class="pre">Clazz</span></a></span></span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_class" title="Permalink to this definition"></a></dt>
+<dd><p>Returns a random class from the provided list
+Args:</p>
+<blockquote>
+<div><p>class_list (List): The list chosen from the Class dictionary
+generator_key (str): key required to specify which randomizer you want</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Raises:</dt><dd><p>RuntimeError: If the key provided is the wrong type
+RuntimeError: If there is an unauthorized item in the passed list</p>
+</dd>
+<dt>Returns:</dt><dd><p>String: the random class</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_race">
+<span class="sig-name descname"><span class="pre">generate_race</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">race_option</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="toolkit.html#toolkit.models.Race" title="toolkit.models.Race"><span class="pre">Race</span></a></span></span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_race" title="Permalink to this definition"></a></dt>
+<dd><p>Generates a race from the provided list
+Args:</p>
+<blockquote>
+<div><p>RaceList (list): The list chosen from the dictionary
+generator_key (str): key required to specify which randomizer you want</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Raises:</dt><dd><p>RuntimeError: If the key provided is the wrong type
+RuntimeError: If there is an unauthorized item in the passed list</p>
+</dd>
+<dt>Returns:</dt><dd><p>String: Race</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_stat_list">
+<span class="sig-name descname"><span class="pre">generate_stat_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.generate_stat_list" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the Stat List needed because the dictionary is in str:function</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>generator_key (str): key required to specify which randomizer you want</p>
+</dd>
+<dt>Raises:</dt><dd><p>RuntimeError: If the key provided is the wrong type</p>
+</dd>
+<dt>Returns:</dt><dd><p>StatList (List): List of stat values</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.get_all_generators">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_all_generators</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_all_generators" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the list of generator keys
+Returns:</p>
+<blockquote>
+<div><p>List: a list of all generator keys</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.get_all_random_generators">
+<span class="sig-name descname"><span class="pre">get_all_random_generators</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_all_random_generators" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the list of random generator keys
+Returns:</p>
+<blockquote>
+<div><p>List: a list of all generator keys</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.get_classes">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_classes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_classes" title="Permalink to this definition"></a></dt>
+<dd><p>Get all classes from database</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>BaseManager[Clazz]: All class object in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.get_limited_generators">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_limited_generators</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_limited_generators" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the list of limited generator keys
+Returns:</p>
+<blockquote>
+<div><p>List: a list of all limited generator keys</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.get_proficiency_modifier">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_proficiency_modifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_proficiency_modifier" title="Permalink to this definition"></a></dt>
+<dd><p>_summary_</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>level (Integer): Character Level</p>
+</dd>
+<dt>Raises:</dt><dd><p>RuntimeError: Not a integer
+ValueError: Not a valid level</p>
+</dd>
+<dt>Returns:</dt><dd><p>Proficiency value: the value to add to proficiencies based on level given</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.get_races">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_races</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_races" title="Permalink to this definition"></a></dt>
+<dd><p>Get all races from database</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>BaseManager[Race]: All race object in database</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.get_unlimited_generators">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_unlimited_generators</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.get_unlimited_generators" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the list of unlimited generator keys
+Returns:</p>
+<blockquote>
+<div><p>List: a list of all unlimited generator keys</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_backend.Character_Generator.three_d_six">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">three_d_six</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_low</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_high</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_backend.Character_Generator.three_d_six" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the total od 3d6</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>_low (_type_): Ignored
+_high (_type_): Ignored</p>
+</dd>
+<dt>Returns:</dt><dd><p>int: Returns the total of 3d6</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.character_generator.character_generator_view">
+<span id="toolkit-views-character-generator-character-generator-view-module"></span><h2>toolkit.views.character_generator.character_generator_view module<a class="headerlink" href="#module-toolkit.views.character_generator.character_generator_view" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_view.CharacterGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CharacterGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_view.CharacterGenerator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></p>
+<p>A class to provide a  page for users visiting the site to
+generate characters.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_view.CharacterGenerator.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_view.CharacterGenerator.get" title="Permalink to this definition"></a></dt>
+<dd><p>GET method for the character generation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.character_generator.character_generator_view.CharacterGenerator.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.character_generator.character_generator_view.CharacterGenerator.post" title="Permalink to this definition"></a></dt>
+<dd><p>POST method for the character generation.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.character_generator">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-toolkit.views.character_generator" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ronen Loundy, Jeffery Meverden, John Tabor, John Schiltz.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
