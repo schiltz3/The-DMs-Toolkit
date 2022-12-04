@@ -14,10 +14,6 @@ import sys
 import django
 
 sys.path.insert(0, os.path.abspath(".."))
-# sys.path.insert(0, os.path.abspath("../.."))
-# sys.path.append("E:/git/The-DMs-Toolkit/toolkit/views/character_generator")
-# sys.path.append("E:/git/The-DMs-Toolkit/toolkit/views/account")
-# sys.path.append("E:/git/The-DMs-Toolkit/toolkit/views/saved/saved_loot")
 os.environ["DJANGO_SETTINGS_MODULE"] = "thedmstoolkit.settings"
 django.setup()
 # -- Project information -----------------------------------------------------
@@ -36,7 +32,7 @@ extensions = [
 ]
 
 templates_path = ["_templates"]
-exclude_patterns = ["_build", "migrations", ".\Tests"]
+exclude_patterns = ["_build", "migrations", "./Tests"]
 apidoc_excluded_paths = ["migrations", "Tests"]
 
 
