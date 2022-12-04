@@ -35,7 +35,7 @@ jobs:
           cd ..
       - name: Move docs to published folder
         run: |
-          rm -f -r docs
+          [ -f docs ] && rm -r docs
           mkdir -p docs
           cp -a Sphinx/_build/html/. docs/
           cp Sphinx/_config.yml docs/
