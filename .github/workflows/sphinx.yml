@@ -30,7 +30,7 @@ jobs:
           pip list
       - name: Make Docs
         run: | 
-          sphinx-build . _build
+          sphinx-build . Sphinx\_build -c Sphinx
       - name: Move docs to published folder
         run: |
           rm -r docs
