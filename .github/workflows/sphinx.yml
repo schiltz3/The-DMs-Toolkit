@@ -23,6 +23,11 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install --upgrade --upgrade-strategy eager -r requirements/prod.txt
+
+      - name: debug
+        run: |
+          python -V
+          pip list
       - uses: ammaraskar/sphinx-action@master
         with:
           docs-folder: "Sphinx/"
