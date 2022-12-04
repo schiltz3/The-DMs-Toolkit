@@ -72,6 +72,9 @@ urlpatterns = [
     path(
         "encounter_generator/", EncounterGenerator.as_view(), name="encounter_generator"
     ),
+    path(
+        "encounter_generator/<int:pk>", EncounterGenerator.as_view(), name="encounter_generator"
+    ),
     # Loot Generator
     path("loot_generator/", LootGenerator.as_view(), name="loot_generator"),
     # Saved Characters
