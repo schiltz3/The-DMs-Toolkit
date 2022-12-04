@@ -27,7 +27,7 @@ jobs:
       - name: Make Docs
         run: | 
           cd Sphinx
-          sphinx-build . _build
+          sphinx-build . _build/html
           cd ..
       - name: Debug
         run: |
