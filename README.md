@@ -9,8 +9,9 @@
 1. Clone repo
 2. Have python 3.9 or higher installed
 3. Run `python -m pip install -r requrements.txt`
-4. Run `python manage.py loaddata databases/all_data.json`
-5. Run `python manage.py runserver`
+4. Run `python manage.py migrate`
+5. Run `python manage.py loaddata databases/all_data.json`
+6. Run `python manage.py runserver`
 
 ---
 
