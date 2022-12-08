@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>toolkit.views.loot_generator package &mdash; The DM&#39;s Toolkit o.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> The DM's Toolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">toolkit.views.loot_generator package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-toolkit.views.loot_generator.cache_loot">toolkit.views.loot_generator.cache_loot module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.cache_loot.cache_loot"><code class="docutils literal notranslate"><span class="pre">cache_loot()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.cache_loot.delete_cached_loot"><code class="docutils literal notranslate"><span class="pre">delete_cached_loot()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.cache_loot.save_cached_loot"><code class="docutils literal notranslate"><span class="pre">save_cached_loot()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.loot_generator.loot_generator_backend">toolkit.views.loot_generator.loot_generator_backend module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator"><code class="docutils literal notranslate"><span class="pre">Loot_Generator</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.LOOT_GENERATOR_DICT"><code class="docutils literal notranslate"><span class="pre">Loot_Generator.LOOT_GENERATOR_DICT</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.LOOT_TYPE_DICT"><code class="docutils literal notranslate"><span class="pre">Loot_Generator.LOOT_TYPE_DICT</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.check_value"><code class="docutils literal notranslate"><span class="pre">Loot_Generator.check_value()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_armor"><code class="docutils literal notranslate"><span class="pre">Loot_Generator.generate_armor()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_currency"><code class="docutils literal notranslate"><span class="pre">Loot_Generator.generate_currency()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_generic_item"><code class="docutils literal notranslate"><span class="pre">Loot_Generator.generate_generic_item()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_loot"><code class="docutils literal notranslate"><span class="pre">Loot_Generator.generate_loot()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_loot_type"><code class="docutils literal notranslate"><span class="pre">Loot_Generator.generate_loot_type()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_magical_item"><code class="docutils literal notranslate"><span class="pre">Loot_Generator.generate_magical_item()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_random"><code class="docutils literal notranslate"><span class="pre">Loot_Generator.generate_random()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_total_value"><code class="docutils literal notranslate"><span class="pre">Loot_Generator.generate_total_value()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_weapon"><code class="docutils literal notranslate"><span class="pre">Loot_Generator.generate_weapon()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.get_all_random_generators"><code class="docutils literal notranslate"><span class="pre">Loot_Generator.get_all_random_generators()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.loot_generator.loot_generator_view">toolkit.views.loot_generator.loot_generator_view module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.Element"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs"><code class="docutils literal notranslate"><span class="pre">GenerateLootInputs</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.average_player_level"><code class="docutils literal notranslate"><span class="pre">GenerateLootInputs.average_player_level</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.from_dict"><code class="docutils literal notranslate"><span class="pre">GenerateLootInputs.from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.generator_type"><code class="docutils literal notranslate"><span class="pre">GenerateLootInputs.generator_type</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.is_valid"><code class="docutils literal notranslate"><span class="pre">GenerateLootInputs.is_valid()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.loot_type"><code class="docutils literal notranslate"><span class="pre">GenerateLootInputs.loot_type</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.total_hoard_value"><code class="docutils literal notranslate"><span class="pre">GenerateLootInputs.total_hoard_value</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.LootGenerator"><code class="docutils literal notranslate"><span class="pre">LootGenerator</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.LootGenerator.get"><code class="docutils literal notranslate"><span class="pre">LootGenerator.get()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.LootGenerator.post"><code class="docutils literal notranslate"><span class="pre">LootGenerator.post()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.loot_generator">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The DM's Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">toolkit.views.loot_generator package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/toolkit.views.loot_generator.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="toolkit-views-loot-generator-package">
+<h1>toolkit.views.loot_generator package<a class="headerlink" href="#toolkit-views-loot-generator-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-toolkit.views.loot_generator.cache_loot">
+<span id="toolkit-views-loot-generator-cache-loot-module"></span><h2>toolkit.views.loot_generator.cache_loot module<a class="headerlink" href="#module-toolkit.views.loot_generator.cache_loot" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.cache_loot.cache_loot">
+<span class="sig-name descname"><span class="pre">cache_loot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="toolkit.html#toolkit.models.GeneratedLoot" title="toolkit.models.GeneratedLoot"><span class="pre">GeneratedLoot</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">weapons_output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="toolkit.html#toolkit.models.Weapon" title="toolkit.models.Weapon"><span class="pre">toolkit.models.Weapon</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">armors_output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="toolkit.html#toolkit.models.Armor" title="toolkit.models.Armor"><span class="pre">toolkit.models.Armor</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generic_items_output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="toolkit.html#toolkit.models.GenericItem" title="toolkit.models.GenericItem"><span class="pre">toolkit.models.GenericItem</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">magic_items_output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="toolkit.html#toolkit.models.MagicItem" title="toolkit.models.MagicItem"><span class="pre">toolkit.models.MagicItem</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.cache_loot.cache_loot" title="Permalink to this definition"></a></dt>
+<dd><p>Create and cache a loot object from the loot_generator view</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>user (User): User to cache the loot on</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.cache_loot.delete_cached_loot">
+<span class="sig-name descname"><span class="pre">delete_cached_loot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.cache_loot.delete_cached_loot" title="Permalink to this definition"></a></dt>
+<dd><p>Delete cached loot</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>user (User): User to delete the cache on</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.cache_loot.save_cached_loot">
+<span class="sig-name descname"><span class="pre">save_cached_loot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="toolkit.html#toolkit.models.GeneratedLoot" title="toolkit.models.GeneratedLoot"><span class="pre">GeneratedLoot</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#toolkit.views.loot_generator.cache_loot.save_cached_loot" title="Permalink to this definition"></a></dt>
+<dd><p>Save the cached loot to the database</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>user (User): User who has the created loot</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[Loot]: Loot if one is cached, else None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.loot_generator.loot_generator_backend">
+<span id="toolkit-views-loot-generator-loot-generator-backend-module"></span><h2>toolkit.views.loot_generator.loot_generator_backend module<a class="headerlink" href="#module-toolkit.views.loot_generator.loot_generator_backend" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Loot_Generator</span></span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Stores information for generating loot</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.LOOT_GENERATOR_DICT">
+<span class="sig-name descname"><span class="pre">LOOT_GENERATOR_DICT</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Armor':</span> <span class="pre">&lt;function</span> <span class="pre">Loot_Generator.generate_armor&gt;,</span> <span class="pre">'Currency':</span> <span class="pre">&lt;function</span> <span class="pre">Loot_Generator.generate_currency&gt;,</span> <span class="pre">'Generic':</span> <span class="pre">&lt;function</span> <span class="pre">Loot_Generator.generate_generic_item&gt;,</span> <span class="pre">'Magic':</span> <span class="pre">&lt;function</span> <span class="pre">Loot_Generator.generate_magical_item&gt;,</span> <span class="pre">'Weapon':</span> <span class="pre">&lt;function</span> <span class="pre">Loot_Generator.generate_weapon&gt;}</span></em><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.LOOT_GENERATOR_DICT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.LOOT_TYPE_DICT">
+<span class="sig-name descname"><span class="pre">LOOT_TYPE_DICT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Encounter':</span> <span class="pre">1.0,</span> <span class="pre">'Hoard':</span> <span class="pre">100.0,</span> <span class="pre">'Scraps':</span> <span class="pre">0.1,</span> <span class="pre">'Treasure</span> <span class="pre">Chest':</span> <span class="pre">10.0}</span></em><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.LOOT_TYPE_DICT" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.check_value">
+<span class="sig-name descname"><span class="pre">check_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.check_value" title="Permalink to this definition"></a></dt>
+<dd><p>Checks if the current value has exceeded the intended loot generation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_armor">
+<span class="sig-name descname"><span class="pre">generate_armor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_armor" title="Permalink to this definition"></a></dt>
+<dd><p>Get a list of all armor from the database then pick a random one and add it to the list of things to add</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_currency">
+<span class="sig-name descname"><span class="pre">generate_currency</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_currency" title="Permalink to this definition"></a></dt>
+<dd><p>Generate a random amount of gold below the remaining value
+Then generates 0-100 silver
+Then generates 0-100 copper</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_generic_item">
+<span class="sig-name descname"><span class="pre">generate_generic_item</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_generic_item" title="Permalink to this definition"></a></dt>
+<dd><p>Get a list of all random items from the database then pick a random one and add it to the list of things to add</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_loot">
+<span class="sig-name descname"><span class="pre">generate_loot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">approximate_total_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_loot_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Random'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_loot" title="Permalink to this definition"></a></dt>
+<dd><p>Overall Function - generates all the loot types</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>generator_key (str, optional): which generator to use choose from keys on Generators.keys.
+Generate key is static for every generation type. Defaults to “random”.
+level (int, optional): average level of the party. Defaults to 1.
+approximate_total_value (double, optional): how much value should be generated is 0 only temporarily on default. Defaults to 0.
+input_loot_type (str, optional): What kind of loot choose from keys on LOOT_TYPE_DICT. Defaults to “random”.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If generator key is not contained in the dictionary
+ValueError: If a non int is passed as a level
+ValueError: If the level isn’t possible to get in D&amp;D
+ValueError: If tne total value isn’t an integer
+ValueError: If the total value is below zero
+ValueError: If the loot type is not random or a valid loot type key</p>
+</dd>
+<dt>Returns:</dt><dd><p>loot_dict: a dictionary containing the loot object and all item lists to add</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_loot_type">
+<span class="sig-name descname"><span class="pre">generate_loot_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_loot_type" title="Permalink to this definition"></a></dt>
+<dd><p>Generate a random loot type</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_magical_item">
+<span class="sig-name descname"><span class="pre">generate_magical_item</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_magical_item" title="Permalink to this definition"></a></dt>
+<dd><p>Get a list of all magic items from the database then pick a random one and add it to the list of things to add
+Ends Generation</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_random">
+<span class="sig-name descname"><span class="pre">generate_random</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_random" title="Permalink to this definition"></a></dt>
+<dd><p>Choose which item to randomly generate</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_total_value">
+<span class="sig-name descname"><span class="pre">generate_total_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_total_value" title="Permalink to this definition"></a></dt>
+<dd><p>Give a random integer that the minimum amount of value should be generated</p>
+<p>Equal to a random number between 1-10 and multiplied by the level and the treasure type</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_weapon">
+<span class="sig-name descname"><span class="pre">generate_weapon</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.generate_weapon" title="Permalink to this definition"></a></dt>
+<dd><p>Get a list of all weapons from the database then pick a random one and add it to the list of things to add</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.get_all_random_generators">
+<span class="sig-name descname"><span class="pre">get_all_random_generators</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_backend.Loot_Generator.get_all_random_generators" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the list of random generator keys
+Returns:</p>
+<blockquote>
+<div><p>List: a list of all generator keys</p>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.loot_generator.loot_generator_view">
+<span id="toolkit-views-loot-generator-loot-generator-view-module"></span><h2>toolkit.views.loot_generator.loot_generator_view module<a class="headerlink" href="#module-toolkit.views.loot_generator.loot_generator_view" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_view.Element">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_view.Element" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Contains the value and error to display in templates</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GenerateLootInputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator_type:</span> <span class="pre">~toolkit.views.loot_generator.loot_generator_view.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loot_type:</span> <span class="pre">~toolkit.views.loot_generator.loot_generator_view.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_hoard_value:</span> <span class="pre">~toolkit.views.loot_generator.loot_generator_view.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">average_player_level:</span> <span class="pre">~toolkit.views.loot_generator.loot_generator_view.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class which holds all the user intractable for the loot generator page</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.average_player_level">
+<span class="sig-name descname"><span class="pre">average_player_level</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.Element" title="toolkit.views.loot_generator.loot_generator_view.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.average_player_level" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.from_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a dictionary, and pulls out the correct args for GenerateLootInputs
+then returns a new GenerateLootInputs with the args filled out
+Args:</p>
+<blockquote>
+<div><p>env (dict[str, Any]): Any dictionary</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>GeneratedLootInputs: new GeneratedLootInputs with args from env</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.generator_type">
+<span class="sig-name descname"><span class="pre">generator_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.Element" title="toolkit.views.loot_generator.loot_generator_view.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.generator_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.is_valid">
+<span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.is_valid" title="Permalink to this definition"></a></dt>
+<dd><p>Determine if Dataclass holds all valid data</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>bool: Tru if dataclass holds valid data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.loot_type">
+<span class="sig-name descname"><span class="pre">loot_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.Element" title="toolkit.views.loot_generator.loot_generator_view.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.loot_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.total_hoard_value">
+<span class="sig-name descname"><span class="pre">total_hoard_value</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.loot_generator.loot_generator_view.Element" title="toolkit.views.loot_generator.loot_generator_view.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_view.GenerateLootInputs.total_hoard_value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_view.LootGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">LootGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_view.LootGenerator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></p>
+<p>A class to provide a page for users visiting the site to
+generate loot.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_view.LootGenerator.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_view.LootGenerator.get" title="Permalink to this definition"></a></dt>
+<dd><p>GET method for the loot generation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.loot_generator.loot_generator_view.LootGenerator.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.loot_generator.loot_generator_view.LootGenerator.post" title="Permalink to this definition"></a></dt>
+<dd><p>POST method for the loot generation.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.loot_generator">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-toolkit.views.loot_generator" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ronen Loundy, Jeffery Meverden, John Tabor, John Schiltz.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

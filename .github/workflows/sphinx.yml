@@ -1,0 +1,53 @@
+name: "Doc builder"
+on:
+  pull_request:
+    branches: [ pages ]
+  push:
+    branches: [ pages ]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+      - uses: actions/cache@v3
+        with:
+          path: ${{ env.pythonLocation }}
+          key: ${{ env.pythonLocation }}-${{ hashFiles('setup.py') }}-${{ hashFiles('dev-requirements.txt') }}
+      - name: Install Dependencies
+        run: |
+          pip install --upgrade --upgrade-strategy eager -r requirements/prod.txt
+          pip install -r Sphinx/requirements.txt
+      - name: Make Docs
+        run: | 
+          cd Sphinx
+          sphinx-build . _build/html
+          cd ..
+      - name: Debug
+        run: |
+          ls Sphinx/
+          echo ---
+          ls Sphinx/_build
+          echo ---
+          ls Sphinx/_build/html
+      - name: Move docs to published folder
+        run: |
+          mkdir -p docs
+          cp -a Sphinx/_build/html/. docs/
+          cp Sphinx/_config.yml docs/
+          cp Sphinx/.nojekyll docs/
+
+      - name: Push changes
+        run: |
+          git config --global user.name 'John Schiltz'
+          git config --global user.email '45466247+schiltz3@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git add .
+          git commit -am "Docs built"
+          git push

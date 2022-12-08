@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>toolkit.views.encounter_generator package &mdash; The DM&#39;s Toolkit o.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> The DM's Toolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">toolkit.views.encounter_generator package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-toolkit.views.encounter_generator.cache_encounter">toolkit.views.encounter_generator.cache_encounter module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.cache_encounter.cache_encounter"><code class="docutils literal notranslate"><span class="pre">cache_encounter()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.cache_encounter.delete_cached_encounter"><code class="docutils literal notranslate"><span class="pre">delete_cached_encounter()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.cache_encounter.save_cached_encounter"><code class="docutils literal notranslate"><span class="pre">save_cached_encounter()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.encounter_generator.encounter_generator_backend">toolkit.views.encounter_generator.encounter_generator_backend module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.ENCOUNTER_TYPE_LIST"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.ENCOUNTER_TYPE_LIST</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.Generators"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.Generators</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.add_tag"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.add_tag()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.calculate_average_cr"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.calculate_average_cr()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.change_average_level"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.change_average_level()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.generate_encounter"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.generate_encounter()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.generate_encounter_type"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.generate_encounter_type()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.generate_loot"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.generate_loot()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.generate_monster"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.generate_monster()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_all_random_generators"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.get_all_random_generators()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_average_cr"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.get_average_cr()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_average_level"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.get_average_level()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_encounter_type"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.get_encounter_type()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_loot"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.get_loot()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_loot_modifier"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.get_loot_modifier()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_monster_list"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.get_monster_list()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_tags"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.get_tags()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.remove_tag"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.remove_tag()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.set_encounter_type"><code class="docutils literal notranslate"><span class="pre">Encounter_Generator.set_encounter_type()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.encounter_generator.encounter_generator_view">toolkit.views.encounter_generator.encounter_generator_view module</a><ul>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.Element"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.EncounterGenerator"><code class="docutils literal notranslate"><span class="pre">EncounterGenerator</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.EncounterGenerator.get"><code class="docutils literal notranslate"><span class="pre">EncounterGenerator.get()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.EncounterGenerator.post"><code class="docutils literal notranslate"><span class="pre">EncounterGenerator.post()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs"><code class="docutils literal notranslate"><span class="pre">GenerateEncounterInputs</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.average_player_level"><code class="docutils literal notranslate"><span class="pre">GenerateEncounterInputs.average_player_level</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.encounter_tags"><code class="docutils literal notranslate"><span class="pre">GenerateEncounterInputs.encounter_tags</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.encounter_type"><code class="docutils literal notranslate"><span class="pre">GenerateEncounterInputs.encounter_type</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.from_dict"><code class="docutils literal notranslate"><span class="pre">GenerateEncounterInputs.from_dict()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.generator_type"><code class="docutils literal notranslate"><span class="pre">GenerateEncounterInputs.generator_type</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.is_valid"><code class="docutils literal notranslate"><span class="pre">GenerateEncounterInputs.is_valid()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-toolkit.views.encounter_generator">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">The DM's Toolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">toolkit.views.encounter_generator package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/toolkit.views.encounter_generator.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="toolkit-views-encounter-generator-package">
+<h1>toolkit.views.encounter_generator package<a class="headerlink" href="#toolkit-views-encounter-generator-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-toolkit.views.encounter_generator.cache_encounter">
+<span id="toolkit-views-encounter-generator-cache-encounter-module"></span><h2>toolkit.views.encounter_generator.cache_encounter module<a class="headerlink" href="#module-toolkit.views.encounter_generator.cache_encounter" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.cache_encounter.cache_encounter">
+<span class="sig-name descname"><span class="pre">cache_encounter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encounter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="toolkit.html#toolkit.models.GeneratedEncounter" title="toolkit.models.GeneratedEncounter"><span class="pre">GeneratedEncounter</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">monster_output</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="toolkit.html#toolkit.models.Monster" title="toolkit.models.Monster"><span class="pre">toolkit.models.Monster</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.cache_encounter.cache_encounter" title="Permalink to this definition"></a></dt>
+<dd><p>Create and cache an encounter object from the encounter_generator view</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>user (User): User to cache the encounter on</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.cache_encounter.delete_cached_encounter">
+<span class="sig-name descname"><span class="pre">delete_cached_encounter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.cache_encounter.delete_cached_encounter" title="Permalink to this definition"></a></dt>
+<dd><p>Delete cached encounter</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>user (User): User to delete the cache on</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.cache_encounter.save_cached_encounter">
+<span class="sig-name descname"><span class="pre">save_cached_encounter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">User</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="toolkit.html#toolkit.models.GeneratedEncounter" title="toolkit.models.GeneratedEncounter"><span class="pre">GeneratedEncounter</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#toolkit.views.encounter_generator.cache_encounter.save_cached_encounter" title="Permalink to this definition"></a></dt>
+<dd><p>Save the cached encounter to the database</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>user (User): User who has the created encounter</p>
+</dd>
+<dt>Returns:</dt><dd><p>Optional[Encounter]: Encounter if one is cached, else None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.encounter_generator.encounter_generator_backend">
+<span id="toolkit-views-encounter-generator-encounter-generator-backend-module"></span><h2>toolkit.views.encounter_generator.encounter_generator_backend module<a class="headerlink" href="#module-toolkit.views.encounter_generator.encounter_generator_backend" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Encounter_Generator</span></span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>_summary_</p>
+<dl class="simple">
+<dt>Raises:</dt><dd><p>ValueError: _description_
+ValueError: _description_
+ValueError: _description_
+ValueError: _description_
+ValueError: _description_
+ValueError: _description_
+ValueError: _description_
+ValueError: _description_
+ValueError: _description_
+RuntimeError: _description_
+ValueError: _description_
+ValueError: _description_</p>
+</dd>
+<dt>Returns:</dt><dd><p>_type_: _description_</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.ENCOUNTER_TYPE_LIST">
+<span class="sig-name descname"><span class="pre">ENCOUNTER_TYPE_LIST</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Horde',</span> <span class="pre">'Skirmish',</span> <span class="pre">'Average</span> <span class="pre">Encounter',</span> <span class="pre">'Challenge',</span> <span class="pre">'Minor</span> <span class="pre">Boss',</span> <span class="pre">'Major</span> <span class="pre">Boss']</span></em><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.ENCOUNTER_TYPE_LIST" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.Generators">
+<span class="sig-name descname"><span class="pre">Generators</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'Random':</span> <span class="pre">&lt;bound</span> <span class="pre">method</span> <span class="pre">Random.randint</span> <span class="pre">of</span> <span class="pre">&lt;random.Random</span> <span class="pre">object&gt;&gt;}</span></em><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.Generators" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.add_tag">
+<span class="sig-name descname"><span class="pre">add_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.add_tag" title="Permalink to this definition"></a></dt>
+<dd><p>_summary_</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>tag (Tag|string): accepts either a tag object or a string that is the same as the name of a tag</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If the tag is a string and no matching tag is in the database
+ValueError: If the tag is a tag object and not in the database
+ValueError: If the tag is not a string or tag object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.calculate_average_cr">
+<span class="sig-name descname"><span class="pre">calculate_average_cr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.calculate_average_cr" title="Permalink to this definition"></a></dt>
+<dd><p>calculates and updates the average cr, only used internally</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.change_average_level">
+<span class="sig-name descname"><span class="pre">change_average_level</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_level</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.change_average_level" title="Permalink to this definition"></a></dt>
+<dd><p>Adjust the average level</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>new_level (int or float): New average level</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If new_level is not a float or int
+ValueError: If new level is not possible to get in dnd</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.generate_encounter">
+<span class="sig-name descname"><span class="pre">generate_encounter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">average_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encounter_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Average</span> <span class="pre">Encounter'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generator_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loot_generate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="toolkit.html#toolkit.models.GeneratedEncounter" title="toolkit.models.GeneratedEncounter"><span class="pre">toolkit.models.GeneratedEncounter</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="toolkit.html#toolkit.models.Monster" title="toolkit.models.Monster"><span class="pre">toolkit.models.Monster</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.generate_encounter" title="Permalink to this definition"></a></dt>
+<dd><p>Outwards facing component of the generate encounter, generates a somewhat random amount of monsters</p>
+<dl>
+<dt>Args:</dt><dd><p>average_level (int or float, optional): Average Level of the party. Defaults to 1.
+encounter_type (str, optional): Type of encounter to be generated. Defaults to “Average Encounter”.
+tags (List of Tags or strings, optional): A list of all tags to be included, tags stack to further limit not expand.</p>
+<blockquote>
+<div><p>Defaults to None.</p>
+</div></blockquote>
+<p>generator_key (str, optional): Generator Type. Defaults to “Random”.
+loot_generate (bool, optional): Boolean generate loot or not. Defaults to False.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: Generator Key is not valid
+ValueError: Loot Generate is not true or false</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.generate_encounter_type">
+<span class="sig-name descname"><span class="pre">generate_encounter_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.generate_encounter_type" title="Permalink to this definition"></a></dt>
+<dd><p>Generate a random encounter type</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.generate_loot">
+<span class="sig-name descname"><span class="pre">generate_loot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.generate_loot" title="Permalink to this definition"></a></dt>
+<dd><p>Generates some loot based on the encounter</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.generate_monster">
+<span class="sig-name descname"><span class="pre">generate_monster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.generate_monster" title="Permalink to this definition"></a></dt>
+<dd><p>Main function of the method, generates a monster randomly from the databases and adds it to the list</p>
+<dl class="simple">
+<dt>Raises:</dt><dd><p>RuntimeError: If there are no monsters suitable to be generated</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_all_random_generators">
+<span class="sig-name descname"><span class="pre">get_all_random_generators</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_all_random_generators" title="Permalink to this definition"></a></dt>
+<dd><p>Gives the list of random generator keys
+Returns:</p>
+<blockquote>
+<div><p>List: a list of all generator keys</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_average_cr">
+<span class="sig-name descname"><span class="pre">get_average_cr</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_average_cr" title="Permalink to this definition"></a></dt>
+<dd><p>returns the average cr of the encounter</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Float: Average cr of the generated monsters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_average_level">
+<span class="sig-name descname"><span class="pre">get_average_level</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_average_level" title="Permalink to this definition"></a></dt>
+<dd><p>returns the average level of the players</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Float: Average level of the players</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_encounter_type">
+<span class="sig-name descname"><span class="pre">get_encounter_type</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_encounter_type" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the type of encounter</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>String: type of encounter</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_loot">
+<span class="sig-name descname"><span class="pre">get_loot</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_loot" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the loot</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>Dictionary: The standard dictionary returned by the generate function from the loot generator</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_loot_modifier">
+<span class="sig-name descname"><span class="pre">get_loot_modifier</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_loot_modifier" title="Permalink to this definition"></a></dt>
+<dd><p>Return the amount the monsters currently modify the loot generated
+Loot Modifier currently not used</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>float: modifier for loot dropped</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_monster_list">
+<span class="sig-name descname"><span class="pre">get_monster_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_monster_list" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the list of monsters generated</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>List: a list of all monsters generated so far</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_tags">
+<span class="sig-name descname"><span class="pre">get_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.get_tags" title="Permalink to this definition"></a></dt>
+<dd><p>Get Current Tags</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>List: List of Tags</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.remove_tag">
+<span class="sig-name descname"><span class="pre">remove_tag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.remove_tag" title="Permalink to this definition"></a></dt>
+<dd><p>Removes a tag from the list</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>tag (Tag|string): accepts either a tag object or a string that is the same as the name of a tag</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If the tag is a string and no matching tag is in the database
+ValueError: If the tag is a tag object and not in the database
+ValueError: If the tag is not a string or tag object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.set_encounter_type">
+<span class="sig-name descname"><span class="pre">set_encounter_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">encounter_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_backend.Encounter_Generator.set_encounter_type" title="Permalink to this definition"></a></dt>
+<dd><p>Change the encounter type</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>encounter_type (String): One of the accepted encounter types</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If encounter_type is not a valid encounter type</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.encounter_generator.encounter_generator_view">
+<span id="toolkit-views-encounter-generator-encounter-generator-view-module"></span><h2>toolkit.views.encounter_generator.encounter_generator_view module<a class="headerlink" href="#module-toolkit.views.encounter_generator.encounter_generator_view" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_view.Element">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_view.Element" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Contains the value and error to display in templates</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_view.EncounterGenerator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">EncounterGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_view.EncounterGenerator" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">View</span></code></p>
+<p>A class to provide a page for users visiting the site to
+generate encounters.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_view.EncounterGenerator.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_view.EncounterGenerator.get" title="Permalink to this definition"></a></dt>
+<dd><p>GET method for the encounter generation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_view.EncounterGenerator.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">HttpRequest</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_view.EncounterGenerator.post" title="Permalink to this definition"></a></dt>
+<dd><p>POST method for the encounter generation.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GenerateEncounterInputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generator_type:</span> <span class="pre">~toolkit.views.encounter_generator.encounter_generator_view.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encounter_type:</span> <span class="pre">~toolkit.views.encounter_generator.encounter_generator_view.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encounter_tags:</span> <span class="pre">~toolkit.views.encounter_generator.encounter_generator_view.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">average_player_level:</span> <span class="pre">~toolkit.views.encounter_generator.encounter_generator_view.Element</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class which holds all the user intractable for the encounter generator page</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.average_player_level">
+<span class="sig-name descname"><span class="pre">average_player_level</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.Element" title="toolkit.views.encounter_generator.encounter_generator_view.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.average_player_level" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.encounter_tags">
+<span class="sig-name descname"><span class="pre">encounter_tags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.Element" title="toolkit.views.encounter_generator.encounter_generator_view.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.encounter_tags" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.encounter_type">
+<span class="sig-name descname"><span class="pre">encounter_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.Element" title="toolkit.views.encounter_generator.encounter_generator_view.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.encounter_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.from_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a dictionary, and pulls out the correct args for GenerateEncounterInputs
+then returns a new GenerateEncounterInputs with the args filled out
+Args:</p>
+<blockquote>
+<div><p>env (dict[str, Any]): Any dictionary</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>GeneratedEncounterInputs: new GeneratedEncounterInputs with args from env</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.generator_type">
+<span class="sig-name descname"><span class="pre">generator_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#toolkit.views.encounter_generator.encounter_generator_view.Element" title="toolkit.views.encounter_generator.encounter_generator_view.Element"><span class="pre">Element</span></a></em><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.generator_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.is_valid">
+<span class="sig-name descname"><span class="pre">is_valid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#toolkit.views.encounter_generator.encounter_generator_view.GenerateEncounterInputs.is_valid" title="Permalink to this definition"></a></dt>
+<dd><p>Determine if Dataclass holds all valid data</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>bool: Tru if dataclass holds valid data</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-toolkit.views.encounter_generator">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-toolkit.views.encounter_generator" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Ronen Loundy, Jeffery Meverden, John Tabor, John Schiltz.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
